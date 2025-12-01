@@ -15,3 +15,6 @@ The formatted_restaurants.json file contain all the data of 350 restaurants as p
     "url_slug": "gabriels-gate"
   },
 
+The restaurants_with_reviews_ratings.json file contains the restaurants with the  reviews and ratings details 
+The restaurants_reviews.json file contain the ratings of the restaurants and the uuid is also added 
+The restaurants_ratings.json file contain the ratings of the restaurants and the uuid is also added 
