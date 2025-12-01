@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="generator" content="Square Online">
+    <link rel="shortcut icon" type="image/x-icon" href="/square.ico">
+    <link rel="preload" href="https://cdn3.editmysite.com/app/website/css/site.3e67d0820f76a805afd5.css" as="style">
+
+    <style>
+        .loading-view {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .loading-container {
+            width: 62px;
+            height: 54px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 12px;
+        }
+
+        @media (min-width: 840px) {
+            .loading-container {
+                width: 72px;
+                height: 54px;
+                grid-gap: 12px;
+            }
+        }
+
+        .dot-container {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#c5b69c20, #c5b69c);
+            /* Base64 encoded simple circle SVG /resources/assets/js/prime/src/site/components/ui/circle.svg */
+            mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xIC0xIDIgMiI+Cgk8Y2lyY2xlIHI9IjEiLz4KPC9zdmc+Cg==');
+            -webkit-mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xIC0xIDIgMiI+Cgk8Y2lyY2xlIHI9IjEiLz4KPC9zdmc+Cg==');
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            mask-size: 100% auto;
+            -webkit-mask-size: 100% auto;
+            mask-position: bottom;
+            -webkit-mask-position: bottom;
+            animation: loading-view-movement;
+            animation-delay: 0s;
+            animation-duration: 3750ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0.8, 0, 0.8, 1);
+        }
+
+        .dot-container:nth-of-type(2) {
+            animation-delay: 130ms;
+        }
+
+        .dot-container:nth-of-type(3) {
+            animation-delay: 260ms;
+        }
+
+        @keyframes loading-view-movement {
+            /* up and down for 3s, stop for 750ms */
+            0%, 27%, 54% {
+                mask-position: bottom;
+                -webkit-mask-position: bottom;
+            }
+
+            14%, 41%, 68% {
+                mask-position: top;
+                -webkit-mask-position: top;
+            }
+
+            27%, 54%, 81%, 100% {
+                mask-position: bottom;
+                -webkit-mask-position: bottom;
+            }
+        }
+    </style>
+
+            <link rel="manifest" href="/manifest.webmanifest">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="default">
+            <meta name='apple-mobile-web-app-title' content='Sobaya'>
+            <meta name='theme-color' content='#c5b69c'>
+            <meta name='msapplication-TileColor' content='#c5b69c'>
+            <link rel='apple-touch-icon' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/icon_180x180_ios_NDk5NT.png?width=180'>
+            <meta name='msapplication-TileImage' content='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/icon_180x180_ios_NDk5NT.png?width=144'>
+            <link rel='apple-touch-icon' sizes='120x120' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/icon_180x180_ios_NDk5NT.png?width=120'>
+            <link rel='apple-touch-icon' sizes='152x152' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/icon_180x180_ios_NDk5NT.png?width=152'>
+            <link rel='apple-touch-icon' sizes='167x167' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/icon_180x180_ios_NDk5NT.png?width=167'>
+            <link rel='apple-touch-icon' sizes='180x180' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/icon_180x180_ios_NDk5NT.png?width=180'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=750&height=1334&fit=crop' media='(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=1242&height=2208&fit=crop' media='(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=1125&height=2436&fit=crop' media='(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=828&height=1792&fit=crop' media='(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=1242&height=2688&fit=crop' media='(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=1170&height=2532&fit=crop' media='(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=1284&height=2778&fit=crop' media='(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=1536&height=2048&fit=crop' media='(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=1620&height=2160&fit=crop' media='(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=1668&height=2224&fit=crop' media='(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=1668&height=2388&fit=crop' media='(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/a34939d0-309f-11e9-a7c2-4f00f46436ed/splash_2048x4435_ODc2OT.jpg?width=2048&height=2732&fit=crop' media='(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)'>
+    
+                        
+            
+    
+        <script defer src="https://cdn3.editmysite.com/app/checkout/assets/checkout/system.c3b89b0b94f4ef0671b1.js" data-cookieconsent="ignore"></script>
+    
+    
+        <script type="systemjs-importmap" src="https://cdn3.editmysite.com/app/checkout/assets/checkout/imports.en.bb12ab84c05e3ce7.js" data-cookieconsent="ignore"></script>
+    
+    
+            <script type="systemjs-importmap" src="https://cdn3.editmysite.com/app/checkout/assets/checkout/locale-imports-map.594ff67ef1a0ef24.json" data-cookieconsent="ignore"></script>
+    
+    
+    <script defer type="text/javascript" src="https://cdn3.editmysite.com/app/website/js/runtime.1d74db687a58c4cdc2b8.js" data-cookieconsent="ignore"></script>
+    <script defer type="text/javascript" src="https://cdn3.editmysite.com/app/website/js/vue-modules.4a41b3ba298bf4563d97.js" data-cookieconsent="ignore"></script>
+    <script defer type="text/javascript" src="https://cdn3.editmysite.com/app/website/js/languages/en.0a2e9b03ab51e13ce7f2.js" data-cookieconsent="ignore"></script>
+    <script defer type="text/javascript" src="https://cdn3.editmysite.com/app/website/js/site.e9addd5f2358d970801f.js" data-cookieconsent="ignore"></script>
+
+    
+    <meta property="og:type" content="website" />
+    
+    <script data-cookieconsent="ignore">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    </script>
+
+            <!-- Facebook Pixel Code -->
+<script data-cookieconsent="marketing">
+    !function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		n.agent='plsquare';n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];
+		s.parentNode.insertBefore(t,s)}(window, document,'script',
+		'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '714399762833994');
+
+	(function() {
+		window.generate_event_id = function () {
+			return 'baebafa0-cee1-11f0-921d-3fa049c99d44' + Date.now().toString();
+		}
+		window.exchange_product = function (pids, callback) {
+			try {
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', '/app/cms/api/v1/sites/a34939d0-309f-11e9-a7c2-4f00f46436ed/exchange-product-id?ids=' + pids.join(','));
+				xhr.send();
+				xhr.onload = function() {
+					if (xhr.status != 200) {
+						console.warn('Could not exchange product id');
+					} else {
+						var ids = JSON.parse(xhr.response);
+						if (ids.length !== undefined) {
+							callback(ids);
+						}
+					}
+				}
+			} catch(err) {
+				console.warn('Could not exchange product id');
+			}
+		}
+		window.fbq_product_event = function (pids, sids, callback) {
+			if (sids.length === pids.length) {
+				callback(sids);
+			} else {
+				exchange_product(pids, callback);
+			}
+		}
+		window.fbq_viewproduct = function (e) {
+			var pid = e.detail.pid;
+			var sid = e.detail.sid;
+			const callback = function(sqpids) {
+				const event_id = generate_event_id();
+				const payload = {
+					content_type: 'product_group',
+					content_ids: sqpids,
+				};
+				fbq('track', 'ViewContent', payload, {
+					eventID: event_id,
+				});
+				conversionClient.emitEvent('viewproduct', payload, event_id);
+			};
+			fbq_product_event([pid], sid ? [sid] : [], callback);
+        };
+		window.fbq_addtocart = function (e) {
+			var pid = e.detail.pid;
+			var sid = e.detail.sid;
+			var currency = e.detail.currency;
+			var value = e.detail.value;
+			const callback = function(sqpids) {
+				const event_id = generate_event_id();
+				const payload = {
+					content_type: 'product_group',
+					content_ids: sqpids,
+					currency: currency,
+					value: value,
+				};
+				fbq('track', 'AddToCart', payload, {
+					eventID: event_id,
+				});
+				conversionClient.emitEvent('addtocart', payload, event_id);
+			};
+			fbq_product_event([pid], sid ? [sid] : [], callback);
+		};
+		window.fbq_makepurchase = function (e) {
+			order_total = e.detail.order_total;
+			order_currency = e.detail.order_currency;
+			product_ids = e.detail.product_ids;
+			square_ids = e.detail.square_ids;
+			customer_email = e.detail.customer_email;
+			customer_phone = e.detail.customer_phone;
+			const callback = function(sqpids) {
+				const event_id = generate_event_id();
+				const payload = {
+					value: order_total,
+					currency: order_currency,
+					content_type: 'product_group',
+					content_ids: sqpids,
+				};
+				fbq('track', 'Purchase', payload, {
+					eventID: event_id,
+				});
+				const conversionsPayload = {
+					value: order_total,
+					currency: order_currency,
+					customer_email: customer_email,
+					customer_phone: customer_phone,
+					content_type: 'product_group',
+					content_ids: sqpids,
+				};
+				conversionClient.emitEvent('makepurchase', conversionsPayload, event_id);
+			};
+			fbq_product_event(product_ids, square_ids ?? [], callback);
+		};
+
+		function afterCSRFCookieSet(callback) {
+			const interval = setInterval(function(){
+				const csrfToken = getCookie(document, window.XSRF_COOKIE_NAME);
+				if (csrfToken){
+					clearInterval(interval);
+					callback();
+				}
+			},200);
+		};
+
+		window.fbq_pageview = function (e) {
+			const pageViewEventId = generate_event_id();
+			fbq('track', 'PageView', {} ,{
+				eventID: pageViewEventId
+			});
+			afterCSRFCookieSet(() => {
+				conversionClient.emitEvent('pageview', {}, pageViewEventId);
+			});
+		}
+
+		document.addEventListener('viewproduct', window.fbq_viewproduct);
+		document.addEventListener('addtocart', window.fbq_addtocart);
+		document.addEventListener('purchase', window.fbq_makepurchase);
+		document.addEventListener('pageview', window.fbq_pageview);
+
+		function getCookie(doc,name) {
+			var decodedCookie = decodeURIComponent(doc.cookie);
+			var cookies = decodedCookie.split(';');
+			var cookieName = name + '=';
+			for (let i = 0; i < cookies.length; i += 1) {
+				var cookie = cookies[i].trim();
+				if (cookie.indexOf(cookieName) === 0) {
+					return cookie.substring(cookieName.length, cookie.length);
+				}
+			}
+			return null;
+		}
+		function FBConversionClient() {
+			this.capiEnabled = true
+			this.emitEvent = async (eventName, payload, eventId) => {
+				if (this.capiEnabled) {
+					try {
+						const fbp = getCookie(document, '_fbp');
+						const fbc = getCookie(document, '_fbc');
+						const serverPayload = {...payload};
+						if (fbp) {
+							serverPayload['fbp'] = fbp;
+						}
+						if (fbc) {
+							serverPayload['fbc'] = fbc;
+						}
+						serverPayload.event_id = eventId;
+						const body = {
+							eventName: eventName,
+							payload: serverPayload,
+						};
+						const endpoint = '/app/cms/api/v1/sites/a34939d0-309f-11e9-a7c2-4f00f46436ed/facebook/pixel-events';
+						const csrfToken = getCookie(document, window.XSRF_COOKIE_NAME);
+						const response = await fetch(endpoint, {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+								'Accept': 'application/json',
+								'X-XSRF-TOKEN': csrfToken
+							},
+							body: JSON.stringify(body)
+						})
+					} catch (err) {
+						console.warn('Error sending to facebook', err);
+					}
+				}
+			}
+		}
+		window.conversionClient = new FBConversionClient();
+	})();
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=714399762833994&ev=PageView&noscript=1" /></noscript>
+<!-- End Facebook Pixel Code -->
+
+   <!-- Google Food Ordering Code -->
+<script data-cookieconsent="marketing">
+    function getCookie(doc,name) {
+		var decodedCookie = decodeURIComponent(doc.cookie);
+		var cookies = decodedCookie.split(';');
+		var cookieName = name + '=';
+		for (let i = 0; i < cookies.length; i += 1) {
+			var cookie = cookies[i].trim();
+			if (cookie.indexOf(cookieName) === 0) {
+				return cookie.substring(cookieName.length, cookie.length);
+			}
+		}
+		return null;
+	}
+	window.gfo_purchase = function (e) {
+		// This is derived from google developer docs:
+		// https://developers.google.com/actions-center/verticals/ordering/redirect/integration-steps/direct-conversion-tracking
+		const rwgTokenOverride = '';
+		const rwgTokenVal = rwgTokenOverride !== '' ? rwgTokenOverride : getCookie(document, '_rwg_token');
+
+		if (rwgTokenVal) {
+			const body = {
+				rwg_token: rwgTokenVal,
+			};
+			const endpoint = '/app/cms/api/v1/google/gfo-conversion';
+			const csrfToken = getCookie(document, window.XSRF_COOKIE_NAME);
+			fetch(endpoint, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json',
+					'X-XSRF-TOKEN': csrfToken
+				},
+				body: JSON.stringify(body)
+			});
+		}
+	};
+	document.addEventListener('purchase', window.gfo_purchase);
+</script>
+<!-- End Google Food Ordering Code -->
+
+    
+    <!--square-online-feature-flags-->
+<script type="application/javascript" data-cookieconsent="ignore" data-role="square-online-featureflags">
+    window.__DYNAMIC_BOOTSTRAP__ ??= {};
+
+    Object.assign(window.__DYNAMIC_BOOTSTRAP__, {
+        featureFlags: {"ecom.website.deprecated-layouts":false,"marketing-enable-drive-repeat-purchase-campaign":true,"ecom.website.facebook-food":true,"ecom.website.theme-export":false,"ecom.website.chamber-via-fastly":true,"ecom.square-online-published-catalog-cache-version":"2023-11-13","ecom.checkout.open_tabs":true,"ecom.website.photo-reviews":true,"ecom.checkout.cmi-sentry-integration":true,"ecom.checkout.cmi.bootstrap-tracking-snowplow":true,"ecom.checkout.cmi.bootstrap-tracking-ga":true,"ecom.website.order-confirmation-page.website-redirect":true,"ecom.checkout.cmi.locale-view-splitting":true,"ecom.checkout.open_tabs_gc_coupon":true,"ecom.cmi-cart":true,"ecom.checkout.cmi.theme-fonts":false,"ecom-fulfillment-api-v-2":false,"ecom.omnichannel-discounts-frontend":true,"ecom.omnichannel-discounts-category-api":false,"ecom-improved-tipping-experience":true,"ecom.splash.loyalty":true,"ecom.website.published-site.datadog-rum":true,"ecom.website.editor.datadog-rum":true,"ecom-website-published-site-datadog-rum-bot-filter":true,"ecom-use-tracking-inventory":false,"ecom.image-controls.width-fix":true,"ecom.gradient-backgrounds":true,"ecom.website.form-fraud-blocking":true,"ecom.website.form-fraud-auto-ban":true,"ecom.website.code-editor":false,"ecom.shopping.pdp-layouts-m1":true,"ecom.chamber.subscriptions":true,"ecom.tuba.subscriptions-paid-shipping-rates":true,"ecom-cko-enhanced-logging":true,"ecom-cko-unified-logging":true,"ecom.shopping.so-coupons-sunset-integrations":true,"ecom.order-online-text-layouts":true,"ecom.appointment-improvements":true,"ecom.appointment-improvements-m2":true,"ecom.tuba.committed-inventory-m1":true,"ecom.splash-improvements":true,"ecom-themes-onboarding":true,"ecom.shopping.featured-categories-paid-layouts":true,"ecom.website.ai-text.short-form":true,"ecom.website.ai-text.long-form":true,"ecom.website.metered-request.override":false,"ecom.website.async-create-theme":false,"ecom.chamber.spi.serve-items":true,"ecom.can_use_cart_sharing":true,"ecom.website.ai.editor-prototype":false,"ecom.website.ai.page-seo":false,"ecom.appointment-direct-booking":true,"ecom-service-cutover-fe-request-augmentations":true,"ecom.catalog.so-item-library-deprecation-3":true,"ecom.kiosk-photo-card":true,"ecom.website.system-page.cart":false,"ecom-enable-kiosk-large-catalog-layout":false,"ecom-hide-instagram":false,"ecom-enable-kiosk-item-preloading":true,"ecom-brand-api-sync":true,"ecom.service-cutover.enable-tuba-traffic":true,"ecom-show-order-online":true,"websdk-use-new-afterpay-buttons":true,"ecom-checkout-should-check-is-decouple-checkout":true,"ecom-prime-use-store-info-v29":true,"ecom-checkout-decouple-open-tabs":true,"ecom-checkout-force-pci-compliance":false,"ecom-website-hide-food-beverage-themes":false,"ecom-orbit-to-monochrome":true,"ecom-website-fix-dine-in-location-selection":true},
+    });
+</script>
+<!--end-square-online-feature-flags-->
+
+    <script type="application/javascript" data-cookieconsent="ignore">
+        window.__BOOTSTRAP_STATE__ = {"siteData":{"site":{"id":"a34939d0-309f-11e9-a7c2-4f00f46436ed","properties":{"classicSiteID":"222209602344133111","catalogSiteId":"222209602344133111","selectedVertical":"food-drink","verticalV4":"quick-serve-restaurant","language":"en","squareMerchantId":"VWTC386KPJKX7","siteCatalogVersion":"f3d4bad8-2300-4855-8483-6be74ad92d4f","appSiteCartNativePayControlGroup":false,"appSiteCartNativePayTestGroup":false,"isKioskSite":false,"squareSyncUserId":"933e9791-a834-4f23-9e50-5667541a733a","isServiceCutoverEnabled":true,"createdPostMenusMigration":false,"migratedSquareOnlineSiteToMenus":true,"profiles_redirect_enabled":null,"profiles_redirect_url":null,"blockFtux":{"product-detail":["ftux-alert"]},"onboarded":{"guidance":{"version":"1","complete":true,"welcomeComplete":true,"templateSwitcher":true,"instagramMiniSiteTipDismissed":true,"guidanceMobileTrafficDismissedCount":3},"selectedVertical":"food-drink","onboardingComplete":true,"isSiteDesignOnboarded":true,"isVideoBannerAnnouncementDismissed":true,"isScrollingTextAnnouncementDismissed":true,"isCustomizationDiscoverabilityDismissed":true},"publishedAt":1748540338,"completedFtux":{"INSTAGRAM_FEATURE_EXPLAINED":true,"IS_SPLASH_OO_SCHOOLTIP_DISMISSED":true},"site_versions":{"editor":{"v0":"a34a24a0-309f-11e9-8867-fdd7b33b017d","v2":"696e3ea0-47c1-11ec-abb9-1dd063f34187","v4":"34bb6020-5def-11ec-8754-01cd1034f5f0","v5":"10e32c50-85ea-11ec-9627-37e03ccbbffa","v6":"8c747810-bf79-11ed-a9aa-512aa889e24d","v7":"02eea970-24c0-11ee-a0b9-2f0138d7e7d4","v8":"f1874070-7d9f-11ee-b2d2-e7f20ac57764"},"published":{"v0":"dfee1910-e0fe-11eb-9f26-6790c55e5aa2","v1":"16b63f30-f621-11eb-8c08-6586bbf57009","v2":"ec393cc0-48a0-11ec-9de6-6b71146a8197","v3":"64413f20-5793-11ec-84c6-9d1874af8c4e","v4":"db1b3fa0-853a-11ec-8ed2-fb59793152d4","v5":"663ebf60-b6cd-11ed-81ec-d5eeb31a19c7","v6":"0d234680-1470-11ee-a981-5747d828cd7a","v7":"3a1443d0-5bff-11ee-91c0-79322a76b1c1","v8":"0f5746d0-63a8-11ee-a4ff-1bb496b71817"}},"websiteNotices":{"siteSettingsTrial":true},"siteIconSettings":{"updatedAt":1707855583,"splash_images":{"config":{"size":"2048","radius":0,"fontPath":"\/var\/www\/public\/static\/fonts\/Square Market\/sqmarket-medium.woff","iconType":"free","imageUrl":null,"language":"en","siteTitle":"Sobaya","customColor":"#c5b69c","primaryColor":"#c5b69c","contrastColor":"#000000"},"2048x4435":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/splash_2048x4435_ODc2OT.jpg"},"ios_icon_images":{"config":{"size":"180","radius":0,"fontPath":"\/var\/www\/public\/static\/fonts\/Square Market\/sqmarket-medium.woff","iconType":"free","imageUrl":null,"language":"en","siteTitle":"Sobaya","customColor":"#c5b69c","primaryColor":"#c5b69c","contrastColor":"#000000"},"180x180":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/icon_180x180_ios_NDk5NT.png"},"android_icon_images":{"config":{"size":"512","radius":256,"fontPath":"\/var\/www\/public\/static\/fonts\/Square Market\/sqmarket-medium.woff","iconType":"free","imageUrl":null,"language":"en","siteTitle":"Sobaya","customColor":"#c5b69c","primaryColor":"#c5b69c","contrastColor":"#000000"},"512x512":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/icon_512x512_android_MzQ4NT.png"}},"selectedDeviceView":"desktop","domain":{"custom_domain":"","subdomain":"sobaya.square.site","site_id":222209602344133111}}},"pagesMeta":[{"id":"ccac3a20-3cb3-11f0-9b9c-071cec81d7d6","name":"Gallery","route":"gallery","title":"Gallery","featureType":null,"description":"","hidden":false},{"id":"ccac7600-3cb3-11f0-9b32-330d296b0941","name":"Home","route":"home","title":"Home","featureType":null,"description":"Enjoy Artisanal Soba Noodles at Home.\nGreat hot or cold, with soups, salads and dipping sauce","hidden":false},{"id":"ccab54c0-3cb3-11f0-a546-edfeb9593251","name":"Support","route":"support","title":"Support","featureType":null,"description":"","hidden":false},{"id":"ccad81e0-3cb3-11f0-8d65-57880921bee4","name":"Terms & Conditions","route":"terms-and-conditions","title":"Terms & Conditions","featureType":null,"description":"","hidden":false}],"customPagesMeta":[],"artifactsMeta":[],"snapshot":{"id":"ccaaac70-3cb3-11f0-8cb9-13b1becd6175","site_id":"a34939d0-309f-11e9-a7c2-4f00f46436ed","properties":{"seo":{"template":{"instagramFeed":{"title":"Instagram","description":""}}},"logo":"https:\/\/images.editor.website\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/sobaya-new_logo-400px.png","color":{"primaryColor":"#c5b69c","secondaryColors":[]},"title":"Sobaya","siteID":"a34939d0-309f-11e9-a7c2-4f00f46436ed","social":[{"icon":"email","user":"","selected":false},{"icon":"facebook","user":"","selected":false},{"icon":"instagram","user":"sobaya.nyc\/","selected":true},{"icon":"linkedin","user":"","selected":false},{"icon":"pinterest","user":"","selected":false},{"icon":"snapchat","user":"","selected":false},{"icon":"tiktok","user":"","selected":false},{"icon":"twitter","user":"","selected":false},{"icon":"vimeo","user":"","selected":false},{"icon":"yelp","user":"","selected":false},{"icon":"youtube","user":"","selected":false}],"fontset":{"name":"oswald-montserrat","version":"0.1.0","overrides":{}},"homePage":"ccac7600-3cb3-11f0-9b32-330d296b0941","routeMap":{"":"ccac7600-3cb3-11f0-9b32-330d296b0941","home":"ccac7600-3cb3-11f0-9b32-330d296b0941","gallery":"ccac3a20-3cb3-11f0-9b9c-071cec81d7d6","support":"ccab54c0-3cb3-11f0-a546-edfeb9593251","terms-and-conditions":"ccad81e0-3cb3-11f0-8d65-57880921bee4","a3514ea0-309f-11e9-96df-676d46c7fb2b":"ccaba0a0-3cb3-11f0-92da-1145a4b54420","a3534250-309f-11e9-abeb-1f23b09a64d0":"ccabcb80-3cb3-11f0-abb5-7b7f0f39f970","a3550b90-309f-11e9-affc-bb233cb06223":"ccabee90-3cb3-11f0-9c7d-917f6e789c86","a356a8f0-309f-11e9-8c38-277de993041f":"ccac1260-3cb3-11f0-a852-c54040272008"},"styleset":{"name":"square","version":"0.1.0"},"trackers":{"facebookPixelID":"714399762833994"},"vertical":"food-drink","framework":{"name":"birdseye","version":"0.1.0"},"openGraph":{"template":{"instagramFeed":{"title":"Instagram","description":""}}},"blocksMeta":{"1d834e31-b31e-11ef-b702-d5444fdd5865":"nYoyzg","1df8e400-146f-11ee-9755-0b7d54558e2e":"NlcVwL","1fc9c091-31b6-11f0-af68-d159501681e1":"dbgwGq","2ddd6871-67c3-11ea-b6f3-1b065f9fa7d7":"zTHnfC","320d13c1-b28f-11ef-b702-d5444fdd5865":"QklKmc","39029221-27bf-11ed-abbc-6d322db57a89":"EBHfQY","397921b1-27bf-11ed-abbc-6d322db57a89":"vdREKG","467745e0-8e25-11ee-8516-a754c10cac8b":"idFpTk","4a011521-af30-11ee-a3ca-bb1e34defc10":"JUMext","4ce6b1f1-2928-11eb-a2b9-97fd2c5d1051":"DELfCW","53383bc1-8e31-11ee-8516-a754c10cac8b":"dQbCLZ","5b7444f1-1ed1-11f0-b23d-b5db650c8f27":"Lirhjk","6fa41e30-ea4e-11ef-af65-09a1334e382e":"VTauxI","74f3d630-9ed2-11eb-a5da-83218f458c5b":"xCBKQM","77d2b600-146e-11ee-9755-0b7d54558e2e":"PMvXVN","7a58e111-b1ca-11ef-b52e-1d9b04cea960":"uYWhcO","7ca4c101-8e3f-11ee-b1a5-a74f180de562":"NqvItB","7f456450-beef-11ef-9b00-931dfe0d8cd9":"hNsyUM","8037a831-85ec-11ec-834f-633ffa066587":"hIeajZ","82d459d0-bf23-11ef-afc9-2d39214d0674":"LojWmD","84bd0951-be5a-11ef-bad1-1b6021546b6c":"WGkQfy","87990a60-9855-11ee-b0ea-79d5d29e3a2e":"rNwJCi","9c47bae1-85ee-11ec-834f-633ffa066587":"TEoYWa","a34ddf60-309f-11e9-8042-9d9f70ec1aae":"cAPNHj","a3522630-309f-11e9-a931-3b51f319e3d6":"PAxEZF","a3524780-309f-11e9-b126-4bcf600226d3":"wrumnX","a3525c50-309f-11e9-9e93-359d3b8a69e8":"dGnbWA","a353e850-309f-11e9-8380-ad48335c6377":"MHhPDj","a3540400-309f-11e9-b241-7b4872bcef6d":"eXodpC","a355b070-309f-11e9-bc87-7fad9d17804f":"ZNjgyv","a355cb70-309f-11e9-b3fa-6ba52a473a97":"izOTXn","a356cf50-309f-11e9-9b08-ab05e097735a":"CuHGcZ","a356f920-309f-11e9-be43-1f9afe76894a":"hnBXur","a3585270-309f-11e9-ae29-29cddbf498f2":"OnVJCF","a3589960-309f-11e9-ae1e-95ab5e42c269":"gqMJlF","a358ca20-309f-11e9-abb3-d5e6e7f0ee6a":"GEvVDi","a358ec80-309f-11e9-8d90-717fa39b28d4":"aiApex","a35919a0-309f-11e9-9c46-e13d66d5e97a":"ghbvzJ","b03056a0-67de-11ea-a362-39f72a88bfc4":"YdHaQj","b700f790-ea4d-11ef-af65-09a1334e382e":"AYGFhj","ba383a61-9ed2-11eb-a5da-83218f458c5b":"hFHuCt","c7b026e1-b6cb-11ed-95bc-93d47e6d502a":"kYNnfZ","cfc27f31-6ad5-11ea-8419-331a1fbabf41":"YMWaie","d35310e1-8e23-11ee-8516-a754c10cac8b":"qzfDAr","ddd01000-31b4-11f0-af68-d159501681e1":"ENsvOa","e2276a30-be5b-11ef-bad1-1b6021546b6c":"gIZahL","ea8402c1-d8bd-11ea-8d19-17b367d1669f":"ecXPjQ","f1ec8980-595f-11ee-a9da-cf3aad5b4548":"JlWFsG","f835e871-0815-11eb-a0e0-9b5298b6619c":"aNdCmf","fbd81571-0815-11eb-a0e0-9b5298b6619c":"RTplbF"},"footerLogo":"https:\/\/images.editor.website\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/sobaya-new_logo-400px.png","headerLogo":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/sobaya-new_logo-400px.png","navigation":[{"link":{"page":{"pageID":"ccac7600-3cb3-11f0-9b32-330d296b0941"}},"type":"page","children":[]},{"link":{"page":{"pageID":"ccac7600-3cb3-11f0-9b32-330d296b0941","sectionID":"1df8e400-146f-11ee-9755-0b7d54558e2e"}},"type":"page","title":"Menu","children":[],"expanded":false},{"tab":true,"link":{"external":"https:\/\/squareup.com\/gift\/VWTC386KPJKX7\/order"},"type":"external","title":"E-Gift Card","children":[],"expanded":false},{"link":{"page":{"pageID":"ccab54c0-3cb3-11f0-a546-edfeb9593251"}},"type":"page"},{"link":{"page":{"pageID":"ccad81e0-3cb3-11f0-8d65-57880921bee4"}},"type":"page"}],"buttonstyle":"squared","customCodes":[{"name":"UserWay ADA Widget","isHead":true,"content":"<script src=\"https:\/\/cdn.userway.org\/widget.js\" data-account=\"7rpi55EhLf\"><\/script>"},{"name":"ADA Enhancements (Igicom)","isHead":true,"content":"<script src=\"https:\/\/s3.amazonaws.com\/assets.tic-nyc.com\/sobaya.js\"><\/script>"}],"customFonts":[],"featuresets":["instagramFeed","restaurant"],"contentAreas":{"cart":{"id":"a358e670-309f-11e9-8e6c-2f7e9da3011e","hidden":false,"content":{"id":"a358ec80-309f-11e9-8d90-717fa39b28d4","type":"block","layout":"cart-1","purpose":"cart@^1.1.0","elements":[{"id":"a358f5a0-309f-11e9-a673-b791e89b8d08","purpose":"title","properties":{}},{"id":"a358fce0-309f-11e9-b314-9756d04e4393","purpose":"button","properties":{}},{"id":"a3590390-309f-11e9-9df1-e552fd6fac50","purpose":"text","properties":{}},{"id":"a3590900-309f-11e9-a021-13a6a7893b15","purpose":"image","properties":{}},{"id":"a3590ee0-309f-11e9-830a-fd9bda170737","purpose":"close","properties":{}}],"properties":{"shortID":"aiApex"}}},"footer":{"id":"a35848c0-309f-11e9-b386-632f76ce0c4d","hidden":false,"content":{"id":"a3585270-309f-11e9-ae29-29cddbf498f2","type":"block","layout":"footer-3","purpose":"footer@^1.1.0","elements":[{"id":"a35860a0-309f-11e9-ab96-275829f927d9","purpose":"logo","identifier":"logo@^1.1.0","properties":{"link":{"tab":false,"link":{"external":"https:\/\/sobaya.square.site"},"type":"external"},"type":"logo","scale":50,"hidden":false,"scaleMigration":"Dec2019"},"isMandatory":true},{"id":"a3586c50-309f-11e9-9c48-cdd1c6de8ca5","purpose":"text","identifier":"text@^1.0.0","properties":{"hidden":true,"content":{"quill":{"ops":[{"insert":"Terms & Conditions","attributes":{"wLink":{"tab":false,"link":{"page":{"pageID":"ccad81e0-3cb3-11f0-8d65-57880921bee4"},"email":"","phone":"","product":"","shopAll":"","category":"","external":"https:\/\/www.sobaya-nyc.com\/terms-conditions"},"type":"page"}}},{"insert":"\n"}]}},"fontSize":"medium"}},{"id":"a3587610-309f-11e9-bf88-5bc39270668b","purpose":"social","identifier":"social-icons@^1.0.0","properties":{"hidden":false}},{"id":"a3587ed0-309f-11e9-bc77-e7a7e5b1d425","purpose":"newsletter","identifier":"form@^1.4.11","properties":{"type":"subscription","fields":[{"id":"a452b750-b28a-11ef-989b-19168e35c975","type":"action-input","label":"","required":true,"properties":{},"instructions":""}],"schema":{"id":"a4530570-b28a-11ef-989b-19168e35c975","hash":"a8372289aa832dc5ab5722c956847d44"}}}],"deprecated":["footer-layouts-v2-sept-2019"],"properties":{"shortID":"OnVJCF","textAlign":"","background":{"type":"color","color":{"value":"--primary-bright-light","isDark":false}},"colorProfile":"primary-bold"}}},"header":{"id":"a35890a0-309f-11e9-be98-f5ff1bf00dda","hidden":false,"content":{"id":"a3589960-309f-11e9-ae1e-95ab5e42c269","type":"block","layout":"header-5","purpose":"header@^1.1.0","elements":[{"id":"a358a6b0-309f-11e9-a4e3-61ee919d9adf","purpose":"logo","identifier":"logo@^1.1.0","properties":{"name":"sobaya-new_logo-400px.png","type":"logo","scale":41,"fontSize":"large","original":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/sobaya-new_logo-400px.png","cropOptions":null,"logoDimensions":{"width":400,"height":217},"scaleMigration":"Dec2019"},"isMandatory":true},{"id":"a358ac70-309f-11e9-8bc7-811a3f6fde49","purpose":"social","properties":{}},{"id":"a358b3d0-309f-11e9-a410-c7efc1866f35","purpose":"navigation","properties":{"hidden":false}},{"id":"a358b960-309f-11e9-99ac-6b725610db42","purpose":"hamburger","properties":{}},{"id":"a358bf00-309f-11e9-987b-97b4c613082f","purpose":"cart","properties":{}}],"properties":{"shortID":"gqMJlF","background":{"type":"default"},"actionButton":{"link":{"tab":false,"link":{"page":{"pageID":"ccac7600-3cb3-11f0-9b32-330d296b0941","sectionID":"ea8402c1-d8bd-11ea-8d19-17b367d1669f"},"routeToOO":true,"orderOnline":true},"type":"page"},"hidden":false,"presetStyle":"primary"},"colorProfile":"custom-profile","shouldDisableSWF":true}}},"navMobile":{"id":"a358c4a0-309f-11e9-b754-cfce7f10f3dc","hidden":false,"content":{"id":"a358ca20-309f-11e9-abb3-d5e6e7f0ee6a","type":"block","layout":"navigation-mobile","purpose":"nav-mobile@^1.1.0","elements":[{"id":"a358d2b0-309f-11e9-a7c6-8b5f120a36ef","purpose":"navigation","properties":{}},{"id":"a358d9c0-309f-11e9-b5d9-e17a5f099ace","purpose":"close","properties":{}},{"id":"a358df30-309f-11e9-a0cd-e534413476e7","purpose":"social","properties":{}}],"properties":{"shortID":"GEvVDi"}}},"freeFooter":{"id":"a3591440-309f-11e9-af93-91676e8b3925","hidden":false,"content":{"id":"a35919a0-309f-11e9-9c46-e13d66d5e97a","type":"block","layout":"free-footer-1","purpose":"free-footer@^1.0.0","elements":[],"properties":{"bgColor":"light","shortID":"ghbvzJ","background":{}}}}},"pageOverrides":{"product":{},"shopAll":{},"category":{},"leaveReview":{},"orderOnline":{},"instagramFeed":{},"searchResults":{}},"pageTemplates":{"splash":"ccade2c0-3cb3-11f0-a49c-7bdfe8b5d104","product":"ccae55d0-3cb3-11f0-b713-9b5b80ed28ed","shopAll":"ccaea120-3cb3-11f0-9af0-2d45383a1fd8","category":"ccaea120-3cb3-11f0-9af0-2d45383a1fd8","leaveReview":"ccae7b30-3cb3-11f0-95e2-c915e88ee53d","orderOnline":"ccae2b00-3cb3-11f0-bb75-d9f9f46f01e1","instagramFeed":"ccae0750-3cb3-11f0-95bf-572c30ee7fc6","searchResults":"ccaea120-3cb3-11f0-9af0-2d45383a1fd8"}},"version":8},"user":{"id":124401079,"properties":{"isSquareSyncUser":true,"country":"US"}},"billingFeatures":{"billingFeatures":{"embed_restricted_widgets":false,"com_gifting":false,"com_authorizenet_payment":false,"com_digital_products":true,"com_coupons":true,"com_product_reviews":false,"com_product_limit":-1,"popup_announcement":true,"popup_coupons":false,"popup_lead_capture":true,"community_support":true,"free_ssl_security":true,"custom_domain_connection":false,"advanced_site_stats":false,"password_protection":false,"video_backgrounds":false,"hd_video_and_audio":false,"membership_registration":false,"membership_settings":false,"online_store":true,"accept_paypal_payments":false,"product_badges":true,"product_modifiers":true,"in_store_pickup":true,"shipping_calculator":true,"chat_and_email_support":true,"phone_support":true,"priority_support":false,"advanced_ecommerce_stats":false,"seo":true,"unlimited_storage":false,"members":0,"abandoned_cart_emails":false,"integrated_shipping_labels":true,"tax_calculator":true,"no_weebly_ads":false,"site_search":false,"product_search":true,"square_gift_cards":true,"inventory_management":true,"integrated_facebook_ads":false,"real_time_shipping_calculator":false,"age_confirmation":true,"square_processing_rate_id":"ECOM_SOS_FREE","square_processing_rate_display":{"USD":[{"percent":"2.9","flat":30,"type":"all"}],"AUD":[{"percent":"2.2","flat":0,"type":"all"}],"CAD":[{"percent":"2.8","flat":30,"type":"all"}],"EUR":[{"percent":"1.4","flat":25,"type":"intra-eu"},{"percent":"2.9","flat":25,"type":"non-eu"}],"GBP":[{"percent":"1.4","flat":25,"type":"intra-eu"},{"percent":"2.5","flat":25,"type":"non-eu"}],"JPY":[{"percent":"3.6","flat":0,"type":"non-jcb"},{"percent":"3.6","flat":0,"type":"jcb"}]},"favicon_customization":true,"site_code_customization":false,"instagram_feed_tagging":true,"quick_shop":true,"scheduleEnabled":false,"smartGroupsEnabled":false,"socialAdsEnabled":true,"lifetimeEmails":2,"emailsPerMonth":2,"recipientsPerEmail":500,"recipientsPerMonth":1000,"automations":0,"automatedRecipientsPerMonth":0,"enabledLeadFormTypes":["popup"],"allowsPurchasingCredits":false,"insights_overview":false,"insights_sales":false,"insights_products":false,"custom_fonts":false,"com_shipping_settings":true,"com_manage_gift_cards":true,"com_create_shipping_label_discount":true,"customer_accounts":true,"com_stripe_payment":false,"com_product_sync":true,"com_product_variant_limit":-1,"com_shipping_labels_tier":"weebly_cpp_tier","com_transaction_fee":"0.00","form_file_upload":false,"product_scheduled_actions":false,"custom_site_icon":true,"video_uploading":0,"buyer_customer_accounts":false,"personalized_order_screen":false,"personalized_recommendations":false,"easy_reordering":true,"self_serve_ordering":false,"ecom_preorders":false,"order_text_alerts":false,"time_based_categories":true,"advanced_order_limits":false,"modifier_images":false,"free_fulfillment_meter":false,"spd_fees_amount":0,"twenty_four_seven_support":false,"advanced_design_controls":false,"order_item_quantity_limit":false,"stock_media":false,"so_buyer_subscriptions":false,"item_badge_customization":false,"shop_all_item_layouts":false,"icon_sets":false,"banner_slides":false,"priority_phone_support":false,"pdp_layouts":false,"full_height_banners":false,"scrolling_text":false,"featured_item_layouts":false,"mega_menu":false,"appts_customization":false,"premium_text_image_layout":false,"featured_category_layouts":false,"ai_generated_content":false,"image_shapes":false,"group_ordering":false,"inventory_bundles":false,"com_square_transaction_best_discount":false},"isTrial":false},"siteFeatures":{"embed_restricted_widgets":false,"com_gifting":false,"com_authorizenet_payment":false,"com_digital_products":true,"com_coupons":true,"com_product_reviews":false,"com_product_limit":-1,"popup_announcement":true,"popup_coupons":false,"popup_lead_capture":true,"community_support":true,"free_ssl_security":true,"custom_domain_connection":false,"advanced_site_stats":false,"password_protection":false,"video_backgrounds":false,"hd_video_and_audio":false,"membership_registration":false,"membership_settings":false,"online_store":true,"accept_paypal_payments":false,"product_badges":true,"product_modifiers":true,"in_store_pickup":true,"shipping_calculator":true,"chat_and_email_support":true,"phone_support":true,"priority_support":false,"advanced_ecommerce_stats":false,"seo":true,"unlimited_storage":false,"members":0,"abandoned_cart_emails":false,"integrated_shipping_labels":true,"tax_calculator":true,"no_weebly_ads":false,"site_search":false,"product_search":true,"square_gift_cards":true,"inventory_management":true,"integrated_facebook_ads":false,"real_time_shipping_calculator":false,"age_confirmation":true,"square_processing_rate_id":"ECOM_SOS_FREE","square_processing_rate_display":{"USD":[{"percent":"2.9","flat":30,"type":"all"}],"AUD":[{"percent":"2.2","flat":0,"type":"all"}],"CAD":[{"percent":"2.8","flat":30,"type":"all"}],"EUR":[{"percent":"1.4","flat":25,"type":"intra-eu"},{"percent":"2.9","flat":25,"type":"non-eu"}],"GBP":[{"percent":"1.4","flat":25,"type":"intra-eu"},{"percent":"2.5","flat":25,"type":"non-eu"}],"JPY":[{"percent":"3.6","flat":0,"type":"non-jcb"},{"percent":"3.6","flat":0,"type":"jcb"}]},"favicon_customization":true,"site_code_customization":false,"instagram_feed_tagging":true,"quick_shop":true,"scheduleEnabled":false,"smartGroupsEnabled":false,"socialAdsEnabled":true,"lifetimeEmails":2,"emailsPerMonth":2,"recipientsPerEmail":500,"recipientsPerMonth":1000,"automations":0,"automatedRecipientsPerMonth":0,"enabledLeadFormTypes":["popup"],"allowsPurchasingCredits":false,"insights_overview":false,"insights_sales":false,"insights_products":false,"custom_fonts":false,"com_shipping_settings":true,"com_manage_gift_cards":true,"com_create_shipping_label_discount":true,"customer_accounts":true,"com_stripe_payment":false,"com_product_sync":true,"com_product_variant_limit":-1,"com_shipping_labels_tier":"weebly_cpp_tier","com_transaction_fee":"0.00","form_file_upload":false,"product_scheduled_actions":false,"custom_site_icon":true,"video_uploading":0,"buyer_customer_accounts":false,"personalized_order_screen":false,"personalized_recommendations":false,"easy_reordering":true,"self_serve_ordering":false,"ecom_preorders":false,"order_text_alerts":false,"time_based_categories":true,"advanced_order_limits":false,"modifier_images":false,"free_fulfillment_meter":false,"spd_fees_amount":0,"twenty_four_seven_support":false,"advanced_design_controls":false,"order_item_quantity_limit":false,"stock_media":false,"so_buyer_subscriptions":false,"item_badge_customization":false,"shop_all_item_layouts":false,"icon_sets":false,"banner_slides":false,"priority_phone_support":false,"pdp_layouts":false,"full_height_banners":false,"scrolling_text":false,"featured_item_layouts":false,"mega_menu":false,"appts_customization":false,"premium_text_image_layout":false,"featured_category_layouts":false,"ai_generated_content":false,"image_shapes":false,"group_ordering":false,"inventory_bundles":false,"com_square_transaction_best_discount":false},"featureset":{"pages":["instagramFeed","orderOnline"],"quickShop":false,"search":false,"blocks":[]},"page":{"id":"ccac7600-3cb3-11f0-9b32-330d296b0941","site_snapshot_id":"ccaaac70-3cb3-11f0-8cb9-13b1becd6175","properties":{"name":"Home","route":"home","title":"Home","description":"Enjoy Artisanal Soba Noodles at Home.\nGreat hot or cold, with soups, salads and dipping sauce","contentAreas":{"banner":{"id":"a34dd710-309f-11e9-9856-53926f6d0adc","hidden":false,"content":{"id":"a34ddf60-309f-11e9-8042-9d9f70ec1aae","type":"block","layout":"banner-1","purpose":"banner@^1.2.2","elements":[{"id":"a34de500-309f-11e9-a1eb-79648fde0c15","purpose":"title-1","identifier":"title@^1.0.0","properties":{"title":{"quill":{"ops":[{"insert":"Handcrafted Japanese Soba Noodles & More"},{"insert":"\n","attributes":{"block":true}}]}},"fontSize":"step-3","textStyle":"title"}},{"id":"a34deaa0-309f-11e9-9f31-d1da9c5d401a","purpose":"image-1","properties":{}},{"id":"a34df010-309f-11e9-bbbb-d7d10493e73b","purpose":"button-1","properties":{"link":{"tab":false,"link":{"product":"412","shopAll":"","external":"https:\/\/sobaya.square.site\/s\/order?location=11e93498ccca59f2bf463685e35eafac&item=412","orderOnline":true},"type":"product"},"label":"Order Online\n","hidden":true,"presetSize":"large","presetColor":"--color-white"}}],"properties":{"text":{"hidden":false,"content":{"quill":{"ops":[{"insert":"since 1996"},{"insert":"\n","attributes":{"block":true}}]}},"fontSize":"step-minus-1","textStyle":"body"},"label":{"hidden":true},"height":"auto","styles":{"minHeight":"560px"},"shortID":"cAPNHj","textAlign":"center","background":{"type":"image","image":{"alt":"Sobaya Soba","size":{},"shape":{},"width":1600,"height":760,"isDark":true,"source":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/soba01_OTQ4OT.jpg","original":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/soba01_OTQ4OT.jpg","imageType":"background","sourceSet":{},"attribution":{}},"imageMobile":{"alt":"Sobaya Soba","width":1600,"height":760,"isDark":true,"source":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/soba01_OTQ4OT.jpg","original":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/soba01_OTQ4OT.jpg","sourceSet":{},"attribution":{}}},"bannerImage":{}}}},"userContent":{"id":"a34d9020-309f-11e9-9f4d-3945488c5f32","hidden":false,"content":{"id":"a34d9840-309f-11e9-b085-af322d75de89","type":"container","cells":[{"id":"5b7444f0-1ed1-11f0-b23d-b5db650c8f27","type":"cell","content":{"id":"5b7444f1-1ed1-11f0-b23d-b5db650c8f27","type":"block","layout":"text-and-image-split-image-left","purpose":"text-and-image@^1.0.0","properties":{"shortID":"Lirhjk","settings":{"texts":{},"titles":{"tag":"h2","bold":false,"hidden":false,"italic":false,"fontSize":"medium","textStyle":"title"},"callouts":{"bold":false,"italic":false,"fontSize":"medium","textStyle":"title"}},"textAlign":"","background":{"type":"default"},"repeatables":[{"id":1,"text":{"content":{"quill":{"ops":[{"insert":"$28","attributes":{"bold":true}},{"insert":"\n\n\n\u25cfCold Soba Only\u3000\u25cfExtra Toppings Available (Additional Charges Apply)\u3000\u25cfLimited Quantity Daily\n\n"},{"insert":"What is Juwari Soba?","attributes":{"bold":true}},{"insert":"\nMade with just two ingredients: milled buckwheat and water. The lack of gluten results in a brittle dough that requires a high degree of skill to form into noodles. Its pure, aromatic flavor and healthy, whole-grain properties make 100% buckwheat noodles a rare treat.\n\n"},{"insert":"Let\u2019s try the freshest soba today!","attributes":{"bold":true,"italic":true}},{"insert":"\n\n"}]}}},"image":{"alt":"SOBAYA JUWARI SOBA","figure":{"name":"Screenshot 2025-04-21 ... PM.png","size":{},"shape":{},"width":1260,"height":1122,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/Screenshot%202025-04-21%20at%206.46.12%20PM_1745278621.png","altText":"","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/Screenshot%202025-04-21%20at%206.46.12%20PM_1745278621.png","sourceSet":{},"focalPoint":{"x":0.5,"y":0.5},"attribution":{},"cropOptions":null,"positionPoint":{"x":0.5,"y":0.7286}},"hidden":false},"title":{"tag":"h2","content":{"quill":{"ops":[{"insert":"JUWARI SOBA \/ 100% Buckwheat Noodles"},{"insert":"\n","attributes":{"block":true}}]}},"fontSize":"medium","textStyle":"title"},"button":{"label":"View products","hidden":true},"callout":{"tag":"h3","hidden":true,"content":{"quill":{"ops":[{"insert":"( Tuesday -- Saturday ) lunch & dinner ","attributes":{"bold":true}},{"insert":"\n","attributes":{"block":true}},{"insert":"\n"}]}},"fontSize":"medium","textStyle":"title"},"secondaryButton":{"label":"Learn more","hidden":true}}],"colorProfile":"primary-dark-bold"}}},{"id":"c7b026e0-b6cb-11ed-95bc-93d47e6d502a","type":"cell","content":{"id":"c7b026e1-b6cb-11ed-95bc-93d47e6d502a","type":"block","layout":"text-and-image-split-image-left","purpose":"text-and-image@^1.0.0","properties":{"height":"medium","shortID":"kYNnfZ","settings":{"texts":{"hidden":false},"images":{"hidden":false},"titles":{"tag":"h2","bold":false,"hidden":false,"italic":false,"fontSize":"medium","textStyle":"title"},"buttons":{"hidden":true},"callouts":{"hidden":false},"secondaryButtons":{"hidden":true}},"background":{"type":"default"},"repeatables":[{"id":1,"text":{"content":{"quill":{"ops":[{"insert":"$27.5","attributes":{"bold":true}},{"insert":"\n\n\n\ufeffTempura, Broiled Fish, Inari Sushi, Mix Salad, Seasonal Vegetables Dish\n\n"},{"insert":"Choose Your Homemade Noodle","attributes":{"bold":true}},{"insert":" : Soba (Cold \/ Hot) or Udon (Cold \/ Hot)\n\n"},{"insert":"*Limited Supply! Only 20 Orders!","attributes":{"bold":true,"italic":true}},{"insert":"\n"}]}}},"image":{"alt":"Sobaya Beto Set","figure":{"name":"P1175712.jpg","size":{},"shape":{},"width":3499,"height":2624,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-34-24_1744151695.jpg","altText":"","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1175712_1744137624.jpg","sourceSet":{"400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-34-24_1744151695.jpg?width=400","800w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-34-24_1744151695.jpg?width=800","1200w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-34-24_1744151695.jpg?width=1200","1600w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-34-24_1744151695.jpg?width=1600","2000w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-34-24_1744151695.jpg?width=2000","2400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-34-24_1744151695.jpg?width=2400"},"focalPoint":{"x":0.5,"y":0.5},"attribution":{},"cropOptions":{"zoom":1.017,"center":{"x":0.5013,"y":0.5103},"realZoom":1.038,"rotation":0},"positionPoint":{"x":0.5,"y":0.5005}}},"title":{"content":{"quill":{"ops":[{"insert":"Monday Lunch \/ Sobaya Bento Set"},{"insert":"\n","attributes":{"block":true}}]}}},"button":{"label":"View products"},"callout":{"content":{"quill":{"ops":[{"insert":"( 12pm -- 3pm ) dine in only"},{"insert":"\n","attributes":{"block":true}}]}}},"secondaryButton":{"label":"Learn more"}}],"colorProfile":"primary-bold"}}},{"id":"8037a830-85ec-11ec-834f-633ffa066587","type":"cell","content":{"id":"8037a831-85ec-11ec-834f-633ffa066587","type":"block","layout":"text-and-image-split-image-left","purpose":"text-and-image@^1.0.0","properties":{"height":"medium","shortID":"hIeajZ","settings":{"texts":{"fontSize":"step-0","textStyle":"body"},"titles":{}},"textAlign":"","background":{"type":"default"},"repeatables":[{"id":1,"text":{"content":{"quill":{"ops":[{"insert":"$21","attributes":{"bold":true}},{"insert":"\n\n\nSobaya Original Curry w\/ Chicken & Seasonal Vegetables, Fukujin-Zuke (Pickles) + Mini House Salad on the side\n\n"},{"insert":"Choose Your Homemade Noodle","attributes":{"bold":true}},{"insert":" : Soba (Cold \/ Hot) or Udon (Cold \/ Hot)\n"}]}}},"image":{"alt":"Sobaya Original Curry Rice Set","figure":{"name":"P1176074-edited.jpg","size":{},"shape":{},"width":3500,"height":2625,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-43-33_1748533451.jpg","altText":"","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1176074-edited_1748530177.jpg","sourceSet":{"400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-43-33_1748533451.jpg?width=400","800w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-43-33_1748533451.jpg?width=800","1200w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-43-33_1748533451.jpg?width=1200","1600w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-43-33_1748533451.jpg?width=1600","2000w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-43-33_1748533451.jpg?width=2000","2400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-43-33_1748533451.jpg?width=2400"},"focalPoint":{"x":0.5,"y":0.5},"attribution":{},"cropOptions":{"zoom":1,"center":{"x":0.5046,"y":0.5413},"realZoom":1.09,"rotation":0},"positionPoint":{"x":0.5,"y":0.5}}},"title":{"content":{"quill":{"ops":[{"insert":"Tuesday Lunch \/ Original Curry Rice Set"},{"insert":"\n","attributes":{"block":true}}]}}},"button":{"label":"View products"},"callout":{"content":{"quill":{"ops":[{"insert":"( 12pm -- 3pm ) dine in only"},{"insert":"\n","attributes":{"block":true}}]}}},"secondaryButton":{"label":"Learn more"}}],"colorProfile":"custom-profile","verticalsHidden":true}}},{"id":"f1f08120-595f-11ee-a9da-cf3aad5b4548","type":"cell","content":{"id":"f1ec8980-595f-11ee-a9da-cf3aad5b4548","type":"block","layout":"text-and-image-split-image-left","purpose":"text-and-image@^1.0.0","properties":{"height":"medium","shortID":"JlWFsG","settings":{"texts":{"fontSize":"step-0","textStyle":"body"}},"textAlign":"","background":{"type":"default"},"repeatables":[{"id":1,"text":{"content":{"quill":{"ops":[{"insert":"$25","attributes":{"bold":true}},{"insert":"\n\n\nIncludes Donburi + *Chef\u2019s Choice Appetizer + Sobaya Miso Soup\n\n"},{"insert":"Choose Your Donburi (Rice Bowl)","attributes":{"bold":true}},{"insert":" : \n\u25cfUna Ju\u3000\u25cfSake Oyako Don\u3000\u25cfTen Don\u3000\u25cfSake Ikura Don\n\n"},{"insert":"*The Chef\u2019s Choice Appetizer may vary from the image shown due to seasonal ingredients","attributes":{"italic":true}},{"insert":"\n"}]}}},"image":{"alt":"Sobaya Donburi Special","figure":{"name":"P1176097-edited.jpg","size":{},"shape":{},"width":3314,"height":2485,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-44-32_1748533526.jpg","altText":"","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1176097-edited_1748530304.jpg","sourceSet":{"400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-44-32_1748533526.jpg?width=400","800w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-44-32_1748533526.jpg?width=800","1200w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-44-32_1748533526.jpg?width=1200","1600w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-44-32_1748533526.jpg?width=1600","2000w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-44-32_1748533526.jpg?width=2000","2400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-29_11-44-32_1748533526.jpg?width=2400"},"focalPoint":{"x":0.5,"y":0.5},"attribution":{},"cropOptions":{"zoom":1.125,"center":{"x":0.5163,"y":0.5109},"realZoom":1.163,"rotation":0},"positionPoint":{"x":0.5,"y":0.5}}},"title":{"content":{"quill":{"ops":[{"insert":"Wednesday Lunch \/ Donburi Special"},{"insert":"\n","attributes":{"block":true}}]}}},"button":{"label":"View products"},"callout":{"content":{"quill":{"ops":[{"insert":"( 12pm -- 3pm ) dine in only"},{"insert":"\n","attributes":{"block":true}}]}}},"secondaryButton":{"label":"Learn more"}}],"colorProfile":"primary-bold","verticalsHidden":true}}},{"id":"9c47bae0-85ee-11ec-834f-633ffa066587","type":"cell","content":{"id":"9c47bae1-85ee-11ec-834f-633ffa066587","type":"block","layout":"text-and-image-split-image-left","purpose":"text-and-image@^1.0.0","properties":{"height":"medium","shortID":"TEoYWa","settings":{"texts":{"fontSize":"step-0","textStyle":"body"}},"background":{"type":"default"},"repeatables":[{"id":1,"text":{"content":{"quill":{"ops":[{"insert":"$23","attributes":{"bold":true}},{"insert":"\n\n\n"},{"insert":"Choose Your Homemade Soba","attributes":{"bold":true}},{"insert":" : \ufeff\n\u25cfTen Zaru\u3000\u25cfTempura Soba\u3000\u25cfKamo Seiro\u3000\u25cfKamo Nanban\n"}]}}},"image":{"alt":"Sobaya Soba Special","figure":{"name":"P1175677.jpg","size":{},"shape":{},"width":3500,"height":2625,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-38-54_1744151961.jpg","altText":"","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1175677_1744137846.jpg","sourceSet":{"400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-38-54_1744151961.jpg?width=400","800w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-38-54_1744151961.jpg?width=800","1200w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-38-54_1744151961.jpg?width=1200","1600w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-38-54_1744151961.jpg?width=1600","2000w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-38-54_1744151961.jpg?width=2000","2400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-04-08_18-38-54_1744151961.jpg?width=2400"},"focalPoint":{"x":0.5,"y":0.5},"attribution":{},"cropOptions":{"zoom":1.393,"center":{"x":0.4974,"y":0.5584},"realZoom":1.577,"rotation":0},"positionPoint":{"x":0.5,"y":0.5}}},"title":{"content":{"quill":{"ops":[{"insert":"Thursday Lunch \/ Soba Special"},{"insert":"\n","attributes":{"block":true}}]}}},"button":{"label":"View products"},"callout":{"content":{"quill":{"ops":[{"insert":"( 12pm -- 3pm ) dine in only"},{"insert":"\n","attributes":{"block":true}}]}}},"secondaryButton":{"label":"Learn more"}}],"colorProfile":"custom-profile","verticalsHidden":true}}},{"id":"4ce6b1f0-2928-11eb-a2b9-97fd2c5d1051","type":"cell","content":{"id":"4ce6b1f1-2928-11eb-a2b9-97fd2c5d1051","type":"block","layout":"text-and-image-split-image-left","purpose":"text-and-image@^1.0.0","properties":{"height":"medium","shortID":"DELfCW","settings":{"texts":{"hidden":false,"fontSize":"step-0","textStyle":"body"},"images":{"size":"medium","shape":null,"aspectRatio":"4_3"},"titles":{"tag":"h2","bold":false,"hidden":false,"italic":false,"fontSize":"medium","textStyle":"title"},"buttons":{"hidden":true},"callouts":{"hidden":false,"fontSize":"medium"}},"textAlign":"","background":{"type":"default"},"repeatables":[{"id":1,"text":{"content":{"quill":{"ops":[{"insert":"$24","attributes":{"bold":true}},{"insert":"\n\n\n\ufeffIncludes Mini Donburi + Lunch Portion Noodle + *Chef\u2019s Choice Appetizer + Refillable Hot Green Tea\n\n"},{"insert":"Choose Your Donburi (Rice Bowl)","attributes":{"bold":true}},{"insert":" : \u25cfUna Ju\u3000\u25cfSake Oyako Don\u3000\u25cfTen Don \n"},{"insert":"Choose Your Homemade Noodle\ufeff","attributes":{"bold":true}},{"insert":" : Soba (Cold \/ Hot) or Udon (Cold \/ Hot)\n\n"},{"insert":"*The Chef\u2019s Choice Appetizer may vary from the image shown due to seasonal ingredients\ufeff","attributes":{"italic":true}},{"insert":"\n"}]}}},"image":{"alt":"Sobaya Mini Lunch Set","figure":{"name":"P1175606edited00.jpg","size":{},"shape":{},"width":3500,"height":2625,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1175606edited00_1748530872.jpg","altText":"","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1175606edited00_1748530872.jpg","sourceSet":{},"focalPoint":{"x":0.5,"y":0.5},"attribution":{},"cropOptions":null,"positionPoint":{"x":0.5,"y":0.5}}},"title":{"content":{"quill":{"ops":[{"insert":"Everyday Lunch \/ Special Mini Lunch Set"},{"insert":"\n","attributes":{"block":true}}]}}},"button":{"label":"Learn more"},"callout":{"content":{"quill":{"ops":[{"insert":"( 12pm -- 3pm ) dine in only","attributes":{}},{"insert":"\n","attributes":{"block":true}}]}}}}],"colorProfile":"primary-bold","verticalsHidden":true}}},{"id":"4a011520-af30-11ee-a3ca-bb1e34defc10","type":"cell","content":{"id":"4a011521-af30-11ee-a3ca-bb1e34defc10","type":"block","layout":"gallery-4","purpose":"gallery@^1.1.2","elements":[{"id":"4aebea50-af30-11ee-99cb-512c0d19ee11","purpose":"image-gallery","properties":{"shape":null,"images":[{"id":"e422f590-b7d8-11ef-af1b-0b0ed71997ae","alt":"Michelin Guide 2024 NYC","name":"SOBAYA MICHELIN Guide ... 01.jpg","width":1317,"height":525,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/SOBAYA%20MICHELIN%20Guide%202024%2001_1733932761.jpg"}],"aspectRatio":"original"}}],"properties":{"title":{"title":{"quill":{"ops":[{"insert":"MICHELIN Guide New York City 2024"},{"insert":"\n","attributes":{"block":true}}]}},"hidden":false},"shortID":"JUMext","subtitle":{"hidden":false,"content":{"quill":{"ops":[{"insert":"We are thrilled to announce that we have been recognized in the MICHELIN Guide 2024 and are honored to continue receiving the prestigious Bib Gourmand award over multiple years!\n"}]}},"fontSize":"step-minus-1","textStyle":"body"},"background":{"type":"color","color":{"value":"--color-black","isDark":true}}}}},{"id":"ddcfe8f0-31b4-11f0-af68-d159501681e1","type":"cell","content":{"id":"ddd01000-31b4-11f0-af68-d159501681e1","type":"block","layout":"text-and-image-highlight","purpose":"text-and-image@^1.0.0","properties":{"shortID":"ENsvOa","settings":{"texts":{"hidden":true},"titles":{}},"textAlign":"center","background":{"type":"image","image":{"size":{},"shape":{},"width":3500,"height":2625,"isDark":true,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-15_13-56-16_1747331810.jpg","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1175968_1747331558.jpg","imageType":"background","sourceSet":{"400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-15_13-56-16_1747331810.jpg?width=400","800w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-15_13-56-16_1747331810.jpg?width=800","1200w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-15_13-56-16_1747331810.jpg?width=1200","1600w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-15_13-56-16_1747331810.jpg?width=1600","2000w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-15_13-56-16_1747331810.jpg?width=2000","2400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-05-15_13-56-16_1747331810.jpg?width=2400"},"focalPoint":{"x":0.5,"y":0.5},"attribution":{},"cropOptions":{"zoom":1,"center":{"x":0.3497,"y":0.5902},"realZoom":1.43,"rotation":0},"positionPoint":{"x":0.5,"y":0.5},"overlayOpacity":0.35}},"repeatables":[{"id":1,"text":{"content":"One of our most popular items. Perfect for everyday use. Exceptional quality and choice."},"image":{"figure":{},"hidden":false},"title":{"tag":"h2","content":{"quill":{"ops":[{"insert":"Original T-Shirt\n"}]}},"fontSize":"medium","textStyle":"title"},"button":{"label":"View products","hidden":true},"callout":{"tag":"h3","hidden":true,"content":"Quality Craftsmanship","fontSize":"medium","textStyle":"title"},"secondaryButton":{"label":"Learn more","hidden":true}}]}}},{"id":"1fc9c090-31b6-11f0-af68-d159501681e1","type":"cell","content":{"id":"1fc9c091-31b6-11f0-af68-d159501681e1","type":"block","layout":"text-and-image-2-row-mirror","purpose":"text-and-image@^1.0.0","properties":{"shortID":"dbgwGq","settings":{"texts":{},"images":{"size":"large","shape":null,"aspectRatio":"1_1"},"titles":{},"buttons":{"hidden":false}},"background":{"type":"default"},"repeatables":[{"id":1,"text":{"content":{"quill":{"ops":[{"insert":"\n"},{"insert":"Take a piece of Sobaya home with you!","attributes":{"bold":true}},{"insert":"\n\nOur signature T-shirt is now available for purchase. \nThis soft and comfortable tee features a small Sobaya logo on the front and an oversized logo on the back \u2014 a stylish way to show your love for Sobaya.\n"},{"insert":"*Feel free to ask staff to make purchase in-store.","attributes":{"italic":true}},{"insert":"\n\n"},{"insert":"Sizes:\u00a0S \/ M \/ \ufeffL \/ XL","attributes":{"bold":true}},{"insert":"\n\n$20\n"}]}}},"image":{"alt":"Sobaya Original T-Shirt ","link":{"tab":true,"link":{"product":"382","external":"https:\/\/square.link\/u\/bkYslUA2"},"type":"product"},"figure":{"name":"P117596800.jpg","width":1155,"height":1155,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P117596800_1747332673.jpg","altText":"","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P117596800_1747332673.jpg","sourceSet":{},"focalPoint":{"x":0.5,"y":0.5},"attribution":{},"cropOptions":null,"positionPoint":{"x":0.5,"y":0.5}},"hidden":false},"title":{"tag":"h2","content":{"quill":{"ops":[{"insert":"Sobaya Original T-Shirt\u00a0"},{"insert":"\n","attributes":{"block":true}}]}},"fontSize":"medium","textStyle":"title"},"button":{"link":{"tab":true,"link":{"product":"382","external":"https:\/\/square.link\/u\/bkYslUA2"},"type":"product"},"label":"BUY NOW\n","hidden":true},"callout":{"tag":"h3","hidden":true,"content":"Quality Craftsmanship","fontSize":"medium","textStyle":"title"},"secondaryButton":{"label":"Learn more","hidden":true}}],"colorProfile":"primary-bold"}}},{"id":"77d749e0-146e-11ee-9755-0b7d54558e2e","type":"cell","content":{"id":"77d2b600-146e-11ee-9755-0b7d54558e2e","type":"block","layout":"text-and-image-highlight","purpose":"text-and-image@^1.0.0","properties":{"shortID":"PMvXVN","settings":{"texts":{"hidden":true,"fontSize":"medium"},"titles":{"hidden":false},"buttons":{"hidden":true}},"background":{"type":"image","image":{"size":{},"shape":{},"width":2500,"height":1664,"isDark":true,"source":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/Sobaya_300dpi-31.jpg","original":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/Sobaya_300dpi-31.jpg","imageType":"background","sourceSet":{},"attribution":{}}},"repeatables":[{"id":1,"text":{"content":"One of our most popular items. Perfect for everyday use. Exceptional quality and choice."},"image":{"figure":{}},"title":{"content":{"quill":{"ops":[{"insert":"E-Gift Card"},{"insert":"\n","attributes":{"block":true}}]}}},"button":{"label":"Learn more"},"callout":{"content":"Quality Craftsmanship"}}],"verticalsHidden":true}}},{"id":"cfc27f30-6ad5-11ea-8419-331a1fbabf41","type":"cell","content":{"id":"cfc27f31-6ad5-11ea-8419-331a1fbabf41","type":"block","layout":"text-and-image-2-row","purpose":"text-and-image@^1.0.0","properties":{"shortID":"YMWaie","settings":{"texts":{"hidden":false,"fontSize":"step-0","textStyle":"body","fontFamily":"--primary-font"},"images":{"size":"large","aspectRatio":"1_1"},"titles":{"tag":"h2","bold":false,"hidden":false,"italic":false,"fontSize":"large","textStyle":"title","fontFamily":"--primary-font"},"buttons":{"hidden":false},"callouts":{"hidden":true}},"background":{"type":"default","color":{"value":"--primary-bright-light","isDark":false}},"repeatables":[{"id":1,"text":{"content":{"quill":{"ops":[{"insert":"\n"},{"insert":"Send an E-Gift card instantly to friends, family, or yourself!\u00a0","attributes":{"bold":true}},{"insert":"\n\nEnjoy Our Artisanal Soba, Sake and More.\n\n$50 (minimum)\n"}]}}},"image":{"alt":"Sobaya Staff Making Soba","link":{"tab":true,"link":{"external":"https:\/\/squareup.com\/gift\/VWTC386KPJKX7\/order"},"type":"external"},"figure":{"name":"P1014027.jpg","width":3680,"height":2760,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1014027_1640889921.jpg","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1014027_1640889921.jpg","sourceSet":{},"attribution":{},"cropOptions":null}},"title":{"content":{"quill":{"ops":[{"insert":"Sobaya E-Gift Card"},{"insert":"\n","attributes":{"block":true}}]}}},"button":{"link":{"tab":true,"link":{"external":"https:\/\/squareup.com\/gift\/VWTC386KPJKX7\/order"},"type":"external"},"label":"PURCHASE\n"},"callout":{"content":{"quill":{"ops":[{"insert":"Sobaya\n"}]}}}}],"colorProfile":"primary-bold","verticalsHidden":true}}},{"id":"74f3af20-9ed2-11eb-a5da-83218f458c5b","type":"cell","content":{"id":"74f3d630-9ed2-11eb-a5da-83218f458c5b","type":"block","layout":"text-and-image-highlight","purpose":"text-and-image@^1.0.0","properties":{"height":"extra-small","shortID":"xCBKQM","settings":{"texts":{"hidden":true,"fontSize":"medium"},"titles":{"hidden":false},"buttons":{"hidden":true},"callouts":{"hidden":true},"secondaryButtons":{"hidden":true}},"textAlign":"","background":{"type":"image","image":{"size":{},"shape":{},"width":3733,"height":2800,"isDark":true,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1420783_1618591275.jpg","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1420783_1618591275.jpg","imageType":"background","sourceSet":{},"attribution":{},"overlayOpacity":0}},"repeatables":[{"id":1,"text":{"content":"One of our most popular items. Perfect for everyday use. Exceptional quality and choice."},"image":{"figure":{}},"title":{"content":{"quill":{"ops":[{"insert":"Seasonal Special\n"}]}}},"button":{"label":"Learn more"},"callout":{"content":"Quality Craftsmanship"}}],"colorProfile":"","verticalsHidden":true}}},{"id":"ba383a60-9ed2-11eb-a5da-83218f458c5b","type":"cell","content":{"id":"ba383a61-9ed2-11eb-a5da-83218f458c5b","type":"block","layout":"featured-products-1","purpose":"featured-products@^1.0.0","elements":[{"id":"ba67aed0-9ed2-11eb-84a9-8729d3146b0d","purpose":"title","properties":{"fontSize":"medium"}},{"id":"ba67aed1-9ed2-11eb-84a9-8729d3146b0d","purpose":"text","properties":{}}],"properties":{"shortID":"hFHuCt","products":["130","443","37"],"textAlign":"","columnCount":3,"hoverEffect":"swap","productMeta":{"product_398":{"imagePath":"\/uploads\/1\/2\/4\/4\/124401079\/s222209602344133111_p398_i3_w4976.jpeg?width=2560"},"product_399":{"imagePath":"\/uploads\/1\/2\/4\/4\/124401079\/s222209602344133111_p399_i2_w4976.jpeg?width=2560"},"product_418":{"imagePath":"\/uploads\/1\/2\/4\/4\/124401079\/s222209602344133111_p418_i3_w3680.jpeg?width=2560"},"product_446":{"imagePath":"\/uploads\/1\/2\/4\/4\/124401079\/s222209602344133111_p446_i3_w3264.jpeg?width=2560"}},"disableTitle":true,"columnGapSize":2,"showQuickShop":true,"verticalsHidden":true}}},{"id":"1dfd77e0-146f-11ee-9755-0b7d54558e2e","type":"cell","content":{"id":"1df8e400-146f-11ee-9755-0b7d54558e2e","type":"block","layout":"text-and-image-highlight","purpose":"text-and-image@^1.0.0","properties":{"shortID":"NlcVwL","settings":{"texts":{"hidden":true,"fontSize":"medium"},"titles":{"hidden":false},"buttons":{"hidden":true}},"background":{"type":"image","image":{"width":4629,"height":2604,"isDark":true,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1350659_1593267373.jpg","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/P1350659_1593267373.jpg","sourceSet":{},"attribution":{}}},"repeatables":[{"id":1,"text":{"content":"One of our most popular items. Perfect for everyday use. Exceptional quality and choice."},"image":{"figure":{}},"title":{"content":{"quill":{"ops":[{"insert":"Menu\n"}]}}},"button":{"label":"Learn more"},"callout":{"content":"Quality Craftsmanship"}}],"verticalsHidden":true}}},{"id":"d35310e0-8e23-11ee-8516-a754c10cac8b","type":"cell","content":{"id":"d35310e1-8e23-11ee-8516-a754c10cac8b","type":"block","layout":"basic-text","purpose":"text@^1.0.0","properties":{"shortID":"qzfDAr","settings":{"links":{"hidden":true},"texts":{},"titles":{"tag":"h4","bold":true,"title":{"quill":{"ops":[{"insert":"Edamame $7"},{"insert":"\n","attributes":{"block":true}}]}},"hidden":false,"italic":false,"fontSize":"large","textStyle":"title"}},"textAlign":"","background":{"type":"color","color":{"value":"--primary-bright-light","isDark":false}},"columnCount":2,"repeatables":[{"id":1,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Boiled Young Soy Beans\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"(V) Edamame $7"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":2,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Silky Soft Tofu w\/ Thin Crispy Coating in Hot Broth\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Agedashi Tofu $14\n"}]}}}},{"id":3,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Boiled Spinach Mixed w\/ Sesame Sauce\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"(V) Goma Ae $7"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":4,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Fried Shishito Pepper w\/ Sesame Salt & Freshly Squeezed Lemon\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"(V) Citrus Shishito $13"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":5,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Sliced Salmon Sashimi \n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"(G) Salmon Sashimi  $14"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":6,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"w\/ Sesame Dressing\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"(V) Seaweed Salad $11"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":7,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Japanese-Style Egg Omelette\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Homemade Dashimaki Tamago $14"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":8,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Mix Green Salad Topped w\/ Tofu & Soba Seeds, Homemade Dressing\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":" House Salad $12"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":9,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Choose Steamed or Fried\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Homemade Shrimp Shumai $14\n"}]}}}}],"sectionText":{"hidden":true},"sectionTitle":{"tag":"h3","bold":false,"align":"center","color":"var(--color-black)","title":{"quill":{"ops":[{"insert":"-- Appetizers --"},{"insert":"\n","attributes":{"block":true}}]}},"hidden":false,"italic":false,"allCaps":false,"fontSize":"step-2","textStyle":"title"}}}},{"id":"46824260-8e25-11ee-8516-a754c10cac8b","type":"cell","content":{"id":"467745e0-8e25-11ee-8516-a754c10cac8b","type":"block","layout":"basic-text","purpose":"text@^1.0.0","properties":{"shortID":"idFpTk","settings":{"links":{"hidden":true},"texts":{},"titles":{"tag":"h4","bold":true,"title":{"quill":{"ops":[{"insert":"Kamo Nanban (H)\u00a0   $24"},{"insert":"\n","attributes":{"block":true}}]}},"hidden":false,"italic":false,"fontSize":"large","textStyle":"title"}},"textAlign":"","columnCount":2,"repeatables":[{"id":1,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Plain Noodles w\/ Sobaya\u2019s Original Dipping Sauce\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Mori (C) $14 "},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":2,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Sliced Sauteed Duck & Scallions in Hot Broth\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Kamo Nanban (H) $25\n"}]}}}},{"id":3,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Mori with Nori Seaweed\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Zaru (C) $15"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":4,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"w\/ Mixed Veggies & Mushrooms\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Yasai (H) $22"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":5,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Cold Noodles w\/ Sauteed Sliced Duck & Scallion in Hot Dipping Sauce\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Kamo Seiro (C) $25"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":6,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Plain Noodles w\/ Fish Cake\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Kake (H) $15"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":7,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Nameko Mushrooms & Grated Radish\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Nameko Oroshi (C) $18"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":8,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"w\/ Fried Batter Flakes in Hot Broth\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Tanuki (H) $17"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":9,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Homemade Soba Noodles over Mesclun, Seaweed, Served w\/ Two Special House Dressings\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"(V) Soba Salad Noodle (C) $22"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":10,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"w\/ Fried Bean Curd in Hot Broth\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Kitsune (H) $18"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":11,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Crispy Jumbo Shrimp & Shishito Tempura w\/ Noodles\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":" Ten Zaru (C) \/ Tempura Soba (H) $26"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":12,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Chicken, Sliced Onion & Scallions in Curry Dashi Soup\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Curry Nanban (H) $19"},{"insert":"\n","attributes":{"block":true}}]}}}}],"sectionText":{"hidden":false,"content":{"quill":{"ops":[{"insert":"(C) - Cold   (H)- Hot\n"}]}}},"sectionTitle":{"title":{"quill":{"ops":[{"insert":"-- Noodles (Soba \/ Udon) -- "},{"insert":"\n","attributes":{"block":true}}]}}}}}},{"id":"53383bc0-8e31-11ee-8516-a754c10cac8b","type":"cell","content":{"id":"53383bc1-8e31-11ee-8516-a754c10cac8b","type":"block","layout":"basic-text","purpose":"text@^1.0.0","properties":{"shortID":"dQbCLZ","settings":{"links":{"hidden":true},"texts":{},"titles":{"tag":"h4","bold":true,"title":{"quill":{"ops":[{"insert":"Yasai Kakiage Don  13"},{"insert":"\n","attributes":{"block":true}}]}},"hidden":false,"italic":false,"fontSize":"large","textStyle":"title"}},"background":{"type":"color","color":{"value":"--primary-bright-light","isDark":false}},"columnCount":2,"repeatables":[{"id":1,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Seasonal Vegetable Tempura over Rice\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Yasai Ten Don $18"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":2,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Grilled Eel over Rice\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Una Ju $28"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":3,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Fried Breaded Cutlet w\/ Egg over Rice (Well Done \/ Medium Rare Egg)\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Katsu Don (Pork \/ Chicken) $20\n"}]}}}},{"id":4,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Classic Japanese Home Style Poached Egg & Chicken over Rice (Well Done \/ Medium Rare Egg)\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Oyako Don $18"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":5,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Sliced Salmon Sashimi & Salmon Roe over Rice\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"(G) Sake Oyako Don $26"},{"insert":"\n","attributes":{"block":true}}]}}}},{"id":6,"link":{"label":"Learn more"},"text":{"content":{"quill":{"ops":[{"insert":"Crispy Jumbo Shrimp & Vegetable Tempura over Rice\n"}]}}},"title":{"title":{"quill":{"ops":[{"insert":"Tendon $24\n"}]}}}}],"sectionTitle":{"align":"center","title":{"quill":{"ops":[{"insert":"-- Rice Bowl --"},{"insert":"\n","attributes":{"block":true}}]}}}}}},{"id":"7ca4c100-8e3f-11ee-b1a5-a74f180de562","type":"cell","content":{"id":"7ca4c101-8e3f-11ee-b1a5-a74f180de562","type":"block","layout":"text-and-image-highlight","purpose":"text-and-image@^1.0.0","properties":{"shortID":"NqvItB","settings":{"texts":{},"titles":{"hidden":true},"callouts":{"hidden":false}},"background":{"type":"default"},"repeatables":[{"id":1,"text":{"content":{"quill":{"ops":[{"insert":"CURRENTLY UPDATING FOR ADA COMPLIANCE","attributes":{"bold":true}},{"insert":"\n"}]}}},"image":{"figure":{},"hidden":false},"title":{"tag":"h2","content":{"quill":{"ops":[{"insert":"CURRENTLY UPDATING FOR ADA COMPLIANCE"},{"insert":"\n","attributes":{"block":true}}]}},"fontSize":"medium","textStyle":"title"},"button":{"label":"View products","hidden":true},"callout":{"tag":"h3","hidden":true,"content":{"quill":{"ops":[{"insert":"(V) : Vegetarian      (G): Gluten free"},{"insert":"\n\n","attributes":{"block":true}},{"insert":"*Consuming raw or undercooked food (*) such as meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness. *Please inform us of any food allergies you have. *Certain dietary restrictions require advance notice and special preparations. For inquiries, please reach out to us directly to speak with our staff. Thank you!\n\n\n"}]}},"fontSize":"medium","textStyle":"title"},"secondaryButton":{"label":"Learn more","hidden":true}}],"colorProfile":""}}},{"id":"87aa6f80-9855-11ee-b0ea-79d5d29e3a2e","type":"cell","content":{"id":"87990a60-9855-11ee-b0ea-79d5d29e3a2e","type":"block","layout":"text-and-image-highlight","purpose":"text-and-image@^1.0.0","properties":{"shortID":"rNwJCi","settings":{"texts":{"hidden":true,"fontSize":"medium"},"titles":{"hidden":false},"buttons":{"hidden":true}},"background":{"type":"image","image":{"width":4976,"height":2800,"isDark":true,"source":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/P1330786.jpg","original":"\/uploads\/b\/a34939d0-309f-11e9-a7c2-4f00f46436ed\/P1330786.jpg","sourceSet":{},"attribution":{}}},"repeatables":[{"id":1,"text":{"content":"One of our most popular items. Perfect for everyday use. Exceptional quality and choice."},"image":{"figure":{}},"title":{"content":{"quill":{"ops":[{"insert":"Order Online\n"}]}}},"button":{"label":"Learn more"},"callout":{"content":"Quality Craftsmanship"}}],"verticalsHidden":true}}},{"id":"ea8402c0-d8bd-11ea-8d19-17b367d1669f","type":"cell","content":{"id":"ea8402c1-d8bd-11ea-8d19-17b367d1669f","type":"block","layout":"text-and-image-2-column-centered","purpose":"text-and-image@^1.0.0","properties":{"shortID":"ecXPjQ","settings":{"texts":{"hidden":true},"images":{"size":"medium","hidden":false,"aspectRatio":"1_1"},"titles":{"hidden":false},"buttons":{"hidden":false,"presetSize":"small","presetStyle":"primary"}},"textAlign":"","background":{"type":"default"},"columnCount":4,"repeatables":[{"id":5,"text":{"content":{"quill":{"ops":[{"insert":"\n\n\n"}]}}},"image":{"alt":"Sobaya Logo","link":{"tab":false,"link":{"orderOnline":true},"type":"orderOnline"},"figure":{"name":"UberEats_Logo copy.jpg","width":394,"height":394,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/UberEats_Logo%20copy_1744141633.jpg","altText":"","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/UberEats_Logo%20copy_1744141633.jpg","sourceSet":{},"attribution":{},"cropOptions":null}},"title":{"content":{"quill":{"ops":[{"insert":"\n","attributes":{"block":true}}]}}},"button":{"link":{"tab":false,"link":{"orderOnline":true},"type":"orderOnline"},"label":"Commission-Free Ordering\n"},"callout":{"content":"Quality Craftsmanship"},"secondaryButton":{"label":"Learn more"}},{"id":4,"text":{"content":{"quill":{"ops":[{"insert":"\n\n\n"}]}}},"image":{"alt":"Doordash Logo","link":{"tab":true,"link":{"external":"https:\/\/www.doordash.com\/store\/sobaya-new-york-1106088\/"},"type":"external"},"figure":{"name":"DoorDash_Logo copy.jpg","width":394,"height":394,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/DoorDash_Logo%20copy_1744141916.jpg","altText":"","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/DoorDash_Logo%20copy_1744141916.jpg","sourceSet":{},"focalPoint":{"x":0.5,"y":0.5},"attribution":{},"cropOptions":null,"positionPoint":{"x":0.5,"y":0.5}}},"title":{"content":{"quill":{"ops":[{"insert":"\n","attributes":{"block":true}}]}}},"button":{"link":{"tab":false,"link":{"external":"https:\/\/www.doordash.com\/store\/sobaya-new-york-1106088\/"},"type":"external"},"label":"DoorDash\n"},"callout":{"content":"Quality Craftsmanship"},"secondaryButton":{"label":"Learn more"}},{"id":3,"text":{"content":{"quill":{"ops":[{"insert":"\n \n\n"}]}}},"image":{"alt":"Uber Eats Logo","link":{"tab":true,"link":{"external":"https:\/\/www.ubereats.com\/new-york\/food-delivery\/sobaya\/qfEO1LINTkq-IDqGlk461Q"},"type":"external"},"figure":{"name":"UberEats_Logo c.jpg","width":394,"height":394,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/UberEats_Logo%20c_1744140941.jpg","altText":"","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/UberEats_Logo%20c_1744140941.jpg","sourceSet":{},"attribution":{},"cropOptions":null}},"title":{"content":{"quill":{"ops":[{"insert":"\n","attributes":{"block":true}}]}}},"button":{"link":{"tab":false,"link":{"external":"https:\/\/www.ubereats.com\/new-york\/food-delivery\/sobaya\/qfEO1LINTkq-IDqGlk461Q"},"type":"external"},"label":"Uber Eats\n"},"callout":{"content":"Quality Craftsmanship"}},{"id":2,"text":{"content":{"quill":{"ops":[{"insert":"\n\n\n"}]}}},"image":{"alt":"Seamless Logo","link":{"tab":true,"link":{"external":"https:\/\/www.seamless.com\/menu\/sobaya-restaurant-229-e-9th-st-new-york\/2034931"},"type":"external"},"figure":{"name":"Seamless_Logo_C.jpg","width":394,"height":394,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/Seamless_Logo_C_1744207932.jpg","altText":"","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/Seamless_Logo_C_1744207932.jpg","sourceSet":{},"attribution":{},"cropOptions":null}},"title":{"content":{"quill":{"ops":[{"insert":"\n","attributes":{"block":true}}]}}},"button":{"link":{"tab":false,"link":{"external":"https:\/\/www.grubhub.com\/restaurant\/sobaya-restaurant-229-e-9th-st-new-york\/2034931"},"type":"external"},"label":"Grubhub\n"},"callout":{"content":"Quality Craftsmanship"}}],"sectionText":{"hidden":true},"colorProfile":"custom-profile","sectionTitle":{"hidden":true},"verticalsHidden":true}}},{"id":"6fb92cd0-ea4e-11ef-af65-09a1334e382e","type":"cell","content":{"id":"6fa41e30-ea4e-11ef-af65-09a1334e382e","type":"block","layout":"gallery-carousel","purpose":"gallery@^1.1.2","elements":[{"id":"4aebea50-af30-11ee-99cb-512c0d19ee11","purpose":"image-gallery","properties":{"shape":null,"images":[{"id":"e0bbf350-ea4d-11ef-af65-09a1334e382e","alt":"Sobaya Staff Making Soba","name":"SDIM6488.jpg","width":2333,"height":3500,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/SDIM6488_1739480556.jpg"},{"id":"e0bbcc40-ea4d-11ef-af65-09a1334e382e","alt":"Sobaya Staff Making Soba","name":"SDIM6306.jpg","width":3500,"height":2333,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-11-44_1739481150.jpg","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/SDIM6306_1739480560.jpg","sourceSet":{"400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-11-44_1739481150.jpg?width=400","800w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-11-44_1739481150.jpg?width=800","1200w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-11-44_1739481150.jpg?width=1200","1600w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-11-44_1739481150.jpg?width=1600","2000w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-11-44_1739481150.jpg?width=2000","2400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-11-44_1739481150.jpg?width=2400"},"focalPoint":{"x":0.5,"y":0.5},"cropOptions":{"zoom":1,"center":{"x":0.4366,"y":0.5165},"realZoom":1.24,"rotation":-0.1396},"positionPoint":{"x":0.5,"y":0.5}},{"id":"8c0b9520-ea4f-11ef-af65-09a1334e382e","alt":"Sobaya Staff Making Soba","name":"SDIM6584.jpg","size":{},"width":3500,"height":2333,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-27-09_1739482055.jpg","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/SDIM6584_1739481241.jpg","sourceSet":{"400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-27-09_1739482055.jpg?width=400","800w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-27-09_1739482055.jpg?width=800","1200w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-27-09_1739482055.jpg?width=1200","1600w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-27-09_1739482055.jpg?width=1600","2000w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-27-09_1739482055.jpg?width=2000","2400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-27-09_1739482055.jpg?width=2400"},"focalPoint":{"x":0.5,"y":0.5},"cropOptions":{"zoom":1,"center":{"x":0.4717,"y":0.5283},"realZoom":1.06,"rotation":0},"positionPoint":{"x":0.5,"y":0.5}},{"id":"8ee011e0-ea4f-11ef-af65-09a1334e382e","alt":"Sobaya Staffs","name":"SDIM6508.jpg","width":3500,"height":2333,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/SDIM6508_1739481240.jpg"},{"id":"765fcac0-ea4f-11ef-af65-09a1334e382e","alt":"Sobaya Staffs Sitting","name":"SDIM6548.jpg","width":3500,"height":2333,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/SDIM6548_1739481243.jpg"},{"id":"6112b041-ea51-11ef-af65-09a1334e382e","alt":"Soba on the Tables","name":"SDIM6529.jpg","size":{},"width":3500,"height":2333,"source":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-30-32_1739482350.jpg","original":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/SDIM6529_1739481240.jpg","sourceSet":{"400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-30-32_1739482350.jpg?width=400","800w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-30-32_1739482350.jpg?width=800","1200w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-30-32_1739482350.jpg?width=1200","1600w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-30-32_1739482350.jpg?width=1600","2000w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-30-32_1739482350.jpg?width=2000","2400w":"\/uploads\/b\/3bd1cb6a74be052c1442edfc36a9e0ae9620a8f4f84e0b12de9f76e7b76a509b\/2025-02-13_16-30-32_1739482350.jpg?width=2400"},"focalPoint":{"x":0.5,"y":0.5},"cropOptions":{"zoom":1,"center":{"x":0.3283,"y":0.3466},"realZoom":1.59,"rotation":0.06981},"positionPoint":{"x":0.5,"y":0.5}}],"columns":1,"aspectRatio":"original"}}],"properties":{"title":{"title":{"quill":{"ops":[{"insert":"Bridging Cultures Through Soba: Sobaya-Sponsored Horokanai Students Share Their Tradition in New York\u00a0\n"}]}},"hidden":false,"fontSize":"step-2","textStyle":"title"},"shortID":"VTauxI","subtitle":{"hidden":false,"content":{"quill":{"ops":[{"insert":"Sobaya proudly supports students\u2019 dreams and continues to promote the rich heritage of Japanese soba culture.\u00a0\n\n\n"}]}},"fontSize":"step-minus-1","textStyle":"body"},"textAlign":"","background":{"type":"color","color":{"value":"--color-black","isDark":true}}}}},{"id":"b7173eb0-ea4d-11ef-af65-09a1334e382e","type":"cell","content":{"id":"b700f790-ea4d-11ef-af65-09a1334e382e","type":"block","layout":"gallery-original-ratio-grid","purpose":"gallery@^1.1.2","elements":[{"id":"4aebea50-af30-11ee-99cb-512c0d19ee11","purpose":"image-gallery","properties":{"shape":null,"images":[],"columns":2,"aspectRatio":"original"}}],"properties":{"title":{"title":{"quill":{"ops":[{"insert":"Bridging Cultures Through Soba: Sobaya-Sponsored Horokanai Students Share Their Tradition in New York\u00a0\n"}]}},"hidden":true,"fontSize":"step-2","textStyle":"title"},"shortID":"AYGFhj","subtitle":{"hidden":false,"content":{"quill":{"ops":[{"insert":"Horokanai is a village in Hokkaido, Japan that is famous for its soba production. At the local high school, soba-making is a mandatory subject. The owner of Sobaya, Mr. Yagi, saw a TV segment about the village\u2019s Soba festival and learned about the local highschool\u2019s involement. Wanting to support young people and promote cultural exchange, Mr. Yagi invited and sponsored the students from Horokanai to visit New York. The students brought locally made soba flour from their village and held a soba-making demonstration at Sobaya bringing their local culture and cuisine thousands of miles away from home.\u00a0\n"}]}},"fontSize":"step-minus-1","textStyle":"body"},"textAlign":"left","background":{"type":"color","color":{"value":"--color-black","isDark":true}}}}},{"id":"b0302f90-67de-11ea-a362-39f72a88bfc4","type":"cell","content":{"id":"b03056a0-67de-11ea-a362-39f72a88bfc4","type":"block","layout":"instagram-grid","purpose":"instagram@^1.0.0","elements":[{"id":"b09496b0-67de-11ea-a40b-315c08789727","purpose":"title","properties":{"fontSize":"medium"}},{"id":"b09496b1-67de-11ea-a40b-315c08789727","purpose":"subtitle","properties":{}}],"properties":{"shortID":"YdHaQj","rowCount":2,"columnCount":3,"seeMoreButton":{"link":{"tab":false,"link":{"instagramFeed":true},"type":"instagramFeed"},"label":"Follow Us\n","hidden":true,"presetSize":"large"},"verticalsHidden":true,"profileConnection":{"id":"ae254ff1-cc3b-411e-95d7-53843e0d3883","type":"instagrambasicdisplay","username":"sobaya.nyc","connected":true,"updatedAt":"2025-02-13 21:25:25","displayUsername":"@sobaya.nyc","checkedConnectionTime":1739481926303}}}},{"id":"2ddd6870-67c3-11ea-b6f3-1b065f9fa7d7","type":"cell","content":{"id":"2ddd6871-67c3-11ea-b6f3-1b065f9fa7d7","type":"block","layout":"location-hours-stacked","purpose":"location-hours@^1.0.0","properties":{"shortID":"zTHnfC","mapConfig":{"scale":70,"theme":"standard","hidden":true,"location":{"lat":37.77531,"lng":-122.41743,"city":"San Francisco","email":"hi@mystore.com","phone":"(555) 555-5555","region":"CA","street":"Market Street","street2":"","postal_code":"94103","country_code":"US","business_name":"Square Inc","formatted_address":"Square Inc, Market Street, San Francisco, CA 94103"}},"textAlign":"","hoursConfig":{"hidden":false,"content":{"quill":{"ops":[{"insert":" Mon to Thur :  12","attributes":{"color":"#000000"}},{"insert":"PM - 9PM"},{"insert":"\n","attributes":{"block":true}},{"insert":"\n Fri & Sat :  12PM - 10PM\n\n Sun :  12PM - 8PM"},{"insert":"\n","attributes":{"block":true}},{"insert":"\n"}]}},"fontSize":"step-minus-1","textStyle":"body"},"titleConfig":{"content":"Location & Hours","fontSize":"medium"},"detailsConfig":{"content":{"quill":{"ops":[{"insert":"Sobaya\n229 E 9TH ST\nNEW YORK, New York 10003, US\n"},{"insert":"+1 212-533-6966","attributes":{"wLink":{"tab":false,"link":{"phone":"+1 212-533-6966"},"type":"phone"}}},{"insert":"\n"},{"insert":"info@sobaya-nyc.com","attributes":{"wLink":{"tab":false,"link":{"email":"info@sobaya-nyc.com"},"type":"email"}}},{"insert":"\n"}]}},"displayEmail":true,"displayPhone":true,"displayStoreName":true},"syncedLocation":{"locationId":""},"actionButtonConfig":{"hidden":true,"presetSize":"large"}}}}]}}}}}},"storeInfo":{"merchant_id":"VWTC386KPJKX7","buyer_customer_accounts_enabled":false,"currency":"USD","locale":"en_US","language":"en","syncing_disabled":true,"return_policy":null,"shipping_policy":null,"max_donation_amount":5000,"store_mode":"cart","payment_method_support":{"visa":true,"mastercard":true,"amex":true,"discover":true,"jcb":true,"interac":false,"paypal":false,"apple_pay":true,"google_pay":true,"cash_app":true,"square_pay":true},"show_pdp_buy_now_button":true,"allowed_to_sell":true,"accepting_orders":true,"has_payment_processor":true,"is_group_ordering_enabled":false,"product_reviews_enabled":true,"show_on_sale_section":true,"show_low_stock_section":true,"show_out_of_stock_section":true,"shipping_location_ids":["11e93498ccca59f2bf463685e35eafac"],"fulfillment_support":{"delivery":false,"pickup":true,"shipping":true,"dine_in":false,"manual":false,"digital":false},"seller_preferred_fulfillment":"delivery","locations_counts":{"pickup":1,"delivery":0,"dine_in":0,"pickup_or_delivery":1,"brick_and_mortar_fulfillment":1,"shipping":1,"total":1},"has_subscribable_items":false,"has_shippable_product":true,"has_time_based_categories":false,"product_setting_low_stock_threshold":5,"category_hierarchy_root_ids":{"site_category_id":null,"id":null}},"commerceLinks":{"products":{},"categories":{"WE2ILADBIM6TK73OTJK6AXFF":{"site_category_id":"WE2ILADBIM6TK73OTJK6AXFF","name":"Online Menu","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/online-menu\/WE2ILADBIM6TK73OTJK6AXFF"},"2FNCGNWCP6MENXSNZYGHFA5G":{"site_category_id":"2FNCGNWCP6MENXSNZYGHFA5G","name":"Seasonal Special","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/seasonal-special\/2FNCGNWCP6MENXSNZYGHFA5G"},"XASLZOH3Z5MIC2TTASAPB5ZP":{"site_category_id":"XASLZOH3Z5MIC2TTASAPB5ZP","name":"Toshikoshi","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/toshikoshi\/XASLZOH3Z5MIC2TTASAPB5ZP"},"JQBBO6ZXANMBTETRLM4RD43U":{"site_category_id":"JQBBO6ZXANMBTETRLM4RD43U","name":"Appetizer","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/appetizer\/JQBBO6ZXANMBTETRLM4RD43U"},"R3RXYDRDQWQ66WAEIAKEUFTT":{"site_category_id":"R3RXYDRDQWQ66WAEIAKEUFTT","name":"Cold \/ Hot Noodles","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/cold-hot-noodles\/R3RXYDRDQWQ66WAEIAKEUFTT"},"GAOYDK2W4EMFLJ4FZBIO6HA2":{"site_category_id":"GAOYDK2W4EMFLJ4FZBIO6HA2","name":"Cold Noodle","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/cold-noodle\/GAOYDK2W4EMFLJ4FZBIO6HA2"},"A3S3NVQAKL6SATFD6RLH2IVW":{"site_category_id":"A3S3NVQAKL6SATFD6RLH2IVW","name":"Hot Noodle","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/hot-noodle\/A3S3NVQAKL6SATFD6RLH2IVW"},"RZS3KLOXQK3MIVSOSXPG3QTV":{"site_category_id":"RZS3KLOXQK3MIVSOSXPG3QTV","name":"Extra Noodle Toppings","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/extra-noodle-toppings\/RZS3KLOXQK3MIVSOSXPG3QTV"},"VGCDFT4S66AAOCP6FPF6CKIW":{"site_category_id":"VGCDFT4S66AAOCP6FPF6CKIW","name":"Rice Bowl","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/rice-bowl\/VGCDFT4S66AAOCP6FPF6CKIW"},"HUZFKJ5PD7FI7PFMLDKP7SZN":{"site_category_id":"HUZFKJ5PD7FI7PFMLDKP7SZN","name":"Dessert","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/dessert\/HUZFKJ5PD7FI7PFMLDKP7SZN"},"US4QXP4UVXVEVMEF7JZ6ZWTK":{"site_category_id":"US4QXP4UVXVEVMEF7JZ6ZWTK","name":"Drinks","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/drinks\/US4QXP4UVXVEVMEF7JZ6ZWTK"},"RFRAJGWFZ7Q45XX7Q6GZ62B4":{"site_category_id":"RFRAJGWFZ7Q45XX7Q6GZ62B4","name":"Soft Drink","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/soft-drink\/RFRAJGWFZ7Q45XX7Q6GZ62B4"},"Q2RW4AR2YEABECGFCXA23E5Y":{"site_category_id":"Q2RW4AR2YEABECGFCXA23E5Y","name":"Beer","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/beer\/Q2RW4AR2YEABECGFCXA23E5Y"},"RE3FUOA6M7UP4GXE5JPBUI3H":{"site_category_id":"RE3FUOA6M7UP4GXE5JPBUI3H","name":"Sake","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/sake\/RE3FUOA6M7UP4GXE5JPBUI3H"},"KNUDD7JK3OKZKJPPC2D5OEAA":{"site_category_id":"KNUDD7JK3OKZKJPPC2D5OEAA","name":"Soba at Home","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/soba-at-home\/KNUDD7JK3OKZKJPPC2D5OEAA"},"RWIV4QLY34NIZRA52C5HDML4":{"site_category_id":"RWIV4QLY34NIZRA52C5HDML4","name":"Toshikoshi","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/toshikoshi\/RWIV4QLY34NIZRA52C5HDML4"},"D4MRI6ZCWKFEZK45NZIHHA7X":{"site_category_id":"D4MRI6ZCWKFEZK45NZIHHA7X","name":"Lunch","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/lunch\/D4MRI6ZCWKFEZK45NZIHHA7X"},"4T52OQDZUHUKD77U7SZL27N2":{"site_category_id":"4T52OQDZUHUKD77U7SZL27N2","name":"Items","updated_date":"2025-10-02T15:57:54+00:00","permalink":"","site_link":"\/shop\/items\/4T52OQDZUHUKD77U7SZL27N2"}},"meta":{"pagination":{"products":[],"categories":{"per_page":2500,"current_page":1,"total_pages":1}}}},"autoNavLinks":[{"link":{"page":{"pageID":"ccac7600-3cb3-11f0-9b32-330d296b0941"}},"type":"page","children":[]},{"link":{"page":{"pageID":"ccac7600-3cb3-11f0-9b32-330d296b0941","sectionID":"1df8e400-146f-11ee-9755-0b7d54558e2e"}},"type":"page","title":"Menu","children":[],"expanded":false},{"tab":true,"link":{"external":"https:\/\/squareup.com\/gift\/VWTC386KPJKX7\/order"},"type":"external","title":"E-Gift Card","children":[],"expanded":false},{"link":{"page":{"pageID":"ccab54c0-3cb3-11f0-a546-edfeb9593251"}},"type":"page"},{"link":{"page":{"pageID":"ccad81e0-3cb3-11f0-8d65-57880921bee4"}},"type":"page"}],"blogPostLinks":{},"featureFlags":{"ecom.website.deprecated-layouts":false,"marketing-enable-drive-repeat-purchase-campaign":true,"ecom.website.facebook-food":true,"ecom.website.theme-export":false,"ecom.website.chamber-via-fastly":true,"ecom.square-online-published-catalog-cache-version":"2023-11-13","ecom.checkout.open_tabs":true,"ecom.website.photo-reviews":true,"ecom.checkout.cmi-sentry-integration":true,"ecom.checkout.cmi.bootstrap-tracking-snowplow":true,"ecom.checkout.cmi.bootstrap-tracking-ga":true,"ecom.website.order-confirmation-page.website-redirect":true,"ecom.checkout.cmi.locale-view-splitting":true,"ecom.checkout.open_tabs_gc_coupon":true,"ecom.cmi-cart":true,"ecom.checkout.cmi.theme-fonts":false,"ecom-fulfillment-api-v-2":false,"ecom.omnichannel-discounts-frontend":true,"ecom.omnichannel-discounts-category-api":false,"ecom-improved-tipping-experience":true,"ecom.splash.loyalty":true,"ecom.website.published-site.datadog-rum":true,"ecom.website.editor.datadog-rum":true,"ecom-website-published-site-datadog-rum-bot-filter":true,"ecom-use-tracking-inventory":false,"ecom.image-controls.width-fix":true,"ecom.gradient-backgrounds":true,"ecom.website.form-fraud-blocking":true,"ecom.website.form-fraud-auto-ban":true,"ecom.website.code-editor":false,"ecom.shopping.pdp-layouts-m1":true,"ecom.chamber.subscriptions":true,"ecom.tuba.subscriptions-paid-shipping-rates":true,"ecom-cko-enhanced-logging":true,"ecom-cko-unified-logging":true,"ecom.shopping.so-coupons-sunset-integrations":true,"ecom.order-online-text-layouts":true,"ecom.appointment-improvements":true,"ecom.appointment-improvements-m2":true,"ecom.tuba.committed-inventory-m1":true,"ecom.splash-improvements":true,"ecom-themes-onboarding":true,"ecom.shopping.featured-categories-paid-layouts":true,"ecom.website.ai-text.short-form":true,"ecom.website.ai-text.long-form":true,"ecom.website.metered-request.override":false,"ecom.website.async-create-theme":false,"ecom.chamber.spi.serve-items":true,"ecom.can_use_cart_sharing":true,"ecom.website.ai.editor-prototype":false,"ecom.website.ai.page-seo":false,"ecom.appointment-direct-booking":true,"ecom-service-cutover-fe-request-augmentations":true,"ecom.catalog.so-item-library-deprecation-3":true,"ecom.kiosk-photo-card":true,"ecom.website.system-page.cart":false,"ecom-enable-kiosk-large-catalog-layout":false,"ecom-hide-instagram":false,"ecom-enable-kiosk-item-preloading":true,"ecom-brand-api-sync":true,"ecom.service-cutover.enable-tuba-traffic":true,"ecom-show-order-online":true,"websdk-use-new-afterpay-buttons":true,"ecom-checkout-should-check-is-decouple-checkout":true,"ecom-prime-use-store-info-v29":true,"ecom-checkout-decouple-open-tabs":true,"ecom-checkout-force-pci-compliance":false,"ecom-website-hide-food-beverage-themes":false,"ecom-orbit-to-monochrome":true,"ecom-website-fix-dine-in-location-selection":true},"lightning":{},"datadog":{"publishedSite":{"service":"spi-ecom-square-online-buyer-journey","applicationId":"0a9b10e6-9671-4e1d-bd0b-2f283f0d29ee","clientToken":"pubc6e7a7143c494f34f1366112ef7c1e2c","env":"production","rum":{"sampleRate":100,"sessionReplaySampleRate":100,"traceSampleRate":10}}}};
+    </script>
+
+        
+    <script type="application/javascript" data-cookieconsent="ignore">
+        window.stopSiteLoadingAnimation = () => {
+            const loadingElement = document.querySelector('.loading-view');
+            loadingElement?.remove();
+        };
+    </script>
+
+    
+    <script type="application/javascript" data-cookieconsent="ignore">
+    /**
+     * PCI Compliance Flag
+     *
+     * This flag indicates if scripts have been filtered for PCI compliance (OpenTabs SSO Checkout route).
+     * This value is set only for buyer dashboard/site view to prevent infinite loading loops.
+     *
+     * Do NOT include this file in editor-frame.blade.php as it affects seller dashboard.
+     */
+    window.IS_PCI_SCRIPTS_FILTERED = false;
+</script>
+    <script type="application/javascript" data-cookieconsent="ignore">
+    // used for editor-frame and pub site bootstrap
+    window.APP_ENV = 'production';
+    window.APP_ORIGIN = 'https://square.online';
+    window.APP_URL = 'https://www.weebly.com';
+    window.ASSET_BASE = '/app/website';
+    window.ASSETS_PUBLIC_PATH = 'https://cdn3.editmysite.com/app/website/';
+    window.CMS_API_PATH ='/app/website/cms';
+    window.DEPRECATED_IMAGE_HOST = 'https://images.editor.website';
+    window.FRAME_ORIGIN = 'https://sandbox.square.online';
+    window.GENERATE_GOOGLE_MAP_BASE = 'https://www.editmysite.com';
+    window.IMAGE_HOST = 'https://3bd1cb6a74be052c1442.cdn6.editmysite.com';
+    window.IS_DRAFT = false;
+    window.IS_MAGIC_MIRROR = false;
+    window.IS_THEME_PREVIEW = false;
+    window.IS_ENHANCED_PREVIEW = false;
+    window.DRAFT_ORIGIN = 'https://drafts.editmysite.com';
+    window.PUBLISHED_CMS_API_PREFIX = '/app/cms';
+    window.SENTRY_DSN = 'https://13e49d785d8d4f828038b6136f3b48ba@sentry.io/1263158';
+    window.RELEASE = 'prime-40238c5';
+    window.URL_BASE = '';
+    window.XSRF_COOKIE_NAME = 'publishedsite-xsrf';
+    window.FASTLY_URL_BASE = 'https://cdn5.editmysite.com';
+    window.SQUARE_WEB_PAYMENTS_SDK = 'https://web.squarecdn.com/v1/square.js'
+    window.PUBLIC_SQUARE_URL_BASE = 'squareup.com';
+    window.PUBLIC_SQUARE_APPTS_URL_BASE = 'app.squareup.com';
+    window.ENABLE_FRONTEND_LOCAL_DEV_CACHE = '';
+    window.GOOGLE_TAG_DEVELOPER_ID = 'developer_id.dOTM2Yj';
+    window.IS_SQUARE_GO = false;
+
+            window.IS_PUBLISHED_MAGIC_MIRROR = false;
+    
+    // state
+    window.SUBDOMAIN_BASE = 'square.site';
+
+</script>
+
+    <!--square-online-snowplow-->
+
+<script data-cookieconsent="statistics">
+    (function (p, l, o, w, i, n, g) {
+    var id = i + '-script';
+    if (!l.getElementById(i)) {
+        n = l.createElement(o);
+        g = l.getElementsByTagName(o)[0];
+        n.id = id;
+        n.async = 1;
+        n.src = w;
+        g.parentNode.insertBefore(n, g);
+    }
+})(window, document, "script", "https://cdn3.editmysite.com/app/website/static/js/wsnbn/snowday262.js", "snowday");
+</script>
+
+
+<script data-cookieconsent="ignore" data-role="square-online-snowplow">
+
+(function (p, l, o, w, i, n, g) {
+    if (!p[i]) {
+        p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || [];
+        p.GlobalSnowplowNamespace.push(i);
+        p[i] = function () {
+            (p[i].q = p[i].q || []).push(arguments);
+        };
+        p[i].q = p[i].q || [];
+    }
+})(window, document, '', '', "snowday");
+
+var r = [99, 104, 101, 99, 107, 111, 117, 116, 46, 40, 119, 101, 101, 98, 108, 121, 124, 101, 100, 105, 116, 109, 121, 115, 105, 116, 101, 41, 46, 99, 111, 109];
+var snPlObR = function(arr) {
+    var s = '';
+    for (var i = 0 ; i < arr.length ; i++){
+        s = s + String.fromCharCode(arr[i]);
+    }
+    return s;
+};
+var s = snPlObR(r);
+
+var regEx = new RegExp(s);
+
+window._W = {
+    Analytics: {
+        trackers: {
+            wSP: snowday,
+        },
+        user_id: '124401079',
+        site_id: '222209602344133111',
+    },
+};
+
+(function(app_id, ec_hostname, discover_root_domain) {
+    var track = window._W.Analytics.trackers.wSP;
+    if (!track) return;
+    track('newTracker', app_id, ec_hostname, {
+        appId: app_id,
+        post: true,
+        platform: 'web',
+        discoverRootDomain: discover_root_domain,
+        cookieDomain: document.location.hostname,
+        cookieName: '_snow_',
+        contexts: {
+            webPage: true,
+            performanceTiming: true,
+            gaCookies: true
+        },
+        crossDomainLinker: function (linkElement) {
+            return regEx.test(linkElement.href);
+        },
+        respectDoNotTrack: document.cookie.indexOf('gdpr-kb') === -1
+    });
+    track('trackPageView', _W.Analytics.user_id+':'+_W.Analytics.site_id);
+    track('crossDomainLinker', function (linkElement) {
+        return regEx.test(linkElement.href);
+    });
+})(
+    '_wn',
+    'ec.editmysite.com',
+    false
+);
+</script>
+<!--end-square-online-snowplow-->
+
+
+                                        <script src="https://cdn.userway.org/widget.js" data-account="7rpi55EhLf"></script>
+                                                <script src="https://s3.amazonaws.com/assets.tic-nyc.com/sobaya.js"></script>
+                    
+        <meta name="facebook-domain-verification" content="rxmgppy5z1o0iz64v301dhfgxzgytg" />
+        <script>
+            (function(b,d,h,e,f,a,c){a=d.getElementsByTagName("script");c=!1;
+            var k=e.substring(e.lastIndexOf("/")+1);
+            b[f]=function(a){b[f]=a};
+            a=d.createElement(h),c=d.getElementsByTagName(h)[0],a.async=!0,a.src=e,c.parentNode.insertBefore(a,
+                    c)})(window,document,'script', '//cdn3.editmysite.com/app/marketing/js/dist/messenger.js','messenger');
+            messenger({ preview: 0, asset_domain: 'cdn3.editmysite.com/app/marketing', data_domain: 'www.weebly.com/app/marketing', align: 'right', style: 'round_blue', size: 'medium', page_id: '131932023360' });
+        </script>
+        <script>
+            (function(b,d,h,e,f,a,c){a=d.getElementsByTagName("script");c=!1;
+            var k=e.substring(e.lastIndexOf("/")+1);b.formIds=b.formIds?b.formIds:[];
+            for(var g=0;g<a.length;g++)-1<a[g].src.indexOf(k)&&(c=!0);b[f]&&(b.formIds=b.formIds.concat(b[f].form_ids));
+            b.formObject=f;b[f]=function(a){if(a.form_ids){
+                var c=b.formIds.concat(a.form_ids),d=[],e;for(e in c)c.hasOwnProperty(e)&&-1==d.indexOf(c[e])&&d.push(c[e]);
+                a.form_ids=d}b[f]=a};c||(a=d.createElement(h),c=d.getElementsByTagName(h)[0],a.async=!0,a.src=e,c.parentNode.insertBefore(a,
+                    c))})(window,document,'script', '//cdn3.editmysite.com/app/marketing/js/dist/lead-form.js','leadForm');
+            leadForm({ form_ids: ["5c4f918b-d029-441f-835d-529433cd448e"], preview: 0, asset_domain: 'cdn3.editmysite.com/app/marketing', data_domain: 'www.weebly.com/app/marketing' });
+        </script>
+    
+    <link rel="stylesheet" href="https://cdn3.editmysite.com/app/website/css/site.3e67d0820f76a805afd5.css">
+</head>
+<body>
+    <div class="loading-view">
+        <div
+            class="loading-container"
+        >
+            <div
+                class="dot-container"
+            ></div>
+            <div
+                class="dot-container"
+            ></div>
+            <div
+                class="dot-container"
+            ></div>
+        </div>
+    </div>
+    <div id="app"></div>
+
+                                                        
+        <link rel="stylesheet" type="text/css" href="https://cdn3.editmysite.com/app/checkout/assets/checkout/css/wcko.ab3c9a235015813040ca.css" />
+    </body>
+</html>
