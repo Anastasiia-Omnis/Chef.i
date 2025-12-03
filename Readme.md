@@ -1,4 +1,4 @@
-The restaurants.json file contain all the data of 350 restaurants as per the updated format with the following fields 
+The restaurants.json file contain all the data of restaurants as per the updated format with the following fields 
   {
     "uuid": "74c8150c-05f4-4094-b913-0bd157850472",
     "name": "Gabriel's Gate",
