@@ -19,3 +19,9 @@ The restaurants_with_reviews_ratings.json file contains the restaurants with the
 The restaurants_reviews.json file contain the ratings of the restaurants and the uuid is also added 
 The restaurants_ratings.json file contain the ratings of the restaurants and the uuid is also added 
 the html menus are available in menus_html_file and the pdfs are available in menus_pdf_files
+
+
+=======================================================================PHASE 2 Details ============================================================================
+
+The phase2_restaurants_details contains details of around 6000 restaurants and all the details are scarapped from different resources ( mostly google ) , it has 1500+ emails and these are accurat
+The phase2_restaurants_with_guess_email.json contain some guesses of email that could be the email of restaurants on the base of some info as per their website as their emails are not available publically and we're not allowed to scrap it 
