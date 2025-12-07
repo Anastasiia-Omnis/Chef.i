@@ -1,0 +1,1452 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.manospizzeria.nyc/',
+        AccountUUID: 'cb206a7580944746868ea35475b82d6e',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: 'b9e2d2c5',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Fri Oct 31 13:52:22 UTC 2025',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'home',
+        InitialPageUuid: '365f18f2aa44463592de12967ea3e71b',
+        InitialPageId: '1190578830',
+        InitialEncodedPageAlias: 'aG9tZQ==',
+        InitialHeaderUuid: '2f1507a5faeb4c9eb389e839a271d6f6',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: true,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: -1,
+            NavbarLiveHomePage: 'https://www.manospizzeria.nyc/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: true
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 30;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.manospizzeria.nyc/">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon"
+      href="https://irp.cdn-website.com/b9e2d2c5/dms3rep/multi/Manos-Faviconmobile.png"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/b9e2d2c5/site_favicon_16_1760553669832.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    :root {
+  --color_1: rgba(0, 0, 0, 1);
+  --color_2: rgba(172, 163, 161, 1);
+  --color_3: rgba(255, 255, 255, 1);
+  --color_4: rgba(255, 255, 255, 1);
+  --color_5: rgba(226, 38, 53, 1);
+  --color_6: rgba(25, 142, 69, 1);
+  --max-content-width_1: 1200px;
+}
+</style>
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+<style id="criticalCss">
+    @charset "UTF-8";[data-layout-grid],[data-widget-type]:has(>.dmWidget.flexButton){-ms-grid-columns:minmax(0,1fr);grid-template-columns:minmax(0,1fr)}@font-face{font-family:Muli;font-style:normal;font-weight:200;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/muli/v34/7Auwp_0qiz-afTLGLQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Muli;font-style:normal;font-weight:300;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/muli/v34/7Auwp_0qiz-afTLGLQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Times New Roman";font-style:normal;font-weight:400;src:local("Times New Roman"),local("TimesNewRomanPSMT"),url(https://dd-cdn.multiscreensite.com/fonts/additionalfonts/f889a07745b51249.woff) format("woff");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215;font-display:swap}@font-face{font-family:FontAwesome;font-display:block;src:url(https://static.cdn-website.com/fonts/fontawesome-webfont.eot?v=6);src:url(https://static.cdn-website.com/fonts/fontawesome-webfont.eot?#iefix&v=6) format("embedded-opentype"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.woff?v=6) format("woff"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.ttf?v=6) format("truetype"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.svg#fontawesomeregular?v=6) format("svg");font-weight:400;font-style:normal}@font-face{font-family:Prata;font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/prata/v22/6xKhdSpbNNCT-sWPCm4.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Muli;font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/muli/v34/7Auwp_0qiz-afTLGLQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Muli;font-style:normal;font-weight:600;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/muli/v34/7Auwp_0qiz-afTLGLQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Muli;font-style:normal;font-weight:700;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/muli/v34/7Auwp_0qiz-afTLGLQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Muli;font-style:normal;font-weight:800;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/muli/v34/7Auwp_0qiz-afTLGLQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Muli;font-style:normal;font-weight:900;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/muli/v34/7Auwp_0qiz-afTLGLQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}:root{--color_1:rgba(0, 0, 0, 1);--color_2:rgba(172, 163, 161, 1);--color_3:rgba(255, 255, 255, 1);--color_4:rgba(255, 255, 255, 1);--color_5:rgba(226, 38, 53, 1);--color_6:rgba(25, 142, 69, 1);--max-content-width_1:1200px}[data-layout-grid]{display:-ms-grid;display:grid;justify-content:start;align-items:start}[data-layout-grid]>.flex-element.group{display:flex;flex-direction:row;justify-content:flex-start;align-items:center;justify-self:center;align-self:start;order:0;max-width:1200px}[data-layout-grid]>.flex-element.group>.flex-element.group{align-items:flex-start;align-self:stretch}.flex-element.group,[data-layout-grid],[data-layout-grid]>.flex-element.group,[data-layout-grid]>.flex-element.group>.flex-element.group{background-size:cover;background-repeat:no-repeat;background-position:50% 50%;position:relative}.flex-element.group,[data-layout-grid]>.flex-element.group>.flex-element.group{max-width:100%;display:flex;flex-direction:column;justify-content:center}.flex-element.widget-wrapper{position:relative;min-width:10px;min-height:10px}#dm [data-flex-id] .widget-wrapper>[data-element-type]{width:100%;height:100%;margin:0;padding:0}[data-flex-id] .widget-wrapper [data-element-type=image] img,[data-flex-id] .widget-wrapper [data-element-type=image] img[width][height]{object-fit:cover;width:100%;height:100%}[data-flex-id] .flex-element.grid>.flex-element{-ms-grid-column:1;grid-column-start:1;-ms-grid-column-span:1;grid-column-end:span 1;-ms-grid-row:1;grid-row-start:1;-ms-grid-row-span:1;grid-row-end:span 1}[data-widget-type]:has(>.dmWidget.flexButton){display:-ms-grid;display:grid;-ms-grid-rows:minmax(0,1fr);grid-template-rows:minmax(0,1fr)}#flex-header [data-widget-type=image]{text-align:center}#flex-header[data-sticky]{position:-webkit-sticky!important;position:sticky!important;top:0!important;z-index:13!important}#site_content,.dmInner,[data-flex-id]{position:relative}.dmInner{background:#fff;min-width:auto!important}a,button{font-family:inherit}#dmRoot{text-decoration-skip-ink:none}[data-layout-grid]{-ms-grid-rows:minmax(0,max-content)!important;grid-template-rows:minmax(0,-webkit-max-content)!important;grid-template-rows:minmax(0,max-content)!important}.flex-widgets-container{display:none}body.fix-mobile-scrolling{overflow:initial}[data-parallax=true]{background-attachment:unset;will-change:background-position}@media (max-width:767px){[data-hidden-on-mobile]{display:none!important}}*,:after,:before{box-sizing:border-box}@media (min-width:768px) and (max-width:1024px){[data-hidden-on-tablet]{display:none!important}}.dmInner ul:not(.defaultList){padding:1px}a,img,li,ul{vertical-align:top}.dmOuter{word-wrap:break-word}#dmFlexHeaderContainer{display:inline}#flex-sticky [data-layout-grid]>.flex-element.group>.flex-element.group>.flex-element.inner-grid>.flex-element{-ms-grid-row:1;-ms-grid-row-span:1;-ms-grid-column:1;-ms-grid-column-span:1;grid-area:1/1/2/2;max-width:fill-available;max-width:-webkit-fill-available}@media (min-width:1025px){[data-hidden-on-desktop]{display:none!important}[data-layout-grid]>.flex-element.group{max-width:var(--max-content-full_1,var(--max-content-width_1,1200px))}}@media (max-width:1024px){[data-layout-grid]>.flex-element.group{max-width:1200px}}body{container-type:inline-size;container-name:body;-webkit-overflow-scrolling:touch}:not(.runtime-module-container) .layout-drawer,:not(.runtime-module-container) .layout-drawer-overlay{visibility:hidden}:not(.runtime-module-container) .layout-drawer{position:fixed;transform:translate(-100%,-100%)}:not(.runtime-module-container) .layout-drawer[data-origin=side-reverse]{transform:translate(100%,0)}:not(.runtime-module-container) .layout-drawer-overlay{opacity:0}.runtime-module-container{width:100%}.runtime-module-container .layout-drawer,.runtime-module-container .layout-drawer-overlay{visibility:visible;height:100%;position:fixed;top:0;left:0}.runtime-module-container .layout-drawer{background-color:#fff;width:75vw;transform:translate(-100%,0);overflow:auto;-webkit-overflow-scrolling:auto;z-index:13;display:flex;flex-direction:column}.runtime-module-container .layout-drawer[data-origin=side-reverse]{transform:translate(100%,0);left:auto;right:0}.runtime-module-container .layout-drawer-overlay{width:100vw;background-color:rgba(0,0,0,.4);opacity:0;z-index:6}@media (min-width:1025px){[data-flex-site] .layout-drawer:not([data-origin=top]){width:30vw}}@media (min-width:768px) and (max-width:1024px){[data-flex-site] .layout-drawer:not([data-origin=top]){width:50vw}}@media (max-width:767px){[data-flex-site] .layout-drawer:not([data-origin=top]){width:80vw}.dmRoot #dm .main-navigation.unifiednav .nav-item-text{position:relative}}[data-flex-site] .layout-drawer [data-flex-id]{flex:1 0 auto}.main-navigation.unifiednav{display:flex;justify-content:space-around;align-items:stretch;overflow:visible}.main-navigation.unifiednav ul{list-style:none;padding:0;margin:0;font-size:1rem}.main-navigation.unifiednav .unifiednav__container{display:flex;list-style:none;flex-grow:1}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap{display:flex;justify-content:flex-start;position:relative;font-weight:400}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::before{content:"";-ms-grid-row-align:center;align-self:center;font-weight:700}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item{display:flex;justify-content:flex-start;align-items:center;flex-direction:row;color:inherit;text-decoration:none;position:relative;padding:12px 15px;margin:0;font-weight:inherit;letter-spacing:.03em}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:0 15px}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item .nav-item-text{white-space:nowrap}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{content:"";width:100%;height:0;border:0 solid transparent;border-top-color:currentColor;display:block;opacity:0}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{opacity:1}.main-navigation.unifiednav.effect-bottom2{padding:calc(12px - .2em - 2px) 15px}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{transform:scaleX(0);border-top-width:2px}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after{margin-top:.2em}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{margin-bottom:.2em;border-top-color:transparent}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{transform:scaleX(1)}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{transform-origin:left}.main-navigation.unifiednav .unifiednav__container .unifiednav__item:not(.unifiednav__item_has-sub-nav) .icon{display:none}.main-navigation.unifiednav:not(.unifiednav_vertical)>.unifiednav__container{justify-content:inherit}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL][data-show-vertical-sub-items=HIDE]>.unifiednav__container:not([data-depth])>.unifiednav__item-wrap .unifiednav__item.dmNavItemSelected>.nav-item-text .icon::before{transform:rotate(180deg)}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container{flex-wrap:wrap;justify-content:inherit}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container .nav-item-text::before{text-align:left}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before,#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])[data-divider]:not([data-direction=RIGHT]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{content:""}@media (max-width:767px){#dm .dmInner .dmWidget{width:100%}}#dm .dmInner .dmWidget:not(.displayNone){display:inline-block}#dm .dmInner .dmWidget.flexButton:not(.displayNone){display:flex}#dm .dmInner .dmWidget.flexButton{display:flex;align-items:center;justify-content:center;padding:10px 7px}#dm .dmInner .dmWidget.flexButton .text{padding:0!important;flex-grow:1;max-width:-webkit-max-content;max-width:max-content}#dm .dmInner .dmWidget.flexButton:after{display:none}#dm .dmInner .dmWidget{text-decoration:none;margin:10px 0;clear:both;position:relative;text-align:center;line-height:22px;box-shadow:none;background-image:none;padding:0;height:auto;border-style:solid;white-space:nowrap}#dm .dmInner .dmWidget:after{content:"";display:inline-block;height:100%;vertical-align:middle;width:0;margin-right:-.25em}#dm .dmInner .dmWidget .iconBg{position:absolute;left:0;width:50px;top:50%;margin-top:-13px}#dm .dmWidget .text{display:inline-block;vertical-align:middle;font-size:1.125em;line-height:normal;white-space:normal;padding:10px 7px;max-width:98%}#dm div.dmContent [class*=" icon-"],[class*=" icon-"]{font-family:FontAwesome!important;font-weight:400;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased}[class*=" icon-"]:before{text-decoration:none;display:inline-block;speak:none}a [class*=" icon-"]{display:inline}[class*=" icon-"]{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}.icon-star:before{content:"\f005"}.icon-angle-down:before{content:"\f107"}.graphicWidget{width:200px;height:200px;margin:10px auto;text-align:center}.graphicWidget svg.svg{width:100%;height:100%;color:#000;fill:#000}.imageWidget{position:relative}.imageWidget img[width][height]{height:auto}[data-flex-site] #flex-header .imageWidget:after{content:none}[data-flex-site] #flex-header .imageWidget:before{font-size:80px;transform:none}.dmNewParagraph[data-version]{line-height:initial}.dmNewParagraph[data-version] .text-align-left{text-align:left!important}.dmNewParagraph[data-version] h1,.dmNewParagraph[data-version] h2,.dmNewParagraph[data-version] p{margin-top:0;margin-bottom:0}@media (max-width:767px){.dmRoot .dmNewParagraph[data-version] .m-text-align-left{text-align:left!important}}.hamburgerButton{display:block;background-color:transparent;border:0;padding:0;margin:0}.hamburgerButton,.hamburgerButton svg{width:100%;height:100%}img{max-width:100%;-ms-interpolation-mode:bicubic;display:inline-block}img[width][height]{height:auto}@media (min-width:1025px){#dm DIV.dmOuter DIV.dmInner{background-image:none}#dm div.dmInner{font-size:16px}#dm div.dmNewParagraph p{font-size:18px}#dm div.dmContent h1{font-size:50px}#dm div.dmContent h2{font-size:32px}#dmRoot #dm div.dmContent h2{font-size:32px;--font-scale:false}#dmRoot #dm div.dmContent h1{font-size:60px;--font-scale:false}#dmRoot #dm div.dmNewParagraph p{font-size:16px}:root{--btn-text-font-size:18px}}@media (min-width:768px) and (max-width:1024px){.dmNewParagraph[data-version] .t-text-align-left{text-align:left!important}#dm div.dmInner,#dm div.dmNewParagraph p{font-size:16px}#dm div.dmContent h1{font-size:50px}#dm div.dmContent h2{font-size:30px}#dmRoot #dm div.dmContent h2{font-size:24px;--font-scale:false}#dmRoot #dm div.dmContent h1{font-size:48px;--font-scale:false}:root{--btn-text-font-size:16px}}@media all{#dm div.dmContent h1{color:#666}#dm div.dmInner{font-family:Muli;color:var(--color_1)}#dm div.dmContent h1,#dm div.dmContent h2,#dm div.dmNewParagraph p{color:var(--color_1);direction:ltr;font-family:Poppins,"Poppins Fallback"}#dm div.dmContent h1{font-weight:700;font-style:normal;text-decoration:none}#dm div.dmContent .dmNewParagraph[data-version] h1{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h1 *{text-decoration:none}#dm div.dmNewParagraph p{font-weight:400;font-style:normal;text-decoration:none}#dm div.dmContent h2{font-weight:700;font-style:normal;text-decoration:none}#dmRoot #dm div.dmContent h1,#dmRoot #dm div.dmContent h2{font-family:Prata,"Prata Fallback";color:#2d2e32;direction:ltr;font-style:normal}#dm div.dmContent .dmNewParagraph[data-version] h2{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h2 *{text-decoration:none}#dmRoot #dm div.dmContent h1{font-weight:400;text-decoration:#2d2e32}#dmRoot #dm div.dmContent .dmNewParagraph[data-version] h1{text-decoration:inherit}#dmRoot #dm div.dmContent .dmNewParagraph[data-version] h1 *{text-decoration:#2d2e32}#dmRoot #dm div.dmContent h2{font-weight:700;text-decoration:#2d2e32;text-transform:none}#dmRoot #dm div.dmContent .dmNewParagraph[data-version] h2{text-decoration:inherit}#dmRoot #dm div.dmContent .dmNewParagraph[data-version] h2 *{text-decoration:#2d2e32}#dmRoot #dm div.dmNewParagraph p{color:#2d2e32;direction:ltr;font-family:Muli;font-weight:400;font-style:normal;text-decoration:#2d2e32}:root{--btn-border-l-color:rgb(255, 255, 255);--btn-border-r-color:rgb(255, 255, 255);--btn-border-b-width:1px;--btn-text-direction:ltr;--btn-border-radius:50px;--btn-border-t-width:1px;--btn-border-tl-radius:var(--btn-border-radius);--btn-border-br-radius:var(--btn-border-radius);--btn-border-bl-radius:var(--btn-border-radius);--btn-bg-color:rgba(226, 38, 53, 1);--btn-border-r-width:1px;--btn-border-tr-radius:var(--btn-border-radius);--btn-border-b-color:rgb(255, 255, 255);--btn-border-l-width:1px;--border-style:solid;--btn-border-t-color:rgb(255, 255, 255);--btn-text-align:center;--btn-text-color:var(--color_4);--btn-text-decoration:none;--btn-text-font-weight:bold;--btn-icon-color:rgba(255, 255, 255, 1);--btn-icon-fill:rgb(0, 0, 238);--btn-icon-wrpr-display:none;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:var(--color_6);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:rgba(255, 255, 255, 1);--btn-hover-text-color:var(--color_4);--btn-hover-text-font-weight:var(--btn-text-font-weight);--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style);--section-padding-top:4%;--section-padding-left:0%;--section-padding-right:0%;--section-padding-bottom:4%;--column-padding-top:16px;--column-padding-right:16px;--column-padding-left:16px;--column-padding-bottom:16px;--inner-column-padding-left:16px;--inner-column-padding-right:16px;--inner-column-padding-top:16px;--inner-column-padding-bottom:16px}.button_2{--btn-border-l-color:rgb(226, 38, 53);--btn-border-r-color:rgb(226, 38, 53);--btn-border-b-width:2px;--btn-text-direction:ltr;--btn-border-radius:50px;--btn-border-t-width:2px;--btn-border-tl-radius:var(--btn-border-radius);--btn-border-br-radius:var(--btn-border-radius);--btn-border-bl-radius:var(--btn-border-radius);--btn-bg-color:rgba(0, 0, 0, 0);--btn-border-r-width:2px;--btn-border-tr-radius:var(--btn-border-radius);--btn-border-b-color:rgb(226, 38, 53);--btn-border-l-width:2px;--border-style:solid;--btn-border-t-color:rgb(226, 38, 53);--btn-text-align:center;--btn-text-color:var(--color_5);--btn-text-decoration:none;--btn-text-font-weight:bold;--btn-icon-color:rgb(0, 0, 238);--btn-icon-fill:rgb(0, 0, 238);--btn-icon-wrpr-display:none;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:var(--color_1);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:var(--color_1);--btn-hover-text-color:var(--color_3);--btn-hover-text-font-weight:var(--btn-text-font-weight);--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style)}}@media (min-width:0px) and (max-width:767px){#dm div.dmInner,#dm div.dmNewParagraph p{font-size:16px}#dm div.dmContent h1{font-size:40px}#dm div.dmContent h2{font-size:30px}#dmRoot #dm div.dmContent h2{font-size:32px;--font-scale:false}#dmRoot #dm div.dmContent h1{font-size:48px;--font-scale:false}.button_2,:root{--btn-text-font-size:18px}:root{--section-padding-left:4%;--section-padding-right:4%}}#dm .dmWidget.button_2:not([data-buttonstyle]),#dm .dmWidget:not([data-buttonstyle]){border-radius:50px}#dm .dmWidget.button_2:not([data-buttonstyle]) .text,#dm .dmWidget.button_2:not([data-buttonstyle]).flexButton,#dm .dmWidget:not([data-buttonstyle]) .text,#dm .dmWidget:not([data-buttonstyle]).flexButton{padding:10px 0}#dm .dmWidget.button_2:not([data-buttonstyle]) .iconBg,#dm .dmWidget:not([data-buttonstyle]) .iconBg{display:none}#dm div.dmInner #site_content .dmWidget{background-color:var(--btn-bg-color);border-color:var(--btn-border-color);border-bottom-color:var(--btn-border-b-color);border-left-color:var(--btn-border-l-color);border-right-color:var(--btn-border-r-color);border-top-color:var(--btn-border-t-color);border-radius:var(--btn-border-radius);border-bottom-left-radius:var(--btn-border-bl-radius);border-bottom-right-radius:var(--btn-border-br-radius);border-top-left-radius:var(--btn-border-tl-radius);border-top-right-radius:var(--btn-border-tr-radius);border-width:var(--btn-border-width);border-bottom-width:var(--btn-border-b-width);border-left-width:var(--btn-border-l-width);border-right-width:var(--btn-border-r-width);border-top-width:var(--btn-border-t-width);direction:var(--btn-text-direction);text-align:var(--btn-text-align)}#dm div.dmInner #site_content .dmWidget span.text{color:var(--btn-text-color);font-size:var(--btn-text-font-size);font-weight:var(--btn-text-font-weight);text-decoration:var(--btn-text-decoration)}#dm div.dmInner #site_content .dmWidget span.icon{color:var(--btn-icon-color);fill:var(--btn-icon-fill)}#dm div.dmInner #site_content .dmWidget:not([data-buttonstyle]) .iconBg{display:var(--btn-icon-wrpr-display)}.dmBody [data-layout-grid]>.flex-element.group{padding-bottom:var(--section-padding-bottom);padding-left:var(--section-padding-left);padding-right:var(--section-padding-right);padding-top:var(--section-padding-top)}.dmBody [data-layout-grid]>.flex-element.group>.flex-element.group{padding-bottom:var(--column-padding-bottom);padding-left:var(--column-padding-left);padding-right:var(--column-padding-right);padding-top:var(--column-padding-top)}@media all{#dm .dmInner div#hamburger-drawer.layout-drawer{background-color:rgba(255,255,255,1)!important}#dm .dmInner .u_1198691314.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{margin:0!important;padding:0 20px!important}#dm .dmInner .u_1117254353{width:100%!important}#dm .dmInner .u_1198691314{justify-content:center!important}#dm .dmInner div.u_1440420817 .svg{fill:var(--color_5)!important}#dm .dmInner nav.u_1198691314.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after{border-style:solid!important;border-width:1.82px 0 0!important;border-color:var(--color_5) transparent transparent!important}#dm .dmInner nav.u_1198691314.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected{color:var(--color_5)!important}#dm .dmInner nav.u_1198691314.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{color:rgba(0,0,0,1)!important;text-transform:uppercase!important}}@media (min-width:768px) and (max-width:1024px){.button_2,:root{--btn-text-font-size:16px}:root{--section-padding-left:2%;--section-padding-right:2%}div[dmtemplateid=FlexHeader] .layout-drawer-overlay{background-color:rgba(0,0,0,.6)!important}}@media (min-width:1025px){#widget_s4l{justify-self:auto;align-self:auto;width:95.8158273381295%;grid-area:auto/auto/auto/auto}}@media all{#flex-header{background-color:var(--color_3);background-image:initial;padding:.6285355122564426% 0;margin:0}#\36 3a049ca0d35b55b4ef2a5c3{width:544px;height:auto;max-width:100%;align-self:auto;order:0;grid-area:auto/auto/auto/auto}#c0504b3a,#widget_5js{height:auto;max-width:100%}#c0504b3a{width:100%;order:3;align-self:center;margin:0;grid-area:auto/auto/auto/auto}#widget_5js{width:280px;order:1;margin-left:0;margin-right:0}#\39 d047ce9,#a1f8711f{column-gap:4%;row-gap:24px;width:100%;margin:0}#\39 d047ce9{min-height:8px;min-width:4%;align-items:flex-end;justify-content:flex-end;padding:16px}#a1f8711f{min-height:0;padding:4% 4% 2%}#\31 2a003a5 a{background-color:rgba(0,0,0,0)}#\31 2a003a5 svg{fill:var(--color_6)}#\31 2a003a5{width:30px;height:30px}}@media (max-width:767px){#\39 d047ce9{width:100%;min-height:62px;height:auto;padding-bottom:6px}#a1f8711f{min-height:unset;flex-direction:column;padding-left:4%;padding-right:4%;padding-bottom:4%}}@media all{#\32 3d5f850,#\32 61979b7,#\35 286ad74{height:auto;order:0;grid-area:auto/auto/auto/auto;max-width:100%}#\39 dc5a074{min-height:85px;column-gap:0;row-gap:0;max-width:none;width:100%;flex-wrap:nowrap;padding:6px 2%;margin:0}#\35 286ad74{width:249px;min-height:55px}#\38 8e69a6f{flex-direction:row;justify-content:flex-start;align-items:center;width:25%;min-width:4%;min-height:8px;column-gap:4%;row-gap:24px;padding:6px 16px;margin:0}#\32 61979b7{width:212px;justify-self:auto;align-self:auto}#\30 4886df1,#\37 80d21df{flex-direction:row;padding:6px 16px;min-height:8px;column-gap:4%;row-gap:24px;min-width:4%;margin:0}#\30 4886df1{justify-content:flex-end;align-items:center;width:25%}#\32 3d5f850{width:100%;justify-self:auto}#\37 80d21df{align-items:center;width:50.00000000000001%}#\37 64397de{min-height:8px;column-gap:4%;row-gap:24px;flex-direction:row;width:25%;justify-content:flex-end;align-items:center;min-width:4%;padding:16px;margin:0}#\30 0ca91b4 svg{fill:var(--color_6)}#\30 0ca91b4{width:30px;height:30px;max-width:100%}#\37 ff771e1{width:60px;height:60px;max-width:100%}#dm .dmInner div.u_1419899867 img{object-fit:cover!important}#dm .dmInner a.u_1125617941{background-color:var(--color_6)!important;background-image:none!important}}@media (min-width:768px) and (max-width:1024px){#a1f8711f{padding-left:4%;padding-right:4%;padding-bottom:4%}#\39 d047ce9{padding-bottom:6px}#\39 dc5a074{padding-left:2%;padding-right:2%;flex-direction:row;flex-wrap:nowrap;min-height:0}#\35 286ad74{width:235px}#\38 8e69a6f{width:39.91785714285713%;margin-left:-.0011659701492537314%;justify-content:center;order:1;min-height:8px}#\30 4886df1{width:30%;order:0;justify-content:flex-start;min-height:8px}#\32 61979b7{width:120px;height:auto}#\37 80d21df{width:20.7%;order:2;justify-content:flex-end;padding-right:50px}#\37 64397de{order:3;width:30%;min-height:8px}#\30 0ca91b4{justify-self:auto;align-self:auto;order:0;margin:0;grid-area:auto/auto/auto/auto}#\37 ff771e1{width:32px;height:32px}}@media (max-width:767px){#\39 dc5a074{min-height:68px;flex-direction:row;flex-wrap:nowrap;padding:0 2%}#\38 8e69a6f{width:50.00000000000001%;justify-content:center;order:1;min-height:8px}#\30 4886df1{width:25%;order:0;justify-content:flex-start;min-height:8px}#\32 61979b7{width:110px;height:auto}#\37 80d21df{width:12.3%;order:2}#\37 64397de{align-items:center;width:25%;order:3;min-height:8px}#\37 ff771e1{width:32px;height:32px}}@media all{#\36 3d24979f4a54e38542a8abd,#group_7up{min-width:4%;min-height:8px;column-gap:4%;row-gap:24px}#flex-header{--overlapping-background-color:rgba(0, 0, 0, 0);--overlapping-background-image:rgba(255, 255, 255, 1)}#\36 3d24979f4a54e38542a8abe{border-width:0;border-color:rgba(0,0,0,1);border-style:solid;background-color:var(--color_3);background-image:initial}#\36 3d24979f4a54e38542a8abd{width:68.89%;background-color:rgba(0,0,0,0);order:0;padding:16px;margin:0}#\36 3d24979f4a54e38542a8abc{min-height:478px;column-gap:4%;row-gap:24px;width:100%;flex-wrap:nowrap;padding:2% 0;margin:0}#widget_74j,#widget_t4h{width:100%;height:auto;max-width:100%}#\36 3d24979f4a54e38542a8aba{margin:0}#group_7up{width:27.105833333333333%;order:1}#widget_kuj{width:100%;height:468px;max-width:100%;margin-top:3px}#widget_hta{width:280px;height:auto;max-width:100%}}@media (min-width:768px) and (max-width:1024px){#\36 3d24979f4a54e38542a8abc{padding-left:2%;padding-right:2%}#widget_kuj{width:100%;height:432px}}@media (max-width:767px){#\36 3d24979f4a54e38542a8abd{min-height:80px;align-items:center;width:100%}#\36 3d24979f4a54e38542a8abc{min-height:0;flex-direction:column;padding-left:4%;padding-right:4%;flex-wrap:nowrap}#group_7up{width:100%;min-height:80px;align-items:center}#widget_kuj{height:240px}}@media all{#\31 f4ffd9a,#\38 8f25411{min-height:8px;column-gap:4%;min-width:4%;margin:0}#\35 3d708ab,#\37 cdd61bd,#aa3d6b13,#widget_hp9{height:auto;max-width:100%}#\37 cdd61bd,#aa3d6b13{width:237px;min-height:58px}#\31 f4ffd9a{row-gap:10px;width:29.21%;padding:16px 16px 30px}#\35 3d708ab{width:100%;order:1}#\39 16447bd{background-color:var(--color_4);background-image:initial}#ecee5a99{min-height:240px;column-gap:4%;row-gap:24px;width:100%;max-width:none;padding:4%;margin:0}#\38 8f25411{row-gap:24px;width:66.70703071672355%;justify-content:flex-end;padding:16px}#widget_hp9{width:100%;order:2}#\33 4014f4a{margin:0}}@media (min-width:768px) and (max-width:1024px){#\31 f4ffd9a{width:100%;min-height:90px;align-items:flex-start;height:auto;padding-bottom:16px}#\35 3d708ab{align-self:flex-start;margin-left:0;margin-right:0;width:100%;max-width:100%}#ecee5a99{flex-direction:column;flex-wrap:nowrap;min-height:0;row-gap:13px;padding:6% 6% 4%}#\38 8f25411{width:100%;min-height:80px}}@media (max-width:767px){#\31 f4ffd9a{width:100%;min-height:90px;align-items:flex-start;padding-bottom:16px;height:auto}#\35 3d708ab{align-self:center;margin-left:0;margin-right:0;order:1}#ecee5a99{min-height:unset;flex-direction:column;row-gap:0;padding:8% 4%}#\38 8f25411{width:100%;min-height:80px;align-items:center;justify-content:flex-start;padding:0;margin:0}}@media all{#\32 5302392,#\33 304d7d6{height:520px;max-width:100%}#\34 e020312,#\38 7a2b334,#\39 6329a5c{min-height:8px;column-gap:4%;row-gap:24px;width:32.666666666666664%;min-width:4%;padding:16px;margin:0}#\32 5302392{width:64.46%}#\35 3e6d586{background-color:var(--color_4);background-image:initial}#\39 6329a5c{align-items:center;background-image:url(https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/IMG_2353-1920w.jpg);order:2;flex-wrap:nowrap}#\33 304d7d6{width:51.22%;justify-self:auto;order:0;grid-area:auto/auto/auto/auto}#\34 e020312{background-image:url(https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/Manos-BuildingFr-1920w.jpg);align-items:center;order:1}#c0660c87{min-height:551px;column-gap:1%;row-gap:6px;width:100%;flex-wrap:nowrap;max-width:none;padding:0;margin:0}#\38 7a2b334{background-image:url(https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/Manos-interiorcounter-photo-KatePrevite-d9826b5f-1920w.png);align-items:center;order:0;background-position:100% 50%}}@media (min-width:768px) and (max-width:1024px){#\32 5302392{height:230px}#\39 6329a5c{width:22.007390109890114%}#\33 304d7d6{height:242px}#\34 e020312,#\38 7a2b334{width:38%}#c0660c87{padding-left:0;padding-right:0}}@media (max-width:767px){#\34 e020312,#\38 7a2b334{width:100%;min-height:80px;margin:0}#\32 5302392{height:344px;min-width:32px;margin:0}#\39 6329a5c{width:100%;min-height:175px;align-items:center;height:auto;margin:0}#\33 304d7d6{height:372px}#\34 e020312{align-items:center;height:auto;flex-direction:row;flex-wrap:nowrap}#c0660c87{min-height:0;flex-direction:column;padding-left:0;padding-right:0;flex-wrap:nowrap;column-gap:1%}#\38 7a2b334{align-items:center}#fec68ec2{grid-area:1/1/span 1/span 1}}@media all{#d1735722{width:100%;height:370px;max-width:100%;justify-self:auto;align-self:auto;order:0;margin:0;grid-area:auto/auto/auto/auto}}@media (min-width:768px) and (max-width:1024px){#d1735722{align-self:auto;width:99.9988819140116%;max-width:100%;height:284px;justify-self:auto;order:0;margin:0;grid-area:auto/auto/auto/auto}}@media all{#b7599b77,#d14e3a33{width:100%;height:auto;max-width:100%;margin:0;grid-area:auto/auto/auto/auto}#d14e3a33{order:1}#b7599b77{order:0;justify-self:auto;align-self:auto}#\31 8cbd1e7,#c9eabf07,#fac360ac{width:100%;height:300px;max-width:100%;justify-self:auto;align-self:auto;order:0;grid-area:auto/auto/auto/auto}#\30 bd84f25,#\39 640527e{height:auto;grid-area:auto/auto/auto/auto}#\30 bd84f25{flex-direction:row;align-items:center;width:99.83081186679388%;min-height:64px;max-height:100%;row-gap:24px;column-gap:4%;order:3;padding:0;margin:0}#\34 6a93d7d{width:280px;height:auto;min-height:64px;max-width:100%;order:0}#\39 640527e{width:985px;max-width:none;order:1;margin-right:0;margin-left:0}#fec68ec2{min-height:385px;column-gap:0;row-gap:0;width:100%;flex-wrap:nowrap;padding:2% 4%;margin:0;grid-area:1/1/span 1/span 1}#\32 19c60c8,#\32 cb0c044{max-width:100%;align-self:auto;order:0;margin:0;grid-area:auto/auto/auto/auto}#\32 cb0c044{width:97.21%;height:150px;justify-self:auto}#\32 19c60c8{width:75.79515812311193%;height:auto}}@media (min-width:768px) and (max-width:1024px){#\34 6a93d7d{width:250px;min-height:54px;margin:0}}@media (max-width:767px){#\34 6a93d7d{width:100%;min-height:54px;margin:0}}#\30 4886df1,#\31 125617941,#\31 198691314,#\31 214762646,#\31 269672714,#\31 404994468,#\31 540576542,#\32 267985746,#\36 3d24979f4a54e38542a8abc,#\36 406026c90e1521f6ecb0ecc,#\36 e28f4b0,#\37 06ac5a6,#\37 80d21df,#\37 ead2539,#\38 8e69a6f,#\39 dc5a074,#c0660c87,#ecee5a99,#fec68ec2,#ff5df099,#userwayAccessibilityIcon{order:0;flex-direction:row}#\31 1464c72,#\31 963944784,#\31 998592992,#\31 f4ffd9a,#\32 02c3475,#\34 3484777,#\35 6272e0f,#\36 06716535,#\36 3a049320d35b55b4ef2a374,#\36 3a049320d35b55b4ef2a377,#\36 3d24979f4a54e38542a8abd,#\36 3da2bddeae8da42b2353673,#\36 3da2bf2eae8da42b23538a2,#\36 406026c90e1521f6ecb0ecd,#\37 47868522,#\37 b733a77,#\37 c1d3314,#\38 7a2b334,#\38 8f25411,#\39 d047ce9,#a1f8711f,#d562c22c,#e5a36542,#group_7bg,#hamburger-drawer{order:0}#\31 963944784,#\31 998592992,#\34 3484777,#\36 06716535,#\36 3a049320d35b55b4ef2a377,#\36 3da2bddeae8da42b2353673,#\37 47868522,#a1f8711f,#e5a36542{flex-direction:row}#\34 e020312,#\35 3d708ab,#\35 48a1d00,#\39 640527e,#d14e3a33,#d20e136d,#d36f4f97,#group_7up,#group_fs5,#widget_5js,#widget_s4l{order:1}#\34 f160b54,#\35 9373326,#\36 29c7f24,#\36 3da2bfbeae8da42b2353a44,#\36 3da2bfbeae8da42b2353a45,#\39 6329a5c,#widget_89q,#widget_hp9,#widget_oue,#widget_uug{order:2}#\30 bd84f25{order:3;flex-direction:row}#\39 25e2604,#c0504b3a,#widget_o69{order:3}#e36030c4{order:4} #dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder:not(.photo-gallery-done) {display: none;} @media (max-width:767px){ [data-hidden-on-mobile] {display:none!important}}
+    .dmDesktopBody [data-anim-desktop]:not([data-anim-desktop='none']) {
+      visibility: hidden;
+    }
+
+    
+</style>
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Prata Fallback";
+  src: local('Arial');
+  ascent-override: 92.0833%;
+  descent-override: 33.5691%;
+  size-adjust: 107.8372%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Poppins Fallback";
+  src: local('Arial');
+  ascent-override: 92.326%;
+  descent-override: 30.7753%;
+  line-gap-override: 8.793%;
+  size-adjust: 113.7274%;
+}
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.manospizzeria.nyc/">
+<script type="application/ld+json">
+    {
+        "@context" : "https://schema.org",
+        "@type" : "WebSite",
+        "name" : "Mano's Pizzeria",
+        "url" : "https://www.manospizzeria.nyc/"
+    }
+</script>
+  <title>
+    Mano’s Pizzeria | Classic New York Pizza in Ridgewood, Queens
+  </title>
+  <meta name="description" content="Award-winning New York-style pizza, made with five-day fermented dough and unbleached Italian flour. Ranked Top 50 Pizzerias in the Country. Quality in Queens."/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Mano’s Pizzeria | Classic New York Pizza in Ridgewood, Queens"/>
+  <meta name="twitter:description" content="Award-winning New York-style pizza, made with five-day fermented dough and unbleached Italian flour. Ranked Top 50 Pizzerias in the Country. Quality in Queens."/>
+  <meta property="og:description" content="Award-winning New York-style pizza, made with five-day fermented dough and unbleached Italian flour. Ranked Top 50 Pizzerias in the Country. Quality in Queens."/>
+  <meta property="og:title" content="Mano’s Pizzeria | Classic New York Pizza in Ridgewood, Queens"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="home"  class="dmRoot fix-mobile-scrolling flex-site dmResellerSite "
+      style="padding:0;margin:0;"
+      
+     data-flex-site >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper -var5 null ">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="FlexHeader" data-responsive-name="FlexLayout" class="runtime-module-container dm-bfs dm-layout-home hasAnimations hasStickyHeader inMiniHeaderMode rows-1200 hamburger-reverse dmPageBody d-page-1716942098 inputs-css-clean dmDHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div id="site_content"> <div id="dmFlexHeaderContainer" class="flex_hfcontainer"> <div id="flex-header" data-variation-id="variation0" data-sticky="true" data-changeable-on-scroll="true" data-overlapping-common="false" role="banner"> <div data-auto="flex-section" id="1990152846" data-flex-id="c093187e" data-layout-section="" data-page-element-type="section" data-page-element-id="1475755753"> <div class="flex-widgets-container" id="1140644136"></div> 
+ <section id="1c1481e3" class="flex-element section" data-auto="flex-element-section"> <div id="603c3bb7" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="9dc5a074" class="flex-element group" data-auto="flex-element-group"> <div id="88e69a6f" class="flex-element group" data-auto="flex-element-group"> <div id="261979b7" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="image" data-keep-proportion="true" data-external-id="1117254353"> <div class="imageWidget align-center u_1117254353" data-element-type="image" data-widget-type="image" id="1117254353" data-binding=""><img src="https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/Manos-Pizzeria-texticon-transparent-8f618a09-254w.png" alt="" id="1066052972" class="" data-dm-image-path="https://irp.cdn-website.com/b9e2d2c5/dms3rep/multi/Manos-Pizzeria-texticon-transparent-8f618a09.png" width="212.0" height="109.1875" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+ <div id="780d21df" class="flex-element group" data-auto="flex-element-group" data-hidden-on-tablet="" data-hidden-on-mobile=""> <div id="23d5f850" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="ONELinksMenu" data-hidden-on-tablet="" data-hidden-on-mobile="" data-external-id="1198691314"> <nav class="effect-bottom2 u_1198691314 main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1198691314" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="HORIZONTAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_00  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="
+         Home
+        " data-auto="page-text-style">Home<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menu" class="unifiednav__item  dmUDNavigationItem_010101854352  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Menu" data-auto="page-text-style">Menu<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101157116  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="About" data-auto="page-text-style">About<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101152840  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Contact" data-auto="page-text-style">Contact<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+ <div id="04886df1" class="flex-element group" data-auto="flex-element-group"> <div id="5286ad74" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="link" data-hidden-on-mobile="" data-hidden-on-tablet="" data-external-id="1540576542"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient u_1540576542 flexButton button_2" file="false" href="https://www.ubereats.com/store/manos-pizzeria/Oj4D11X0UveUSwi_7AUSzA?utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" data-element-type="dButtonLinkId" id="1540576542" target="_blank"> <span class="iconBg" aria-hidden="true" id="1480742056"> <span class="icon hasFontIcon icon-star" id="1234163169"></span> 
+</span> 
+ <span class="text" id="1267294679">ORDER DELIVERY</span> 
+</a> 
+</div> 
+ <div id="7ff771e1" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="graphic" data-hidden-on-desktop="" data-external-id="1440420817"> <div class="graphicWidget u_1440420817" data-element-type="graphic" data-widget-type="graphic" id="1440420817"> <a href="tel:(718) 418-1112" id="1307644512" file="false"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1408 1792" id="1563237900" class="svg u_1563237900" data-icon-name="fa-phone"> <path fill="inherit" d="M1408 1240q0 27-10 70.5t-21 68.5q-21 50-122 106-94 51-186 51-27 0-52.5-3.5t-57.5-12.5-47.5-14.5-55.5-20.5-49-18q-98-35-175-83-128-79-264.5-215.5t-215.5-264.5q-48-77-83-175-3-9-18-49t-20.5-55.5-14.5-47.5-12.5-57.5-3.5-52.5q0-92 51-186 56-101 106-122 25-11 68.5-21t70.5-10q14 0 21 3 18 6 53 76 11 19 30 54t35 63.5 31 53.5q3 4 17.5 25t21.5 35.5 7 28.5q0 20-28.5 50t-62 55-62 53-28.5 46q0 9 5 22.5t8.5 20.5 14 24 11.5 19q76 137 174 235t235 174q2 1 19 11.5t24 14 20.5 8.5 22.5 5q18 0 46-28.5t53-62 55-62 50-28.5q14 0 28.5 7t35.5 21.5 25 17.5q25 15 53.5 31t63.5 35 54 30q70 35 76 53 3 7 3 21z"></path> 
+</svg> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div id="764397de" class="flex-element group" data-auto="flex-element-group" data-hidden-on-desktop=""> <div id="00ca91b4" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="hamburgerButton" data-external-id="1998777521"> <button class="hamburgerButton" data-element-type="hamburgerButton" id="1998777521" aria-controls="hamburger-drawer" aria-expanded="false"> <svg width="100pt" height="100pt" version="1.1" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id="1555668457"> <path d="m3.6172 10.754h-0.050782c-1.9727 0-3.5703 1.5977-3.5703 3.5703 0 1.9727 1.5977 3.5703 3.5703 3.5703h0.054688 92.758 0.050782c1.9727 0 3.5703-1.5977 3.5703-3.5703 0-1.9727-1.5977-3.5703-3.5703-3.5703h-0.054688zm0 35.676h-0.050782c-1.9727 0-3.5703 1.5977-3.5703 3.5703s1.5977 3.5703 3.5703 3.5703h0.054688 92.758 0.050782c1.9727 0 3.5703-1.5977 3.5703-3.5703s-1.5977-3.5703-3.5703-3.5703h-0.054688zm0 35.68h-0.050782c-1.9727 0-3.5703 1.5977-3.5703 3.5703 0 1.9727 1.5977 3.5703 3.5703 3.5703h0.054688 92.758 0.050782c1.9727 0 3.5703-1.5977 3.5703-3.5703 0-1.9727-1.5977-3.5703-3.5703-3.5703h-0.054688z"></path> 
+</svg> 
+</button> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+</div> 
+ <div id="hamburger-drawer" class="hamburger-drawer layout-drawer" layout="5ff40d2f36ae4e5ea1bc96b2e2fcf67e===header" data-origin="side-reverse"> <div data-layout-section="" data-auto="flex-section" id="1558513594" data-flex-id="18f5ea00"> <div class="flex-widgets-container" id="1554675836"></div> 
+ <section id="f6054f97" class="flex-element section" data-auto="flex-element-section"> <div id="ef8b5b8a" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="a1f8711f" class="flex-element group" data-auto="flex-element-group"> <div id="9d047ce9" class="flex-element group" data-auto="flex-element-group"> <div id="12a003a5" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="hamburgerButton" data-external-id="1717245942"> <a role="button" class="hamburgerButton" data-element-type="hamburgerButton" id="1717245942" aria-controls="hamburger-drawer" aria-expanded="false"> <svg width="100pt" height="100pt" version="1.1" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id="1463788326"> <path d="m82 87.883c1.625 1.625 4.2656 1.625 5.8906 0 1.6289-1.6289 1.6289-4.2656 0-5.8945l-32.414-32.41 32.406-32.406c1.6289-1.625 1.6289-4.2656
+ 0-5.8906-1.6289-1.6289-4.2656-1.6289-5.8906 0l-32.406 32.402-32.406-32.406c-1.625-1.625-4.2656-1.625-5.8906 0-1.6289 1.6289-1.6289 4.2656 0
+ 5.8945l32.402 32.406-32.41 32.414c-1.6289 1.625-1.6289 4.2617 0 5.8906 1.625 1.6289 4.2656 1.6289 5.8906 0l32.414-32.414z" fill-rule="evenodd"></path> 
+</svg> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-auto="flex-section" id="1099442592" data-flex-id="63a049320d35b55b4ef2a372" data-layout-section=""> <div class="flex-widgets-container" id="1247649854"></div> 
+ <section id="63a049320d35b55b4ef2a373" class="flex-element section" data-auto="flex-element-section"> <div id="63a049320d35b55b4ef2a376" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="63a049320d35b55b4ef2a377" class="flex-element group" data-auto="flex-element-group"> <div id="63a049320d35b55b4ef2a374" class="flex-element group" data-auto="flex-element-group"> <div id="63a049ca0d35b55b4ef2a5c3" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="ONELinksMenu" data-external-id="1998592992"> <nav class="u_1998592992 effect-bottom2 main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_2" layout-sub="" data-show-vertical-sub-items="HIDE" id="1998592992" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_00  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="
+         Home
+        " data-auto="page-text-style">Home<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menu" class="unifiednav__item  dmUDNavigationItem_010101854352  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Menu" data-auto="page-text-style">Menu<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101157116  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="About" data-auto="page-text-style">About<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101152840  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Contact" data-auto="page-text-style">Contact<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-auto="flex-section" id="1029527021" data-flex-id="6406026c90e1521f6ecb0eca" data-layout-section=""> <div class="flex-widgets-container" id="1659590659"></div> 
+ <section id="6406026c90e1521f6ecb0ec9" class="flex-element section" data-auto="flex-element-section"> <div id="6406026c90e1521f6ecb0ecb" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="6406026c90e1521f6ecb0ecc" class="flex-element group" data-auto="flex-element-group"> <div id="6406026c90e1521f6ecb0ecd" class="flex-element group" data-auto="flex-element-group"> <div id="widget_u1k" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="link" data-external-id="747868522"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="https://www.ubereats.com/store/manos-pizzeria/Oj4D11X0UveUSwi_7AUSzA?utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" data-element-type="dButtonLinkId" id="747868522" target="_blank"> <span class="iconBg" aria-hidden="true" id="1479021349"> <span class="icon hasFontIcon icon-star" id="1381670135"></span> 
+</span> 
+ <span class="text" id="1992901609">ORDER ONLINE</span> 
+</a> 
+</div> 
+ <div id="widget_en9" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="socialhub" data-external-id="1396544543"> <div class="align-center text-align-center u_1396544543 dmSocialHub gapSpacing" id="1396544543" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://facebook.com/manospizzeria" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style8" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://instagram.com/manos_pizzeria" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style8" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.google.com/maps/place/v9vxcbN4V2FdPdDA7" target="_blank" dm_dont_rewrite_url="true" aria-label="google_my_business" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;GoogleMyBusiness&apos;)"> <span class="dmSocialGoogleMyBusiness dm-social-icons-google-my-business oneIcon socialHubIcon style8" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="tel:7184181112" target="_blank" dm_dont_rewrite_url="true" aria-label="phone" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Phone&apos;)"> <span class="dmSocialPhone icon-phone oneIcon socialHubIcon style8" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="widget_s4l" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1287536004"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1287536004" style=""><p class="m-text-align-center t-text-align-center" style="line-height: 2;"><span style="display: initial;">(718) 418-1112</span></p><p class="m-text-align-center t-text-align-center"><span style="display: initial;">62-98 Forest Ave</span></p><p class="m-text-align-center t-text-align-center"><span style="display: initial;">Ridgewood, NY 11385</span></p><p class="t-text-align-center"><span style="display: initial;"><br/></span></p></div> 
+</div> 
+ <div id="widget_oue" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="image" data-external-id="2986015622"> <div class="imageWidget align-center u_2986015622" data-element-type="image" data-widget-type="image" id="2986015622"><img src="https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/IMG_1875-597w.jpg" alt="" id="1015201966" class="" width="1223" height="1205" data-dm-image-path="https://irp.cdn-website.com/b9e2d2c5/dms3rep/multi/IMG_1875.jpg" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+</div> 
+ <div class="layout-drawer-overlay" id="layout-drawer-overlay"></div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_home dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div data-layout-section="" data-auto="flex-section" id="1084846789" data-flex-id="44426125" data-page-element-type="section" data-page-element-id="1722754613"> <div class="flex-widgets-container" id="1556386773"></div> 
+ <section id="34014f4a" class="flex-element section" data-auto="flex-element-section"> <div id="916447bd" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="ecee5a99" class="flex-element group" data-auto="flex-element-group"> <div id="88f25411" class="flex-element group" data-auto="flex-element-group"> <div id="53d708ab" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1448414774"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1448414774" style="" data-ai-tag="Section title"> <h1 class="m-text-align-left t-text-align-left" style="line-height: 1;"><span style="display: unset;">Quality in Queens.</span></h1> 
+</div> 
+</div> 
+ <div id="widget_hp9" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="457893244"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="457893244" style=""><p class="text-align-left m-text-align-left"><span style="display: unset;">Crisp, thin-crust pizza made with long-fermented dough, simple ingredients, and serious flavor.</span></p></div> 
+</div> 
+</div> 
+ <div id="1f4ffd9a" class="flex-element group" data-auto="flex-element-group"> <div id="7cdd61bd" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="link" data-hidden-on-tablet="" data-hidden-on-mobile="" data-hidden-on-desktop="" data-external-id="1963944784"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="https://www.toasttab.com/local/order/manos-pizzeria-62-98-forest-ave/item-minucci-pie_6516079b-d813-43e3-aed7-5b4727fd4c5d" data-element-type="dButtonLinkId" id="1963944784" target="_blank"> <span class="iconBg" aria-hidden="true" id="1239063117"> <span class="icon hasFontIcon icon-star" id="1765598561"></span> 
+</span> 
+ <span class="text" id="1318210559" data-ai-tag="Short button text">ORDER PICKUP</span> 
+</a> 
+</div> 
+ <div id="aa3d6b13" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="link" data-external-id="1125617941"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton u_1125617941" file="false" href="https://www.ubereats.com/store/manos-pizzeria/Oj4D11X0UveUSwi_7AUSzA?utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" data-element-type="dButtonLinkId" id="1125617941" target="_blank"> <span class="iconBg" aria-hidden="true" id="1381863741"> <span class="icon hasFontIcon icon-star" id="1544713597"></span> 
+</span> 
+ <span class="text" id="1061472404" data-ai-tag="Short button text">ORDER DELIVERY</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-layout-section="" data-auto="flex-section" id="1760951889" data-flex-id="b901288e" data-page-element-type="section" data-page-element-id="1722754613"> <div class="flex-widgets-container" id="1381435227"></div> 
+ <section id="5e7aea00" class="flex-element section" data-auto="flex-element-section"> <div id="53e6d586" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="c0660c87" class="flex-element group" data-auto="flex-element-group"> <div id="87a2b334" class="flex-element group" data-auto="flex-element-group" data-parallax="true" data-parallax-velocity="0.2"> <div id="3304d7d6" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="spacer" data-external-id="1987553808"> <div data-element-type="spacer" class="dmSpacer" id="1987553808"></div> 
+</div> 
+</div> 
+ <div id="4e020312" class="flex-element group" data-auto="flex-element-group" data-parallax="true" data-parallax-velocity="0.2"> <div id="25302392" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="spacer" data-external-id="1415846131"> <div data-element-type="spacer" class="dmSpacer" id="1415846131"></div> 
+</div> 
+</div> 
+ <div id="96329a5c" class="flex-element group" data-auto="flex-element-group"></div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-auto="flex-section" id="1641784833" data-flex-id="63d24979f4a54e38542a8ab9" data-layout-section=""> <div class="flex-widgets-container" id="1835502329"></div> 
+ <section id="63d24979f4a54e38542a8aba" class="flex-element section" data-auto="flex-element-section"> <div id="63d24979f4a54e38542a8abe" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="63d24979f4a54e38542a8abc" class="flex-element group" data-auto="flex-element-group"> <div id="63d24979f4a54e38542a8abd" class="flex-element group" data-auto="flex-element-group"> <div id="widget_t4h" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="350160659"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="350160659" style=""> <h2><span style="display: unset;">Classic New York Pizza, Perfected in Ridgewood</span></h2> 
+</div> 
+</div> 
+ <div id="widget_74j" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="3588491086"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="3588491086" style=""><p><span style="display: initial;">Here at Mano&rsquo;s, we&rsquo;re not here to reinvent New York pizza. We&rsquo;re here to do it right.</span></p><p><span style="display: initial;"><br/></span></p><p><span style="display: initial;">Our dough ferments for five full days, giving every slice its signature crunch and light, airy bite. We use unbleached, unbromated Italian flour because great pizza starts with better ingredients.</span></p><p><span style="display: initial;"><br/></span></p><p><span style="display: initial;">Our sauce is simple, made with Italian tomatoes, Trapani sea salt, and olive oil. The balance of sauce to cheese is what makes it perfect: every bite crisp, flavorful, and unmistakably New York.</span></p><p><span style="display: initial;"><br/></span></p><p><span style="display: initial;">Mano&rsquo;s is built on family, neighborhood pride, and respect for the craft. Every pie we make reflects the people behind it and the place we call home.</span></p></div> 
+</div> 
+ <div id="widget_hta" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="link" data-external-id="606716535"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/about" data-element-type="dButtonLinkId" id="606716535"> <span class="iconBg" aria-hidden="true" id="1659277609"> <span class="icon hasFontIcon icon-star" id="1104046326"></span> 
+</span> 
+ <span class="text" id="1011138980">OUR STORY</span> 
+</a> 
+</div> 
+</div> 
+ <div id="group_7up" class="flex-element group" data-auto="flex-element-group"> <div id="widget_kuj" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="image" data-external-id="1419899867"> <div class="imageWidget align-center u_1419899867" data-element-type="image" data-widget-type="image" id="1419899867"><img src="https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/manos-icontable01-561h.jpg" alt="" id="1411711011" class="" width="1920" height="2560" data-dm-image-path="https://irp.cdn-website.com/b9e2d2c5/dms3rep/multi/manos-icontable01.jpg" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-flex-id="66d62377" data-auto="flex-section" id="1111858744" data-layout-section="" data-page-element-type="section" data-page-element-id="1367202114"> <div class="flex-widgets-container" id="1405568040"></div> 
+ <section id="60608868" class="flex-element section" data-auto="flex-element-section"> <div id="0b551669" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid="" data-parallax="true" data-parallax-velocity="0.2"> <div id="fec68ec2" class="flex-element group" data-auto="flex-element-group"> <div id="56272e0f" class="flex-element group" data-auto="flex-element-group"> <div id="9640527e" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1828025615"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1828025615" data-ai-tag="Section title" style=""> <h2 class="text-align-center"><span style="color: rgb(255, 255, 255); display: unset;">Ready for a slice?</span></h2> 
+</div> 
+</div> 
+ <div id="59373326" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1524265295"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1524265295" data-ai-tag="Short description" style=""><p class="m-text-align-center text-align-center"><span class="" style="display: initial; color: var(--color_4);"><span style="display: initial; color: var(--color_4);">Call to order</span> 
+</span><a href="tel:(718) 418-1112" runtime_url="tel:(718) 418-1112" type="call" style="display: initial; color: var(--color_3); font-weight: normal;">718-418-1112</a><span single-space="true" class="" style="display: initial; color: var(--color_5);"> <span style="display: initial; color: var(--color_5);"></span> 
+</span><span style="display: initial; color: var(--color_4);">or visit the store for pickup.</span></p></div> 
+</div> 
+ <div id="0bd84f25" class="flex-element group" data-auto="flex-element-group"> <div id="46a93d7d" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="link" data-hidden-on-desktop="" data-hidden-on-mobile="" data-hidden-on-tablet="" data-external-id="1404994468"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton u_1404994468" file="false" href="https://www.toasttab.com/local/order/manos-pizzeria-62-98-forest-ave/item-minucci-pie_6516079b-d813-43e3-aed7-5b4727fd4c5d" data-element-type="dButtonLinkId" id="1404994468" target="_blank"> <span class="iconBg" aria-hidden="true" id="1131222749"> <span class="icon hasFontIcon icon-star" id="1928425474"></span> 
+</span> 
+ <span class="text" id="1170615080" data-ai-tag="Short button text">ORDER PICKUP</span> 
+</a> 
+</div> 
+ <div id="d36f4f97" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="link" data-external-id="1269672714"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton u_1269672714" file="false" href="https://www.ubereats.com/store/manos-pizzeria/Oj4D11X0UveUSwi_7AUSzA?utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" data-element-type="dButtonLinkId" id="1269672714" target="_blank"> <span class="iconBg" aria-hidden="true" id="1387513080"> <span class="icon hasFontIcon icon-star" id="1880927162"></span> 
+</span> 
+ <span class="text" id="1259741246" data-ai-tag="Short button text">ORDER DELIVERY</span> 
+</a> 
+</div> 
+ <div id="4f160b54" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="link" data-external-id="1214762646"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton u_1214762646 button_2" file="false" href="/menu" data-element-type="dButtonLinkId" id="1214762646"> <span class="iconBg" aria-hidden="true" id="1579764804"> <span class="icon hasFontIcon icon-star" id="1132259992"></span> 
+</span> 
+ <span class="text" id="1962810672" data-ai-tag="Short button text">View Menu</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-layout-section="" data-auto="flex-section" id="1622196395" data-flex-id="8ea76560"> <div class="flex-widgets-container" id="1347057005"></div> 
+ <section id="7675ca8c" class="flex-element section" data-auto="flex-element-section"> <div id="85968e09" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="7ead2539" class="flex-element group" data-auto="flex-element-group"> <div id="7c1d3314" class="flex-element group" data-auto="flex-element-group"> <div id="widget_v8l" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1767923333"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1767923333" style=""> <h2 style="letter-spacing: initial;" class="m-text-align-center"><span style="display: unset; text-transform: uppercase;">hot off the Press</span></h2> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-layout-section="" data-auto="flex-section" id="1592193275" data-flex-id="5985587e" data-page-element-type="section" data-page-element-id="1313851985"> <div class="flex-widgets-container" id="1657374802"></div> 
+ <section id="ddbd6093" class="flex-element section" data-auto="flex-element-section"> <div id="bda7c271" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="e5a36542" class="flex-element group" data-auto="flex-element-group"> <div id="d562c22c" class="flex-element group" data-auto="flex-element-group"> <div id="d1735722" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="ssrimageslider" data-external-id="1835466113"> <div id="1835466113" dmle_extension="ssrimageslider" data-element-type="ssrimageslider" class="u_1835466113"><span id="ssrWrap-1835466113" ><style data-styled="true" data-styled-version="5.3.11">@media all{.duWPxK{height:100%;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-repeat:no-repeat;background-size:100%;position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;gap:24px;}}/*!sc*/
+@media (max-width:767px){.duWPxK{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}/*!sc*/
+@media all{.czJDBm{height:100%;width:100%;box-sizing:border-box;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}}/*!sc*/
+@media all{.bcOvLo{width:100%;height:100%;position:relative;overflow:hidden;}}/*!sc*/
+@media (max-width:767px){.bcOvLo{width:100%;}}/*!sc*/
+@media all{.gvRxsn{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:absolute;left:0;top:0;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;right:0;bottom:-200%;-webkit-transform:translateY(-0%);-ms-transform:translateY(-0%);transform:translateY(-0%);-webkit-transition:-webkit-transform 1s ease-in-out;-webkit-transition:transform 1s ease-in-out;transition:transform 1s ease-in-out;}}/*!sc*/
+@media all{.bElkjm{position:relative;-webkit-flex:1;-ms-flex:1;flex:1;}}/*!sc*/
+@media all{.edjuHe{position:absolute;top:0;bottom:0;left:0;right:0;}}/*!sc*/
+@media (max-width:767px){.edjuHe{left:0;right:0;}}/*!sc*/
+@media all{.iaqcno{width:100%;height:100%;position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;overflow:hidden;gap:32px;}}/*!sc*/
+@media (max-width:767px){.iaqcno{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;gap:24px;}}/*!sc*/
+@media all{.jqeqXx{background-color:#eee;overflow:hidden;position:relative;width:37%;border-radius:0px;background:rgba(0,0,0,0);}}/*!sc*/
+@media (max-width:767px){.jqeqXx{width:auto;-webkit-flex:revert;-ms-flex:revert;flex:revert;-webkit-flex-basis:55%;-ms-flex-preferred-size:55%;flex-basis:55%;}}/*!sc*/
+@media all{.iGYlRV{position:absolute;top:0;bottom:0;left:0;right:0;}}/*!sc*/
+@media all{.lmRRXl{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;visibility:visible;padding-block:24px;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:61%;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;text-align:left;}}/*!sc*/
+@media (min-width:1025px){.lmRRXl{padding-left:20px;-webkit-align-items:start;-webkit-box-align:start;-ms-flex-align:start;align-items:start;text-align:start;padding-right:0px;}}/*!sc*/
+@media (max-width:1024px) and (min-width:768px){.lmRRXl{-webkit-align-items:start;-webkit-box-align:start;-ms-flex-align:start;align-items:start;text-align:start;}}/*!sc*/
+@media (max-width:767px){.lmRRXl{width:auto;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center;-webkit-flex:revert;-ms-flex:revert;flex:revert;padding-block:0;padding-inline:24px;padding-left:15px;padding-right:15px;}}/*!sc*/
+@media all{.ctNFPo{object-fit:contain;display:block;width:100%;height:100%;}}/*!sc*/
+@media all{.dTUJcZ{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;visibility:hidden;padding-block:24px;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:61%;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;text-align:left;}}/*!sc*/
+@media (min-width:1025px){.dTUJcZ{padding-left:20px;-webkit-align-items:start;-webkit-box-align:start;-ms-flex-align:start;align-items:start;text-align:start;padding-right:0px;}}/*!sc*/
+@media (max-width:1024px) and (min-width:768px){.dTUJcZ{-webkit-align-items:start;-webkit-box-align:start;-ms-flex-align:start;align-items:start;text-align:start;}}/*!sc*/
+@media (max-width:767px){.dTUJcZ{width:auto;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center;-webkit-flex:revert;-ms-flex:revert;flex:revert;padding-block:0;padding-inline:24px;padding-left:15px;padding-right:15px;}}/*!sc*/
+@media all{.cwIWr{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:8px;-webkit-order:0;-ms-flex-order:0;order:0;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-inline-start:2px;}}/*!sc*/
+@media (max-width:767px){.cwIWr{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;padding-inline-start:0;padding-block-end:2px;}}/*!sc*/
+data-styled.g2[id="sc-gEvEer"]{content:"duWPxK,czJDBm,bcOvLo,gvRxsn,bElkjm,edjuHe,iaqcno,jqeqXx,iGYlRV,lmRRXl,ctNFPo,dTUJcZ,cwIWr,"}/*!sc*/
+@media all{.gwrNyQ{object-fit:contain;object-position:50% 50%;display:block;width:100%;height:100%;}}/*!sc*/
+data-styled.g4[id="sc-fqkvVR"]{content:"gwrNyQ,"}/*!sc*/
+@media all{#dm#dm#dm .hBjfGr.hBjfGr{margin:0;margin-block-end:8px;color:rgba(42,33,30,1);font-weight:bold;font-style:italic;}}/*!sc*/
+@media (min-width:1025px){#dm#dm#dm .hBjfGr.hBjfGr{font-size:24px;}}/*!sc*/
+@media (max-width:1024px) and (min-width:768px){#dm#dm#dm .hBjfGr.hBjfGr{font-size:26px;}}/*!sc*/
+@media (max-width:767px){#dm#dm#dm .hBjfGr.hBjfGr{font-size:19px;}}/*!sc*/
+@media all{#dm#dm#dm .gjSNep.gjSNep{margin-block-end:24px;color:rgba(42,33,30,1);}#dm#dm#dm .gjSNep.gjSNep p{margin-block:0;}}/*!sc*/
+@media (min-width:1025px){#dm#dm#dm .gjSNep.gjSNep{font-size:16px;}}/*!sc*/
+@media (max-width:1024px) and (min-width:768px){#dm#dm#dm .gjSNep.gjSNep{font-size:14px;}}/*!sc*/
+@media (max-width:767px){#dm#dm#dm .gjSNep.gjSNep{font-size:13px;}}/*!sc*/
+@media all{#dm#dm#dm .itcMMz.itcMMz{max-width:revert;white-space:revert;display:inline-block;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}}/*!sc*/
+@media (min-width:1025px){#dm#dm#dm .itcMMz.itcMMz{font-size:14px;}}/*!sc*/
+@media (max-width:1024px) and (min-width:768px){#dm#dm#dm .itcMMz.itcMMz{font-size:13px;}}/*!sc*/
+@media (max-width:767px){#dm#dm#dm .itcMMz.itcMMz{font-size:11px;}}/*!sc*/
+data-styled.g9[id="sc-imWYAI"]{content:"hBjfGr,gjSNep,itcMMz,"}/*!sc*/
+@media all{#dm#dm#dm .kLKVWg.kLKVWg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;min-width:150px;width:auto;padding-inline-start:20px;padding-inline-end:20px;margin:0;}#dm#dm#dm .kLKVWg.kLKVWg:after{display:none;}}/*!sc*/
+data-styled.g10[id="sc-jXbUNg"]{content:"kLKVWg,"}/*!sc*/
+@media all{#dm#dm#dm .pnYiL.pnYiL{padding:unset;background-color:currentColor;border:unset;cursor:pointer;border-radius:50%;width:8px;height:8px;box-shadow:0px 0px 2px rgba(24,39,75,0.3),0px 0px 3px rgba(24,39,75,0.04);color:var(--color_5);}}/*!sc*/
+@media (min-width:1025px){#dm#dm#dm .pnYiL.pnYiL{width:12px;height:12px;}}/*!sc*/
+@media all{#dm#dm#dm .fyljFX.fyljFX{padding:unset;background-color:#e1e3e7;border:unset;cursor:pointer;border-radius:50%;width:8px;height:8px;box-shadow:0px 0px 2px rgba(24,39,75,0.3),0px 0px 3px rgba(24,39,75,0.04);}}/*!sc*/
+@media (min-width:1025px){#dm#dm#dm .fyljFX.fyljFX{width:12px;height:12px;}}/*!sc*/
+data-styled.g14[id="sc-jlZhew"]{content:"pnYiL,fyljFX,"}/*!sc*/
+</style><div style="height:100%;overflow:hidden" data-auto="slider-wrapper" class="sc-gEvEer d-ext-mediaSlider-slidesContainer"><div data-auto="actual-slider" class="sc-gEvEer duWPxK"><div data-auto="slider-slides-container" class="sc-gEvEer czJDBm"><div class="sc-gEvEer bcOvLo"><div data-auto="slider-filmRole" class="sc-gEvEer gvRxsn"><div data-auto="slideSlot 0 slideSlotActive" class="sc-gEvEer bElkjm d-ext-mediaSlider-slidesContainer__slide--active"><div class="sc-gEvEer edjuHe"><div data-auto="ssr-slide-97397" class="sc-gEvEer iaqcno"><div data-grab="slide-media-container" class="sc-gEvEer jqeqXx"><img data-grab="slide-media" src="https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/nyt-review-f5adbb53-4bccbba2-1920w.png" loading="lazy" class="sc-fqkvVR gwrNyQ"/><div data-grab="slide-overlay" class="sc-gEvEer iGYlRV"></div></div><div class="sc-gEvEer lmRRXl animated fadeInUp d-ext-mediaSlider-slide__contentContainer" data-grab="slideContentContainer"><h3 data-auto="title" data-grab="title" class="sc-imWYAI hBjfGr d-ext-mediaSlider-contentContainer__title">“Any neighborhood would be lucky to have a Mano’s.”</h3><div data-auto="desc" data-grab="description" class="sc-imWYAI gjSNep d-ext-mediaSlider-contentContainer__description"><p><strong>— The New York Times</strong></p><p><br></p><p>The Times calls Mano’s a destination for fans of new wave pizza — known for its tangy, fermented crusts that stand straight when folded. Owner Nick Manopella goes to great lengths to make sure every slice feels light, not heavy, fermenting the dough for several days and topping it with a simple, unsweetened tomato sauce.</p><p><br></p><p>It’s all highly technical, but as the review says, “it doesn’t take much thought to enjoy a plain slice at Mano’s.”</p></div><a href="https://www.nytimes.com/article/best-nyc-pizza-pizzeria.html?unlocked_article_code=1.I08.g-yW.eAuKk9vnuPOP&amp;smid=url-share" type="url" target="_blank" link_type="url" data-auto="button-root" data-grab="button-root" class="sc-jXbUNg kLKVWg dmWidget button_2   d-ext-mediaSlider-contentContainer__button" data-disabled="false"><span data-auto="button-text" data-grab="button-text" class="sc-imWYAI itcMMz text">Read The Full Review</span></a></div></div></div></div><div data-auto="slideSlot 1" class="sc-gEvEer bElkjm d-ext-mediaSlider-slidesContainer__slide"><div class="sc-gEvEer edjuHe"><div data-auto="ssr-slide-2049" class="sc-gEvEer iaqcno"><div data-grab="slide-media-container" class="sc-gEvEer jqeqXx"><div data-grab="slide-media" class="sc-gEvEer ctNFPo"></div><div data-grab="slide-overlay" class="sc-gEvEer iGYlRV"></div></div><div class="sc-gEvEer dTUJcZ  d-ext-mediaSlider-slide__contentContainer" data-grab="slideContentContainer"><h3 data-auto="title" data-grab="title" class="sc-imWYAI hBjfGr d-ext-mediaSlider-contentContainer__title">“Mano’s is not just a classic New York slice, but a classic New York slice shop as well.“</h3><div data-auto="desc" data-grab="description" class="sc-imWYAI gjSNep d-ext-mediaSlider-contentContainer__description"><p><strong>— The Infatuation</strong></p><p><br></p><p>The Infatuation calls Mano’s the kind of slice shop every neighborhood needs — paper plates, red-checkered tables, and family photos on the wall. Their review praises the perfectly chewy, charred crust and notes that the dough is fermented for five days, giving each slice that crisp, crackery texture. They also highlight family-inspired pies like the Fulgieri with caramelized onions and the Minucci with sausage, pepperoni, and Calabrian chilis.</p></div><a href="https://www.theinfatuation.com/new-york/reviews/manos-pizzeria" type="url" target="_blank" link_type="url" data-auto="button-root" data-grab="button-root" class="sc-jXbUNg kLKVWg dmWidget button_2   d-ext-mediaSlider-contentContainer__button" data-disabled="false"><span data-auto="button-text" data-grab="button-text" class="sc-imWYAI itcMMz text">Read The Full Review</span></a></div></div></div></div><div data-auto="slideSlot 2" class="sc-gEvEer bElkjm d-ext-mediaSlider-slidesContainer__slide"><div class="sc-gEvEer edjuHe"><div data-auto="ssr-slide-34240" class="sc-gEvEer iaqcno"><div data-grab="slide-media-container" class="sc-gEvEer jqeqXx"><div data-grab="slide-media" class="sc-gEvEer ctNFPo"></div><div data-grab="slide-overlay" class="sc-gEvEer iGYlRV"></div></div><div class="sc-gEvEer dTUJcZ  d-ext-mediaSlider-slide__contentContainer" data-grab="slideContentContainer"><h3 data-auto="title" data-grab="title" class="sc-imWYAI hBjfGr d-ext-mediaSlider-contentContainer__title">A well-kept neighborhood pizzeria, among the most appreciated in the city for those seeking quality without excess.</h3><div data-auto="desc" data-grab="description" class="sc-imWYAI gjSNep d-ext-mediaSlider-contentContainer__description"><p><strong>— Top 50 Pizza USA</strong></p><p><br></p><p>Top 50 Pizza USA praises Mano’s for its long-fermented dough and perfect balance of crispiness and lightness. The review highlights the simplicity of the classic cheese slice and the bold flavor of the Minucci, topped with sausage, chili, and spicy honey — all served in a welcoming, no-frills setting that defines Ridgewood charm.</p></div><a href="https://www.50toppizza.it/referenza/manos-pizzeria-2/" type="url" target="_blank" link_type="url" data-auto="button-root" data-grab="button-root" class="sc-jXbUNg kLKVWg dmWidget button_2   d-ext-mediaSlider-contentContainer__button" data-disabled="false"><span data-auto="button-text" data-grab="button-text" class="sc-imWYAI itcMMz text">Read The Full Review</span></a></div></div></div></div></div></div></div><div data-auto="pagination-bullets-base-container" data-grab="pagination-container" class="sc-gEvEer cwIWr"><button data-grab="pagination-button-bullet active" data-auto="pagination-button-bullet 0 active" aria-label="go to slide 1" class="sc-jlZhew pnYiL"></button><button data-grab="pagination-button-bullet" data-auto="pagination-button-bullet 1" aria-label="go to slide 2" class="sc-jlZhew fyljFX"></button><button data-grab="pagination-button-bullet" data-auto="pagination-button-bullet 2" aria-label="go to slide 3" class="sc-jlZhew fyljFX"></button></div></div></div><script data-role="hydration">;window?.waitForDeferred?.('ssrLibrariesLoaded', () => {window.SSRRuntime.RuntimeReactHelpers.initiateWidget({"type":"SSR_IMAGE_SLIDER","props":{"layout":"LAYOUT_6","autoPagination":{"on":true,"intervalInSeconds":7,"pauseOnHover":true},"slidesData":[{"uuid":"97397","title":"“Any neighborhood would be lucky to have a Mano’s.”","desc":"<p><strong>— The New York Times</strong></p><p><br></p><p>The Times calls Mano’s a destination for fans of new wave pizza — known for its tangy, fermented crusts that stand straight when folded. Owner Nick Manopella goes to great lengths to make sure every slice feels light, not heavy, fermenting the dough for several days and topping it with a simple, unsweetened tomato sauce.</p><p><br></p><p>It’s all highly technical, but as the review says, “it doesn’t take much thought to enjoy a plain slice at Mano’s.”</p>","media":{"imgSrc":"https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/nyt-review-f5adbb53-4bccbba2-1920w.png","alt":null,"vidSrc":null,"lazy":true,"type":"IMAGE"},"button":{"text":"Read The Full Review"},"linkDomAttributes":{"href":"https://www.nytimes.com/article/best-nyc-pizza-pizzeria.html?unlocked_article_code=1.I08.g-yW.eAuKk9vnuPOP&smid=url-share","type":"url","target":"_blank","link_type":"url","popup_target":null,"product_id":null},"showButton":true,"imgCssObjectPositionValue":"50% 50%"},{"uuid":"2049","title":"“Mano’s is not just a classic New York slice, but a classic New York slice shop as well.“","desc":"<p><strong>— The Infatuation</strong></p><p><br></p><p>The Infatuation calls Mano’s the kind of slice shop every neighborhood needs — paper plates, red-checkered tables, and family photos on the wall. Their review praises the perfectly chewy, charred crust and notes that the dough is fermented for five days, giving each slice that crisp, crackery texture. They also highlight family-inspired pies like the Fulgieri with caramelized onions and the Minucci with sausage, pepperoni, and Calabrian chilis.</p>","media":{"imgSrc":"https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/infatuation-screenshot-1920w.png","alt":null,"vidSrc":null,"lazy":true,"type":"IMAGE"},"button":{"text":"Read The Full Review"},"linkDomAttributes":{"href":"https://www.theinfatuation.com/new-york/reviews/manos-pizzeria","type":"url","target":"_blank","link_type":"url","popup_target":null,"product_id":null},"showButton":true},{"uuid":"34240","title":"A well-kept neighborhood pizzeria, among the most appreciated in the city for those seeking quality without excess.","desc":"<p><strong>— Top 50 Pizza USA</strong></p><p><br></p><p>Top 50 Pizza USA praises Mano’s for its long-fermented dough and perfect balance of crispiness and lightness. The review highlights the simplicity of the classic cheese slice and the bold flavor of the Minucci, topped with sausage, chili, and spicy honey — all served in a welcoming, no-frills setting that defines Ridgewood charm.</p>","media":{"imgSrc":"https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/image26-1920w.jpeg","alt":null,"vidSrc":null,"lazy":true,"type":"IMAGE"},"button":{"text":"Read The Full Review"},"linkDomAttributes":{"href":"https://www.50toppizza.it/referenza/manos-pizzeria-2/","type":"url","target":"_blank","link_type":"url","popup_target":null,"product_id":null},"showButton":true}],"paginationType":"bullets","animationType":"slide","contentAnimationTypeCssClass":"fadeInUp","bindingSource":null,"paginationShow":"always","arrowStyle":"arrow_thin","slotsInFrame":null,"_styles":{"slide_contentContainer":{"desktop":{"padding-left":"20px","align-items":"start","text-align":"start","padding-right":"0px"},"tablet":{"align-items":"start","text-align":"start"},"mobile":{"padding-left":"15px","align-items":"center","padding-right":"15px","text-align":"center"}},"slide_title":{"common":{"color":"rgba(42, 33, 30, 1)","font-weight":"bold","font-style":"italic"},"desktop":{"font-size":"24px"},"tablet_implicit":{"font-size":"22px"},"tablet":{"font-size":"26px"},"mobile_implicit":{"font-size":"19px"}},"slide_desc":{"common":{"color":"rgba(42, 33, 30, 1)"},"desktop":{"font-size":"16px"},"tablet_implicit":{"font-size":"14px"},"mobile_implicit":{"font-size":"13px"}},"slide_button":{"root":{},"text":{"desktop":{"font-size":"14px"},"tablet_implicit":{"font-size":"13px"},"mobile_implicit":{"font-size":"11px"}},"rootHover":{},"rootHoverText":{},"icon":{},"iconWrapper":{},"buttonTypeCSSClass":"button_2"},"slide_mediaContainer":{"common":{"border-radius":"0px","border-bottom-left-radius":null,"background":"rgba(0, 0, 0, 0)","border-top-left-radius":null,"border-top-right-radius":null,"border-bottom-right-radius":null}},"slide_media":{"common":{"object-fit":"contain"}},"pagination_buttonBullet":{"common":{},"desktop":{"width":"12px","height":"12px"}},"pagination_buttonBulletActive":{"common":{"color":"var(--color_5)"}},"layoutSpecificStyles":{}},"widgetId":"1835466113"},"id":"1835466113"}, false)});</script></span></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-layout-section="" data-auto="flex-section" id="1450700619" data-flex-id="7933b057" data-page-element-type="section" data-page-element-id="1341478237"> <div class="flex-widgets-container" id="1754204070"></div> 
+ <section id="64ec4dab" class="flex-element section" data-auto="flex-element-section"> <div id="37852801" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="43484777" class="flex-element group" data-auto="flex-element-group"> <div id="202c3475" class="flex-element group" data-auto="flex-element-group"> <div id="219c60c8" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1801426462"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1801426462" data-ai-tag="Section title" style=""> <h2 class="t-text-align-left m-text-align-center"><span style="display: unset;">🏆A Slice of Recognition</span></h2> 
+</div> 
+</div> 
+ <div id="d20e136d" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1290694518"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1290694518" style="" data-ai-tag="Short description"><p class="text-align-left t-text-align-left m-text-align-center"><span class="" style="display: unset;"><span style="display: unset;">We&rsquo;re proud to be recognized among the</span> 
+</span><strong style="display: unset;">Top 50 Pizzerias in the Country</strong><span class="" style="display: unset;"><span style="display: unset;">, ranking</span> 
+</span><strong style="display: unset;">#8 in 2025</strong><span class="" style="display: unset;"> <span style="display: unset;">and</span> 
+</span><strong style="display: unset;">#4 in 2024</strong><span style="display: unset;">.</span></p></div> 
+</div> 
+</div> 
+ <div id="group_fs5" class="flex-element group" data-auto="flex-element-group"> <div id="2cb0c044" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="image" data-external-id="1984110139"> <div class="imageWidget align-center u_1984110139" data-element-type="image" data-widget-type="image" id="1984110139"><img src="https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/50-top-pizza-180h.jpg" alt="" id="1154931386" class="" width="1633" height="1633" data-dm-image-path="https://irp.cdn-website.com/b9e2d2c5/dms3rep/multi/50-top-pizza.jpg" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-layout-section="" data-auto="flex-section" id="1473511572" data-flex-id="d1d8ebc5" data-page-element-type="section" data-page-element-id="1877488536"> <div class="flex-widgets-container" id="1203195637"></div> 
+ <section id="166d89f9" class="flex-element section" data-auto="flex-element-section"> <div id="b7869496" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="ff5df099" class="flex-element group" data-auto="flex-element-group"> <div id="7b733a77" class="flex-element group" data-auto="flex-element-group"> <div id="b7599b77" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1201381399"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1201381399" style="" data-ai-tag="Kicker"><p class="text-align-center"><span style="color: var(--color_3); display: unset; text-transform: uppercase;">Follow us</span></p></div> 
+</div> 
+ <div id="d14e3a33" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1460024699"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1460024699" data-ai-tag="Section title" style=""> <h2 class="text-align-center"><span style="display: unset; color: var(--color_3);">Stay Connected with Mano&rsquo;s</span></h2> 
+</div> 
+</div> 
+ <div id="widget_uug" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1681094081"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1681094081" style=""><p class="text-align-center m-text-align-center"><span style="display: unset; color: var(--color_3);">Follow @manospizzeria for a behind-the-scenes look at the shop, new specials, and the pies everyone&rsquo;s talking about.</span></p></div> 
+</div> 
+ <div id="widget_o69" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="socialhub" data-external-id="1043718147"> <div class="align-center text-align-center u_1043718147 dmSocialHub gapSpacing" id="1043718147" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://instagram.com/manos_pizzeria" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style3" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-layout-section="" data-auto="flex-section" id="1144995975" data-flex-id="0cc80a72" data-page-element-type="section" data-page-element-id="1877488536"> <div class="flex-widgets-container" id="1976485319"></div> 
+ <section id="f1d3e3e5" class="flex-element section" data-auto="flex-element-section"> <div id="0515f633" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="6e28f4b0" class="flex-element group" data-auto="flex-element-group"> <div id="548a1d00" class="flex-element group" data-auto="flex-element-group"> <div id="18cbd1e7" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="image" data-external-id="1298391084"> <div class="imageWidget align-center u_1298391084" data-element-type="image" data-widget-type="image" id="1298391084"><img src="https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/image13-490w.jpeg" alt="" id="1251295610" class="" width="1242" height="876" data-dm-image-path="https://irp.cdn-website.com/b9e2d2c5/dms3rep/multi/image13.jpeg" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+ <div id="629c7f24" class="flex-element group" data-auto="flex-element-group"> <div id="c9eabf07" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="image" data-external-id="1655861374"> <div class="imageWidget align-center u_1655861374" data-element-type="image" data-widget-type="image" id="1655861374"><img src="https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/Screenshot+2025-10-06+at+6.57.23-PM-490w.png" alt="" id="1511630339" class="" width="1866" height="1838" data-dm-image-path="https://irp.cdn-website.com/b9e2d2c5/dms3rep/multi/Screenshot+2025-10-06+at+6.57.23-PM.png" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+ <div id="925e2604" class="flex-element group" data-auto="flex-element-group"> <div id="fac360ac" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="image" data-external-id="1139351747"> <div class="imageWidget align-center u_1139351747" data-element-type="image" data-widget-type="image" id="1139351747"><img src="https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/Screenshot+2025-10-06+at+6.54.03-PM-490w.png" alt="" id="1394968986" class="" width="1406" height="1510" data-dm-image-path="https://irp.cdn-website.com/b9e2d2c5/dms3rep/multi/Screenshot+2025-10-06+at+6.54.03-PM.png" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+ <div id="e36030c4" class="flex-element group" data-auto="flex-element-group"> <div id="d4db12e4" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="image" data-external-id="1497272271"> <div class="imageWidget align-center u_1497272271" data-element-type="image" data-widget-type="image" id="1497272271"><img src="https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/manos-insta-1-c7e45418-490w.png" alt="" id="1307442820" class="" width="1401" height="1416" data-dm-image-path="https://irp.cdn-website.com/b9e2d2c5/dms3rep/multi/manos-insta-1-c7e45418.png" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer flex_hfcontainer"> <div id="flex-footer" role="contentinfo"> <div data-layout-section="" data-auto="flex-section" id="1040776654" data-flex-id="bae92cf1"> <div class="flex-widgets-container" id="1945392167"></div> 
+ <section id="3e415e2f" class="flex-element section" data-auto="flex-element-section"> <div id="2267e707" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="706ac5a6" class="flex-element group" data-auto="flex-element-group"> <div id="11464c72" class="flex-element group" data-auto="flex-element-group"> <div id="widget_f08" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="clicktomap" data-external-id="2366316489"> <div class="default align-center flexButton inlineMap" data-type="inlineMap" data-lat="40.710819" data-lng="-73.905389" data-address="62-98 Forest Avenue, Ridgewood, New York 11385, United States" data-height="" data-msid="" data-mapurl="" data-lang="en" data-color-scheme="" data-zoom="13" data-layout="layout4" data-popup-display="" data-popup-show="false" data-popup-title="" data-popup-title-visible="false" data-popup-description="" data-popup-description-visible="false" id="2366316489" dmle_extension="mapextension" data-element-type="mapextension" modedesktop="map" modemobile="map" addresstodisplay="62-98 Forest Avenue, Ridgewood, New York 11385, United States" geocompleteaddress="62-98 Forest Avenue, Ridgewood, New York 11385, United States" data-popup-display-desktop="" data-popup-display-mobile="" data-display-type="block" layout="layout4" dmmapsource="dm" modetablet="map" wr="true" icon="true" surround="true" adwords="" icon-name="icon-map-marker" street="" city="" country="US" country_full="United States" state="" zip="" business="Mano's Pizzeria" provider="mapbox" lon="-73.905389" lat="40.710819" zoom="13"> <div class="mapContainer" style="height: 100%; width: 100%; overflow: hidden; z-index: 0;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-auto="flex-section" id="1755561873" data-flex-id="63da2bddeae8da42b2353671" data-layout-section=""> <div class="flex-widgets-container" id="1245219930"></div> 
+ <section id="63da2bddeae8da42b2353670" class="flex-element section" data-auto="flex-element-section"> <div id="63da2bddeae8da42b2353672" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="63da2bddeae8da42b2353673" class="flex-element group" data-auto="flex-element-group"> <div id="group_7bg" class="flex-element group" data-auto="flex-element-group"> <div id="widget_c7i" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="image" data-keep-proportion="true" data-external-id="287167028"> <div class="imageWidget align-center" data-element-type="image" data-widget-type="image" id="287167028"><img src="https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/manos-logo-transparent+copy-KO-319w.png" alt="" id="1046563017" class="" width="1920" height="1587" data-dm-image-path="https://irp.cdn-website.com/b9e2d2c5/dms3rep/multi/manos-logo-transparent+copy-KO.png" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+ <div id="widget_dpv" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="812836563"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="812836563" style=""> <h3 class="text-align-center"><span style="display: unset; color: var(--color_3);">Quality in Queens.</span></h3> 
+</div> 
+</div> 
+</div> 
+ <div id="63da2bf2eae8da42b23538a2" class="flex-element group" data-auto="flex-element-group"> <div id="63da2bf2eae8da42b23538a3" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1721508574"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1721508574" style="" new-inline-bind-applied="true" data-diy-text=""> <h6 class="t-text-align-center m-text-align-center text-align-left"><span style="color: var(--color_4); display: initial;"><span class="inline-data-binding" data-encoded-value="TWFubydzIFBpenplcmlh" data-inline-binding="content_library.global.company_name" data-inline-binding-encoded="Y29udGVudF9saWJyYXJ5Lmdsb2JhbC5jb21wYW55X25hbWU=">Mano's Pizzeria</span></span></h6> 
+ <p class="t-text-align-center m-text-align-center text-align-left"><span style="color: var(--color_4); display: initial;"><span class="inline-data-binding" data-encoded-value="KDcxOCkgNDE4LTExMTI=" data-inline-binding="content_library.global.phone.store phone" data-inline-binding-encoded="Y29udGVudF9saWJyYXJ5Lmdsb2JhbC5waG9uZS5zdG9yZSBwaG9uZQ=="><a class="inlineBindingLink" target="_blank" href="tel:(718) 418-1112">(718) 418-1112</a></span></span></p><p class="t-text-align-center m-text-align-center text-align-left"><span style="display: initial; color: var(--color_3);">62-98 Forest Ave, Ridgewood, NY 11385</span></p></div> 
+</div> 
+ <div id="4e016408" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1102040036"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1102040036" style="" data-diy-text=""> <h6 class="t-text-align-center m-text-align-center text-align-left"><font color="#ffffff">hours:</font><font color="#ffffff" style="display: initial;"><span class="ql-cursor">﻿</span></font></h6> 
+</div> 
+</div> 
+ <div id="widget_nq4" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="hoursOfOperation" data-external-id="788250753"> <div class="default u_788250753 dmHoursOfOperation" id="788250753" dmle_extension="open_hours" data-element-type="open_hours" data-binding="W3siYmluZGluZ05hbWUiOiJidXNpbmVzc19ob3VycyIsInZhbHVlIjoiY29udGVudF9saWJyYXJ5Lmdsb2JhbC5idXNpbmVzc19ob3VycyJ9XQ==" time_format="12" wr="true" displaytitle="false" lang="" forcedisplay="false" icon="true" surround="true" adwords=""> <dl class="open-hours-data"> <div class="open-hours-item"> <dt day="0">Mon - Tue</dt> 
+ <dd>Closed</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="2">Wed - Thu</dt> 
+ <dd> <time>12:30 pm</time> 
+- <time>8:00 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="4">Fri - Sat</dt> 
+ <dd> <time>12:30 pm</time> 
+- <time>9:00 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="6">Sunday</dt> 
+ <dd> <time>12:30 pm</time> 
+- <time>8:00 pm</time> 
+</dd> 
+</div> 
+</dl> 
+</div> 
+</div> 
+</div> 
+ <div id="63da2bfbeae8da42b2353a45" class="flex-element group" data-auto="flex-element-group"> <div id="widget_5js" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="link" data-hidden-on-desktop="" data-hidden-on-tablet="" data-hidden-on-mobile="" data-external-id="2267985746"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="https://www.toasttab.com/local/order/manos-pizzeria-62-98-forest-ave/item-minucci-pie_6516079b-d813-43e3-aed7-5b4727fd4c5d" data-element-type="dButtonLinkId" id="2267985746" target="_blank"> <span class="iconBg" aria-hidden="true" id="1674592607"> <span class="icon hasFontIcon icon-star" id="1998102836"></span> 
+</span> 
+ <span class="text" id="1552092675">ORDER ONLINE</span> 
+</a> 
+</div> 
+ <div id="widget_89q" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="image" data-keep-proportion="true" data-external-id="1903081518"> <div class="imageWidget align-center" data-element-type="image" data-widget-type="image" id="1903081518"> <a href="https://www.ubereats.com/store/manos-pizzeria/Oj4D11X0UveUSwi_7AUSzA?utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" id="1584601480" class="" target="_blank" file="false"><img src="https://lirp.cdn-website.com/b9e2d2c5/dms3rep/multi/opt/Uber_Eats_app_icon_2020-96w.webp" alt="" id="1982779414" class="" width="1024" height="1024" data-dm-image-path="https://irp.cdn-website.com/b9e2d2c5/dms3rep/multi/Uber_Eats_app_icon_2020.webp" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div id="63da2bfbeae8da42b2353a44" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="socialhub" data-external-id="1069507160"> <div class="align-center text-align-center u_1069507160 dmSocialHub gapSpacing" id="1069507160" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="tel:7184181112" target="_blank" dm_dont_rewrite_url="true" aria-label="phone" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Phone&apos;)"> <span class="dmSocialPhone icon-phone oneIcon socialHubIcon style9" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://facebook.com/manospizzeria" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style9" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://instagram.com/manos_pizzeria" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style9" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://yelp.com/biz/mano-s-pizzeria-ridgewood" target="_blank" dm_dont_rewrite_url="true" aria-label="yelp" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Yelp&apos;)"> <span class="dmSocialYelp dm-social-icons-yelp oneIcon socialHubIcon style9" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.google.com/maps/place/v9vxcbN4V2FdPdDA7" target="_blank" dm_dont_rewrite_url="true" aria-label="google_my_business" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;GoogleMyBusiness&apos;)"> <span class="dmSocialGoogleMyBusiness dm-social-icons-google-my-business oneIcon socialHubIcon style9" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="c0504b3a" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="custom" data-external-id="1056813044"> <div class="widget-1f5975 u_1056813044 dmCustomWidget" data-lazy-load="" data-title="" id="1056813044" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="1f5975986930429f819d4cd2154b5c4a" data-widget-version="25" data-widget-config="eyJyZXZlcnNlRmxhZyI6bnVsbCwiY29weXJpZ2h0VGV4dCI6IjxwIGNsYXNzPVwicnRlQmxvY2tcIj5BbGwgUmlnaHRzIFJlc2VydmVkIHwgTWFubyYjeDI3O3MgUGl6emVyaWE8L3A+In0="> <div class="copyright"> <div>&copy; 2025&nbsp;</div> 
+ <div><p class="rteBlock">All Rights Reserved | Mano's Pizzeria</p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link rel="preload" href="https://irp.cdn-website.com/fonts/css2?family=Prata:ital,wght@0,400&family=Muli:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;subset=latin-ext&amp;display=swap"  as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<style>
+@font-face {
+  font-family: "DudaSansVF";
+  src: url("https://irp.cdn-website.com/b9e2d2c5/fonts/DudaSansVF-edd7_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-flex-->
+<link rel="preload" as="style" fetchpriority="low" onload="loadCSS(this)" href="https://static.cdn-website.com/mnlt/production/5978/_dm/s/rt/dist/css/d-css-runtime-flex.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link rel="preload" href="https://irp.cdn-website.com/WIDGET_CSS/bc3e508a9f96b3b5b2f5d31f587ca1bd.css" id="widgetCSS" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="home"] #dm [data-show-on-page-only="home"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/b9e2d2c5/files/b9e2d2c5_withFlex_1.min.css?v=17" id="siteGlobalCss" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<!-- Page CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/b9e2d2c5/files/b9e2d2c5_home_withFlex_1.min.css?v=17" id="homeCssLink" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<style id="pagestyle" type="text/css">
+    
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    @media (min-width: 1025px) {  }@media (min-width: 768px) and (max-width: 1024px) {  }@media (max-width: 767px) {  }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script>
+    window.customWidgetsFunctions["1f5975986930429f819d4cd2154b5c4a~25"] = function (element, data, api) {
+        null
+    };
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5978";
+    var build = "2025-12-01T14_43_32";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-12-01T14_43_32";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5978';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5978';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =false;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =false;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5978/_dm/s/rt/dist/scripts/d-js-runtime-flex-package.min.js"  id="d-js-core" defer></script>
+<!-- End of HEAD RT JS Include -->
+<script>
+    document.addEventListener('DOMContentLoaded', () =>
+        window.runtime.initLayout()
+    );
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: 'b9e2d2c5'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: b9e2d2c5 -->
+<script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<div><script type="text/javascript">
+             try{
+            if (globalThis.parent){
+                 var parentFlags =  globalThis.parent._flags;
+                 var parentStrings =  globalThis.parent.dmStr;
+
+             }
+            } catch(e) {}
+            _flags = window._flags || {};_flags = {...parentFlags,..._flags,...{"runtime.ssr.accordion.scroll.height.fix":true,"runtime.ssr.add.render":true,"runtime.ssr.booking.dryrun.for.default.staffmember":false,"runtime.ssr.checkbox.customizations":false,"runtime.ssr.ecom.productStore.connectedWidgets.init.listener.from.rt.mobx.store":false,"runtime.ssr.enabled":true,"runtime.ssr.initial-props-in-data-attribute":true,"runtime.ssr.lazyHydrate":true,"runtime.ssr.log.showHydrationDiff":false,"runtime.ssr.log.showHydrationErrors":true,"runtime.ssr.non-view-media-server-placeholder":true,"runtime.ssr.productCustomizations":true,"runtime.ssr.productStore.internal.observer":true,"runtime.ssr.render.overrideMarkup":true,"runtime.ssr.script-fetch-priority-low":false,"runtime.ssr.slider-dev-logging":false,"runtime.ssr.slider-reOrderSelectedToBeFirst":true,"runtime.ssr.slider.alternative.animation.to.reduce.cls.enabled":true,"runtime.ssr.slider.image.fillAvailableSpace.enabled":true,"runtime.ssr.ssrAddToCart.snipcart.new.api.addProduct.enabled":true,"runtime.ssr.ssrSlider.multiplePaginationPerLayout.enabled":true,"runtime.ssr.ssrSlider.slideCleanWrap.enabled":true,"runtime.ssr.widget.migration.addtocart":false,"runtime.ssr.widget.migration.options.variations":false}}
+           
+        
+          var dmStr = {...parentStrings,...dmStr,...{"key.runtime":"some value","placeholder.add-content":"Add Content","second.key":"value2","widget.addtocart.title":"Add to cart","ui.ed.breadcrumbs.empty.message":"There aren't any visible pages to show in the breadcrumbs. This message won't appear on your live published site.","ui.runtimessr.addtocart.subscribe.title":"Subscribe Now","ui.runtimessr.addtocart.subscribe.tooltip.text":"Test your subscription’s checkout by publishing your site and using its live version. ","ui.runtimessr.calbooking.back.button":"Back","ui.runtimessr.calbooking.booking.title":"{eventTitle} between {staffMemberName} and {attendeeNames}","ui.runtimessr.calbooking.cancelBooking.cancelButton":"Cancel appointment","ui.runtimessr.calbooking.cancelBooking.cancelling":"Cancelling...","ui.runtimessr.calbooking.cancelBooking.cancelling.placeholder":"Why are you cancelling?","ui.runtimessr.calbooking.cancelBooking.reason":"Reason for cancellation (optional)","ui.runtimessr.calbooking.cancelBooking.title":"Cancel this appointment?","ui.runtimessr.calbooking.canceledBooking.title":"This appointment is canceled","ui.runtimessr.calbooking.confirmation.dryRun.note":"Check back later or contact us for more info","ui.runtimessr.calbooking.confirmation.dryRun.title":"This site isn’t accepting bookings yet","ui.runtimessr.calbooking.confirmation.pending.subtitle":"It’s now awaiting confirmation from our team","ui.runtimessr.calbooking.confirmation.pending.title":"Your booking request was sent","ui.runtimessr.calbooking.confirmation.preview.note":"Go to the live site at its actual domain to make a booking","ui.runtimessr.calbooking.confirmation.preview.title":"You can't create appointments in preview mode","ui.runtimessr.calbooking.confirmation.success.back":"Back","ui.runtimessr.calbooking.confirmation.success.cancel":"Cancel","ui.runtimessr.calbooking.confirmation.success.change":"Need to make a change?","ui.runtimessr.calbooking.confirmation.success.description":"We sent an email with the details to everyone.","ui.runtimessr.calbooking.confirmation.success.host":"Host","ui.runtimessr.calbooking.confirmation.success.or":"or","ui.runtimessr.calbooking.confirmation.success.reschedule":"Reschedule","ui.runtimessr.calbooking.confirmation.success.title":"This meeting is scheduled","ui.runtimessr.calbooking.confirmation.success.videoCallLink":"Video Call","ui.runtimessr.calbooking.confirmation.success.what":"What","ui.runtimessr.calbooking.confirmation.success.when":"When","ui.runtimessr.calbooking.confirmation.success.where":"Where","ui.runtimessr.calbooking.confirmation.success.who":"Who","ui.runtimessr.calbooking.duration.minutes":"{duration} min","ui.runtimessr.calbooking.markup.eventType":"Appointment type name","ui.runtimessr.calbooking.markup.userName":"Staff Member Name","ui.runtimessr.calbooking.meta.price.free":"Free","ui.runtimessr.calbooking.meta.price.includes.tax":"Includes {taxPercentage} tax","ui.runtimessr.calbooking.meta.price.might.change":"Total price might change depending on your location","ui.runtimessr.calbooking.paid.booking.next.step.button":"Next","ui.runtimessr.calbooking.reschedule.booking":"Reschedule Booking","ui.runtimessr.collectionSearch.noResults":"No results.","ui.runtimessr.priceOptions.option.oneTimeOnly":"One-time purchase","ui.runtimessr.productCustomizations.errors.checkbox.exactlyChoices":"Choose exactly {exact} choices","ui.runtimessr.productCustomizations.errors.checkbox.maxChoices":"Choose up to {max} choices","ui.runtimessr.productCustomizations.errors.checkbox.minChoices":"Choose at least {min} choices","ui.runtimessr.productCustomizations.errors.checkbox.required":"Choose at least one choice","ui.runtimessr.productCustomizations.errors.required":"This field is required","ui.runtimessr.productCustomizations.noCustomizations":"This product has no product customizations. This widget will not show up on the live site.","ui.runtimessr.productPrice.omnibus.last.price":"Lowest price in the last {period} days - {displayedPrice}","ui.runtimessr.productPrice.omnibus.total.price.might.change":"Total price might change depending on your location","ui.runtimessr.productPrice.omnibus.vat":"Includes {vatPercentage}% tax","ui.runtimessr.productPriceOptions.autoRenew":"Will auto-renew until canceled","ui.runtimessr.productPriceOptions.expiresAfter":"Expires after","ui.runtimessr.productPriceOptions.frequency.monthly":"month","ui.runtimessr.productPriceOptions.frequency.weekly":"week","ui.runtimessr.productPriceOptions.frequency.yearly":"year","ui.runtimessr.productPriceOptions.frequencyPlural.monthly":"months","ui.runtimessr.productPriceOptions.frequencyPlural.weekly":"weeks","ui.runtimessr.productPriceOptions.frequencyPlural.yearly":"years","ui.runtimessr.productPriceOptions.title":"Price options","widget.addtocart.disabledText.placeHolder":"OUT OF STOCK","widget.filtersort.clear-all":"clear all","widget.filtersort.filter-by.title":"Filter by","widget.filtersort.sort-by.title":"Sort by","widget.filtersort.title":"Sort & Filter"}}
+
+</script>
+        <script id="ssr-static" type="module"  src="https://ms-cdn.multiscreensite.com/runtime-react/4032/res/js/runtime-react.js"></script></div><!--  End Script tags -->
+<!--  Site Wide Html Markup -->
+<div id="swh-5f6c7a5a60ef486cba0d62644517d691"><div data-wrapper-source="appstore" > <script type="text/javascript" src="https://cdn.userway.org/widget.js?account=brC6IWXFjF&platfAppInstalledSiteId=3909363"></script> </div></div><!--  Site Wide Html Markup -->
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Degirmen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body class="page">
+    <header class="header">
+        <!-- Main site navigation -->
+        <div class="header__nav-container">
+            <nav class="nav header__nav">
+                <a class="nav__logo" href="index.html">
+                    <img src="img/degirmen-logo.png" alt="Degirmen logo" />
+                </a>
+
+                <ul class="nav__list site-nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item nav__item--active"><a href="menu.html" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="story.html" class="nav__link">Our&nbsp;Story</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact&nbsp;Us</a></li>
+                </ul>
+
+                <div class="nav__actions">
+                    <button class="nav__cart-button" aria-label="Open cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="nav__cart-badge">0</span>
+                    </button>
+                    <label class="theme-switch" title="Toggle theme">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="theme-slider"></span>
+                    </label>
+                    <button class="nav__menu-button" aria-label="Toggle menu">
+                        <span class="nav__menu-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cart-overlay"></div>
+    <div class="cart-panel">
+        <div class="cart-panel__header">
+            <h3 class="cart-panel__title">Your Order</h3>
+            <button class="cart-panel__close" aria-label="Close cart">&times;</button>
+        </div>
+        <ul class="cart-panel__body">
+            <!-- Cart items will be rendered here by JavaScript -->
+            <li class="cart-panel__empty-message">Your cart is empty.</li>
+        </ul>
+        <div class="cart-panel__footer">
+            <div class="cart-panel__total">
+                <span>Total:</span>
+                <span class="cart-panel__total-price">$0.00</span>
+            </div>
+            <a href="#" class="cart-panel__checkout-button">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Food‑category navigation -->
+        <h2 class="categories-title">Food Categories</h2>
+        <div class="categories-wrapper">
+            <div class="categories-icon">
+                <i class="fas fa-chevron-left" id="left"></i>
+            </div>
+            <ul class="nav-categories__list tabs-box">
+                <li class="nav-categories__item tab nav-categories__item--active" data-category="burger"><span class="nav-categories__icon"><i class="fas fa-hamburger"></i></span>
+                    <span class="nav-categories__label">Burger</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="steak"><span class="nav-categories__icon"><i class="fas fa-fire-burner"></i></span>
+                    <span class="nav-categories__label">Steak</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="bbq"><span class="nav-categories__icon"><i class="fas fa-fire"></i></span>
+                    <span class="nav-categories__label">BBQ</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="seafood dishes">
+                    <span class="nav-categories__icon"><i class="fas fa-fish"></i></span>
+                    <span class="nav-categories__label">Seafood Dishes</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="doner"><span class="nav-categories__icon"><i class="fas fa-hotdog"></i></span>
+                    <span class="nav-categories__label">Doner</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="soups"><span class="nav-categories__icon"><i class="fas fa-bowl-food"></i></span>
+                    <span class="nav-categories__label">Soups</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="salads"><span class="nav-categories__icon"><i class="fas fa-leaf"></i></span>
+                    <span class="nav-categories__label">Salads</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="pide"><span class="nav-categories__icon"><i class="fas fa-bread-slice"></i></span>
+                    <span class="nav-categories__label">Pide</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="pizza"><span class="nav-categories__icon"><i class="fas fa-pizza-slice"></i></span>
+                    <span class="nav-categories__label">Pizza</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="breakfast"><span class="nav-categories__icon"><i class="fas fa-egg"></i></span>
+                    <span class="nav-categories__label">Breakfast</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="pastas"><span class="nav-categories__icon"><i class="fas fa-utensils"></i></span>
+                    <span class="nav-categories__label">Pastas</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="chicken world">
+                    <span class="nav-categories__icon"><i class="fas fa-drumstick-bite"></i></span>
+                    <span class="nav-categories__label">Chicken World</span>
+                </li>
+                <li class="nav-categories__item tab" data-category="fried foods">
+                    <span class="nav-categories__icon"><i class="fas fa-cookie"></i></span>
+                    <span class="nav-categories__label">Fried Foods</span>
+                </li>
+            </ul>
+            <div class="categories-icon">
+                <i class="fas fa-chevron-right" id="right"></i>
+            </div>
+        </div>
+
+        <div class="menu-content">
+            <h1 class="menu__title">
+                <span class="menu__title-icon" id="menu-icon"><i class="fas fa-hamburger"></i></span>
+                <span id="menu-title-text">Burger</span>
+            </h1>
+            <p class="menu__sizes" id="menu-sizes"></p>
+
+            <ul class="food-list" id="food-list">
+                <!-- Food items will be populated by JavaScript -->
+            </ul>
+        </div>
+    </main>
+
+    <div class="food-details-overlay"></div>
+    <div class="food-details-panel">
+        <button class="food-details__close" aria-label="Close details panel">&times;</button>
+        <div class="food-details__content">
+            <h2 class="food-details__name"></h2>
+            <p class="food-details__ingredients"></p>
+            <p class="food-details__description"></p>
+            <div class="food-details__footer">
+                <span class="food-details__price"></span>
+                <button class="food-details__order-button">Add to Order</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Bottom Mobile Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav__item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="menu.html" class="bottom-nav__item bottom-nav__item--active">
+            <i class="fas fa-utensils"></i>
+            <span>Menu</span>
+        </a>
+        <a href="story.html" class="bottom-nav__item">
+            <i class="fas fa-book-open"></i>
+            <span>Story</span>
+        </a>
+        <a href="contact.html" class="bottom-nav__item">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__section footer__section--about">
+                <h3 class="footer__title">Degirmen</h3>
+                <p class="footer__about-text">A taste of tradition in every bite. We serve authentic and delicious dishes made with the freshest ingredients, inspired by our rich heritage.</p>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Quick Links</h3>
+                <ul class="footer__list">
+                    <li class="footer__list-item">
+                        <a href="menu.html" class="footer__link">Our Menu</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="story.html" class="footer__link">About Us</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="contact.html" class="footer__link">Contact</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#privacy" class="footer__link">Privacy Policy</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Contact Us</h3>
+                <ul class="footer__list">
+                    <li class="footer__list-item">📍 236 A Brighton Beach Ave, Brooklyn, NY 11235</li>
+                    <li class="footer__list-item">📞 +1 (646) 881-3322</li>
+                    <li class="footer__list-item">✉️ Degirmenbrooklyn@gmail.com</li>
+                    <li class="footer__list-item">⏰ Mon-Sun: 7:30 AM - 10:00 PM</li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Follow Us</h3>
+                <div class="footer__social">
+                    <a href="https://www.instagram.com/degirmenusa/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2024 Degirmen Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="menu_data.js?v=22"></script>
+    <script src="js/script.js"></script>
+</body>
+</html> 

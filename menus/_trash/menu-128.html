@@ -1,0 +1,447 @@
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3WJVZJ095L"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11547096844"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-3WJVZJ095L');
+        gtag('config', 'AW-11547096844');
+    </script>
+
+    <script src="/js/ga.js"></script>
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/pdfs.css">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.0.375/pdf_viewer.min.css">
+    <title>Kashkaval Garden All Menus</title>
+    <style>
+        body {
+            font-family: Montserrat, sans-serif;
+            background: url(/img/bg1.jpg);
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            min-height: 100vh;
+        }
+
+        .menu-nav {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 20px;
+            background: rgba(17, 17, 17, 0.8);
+            border-radius: 0;
+            box-shadow: 0 2px 6px 0 rgba(50, 50, 50, 0.3);
+        }
+
+        .menu-buttons-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .resy-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-nav-button {
+            border: 0;
+            background: #7b5b4b;
+            color: #fff !important;
+            padding: 12px 16px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+            border-radius: 20px;
+            font-family: Montserrat, sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            white-space: nowrap;
+            margin: 4px;
+        }
+
+        .menu-nav-button:hover {
+            background: #333;
+        }
+
+        .menu-nav-button.active {
+            background: #B13032;
+        }
+
+        .menu-nav-button:focus {
+            outline: 0;
+            background: #482818;
+        }
+
+        .menu-section {
+            display: none;
+            background: rgba(17, 17, 17, 0.6);
+            border-radius: 0;
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 95%;
+            box-shadow: 0 2px 6px 0 rgba(50, 50, 50, 0.3);
+        }
+
+        .menu-section.active {
+            display: block;
+        }
+
+        canvas {
+            display: block;
+            margin: 0 auto 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 0;
+        }
+
+        /* Resy button styling */
+        .resy-button {
+            display: inline-block;
+            margin: 10px 15px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            color: #2c1810;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 6px 20px rgba(212, 175, 55, 0.5),
+                0 0 20px rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            vertical-align: middle;
+            border: 2px solid rgba(255, 215, 0, 0.6);
+            transform: scale(1.1);
+        }
+
+        .resy-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .resy-button:hover::before {
+            left: 100%;
+        }
+
+        .resy-button:hover {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #1a1a1a !important;
+            transform: scale(1.15) translateY(-2px);
+            box-shadow:
+                0 8px 25px rgba(212, 175, 55, 0.7),
+                0 0 30px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Override Resy widget styles for alignment */
+        .menu-nav span[role="button"] {
+            border: 2px solid #ffc600 !important;
+            background: #ffc600 !important;
+            color: #333 !important;
+            border-radius: 20px !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease-in-out !important;
+            box-shadow: 0 2px 6px 0 rgba(50, 50, 50, 0.3) !important;
+            margin: 4px !important;
+            vertical-align: middle !important;
+        }
+
+        .menu-nav span[role="button"]:hover {
+            background: #fff !important;
+            color: #000 !important;
+            transform: scale(1.1) translateY(-2px) !important;
+            box-shadow: 0 4px 10px 0 rgba(50, 50, 50, 0.4) !important;
+        }
+
+        .menu-nav span[role="button"]:hover * {
+            color: #000 !important;
+            background: transparent !important;
+        }
+
+        .menu-nav span[role="button"] * {
+            color: #333 !important;
+        }
+
+        .menu-nav span[role="button"] iframe {
+            border-radius: 18px !important;
+        }
+
+        /* Tablet responsiveness */
+        @media (max-width: 1024px) {
+            .menu-nav {
+                grid-template-columns: 1fr 1fr;
+                max-width: 600px;
+            }
+
+            .menu-nav span[role="button"] {
+                grid-column: span 2 !important;
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            .menu-nav {
+                margin: 10px;
+                padding: 20px;
+                grid-template-columns: 1fr;
+                gap: 12px;
+                max-width: none;
+            }
+
+            .menu-nav-button,
+            .menu-nav span[role="button"] {
+                width: 100% !important;
+                max-width: none !important;
+                min-width: auto !important;
+                grid-column: 1 !important;
+                font-size: 16px;
+                padding: 16px 20px;
+            }
+
+            .menu-section {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            canvas {
+                max-width: 100%;
+                height: auto;
+                margin: 10px auto 20px;
+            }
+        }
+
+            .menu-section {
+                margin: 10px;
+                padding: 15px;
+                border-radius: 15px;
+            }
+
+            canvas {
+                max-width: 100%;
+                height: auto;
+                margin: 10px auto 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-nav-button {
+                font-size: 16px;
+                padding: 12px 16px;
+            }
+
+            .resy-button {
+                font-size: 17px;
+                padding: 14px 18px;
+            }
+
+            .menu-section {
+                padding: 10px;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="menu-nav">
+        <div class="menu-buttons-row">
+            <button class="menu-nav-button active" onclick="showMenu('dinner', this)">Dinner</button>
+            <button class="menu-nav-button" onclick="showMenu('lunch', this)">Lunch</button>
+            <button class="menu-nav-button" onclick="showMenu('brunch', this)">Brunch</button>
+            <button class="menu-nav-button" onclick="showMenu('bar', this)">Bar/Dessert</button>
+        </div>
+        <div class="resy-row">
+            <a href="https://resy.com/cities/new-york-ny/venues/kashkaval-garden" id="resyButton-mSoBfhwI4-99Azo6v1yxN" class="resy-button">📅 Book Reservation</a>
+        </div>
+    </div>
+    <script src="https://widgets.resy.com/embed.js"></script>
+    <script>
+        resyWidget.addButton(document.getElementById('resyButton-mSoBfhwI4-99Azo6v1yxN'), {"venueId":65273,"apiKey":"UXMj33o2BwM3pnEdhaFNrtvfIzuM3NxV","replace":true});
+    </script>
+
+    <div id="dinner-menu" class="menu-section active">
+        <canvas id="dinnerViewer1"></canvas><br/>
+        <canvas id="dinnerViewer2"></canvas><br/>
+        <canvas id="dinnerViewer3"></canvas>
+    </div>
+
+    <div id="lunch-menu" class="menu-section">
+        <canvas id="lunchViewer1"></canvas><br/>
+        <canvas id="lunchViewer2"></canvas><br/>
+        <canvas id="lunchViewer3"></canvas>
+    </div>
+
+    <div id="brunch-menu" class="menu-section">
+        <canvas id="brunchViewer1"></canvas><br/>
+        <canvas id="brunchViewer2"></canvas>
+    </div>
+
+    <div id="bar-menu" class="menu-section">
+        <canvas id="barViewer1"></canvas><br/>
+        <canvas id="barViewer2"></canvas><br/>
+        <canvas id="barViewer3"></canvas><br/>
+        <canvas id="barViewer4"></canvas><br/>
+        <canvas id="barViewer5"></canvas><br/>
+        <canvas id="barViewer6"></canvas><br/>
+        <canvas id="barViewer7"></canvas><br/>
+        <canvas id="barViewer8"></canvas>
+    </div>
+</div>
+
+<script>
+    // Polyfill URL.parse() if the browser doesn't have it
+    if (!('parse' in URL)) {
+        URL.parse = function (url, base) {
+            try { return base ? new URL(url, base) : new URL(url, document.baseURI); }
+            catch { return null; } // Spec returns null on failure
+        };
+    }
+</script>
+
+<script type="module">
+    import * as pdfjsLib from "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.0.375/pdf.min.mjs";
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.0.375/pdf.worker.min.mjs";
+
+    // Make pdfjsLib available globally for loadPdf function
+    window.pdfjsLib = pdfjsLib;
+
+    let currentMenu = null;
+
+    window.showMenu = function(menuType, clickedButton) {
+        // Update button states
+        document.querySelectorAll('.menu-nav-button').forEach(btn => btn.classList.remove('active'));
+
+        // Make clicked button active
+        clickedButton.classList.add('active');
+
+        // Hide all menu sections
+        document.querySelectorAll('.menu-section').forEach(section => {
+            section.classList.remove('active');
+            section.style.display = 'none';
+        });
+
+        // Show selected menu section
+        const menuSection = document.getElementById(menuType + '-menu');
+        menuSection.classList.add('active');
+        menuSection.style.display = 'block';
+
+        // Load PDF if not already loaded or if switching menus
+        if (currentMenu !== menuType) {
+            currentMenu = menuType;
+            loadMenuPdf(menuType);
+        }
+    }
+
+    function loadMenuPdf(menuType) {
+        const configs = {
+            dinner: { pdf: '/pdf/2025-10-Dinner.pdf', pages: 3, prefix: 'dinner' },
+            lunch: { pdf: '/pdf/2025-10-Lunch.pdf', pages: 3, prefix: 'lunch' },
+            brunch: { pdf: '/pdf/2025-10-Brunch.pdf', pages: 2, prefix: 'brunch' },
+            bar: { pdf: '/pdf/2025-09-BarMenu.pdf', pages: 8, prefix: 'bar' }
+        };
+
+        const config = configs[menuType];
+        if (config) {
+            loadPdf(config.pdf, config.pages, null, config.prefix);
+        }
+    }
+
+    // Enhanced loadPdf function to support different canvas prefixes
+    window.loadPdf = async function(url, pageCount, loadingElementId, canvasPrefix = 'pdfViewer') {
+        try {
+            const loadingTask = pdfjsLib.getDocument(url);
+            const pdf = await loadingTask.promise;
+
+            let pagesRendered = 0;
+
+            for (let pageNum = 1; pageNum <= Math.min(pageCount, pdf.numPages); pageNum++) {
+                const page = await pdf.getPage(pageNum);
+                const scale = 1.5;
+                const viewport = page.getViewport({ scale: scale });
+
+                const canvas = document.getElementById(canvasPrefix + 'Viewer' + pageNum);
+                if (canvas) {
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+
+                    await page.render(renderContext).promise;
+                    pagesRendered++;
+
+                    // Hide loader when all pages have rendered
+                    if (pagesRendered === pageCount) {
+                        hideLoader();
+                    }
+                }
+            }
+
+            if (loadingElementId) {
+                const loadingElement = document.getElementById(loadingElementId);
+                if (loadingElement) {
+                    loadingElement.style.display = 'none';
+                }
+            }
+        } catch (error) {
+            console.error('Error loading PDF:', error);
+            hideLoader(); // Hide loader even on error
+        }
+    };
+
+    // Function to hide the loader (same as in ga.js)
+    function hideLoader() {
+        let loader = document.getElementById("loading");
+        if (loader) {
+            loader.remove();
+        }
+    }
+
+    // Check for resy parameter and hide button if false
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('resy') === 'false') {
+        const resyRow = document.querySelector('.resy-row');
+        if (resyRow) {
+            resyRow.style.display = 'none';
+        }
+    }
+
+    // Load dinner menu by default
+    loadMenuPdf('dinner');
+</script>
+
+</body>
+</html>

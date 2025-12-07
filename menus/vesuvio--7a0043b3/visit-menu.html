@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.4",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+	<!-- This site is optimized with the Yoast SEO plugin v26.5 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Catering by the Tray | Menu | Vesuvio</title>
+<link crossorigin data-rocket-preconnect href="https://fonts.googleapis.com" rel="preconnect">
+<link data-rocket-preload as="style" href="https://fonts.googleapis.com/css?family=Abel%3A300%2C400%2C700%7CPlayfair%20Display%3A400&#038;display=swap" rel="preload">
+<link href="https://fonts.googleapis.com/css?family=Abel%3A300%2C400%2C700%7CPlayfair%20Display%3A400&#038;display=swap" media="print" onload="this.media=&#039;all&#039;" rel="stylesheet">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel%3A300%2C400%2C700%7CPlayfair%20Display%3A400&#038;display=swap"></noscript><link rel="preload" data-rocket-preload as="image" href="https://vesuviobayridge.com/wp-content/uploads/2022/08/asfalt-dark.png" fetchpriority="high">
+	<meta name="description" content="Vesuvio Catering by the tray. We cater to all functions from office events to house parties. Let Vesuvio cater your next event." />
+	<link rel="canonical" href="https://vesuviobayridge.com/catering-by-the-tray/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Catering by the Tray | Menu | Vesuvio" />
+	<meta property="og:description" content="Vesuvio Catering by the tray. We cater to all functions from office events to house parties. Let Vesuvio cater your next event." />
+	<meta property="og:url" content="https://vesuviobayridge.com/catering-by-the-tray/" />
+	<meta property="og:site_name" content="Vesuvio Restaurant and Pizzeria" />
+	<meta property="article:modified_time" content="2025-10-07T18:54:19+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://vesuviobayridge.com/catering-by-the-tray/","url":"https://vesuviobayridge.com/catering-by-the-tray/","name":"Catering by the Tray | Menu | Vesuvio","isPartOf":{"@id":"https://vesuviobayridge.com/#website"},"datePublished":"2022-08-11T00:53:46+00:00","dateModified":"2025-10-07T18:54:19+00:00","description":"Vesuvio Catering by the tray. We cater to all functions from office events to house parties. Let Vesuvio cater your next event.","breadcrumb":{"@id":"https://vesuviobayridge.com/catering-by-the-tray/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://vesuviobayridge.com/catering-by-the-tray/"]}]},{"@type":"BreadcrumbList","@id":"https://vesuviobayridge.com/catering-by-the-tray/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://vesuviobayridge.com/"},{"@type":"ListItem","position":2,"name":"Catering by the Tray"}]},{"@type":"WebSite","@id":"https://vesuviobayridge.com/#website","url":"https://vesuviobayridge.com/","name":"Vesuvio Restaurant and Pizzeria","description":"Serving Bay Ridge Since 1953","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://vesuviobayridge.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Vesuvio Restaurant and Pizzeria &raquo; Feed" href="https://vesuviobayridge.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Vesuvio Restaurant and Pizzeria &raquo; Comments Feed" href="https://vesuviobayridge.com/comments/feed/" />
+<link rel="preload" href="https://vesuviobayridge.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://vesuviobayridge.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://vesuviobayridge.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://vesuviobayridge.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.3' media='all' />
+<style id='wp-block-library-theme-inline-css'>
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--fl-heading-text: #333333;--wp--preset--color--fl-body-bg: #ffffff;--wp--preset--color--fl-body-text: #808080;--wp--preset--color--fl-accent: #000000;--wp--preset--color--fl-accent-hover: #428bca;--wp--preset--color--fl-topbar-bg: #326796;--wp--preset--color--fl-topbar-text: #c2d2e0;--wp--preset--color--fl-topbar-link: #c2d2e0;--wp--preset--color--fl-topbar-hover: #ffffff;--wp--preset--color--fl-header-bg: #326796;--wp--preset--color--fl-header-text: #c2d2e0;--wp--preset--color--fl-header-link: #c2d2e0;--wp--preset--color--fl-header-hover: #ffffff;--wp--preset--color--fl-nav-bg: #428bca;--wp--preset--color--fl-nav-link: #c2d2e0;--wp--preset--color--fl-nav-hover: #ffffff;--wp--preset--color--fl-content-bg: #ffffff;--wp--preset--color--fl-footer-widgets-bg: #326796;--wp--preset--color--fl-footer-widgets-text: #c2d2e0;--wp--preset--color--fl-footer-widgets-link: #c2d2e0;--wp--preset--color--fl-footer-widgets-hover: #ffffff;--wp--preset--color--fl-footer-bg: #428bca;--wp--preset--color--fl-footer-text: #c2d2e0;--wp--preset--color--fl-footer-link: #c2d2e0;--wp--preset--color--fl-footer-hover: #ffffff;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='fl-builder-layout-14-css' href='https://vesuviobayridge.com/wp-content/uploads/bb-plugin/cache/14-layout.css?ver=984509e38e9822aa3b110f9036919c4d' media='all' />
+<link rel='stylesheet' id='wp-components-css' href='https://vesuviobayridge.com/wp-includes/css/dist/components/style.min.css?ver=6.8.3' media='all' />
+<link rel='stylesheet' id='godaddy-styles-css' href='https://vesuviobayridge.com/wp-content/mu-plugins/vendor/wpex/godaddy-launch/includes/Dependencies/GoDaddy/Styles/build/latest.css?ver=2.0.2' media='all' />
+<link rel='stylesheet' id='font-awesome-5-css' href='https://vesuviobayridge.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/css/all.min.css?ver=2.9.3.2' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='https://vesuviobayridge.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/css/v4-shims.min.css?ver=2.9.3.2' media='all' />
+<link rel='stylesheet' id='fl-builder-layout-bundle-4a52ccbe43fb3d6192069e14a15ce0ba-css' href='https://vesuviobayridge.com/wp-content/uploads/bb-plugin/cache/4a52ccbe43fb3d6192069e14a15ce0ba-layout-bundle.css?ver=2.9.3.2-1.5.1.1' media='all' />
+<link rel='stylesheet' id='gd-core-css' href='https://vesuviobayridge.com/wp-content/plugins/pws-core/public/css/GD-cORe-public.css?ver=4.0.2' media='all' />
+<link rel='stylesheet' id='jquery-magnificpopup-css' href='https://vesuviobayridge.com/wp-content/plugins/bb-plugin/css/jquery.magnificpopup.min.css?ver=2.9.3.2' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='https://vesuviobayridge.com/wp-content/themes/bb-theme/css/bootstrap.min.css?ver=1.7.18' media='all' />
+<link rel='stylesheet' id='fl-automator-skin-css' href='https://vesuviobayridge.com/wp-content/uploads/bb-theme/skin-68e55eaa77ea3.css?ver=1.7.18' media='all' />
+<link rel='stylesheet' id='pp-animate-css' href='https://vesuviobayridge.com/wp-content/plugins/bbpowerpack/assets/css/animate.min.css?ver=3.5.1' media='all' />
+
+<script type="rocketlazyloadscript" data-rocket-src="https://vesuviobayridge.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://vesuviobayridge.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://vesuviobayridge.com/wp-content/cache/min/1/wp-content/plugins/pws-core/public/js/GD-cORe-public.js?ver=1764367382" id="gd-core-js" data-rocket-defer defer></script>
+<link rel="https://api.w.org/" href="https://vesuviobayridge.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://vesuviobayridge.com/wp-json/wp/v2/pages/14" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://vesuviobayridge.com/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://vesuviobayridge.com/?p=14' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://vesuviobayridge.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvesuviobayridge.com%2Fcatering-by-the-tray%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://vesuviobayridge.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvesuviobayridge.com%2Fcatering-by-the-tray%2F&#038;format=xml" />
+		<script type="rocketlazyloadscript">
+			var bb_powerpack = {
+				version: '2.40.6',
+				getAjaxUrl: function() { return atob( 'aHR0cHM6Ly92ZXN1dmlvYmF5cmlkZ2UuY29tL3dwLWFkbWluL2FkbWluLWFqYXgucGhw' ); },
+				callback: function() {},
+				mapMarkerData: {},
+				post_id: '14',
+				search_term: '',
+				current_page: 'https://vesuviobayridge.com/catering-by-the-tray/',
+				conditionals: {
+					is_front_page: false,
+					is_home: false,
+					is_archive: false,
+					current_post_type: '',
+					is_tax: false,
+										is_author: false,
+					current_author: false,
+					is_search: false,
+									}
+			};
+		</script>
+				<style id="wp-custom-css">
+			@media screen and (max-width: 1366px) and (min-width: 1280px){
+
+body .fl-page {zoom:90%;}
+
+}
+
+.gform_required_legend{
+display: none;
+}
+
+
+@media screen and (max-width: 768px){ 
+
+.fl-node-v7lyjo2rs9ei .pp-advanced-menu.off-canvas .pp-toggle-arrows .pp-menu-toggle {
+    right: 0;
+    left: 0px;
+}
+
+}
+
+@media screen and (max-width: 480px){ 
+.fl-node-ac20xzkf64qv .pp-advanced-menu.off-canvas .pp-toggle-arrows .pp-menu-toggle {
+    right: 0;
+    left: 0;
+}
+}
+		</style>
+		<meta name="generator" content="WP Rocket 3.19.4" data-wpr-features="wpr_delay_js wpr_defer_js wpr_minify_js wpr_preconnect_external_domains wpr_oci wpr_preload_links wpr_desktop" /></head>
+<body class="wp-singular page-template-default page page-id-14 wp-theme-bb-theme fl-builder fl-builder-2-9-3-2 fl-themer-1-5-1-1 fl-theme-1-7-18 fl-no-js fl-theme-builder-header fl-theme-builder-header-header-sitewide fl-theme-builder-footer fl-theme-builder-footer-footer-sitewide-copy fl-framework-bootstrap fl-preset-bold fl-full-width fl-scroll-to-top fl-search-active" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<a aria-label="Skip to content" class="fl-screen-reader-text" href="#fl-main-content">Skip to content</a><div  class="fl-page">
+	<header  class="fl-builder-content fl-builder-content-5 fl-builder-global-templates-locked" data-post-id="5" data-type="header" data-sticky="0" data-sticky-on="" data-sticky-breakpoint="medium" data-shrink="0" data-overlay="0" data-overlay-bg="transparent" data-shrink-image-height="50px" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader"><div  class="fl-row fl-row-full-width fl-row-bg-color fl-node-5th3v9i8mofb fl-row-default-height fl-row-align-center fl-visible-desktop fl-visible-large fl-visible-medium headmain" data-node="5th3v9i8mofb">
+	<div  class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div  class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-zyrmi4gv763k fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="zyrmi4gv763k">
+			<div class="fl-col fl-node-lpkmb9nvd53q fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="lpkmb9nvd53q">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-2ursc80yxjv1" data-node="2ursc80yxjv1">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-photo fl-photo-align-left" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+				<a href="https://vesuviobayridge.com" target="_self" itemprop="url">
+				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-38 size-full" src="https://vesuviobayridge.com/wp-content/uploads/2022/08/vesuviologo.png" alt="vesuvio logo" itemprop="image" height="358" width="604" title="vesuvio logo"  data-no-lazy="1" srcset="https://vesuviobayridge.com/wp-content/uploads/2022/08/vesuviologo.png 604w, https://vesuviobayridge.com/wp-content/uploads/2022/08/vesuviologo-300x178.png 300w" sizes="auto, (max-width: 604px) 100vw, 604px" />
+				</a>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-jyvg1cf9i7rz fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="jyvg1cf9i7rz">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-advanced-menu fl-node-v7lyjo2rs9ei" data-node="v7lyjo2rs9ei">
+	<div class="fl-module-content fl-node-content">
+					<div class="pp-advanced-menu-mobile">
+			<button class="pp-advanced-menu-mobile-toggle hamburger" tabindex="0" aria-label="Menu" aria-expanded="false">
+				<div class="pp-hamburger"><div class="pp-hamburger-box"><div class="pp-hamburger-inner"></div></div></div>			</button>
+			</div>
+			<div class="pp-advanced-menu pp-advanced-menu-accordion-collapse pp-menu-default pp-menu-align-center pp-menu-position-below">
+   	   	<div class="pp-clear"></div>
+	<nav class="pp-menu-nav" aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+		<ul id="menu-main" class="menu pp-advanced-menu-horizontal pp-toggle-arrows"><li id="menu-item-9" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="https://vesuviobayridge.com/"><span class="menu-item-text">Home</span></a></li><li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children pp-has-submenu"><div class="pp-has-submenu-container"><a href="#"><span class="menu-item-text">Menus<span class="pp-menu-toggle" tabindex="0" aria-expanded="false" aria-label="Menus: submenu" role="button"></span></span></a></div><ul class="sub-menu">	<li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/dining-room/"><span class="menu-item-text">Dining Room, Takeout and Delivery</span></a></li>	<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item"><a href="https://vesuviobayridge.com/catering-by-the-tray/" aria-current="page"><span class="menu-item-text">Catering by the Tray</span></a></li>	<li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/private-party-room/"><span class="menu-item-text">Private Party Room</span></a></li>	<li id="menu-item-304" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/power-lunch-menu/"><span class="menu-item-text">Power Lunch</span></a></li>	<li id="menu-item-408" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/holiday-menu/"><span class="menu-item-text">Holiday</span></a></li>	<li id="menu-item-548" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/no-title/"><span class="menu-item-text">Mussels and Martini Mondays!</span></a></li></ul></li><li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><span class="menu-item-text">About Us</span></a></li><li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/contact/"><span class="menu-item-text">Contact</span></a></li></ul>	</nav>
+</div>
+<script type="text/html" id="pp-menu-v7lyjo2rs9ei"><div class="pp-advanced-menu pp-advanced-menu-accordion-collapse off-canvas pp-menu-position-below">
+	<div class="pp-clear"></div>
+	<nav class="pp-menu-nav pp-off-canvas-menu pp-menu-right" aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+		<a href="javascript:void(0)" class="pp-menu-close-btn" aria-label="Close the menu" role="button">×</a>
+		<ul id="menu-main-1" class="menu pp-advanced-menu-horizontal pp-toggle-arrows"><li id="menu-item-9" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="https://vesuviobayridge.com/"><span class="menu-item-text">Home</span></a></li><li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children pp-has-submenu"><div class="pp-has-submenu-container"><a href="#"><span class="menu-item-text">Menus<span class="pp-menu-toggle" tabindex="0" aria-expanded="false" aria-label="Menus: submenu" role="button"></span></span></a></div><ul class="sub-menu">	<li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/dining-room/"><span class="menu-item-text">Dining Room, Takeout and Delivery</span></a></li>	<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item"><a href="https://vesuviobayridge.com/catering-by-the-tray/" aria-current="page"><span class="menu-item-text">Catering by the Tray</span></a></li>	<li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/private-party-room/"><span class="menu-item-text">Private Party Room</span></a></li>	<li id="menu-item-304" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/power-lunch-menu/"><span class="menu-item-text">Power Lunch</span></a></li>	<li id="menu-item-408" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/holiday-menu/"><span class="menu-item-text">Holiday</span></a></li>	<li id="menu-item-548" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/no-title/"><span class="menu-item-text">Mussels and Martini Mondays!</span></a></li></ul></li><li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><span class="menu-item-text">About Us</span></a></li><li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/contact/"><span class="menu-item-text">Contact</span></a></li></ul>	</nav>
+</div>
+</script>	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-83t7i4nwoh9u fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="83t7i4nwoh9u">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-icon fl-node-8qlpe4u7wbft" data-node="8qlpe4u7wbft">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+								<a href="tel:+17187450222" target="_self"  tabindex="-1" aria-hidden="true" aria-labelledby="fl-icon-text-8qlpe4u7wbft">
+							<i class="fas fa-phone-alt" aria-hidden="true"></i>
+						</a>
+			</span>
+			<div id="fl-icon-text-8qlpe4u7wbft" class="fl-icon-text">
+						<a href="tel:+17187450222" target="_self"  class="fl-icon-text-link fl-icon-text-wrap">
+						<p><a href="tel:+17187450222">(718) 745-0222</a></p>						</a>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-mpafk2e4dxqg fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="mpafk2e4dxqg">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-button fl-node-nyw7grpuda52" data-node="nyw7grpuda52">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-button-wrap fl-button-width-full fl-button-center">
+			<a href="https://vesuvio.alohaorderonline.com/StartOrder.aspx" target="_blank" class="fl-button" rel="noopener" >
+							<span class="fl-button-text">Order Now</span>
+					</a>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div  class="fl-row fl-row-full-width fl-row-bg-color fl-node-s5zb12gohvin fl-row-default-height fl-row-align-center fl-visible-mobile headmain" data-node="s5zb12gohvin">
+	<div  class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-yrg6x0pebuvd fl-col-group-custom-width fl-col-group-equal-height fl-col-group-align-center" data-node="yrg6x0pebuvd">
+			<div class="fl-col fl-node-q3sh6g17z5oa fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="q3sh6g17z5oa">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-w860dbsr3pui" data-node="w860dbsr3pui">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-photo fl-photo-align-left" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+				<a href="https://vesuviobayridge.com" target="_self" itemprop="url">
+				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-38 size-full" src="https://vesuviobayridge.com/wp-content/uploads/2022/08/vesuviologo.png" alt="vesuvio logo" itemprop="image" height="358" width="604" title="vesuvio logo"  data-no-lazy="1" srcset="https://vesuviobayridge.com/wp-content/uploads/2022/08/vesuviologo.png 604w, https://vesuviobayridge.com/wp-content/uploads/2022/08/vesuviologo-300x178.png 300w" sizes="auto, (max-width: 604px) 100vw, 604px" />
+				</a>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-82v1b5nejzyc fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="82v1b5nejzyc">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-icon fl-node-ka1zr9ei4f6b" data-node="ka1zr9ei4f6b">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+								<a href="tel:+17187450222" target="_self">
+							<i class="fas fa-phone-alt" aria-hidden="true"></i>
+						</a>
+			</span>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-rkt2yn68veag fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="rkt2yn68veag">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-advanced-menu fl-node-ac20xzkf64qv" data-node="ac20xzkf64qv">
+	<div class="fl-module-content fl-node-content">
+					<div class="pp-advanced-menu-mobile">
+			<button class="pp-advanced-menu-mobile-toggle hamburger" tabindex="0" aria-label="Menu" aria-expanded="false">
+				<div class="pp-hamburger"><div class="pp-hamburger-box"><div class="pp-hamburger-inner"></div></div></div>			</button>
+			</div>
+			<div class="pp-advanced-menu pp-advanced-menu-accordion-collapse pp-menu-default pp-menu-align-center pp-menu-position-below">
+   	   	<div class="pp-clear"></div>
+	<nav class="pp-menu-nav" aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+		<ul id="menu-main-2" class="menu pp-advanced-menu-horizontal pp-toggle-arrows"><li id="menu-item-9" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="https://vesuviobayridge.com/"><span class="menu-item-text">Home</span></a></li><li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children pp-has-submenu"><div class="pp-has-submenu-container"><a href="#"><span class="menu-item-text">Menus<span class="pp-menu-toggle" tabindex="0" aria-expanded="false" aria-label="Menus: submenu" role="button"></span></span></a></div><ul class="sub-menu">	<li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/dining-room/"><span class="menu-item-text">Dining Room, Takeout and Delivery</span></a></li>	<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item"><a href="https://vesuviobayridge.com/catering-by-the-tray/" aria-current="page"><span class="menu-item-text">Catering by the Tray</span></a></li>	<li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/private-party-room/"><span class="menu-item-text">Private Party Room</span></a></li>	<li id="menu-item-304" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/power-lunch-menu/"><span class="menu-item-text">Power Lunch</span></a></li>	<li id="menu-item-408" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/holiday-menu/"><span class="menu-item-text">Holiday</span></a></li>	<li id="menu-item-548" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/no-title/"><span class="menu-item-text">Mussels and Martini Mondays!</span></a></li></ul></li><li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><span class="menu-item-text">About Us</span></a></li><li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/contact/"><span class="menu-item-text">Contact</span></a></li></ul>	</nav>
+</div>
+<script type="text/html" id="pp-menu-ac20xzkf64qv"><div class="pp-advanced-menu pp-advanced-menu-accordion-collapse off-canvas pp-menu-position-below">
+	<div class="pp-clear"></div>
+	<nav class="pp-menu-nav pp-off-canvas-menu pp-menu-right" aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+		<a href="javascript:void(0)" class="pp-menu-close-btn" aria-label="Close the menu" role="button">×</a>
+		<ul id="menu-main-3" class="menu pp-advanced-menu-horizontal pp-toggle-arrows"><li id="menu-item-9" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="https://vesuviobayridge.com/"><span class="menu-item-text">Home</span></a></li><li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children pp-has-submenu"><div class="pp-has-submenu-container"><a href="#"><span class="menu-item-text">Menus<span class="pp-menu-toggle" tabindex="0" aria-expanded="false" aria-label="Menus: submenu" role="button"></span></span></a></div><ul class="sub-menu">	<li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/dining-room/"><span class="menu-item-text">Dining Room, Takeout and Delivery</span></a></li>	<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item"><a href="https://vesuviobayridge.com/catering-by-the-tray/" aria-current="page"><span class="menu-item-text">Catering by the Tray</span></a></li>	<li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/private-party-room/"><span class="menu-item-text">Private Party Room</span></a></li>	<li id="menu-item-304" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/power-lunch-menu/"><span class="menu-item-text">Power Lunch</span></a></li>	<li id="menu-item-408" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/holiday-menu/"><span class="menu-item-text">Holiday</span></a></li>	<li id="menu-item-548" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/no-title/"><span class="menu-item-text">Mussels and Martini Mondays!</span></a></li></ul></li><li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#"><span class="menu-item-text">About Us</span></a></li><li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/contact/"><span class="menu-item-text">Contact</span></a></li></ul>	</nav>
+</div>
+</script>	</div>
+</div>
+</div>
+</div>
+			<div  class="fl-col fl-node-p0vrwtmiofaz fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="p0vrwtmiofaz">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-button fl-node-79z5uqyow2km" data-node="79z5uqyow2km">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-button-wrap fl-button-width-full fl-button-center">
+			<a href="https://vesuvio.alohaorderonline.com/StartOrder.aspx" target="_blank" class="fl-button" rel="noopener" >
+							<span class="fl-button-text">Order Now</span>
+					</a>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</header><div  class="uabb-js-breakpoint" style="display: none;"></div>	<div  id="fl-main-content" class="fl-page-content" itemprop="mainContentOfPage" role="main">
+
+		
+<div  class="fl-content-full container">
+	<div  class="row">
+		<div class="fl-content col-md-12">
+			<article class="fl-post post-14 page type-page status-publish hentry" id="fl-post-14" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+
+			<div class="fl-post-content clearfix" itemprop="text">
+		<div class="fl-builder-content fl-builder-content-14 fl-builder-content-primary fl-builder-global-templates-locked" data-post-id="14"><div class="fl-row fl-row-full-width fl-row-bg-photo fl-node-3tr6k7blm9ad fl-row-default-height fl-row-align-center fl-row-bg-overlay" data-node="3tr6k7blm9ad">
+	<div  class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-s64no3x79iyu fl-col-group-equal-height fl-col-group-align-center" data-node="s64no3x79iyu">
+			<div class="fl-col fl-node-6243locg1awv fl-col-bg-color" data-node="6243locg1awv">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-heading fl-node-8to3eqxzklwc" data-node="8to3eqxzklwc">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp-center pp-dual-heading">
+		
+		<h2 class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">CATERING</span>
+
+											<span class="title-text pp-secondary-title">BY THE TRAY</span>
+			
+			
+		</h2>
+
+		
+	</div>
+
+	
+	</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-5mq7i3wtd6ke" data-node="5mq7i3wtd6ke">
+			<div class="fl-col fl-node-qcvfxh2rkg87 fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-has-cols" data-node="qcvfxh2rkg87">
+	<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-ypvoqbu3x9hr fl-col-group-nested" data-node="ypvoqbu3x9hr">
+			<div class="fl-col fl-node-6q9o7imdy8kj fl-col-bg-color" data-node="6q9o7imdy8kj">
+	<div class="fl-col-content fl-node-content"><h2  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-zv51the4kilm" data-node="zv51the4kilm">
+			STARTER	</h2>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-xonr1tjb3kam fl-col-group-nested fl-col-group-custom-width" data-node="xonr1tjb3kam">
+			<div class="fl-col fl-node-7rj045b6fmq8 fl-col-bg-color fl-col-small-custom-width fl-visible-desktop fl-visible-large fl-visible-medium" data-node="7rj045b6fmq8">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+			<div class="fl-col fl-node-orxim31fe6py fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="orxim31fe6py">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-xys1e257d3fu" data-node="xys1e257d3fu">
+	<p style="text-align: right;">HALF</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-qieyctrmus1b fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="qieyctrmus1b">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-kagievl2jh57" data-node="kagievl2jh57">
+	<p style="text-align: right;">FULL</p>
+</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-a098kh73b5wz fl-col-group-nested fl-col-group-custom-width" data-node="a098kh73b5wz">
+			<div class="fl-col fl-node-7clyvx9b6a38 fl-col-bg-color fl-col-small-custom-width" data-node="7clyvx9b6a38">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-gqoxtvurh35f" data-node="gqoxtvurh35f">
+	<p><span style="font-size: 16px;">HOT ANTIPASTO</span><br />
+<span style="font-size: 16px;">COLD ANTIPASTO</span><br />
+<span style="font-size: 16px;">SEAFOOD OR PULDO SALAD</span><br />
+<span style="font-size: 16px;">CALAMARI FRITTI</span><br />
+<span style="font-size: 16px;">BAKED CLAMS OR ZUPPA DI MUSSELS</span><br />
+<span style="font-size: 16px;">MOZZARELLA OR ZUCCHINI STICKS</span><br />
+<span style="font-size: 16px;">BUFFALO WINGS OR FRIED RAVIOLI</span><br />
+<span style="font-size: 16px;">SHRIMP COCKTAIL</span><br />
+<span style="font-size: 16px;">MOZZARELLA IN CARROZZA</span><br />
+<span style="font-size: 16px;">POTATO CROQUETTES</span><br />
+<span style="font-size: 16px;">EGGPLANT ROLLATINI</span><br />
+<span style="font-size: 16px;">MINI RICEBALLS</span><br />
+<span style="font-size: 16px;">CHICKEN FINGERS W/ FRENCH FRIES</span></p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-6isn94yo28xb fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="6isn94yo28xb">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-1bsevl7pdwg8" data-node="1bsevl7pdwg8">
+	<p>85<br />
+80<br />
+110<br />
+85<br />
+85<br />
+80<br />
+80<br />
+105<br />
+75<br />
+55<br />
+80<br />
+60<br />
+80</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-69wklxgbecmd fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="69wklxgbecmd">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-ef5jgu2okyl0" data-node="ef5jgu2okyl0">
+	<p>115<br />
+110<br />
+160<br />
+115<br />
+115<br />
+105<br />
+105<br />
+165<br />
+95<br />
+85<br />
+105<br />
+75<br />
+105</p>
+</div>
+</div>
+</div>
+	</div>
+<h2  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-q9fukoh7dw05" data-node="q9fukoh7dw05">
+			SALAD	</h2>
+
+<div class="fl-col-group fl-node-qkiv648lyxu0 fl-col-group-nested" data-node="qkiv648lyxu0">
+			<div class="fl-col fl-node-xhiby5epq681 fl-col-bg-color fl-visible-desktop fl-visible-large fl-visible-medium" data-node="xhiby5epq681">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+			<div class="fl-col fl-node-l0nqg2mjb5yf fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="l0nqg2mjb5yf">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-ur8cq60blonv" data-node="ur8cq60blonv">
+	<p>HALF</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-9r01ughcn3ok fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="9r01ughcn3ok">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-qgxp5s9l6n1d" data-node="qgxp5s9l6n1d">
+	<p>FULL</p>
+</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-6tu2wbom7lzr fl-col-group-nested" data-node="6tu2wbom7lzr">
+			<div class="fl-col fl-node-avspb3lio2tm fl-col-bg-color" data-node="avspb3lio2tm">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-7smrow8b95zg" data-node="7smrow8b95zg">
+	<p>GARDEN OR CAESAR SALAD<br />
+CAPRINO SALAD<br />
+ARUGULA SALAD<br />
+MOZZARELLA DI CASA<br />
+add Chicken, Shrimp or Salmon</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-mjg1vo6cnyba fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="mjg1vo6cnyba">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-jt5q7abzoscv" data-node="jt5q7abzoscv">
+	<p>60<br />
+65<br />
+65<br />
+70<br />
+50</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-mbz4h53g1nou fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="mbz4h53g1nou">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-t9ruecnf8obz" data-node="t9ruecnf8obz">
+	<p>75<br />
+85<br />
+85<br />
+95<br />
+65</p>
+</div>
+</div>
+</div>
+	</div>
+<h2  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-vg5bs6xi9neh" data-node="vg5bs6xi9neh">
+			VEGETABLE	</h2>
+
+<div class="fl-col-group fl-node-vpeksu1zw2d9 fl-col-group-nested" data-node="vpeksu1zw2d9">
+			<div class="fl-col fl-node-10c8agvl635f fl-col-bg-color fl-visible-desktop fl-visible-large fl-visible-medium" data-node="10c8agvl635f">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+			<div class="fl-col fl-node-z2mwhgvkcqey fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="z2mwhgvkcqey">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-cgw6t4qux9zi" data-node="cgw6t4qux9zi">
+	<p>HALF</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-giqebx5djtpn fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="giqebx5djtpn">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-h0i5bvo3ug6m" data-node="h0i5bvo3ug6m">
+	<p>FULL</p>
+</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-tyzovc5l18xp fl-col-group-nested" data-node="tyzovc5l18xp">
+			<div class="fl-col fl-node-kvx263ydn9lq fl-col-bg-color" data-node="kvx263ydn9lq">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-7gka9uziv83d" data-node="7gka9uziv83d">
+	<p>SPINACH OR BROCCOLI<br />
+STRING BEANS<br />
+BROCCOLI RABE<br />
+MIXED VEGETABLES<br />
+GRILLED VEGETABLES</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-p1erhy0k7bdw fl-col-bg-color fl-col-small fl-col-small-full-width fl-visible-desktop fl-visible-large fl-visible-medium" data-node="p1erhy0k7bdw">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-m1ydoa6l734w" data-node="m1ydoa6l734w">
+	<p>70<br />
+70<br />
+75<br />
+75<br />
+75</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-b95dl3wn4p7q fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="b95dl3wn4p7q">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-jg3qnpdlfr8a" data-node="jg3qnpdlfr8a">
+	<p>95<br />
+95<br />
+105<br />
+100<br />
+100</p>
+</div>
+</div>
+</div>
+	</div>
+</div>
+</div>
+			<div class="fl-col fl-node-fadp3mhzg6l1 fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-has-cols" data-node="fadp3mhzg6l1">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-heading fl-node-4s5hbyfkxd6o" data-node="4s5hbyfkxd6o">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp-center">
+		
+		<h2 class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">PASTA</span>
+
+			
+			
+		</h2>
+
+		
+	</div>
+
+			<div class="pp-sub-heading">
+			<p><em>Spaghetti, Linguine, Penne, Rigatoni or Fussili</em></p>
+		</div>
+	
+	</div>
+	</div>
+</div>
+
+<div class="fl-col-group fl-node-opwl6s0dg3qb fl-col-group-nested" data-node="opwl6s0dg3qb">
+			<div class="fl-col fl-node-sy3pmogcr5l8 fl-col-bg-color fl-visible-desktop fl-visible-large fl-visible-medium" data-node="sy3pmogcr5l8">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+			<div class="fl-col fl-node-9hpg65cir1q7 fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="9hpg65cir1q7">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-f4d1qyu2h5wj fl-visible-desktop fl-visible-large fl-visible-medium" data-node="f4d1qyu2h5wj">
+	<p>HALF</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-gw5up9hjryc4 fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="gw5up9hjryc4">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-zk7v1t2jipsf" data-node="zk7v1t2jipsf">
+	<p>FULL</p>
+</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-me4cpx6hv2it fl-col-group-nested" data-node="me4cpx6hv2it">
+			<div class="fl-col fl-node-ov0m1h29g5ct fl-col-bg-color" data-node="ov0m1h29g5ct">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-5eg6f3l0zntw" data-node="5eg6f3l0zntw">
+	<p>AL FILETTO DI POMODORO<br />
+MARINARA OR POMODORO<br />
+BOLOGNESE OR ALFREDO<br />
+BROCCOLI RABE &amp; SAUSAGE OR CHICKEN<br />
+PRIMAVERA<br />
+BANDIERA OR PUTTANSECA<br />
+VODKA<br />
+RIO MARE<br />
+WHITE OR RED CLAM SAUCE<br />
+BUON GUSTAIO OR TOSCANA<br />
+BAKED ZITI<br />
+TREMEZZO<br />
+STUFFED SHELLS OR RAVIOLI OR MANICOTTI<br />
+LASAGNA<br />
+RUSTICA OR CAMPAGNOLA<br />
+CAPRESE OR CARBONARA<br />
+AL SALMONE</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-2kpo6u07aixe fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="2kpo6u07aixe">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-xl4zueq6g5y2" data-node="xl4zueq6g5y2">
+	<p>75<br />
+75<br />
+80<br />
+95<br />
+85<br />
+85<br />
+85<br />
+95<br />
+95<br />
+90<br />
+80<br />
+95<br />
+85<br />
+90<br />
+95<br />
+95<br />
+95</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-lj7v385ca96b fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="lj7v385ca96b">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-4gq51i79uahv" data-node="4gq51i79uahv">
+	<p>95<br />
+95<br />
+105<br />
+135<br />
+115<br />
+115<br />
+115<br />
+135<br />
+135<br />
+130<br />
+105<br />
+135<br />
+115<br />
+125<br />
+135<br />
+135<br />
+135</p>
+</div>
+</div>
+</div>
+	</div>
+<h2  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-iw3bexsdvnm5" data-node="iw3bexsdvnm5">
+			ENTREÉ	</h2>
+
+<div class="fl-col-group fl-node-nr7ydil8520j fl-col-group-nested" data-node="nr7ydil8520j">
+			<div class="fl-col fl-node-r4m6cuaqgi1n fl-col-bg-color fl-visible-desktop fl-visible-large fl-visible-medium" data-node="r4m6cuaqgi1n">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+			<div class="fl-col fl-node-on7swzdjbhac fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="on7swzdjbhac">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-h0kauf59zirw" data-node="h0kauf59zirw">
+	<p>HALF</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-ymtg3dj5s0ze fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="ymtg3dj5s0ze">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-9eltfnc3iwhg" data-node="9eltfnc3iwhg">
+	<p>FULL</p>
+</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-u60z27ftb9kw fl-col-group-nested" data-node="u60z27ftb9kw">
+			<div class="fl-col fl-node-6143qwyjf075 fl-col-bg-color" data-node="6143qwyjf075">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-6cvjxk1ibh2r" data-node="6cvjxk1ibh2r">
+	<p>GRILLED SKIRT STEAK<br />
+EGGPLANT PARM<br />
+VEAL PARM OR PICATA<br />
+VEAL FRANCESE OR LIMONE<br />
+VEAL MARSALA OR PIZZAIOLA<br />
+MEATBALL OR SAUSAGE<br />
+SAUSAGE &amp; PEPPERS<br />
+CHICKEN PARM OR PICATA<br />
+CHICKEN FRANCESE OR MARSALA<br />
+CHICKEN SCARPARIELLO<br />
+GRILLED CHICKEN</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-a4vwr9imcd2s fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="a4vwr9imcd2s">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-x4eokwjg0d58" data-node="x4eokwjg0d58">
+	<p>125<br />
+85<br />
+95<br />
+95<br />
+95<br />
+90<br />
+90<br />
+90<br />
+90<br />
+90<br />
+85</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-gwfrt9n0cvuj fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="gwfrt9n0cvuj">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-ni4rem2jxs0c" data-node="ni4rem2jxs0c">
+	<p>175<br />
+115<br />
+135<br />
+135<br />
+135<br />
+125<br />
+125<br />
+125<br />
+125<br />
+125<br />
+115</p>
+</div>
+</div>
+</div>
+	</div>
+<h2  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-arb4xv73hf0z" data-node="arb4xv73hf0z">
+			SEAFOOD	</h2>
+
+<div class="fl-col-group fl-node-2zjuo8ntpkc5 fl-col-group-nested" data-node="2zjuo8ntpkc5">
+			<div class="fl-col fl-node-icp0fbvx6z2s fl-col-bg-color fl-visible-desktop fl-visible-large fl-visible-medium" data-node="icp0fbvx6z2s">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+			<div class="fl-col fl-node-1oh5byx29r0n fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="1oh5byx29r0n">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-tlf86hzpvrn7" data-node="tlf86hzpvrn7">
+	<p>HALF</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-b2yk6mx47385 fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="b2yk6mx47385">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-zy95hbxncaj0" data-node="zy95hbxncaj0">
+	<p>FULL</p>
+</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-oxl9hpj237qa fl-col-group-nested" data-node="oxl9hpj237qa">
+			<div class="fl-col fl-node-sqhu083az2vx fl-col-bg-color" data-node="sqhu083az2vx">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-b8zpylo6gme0" data-node="b8zpylo6gme0">
+	<p>SALMON<br />
+SHRIMP OR FILET OF SOLE PARM<br />
+SHRIMP OR FILET OF SOLE FRANCESE<br />
+SHRIMP OR FILET OF SOLE OREGANATA<br />
+SHRIMP SCAMPI OVER RICE<br />
+SHRIMP FRA DIAVOLO OVER LINGUINI<br />
+ZUPPA DI PECSE OVER LINGUINI</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-h3imbfyp7ck5 fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="h3imbfyp7ck5">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-ldjzawuy81oh" data-node="ldjzawuy81oh">
+	<p>105<br />
+105<br />
+115<br />
+105<br />
+115<br />
+115<br />
+130</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-gqk0cp6ow9nt fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="gqk0cp6ow9nt">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-9486vo7leyau" data-node="9486vo7leyau">
+	<p>150<br />
+160<br />
+170<br />
+150<br />
+170<br />
+170<br />
+180</p>
+</div>
+</div>
+</div>
+	</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-op3simfdxe9t" data-node="op3simfdxe9t">
+			<div class="fl-col fl-node-1b96jiswfqxu fl-col-bg-color" data-node="1b96jiswfqxu">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-fx4m30278jiz" data-node="fx4m30278jiz">
+	<p>Half tray serves 10 to 12 people - Full tray serves 18-20 people • Sales tax not included. Prices are subject to change. 8/25</p>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</div><div  class="uabb-js-breakpoint" style="display: none;"></div>	</div><!-- .fl-post-content -->
+	
+</article>
+
+<!-- .fl-post -->
+		</div>
+	</div>
+</div>
+
+
+	</div><!-- .fl-page-content -->
+	<footer  class="fl-builder-content fl-builder-content-92 fl-builder-global-templates-locked" data-post-id="92" data-type="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter"><div  class="fl-row fl-row-full-width fl-row-bg-color fl-node-6ur8iamyx1l5 fl-row-default-height fl-row-align-center footer-row" data-node="6ur8iamyx1l5">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-v4qc8z7hetkm fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="v4qc8z7hetkm">
+			<div class="fl-col fl-node-psh4wnvt32c8 fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="psh4wnvt32c8">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-r4axukmhcg59" data-node="r4axukmhcg59">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-photo fl-photo-align-left" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+				<a href="https://vesuviobayridge.com" target="_self" itemprop="url">
+				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-38 size-full" src="https://vesuviobayridge.com/wp-content/uploads/2022/08/vesuviologo.png" alt="vesuvio logo" itemprop="image" height="358" width="604" title="vesuvio logo" srcset="https://vesuviobayridge.com/wp-content/uploads/2022/08/vesuviologo.png 604w, https://vesuviobayridge.com/wp-content/uploads/2022/08/vesuviologo-300x178.png 300w" sizes="auto, (max-width: 604px) 100vw, 604px" />
+				</a>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-ak6tymgbvzou fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="ak6tymgbvzou">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-icon fl-node-wmb0gc57n1iz" data-node="wmb0gc57n1iz">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+								<a href="mailto:vesuviobayridge@gmail.com" target="_self"  tabindex="-1" aria-hidden="true" aria-labelledby="fl-icon-text-wmb0gc57n1iz">
+							<i class="fas fa-mail-bulk" aria-hidden="true"></i>
+						</a>
+			</span>
+			<div id="fl-icon-text-wmb0gc57n1iz" class="fl-icon-text">
+						<a href="mailto:vesuviobayridge@gmail.com" target="_self"  class="fl-icon-text-link fl-icon-text-wrap">
+						<p>vesuviobayridge@gmail.com</p>						</a>
+					</div>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-icon fl-node-gb9fx7dc5wey" data-node="gb9fx7dc5wey">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+								<a href="tel:+17187450222" target="_self"  tabindex="-1" aria-hidden="true" aria-labelledby="fl-icon-text-gb9fx7dc5wey">
+							<i class="fas fa-phone-alt" aria-hidden="true"></i>
+						</a>
+			</span>
+			<div id="fl-icon-text-gb9fx7dc5wey" class="fl-icon-text">
+						<a href="tel:+17187450222" target="_self"  class="fl-icon-text-link fl-icon-text-wrap">
+						<p>(718) 745-0222</p>						</a>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-kgnaqyzhlbt8 fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="kgnaqyzhlbt8">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-icon fl-node-luz6d4wrbfgm" data-node="luz6d4wrbfgm">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+								<a href="https://g.page/vesuviobayridge?share" target="_blank"  tabindex="-1" aria-hidden="true" aria-labelledby="fl-icon-text-luz6d4wrbfgm" rel="noopener" >
+							<i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+						</a>
+			</span>
+			<div id="fl-icon-text-luz6d4wrbfgm" class="fl-icon-text">
+						<a href="https://g.page/vesuviobayridge?share" target="_blank"  class="fl-icon-text-link fl-icon-text-wrap" rel="noopener" >
+						<p><a href="https://g.page/vesuviobayridge?share" target="_blank" rel="noopener">7305 3rd Ave, Brooklyn, NY 11209</a></p>						</a>
+					</div>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-icon fl-node-fqprv4dy289e" data-node="fqprv4dy289e">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fas fa-clock" aria-hidden="true"></i>
+					</span>
+			<div id="fl-icon-text-fqprv4dy289e" class="fl-icon-text fl-icon-text-wrap">
+						<p>Open for lunch and dinner, Mon-Sun 11am-midnight</p>					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-wx8u57ecghj4 fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="wx8u57ecghj4">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-map fl-node-mjly4aw1bdep" data-node="mjly4aw1bdep">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-map fl-map-auto-responsive-disabled">
+	<iframe src="https://www.google.com/maps/embed/v1/place?q=7305+3rd+Ave%2C+Brooklyn%2C+NY+11209%2C+United+States&key=AIzaSyD09zQ9PNDNNy9TadMuzRV_UsPUoWKntt8" aria-hidden="true"></iframe></div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-t9u0qfjgbonx" data-node="t9u0qfjgbonx">
+			<div class="fl-col fl-node-ah3pu52fkj04 fl-col-bg-color" data-node="ah3pu52fkj04">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-advanced-separator fl-node-1rxi5h4mytqf" data-node="1rxi5h4mytqf">
+	<div class="fl-module-content fl-node-content">
+		
+<div class="uabb-module-content uabb-separator-parent">
+
+	
+			<div class="uabb-separator"></div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-h0apms8ie32n" data-node="h0apms8ie32n">
+			<div class="fl-col fl-node-1aotduy8r49l fl-col-bg-color" data-node="1aotduy8r49l">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-menu fl-node-qyhfli6829rc" data-node="qyhfli6829rc">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu">
+		<div class="fl-clear"></div>
+	<nav aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-new-footer" class="menu fl-menu-horizontal fl-toggle-none"><li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/dining-room/">Dining Room, Takeout and Delivery Menu</a></li><li id="menu-item-83" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/dining-room/">Take Out &#038; Delivery</a></li><li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item"><a href="https://vesuviobayridge.com/catering-by-the-tray/">Catering by the Tray</a></li><li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/private-party-room/">Private Party Room Menu</a></li><li id="menu-item-86" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Holiday</a></li><li id="menu-item-120" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">About Us</a></li><li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://vesuviobayridge.com/contact/">Contact</a></li></ul></nav></div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-vwjozx72yk0a fl-col-bg-color fl-col-small fl-col-small-full-width" data-node="vwjozx72yk0a">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-icon-group fl-node-6txenuz3958p" data-node="6txenuz3958p">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-group">
+	<span class="fl-icon">
+								<a href="https://www.facebook.com/vesuviobayridge" target="_blank" rel="noopener" >
+							<i class="fab fa-facebook" aria-hidden="true"></i>
+						</a>
+			</span>
+		<span class="fl-icon">
+								<a href="https://www.instagram.com/vesuviobayridge/" target="_blank" rel="noopener" >
+							<i class="fab fa-instagram" aria-hidden="true"></i>
+						</a>
+			</span>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div  class="fl-row fl-row-full-width fl-row-bg-color fl-node-cp69fsjrqit3 fl-row-default-height fl-row-align-center footer-copyright" data-node="cp69fsjrqit3">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-c3sogqa6edwf fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="c3sogqa6edwf">
+			<div class="fl-col fl-node-nyz8ckt72hjq fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="nyz8ckt72hjq">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-68fvjndieyp2" data-node="68fvjndieyp2">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p>© 2025 Vesuvio Restaurant and Pizzeria. All Rights Reserved.</p>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-obsja7n8mtpi fl-col-bg-color fl-col-small fl-col-small-full-width fl-col-small-custom-width" data-node="obsja7n8mtpi">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-html fl-node-6f8nazg3j59c" data-node="6f8nazg3j59c">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-html">
+	<div align="right">
+<a rel="nofollow" href="https://www.godaddy.com/websites/web-design"
+target="_blank"><img alt="GoDaddy Web Design"
+src="https://nebula.wsimg.com/aadc63d8e8dbd533470bdc4e350bc4af?AccessKeyId=B7351D786AE96FEF6EBB&disposition=0&alloworigin=1"></a></div></div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</footer><div class="uabb-js-breakpoint" style="display: none;"></div>	</div><!-- .fl-page -->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/bb-theme\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<a href="#" role="button" id="fl-to-top"><span class="sr-only">Scroll To Top</span><i class="fas fa-chevron-up" aria-hidden="true"></i></a><script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://vesuviobayridge.com/wp-content/cache/min/1/wp-content/uploads/bb-plugin/cache/14-layout.js?ver=1764367857" id="fl-builder-layout-14-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://vesuviobayridge.com/wp-content/cache/min/1/wp-content/plugins/coblocks/dist/js/coblocks-animation.js?ver=1764367382" id="coblocks-animation-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://vesuviobayridge.com/wp-content/cache/min/1/wp-content/plugins/coblocks/dist/js/vendors/tiny-swiper.js?ver=1764367382" id="coblocks-tiny-swiper-js" data-rocket-defer defer></script>
+<script id="coblocks-tinyswiper-initializer-js-extra">
+var coblocksTinyswiper = {"carouselPrevButtonAriaLabel":"Previous","carouselNextButtonAriaLabel":"Next","sliderImageAriaLabel":"Image"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://vesuviobayridge.com/wp-content/cache/min/1/wp-content/plugins/coblocks/dist/js/coblocks-tinyswiper-initializer.js?ver=1764367382" id="coblocks-tinyswiper-initializer-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://vesuviobayridge.com/wp-content/plugins/bb-plugin/js/jquery.imagesloaded.min.js?ver=2.9.3.2" id="imagesloaded-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://vesuviobayridge.com/wp-content/plugins/bb-plugin/js/jquery.ba-throttle-debounce.min.js?ver=2.9.3.2" id="jquery-throttle-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://vesuviobayridge.com/wp-content/cache/min/1/wp-content/uploads/bb-plugin/cache/384a58fe7358ccca8d6fb3fd75717ea0-layout-bundle.js?ver=1764367458" id="fl-builder-layout-bundle-384a58fe7358ccca8d6fb3fd75717ea0-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/vesuviobayridge.com","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://vesuviobayridge.com/wp-content/plugins/bb-plugin/js/jquery.magnificpopup.min.js?ver=2.9.3.2" id="jquery-magnificpopup-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://vesuviobayridge.com/wp-content/themes/bb-theme/js/bootstrap.min.js?ver=1.7.18" id="bootstrap-js" data-rocket-defer defer></script>
+<script id="fl-automator-js-extra">
+var themeopts = {"medium_breakpoint":"768","mobile_breakpoint":"500","lightbox":"enabled","scrollTopPosition":"800"};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://vesuviobayridge.com/wp-content/themes/bb-theme/js/theme.min.js?ver=1.7.18" id="fl-automator-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript">'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),
+                _trfd.push({'tccl.baseHost':'secureserver.net'}),
+                _trfd.push({'ap':'wpaas_v2'},
+                    {'server':'0db8d348018c'},
+                    {'pod':'c20-prod-p3-us-west-2'},
+                                        {'xid':'44781412'},
+                    {'wp':'6.8.3'},
+                    {'php':'8.0.30.7'},
+                    {'loggedin':'0'},
+                    {'cdn':'1'},
+                    {'builder':'beaver-builder'},
+                    {'theme':'bb-theme'},
+                    {'wds':'1'},
+                    {'wp_alloptions_count':'288'},
+                    {'wp_alloptions_bytes':'94419'},
+                    {'gdl_coming_soon_page':'0'}
+                    , {'appid':'446139'}                 );
+            var trafficScript = document.createElement('script'); trafficScript.src = 'https://img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'; window.document.head.appendChild(trafficScript);</script>
+		<script type="rocketlazyloadscript">window.addEventListener('click', function (elem) { var _elem$target, _elem$target$dataset, _window, _window$_trfq; return (elem === null || elem === void 0 ? void 0 : (_elem$target = elem.target) === null || _elem$target === void 0 ? void 0 : (_elem$target$dataset = _elem$target.dataset) === null || _elem$target$dataset === void 0 ? void 0 : _elem$target$dataset.eid) && ((_window = window) === null || _window === void 0 ? void 0 : (_window$_trfq = _window._trfq) === null || _window$_trfq === void 0 ? void 0 : _window$_trfq.push(["cmdLogEvent", "click", elem.target.dataset.eid]));});</script>
+		<script type="rocketlazyloadscript" data-minify="1" data-rocket-src='https://vesuviobayridge.com/wp-content/cache/min/1/traffic-assets/js/tccl-tti.min.js?ver=1764367383' onload="window.tti.calculateTTI()" data-rocket-defer defer></script>
+		</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1764963601 -->

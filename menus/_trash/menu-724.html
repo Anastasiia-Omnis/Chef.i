@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<script type="text/javascript">
+/* <![CDATA[ */
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+/* ]]> */
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="pingback" href="https://clintonhallny.com/xmlrpc.php" />
+<script type="text/javascript">
+document.documentElement.className = 'js';
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><style id="et-builder-googlefonts-cached-inline">/* Original: https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic|Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R8WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq_p9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq5Z9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR6WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqw16WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Xw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC73w3aX8.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4WjNDr0fJQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4ejMDr0fJQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4TbMDr0fJQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4WjMDr0fJQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4VrMDr0fJQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4bbLDr0fJQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4Y_LDr0fJQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4ejLDr0fJQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4cHLDr0fJQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CGPrQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtaorCGPrQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCGPrQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCGPrQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvoorCGPrQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpbCGPrQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVs9pbCGPrQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtapbCGPrQ.ttf) format('truetype');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtzpbCGPrQ.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R8WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq_p9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq5Z9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR6WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqw16WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Xw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC73w3aXw.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4WjNDr0fJg.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4ejMDr0fJg.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4TbMDr0fJg.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4WjMDr0fJg.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4VrMDr0fJg.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4bbLDr0fJg.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4Y_LDr0fJg.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4ejLDr0fJg.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4cHLDr0fJg.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CGPrc.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtaorCGPrc.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCGPrc.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCGPrc.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvoorCGPrc.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpbCGPrc.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVs9pbCGPrc.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtapbCGPrc.woff) format('woff');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtzpbCGPrc.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R8WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq_p9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq5Z9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR6WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqw16WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Xw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC73w3aXo.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4WjNDr0fIA.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4ejMDr0fIA.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4TbMDr0fIA.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4WjMDr0fIA.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4VrMDr0fIA.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4bbLDr0fIA.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4Y_LDr0fIA.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4ejLDr0fIA.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4cHLDr0fIA.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CGPrE.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtaorCGPrE.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCGPrE.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCGPrE.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvoorCGPrE.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpbCGPrE.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVs9pbCGPrE.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtapbCGPrE.woff2) format('woff2');}@font-face {font-family: 'Raleway';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVtzpbCGPrE.woff2) format('woff2');}</style><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<script type="text/javascript">
+let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+<!-- This site is optimized with the Yoast SEO plugin v25.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Clinton Hall Bronx - Clinton Hall NY</title>
+<meta name="description" content="Located just off historic Arthur Ave. and next to Fordham University, Clinton Hall Bronx has an eclectic mix of students and families from the neighborhood." />
+<link rel="canonical" href="https://clintonhallny.com/bronx/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Clinton Hall Bronx - Clinton Hall NY" />
+<meta property="og:description" content="Located just off historic Arthur Ave. and next to Fordham University, Clinton Hall Bronx has an eclectic mix of students and families from the neighborhood." />
+<meta property="og:url" content="https://clintonhallny.com/bronx/" />
+<meta property="og:site_name" content="Clinton Hall" />
+<meta property="article:publisher" content="https://www.facebook.com/ClintonHallNY" />
+<meta property="article:modified_time" content="2025-05-24T17:54:47+00:00" />
+<meta property="og:image" content="https://clintonhallny.com/wp-content/uploads/2018/08/CHBronx4-bg.jpg" />
+<meta property="og:image:width" content="2500" />
+<meta property="og:image:height" content="1671" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ClintonHallNY" />
+<meta name="twitter:label1" content="Est. reading time" />
+<meta name="twitter:data1" content="2 minutes" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clintonhallny.com/bronx/","url":"https://clintonhallny.com/bronx/","name":"Clinton Hall Bronx - Clinton Hall NY","isPartOf":{"@id":"https://clintonhallny.com/#website"},"primaryImageOfPage":{"@id":"https://clintonhallny.com/bronx/#primaryimage"},"image":{"@id":"https://clintonhallny.com/bronx/#primaryimage"},"thumbnailUrl":"https://clintonhallny.com/wp-content/uploads/2018/08/CHBronx4-bg.jpg","datePublished":"2018-06-29T18:15:08+00:00","dateModified":"2025-05-24T17:54:47+00:00","description":"Located just off historic Arthur Ave. and next to Fordham University, Clinton Hall Bronx has an eclectic mix of students and families from the neighborhood.","breadcrumb":{"@id":"https://clintonhallny.com/bronx/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://clintonhallny.com/bronx/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://clintonhallny.com/bronx/#primaryimage","url":"https://clintonhallny.com/wp-content/uploads/2018/08/CHBronx4-bg.jpg","contentUrl":"https://clintonhallny.com/wp-content/uploads/2018/08/CHBronx4-bg.jpg","width":2500,"height":1671},{"@type":"BreadcrumbList","@id":"https://clintonhallny.com/bronx/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clintonhallny.com/"},{"@type":"ListItem","position":2,"name":"Bronx"}]},{"@type":"WebSite","@id":"https://clintonhallny.com/#website","url":"https://clintonhallny.com/","name":"Clinton Hall","description":"Good Beer, Good Food, Good Times","publisher":{"@id":"https://clintonhallny.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://clintonhallny.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://clintonhallny.com/#organization","name":"Clinton Hall","url":"https://clintonhallny.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://clintonhallny.com/#/schema/logo/image/","url":"https://clintonhallny.com/wp-content/uploads/2018/06/clintonHall-favicon.jpg","contentUrl":"https://clintonhallny.com/wp-content/uploads/2018/06/clintonHall-favicon.jpg","width":209,"height":209,"caption":"Clinton Hall"},"image":{"@id":"https://clintonhallny.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/ClintonHallNY","https://x.com/ClintonHallNY","https://www.instagram.com/ClintonHallNY/"]}]}</script>
+<!-- / Yoast SEO plugin. -->
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//assets..untappd.com' />
+<link rel='dns-prefetch' href='//beer.untappd.com' />
+<link rel='dns-prefetch' href='//business.untapd.com' />
+<link rel='dns-prefetch' href='//cf.chownowcdn.com' />
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//embed-menu-preloader.untappdapi.com' />
+<link rel='dns-prefetch' href='//fonts.gstatic.com' />
+<link rel="alternate" type="application/rss+xml" title="Clinton Hall &raquo; Feed" href="https://clintonhallny.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Clinton Hall &raquo; Comments Feed" href="https://clintonhallny.com/comments/feed/" />
+<meta content="Clinton Hall v.1.0.0" name="generator"/><link rel='stylesheet' id='sbi_styles-css' href='https://clintonhallny.com/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.9.1' type='text/css' media='all' />
+<style id='wp-block-library-theme-inline-css' type='text/css'>
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id='pdfemb-pdf-embedder-viewer-style-inline-css' type='text/css'>
+.wp-block-pdfemb-pdf-embedder-viewer{max-width:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='foobox-free-min-css' href='https://clintonhallny.com/wp-content/plugins/foobox-image-lightbox/free/css/foobox.free.min.css?ver=2.7.35' type='text/css' media='all' />
+<link rel='stylesheet' id='acwp-main-css-css' href='https://clintonhallny.com/wp-content/plugins/accessible-poetry/assets/css/main.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='acwp-mdi-css' href='https://fonts.googleapis.com/icon?family=Material+Icons&#038;ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wtfdivi-user-css-css' href='https://clintonhallny.com/wp-content/uploads/wtfdivi/wp_head.css?ver=1532527727' type='text/css' media='all' />
+<link rel='stylesheet' id='dwd-map-extended-css' href='https://clintonhallny.com/wp-content/plugins/dwd-map-extended/public/css/dwd-map-extended-public.css?ver=1.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-blurb-extended-styles-css' href='https://clintonhallny.com/wp-content/plugins/divi-blurb-extended/styles/style.min.css?ver=2.2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='popup-maker-site-css' href='//clintonhallny.com/wp-content/uploads/pum/pum-site-styles.css?generated=1757966542&#038;ver=1.20.6' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_reset_css-css' href='https://clintonhallny.com/wp-content/plugins/gravityforms/legacy/css/formreset.min.css?ver=2.9.21' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_formsmain_css-css' href='https://clintonhallny.com/wp-content/plugins/gravityforms/legacy/css/formsmain.min.css?ver=2.9.21' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_ready_class_css-css' href='https://clintonhallny.com/wp-content/plugins/gravityforms/legacy/css/readyclass.min.css?ver=2.9.21' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_browsers_css-css' href='https://clintonhallny.com/wp-content/plugins/gravityforms/legacy/css/browsers.min.css?ver=2.9.21' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-parent-css' href='https://clintonhallny.com/wp-content/themes/Divi/style-static.min.css?ver=4.27.4' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-pum-css' href='https://clintonhallny.com/wp-content/themes/clinton-hall/style.css?ver=4.27.4' type='text/css' media='all' />
+<script type="text/javascript" src="https://clintonhallny.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="jquery-js-after">
+/* <![CDATA[ */
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-content/themes/clinton-hall/ds-script.js?ver=6.8.3" id="ds-theme-script-js"></script>
+<script type="text/javascript" defer='defer' src="https://clintonhallny.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.9.21" id="gform_json-js"></script>
+<script type="text/javascript" id="gform_gravityforms-js-extra">
+/* <![CDATA[ */
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/clintonhallny.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/clintonhallny.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"6b95090fe992cf9515d7610c8cdc5f41","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/clintonhallny.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/clintonhallny.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"6b95090fe992cf9515d7610c8cdc5f41","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = {"1":"1"};
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https:\/\/clintonhallny.com\/wp-content\/plugins\/gravityforms\/images"}};
+/* ]]> */
+</script>
+<script type="text/javascript" defer='defer' src="https://clintonhallny.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.9.21" id="gform_gravityforms-js"></script>
+<script type="text/javascript" defer='defer' src="https://clintonhallny.com/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=380b7a5ec0757c78876bc8a59488f2f3" id="gform_gravityforms_utils-js"></script>
+<script type="text/javascript" id="foobox-free-min-js-before">
+/* <![CDATA[ */
+/* Run FooBox FREE (v2.7.35) */
+var FOOBOX = window.FOOBOX = {
+ready: true,
+disableOthers: false,
+o: {wordpress: { enabled: true }, countMessage:'image %index of %total', captions: { dataTitle: ["captionTitle","title"], dataDesc: ["captionDesc","description"] }, rel: '', excludes:'.fbx-link,.nofoobox,.nolightbox,a[href*="pinterest.com/pin/create/button/"]', affiliate : { enabled: false }},
+selectors: [
+".foogallery-container.foogallery-lightbox-foobox", ".foogallery-container.foogallery-lightbox-foobox-free", ".gallery", ".wp-block-gallery", ".wp-caption", ".wp-block-image", "a:has(img[class*=wp-image-])", ".foobox"
+],
+pre: function( $ ){
+// Custom JavaScript (Pre)
+},
+post: function( $ ){
+// Custom JavaScript (Post)
+// Custom Captions Code
+},
+custom: function( $ ){
+// Custom Extra JS
+}
+};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-content/plugins/foobox-image-lightbox/free/js/foobox.free.min.js?ver=2.7.35" id="foobox-free-min-js"></script>
+<link rel="https://api.w.org/" href="https://clintonhallny.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://clintonhallny.com/wp-json/wp/v2/pages/392" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://clintonhallny.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+<link rel='shortlink' href='https://clintonhallny.com/?p=392' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://clintonhallny.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fclintonhallny.com%2Fbronx%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://clintonhallny.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fclintonhallny.com%2Fbronx%2F&#038;format=xml" />
+<style>.nav li.et-hover > ul,
+.menu li.et-hover > ul {
+visibility: visible !important;
+opacity: 1 !important; }
+.da11y-submenu-show {
+visibility: visible !important;
+}
+.keyboard-outline {
+outline: #2ea3f2 solid 2px;
+-webkit-transition: none !important;
+transition: none !important;
+}
+button:active.keyboard-outline,
+button:focus.keyboard-outline,
+input:active.keyboard-outline,
+input:focus.keyboard-outline,
+a[role="tab"].keyboard-outline {
+outline-offset: -5px;
+}
+.et-search-form input:focus.keyboard-outline {
+padding-left: 15px;
+padding-right: 15px;
+}
+.et_pb_tab {
+-webkit-animation: none !important;
+animation: none !important;
+}
+.et_pb_contact_form_label,
+.widget_search .screen-reader-text,
+.et_pb_social_media_follow_network_name,
+.et_pb_search .screen-reader-text {
+display: block !important; }
+.da11y-screen-reader-text,
+.et_pb_contact_form_label,
+.widget_search .screen-reader-text,
+.et_pb_social_media_follow_network_name,
+.et_pb_search .screen-reader-text {
+clip: rect(1px, 1px, 1px, 1px);
+position: absolute !important;
+height: 1px;
+width: 1px;
+overflow: hidden;
+text-shadow: none;
+text-transform: none;
+letter-spacing: normal;
+line-height: normal;
+font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+font-size: 1em;
+font-weight: 600;
+-webkit-font-smoothing: subpixel-antialiased;
+}
+.da11y-screen-reader-text:focus {
+background: #f1f1f1;
+color: #00547A;
+-webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+clip: auto !important;
+display: block;
+height: auto;
+left: 5px;
+padding: 15px 23px 14px;
+text-decoration: none;
+top: 7px;
+width: auto;
+z-index: 1000000; }
+</style><meta name="viewport" content="width=device-width, initial-scale=1.0" />	<script data-name="dbdb-head-js">
+</script>
+<style>
+.db_title, .db_tagline { 
+margin-right: 30px;
+margin-top: 0px;
+line-height: 1em;
+}
+.db_title_and_tagline {
+display: flex;
+align-items: flex-start;
+}
+.db_tagline_below_title_on .db_title_and_tagline {
+flex-direction: column;
+}
+.db_tagline_below_title_on .db_tagline {
+margin-top: 8px;
+}
+.db_title_and_tagline_valign_middle .db_title_and_tagline {
+align-items: center;
+}
+.db_title_and_tagline_valign_bottom .db_title_and_tagline {
+align-items: flex-end;
+}
+.db_title_and_tagline_below_logo_on .db_title_and_tagline {
+position: absolute;
+bottom: 0px;
+left: 0px;
+transform: translateY(100%);
+}
+</style>
+<style>
+@media only screen and (min-width: 981px) {
+.et_pb_subscribe.db_inline_form .et_pb_newsletter_form form {
+display: flex;
+width: 100%;
+grid-gap: 20px;
+}
+.et_pb_subscribe.db_inline_form .et_pb_newsletter_form form > * {
+flex: 1 1 0%;
+}
+.et_pb_subscribe.db_inline_form .et_pb_newsletter_form p.et_pb_newsletter_field {
+padding-bottom: 0;
+}
+}
+</style>
+<style>.dbiv-nciv .percent-value{opacity:0;} .dbiv-nciv.dbiv-nciv-ready .percent-value{opacity:1;}</style>    <style>
+.db_pb_team_member_website_icon:before {
+content: "\e0e3";
+}
+</style>
+<style>
+.db_pb_team_member_email_icon:before {
+content: "\e010";
+}
+ul.et_pb_member_social_links li > span {
+display: inline-block !important;
+}
+/* Fix email icon hidden by Email Address Encoder plugin */
+ul.et_pb_member_social_links li>span {
+display: inline-block !important;
+}
+</style><style>.db_pb_team_member_phone_icon:before { content: "\e090"; } ul.et_pb_member_social_links li>span { display: inline-block !important; }</style><style>.db_pb_team_member_instagram_icon:before { content: "\e09a"; }</style>    <style>
+.et_pb_slider.dbdb_slider_random .et-pb-active-slide {
+visibility: hidden;
+}
+</style>
+<style>
+.et_pb_gallery .et-pb-slider-arrows a {
+margin-top: 0;
+transform: translateY(-50%);
+}
+</style>
+<style>
+.et_pb_gallery .et-pb-controllers a {
+border-style: solid;
+}
+</style>
+<script type="text/javascript">
+(function(url){
+if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+var addEvent = function(evt, handler) {
+if (window.addEventListener) {
+document.addEventListener(evt, handler, false);
+} else if (window.attachEvent) {
+document.attachEvent('on' + evt, handler);
+}
+};
+var removeEvent = function(evt, handler) {
+if (window.removeEventListener) {
+document.removeEventListener(evt, handler, false);
+} else if (window.detachEvent) {
+document.detachEvent('on' + evt, handler);
+}
+};
+var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+var logHuman = function() {
+if (window.wfLogHumanRan) { return; }
+window.wfLogHumanRan = true;
+var wfscr = document.createElement('script');
+wfscr.type = 'text/javascript';
+wfscr.async = true;
+wfscr.src = url + '&r=' + Math.random();
+(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+for (var i = 0; i < evts.length; i++) {
+removeEvent(evts[i], logHuman);
+}
+};
+for (var i = 0; i < evts.length; i++) {
+addEvent(evts[i], logHuman);
+}
+})('//clintonhallny.com/?wordfence_lh=1&hid=5F7B8698D024C6EE978BFED79CD275C1');
+</script><style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #000000; }
+</style>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZZ3MCFV');</script>
+<!-- End Google Tag Manager -->
+<script src='https://cf.chownowcdn.com/latest/static/integrations/ordering-modal.min.js' data-chownow-company-id='13900'></script>
+<meta name="google-site-verification" content="h7bH_TH40Z8oprXCZ16JZhmFvwCf8IhrVDX0KNKqoLo" />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-87DrmpqHRiY8hPLIr7ByqhPIywuSsjuQAfMXAE0sMUpY3BM7nXjf+mLIUSvhDArs" crossorigin="anonymous">
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '654281591378989');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=654281591378989&amp;ev=PageView&amp;noscript=1"></noscript>
+<script type="text/javascript">
+var elm=document.getElementsByTagName("html")[0];
+elm.style.display="none";
+document.addEventListener("DOMContentLoaded",function(event) {elm.style.display="block"; });
+</script>
+<!-- End Facebook Pixel Code -->
+<!-- Pixel Code for https://app.flockrocket.io/ -->
+<!--<script async src="https://app.flockrocket.io/pixel/970d12e0f3e980a80662fb63c656762b"></script>-->
+<!-- END Pixel Code -->
+<style type="text/css">
+#main-header .et_mobile_menu .menu-item-has-children > a { background-color: transparent; position: relative; }
+#main-header .et_mobile_menu .menu-item-has-children > a:after { font-family: 'ETmodules'; text-align: center; speak: none; font-weight: normal; font-variant: normal; text-transform: none; -webkit-font-smoothing: antialiased; position: absolute; }
+#main-header .et_mobile_menu .menu-item-has-children > a:after { font-size: 16px; content: '\4c'; top: 13px; right: 10px; }
+#main-header .et_mobile_menu .menu-item-has-children.visible > a:after { content: '\4d'; }
+#main-header .et_mobile_menu ul.sub-menu { display: none !important; visibility: hidden !important;  transition: all 1.5s ease-in-out;}
+#main-header .et_mobile_menu .visible > ul.sub-menu { display: block !important; visibility: visible !important; }
+#main-header .et_mobile_menu .always-visitable {
+position: relative;
+}
+#main-header .et_mobile_menu .always-visitable .hover-link {
+position: absolute;
+top: 0; left: 0; bottom: 0;
+right: 60px; /* right area continues to expand or collapse */
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer"><link rel="icon" href="https://clintonhallny.com/wp-content/uploads/2018/07/beer-favicon-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://clintonhallny.com/wp-content/uploads/2018/07/beer-favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://clintonhallny.com/wp-content/uploads/2018/07/beer-favicon.png" />
+<meta name="msapplication-TileImage" content="https://clintonhallny.com/wp-content/uploads/2018/07/beer-favicon.png" />
+<style id="et-divi-customizer-global-cached-inline-styles">body,.et_pb_column_1_2 .et_quote_content blockquote cite,.et_pb_column_1_2 .et_link_content a.et_link_main_url,.et_pb_column_1_3 .et_quote_content blockquote cite,.et_pb_column_3_8 .et_quote_content blockquote cite,.et_pb_column_1_4 .et_quote_content blockquote cite,.et_pb_blog_grid .et_quote_content blockquote cite,.et_pb_column_1_3 .et_link_content a.et_link_main_url,.et_pb_column_3_8 .et_link_content a.et_link_main_url,.et_pb_column_1_4 .et_link_content a.et_link_main_url,.et_pb_blog_grid .et_link_content a.et_link_main_url,body .et_pb_bg_layout_light .et_pb_post p,body .et_pb_bg_layout_dark .et_pb_post p{font-size:14px}.et_pb_slide_content,.et_pb_best_value{font-size:15px}#et_search_icon:hover,.mobile_menu_bar:before,.mobile_menu_bar:after,.et_toggle_slide_menu:after,.et-social-icon a:hover,.et_pb_sum,.et_pb_pricing li a,.et_pb_pricing_table_button,.et_overlay:before,.entry-summary p.price ins,.et_pb_member_social_links a:hover,.et_pb_widget li a:hover,.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active,.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active,.et_pb_gallery .et_pb_gallery_pagination ul li a.active,.wp-pagenavi span.current,.wp-pagenavi a:hover,.nav-single a,.tagged_as a,.posted_in a{color:#e9a825}.et_pb_contact_submit,.et_password_protected_form .et_submit_button,.et_pb_bg_layout_light .et_pb_newsletter_button,.comment-reply-link,.form-submit .et_pb_button,.et_pb_bg_layout_light .et_pb_promo_button,.et_pb_bg_layout_light .et_pb_more_button,.et_pb_contact p input[type="checkbox"]:checked+label i:before,.et_pb_bg_layout_light.et_pb_module.et_pb_button{color:#e9a825}.footer-widget h4{color:#e9a825}.et-search-form,.nav li ul,.et_mobile_menu,.footer-widget li:before,.et_pb_pricing li:before,blockquote{border-color:#e9a825}.et_pb_counter_amount,.et_pb_featured_table .et_pb_pricing_heading,.et_quote_content,.et_link_content,.et_audio_content,.et_pb_post_slider.et_pb_bg_layout_dark,.et_slide_in_menu_container,.et_pb_contact p input[type="radio"]:checked+label i:before{background-color:#e9a825}.container,.et_pb_row,.et_pb_slider .et_pb_container,.et_pb_fullwidth_section .et_pb_title_container,.et_pb_fullwidth_section .et_pb_title_featured_container,.et_pb_fullwidth_header:not(.et_pb_fullscreen) .et_pb_fullwidth_header_container{max-width:1200px}.et_boxed_layout #page-container,.et_boxed_layout.et_non_fixed_nav.et_transparent_nav #page-container #top-header,.et_boxed_layout.et_non_fixed_nav.et_transparent_nav #page-container #main-header,.et_fixed_nav.et_boxed_layout #page-container #top-header,.et_fixed_nav.et_boxed_layout #page-container #main-header,.et_boxed_layout #page-container .container,.et_boxed_layout #page-container .et_pb_row{max-width:1360px}a{color:#e9a825}#main-header,#main-header .nav li ul,.et-search-form,#main-header .et_mobile_menu{background-color:#000000}.nav li ul{border-color:#006937}.et_secondary_nav_enabled #page-container #top-header{background-color:#e9a825!important}#et-secondary-nav li ul{background-color:#e9a825}.et_header_style_centered .mobile_nav .select_page,.et_header_style_split .mobile_nav .select_page,.et_nav_text_color_light #top-menu>li>a,.et_nav_text_color_dark #top-menu>li>a,#top-menu a,.et_mobile_menu li a,.et_nav_text_color_light .et_mobile_menu li a,.et_nav_text_color_dark .et_mobile_menu li a,#et_search_icon:before,.et_search_form_container input,span.et_close_search_field:after,#et-top-navigation .et-cart-info{color:#fffcdd}.et_search_form_container input::-moz-placeholder{color:#fffcdd}.et_search_form_container input::-webkit-input-placeholder{color:#fffcdd}.et_search_form_container input:-ms-input-placeholder{color:#fffcdd}#top-menu li a{font-size:19px}body.et_vertical_nav .container.et_search_form_container .et-search-form input{font-size:19px!important}#top-menu li a,.et_search_form_container input{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none;letter-spacing:1px}.et_search_form_container input::-moz-placeholder{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none;letter-spacing:1px}.et_search_form_container input::-webkit-input-placeholder{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none;letter-spacing:1px}.et_search_form_container input:-ms-input-placeholder{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none;letter-spacing:1px}#main-footer .footer-widget h4,#main-footer .widget_block h1,#main-footer .widget_block h2,#main-footer .widget_block h3,#main-footer .widget_block h4,#main-footer .widget_block h5,#main-footer .widget_block h6{color:#e9a825}.footer-widget li:before{border-color:#e9a825}#footer-info,#footer-info a{color:#f15623}#footer-bottom .et-social-icon a{font-size:17px}#footer-bottom .et-social-icon a{color:#f15623}body .et_pb_button{font-size:17px;background-color:#006937;border-width:0px!important;border-radius:0px;font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none;;letter-spacing:2px}body.et_pb_button_helper_class .et_pb_button,body.et_pb_button_helper_class .et_pb_module.et_pb_button{color:#ffffff}body .et_pb_button:after{font-size:27.2px}body .et_pb_bg_layout_light.et_pb_button:hover,body .et_pb_bg_layout_light .et_pb_button:hover,body .et_pb_button:hover{color:#ffffff!important;border-radius:0px}@media only screen and (min-width:981px){.et_header_style_left #et-top-navigation,.et_header_style_split #et-top-navigation{padding:36px 0 0 0}.et_header_style_left #et-top-navigation nav>ul>li>a,.et_header_style_split #et-top-navigation nav>ul>li>a{padding-bottom:36px}.et_header_style_split .centered-inline-logo-wrap{width:72px;margin:-72px 0}.et_header_style_split .centered-inline-logo-wrap #logo{max-height:72px}.et_pb_svg_logo.et_header_style_split .centered-inline-logo-wrap #logo{height:72px}.et_header_style_centered #top-menu>li>a{padding-bottom:13px}.et_header_style_slide #et-top-navigation,.et_header_style_fullscreen #et-top-navigation{padding:27px 0 27px 0!important}.et_header_style_centered #main-header .logo_container{height:72px}.et_header_style_centered #logo{max-height:56%}.et_pb_svg_logo.et_header_style_centered #logo{height:56%}.et_header_style_left .et-fixed-header #et-top-navigation,.et_header_style_split .et-fixed-header #et-top-navigation{padding:23px 0 0 0}.et_header_style_left .et-fixed-header #et-top-navigation nav>ul>li>a,.et_header_style_split .et-fixed-header #et-top-navigation nav>ul>li>a{padding-bottom:23px}.et_header_style_centered header#main-header.et-fixed-header .logo_container{height:45px}.et_header_style_split #main-header.et-fixed-header .centered-inline-logo-wrap{width:45px;margin:-45px 0}.et_header_style_split .et-fixed-header .centered-inline-logo-wrap #logo{max-height:45px}.et_pb_svg_logo.et_header_style_split .et-fixed-header .centered-inline-logo-wrap #logo{height:45px}.et_header_style_slide .et-fixed-header #et-top-navigation,.et_header_style_fullscreen .et-fixed-header #et-top-navigation{padding:14px 0 14px 0!important}.et_fixed_nav #page-container .et-fixed-header#top-header{background-color:#e9a825!important}.et_fixed_nav #page-container .et-fixed-header#top-header #et-secondary-nav li ul{background-color:#e9a825}.et-fixed-header #top-menu a,.et-fixed-header #et_search_icon:before,.et-fixed-header #et_top_search .et-search-form input,.et-fixed-header .et_search_form_container input,.et-fixed-header .et_close_search_field:after,.et-fixed-header #et-top-navigation .et-cart-info{color:#fffcdd!important}.et-fixed-header .et_search_form_container input::-moz-placeholder{color:#fffcdd!important}.et-fixed-header .et_search_form_container input::-webkit-input-placeholder{color:#fffcdd!important}.et-fixed-header .et_search_form_container input:-ms-input-placeholder{color:#fffcdd!important}.et-fixed-header #top-menu li.current-menu-ancestor>a,.et-fixed-header #top-menu li.current-menu-item>a,.et-fixed-header #top-menu li.current_page_item>a{color:#f15623!important}}@media only screen and (min-width:1500px){.et_pb_row{padding:30px 0}.et_pb_section{padding:60px 0}.single.et_pb_pagebuilder_layout.et_full_width_page .et_post_meta_wrapper{padding-top:90px}.et_pb_fullwidth_section{padding:0}}	h1,h2,h3,h4,h5,h6{font-family:'Montserrat',Helvetica,Arial,Lucida,sans-serif}body,input,textarea,select{font-family:'Raleway',Helvetica,Arial,Lucida,sans-serif}#main-header,#et-top-navigation{font-family:'Montserrat',Helvetica,Arial,Lucida,sans-serif}p,a{font-family:'Knockout'}#acwp-toolbar-btn-wrap{border:0}h1,h2,h3,h4,h5,h6{font-family:'Edmondsans'!important}.et_header_style_split #et-top-navigation nav>ul>li>a{z-index:3;font-family:'Edmondsans'!important}#happeningsImg{display:none}#top-menu li.current-menu-ancestor>a{color:#e9a825!important}#tripleseat_embed_form input,#tripleseat_embed_form button,#tripleseat_embed_form textarea{}#tripleseat_embed_form{color:#FFF;margin-top:0!important}#tripleseat_embed_form .ui-datepicker{width:36em!important;padding:0.2em 0.2em 0;display:none}#tripleseat_embed_form .button{color:#FFF;background:#fc5000;text-transform:uppercase;font-weight:bold}#tripleseat_embed_form tr td{border:0!important}.g-recaptcha div{width:100%!Important}#dp_lead_event_date,#lead_start_time,#lead_end_time{padding-left:25px!important}.covid{position:fixed;width:100%;top:0;height:40px;background:#f7f785;text-align:center;padding:8px;z-index:99}#popmake-3385{padding:5px 5px 2px 5px}.popmake #contentRow,.popmake #contentRow .et_pb_text{width:100%!important;max-width:100%!important;padding:0!important}#acwp-toolbar-btn{right:initial!important;top:initial!important;left:auto!important;position:fixed!important;right:15px!important;bottom:70px!important}.covid a{color:#000;font-weight:bold}body #acwp-toolbar-btn-wrap{top:initial!important;left:20px}.orderOnline{position:fixed;top:160px;right:0;background:#000;z-index:9;padding:8px 10px 6px 10px;text-transform:uppercase;border:solid 2px orange;font-size:17px;border-right:0;display:none}.home .orderOnline{display:block}.orderOnline a{color:#FFF}#main-header{}#custom_html-2{text-align:center;width:100%;font-size:15px}#custom_html-2 a{font-size:18px}#footer-widgets{padding-top:0;padding:10px 0;text-align:center}#footer-widgets .footer-widget{margin-bottom:0}#tripleseat_embed_form{background:#000;margin-top:25px}#tripleseat_embed_form td{padding:15px!Important}#tripleseat_embed_form h2{color:#cca251!important;margin-top:15px}#tripleseat_embed_form input{width:100%;padding:10px}#venueInfo .venueCol2 .et_pb_button_module_wrapper{display:inline-block;margin:10px 10px 0px 0px!important;text-align:right;float:right}#footer-bottom .container{max-width:97%!important;width:97%!important}.parent-pageid-1186 .et_pb_all_tabs{display:none}#top-menu li.current-menu-item>a{color:#f15623!important}#venueInfo i{display:inline-block;margin-right:10px;color:#fffcdd}#bookEventBtn{border-radius:0;color:#FFF!Important}#bookEventBtn:hover{background:#006937}.gatherForm{margin-top:75px!important}.et_pb_tabs_controls li{border-radius:0!important}#locationMap .et_pb_map{height:700px}.ds-tab-navigation{border:0;background:transparent!important}.delivBtn{padding:8px 20px;font-weight:400!important;color:#FFF;border:solid thin #FFF!important;margin-right:10px;font-size:17px;background:#0000007d;text-transform:uppercase;border-radius:0;display:table-cell;position:relative;line-height:22px}.ds-tab-navigation ul.et_pb_tabs_controls{background-color:transparent;margin-bottom:20px}.ds-tab-navigation .et_pb_all_tabs{background-color:#1e1c1cb3;color:#FFF}.ds-tab-navigation .et_pb_tabs_controls li{border:solid thin #FFF!important;margin-right:10px;margin-top:5px;margin-bottom:5px;;border-radius:3px;font-size:17px;background:#0000007d;text-transform:uppercase}.ds-tab-navigation .et_pb_tabs_controls li a{text-transform:uppercase;padding:5px 20px;font-weight:400!important;color:#FFF}.ds-tab-navigation .et_pb_tabs_controls li.et_pb_tab_active{background:#0000007d;color:#f15623!important;border:solid thin #f15623!Important}.ds-tab-navigation .et_pb_tabs_controls li.et_pb_tab_active a{color:#f15623!important}.ds-tab-navigation ul.et_pb_tabs_controls:after{display:block;visibility:visible;position:relative;z-index:9;top:-1px;border-top:0;content:""}.et_pb_tabs_controls li a{text-transform:uppercase;color:#bc945b}.flexbox-parent{width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;align-content:stretch;background:#FFF!important}.flexbox-item{}.flexbox-item-grow{flex:1}.flexbox-item.header{background:rgba(255,0,0,.1)}.flexbox-item.footer{background:rgba(0,255,0,.1)}.flexbox-item.content{background:#FFF!important}.fill-area{display:flex;flex-direction:row;justify-content:flex-start;align-items:stretch;align-content:stretch}.fill-area-content{background:rgba(0,0,0,.3);border:1px solid #000000;height:86vh;overflow:auto}#mc_embed_signup #mce-PHONE{margin-top:15px}#mc_embed_signup #mce-PHONE,#mc_embed_signup #mce-FNAME,#mc_embed_signup #mce-LNAME,#mc_embed_signup #mce-EMAIL{width:100%;padding:14px 4%!important;border:solid thin #CCC;border-radius:3px!important;color:#666;background-color:#fff;font-size:16px;font-weight:400;-webkit-appearance:none}#mc_embed_signup input[type=submit]{font-size:16px;padding:10px;float:right;border-radius:3px}#mc_embed_signup #mce-FNAME{width:100%;float:left;margin-top:15px 0}#mc_embed_signup .group1{margin-bottom:15px}#mc_embed_signup .group2{float:left;width:48%;margin-right:3%}#mc_embed_signup .group3{float:left;width:49%;margin-top:0px}#mc_embed_signup .group5{width:80%;float:left}#mce-MMERGE6-month,#mce-MMERGE6-day{padding:14px 2%!important;border:solid thin #CCC;border-radius:3px!important;color:#666;background-color:#fff;font-size:13px;font-weight:400;-webkit-appearance:none;margin-top:15px;width:10%}#mc_embed_signup label{display:none}.page-id-396 .closeBtn,.page-id-398 .closeBtn,.page-id-400 .closeBtn{left:10px!important}.ut-menu .menu-list-item a:hover{background:#000!important}#orderNow,#orderNowMobile{border:solid thin #CCC;padding:10px 15px;text-transform:uppercase;letter-spacing:1px;background:#fc4f00;color:#fffcdd!important;font-weight:bold;display:none!important}html.pum-open.pum-open-overlay.pum-open-scrollable body>[aria-hidden]{padding-right:0!Important}.gform_body input{border-radius:3px;padding:8px!important}.gform_body label{color:#000}#gform_submit_button_2{background:#E8A824;color:#FFF;padding:10px 20px;text-transform:uppercase;border:0}#popmake-3767{padding:0;border:0}#acp-toggle-toolbar{top:initial!important;position:fixed!important;bottom:70px!important}.menu-item-14581 a,.menu-item-14595 a,.menu-item-14638 a{text-transform:initial!important}@media screen and (max-width:981px){#tripleseat_embed_form table,#tripleseat_embed_form thead,#tripleseat_embed_form tbody,#tripleseat_embed_form td,#tripleseat_embed_form tr{display:block;overflow:auto}#tripleseat_embed_form td{padding:5px 15px!Important}#tripleseat_embed_form #lead_phone_number{width:100%!important}#tripleseat_embed_form h2{font-size:20px}.row_first_name td{width:100%;display:block!Important}.row_first_name td input{width:100%!important}.ds-tab-navigation .et_pb_tabs_controls li{margin-bottom:10px}#mc_embed_signup .group2,#mc_embed_signup .group3{float:none;width:100%!important;margin-right:0}#mc_embed_signup .group3 #mce-LNAME{margin-top:30px}#mc_embed_signup .group2{margin-bottom:25px}.et_pb_column_1{height:auto!important}#venueInfo{height:initial!important}.delivBtn{width:97%;display:block}.parent-pageid-390 .et_pb_column_2:before{content:"";position:absolute;width:100%;height:100%;top:0;left:0;background:rgba(0,0,0,0.62)}#mce-MMERGE6-month,#mce-MMERGE6-day{width:18%}#main-header .container{padding:0!important}.page-id-396 .closeBtn,.page-id-398 .closeBtn,.page-id-400 .closeBtn{left:0px!important}#orderNow{z-index:99999999;position:absolute!important;display:inline-block;bottom:10px;text-align:center;color:#FFF;padding:5px 10px!important;right:-1px;display:none}#orderNowMobile{display:block;z-index:99999999;position:fixed!important;display:inline-block;bottom:10px;text-align:center;color:#FFF;padding:5px 10px!important;right:-2px;box-shadow:0 0 10px #333}}@media screen and (min-width:981px){#top-menu li li a{width:300px!important;padding:6px 20px!important}.nav li ul{width:320px!important}.page-id-398 .delivBtn{}#orderNow{z-index:99999999;position:absolute;display:inline-block;top:29px;right:13px}#orderNowMobile{display:none}#main-header.et-fixed-header	#orderNow{z-index:99999999;position:absolute;display:inline-block;top:16px;right:13px}#page-container{top:103px!important;padding-top:103px!important}}@media screen and (min-width:1624px){.delivBtn{margin-top:5px!important}.page-id-400 .delivBtn{margin-top:5px!important;top:5px}.page-id-396 .delivBtn{margin-top:5px!important;top:5px}.page-id-398 .delivBtn{margin:5px 0!important}}</style></head>
+<body data-rsssl=1 class="wp-singular page-template-default page page-id-392 custom-background wp-theme-Divi wp-child-theme-clinton-hall acwp-readable-arial dbdb_divi_2_4_up mobile android et_pb_button_helper_class et_fullwidth_nav et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_centered et_pb_footer_columns1 et_cover_background et_pb_gutter linux et_pb_gutters3 et_pb_pagebuilder_layout et_smooth_scroll et_no_sidebar et_divi_theme et-db">
+<div id="page-container">
+<header id="main-header" data-height-onload="72">
+<div class="container clearfix et_menu_container">
+<div class="logo_container">
+<span class="logo_helper"></span>
+<a href="https://clintonhallny.com/">
+<img src="/wp-content/uploads/2018/07/chall-logo3.png" width="1000" height="55" alt="Clinton Hall" id="logo" data-height-percentage="56" />
+</a>
+</div>
+<div id="et-top-navigation" data-height="72" data-fixed-height="45">
+<nav id="top-menu-nav">
+<ul id="top-menu" class="nav"><li class="always-visitable menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1299"><a href="https://clintonhallny.com/locations/">Locations</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-403"><a href="https://clintonhallny.com/fidi/" title="Clinton Hill Financial Distrcit">Financial District</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1160"><a href="https://clintonhallny.com/36th-street/">36th Street</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-392 current_page_item menu-item-407"><a href="https://clintonhallny.com/bronx/" aria-current="page">Bronx</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405"><a href="https://clintonhallny.com/51st-street/">51st Street (Courtyard Beer Garden)</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-411"><a href="https://clintonhallny.com/our-story/">Our Story</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1288"><a href="https://clintonhallny.com/press/">Press</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12474"><a href="https://clintonhallny.com/clinton-hall-social/">Clinton Hall Social</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-415"><a href="https://clintonhallny.com/gallery/">Gallery</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2884"><a href="https://clintonhallny.com/gallery/">The Fun</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2883"><a href="https://clintonhallny.com/the-venues/">The Venues</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://clintonhallny.com/contact/" title="Contact Clinton Hall">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-14693"><a href="https://clintonhallny.com/reservations/">Reservations</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14581"><a href="https://www.sevenrooms.com/explore/clintonhall51/reservations/create/search/">51st Street</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14595"><a href="https://www.sevenrooms.com/explore/clintonhall36/reservations/create/search/">36th Street</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14638"><a href="https://www.sevenrooms.com/explore/clintonhallfidi/reservations/create/search/">Fidi</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14616"><a href="#">Ch Happenings</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14779"><a href="https://clintonhallny.com/ufc/">UFC</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14832"><a href="https://clintonhallny.com/nfl-sundays/">NFL Sundays</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14903"><a href="https://clintonhallny.com/nba/">NBA</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-245173"><a href="https://clintonhallny.com/clinton-hall-oktoberfest/">Oktoberfest</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14856"><a href="https://clintonhallny.com/university-of-miami-saturday-football/">University Of Miami Saturday Football</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-245174"><a href="https://clintonhallny.com/university-of-arizona-football/">University of Arizona Football</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14847"><a href="https://clintonhallny.com/mixtape-bingo/">Mixtape Bingo</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14854"><a href="https://clintonhallny.com/trivia-night/">Trivia Night</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13394"><a href="https://clintonhallny.com/book-your-event/">Book Your Event</a></li>
+</ul>						</nav>
+<div id="et_mobile_nav_menu">
+<div class="mobile_nav closed">
+<span class="select_page">Select Page</span>
+<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+</div>
+</div>				</div> <!-- #et-top-navigation -->
+</div> <!-- .container -->
+</header> <!-- #main-header -->
+<div id="et-main-area">
+<div id="main-content">
+<article id="post-392" class="post-392 page type-page status-publish has-post-thumbnail hentry">
+<div class="entry-content">
+<div class="et-l et-l--post">
+<div class="et_builder_inner_content et_pb_gutters3"><div id="venueInfo" class="et_pb_with_border et_pb_section et_pb_section_2 et_pb_section_parallax et_pb_with_background et_section_regular" >
+<span class="et_parallax_bg_wrap"><span
+class="et_parallax_bg et_pb_parallax_css"
+style="background-image: url(https://clintonhallny.com/wp-content/uploads/2018/08/CHBronx4-bg.jpg);"
+></span></span>
+<div class="et_pb_row et_pb_row_2 et_pb_row_fullwidth et_pb_equal_columns et_pb_gutters1">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_2 locationAddy et_animated  et_pb_text_align_left et_pb_bg_layout_dark">
+<div class="et_pb_text_inner"><h1>Clinton Hall Bronx</h1>
+<h2>601 East 189th Street<br />
+Bronx, NY 10458</h2>
+<p><a href="https://www.google.com/maps/place/601+E+189th+St,+Bronx,+NY+10458/data=!4m2!3m1!1s0x89c2f481aa32a747:0x65281b7a0673b150?sa=X&amp;ved=0ahUKEwiNgMmElO_bAhVDylMKHeL6BdkQ8gEIJjAA" target="_blank" rel="noopener noreferrer"><i class="fal fa-map-pin" style="color: #bc945b;"></i>directions</a></div>
+</div><div class="et_pb_module et_pb_text et_pb_text_3 locationPhone et_animated  et_pb_text_align_left et_pb_bg_layout_dark">
+<div class="et_pb_text_inner"><a style="color: #f15623; font-family: 'Edmondsans' !Important;" href="tel:7182206400"><i class="fal fa-phone-volume"></i> (718) 220-6400</a></div>
+</div><div class="et_pb_module et_pb_text et_pb_text_4 et_animated  et_pb_text_align_left et_pb_bg_layout_dark">
+<div class="et_pb_text_inner">Located just off historic Arthur Avenue and next to Fordham University, Clinton Hall Bronx brings together an eclectic mix of college students and families from the neighborhood.</div>
+</div><div class="et_pb_button_module_wrapper et_pb_button_0_wrapper  et_pb_module  dbdb-icon-on-right dbdb-icon-on-hover">
+<a id="bookEventBtn" class="et_pb_button et_pb_button_0 et_animated et_hover_enabled et_pb_bg_layout_light" href="https://www.toasttab.com/clinton-hall-bx-601-e189-st" target="_blank">Order Online</a>
+</div><div class="et_pb_module et_pb_text et_pb_text_5 et_animated  et_pb_text_align_left et_pb_bg_layout_dark">
+<div class="et_pb_text_inner"><h3><i class="fal fa-clock"></i> Hours</h3>
+<p>Monday – Friday: 4pm – 11pm<br />Saturday – Sunday: 12pm – 11pm</p></div>
+</div><div class="et_pb_module et_pb_text et_pb_text_6 et_animated  et_pb_text_align_left et_pb_bg_layout_dark">
+<div class="et_pb_text_inner"><h3><i class="fal fa-calendar-alt"></i> CH Happenings</h3></div>
+</div><div id="happeningsImg" class="et_pb_module et_pb_image et_pb_image_0 et_animated et-waypoint">
+<a href="https://clintonhallny.com/wp-content/uploads/2024/01/ch-rw-menu-winter-2024.jpg" class="et_pb_lightbox_image" title=""><span class="et_pb_image_wrap "><img fetchpriority="high" decoding="async" width="1500" height="1930" src="https://clintonhallny.com/wp-content/uploads/2024/01/ch-rw-menu-winter-2024.jpg" alt="" title="ch-rw-menu-winter-2024" srcset="https://clintonhallny.com/wp-content/uploads/2024/01/ch-rw-menu-winter-2024.jpg 1500w, https://clintonhallny.com/wp-content/uploads/2024/01/ch-rw-menu-winter-2024-1280x1647.jpg 1280w, https://clintonhallny.com/wp-content/uploads/2024/01/ch-rw-menu-winter-2024-980x1261.jpg 980w, https://clintonhallny.com/wp-content/uploads/2024/01/ch-rw-menu-winter-2024-480x618.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1500px, 100vw" class="wp-image-14497" /></span></a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_1_wrapper  et_pb_module  dbdb-icon-on-right dbdb-icon-on-hover">
+<a class="et_pb_button et_pb_button_1 bookEvent2 et_animated et_hover_enabled et_pb_bg_layout_light" href="mailto:dmadlen@clintonhallny.com" target="_blank">Book Now</a>
+</div>
+</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_3 venueCol2  et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_tabs et_pb_tabs_0 ds-tab-navigation et_animated " >
+<ul class="et_pb_tabs_controls clearfix">
+<li class="et_pb_tab_0 et_pb_tab_active"><a href="#">Beer</a></li><li class="et_pb_tab_1"><a href="#">All Day Food</a></li><li class="et_pb_tab_2"><a href="#">Brunch</a></li><li class="et_pb_tab_3"><a href="#">Cocktails</a></li><li class="et_pb_tab_4"><a href="#">Happy Hour</a></li>
+</ul>
+<div class="et_pb_all_tabs">
+<div class="et_pb_tab et_pb_tab_0 clearfix et_pb_active_content">
+<div class="et_pb_tab_content"><div class="flexbox-parent">
+<div class="flexbox-item fill-area content flexbox-item-grow">
+<div class="fill-area-content flexbox-item-grow"><div class="et_pb_module et_pb_code et_pb_code_1">
+<div class="et_pb_code_inner"><div id="menu-container"></div><script type="text/javascript">!function(e,n){var t=document.createElement("script"),a=document.getElementsByTagName("script")[0];t.async=1,a.parentNode.insertBefore(t,a),t.onload=t.onreadystatechange=function(e,a){(a||!t.readyState||/loaded|complete/.test(t.readyState))&&(t.onload=t.onreadystatechange=null,t=void 0,a||n&&n())},t.src=e}("https://embed-menu-preloader.untappdapi.com/embed-menu-preloader.min.js",function(){PreloadEmbedMenu("menu-container",7606,26701)});</script></div>
+</div></div>
+</div>
+</div></div>
+</div><div class="et_pb_tab et_pb_tab_1 clearfix">
+<div class="et_pb_tab_content"><div class="flexbox-parent">
+<div class="flexbox-item fill-area content flexbox-item-grow">
+<div class="fill-area-content flexbox-item-grow"><img decoding="async" class="wp-image-357 alignnone size-medium" src="https://clintonhallny.com/wp-content/uploads/2023/12/CH_Bronx_12-18-23a.jpg" alt="Clinton Hall Bronx Food Menu" width="100%" /></div>
+</div>
+</div></div>
+</div><div class="et_pb_tab et_pb_tab_2 clearfix">
+<div class="et_pb_tab_content"><div class="flexbox-parent">
+<div class="flexbox-item fill-area content flexbox-item-grow">
+<div class="fill-area-content flexbox-item-grow"><img decoding="async" class="wp-image-357 alignnone size-medium" src="https://clintonhallny.com/wp-content/uploads/2023/11/CH_brunch_11-20-23.jpg" alt="Clinton Hall Bronx Food Menu" width="100%">
+</div>
+</div>
+</div></div>
+</div><div class="et_pb_tab et_pb_tab_3 clearfix">
+<div class="et_pb_tab_content"><p><img decoding="async" class="alignnone wp-image-245068 size-full" src="https://clintonhallny.com/wp-content/uploads/2025/05/Summer-2025-CH-Cocktail-Menu-V7-Bronx.png" alt="" width="1500" height="2100" srcset="https://clintonhallny.com/wp-content/uploads/2025/05/Summer-2025-CH-Cocktail-Menu-V7-Bronx.png 1500w, https://clintonhallny.com/wp-content/uploads/2025/05/Summer-2025-CH-Cocktail-Menu-V7-Bronx-1280x1792.png 1280w, https://clintonhallny.com/wp-content/uploads/2025/05/Summer-2025-CH-Cocktail-Menu-V7-Bronx-980x1372.png 980w, https://clintonhallny.com/wp-content/uploads/2025/05/Summer-2025-CH-Cocktail-Menu-V7-Bronx-480x672.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1500px, 100vw" /></p></div>
+</div><div class="et_pb_tab et_pb_tab_4 clearfix">
+<div class="et_pb_tab_content"><div class="flexbox-parent">
+<div class="flexbox-item fill-area content flexbox-item-grow">
+<div class="fill-area-content flexbox-item-grow"><img decoding="async" class="alignnone size-full wp-image-2675" src="https://clintonhallny.com/wp-content/uploads/2022/03/hh03-17.jpg" alt="Clinton Hall Bronx Happy Hour Menu"></div>
+</div>
+</div></div>
+</div>
+</div>
+</div><div class="et_pb_module et_pb_code et_pb_code_2">
+<div class="et_pb_code_inner"><script type="text/javascript" src="https://gatherhere.com/js/leadform.js" id="gather-loader" data-advanced></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+$( '#bookEventBtn').attr( "data-location-id", "ekz96axo" );
+$('.et_pb_tab_2 a').removeAttr('href');
+$('.et_pb_tab_2 a').removeAttr('role');
+$('.et_pb_tab_2 a').removeAttr('aria-expanded');
+$('.et_pb_tab_2 a').removeAttr('aria-controls');
+$('#page-container').next('div').addClass('gatherForm');
+});
+</script>
+<style>
+.et_pb_all_tabs .ut-menu .h1 {
+color: #cda14a !important;
+}
+</style>
+</div>
+</div>
+</div>
+</div>
+</div>		</div>
+</div>
+</div>
+</article>
+</div>
+
+<span class="et_pb_scroll_top et-pb-icon"></span>
+<footer id="main-footer">
+<div id="footer-bottom">
+<div class="container clearfix">
+<ul class="et-social-icons">
+<li class="et-social-icon et-social-facebook">
+<a href="https://www.facebook.com/ClintonHallNY" class="icon">
+<span>Facebook</span>
+</a>
+</li>
+</ul><div id="footer-info">© 2018 Clinton Hall. All Rights Reserved.</div>					</div>
+</div>
+</footer>
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/clinton-hall\/*","\/wp-content\/themes\/Divi\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+if($('.menu-item-has-children').find('a') ) {
+$('.menu-item-has-children').find('a').addClass('da11y-submenu');
+$('.menu-item-has-children').find('a').not('.sub-menu a').attr('aria-expanded', 'false');
+}
+$('.da11y-submenu').on('focus', function() {
+$(this).not('.sub-menu a').attr('aria-expanded', 'true');
+$(this).siblings('.sub-menu').addClass('da11y-submenu-show');
+$(this).trigger('mouseenter');
+});
+$('.menu-item-has-children a').on('focusout', function() {
+if($(this).parent().not('.menu-item-has-children').is(':last-child')) {
+$(this).parents('.menu-item-has-children').children('.da11y-submenu').attr('aria-expanded', 'false').trigger('mouseleave').siblings('.sub-menu').removeClass('da11y-submenu-show');
+}
+});
+/**
+* Generate search form styles.
+*
+* @since Divi v3.0.23
+*/
+function et_set_search_form_css() {
+const search_container = $('.et_search_form_container');
+const body = $('body');
+if (search_container.hasClass('et_pb_search_visible')) {
+const header_height = $('#main-header').innerHeight();
+const menu_width = $('#top-menu').width();
+const font_size = $('#top-menu li a').css('font-size');
+search_container.css({ height: header_height + 'px' });
+search_container.find('input').css('font-size', font_size);
+if (!body.hasClass('et_header_style_left')) {
+search_container.css('max-width', menu_width + 60);
+} else {
+search_container.find('form').css('max-width', menu_width + 60);
+}
+}
+}
+/**
+* Show the search.
+*
+* @since Divi v3.0.23
+*/
+function show_search() {
+const search_container = $('.et_search_form_container');
+if (search_container.hasClass('et_pb_is_animating')) {
+return;
+}
+$('.et_menu_container').removeClass('et_pb_menu_visible et_pb_no_animation').addClass('et_pb_menu_hidden');
+search_container.removeClass('et_pb_search_form_hidden et_pb_no_animation').addClass('et_pb_search_visible et_pb_is_animating');
+setTimeout(function () {
+$('.et_menu_container').addClass('et_pb_no_animation');
+search_container.addClass('et_pb_no_animation').removeClass('et_pb_is_animating');
+}, 1000);
+search_container.find('input').focus();
+et_set_search_form_css();
+}
+/**
+* Hide the search.
+*
+* @since Divi v3.0.23
+*/
+function hide_search() {
+if ($('.et_search_form_container').hasClass('et_pb_is_animating')) {
+return;
+}
+$('.et_menu_container').removeClass('et_pb_menu_hidden et_pb_no_animation').addClass('et_pb_menu_visible');
+$('.et_search_form_container').removeClass('et_pb_search_visible et_pb_no_animation').addClass('et_pb_search_form_hidden et_pb_is_animating');
+setTimeout(function () {
+$('.et_menu_container').addClass('et_pb_no_animation');
+$('.et_search_form_container').addClass('et_pb_no_animation').removeClass('et_pb_is_animating');
+}, 1000);
+}
+$(this).keyup(function () {
+$('.et-search-field').focus(function () {
+show_search();
+}).blur(function () {
+hide_search();
+});
+});
+});
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+/**
+* Add skiplink to page.
+*/
+function skipTo(target) {
+const skiplink = '<a href="' + target + '" class="skip-link da11y-screen-reader-text">Skip to content</a>';
+$(target).attr('tabindex', -1);
+$('body').prepend(skiplink);
+}
+skipTo('#main-content');
+/**
+* Use js to focus for internal links.
+*/
+$('a[href^="#"]').click(function () {
+const content = $('#' + $(this).attr('href').slice(1));
+content.focus();
+});
+});
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+let lastKey = new Date();
+let lastClick = new Date();
+/**
+* Only apply focus styles for keyboard usage.
+*/
+$(this).on('focusin', function (e) {
+$('.keyboard-outline').removeClass('keyboard-outline');
+const wasByKeyboard = lastClick < lastKey;
+if (wasByKeyboard) {
+$(e.target).addClass('keyboard-outline');
+}
+});
+$(this).on('mousedown', function () {
+lastClick = new Date();
+});
+$(this).on('keydown', function () {
+lastKey = new Date();
+});
+});
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+/**
+* Allow Accordion & Toggle Divi modules to be focusable.
+*
+* @divi-module  Accordion, Toggle
+*/
+$('.et_pb_toggle').each(function () {
+$(this).attr('tabindex', 0);
+});
+/**
+* Prevent spacebar from scolling page when toggle & accordion have focus.
+*
+* @divi-module  Accordion, Toggle
+*/
+$('.et_pb_toggle').on('keydown', function(e) {
+// Spacebar.
+if (e.which === 32){
+e.preventDefault();
+}
+});
+/**
+* Expand Accordion & Toggle modules when enter or spacebar are pressed while focused.
+*
+* @divi-module  Accordion, Toggle
+*/
+$(document).on('keyup', function(e) {
+// Spacebar & Enter.
+if (e.which === 13 || e.which === 32) {
+$('.et_pb_toggle:focus .et_pb_toggle_title').trigger('click');
+}
+});
+});
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+/**
+* Add unique ID to search module input with matching label.
+*
+* @divi-module  Search
+*/
+$('.et-search-field').each(function (e) {
+$(this).attr('id', 'et_pb_search_module_input_' + e);
+$('#et_pb_search_module_input_' + e).before('<label class="da11y-screen-reader-text" for="et_pb_search_module_input_' + e + '">Search for...</label>');
+$('#et_pb_search_module_input_' + e).after('<button type="submit" class="da11y-screen-reader-text">Search</button>');
+});
+/**
+* Add unique ID to contact module input with matching label.
+*
+* @divi-module  Contact
+*/
+$('.et_pb_contact_form').each(function (e) {
+$(this).find('.et_pb_contact_captcha_question').parent().wrap('<label></label>');
+});
+/**
+* Correct labels on social media icons
+*/
+$('.et-social-facebook a.icon span').text('Facebook');
+$('.et-social-twitter a.icon span').text('Twitter');
+$('.et-social-google-plus a.icon span').text('Google Plus');
+$('.et-social-pinterest a.icon span').text('Pinterest');
+$('.et-social-linkedin a.icon span').text('LinkedIn');
+$('.et-social-tumblr a.icon span').text('Tumblr');
+$('.et-social-instagram a.icon span').text('Instagram');
+$('.et-social-skype a.icon span').text('Skype');
+$('.et-social-flikr a.icon span').text('Flickr');
+$('.et-social-myspace a.icon span').text('Myspace');
+$('.et-social-dribbble a.icon span').text('Dribble');
+$('.et-social-youtube a.icon span').text('YouTube');
+$('.et-social-vimeo a.icon span').text('Vimeo');
+$('.et-social-rss a.icon span').text('RSS');
+});
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+/**
+* Add role="tabList".
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tabs_controls').each(function () {
+$(this).attr('role', 'tabList');
+});
+/**
+* Add role="presentation".
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tabs_controls li').each(function () {
+$(this).attr('role', 'presentation');
+});
+/**
+* Add role="tab".
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tabs_controls a').each(function () {
+$(this).attr('role', 'tab');
+});
+/**
+* Add role="tabpanel".
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tab').each(function () {
+$(this).attr('role', 'tabpanel');
+});
+/**
+* Add initial state:
+*
+* aria-selected="false"
+* aria-expanded="false"
+* tabindex=-1
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tabs_controls li:not(.et_pb_tab_active) a').each(function () {
+$(this).attr({
+'aria-selected': 'false',
+'aria-expanded': 'false',
+tabindex: -1
+});
+});
+/**
+* Add initial state:
+*
+* aria-selected="true"
+* aria-expanded="true"
+* tabindex=-1
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tabs_controls li.et_pb_tab_active a').each(function () {
+$(this).attr({
+'aria-selected': 'true',
+'aria-expanded': 'true',
+tabindex: 0
+});
+});
+/**
+* Add unique ID to tab controls.
+* Add aria-controls="x".
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tabs_controls a').each(function (e) {
+$(this).attr({
+id: 'et_pb_tab_control_' + e,
+'aria-controls': 'et_pb_tab_panel_' + e
+});
+});
+/**
+* Add unique ID to tab panels.
+* Add aria-labelledby="x".
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tab').each(function (e) {
+$(this).attr({
+id: 'et_pb_tab_panel_' + e,
+'aria-labelledby': 'et_pb_tab_control_' + e
+});
+});
+/**
+* Set initial inactive tab panels to aria-hidden="false".
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tab.et_pb_active_content').each(function () {
+$(this).attr('aria-hidden', 'false');
+});
+/**
+* Set initial inactive tab panels to aria-hidden="true".
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tab:not(.et_pb_active_content)').each(function () {
+$(this).attr('aria-hidden', 'true');
+});
+/**
+* Add unique ID to tab module.
+* Need to use data attribute because a regular ID somehow interferes with Divi.
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tabs').each(function (e) {
+$(this).attr('data-da11y-id', 'et_pb_tab_module_' + e);
+});
+/**
+* Update aria-selected attribute when tab is clicked or when hitting enter while focused.
+*
+* @divi-module  Tab
+*/
+$('.et_pb_tabs_controls a').on('click', function () {
+const id = $(this).attr('id');
+const namespace = $(this).closest('.et_pb_tabs').attr('data-da11y-id'); // Used as a selector to scope changes to current module.
+// Reset all tab controls to be aria-selected="false" & aria-expanded="false".
+$('[data-da11y-id="' + namespace + '"] .et_pb_tabs_controls a').attr({
+'aria-selected': 'false',
+'aria-expanded': 'false',
+tabindex: -1
+});
+// Make active tab control aria-selected="true" & aria-expanded="true".
+$(this).attr({
+'aria-selected': 'true',
+'aria-expanded': 'true',
+tabindex: 0
+});
+// Reset all tabs to be aria-hidden="true".
+$('#' + namespace + ' .et_pb_tab').attr('aria-hidden', 'true');
+// Label active tab panel as aria-hidden="false".
+$('[aria-labelledby="' + id + '"]').attr('aria-hidden', 'false');
+});
+// Arrow navigation for tab modules
+$('.et_pb_tabs_controls a').keyup(function (e) {
+const namespace = $(this).closest('.et_pb_tabs').attr('data-da11y-id');
+const module = $('[data-da11y-id="' + namespace + '"]');
+if (e.which === 39) { // Right.
+const next = module.find('li.et_pb_tab_active').next();
+if (next.length > 0) {
+next.find('a').trigger('click');
+} else {
+module.find('li:first a').trigger('click');
+}
+} else if (e.which === 37) { // Left.
+const next = module.find('li.et_pb_tab_active').prev();
+if (next.length > 0) {
+next.find('a').trigger('click');
+} else {
+module.find('li:last a').trigger('click');
+}
+}
+$('.et_pb_tabs_controls a').removeClass('keyboard-outline');
+module.find('li.et_pb_tab_active a').addClass('keyboard-outline');
+});
+/**
+* Add unique ID to search module.
+* Need to use data attribute because a regular ID somehow interferes with Divi.
+*
+* @divi-module  Search
+*/
+$('.et_pb_search').each(function (e) {
+$(this).attr('data-da11y-id', 'et_pb_search_module_' + e);
+});
+/**
+* Add aria-required="true" to inputs.
+*
+* @divi-module  Contact Form
+*/
+$('[data-required_mark="required"]').each(function () {
+$(this).attr('aria-required', 'true');
+});
+/**
+* Hide hidden error field on contact form.
+*
+* @divi-module  Contact Form
+*/
+$('.et_pb_contactform_validate_field').attr('type', 'hidden');
+/**
+* Add alert role to error or success contact form message
+*
+* @divi-module  Contact Form
+*/
+$('.et-pb-contact-message').attr('role', 'alert');
+/**
+* Add main role to main-content
+*/
+$('#main-content').attr('role', 'main');
+/**
+* Add aria-label="x".
+*
+* @divi-module  Fullwidth header, comment-wrap
+*/
+$('.et_pb_fullwidth_header').each(function (e) {
+$(this).attr('aria-label', 'Wide Header' + e);
+});
+$('#comment-wrap').attr('aria-label', 'Comments');
+});
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+/**
+* Add aria-hidden="true" to all icons
+*/
+$('#et_top_search, .et_close_search_field, .et_pb_main_blurb_image').attr('aria-hidden', 'true');
+});
+</script>
+<div id="acwp-toolbar-btn-wrap" class=" ">
+<button type="button"id="acwp-toolbar-btn" tabindex="0" aria-label="Toggle Accessibility Toolbar">
+<svg xmlns="http://www.w3.org/2000/svg" focusable="false" style="transform: rotate(360deg);" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+<path d="M10 2.6c.83 0 1.5.67 1.5 1.5s-.67 1.51-1.5 1.51c-.82 0-1.5-.68-1.5-1.51s.68-1.5 1.5-1.5zM3.4 7.36c0-.65 6.6-.76 6.6-.76s6.6.11 6.6.76s-4.47 1.4-4.47 1.4s1.69 8.14 1.06 8.38c-.62.24-3.19-5.19-3.19-5.19s-2.56 5.43-3.18 5.19c-.63-.24 1.06-8.38 1.06-8.38S3.4 8.01 3.4 7.36z" fill="currentColor"></path>
+</svg>
+</button>
+</div>
+<div id="acwp-toolbar" class="acwp-toolbar   acwp-style-default" aria-label="Accessibility Toolbar Toggle View">
+<div id="acwp-toolbar-module">
+<div class="acwp-heading">
+<p class="acwp-title">Accessibility Toolbar</p>
+<button type="button" id="acwp-close-toolbar">
+<i class="material-icons" aria-hidden="true">close</i>
+<span class="sr-only">Toggle the visibility of the Accessibility Toolbar</span>
+</button>
+</div>
+<div class="acwp-togglers">
+<div class="acwp-toggler acwp-toggler-keyboard">
+<label for="acwp-toggler-keyboard" tabindex="0" data-name="keyboard">
+<i class="material-icons" aria-hidden="true">keyboard</i>
+<span>Keyboard Navigation</span>
+<div class="acwp-switcher">
+<input type="checkbox" id="acwp-toggler-keyboard" hidden />
+<div class="acwp-switch"></div>
+</div>
+</label>
+</div>
+<div class="acwp-toggler acwp-toggler-animations">
+<label for="acwp-toggler-animations" tabindex="0" data-name="animations">
+<i class="material-icons" aria-hidden="true">visibility_off</i>
+<span>Disable Animations</span>
+<div class="acwp-switcher">
+<input type="checkbox" id="acwp-toggler-animations" hidden />
+<div class="acwp-switch"></div>
+</div>
+</label>
+</div>
+<div class="acwp-toggler acwp-toggler-contrast">
+<label for="acwp-toggler-contrast" tabindex="0" data-name="contrast">
+<i class="material-icons" aria-hidden="true">nights_stay</i>
+<span>Contrast</span>
+<div class="acwp-switcher">
+<input type="checkbox" id="acwp-toggler-contrast" hidden />
+<div class="acwp-switch"></div>
+</div>
+</label>
+</div>
+<div class="acwp-toggler acwp-toggler-incfont">
+<label for="acwp-toggler-incfont" tabindex="0" data-name="incfont">
+<i class="material-icons" aria-hidden="true">format_size</i>
+<span>Increase Text</span>
+<div class="acwp-switcher">
+<input type="checkbox" id="acwp-toggler-incfont" hidden />
+<div class="acwp-switch"></div>
+</div>
+</label>
+</div>
+<div class="acwp-toggler acwp-toggler-decfont">
+<label for="acwp-toggler-decfont" tabindex="0" data-name="decfont">
+<i class="material-icons" aria-hidden="true">text_fields</i>
+<span>Decrease Text</span>
+<div class="acwp-switcher">
+<input type="checkbox" id="acwp-toggler-decfont" hidden />
+<div class="acwp-switch"></div>
+</div>
+</label>
+</div>
+<div class="acwp-toggler acwp-toggler-readable">
+<label for="acwp-toggler-readable" tabindex="0" data-name="readable">
+<i class="material-icons" aria-hidden="true">font_download</i>
+<span>Readable Font</span>
+<div class="acwp-switcher">
+<input type="checkbox" id="acwp-toggler-readable" hidden />
+<div class="acwp-switch"></div>
+</div>
+</label>
+</div>
+<div class="acwp-toggler acwp-toggler-marktitles">
+<label for="acwp-toggler-marktitles" tabindex="0" data-name="marktitles">
+<i class="material-icons" aria-hidden="true">title</i>
+<span>Mark Titles</span>
+<div class="acwp-switcher">
+<input type="checkbox" id="acwp-toggler-marktitles" hidden />
+<div class="acwp-switch"></div>
+</div>
+</label>
+</div>
+<div class="acwp-toggler acwp-toggler-underline">
+<label for="acwp-toggler-underline" tabindex="0" data-name="underline">
+<i class="material-icons" aria-hidden="true">link</i>
+<span>Highlight Links & Buttons</span>
+<div class="acwp-switcher">
+<input type="checkbox" id="acwp-toggler-underline" hidden />
+<div class="acwp-switch"></div>
+</div>
+</label>
+</div>
+</div>
+<div class="acwp-footer">
+<ul>
+<li>Powered with <i class="material-icons" aria-hidden="true">favorite</i><span class="sr-only">Love</span> by <a href="https://www.codenroll.co.il/" target="_blank">Codenroll</a></li>
+</ul>
+</div>
+</div>
+</div>
+<style>body #acwp-toolbar-btn-wrap {top: 120px; left: 20px;}.acwp-toolbar{top: -100vh; left: 20px;}.acwp-toolbar.acwp-toolbar-show{top: 55px;}</style>    <script>
+jQuery(document).ready(function($) {
+$('.et_pb_slider.dbdb_slider_random').each(function() {
+var $slider = $(this);
+var $slidesContainer = $slider.find('.et_pb_slides');
+// Randomize the slides
+var $slides = $slidesContainer.children().sort(function() {
+return Math.random() - 0.5;
+}).detach().appendTo($slidesContainer);
+// Remove the active class from existing slide
+$slides.removeClass('et-pb-active-slide');
+// Restore visibility to the slides
+$slides.css('visibility', 'visible');
+// Add the active class to the first slide
+$slides.first().addClass('et-pb-active-slide');
+});
+});
+</script>
+<style>
+.et_pb_newsletter .et_pb_newsletter_button.et_pb_button[data-db-button-animation="rocking"] {
+animation: dbRockingEffect 2s linear infinite;
+transition: transform 0.3s ease-in-out;
+}
+.et_pb_newsletter .et_pb_newsletter_button.et_pb_button[data-db-button-animation="rocking"]:hover {
+animation: none;
+transform: rotate(0deg);
+}
+@keyframes dbRockingEffect {
+0%, 60%, 100% { transform: rotate(0deg); }
+15% { transform: rotate(1.5deg); }
+45% { transform: rotate(-1.5deg); }
+}
+</style>
+<script>
+jQuery(function($) {
+// Trigger counter refresh on first load
+$('.dbdb-gallery-with-image-count').each(function() {
+triggerSlideChanged($(this));
+});
+// Trigger counter refresh when the slide changes (due to arrow button clicked)
+$(document).on('mouseup', '.dbdb-gallery-with-image-count .et-pb-slider-arrows a, .dbdb-gallery-with-image-count .et-pb-controllers a', function() {
+var $gallery = $(this).closest('.dbdb-gallery-with-image-count');
+triggerSlideChanged($gallery);
+});
+function triggerSlideChanged($gallery) {
+$gallery.trigger('divi-booster:gallery-slide-changed');
+}
+// Update the counter when the slide has changed
+$(document).on('divi-booster:gallery-slide-changed', '.dbdb-gallery-with-image-count', function() {
+var $gallery = $(this);
+setTimeout(function() {
+var currentIndex = $gallery.find('.et-pb-active-slide').index() + 1;
+$gallery.find('.dbdb-slide-counter-active').text(currentIndex);
+}, 50);
+});
+// Set separator on lightbox count
+setTimeout(
+function() {
+$('.et_pb_gallery_items').each(function() {
+if ($(this).data('magnificPopup') && $(this).data('dbdb-image-count-separator')) {
+$(this).data('magnificPopup').gallery.tCounter = '%curr%' + $(this).data('dbdb-image-count-separator') + '%total%';
+}
+});
+},
+0
+);
+});
+</script>
+<style>
+.dbdb-gallery-with-image-count .dbdb-slide-counter {
+position: absolute;
+width: 100%;
+}
+.dbdb-gallery-with-image-count {
+overflow: visible !important;
+}
+.dbdb-gallery-with-image-count .et_pb_gallery_items {
+overflow: hidden;
+}
+/* Fix divi gallery layout change on first slide change bug (as this causes the counter to jump too) */
+.dbdb-gallery-with-image-count .et_pb_gallery_item.et_slide_transition {
+display: block !important;
+}
+</style>
+<style>
+/* Hide li.prev-dots only when it is the second child and display mode is icon, text, or icon_text */
+.et_pb_gallery[data-display-mode="icon"] .et_pb_gallery_pagination li.prev-dots:nth-child(2),
+.et_pb_gallery[data-display-mode="text"] .et_pb_gallery_pagination li.prev-dots:nth-child(2),
+.et_pb_gallery[data-display-mode="icon_text"] .et_pb_gallery_pagination li.prev-dots:nth-child(2) {
+display: none !important;
+}
+/* Hide prev/next links until JS updates them */
+.et_pb_gallery.et_pb_gallery_grid .et_pb_gallery_pagination {
+visibility: hidden;
+}
+</style>
+<script>
+(function(){
+document.querySelectorAll('.et_pb_gallery.et_pb_gallery_grid').forEach(function(gallery){
+var pagination = gallery.querySelector('.et_pb_gallery_pagination');
+if (!pagination) return;
+var displayMode = gallery.getAttribute('data-display-mode') || 'default';
+var updateLinks = function(){
+setTimeout(function() {
+var prev = pagination.querySelector('a.page-prev');
+var next = pagination.querySelector('a.page-next');
+if (displayMode === 'icon') {
+if (prev) prev.textContent = '';
+if (next) next.textContent = '';
+} else {
+if (prev) prev.textContent = gallery.getAttribute('data-prev-text') || 'Prev';
+if (next) next.textContent = gallery.getAttribute('data-next-text') || 'Next';
+}
+// Show links after update
+pagination.style.visibility = 'visible';
+}, 1000);
+};
+updateLinks();
+var observer = new MutationObserver(function(mutations){
+updateLinks();
+observer.disconnect();
+});
+observer.observe(pagination, { childList: true });
+});
+})();
+</script>
+<script>
+jQuery(document).ready(function($) {
+$(document).on('click', '.et_pb_gallery .et_pb_gallery_image a', function() {
+// Remove the old class
+$('body').removeClass(function(index, className) {
+return (className.match(/(^|\s)et_pb_gallery_\d+_dbdb_lightbox_open/g) || []).join(' ');
+});
+// Add the new class
+var gallery_module_order = $(this).closest('.et_pb_gallery').attr('class').match(/et_pb_gallery_\d+/)[0];
+$('body').addClass(gallery_module_order + '_dbdb_lightbox_open');
+});
+});
+</script>
+<div 
+id="pum-7640" 
+role="dialog" 
+aria-modal="false"
+class="pum pum-overlay pum-theme-258 pum-theme-default-theme popmake-overlay click_open" 
+data-popmake="{&quot;id&quot;:7640,&quot;slug&quot;:&quot;covid&quot;,&quot;theme_id&quot;:258,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;,&quot;cookie_name&quot;:null}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:false,&quot;responsive_min_width&quot;:false,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:false,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:false,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:false,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:false,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:false,&quot;position_left&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:false,&quot;animation_speed&quot;:false,&quot;animation_origin&quot;:false,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:false},&quot;close&quot;:{&quot;text&quot;:false,&quot;button_delay&quot;:false,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}">
+<div id="popmake-7640" class="pum-container popmake theme-258 pum-responsive pum-responsive-medium responsive size-medium">
+<div class="pum-content popmake-content" tabindex="0">
+<div class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular" >
+<div class="et_pb_row et_pb_row_0">
+<div class="et_pb_column et_pb_column_4_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_dark">
+<div class="et_pb_text_inner"><h2>COVID-19 Update</h2>
+<p>Fidi, 36th &#038; the Bronx are all open for socially distant indoor and outdoor dining! It’s the same outdoor space you know and love, with all of the necessary safety precautions to keep you as safe and healthy as possible during these times. Masks are required upon entry and must be worn until you are seated at your table. Please keep 6-feet away from other guests at all times &#8211; our staff will be doing the same! Contactless takeout and delivery is also available &#8211; all you have to do is click the “<a href="https://clintonhallny.getbento.com/online-ordering/offline" target="_blank" rel="noopener noreferrer">ORDER NOW</a>” button on our website!</p>
+<p>Please stay tuned for updates on our other locations as they will be opening in the upcoming weeks and months. We appreciate your understanding during these times. The wellbeing and safety of our guests and staff is still our absolute highest priority. Follow us on Instagram <a href="https://www.instagram.com/clintonhallny/?hl=en" target="_blank" rel="noopener noreferrer">@clintonhallny</a> for all announcements. We hope you’re staying healthy and safe and we can’t wait to see you soon!</p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button type="button" class="pum-close popmake-close" aria-label="Close">
+&#215;			</button>
+</div>
+</div>
+<div 
+id="pum-2959" 
+role="dialog" 
+aria-modal="false"
+class="pum pum-overlay pum-theme-258 pum-theme-default-theme popmake-overlay click_open" 
+data-popmake="{&quot;id&quot;:2959,&quot;slug&quot;:&quot;book-event&quot;,&quot;theme_id&quot;:258,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;,&quot;cookie_name&quot;:null}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:false,&quot;responsive_min_width&quot;:false,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:false,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:false,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:false,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:false,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:false,&quot;position_left&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:false,&quot;animation_speed&quot;:false,&quot;animation_origin&quot;:false,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:false},&quot;close&quot;:{&quot;text&quot;:false,&quot;button_delay&quot;:false,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}">
+<div id="popmake-2959" class="pum-container popmake theme-258 pum-responsive pum-responsive-medium responsive size-medium">
+<div class="pum-content popmake-content" tabindex="0">
+<div class="et_pb_section et_pb_section_1 et_section_regular" >
+<div class="et_pb_row et_pb_row_1 et_pb_row_fullwidth et_pb_gutters2 dbdb_default_mobile_width">
+<div class="et_pb_column et_pb_column_4_4 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h3>Reserve your Space!</h3>
+<p>
+<div class='gf_browser_chrome gform_wrapper gform_legacy_markup_wrapper gform-theme--no-framework' data-form-theme='legacy' data-form-index='0' id='gform_wrapper_1' ><div id='gf_1' class='gform_anchor' tabindex='-1'></div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_1' id='gform_1'  action='/bronx/#gf_1' data-formid='1' novalidate> 
+<input type='hidden' class='gforms-pum' value='{"closepopup":false,"closedelay":0,"openpopup":false,"openpopup_id":0}' />
+<div class='gform-body gform_body'><ul id='gform_fields_1' class='gform_fields top_label form_sublabel_below description_below validation_below'><li id="field_1_7" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_7'>Company</label><div class='ginput_container'><input name='input_7' id='input_1_7' type='text' value='' autocomplete='new-password'/></div><div class='gfield_description' id='gfield_description_1_7'>This field is for validation purposes and should be left unchanged.</div></li><li id="field_1_1" class="gfield gfield--type-name gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label gfield_label_before_complex' >Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_complex ginput_container ginput_container--name no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name gform-grid-row' id='input_1_1'>
+<span id='input_1_1_3_container' class='name_first gform-grid-col gform-grid-col--size-auto' >
+<input type='text' name='input_1.3' id='input_1_1_3' value=''   aria-required='true'     />
+<label for='input_1_1_3' class='gform-field-label gform-field-label--type-sub '>First</label>
+</span>
+<span id='input_1_1_6_container' class='name_last gform-grid-col gform-grid-col--size-auto' >
+<input type='text' name='input_1.6' id='input_1_1_6' value=''   aria-required='true'     />
+<label for='input_1_1_6' class='gform-field-label gform-field-label--type-sub '>Last</label>
+</span>
+</div></li><li id="field_1_2" class="gfield gfield--type-email gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_2'>Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+<input name='input_2' id='input_1_2' type='email' value='' class='large'    aria-required="true" aria-invalid="false"  />
+</div></li><li id="field_1_3" class="gfield gfield--type-phone gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_3'>Phone<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_phone'><input name='input_3' id='input_1_3' type='tel' value='' class='large'   aria-required="true" aria-invalid="false"   /></div></li><li id="field_1_4" class="gfield gfield--type-select gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_4'>Location<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_select'><select name='input_4' id='input_1_4' class='large gfield_select'    aria-required="true" aria-invalid="false" ><option value='FiDi' >FiDi</option><option value='36th' >36th</option><option value='51st' >51st</option><option value='BX' >BX</option></select></div></li><li id="field_1_5" class="gfield gfield--type-text gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_5'>How did you hear about us?<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_5' id='input_1_5' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></li><li id="field_1_6" class="gfield gfield--type-textarea field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_6'>Message</label><div class='ginput_container ginput_container_textarea'><textarea name='input_6' id='input_1_6' class='textarea small'      aria-invalid="false"   rows='10' cols='50'></textarea></div></li></ul></div>
+<div class='gform-footer gform_footer top_label'> <input type='submit' id='gform_submit_button_1' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' value='Submit'  /> <input type='hidden' name='gform_ajax' value='form_id=1&amp;title=&amp;description=&amp;tabindex=0&amp;theme=legacy&amp;styles=[]&amp;hash=cd2be339d0cc8817aebf61cab8e89a96' />
+<input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_1' value='iframe' />
+<input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_1' id='gform_theme_1' value='legacy' />
+<input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_1' id='gform_style_settings_1' value='[]' />
+<input type='hidden' class='gform_hidden' name='is_submit_1' value='1' />
+<input type='hidden' class='gform_hidden' name='gform_submit' value='1' />
+<input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+<input type='hidden' class='gform_hidden' name='state_1' value='WyJbXSIsIjYxNzk1OTZlODA1YTI5Y2RmNjBmNTM0MmNhNDhmYzZhIl0=' />
+<input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_1' id='gform_target_page_number_1' value='0' />
+<input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_1' id='gform_source_page_number_1' value='1' />
+<input type='hidden' name='gform_field_values' value='' />
+</div>
+<p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="146"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+</div>
+<iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_1' id='gform_ajax_frame_1' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+<script type="text/javascript">
+/* <![CDATA[ */
+gform.initializeOnLoaded( function() {gformInitSpinner( 1, 'https://clintonhallny.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_1').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1').val();gformInitSpinner( 1, 'https://clintonhallny.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [1, current_page]);window['gf_submitting_1'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_1').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1]);window['gf_submitting_1'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1').text());}else{jQuery('#gform_1').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "1", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_1" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_1";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_1" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 1, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} ); 
+/* ]]> */
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button type="button" class="pum-close popmake-close" aria-label="Close">
+&#215;			</button>
+</div>
+</div>
+<script type="text/javascript">
+var et_animation_data = [{"class":"et_pb_text_2","style":"fade","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_text_3","style":"fade","repeat":"once","duration":"1000ms","delay":"100ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_text_4","style":"fade","repeat":"once","duration":"1000ms","delay":"200ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_button_0","style":"fade","repeat":"once","duration":"1000ms","delay":"600ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_text_5","style":"fade","repeat":"once","duration":"1000ms","delay":"300ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_text_6","style":"fade","repeat":"once","duration":"1000ms","delay":"400ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_image_0","style":"fade","repeat":"once","duration":"1000ms","delay":"600ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_button_1","style":"fade","repeat":"once","duration":"1000ms","delay":"600ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_tabs_0","style":"fade","repeat":"once","duration":"1000ms","delay":"350ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"}];
+</script>
+<!-- Instagram Feed JS -->
+<script type="text/javascript">
+var sbiajaxurl = "https://clintonhallny.com/wp-admin/admin-ajax.php";
+</script>
+<style>
+.et-fb-no-vb-support-warning {
+display: none !important;
+}
+</style>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZZ3MCFV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<link rel='stylesheet' id='dbdb-social-media-follow-css' href='https://clintonhallny.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/css/social_media_follow.css?ver=4.27.4' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://clintonhallny.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.3' type='text/css' media='none' onload="media='all'" />
+<script type="text/javascript" id="acwp-toolbar-js-extra">
+/* <![CDATA[ */
+var acwp_attr = {"fontsizer_customtags":"","fontsize_excludetags":"","fontsizer_max":"","fontsizer_min":"","fontsizer_nolineheight":"","hide_fontsize":"","no_btn_drage":"","contrast_exclude":"","nocookies":"","blogurl":"https:\/\/clintonhallny.com"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-content/plugins/accessible-poetry/assets/js/toolbar.js?ver=6.8.3" id="acwp-toolbar-js"></script>
+<script type="text/javascript" id="plugin-frontend-js-js-extra">
+/* <![CDATA[ */
+var AccessibleWPData = {"siteUrl":"https:\/\/clintonhallny.com"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-content/plugins/accessible-poetry/inc/frontend.js?ver=1.0" id="plugin-frontend-js-js"></script>
+<script type="text/javascript" id="divi-custom-script-js-extra">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"https:\/\/clintonhallny.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/clintonhallny.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/clintonhallny.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"6786b7b7aa","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"663170c879","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"392","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"https:\/\/clintonhallny.com\/wp-content\/themes\/Divi\/includes\/builder\/frontend-builder\/assets\/vendors","accent_color":"#e9a825","waypoints_options":{"context":[".pum-overlay"]}};
+var et_pb_box_shadow_elements = [];
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-content/themes/Divi/js/scripts.min.js?ver=4.27.4" id="divi-custom-script-js"></script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-content/themes/Divi/js/smoothscroll.js?ver=4.27.4" id="smoothscroll-js"></script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-content/plugins/divi-blurb-extended/scripts/frontend-bundle.min.js?ver=2.2.5" id="divi-blurb-extended-frontend-bundle-js"></script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script type="text/javascript" id="popup-maker-site-js-extra">
+/* <![CDATA[ */
+var pum_vars = {"version":"1.20.6","pm_dir_url":"https:\/\/clintonhallny.com\/wp-content\/plugins\/popup-maker\/","ajaxurl":"https:\/\/clintonhallny.com\/wp-admin\/admin-ajax.php","restapi":"https:\/\/clintonhallny.com\/wp-json\/pum\/v1","rest_nonce":null,"default_theme":"258","debug_mode":"","disable_tracking":"","home_url":"\/","message_position":"top","core_sub_forms_enabled":"1","popups":[],"cookie_domain":"","analytics_route":"analytics","analytics_api":"https:\/\/clintonhallny.com\/wp-json\/pum\/v1"};
+var pum_sub_vars = {"ajaxurl":"https:\/\/clintonhallny.com\/wp-admin\/admin-ajax.php","message_position":"top"};
+var pum_popups = {"pum-7640":{"triggers":[],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":258,"size":"medium","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":350,"animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":100,"position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":false,"stackable":false,"disable_reposition":false,"zindex":1999999999,"close_button_delay":0,"fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"default-theme","id":7640,"slug":"covid"},"pum-2959":{"triggers":[],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":258,"size":"medium","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":350,"animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":100,"position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":false,"stackable":false,"disable_reposition":false,"zindex":1999999999,"close_button_delay":0,"fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"default-theme","id":2959,"slug":"book-event"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="//clintonhallny.com/wp-content/uploads/pum/pum-site-scripts.js?defer&amp;generated=1757966542&amp;ver=1.20.6" id="popup-maker-site-js"></script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-includes/js/dist/dom-ready.min.js?ver=f77871ff7694fffea381" id="wp-dom-ready-js"></script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-includes/js/dist/a11y.min.js?ver=3156534cc54473497e14" id="wp-a11y-js"></script>
+<script type="text/javascript" defer='defer' src="https://clintonhallny.com/wp-content/plugins/gravityforms/js/jquery.maskedinput.min.js?ver=2.9.21" id="gform_masked_input-js"></script>
+<script type="text/javascript" defer='defer' src="https://clintonhallny.com/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=8673c9a2ff188de55f9073009ba56f5e" id="gform_gravityforms_theme_vendors-js"></script>
+<script type="text/javascript" id="gform_gravityforms_theme-js-extra">
+/* <![CDATA[ */
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"6b95090fe992cf9515d7610c8cdc5f41"},"ajax":{"ajaxurl":"https:\/\/clintonhallny.com\/wp-admin\/admin-ajax.php","ajax_submission_nonce":"d77ee29c8a","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again."}}}},"hmr_dev":"","public_path":"https:\/\/clintonhallny.com\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/","config_nonce":"dbbf0ce867"};
+/* ]]> */
+</script>
+<script type="text/javascript" defer='defer' src="https://clintonhallny.com/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=ea8a466a3fdf642558f016efd46a6aff" id="gform_gravityforms_theme-js"></script>
+<script defer type="text/javascript" src="https://clintonhallny.com/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1752679434" id="akismet-frontend-js"></script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-content/themes/Divi/core/admin/js/common.js?ver=4.27.4" id="et-core-common-js"></script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-content/uploads/wtfdivi/wp_footer.js?ver=1532527727" id="wtfdivi-user-js-js"></script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js?ver=4.27.4" id="fitvids-js"></script>
+<script type="text/javascript" src="https://clintonhallny.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js?ver=4.27.4" id="magnific-popup-js"></script>
+<style id="et-builder-module-design-deferred-392-cached-inline-styles">@media screen and (min-width:1624px){.delivBtn{top:5px!important}}.et_pb_tab_3{}.et_pb_section_0.et_pb_section{padding-top:0px;padding-bottom:0px;background-color:#333333!important}.et_pb_row_0,body #page-container .et-db #et-boc .et-l .et_pb_row_0.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0.et_pb_row,.et_pb_row_0,body .pum-container .et-db #et-boc .et-l .et_pb_row_0.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0.et_pb_row,.et_pb_row_0,body #page-container .et-db .pum .et-l .et_pb_row_0.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0.et_pb_row,.et_pb_row_0,body .pum-container .et-db .pum .et-l .et_pb_row_0.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0.et_pb_row{width:90%;max-width:90%}.et_pb_text_0{padding-top:20px!important;padding-right:20px!important;padding-bottom:20px!important;padding-left:20px!important}.et_pb_section_1.et_pb_section,.et_pb_tabs_0 .et_pb_tab{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px}.et_pb_row_1.et_pb_row{padding-top:15px!important;padding-right:0px!important;padding-bottom:0px!important;padding-left:0px!important;padding-top:15px;padding-right:0px;padding-bottom:0px;padding-left:0px}.et_pb_section_2{border-top-color:#006937;border-bottom-color:#006937}.et_pb_section_2.et_pb_section{padding-top:0px;padding-right:0px;padding-bottom:200px;padding-left:0px;background-color:#000000!important}.et_pb_section_2:after{content:"";position:absolute;width:100%;height:100%;top:0;left:0;background:rgba(0,0,0,0.35)}.et_pb_row_2.et_pb_row{padding-top:0px!important;padding-right:0px!important;padding-bottom:0px!important;padding-left:0px!important;padding-top:0;padding-right:0px;padding-bottom:0;padding-left:0px}.et_pb_text_2.et_pb_text{color:#bc945b!important}.et_pb_text_2 h1{text-transform:uppercase;font-size:35px;color:#f15623!important}.et_pb_text_2 h2{font-size:22px;color:#bc945b!important;line-height:1.3em}.et_pb_text_2{margin-bottom:10px!important}.et_pb_text_3{line-height:1.8em;font-size:24px;line-height:1.8em;padding-bottom:15px!important}.et_pb_text_3 h1{text-transform:uppercase;font-size:35px;color:#e9a825!important}.et_pb_text_3 h2{font-size:19px;color:#ff4600!important;line-height:1.3em}.et_pb_text_4{line-height:1.5em;font-size:20px;line-height:1.5em;margin-bottom:35px!important}.et_pb_button_0_wrapper{margin-top:0px!important;margin-bottom:40px!important}body #page-container .et_pb_section .et_pb_button_0,body .pum-container .et_pb_section .et_pb_button_0,body #page-container .et_pb_section .et_pb_button_1,body .pum-container .et_pb_section .et_pb_button_1{color:#ffffff!important}body #page-container .et_pb_section .et_pb_button_0:hover,body .pum-container .et_pb_section .et_pb_button_0:hover,body #page-container .et_pb_section .et_pb_button_1:hover,body .pum-container .et_pb_section .et_pb_button_1:hover{background-image:initial;background-color:#fc5422}.et_pb_button_0,.et_pb_button_1{transition:background-color 300ms ease 0ms}.et_pb_button_0,.et_pb_button_0:after,.et_pb_button_1,.et_pb_button_1:after{transition:all 300ms ease 0ms}.et_pb_text_5.et_pb_text,.et_pb_text_6.et_pb_text{color:#ffffff!important}.et_pb_text_5{font-size:18px;margin-bottom:40px!important}.et_pb_text_5 h2,.et_pb_text_6 h2{text-transform:uppercase;font-size:25px;color:#ff4600!important}.et_pb_text_5 h3,.et_pb_text_6 h3{text-transform:uppercase;font-size:25px;color:#f15623!important}.et_pb_text_6{font-size:20px}.et_pb_image_0{text-align:left;margin-left:0}.et_pb_button_1_wrapper{margin-top:10px!important;margin-bottom:20px!important}.et_pb_tabs div.et_pb_tab_0.et_pb_tab{width:100%;height:100%}.et_pb_tabs_0.et_pb_tabs .et_pb_all_tabs{background-color:#fcfcfc}.et_pb_column_2,.et_pb_column_3{padding-top:50px;padding-right:20px;padding-left:20px}.et_pb_tabs .et_pb_tab_0.et_pb_tab{background-color:rgba(0,0,0,0)}@media only screen and (min-width:981px){.et_pb_row_1,body #page-container .et-db #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,.et_pb_row_1,body .pum-container .et-db #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,.et_pb_row_1,body #page-container .et-db .pum .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,.et_pb_row_1,body .pum-container .et-db .pum .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1.et_pb_row{width:94%;max-width:94%}.et_pb_row_2,body #page-container .et-db #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,.et_pb_row_2,body .pum-container .et-db #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,.et_pb_row_2,body #page-container .et-db .pum .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,.et_pb_row_2,body .pum-container .et-db .pum .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_2.et_pb_row{width:100%;max-width:100%}.et_pb_text_4{max-width:69%}.et_pb_image_0{max-width:400px}}@media only screen and (max-width:980px){.et_pb_row_1,body #page-container .et-db #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,.et_pb_row_1,body .pum-container .et-db #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,.et_pb_row_1,body #page-container .et-db .pum .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,.et_pb_row_1,body .pum-container .et-db .pum .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1.et_pb_row{width:80%;max-width:80%}.et_pb_section_2{border-top-color:#006937;border-bottom-color:#006937}.et_pb_row_2,body #page-container .et-db #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,.et_pb_row_2,body .pum-container .et-db #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,.et_pb_row_2,body #page-container .et-db .pum .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,.et_pb_row_2,body .pum-container .et-db .pum .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_2.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_2.et_pb_row{width:100%;max-width:100%}.et_pb_text_2 h1{font-size:33px}.et_pb_text_4{max-width:100%}.et_pb_button_0_wrapper{margin-top:0px!important;margin-bottom:40px!important}body #page-container .et_pb_section .et_pb_button_0:after,body .pum-container .et_pb_section .et_pb_button_0:after,body #page-container .et_pb_section .et_pb_button_1:after,body .pum-container .et_pb_section .et_pb_button_1:after{display:inline-block;opacity:0}body #page-container .et_pb_section .et_pb_button_0:hover:after,body .pum-container .et_pb_section .et_pb_button_0:hover:after,body #page-container .et_pb_section .et_pb_button_1:hover:after,body .pum-container .et_pb_section .et_pb_button_1:hover:after{opacity:1}.et_pb_image_0{max-width:400px}.et_pb_image_0 .et_pb_image_wrap img{width:auto}}@media only screen and (max-width:767px){.et_pb_section_2{border-top-color:#006937;border-bottom-color:#006937}.et_pb_text_2 h2,.et_pb_text_3{font-size:19px}.et_pb_text_4,.et_pb_text_5,.et_pb_text_6{font-size:15px}.et_pb_button_0_wrapper{margin-top:0px!important;margin-bottom:40px!important}body #page-container .et_pb_section .et_pb_button_0:after,body .pum-container .et_pb_section .et_pb_button_0:after,body #page-container .et_pb_section .et_pb_button_1:after,body .pum-container .et_pb_section .et_pb_button_1:after{display:inline-block;opacity:0}body #page-container .et_pb_section .et_pb_button_0:hover:after,body .pum-container .et_pb_section .et_pb_button_0:hover:after,body #page-container .et_pb_section .et_pb_button_1:hover:after,body .pum-container .et_pb_section .et_pb_button_1:hover:after{opacity:1}.et_pb_text_5 h3,.et_pb_text_6 h3{font-size:22px}.et_pb_image_0{max-width:100%}.et_pb_image_0 .et_pb_image_wrap img{width:auto}.et_pb_column_2,.et_pb_column_3{padding-right:20px;padding-left:20px}}</style><script type="text/javascript">
+/* <![CDATA[ */
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 1) {jQuery('#input_1_3').mask('(999) 999-9999').bind('keypress', function(e){if(e.which == 13){jQuery(this).blur();} } );} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } ); 
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "1", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_1" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_1";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_1" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 1, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } ); 
+/* ]]> */
+</script>
+</body>
+</html><!-- WP Fastest Cache file was created in 0.734 seconds, on October 31, 2025 @ 4:12 am --><!-- via php -->

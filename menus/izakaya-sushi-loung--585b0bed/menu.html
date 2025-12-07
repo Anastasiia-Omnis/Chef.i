@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Izakaya Sushi & Lounge Online Order - 167 Hospitality Dr , Xenia, OH 45385">
+    <meta name="keywords" content="Izakaya Sushi & Lounge, Izakaya Sushi & Lounge Online Order">
+    <meta name="author" content="Mike - Joyopos">
+    <!-- Page Title -->
+    <title>Izakaya Sushi & Lounge </title>
+    <!-- Google Fonts css-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900%7CPlayfair+Display:400,700,900"
+          rel="stylesheet">
+    <!-- Bootstrap css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Font Awesome icon css-->
+    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="css/pe-icon-7-stroke.css" rel="stylesheet" media="screen">
+    <link href="css/flaticon.css" rel="stylesheet" media="screen">
+    <!-- Carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <!-- Magnific Popup CSS -->
+
+    <link rel="stylesheet" href="swiper/swiper.css">
+
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <!-- Slick nav css -->
+    <link rel="stylesheet" href="css/slicknav.css">
+    <!--  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>-->
+
+    <!-- Grid Gallery css -->
+    <link rel="stylesheet" data-template-style="true" type="text/css" href="css/CSTiles-1.1.0.css">
+    <!-- Main custom css -->
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="pop_order/css.css">
+    <style>
+        .services {
+            padding: 200px 0;
+        }
+
+        .help-block.text-danger {
+            text-align: left;
+        }
+
+        .fixed-nav-cn {
+            right: 0px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            top: 50%;
+            text-transform: uppercase;
+            position: fixed;
+            border-color: #E7B360;
+            color: black;
+            background-color: #E7B360;
+            width: auto;
+            display: none;
+            text-align: center;
+            padding: 10px;
+            height: auto;
+            line-height: 25px;
+            font-size: 16px;
+            box-shadow: 0px 0px 10px #797979;
+            z-index: 1999999;
+            border-radius: 0;
+        }
+
+        .fixed-nav-cn:hover {
+            color: black;
+        }
+
+        .fh5co-text button {
+            font-size: 20px;
+        }
+
+        .fixed-nav-en {
+            width: auto;
+        }
+
+        @media (max-width: 992px) {
+            .fixed-nav-cn {
+                display: none;
+            }
+
+            .fixed-nav-en {
+                font-size: 14px !important;
+                padding: 10px !important;
+            }
+        }
+
+
+        .pop-box {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.68);
+            z-index: 1111;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .pop-box-body {
+            max-width: 500px;
+            height: auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 5px;
+            font-size: 14px;
+            position: relative;
+            margin: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .close-btn img {
+            width: 30px;
+        }
+
+        .pop-box-flex {
+            width: 100%;
+            height: 100%;
+            padding-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+        }
+
+
+        .review-carousel-container {
+            max-width: 1024px;
+            overflow: hidden;
+            padding:   40px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+        }
+
+        .review-carousel-container .review-header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        /* Swiper 容器样式 */
+        .review-carousel-container .swiper-container2 {
+            width: 100%;
+            height: 250px; /* 设置轮播高度 */
+        }
+
+        /* 单个评论项样式 */
+        .review-carousel-container .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 30px;
+            text-align: center;
+            box-sizing: border-box;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 评论内容样式 */
+        .review-carousel-container .review-text {
+            font-size: 14px;
+            color: #555;
+            margin-top: 15px;
+            text-align: left;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* 客户姓名样式 */
+        .review-carousel-container .reviewer-name {
+            font-weight: bold;
+            color: #a04000; /* 居酒屋相关的颜色 */
+            margin-top: 15px;
+            font-size: 1em;
+        }
+
+        /* 星级评分样式 */
+        .review-carousel-container .stars {
+            color: #ffc107; /* 醒目的金色 */
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            letter-spacing: 5px; /* 星星间距 */
+        }
+
+        /* 导航按钮和分页器样式 (可选，但推荐保留) */
+        .review-carousel-container .swiper-button-prev, .review-carousel-container .swiper-button-next {
+            color: #a04000 !important;
+        }
+
+        .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+            background-color: #c0c0c0;
+        }
+
+        .review-carousel-container .swiper-pagination-bullet-active {
+            background: #a04000 !important;
+        }
+
+
+        @media (max-width: 992px) {
+            /* Swiper 容器样式 */
+            .review-carousel-container .swiper-container2 {
+                width: 100%;
+                height: auto; /* 设置轮播高度 */
+            }
+        }
+
+
+    </style>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P7CNFJP8');</script>
+    <!-- End Google Tag Manager -->
+
+</head>
+
+
+<a class="fixed-nav-cn text-center btn order_pop_up_action fixed-nav-en js-scroll-trigger" data-glf-cuid="test"
+   href="javascript:;">Order<br>Now
+</a>
+
+
+<body data-spy="scroll" data-target="#navigation" data-offset="75">
+<!-- Preloader starts -->
+<!--<div class="preloader">-->
+<!--<div class="browser-screen-loading-content">-->
+<!--<div class="loading-dots dark-gray">-->
+<!--<img src="images/puff.svg" alt="Preloader" />-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!-- Preloader Ends -->
+
+<!-- Header Section Starts-->
+<header>
+    <nav id="main-nav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container container-bar">
+            <div class="navbar-header">
+                <!-- Logo starts -->
+                <a class="navbar-brand navbar-brand-logo" href="#">
+                    <img src="images/logo.png" alt="Logo"/>
+                </a>
+                <!-- Logo Ends -->
+
+                <!-- Responsive Menu button starts -->
+                <div class="navbar-toggle">
+                </div>
+                <!-- Responsive Menu button Ends -->
+            </div>
+
+            <div id="responsive-menu"></div>
+
+            <!-- Navigation starts -->
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right main-navigation" id="main-menu">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#aboutus">About</a></li>
+
+                    <li><a href="#service">Services</a></li>
+                    <!--<li><a href="#price">Menu</a></li>-->
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                    <li>
+                        <button class="online-nav-btn order_pop_up_action " data-glf-cuid="test">Online Order
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <!-- Navigation Ends -->
+        </div>
+    </nav>
+</header>
+<!-- Header Section Ends-->
+
+
+<!-- Banner Section Starts -->
+<section class="banner" id="home">
+
+
+    <div class="banner-silde">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-img" style="background: url(images/banner/1.jpg) center top">
+
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="slide-img" style="background: url(images/banner/2.jpg) center top">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="swiper-pagination swiper-pagination-white"></div>
+
+
+        </div>
+    </div>
+
+
+    <div class="banner-coo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner-desc">
+                        <h2 class="big-title">Welcome To Izakaya Sushi & Lounge</h2>
+                        <p class="banner-desc-text">Japanese Restaurant <br>
+                            <a style="color: white" href="tel:(718) 683-9991"> Tel: (718) 683-9991</a>
+                        </p>
+
+                        <div class="">
+                            <a href="javascript:;" class="btn-custom btn-custom-online order_pop_up_action"
+                               style="width: 285px"
+                               data-glf-cuid="test"> ONLINE ORDER </a>
+                        </div>
+
+                        <!--            <div class="">-->
+                        <!--              <a  target="_blank" href="https://direct.chownow.com/order/38615/locations/58786"  class="btn-custom btn-custom-online   text-uppercase" style="margin-top: 10px;width: 285px"-->
+                        <!--                 data-glf-cuid="test"> Delivery Through CHOWNOW </a>-->
+                        <!--            </div>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+<div class="review-carousel-container container">
+    <h2 class="review-header"> Izakaya Reviews </h2>
+
+    <div class="swiper swiper-container2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">Izakaya Sushi is a cozy spot with super fresh rolls, great flavors, and really
+                    friendly service. The portions are perfect, the ambiance is chill, and everything tastes clean and
+                    delicious. Definitely a place I’d come back to!</p>
+                <p class="reviewer-name">— Masha</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">Fresh sushi and sashimi that were surprisingly good. The wait staff were
+                    welcoming and attentive. Oysters that I ordered were good but would love to see just oysters and no
+                    soy sauce. The vibes were great and had a nice lunch!</p>
+                <p class="reviewer-name">— Austin</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">Before you even eat, the atmosphere and design is great, and it sets the tone for
+                    the quality of the restaurant as a whole. The service was top notch, and they took good care us and
+                    made sure we were happy, which we definitely were once the food came out. If everything else wasn’t
+                    enough to convince you to come here, the food will be. 10/10</p>
+                <p class="reviewer-name">— Reeve</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">Great service and atmosphere. The fish is fresh, and the seating is very
+                    pleasant. Pricing is good too. Overall, would recommend!</p>
+                <p class="reviewer-name">— Elif</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">A cozy and atmospheric place! The sushi rolls and oysters are fresh and
+                    absolutely delicious — they melt in your mouth. The mojito is perfectly balanced: refreshing and not
+                    too sweet. The service is top-notch — fast and friendly. I’ll definitely be coming back.</p>
+                <p class="reviewer-name">— Kateryna</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">The sushi here is amazing and the service was great! Our server was very
+                    attentive and atmosphere was very nice and clean. Would definitely come here again and recommend
+                    this place to others for sushi.</p>
+                <p class="reviewer-name">— Tyana</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">What an incredible spot! The sushi was fresh, flavorful, and beautifully
+                    presented—some of the best I’ve had in the area. The $1 oysters were an amazing deal and
+                    surprisingly high quality. Great variety on the menu, everything we tried was delicious.</p>
+                <p class="reviewer-name">— Tetiana</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">This place became one of our go to spots here in the sheepshead bay area. One day
+                    we stumbled upon this place looking for something new, and we came here to Izakaya and fell in love
+                    every since. Been here 7 times in the last couple of months 🙌🏽. Best appetizer, is the Fried
+                    Oysters, sushi is great, all entrees are great! I recommend King of the Sea & Surf & Turf.</p>
+                <p class="reviewer-name">— Aaron</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">Really nice vibe inside, the food was delicious and the service was amazing. Will
+                    definitely go back!</p>
+                <p class="reviewer-name">— Sasha</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">The food was delicious! The service was great and the vibe of the place is chill
+                    and relaxing. My friends and I ordered oysters, shrimp tempura, shumai, snow white roll and the sake
+                    sangria all on the happy hour menu. It was all delicioussssss. And we got free fried ice creammm</p>
+                <p class="reviewer-name">— Sky</p>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination2 text-center"></div>
+
+        <div class="swiper-button-prev2"></div>
+        <div class="swiper-button-next2"></div>
+    </div>
+
+</div>
+
+
+<!-- Banner Section Ends -->
+
+<!-- History Box starts -->
+<section class="history" id="aboutus">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+                <div class="history-single">
+                    <div class="main-title">
+
+                        <h2>About </h2>
+                    </div>
+
+                    <div class="history-desc">
+                        <p style="font-size: 18px">Our Mission- serving healthy, delicious, nutritional food and
+                            striving to create a relaxed and
+                            enjoyable dining experience for our customers。 <br> <br>
+
+
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- History Box ends -->
+
+<!-- Services section starts -->
+<section class="services" id="service">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-4 col-sm-4">
+                <div class="main-title main-title-service">
+                    <p>Best Service Ever</p>
+                    <h2>Who we are</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-4 col-sm-4">
+                <div class="services-text ">
+                    Welcome to Izakaya Sushi & Lounge! We focus on providing healthy, fresh and natural dishes to
+                    satisfy the
+                    modern customer’s tastes and needs. Our main specialty cuisines are Japanese. All of our dishes are
+                    made with
+                    only the freshest of ingredients of the highest quality to achieve the best flavors and
+                    presentation. Our main
+                    ingredients are fresh seafood, fruits and vegetables. The flavors of our dishes vary by cuisines
+                    with our
+                    Japanese dishes are more raw and pure.
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</section>
+
+
+<!-- Photo Gallery Section starts -->
+<section class="gallery" id="gallery">
+    <div class="container-fluid">
+        <div class="row no-pad">
+            <div class="col-md-12">
+                <div class="main-title">
+                    <p>See the Celebration</p>
+                    <h2>Photo Gallery</h2>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-pad">
+            <div class="col-md-12">
+                <div class="gallery-image-box">
+                    <div class="cstiles" data-cstiles-size="4,auto" data-cstiles-margin="4">
+
+
+                        <div class="cstiles__item" data-cstiles-size="2">
+                            <img class="cstiles__item-image" src="images/gallery/1.jpg" alt=" ">
+                            <div class="gallery-overlay">
+                                <a href="images/gallery/1.jpg"><i class="pe-7s-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="cstiles__item" data-cstiles-size="1">
+                            <img class="cstiles__item-image" src="images/gallery/2.jpg" alt=" ">
+                            <div class="gallery-overlay">
+                                <a href="images/gallery/2.jpg"><i class="pe-7s-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="cstiles__item" data-cstiles-size="1,2">
+                            <img class="cstiles__item-image" src="images/gallery/3.jpg" alt=" ">
+                            <div class="gallery-overlay">
+                                <a href="images/gallery/3.jpg"><i class="pe-7s-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="cstiles__item" data-cstiles-size="1" data-cstiles-order="1"
+                             data-cstiles-order-tablet="1">
+                            <img class="cstiles__item-image" src="images/gallery/4.jpg" alt=" ">
+                            <div class="gallery-overlay">
+                                <a href="images/gallery/4.jpg"><i class="pe-7s-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="cstiles__item" data-cstiles-size="2,1" data-cstiles-order="2"
+                             data-cstiles-order-tablet="2" data-cstiles-image_position="left,bottom">
+                            <img class="cstiles__item-image" src="images/gallery/5.jpg" alt=" ">
+                            <div class="gallery-overlay">
+                                <a href="images/gallery/5.jpg"><i class="pe-7s-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="cstiles__item" data-cstiles-size="1">
+                            <img class="cstiles__item-image" src="images/gallery/6.jpg" alt=" ">
+                            <div class="gallery-overlay">
+                                <a href="images/gallery/6.jpg"><i class="pe-7s-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="cstiles__item" data-cstiles-size="1">
+                            <img class="cstiles__item-image" src="images/gallery/7.jpg" alt=" ">
+                            <div class="gallery-overlay">
+                                <a href="images/gallery/7.jpg"><i class="pe-7s-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="cstiles__item" data-cstiles-size="2,1">
+                            <img class="cstiles__item-image" src="images/gallery/8.jpg" alt=" ">
+                            <div class="gallery-overlay">
+                                <a href="images/gallery/8.jpg"><i class="pe-7s-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="cstiles__item" data-cstiles-size="1">
+                            <img class="cstiles__item-image" src="images/gallery/9.jpg" alt=" ">
+                            <div class="gallery-overlay">
+                                <a href="images/gallery/9.jpg"><i class="pe-7s-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="cstiles__item" data-cstiles-size="1">
+                            <img class="cstiles__item-image" src="images/gallery/10.jpg" alt=" ">
+                            <div class="gallery-overlay">
+                                <a href="images/gallery/10.jpg"><i class="pe-7s-plus"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="cstiles__item" data-cstiles-size="2,1">
+                            <img class="cstiles__item-image" src="images/gallery/11.jpg" alt=" ">
+                            <div class="gallery-overlay">
+                                <a href="images/gallery/11.jpg"><i class="pe-7s-plus"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contactus" id="contact">
+    <div class="google-map">
+
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.941951999997!2d-73.9523367!3d40.587036700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c244640dac1ac3%3A0xa214912141842854!2s1629%20Sheepshead%20Bay%20Rd%2C%20Brooklyn%2C%20NY%2011235%E7%BE%8E%E5%9B%BD!5e0!3m2!1szh-CN!2s!4v1698388234158!5m2!1szh-CN!2s"
+                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0">
+        </iframe>
+
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="contact-box">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-info">
+                                <div class="contact-image">
+                                    <img src="images/contact.png" alt=""/>
+                                </div>
+
+                                <div class="contact-information">
+                                    <div class="contact-info-single">
+                                        <div class="icon-box"><i class="pe-7s-map-marker"></i></div>
+
+
+                                        <p>1629 Sheepshead Bay Road Brooklyn, NY 11235
+                                        </p>
+                                    </div>
+
+                                    <div class="contact-info-single">
+                                        <div class="icon-box"><i class="pe-7s-call"></i></div>
+                                        <p><a style="color: black" href="tel:(718) 683-9991"> Tel: (718) 683-9991</a>
+
+                                    </div>
+
+                                    <!--                  <div class="contact-info-single">-->
+                                    <!--                    <div class="icon-box"><i class="pe-7s-mail"></i></div>-->
+                                    <!--                    <p style="padding-top: 10px">takuxenia@gmail.com-->
+                                    <!--                      <br/>-->
+                                    <!--                    </p>-->
+                                    <!--                  </div>-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <div class="main-title">
+                                    <p>Enter your Details</p>
+                                    <h2>Get in touch</h2>
+                                </div>
+
+                                <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required="required" id="name"
+                                               placeholder="ENTER YOUR NAME"/>
+                                        <p class="help-block text-danger"></p>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" required="required" id="email"
+                                               placeholder="ENTER YOUR EMAIL"/>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="5" id="message"
+                                                  placeholder="WRITE YOUR MESSAGE HERE"></textarea>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div id="success"></div>
+                                        <input type="submit" class="btn-custom" id="sendMessageButton" value="Submit"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact us section ends -->
+
+<!-- Footer section starts -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="siteinfo">
+                    <p>Copyright &copy; Izakaya Sushi & Lounge. All rights reserved. Design By <a href="#"
+                                                                                                  target="_blank">Joyopos
+                        Studio</a>
+                </div>
+
+
+                <div class="footer-social">
+                    <a href="#"><img src="images/logo.png" alt="logo"></a>
+
+
+                </div>
+                <div class="footer-social" style="color: white">
+
+                    <a style="color: white" href="tel:(718) 683-9991"> Tel: (718) 683-9991</a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer section ends -->
+
+
+<div class="order_pop_up_box ">
+    <div class="order_pop_up_box_in">
+        <div class="order_pop_up">
+
+            <div class="" style="text-align: right;width: 100%;padding-bottom: 10px">
+                <a href="javascript:;" class="btn_close">
+                    Close &nbsp✕
+                </a>
+            </div>
+
+            <div class="frame-content" id="frame-live">
+                <iframe style="border: none"
+                        src="https://www.onlineorder.abcpos.com/izakayasushilounge/0091926ed5c3460b87ffe9cc376b01e4"
+                        data-src="https://www.onlineorder.abcpos.com/izakayasushilounge/0091926ed5c3460b87ffe9cc376b01e4"
+                        width="100%" height="100%">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="pop-box">
+    <div class="pop-box-flex">
+        <div class="pop-box-body">
+            <a href="javascript:;" class="close-btn"><img src="https://demo.joyopos.us/upload/close.png"
+                                                          alt="close"></a>
+            Notice: <br>
+            Party Tray and Catering cannot combined with other coupons.
+        </div>
+    </div>
+</div>
+
+
+<!-- Jquery Library File -->
+<script src="js/jquery-1.12.4.min.js"></script>
+<!-- SmoothScroll -->
+<script src="js/SmoothScroll.js"></script>
+<!-- Bootstrap js file -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<!-- Slick Nav js file -->
+<script src="js/jquery.slicknav.js"></script>
+<!-- Magnific Popup js file -->
+<script src="js/jquery.magnific-popup.js"></script>
+<!-- Owl Carousel js file -->
+<script src="js/owl.carousel.js"></script>
+<!-- CS Tiles Gallery js file -->
+<script src="js/jquery.CSTiles-1.1.0.min.js"></script>
+<!-- Main Custom js file -->
+<script src="js/function.js"></script>
+<script src="swiper/swiper.min.js"></script>
+<script src="mail/contact_me.js"></script>
+<script src="mail/jqBootstrapValidation.js"></script>
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        effect: 'fade',
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    var scrolledWindow_nav = function () {
+
+
+        var scroll_start = 0;
+
+
+        $(window).scroll(function () {
+            scroll_start = $(this).scrollTop();
+            if (scroll_start > 180) {
+                $(".fixed-nav-cn ").fadeIn();
+            } else {
+                $(".fixed-nav-cn ").fadeOut();
+            }
+        });
+    };
+
+    scrolledWindow_nav();
+    // $(".pop-box").fadeIn();
+    $(".close-btn").click(function () {
+        $(".pop-box").fadeOut();
+    })
+
+
+    var swiper2 = new Swiper('.swiper-container2', {
+        // 确保在移动端和其他设备上可以正确显示多个 slide
+        slidesPerView: 1, // 默认显示一个
+        spaceBetween: 30, // slide 间的距离
+        loop: true, // 开启循环模式
+        direction: 'horizontal', // 从左到右滚动 (默认值)
+
+        // 响应式断点 (根据屏幕宽度显示不同数量的 slide)
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
+
+        speed:1500,
+
+        // 自动播放配置
+        autoplay: {
+            delay: 3000, // 5 秒延迟
+            disableOnInteraction: false, // 用户交互后不停止自动播放
+        },
+
+        // 分页器配置
+        pagination: {
+            el: '.swiper-pagination2',
+            clickable: true, // 小圆点可点击跳转
+        },
+
+        // 导航按钮配置
+        navigation: {
+            nextEl: '.swiper-button-next2',
+            prevEl: '.swiper-button-prev2',
+        },
+    });
+
+
+</script>
+
+
+<script src="pop_order/main.js"></script>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7CNFJP8"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degirmen</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/styles.css?v=3">
+</head>
+<body class="page">
+    <header class="header">
+        <!-- Main site navigation -->
+        <div class="header__nav-container">
+            <nav class="nav header__nav">
+                <a class="nav__logo" href="index.html">
+                    <img src="img/degirmen-logo.png" alt="Degirmen logo" />
+                </a>
+
+                <ul class="nav__list site-nav__list">
+                    <li class="nav__item nav__item--active"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="story.html" class="nav__link">Our&nbsp;Story</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact&nbsp;Us</a></li>
+                </ul>
+
+                <div class="nav__actions">
+                    <button class="nav__cart-button" aria-label="Open cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="nav__cart-badge">0</span>
+                    </button>
+                    <label class="theme-switch" title="Toggle theme">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="theme-slider"></span>
+                    </label>
+                    <button class="nav__menu-button" aria-label="Toggle menu">
+                        <span class="nav__menu-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cart-overlay"></div>
+    <div class="cart-panel">
+        <div class="cart-panel__header">
+            <h3 class="cart-panel__title">Your Order</h3>
+            <button class="cart-panel__close" aria-label="Close cart">&times;</button>
+        </div>
+        <ul class="cart-panel__body">
+            <!-- Cart items will be rendered here by JavaScript -->
+            <li class="cart-panel__empty-message">Your cart is empty.</li>
+        </ul>
+        <div class="cart-panel__footer">
+            <div class="cart-panel__total">
+                <span>Total:</span>
+                <span class="cart-panel__total-price">$0.00</span>
+            </div>
+            <a href="#" class="cart-panel__checkout-button">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <div class="hero">
+            <video class="hero__video" autoplay muted loop playsinline>
+                <source src="img/MAIN_VIDEO.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero__content">
+                <h1 class="hero__title">Welcome to Degirmen</h1>
+                <p class="hero__subtitle">Experience authentic Turkish cuisine in a modern atmosphere</p>
+                <div class="hero__buttons">
+                    <a href="menu.html" class="hero__button hero__button--primary">View Menu</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infinite horizontal scroller (home) using interior* images -->
+        <div class="story-scroller home-scroller">
+            <div class="story-scroller__rail">
+                <div class="story-scroller__inner">
+                    <img src="img/interior_01.jpg" alt="Interior 01">
+                    <img src="img/interior_02.jpg" alt="Interior 02">
+                    <img src="img/interior_03.jpg" alt="Interior 03">
+                    <img src="img/interior_04.jpg" alt="Interior 04">
+                    <img src="img/interior_05.jpg" alt="Interior 05">
+                    <img src="img/interior.jpg" alt="Interior">
+                </div>
+                <div class="story-scroller__inner" aria-hidden="true">
+                    <img src="img/interior_01.jpg" alt="">
+                    <img src="img/interior_02.jpg" alt="">
+                    <img src="img/interior_03.jpg" alt="">
+                    <img src="img/interior_04.jpg" alt="">
+                    <img src="img/interior_05.jpg" alt="">
+                    <img src="img/interior.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- About Preview Section -->
+        <div class="about-preview">
+            <div class="about-preview__content">
+                <div class="about-preview__text">
+                    <h2 class="section__title">Our Story</h2>
+                    <p class="about-preview__description">
+                        For over two decades, Degirmen has been serving authentic Turkish cuisine with a modern twist. 
+                        Our passion for quality ingredients and traditional recipes has made us a favorite destination for food lovers.
+                    </p>
+                    <a href="story.html" class="about-preview__link">Learn More</a>
+                </div>
+                <div class="about-preview__image">
+                    <img src="img/interior_01.jpg" alt="Degirmen interior seating area">
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta">
+            <div class="cta__content">
+                <h2 class="cta__title">Ready to Experience Degirmen?</h2>
+                <p class="cta__text">Join us for an unforgettable dining experience</p>
+                <div class="cta__buttons">
+                    <a href="menu.html" class="cta__button cta__button--secondary">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Branches Section -->
+    <div class="branches">
+        <div class="branches__content">
+            <h2 class="section__title">Our Locations</h2>
+            <p class="branches__subtitle">Visit us at any of our convenient locations</p>
+            
+            <div class="branches__grid">
+                <div class="branches__map-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; width: 100%;">
+                    <div class="home-map" style="background: var(--bg-dark); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-lighter); aspect-ratio: 1 / 1; position: relative;">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Degirmen+Restaurant+and+Bakery+236+A+Brighton+Beach+Ave+Brooklyn+NY+11235" target="_blank" rel="noopener" style="position:absolute; inset:0; z-index:2; text-indent:-9999px;">Get Directions</a>
+                        <iframe
+                            title="Degirmen Brighton Location Map"
+                            src="https://www.google.com/maps?q=Degirmen+Restaurant+and+Bakery+236+A+Brighton+Beach+Ave%2C+Brooklyn%2C+NY+11235&output=embed"
+                            width="100%"
+                            height="100%"
+                            style="border:0; width: 100%; height: 100%; filter: invert(90%) hue-rotate(180deg);"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="home-map-info" id="open-status-container" style="padding: 0; display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3 style="margin: 0; color: var(--text-light); font-size: 1.4rem;">Degirmen Restaurant and Bakery</h3>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent);"></i>
+                            <span>236 A Brighton Beach Ave, Brooklyn, NY 11235</span>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <i class="fas fa-clock" style="color: var(--accent);"></i>
+                            <span>Mon-Sun: 7:30 AM - 10:00 PM</span>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <i class="fas fa-circle" id="open-status-indicator"></i>
+                            <span id="open-status">Open Now</span>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <i class="fas fa-phone" style="color: var(--accent);"></i>
+                            <a href="tel:+16468813322" style="color: var(--accent); text-decoration: none;">+1 (646) 881-3322</a>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <i class="fas fa-envelope" style="color: var(--accent);"></i>
+                            <a href="mailto:Degirmenbrooklyn@gmail.com" style="color: var(--accent); text-decoration: none;">Degirmenbrooklyn@gmail.com</a>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <i class="fas fa-location-arrow" style="color: var(--accent);"></i>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Degirmen+Restaurant+and+Bakery+236+A+Brighton+Beach+Ave+Brooklyn+NY+11235" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Get Directions</a>
+                        </div>
+                        <div style="display:flex; gap: 12px;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Degirmen+Restaurant+and+Bakery+236+A+Brighton+Beach+Ave+Brooklyn+NY+11235" target="_blank" rel="noopener" class="branch-card__button branch-card__button--primary" style="flex: none;">
+                                <i class="fas fa-location-arrow"></i>
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Mobile Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav__item bottom-nav__item--active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="menu.html" class="bottom-nav__item">
+            <i class="fas fa-utensils"></i>
+            <span>Menu</span>
+        </a>
+        <a href="story.html" class="bottom-nav__item">
+            <i class="fas fa-book-open"></i>
+            <span>Story</span>
+        </a>
+        <a href="contact.html" class="bottom-nav__item">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__section footer__section--about">
+                <h3 class="footer__title">Degirmen</h3>
+                <p class="footer__about-text">A taste of tradition in every bite. We serve authentic and delicious dishes made with the freshest ingredients, inspired by our rich heritage.</p>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Quick Links</h3>
+                <ul class="footer__list">
+                    <li class="footer__list-item">
+                        <a href="menu.html" class="footer__link">Our Menu</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="story.html" class="footer__link">About Us</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="contact.html" class="footer__link">Contact</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#privacy" class="footer__link">Privacy Policy</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Contact Us</h3>
+                <ul class="footer__list">
+                    <li class="footer__list-item">📍 236 A Brighton Beach Ave, Brooklyn, NY 11235</li>
+                    <li class="footer__list-item">📞 +1 (646) 881-3322</li>
+                    <li class="footer__list-item">✉️ Degirmenbrooklyn@gmail.com</li>
+                    <li class="footer__list-item">⏰ Mon-Sun: 7:30 AM - 10:00 PM</li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Follow Us</h3>
+                <div class="footer__social">
+                    <a href="https://www.instagram.com/degirmenusa/" target="_blank" rel="noopener" class="footer__social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2024 Degirmen Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="privacy" class="privacy-modal">
+        <div class="privacy-modal__content">
+            <a href="#" class="privacy-modal__close" aria-label="Close modal">&times;</a>
+            <h2>Privacy Policy</h2>
+            <p>This privacy policy describes how Degirmen Restaurant collects, uses, and protects your personal information when you visit our website or dine at our restaurant.</p>
+            <p>We collect information you provide directly to us, such as when you make a reservation, contact us, or sign up for our newsletter.</p>
+            <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent.</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,588 @@
+
+<!DOCTYPE html> 
+<html> 
+<head id="ctl00_Head1"><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>
+	Ozen Asian Fusion Restaurant, New York, NY 10025, Dine In, Take Out, Online Order
+</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style1.css" />
+    
+    <style>
+        /* Custom CSS for the header area */
+        .cart-icon a {
+            color: #dc3545; /* Red color to match theme */
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .cart-icon a:hover {
+            color: #c82333; /* Darker red on hover */
+        }
+        
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 50%;
+            font-size: 10px;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .phone-link {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .phone-link:hover {
+            color: #dc3545;
+        }
+        
+        /* Offcanvas menu styles */
+        .offcanvas-header {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .offcanvas-title {
+            font-weight: 600;
+        }
+        
+        .offcanvas-menu .nav-link {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.2s;
+        }
+        
+        .offcanvas-menu .nav-link:hover {
+            background-color: #f8f9fa;
+            color: #dc3545;
+        }
+        
+        .offcanvas-menu .nav-link i {
+            width: 24px;
+            text-align: center;
+            margin-right: 8px;
+        }
+    </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="./default.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZNg16_oTERwWUZE9dOoSXmKR-XNCkqib196x-riDWheWGeiNyDLbGfXJHMS1mNCRvg2&amp;t=637346628242505677" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=D9drwtSJ4hBA6O8UhT6CQh8i6iy2BQJpJAIYIudk9nnMhsza_xygI-CHFSXz_YYSo14lSWAPdgPcqCN4lfR-kQcLrQh1Z5ytJacMG1Vkg3RSZK5-uug8OlLkS_CPNE4I0Z1194MXgchPtbllKchzLyBbx8yx787Z9BfyK7MC6g01&amp;t=ffffffffb4e3605f" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=JnUc-DEDOM5KzzVKtsL1tZZ3iX1xiuMn8R0TVreeI4ugjekM4a_5xcfYd1HM9dakBaR1IWhuQMwaQbNzGWn8se4hKPmvaNjotv0yisyrzwBpM9z7hOgBNEno6xeDzsOFj5jI10QG7SPZxeeo3v-oXk68-SlxmysCwuggRZ-OJ3lAmgLQ_2l7-aDuzcTWGeyC0&amp;t=ffffffffb4e3605f" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>	
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+        <!-- Fixed Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
+            <!-- Top Info Bar -->
+            <div class="bg-light py-2">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <small class="text-muted">
+                                <i class="fas fa-map-marker-alt text-danger me-1"></i>
+                                760 Amsterdam Ave, New York, NY 10025
+                            </small>
+                        </div>
+                        <div class="col-auto">
+                            <small class="text-muted">
+                                <i class="fas fa-phone text-danger me-1"></i>
+                                <a href="tel:2126780300" class="phone-link">(212) 678-0300</a>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <!-- Menu Button -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas">
+                    <i class="fa-solid fa-bars fs-4"></i>
+                </button>
+
+                <!-- Logo -->
+                <a class="navbar-brand mx-auto" href="default.aspx">
+                    <img src="assets/images/logo.svg" alt="Ozen Logo" height="40">
+                </a>
+
+                <!-- Cart Icon -->
+                <div class="cart-icon">
+                    <a href="basket.aspx" class="position-relative" data-ajax="false">
+                        <i class="fa fa-shopping-cart fs-5"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Offcanvas Menu -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="menuOffcanvas">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body p-0">
+                <div class="offcanvas-menu">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="default.aspx">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="productlist.aspx?cid=2">
+                                <i class="fas fa-utensils"></i> Order Now
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="basket.aspx">
+                                <i class="fas fa-shopping-cart"></i> View Cart
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="myorders.aspx">
+                                <i class="fas fa-history"></i> Order History
+                            </a>
+                        </li>
+    
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content with padding for navbar -->
+        <div style="padding-top: 70px;">
+            
+<style>
+    .hero-section {
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .hero-message-box {
+        background: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(3px);
+        padding: 2rem 3rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        max-width: 90%;
+        width: auto;
+        animation: fadeIn 1s ease-in;
+    }
+
+    .message-title {
+        color: #af0d16;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+    }
+
+    .message-text {
+        color: #333;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .message-subtext {
+        color: #666;
+        font-size: 1rem;
+        font-style: italic;
+        margin-bottom: 0;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-message-box {
+            padding: 1.5rem 2rem;
+        }
+
+        .message-title {
+            font-size: 2rem;
+        }
+
+        .message-text {
+            font-size: 1.1rem;
+        }
+    }
+</style> 
+
+<style>
+    .custom-slider {
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+    }
+
+    .rounded-slider {
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .carousel-item {
+        transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px;
+        transform: scale(1);
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-item.active img {
+        transform: scale(1.02);
+    }
+
+    /* Custom Navigation Arrows */
+    .carousel-arrow-prev,
+    .carousel-arrow-next {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #af0d16;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-arrow-prev:hover,
+    .carousel-arrow-next:hover {
+        background: #af0d16;
+        color: white;
+        transform: scale(1.1);
+    }
+
+    /* Custom Indicators */
+    .custom-indicators {
+        margin-bottom: -30px;
+        z-index: 2;
+    }
+
+    .custom-indicators [data-bs-target] {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 2px solid rgba(175, 13, 22, 0.5);
+        margin: 0 5px;
+        transition: all 0.3s ease;
+    }
+
+    .custom-indicators .active {
+        background-color: #af0d16;
+        border-color: white;
+        transform: scale(1.2);
+    }
+
+    /* Fade Animation */
+    .carousel-fade .carousel-item {
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
+    }
+
+    .carousel-fade .carousel-item.active {
+        opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+        .carousel-item img {
+            height: 300px;
+        }
+
+        .carousel-arrow-prev,
+        .carousel-arrow-next {
+            width: 35px;
+            height: 35px;
+        }
+
+        .custom-indicators {
+            margin-bottom: -25px;
+        }
+    }
+</style>
+
+
+    <!-- Promotion Card -->
+	
+<!-- Hero Section -->
+<div class="position-relative hero-section">
+    <img src="images/top.jpg" alt="Hero Image" class="w-100 h-100 object-fit-cover">
+    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+        <div class="text-center hero-message-box">
+            <h2 class="message-title">Ozen Asian Fusion Restaurant, New York, NY</h2>
+            <p class="message-text">Free Delivery (Min. $10)</p>
+            <p class="message-subtext">within 1 mile</p>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- About Section -->
+    <section class="container my-5 text-center">
+        <div class="rounded-circle bg-dark d-flex align-items-center justify-content-center mx-auto mb-4" 
+             style="width: 80px; height: 80px;">
+            <img src="images/food.png" alt="Food Icon" style="width: 50px;">
+        </div>
+        
+      
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="fs-4 fw-bold mb-3">Ozen Asian Fusion Restaurant</h2>
+                <p class="text-muted">
+                    Located at <em>760 Amsterdam Ave, New York, NY 10025</em>, our restaurant offers a wide array of Chinese, Japanese & Thai food, such as Kung Pao Chicken, Pepper Steak w. Onion, Rainbow Roll, Pad Thai.
+                    <br><br>
+                    Try our delicious food and service today. Come in for an Asian Lunch Special or during evenings 
+                    for a delicious Asian style dinner. You can also online order your favorite Asian Fusion food for take out.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Single-Row Composite Image Layout -->
+<div class="container mb-5">
+    <div class="row">
+        
+                <div class="col-12 mb-4">
+                    <div class="menu-image-container">
+                        <img src='images/menu/bottom.jpg' alt="Menu Dishes" class="img-fluid rounded w-100 composite-menu-img">
+                    </div>
+                </div>
+            
+                <div class="col-12 mb-4">
+                    <div class="menu-image-container">
+                        <img src='images/menu/bottom1.jpg' alt="Menu Dishes" class="img-fluid rounded w-100 composite-menu-img">
+                    </div>
+                </div>
+            
+    </div>
+</div>
+
+<style>
+    /* Optimized for composite images that already contain multiple dishes */
+    .menu-image-container {
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease;
+    }
+    
+    .menu-image-container:hover {
+        transform: translateY(-5px);
+    }
+    
+    .composite-menu-img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+    }
+    
+    @media (max-width: 768px) {
+        .composite-menu-img {
+            max-height: none; /* Allow natural height on mobile */
+        }
+    }
+</style>
+
+    <!-- Footer -->
+    <footer class="footer-bg py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Location Section -->
+                <div class="col-lg-4 mb-4">
+                    <h3 class="text-white text-uppercase mb-4">Location</h3>
+                    <div class="text-light">
+                        <p>
+                            <i class="fas fa-map-marker-alt text-danger me-2"></i>
+                            760 Amsterdam Ave, New York, NY 10025
+                        </p>
+                        <p>
+                            <i class="fas fa-phone text-danger me-2"></i>
+                            Phone: (212) 678-0300 &nbsp; (212) 678-4636 &nbsp; (917) 285-6606<br>
+                            Fax:  (212) 678-0400
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Working Hours Section -->
+                <div class="col-lg-4 mb-4">
+                    <h3 class="text-white text-uppercase mb-4">Open Hours</h3>
+                    <div class="text-light">
+                        <p>Monday - Sunday 11:00 am - 11:00 pm</p>
+                    </div>
+                </div>
+
+                <!-- Direction Section -->
+                <div class="col-lg-4 mb-4">
+                    <h3 class="text-white text-uppercase mb-4">Direction</h3>
+                    <div class="map-container rounded">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.5019650619574!2d-73.970037!3d40.794962000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f627cc7b936f%3A0x46275a628431a913!2sOzen%20Sushi%20Asian%20Fusion!5e0!3m2!1sen!2sus!4v1747520849328!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div class="bg-dark text-white py-3 text-center">
+        © 2025 Ozen Asian Fusion Restaurant. All rights reserved.
+    </div>
+
+    <!-- Fixed Order Button -->
+    <div class="fixed-bottom bg-white bg-opacity-75 py-3" style="backdrop-filter: blur(8px);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <a href="productlist.aspx?cid=2" class="btn btn-danger w-100 py-3 rounded-pill fw-bold">
+                        Order Online
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .hero-section {
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .hero-section img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .menu-img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .footer-bg {
+            background: url(images/footerbg.jpg) #32353a;
+            border-top: 3px solid #999393;
+        }
+
+        .map-container {
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 300px;
+            }
+            
+            .carousel-item img {
+                height: 300px;
+            }
+
+            .menu-img {
+                height: 180px;
+            }
+        }
+    </style>
+
+        </div>
+    </form>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if URL contains status=complete
+    if (window.location.href.indexOf('status=complete') > -1) {
+        console.log("Found status=complete, trying to show modal");
+        setTimeout(function() {
+            if (typeof showOrderModal === 'function') {
+                showOrderModal();
+            } else {
+                console.error("showOrderModal function not found");
+                // Direct fallback
+                var modal = document.getElementById('orderConfirmationModal');
+                if (modal) {
+                    modal.style.display = 'block';
+                    modal.classList.add('show');
+                    document.body.classList.add('modal-open');
+                }
+            }
+        }, 500);
+    }
+});
+</script>
+</body>
+</html>

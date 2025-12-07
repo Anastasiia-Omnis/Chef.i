@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+1<style type="text/css">
+#load{
+position:absolute;
+z-index:1;
+border:3px double #999;
+background:url(images/dot.png) repeat;
+width:100%;
+height:100%;
+top:0px;
+left:0px;
+text-align:center;
+line-height:300px;
+font-family:"Trebuchet MS", verdana, arial,tahoma;
+font-size:18pt;
+}
+</style>
+<link href="https://ezonlineordernow.com/css/style_sheet.css"  type="text/css" rel="stylesheet"/>
+<LINK href="https://ezonlineordernow.com/css/mobanwang.css" type=text/css rel=stylesheet>
+<title>The Legend Cafe</title>
+<meta name="description" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en" />
+
+<script type="text/javascript" src="https://ezonlineordernow.com/js/jquery-1.91.js"></script>
+<script>
+$(document).ready(function(){
+  $("#close_cart").click(function(){
+    $("#cart_box").fadeOut().fast;
+  });
+});
+
+
+function get_detail(str, oid) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		$("#cart_box").fadeIn().fast;
+      document.getElementById("cart_box").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/get_info.php?q="+str+"&oid="+oid+"&id="+Math.random(),true);
+  xhttp.send();
+}
+function remove_product(action_, remove_pid) {
+ var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	document.getElementById("container_cart").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/save_info.php?oid=6343176&action_="+action_+"&remove_id="+remove_pid+"&id="+Math.random(),true);
+  xhttp.send();
+
+	
+}
+
+function save_product(action_, remove_pid, mod_value, modi_cnt) {
+		var pid=document.getElementById("pid").value;
+		var product_price=document.getElementById("product_price").value;
+		var qty_=document.getElementById("qty_box").value;
+		var request_=document.getElementById("request_").value;
+		request_.replace(/[^a-zA-Z ]/g, " ");
+
+var x = document.getElementsByName("size_");
+var i;
+for (i = 0; i < x.length; i++) {
+
+   if(x[i].checked== true){
+	   
+	var size_=x[i].value;
+	break;
+   
+  }
+}
+if(mod_value!=""){
+var chk_er="";
+if(document.modifier.elements["modi0[]"]){
+var modi_00="MOD_00";  var chk_opt0=""; var mod0_qty="";
+	 for(x=0; x<document.modifier.elements["modi0[]"].length; x++){
+        if(document.modifier.elements["modi0[]"][x].checked==true){
+			//var mod0_qty="modi_qty_"+document.modifier.elements["modi0[]"][x].value;
+			var tmp=document.modifier.elements["modi0[]"][x].value.split("::");
+   var mod0_qty="modi_qty_"+tmp[0];
+           chk_opt0=1;
+modi_00=modi_00+","+document.modifier.elements["modi0[]"][x].value+":"+document.getElementById(mod0_qty).value;
+        }
+    }
+		if(document.getElementById("opt0").value=="" &&  chk_opt0==""){
+		chk_er=1;
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi1[]"]){
+var modi_01="MOD_01"; var chk_opt1="";  var mod1_qty="";
+	 for(x=0; x<document.modifier.elements["modi1[]"].length; x++){
+        if(document.modifier.elements["modi1[]"][x].checked==true){
+			
+		var tmp=document.modifier.elements["modi1[]"][x].value.split("::");
+   var mod1_qty="modi_qty_"+tmp[0];        
+modi_01=modi_01+","+document.modifier.elements["modi1[]"][x].value+"::"+document.getElementById(mod1_qty).value;
+
+//alert(modi_01);
+chk_opt1=1;
+        }
+    }
+	if(document.getElementById("opt1").value=="" &&  chk_opt1==""){
+		chk_er=1;
+		$("#required_box").html("Please select required option");
+	}
+	
+}
+
+if(document.modifier.elements["modi2[]"]){
+var modi_02="MOD_02";   var chk_opt2=""; var mod2_qty="";
+	 for(x=0; x<document.modifier.elements["modi2[]"].length; x++){
+        if(document.modifier.elements["modi2[]"][x].checked==true){
+		var tmp=document.modifier.elements["modi2[]"][x].value.split("::");
+   var mod2_qty="modi_qty_"+tmp[0];	
+           chk_opt2=1;
+modi_02=modi_02+","+document.modifier.elements["modi2[]"][x].value+"::"+document.getElementById(mod2_qty).value;
+        }
+    }
+		if(document.getElementById("opt2").value=="" &&  chk_opt2==""){
+		chk_er=2;
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi3[]"]){
+var modi_03="MOD_03";  var chk_opt3=""; var mod3_qty="";
+	 for(x=0; x<document.modifier.elements["modi3[]"].length; x++){
+        if(document.modifier.elements["modi3[]"][x].checked==true){
+			var tmp=document.modifier.elements["modi3[]"][x].value.split("::");
+   var mod3_qty="modi_qty_"+tmp[0];
+           chk_opt3=1;
+modi_03=modi_03+","+document.modifier.elements["modi3[]"][x].value+"::"+document.getElementById(mod3_qty).value;
+        }
+    }
+	if(document.getElementById("opt3").value=="" &&  chk_opt3==""){
+		chk_er=3;
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi4[]"]){
+var modi_04="MOD_04";  var chk_opt4=""; var mod4_qty="";
+	 for(x=0; x<document.modifier.elements["modi4[]"].length; x++){
+        if(document.modifier.elements["modi4[]"][x].checked==true){
+			
+			var tmp=document.modifier.elements["modi4[]"][x].value.split("::");
+   var mod4_qty="modi_qty_"+tmp[0];
+   
+           chk_opt4=4;
+modi_04=modi_04+","+document.modifier.elements["modi4[]"][x].value+"::"+document.getElementById(mod4_qty).value;
+        }
+    }
+			if(document.getElementById("opt4").value=="" &&  chk_opt4==""){
+		chk_er=1;
+		$("#required_box").html("Please select required option");
+	}
+
+}
+
+if(document.modifier.elements["modi5[]"]){
+var modi_05="MOD_05";  var chk_opt5=""; var mod5_qty="";
+	 for(x=0; x<document.modifier.elements["modi5[]"].length; x++){
+        if(document.modifier.elements["modi5[]"][x].checked==true){
+			var tmp=document.modifier.elements["modi5[]"][x].value.split("::");
+   var mod5_qty="modi_qty_"+tmp[0];
+           chk_opt5=5;
+modi_05=modi_05+","+document.modifier.elements["modi5[]"][x].value+"::"+document.getElementById(mod5_qty).value;
+        }
+    }
+	if(document.getElementById("opt5").value=="" &&  chk_opt5==""){
+		
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi6[]"]){
+var modi_06="MOD_06";  var chk_opt6=""; var mod6_qty="";
+	 for(x=0; x<document.modifier.elements["modi6[]"].length; x++){
+        if(document.modifier.elements["modi6[]"][x].checked==true){
+           chk_opt6=6;
+		   var tmp=document.modifier.elements["modi6[]"][x].value.split("::");
+   var mod6_qty="modi_qty_"+tmp[0];
+modi_06=modi_06+","+document.modifier.elements["modi6[]"][x].value+"::"+document.getElementById(mod6_qty).value;
+        }
+    }
+	if(document.getElementById("opt6").value=="" &&  chk_opt6==""){
+		chk_er=6;
+		$("#required_box").html("Please select required option");
+	}
+}
+}
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	document.getElementById("container_cart").innerHTML = this.responseText;
+    }
+  };
+  if(chk_er=="" || modi_cnt<=0){
+  xhttp.open("GET", "https://ezonlineordernow.com/save_info.php?oid=6343176&pid="+pid+"&product_price="+product_price+"&size_="+size_+"&qty_="+qty_+"&action_="+action_+"&remove_id="+remove_pid+"&request_="+request_+"&modi_01="+modi_01+"&modi_02="+modi_02+"&modi_03="+modi_03+"&modi_04="+modi_04+"&modi_05="+modi_05+"&modi_06="+modi_06+"&modi_00="+modi_00+"&id="+Math.random(),true);
+  xhttp.send();
+    $("#cart_box").fadeOut().fast;
+}
+}
+
+
+function del_qty(){
+	var qty_=document.getElementById("qty_box").value;
+	if(qty_>=2){
+	document.getElementById("qty_box").value=eval(document.getElementById("qty_box").value)-1;
+	}
+}
+
+function add_qty(){
+	var qty_=document.getElementById("qty_box").value;
+
+	document.getElementById("qty_box").value=eval(document.getElementById("qty_box").value)+1;
+
+}
+
+
+function remove_item(action_, remove_pid) {
+			
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+
+
+		
+      document.getElementById("container_cart").innerHTML = this.responseText;
+	 
+    }
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/remove_item.php?action_="+action_+"&remove_id="+remove_pid+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+
+function get_ship(action_) {
+		
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		if(action_=="delivery"){
+	document.getElementById('delivery_').style.background = '#F90';	
+	document.getElementById('pickup_').style.background = '';
+	$("#pickup_box").fadeOut().fast;
+	$("#delivery_box").fadeIn().fast;
+	}
+		if(action_=="pickup"){
+	document.getElementById('delivery_').style.background = '';	
+	document.getElementById('pickup_').style.background = '#F90';	
+	$("#delivery_box").fadeOut().fast; 
+	$("#pickup_box").fadeIn().fast;
+		}	
+    }	
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/get_ship.php?action_="+action_+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+
+function get_pay(action_) {
+		
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		if(action_=="cc"){
+	document.getElementById('cc').style.background = '#F90';	
+	document.getElementById('cash').style.background = '';
+$("#cc_box").fadeIn().fast;$("#cash_box").fadeOut().fast;
+$("#show_tip").fadeIn().fast;
+
+	}
+		if(action_=="cash"){
+	document.getElementById('cc').style.background = '';	
+	document.getElementById('cash').style.background = '#F90';	
+$("#cc_box").fadeOut().fast;$("#cash_box").fadeIn().fast;$("#show_tip").fadeOut().fast;
+		}	
+    }	
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/get_pay.php?action_="+action_+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+function get_tip(action_) {
+		var cTip=document.getElementById('ct_tip').value; 
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		if(action_=="0.15"){
+	document.getElementById('tip_15').style.background = '#F90';	
+	document.getElementById('tip_18').style.background = '';
+	document.getElementById('tip_20').style.background = '';
+	document.getElementById('tip_custom').style.background = '';
+	}
+		if(action_=="0.18"){
+	document.getElementById('tip_15').style.background = '';
+	document.getElementById('tip_custom').style.background = '';	
+	document.getElementById('tip_18').style.background = '#F90';
+	document.getElementById('tip_20').style.background = '';
+	}
+		if(action_=="0.20"){
+	document.getElementById('tip_15').style.background = '';	
+	document.getElementById('tip_18').style.background = '';
+	document.getElementById('tip_custom').style.background = '';
+	document.getElementById('tip_20').style.background = '#F90';
+	}
+			if(action_=="customize"){
+
+	document.getElementById('tip_15').style.background = '';	
+	document.getElementById('tip_18').style.background = '';
+	document.getElementById('tip_20').style.background = '';
+	document.getElementById('tip_custom').style.background = '#F90';
+	}	
+    }	
+	document.getElementById("show_total").innerHTML = this.responseText;
+	$("#customize_tip").fadeOut().fast;
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/get_tip.php?action_="+action_+"&c_tip="+cTip+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+
+
+
+function get_input_tip() {
+	var action_=document.getElementById('ct_tip').value; 
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	document.getElementById("show_total").innerHTML = this.responseText; 
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/get_tip_amt.php?action_="+action_+"&id="+Math.random(),true);
+  xhttp.send();
+}
+
+}
+
+
+$(document).ready(function(){
+  $("#tip_custom").click(function(){
+
+    $("#customize_tip").toggle().fast;
+  });
+});
+
+</script>
+<script type="text/livescript">
+function copy_address(){
+	document.getElementById('delivery_street').value=document.getElementById('street').value;
+	document.getElementById('delivery_apt').value=document.getElementById('apt').value;
+	document.getElementById('delivery_city').value=document.getElementById('city').value;
+	document.getElementById('delivery_state').value=document.getElementById('state').value;
+	document.getElementById('delivery_zip_code').value=document.getElementById('zip_code').value;
+	
+}
+
+function chk_opt_box(url){
+document.getElementById(url).checked=true;
+}
+var ray={
+ajax:function(st)
+	{
+		this.show('load');
+	},
+show:function(el)
+	{
+		this.getID(el).style.display='';
+	},
+getID:function(el)
+	{
+		return document.getElementById(el);
+	}
+}
+
+
+</script>
+
+</head>
+<body><div id="load" style="display:none; z-index:9999999999999999; color:#FFFFFF; line-height:38px; font-size:32px; text-align:center; padding-top:200px;">Loading ..... Please wait.<br />
+  <img src="https://ezonlineordernow.com/images/loader.gif" width="125" height="15" /></div>
+<div id="top"><a href="https://ezonlineordernow.com/index.php/restaurant" target="_self"><img src="https://ezonlineordernow.com/images/logo.png" height="38" width="50"alt=""  style="margin-top:2px; margin-left:2px;"/><span style="font-size:24px; line-height:80px;"></span></a>   <a href="https://ezonlineordernow.com/index.php/login"  id="login" target="_self">Login/Register</a>
+</div>
+
+<div id="container_box">
+<div id="closed_msg">Sorry, the online order is closed now! Current Time: 13:31:26</div>
+
+<script>
+
+function close_box(){
+    $("#cart_box").fadeOut().fast;
+}
+
+
+</script>
+
+<div id="container_m">
+<h6 style="background:#FFF;"><p  class="logo"> The Legend Cafe</p>
+<p style="line-height:24px; margin-bottom:15px;">8140 New Utrecht Ave<br />Brooklyn NY 11214<br />
+ Tel:718-259-6888</p>
+<p><img src="https://ezonlineordernow.com/images/Pickup_icon.png" width="30" height="30" style="position:relative; top:10px;" /><strong>Pickup:</strong> You will receive email for pickup time    &nbsp;  &nbsp;</p>
+
+<div id="time_shift">
+<strong style="padding-right:20px;">Business Hours</strong><br><div class="left_box"><strong>Mon:</strong> </div><div class="mid_box">11:00 am~8:30 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Tue:</strong> </div><div class="mid_box">11:00 am~8:30 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Wed:</strong> </div><div class="mid_box">11:00 am~8:30 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Thurs:</strong> </div><div class="mid_box">11:00 am~8:30 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Fri:</strong> </div><div class="mid_box">11:00 am~8:30 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Sat:</strong> </div><div class="mid_box">11:00 am~8:30 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Sun:</strong> </div><div class="mid_box">11:00 am~8:30 pm&nbsp; &nbsp; </div><div class="right_box"></div></div>
+
+</h6><h5>
+</h5>
+</div>
+<div id="container_cart">
+<div id="cart_top"><h2 style="font-size:32px; font-family:'Times New Roman', Times, serif; ">The Legend Cafe</h2>
+</div>
+<div id="cart_content" style="z-index:9999;">
+<h2 style="font-size:32px; font-family:'Times New Roman', Times, serif; color:#CCC; ">No Item(s) <br>Need to add something?</h2>
+	
+</div>
+
+<div id="cart_box"></div>
+<script type="text/javascript">
+
+
+
+function check_box0(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi0[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+	
+if(document.getElementById(url).checked==true){
+	$("#error0").empty();
+	$("#count_0").html(o);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+}else{
+	if(o<url1){ $("#error0").empty();
+document.getElementById(url).checked=true;
+document.getElementById(url5).value=o+1;
+$("#count_0").html(o+1);
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error0").html("Item(s) over limit");
+	
+}
+}
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+function check_box1(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi1[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error1").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_1").empty();
+}else{
+	if(o<url1){ $("#error1").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error1").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error1").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error1").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_1").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+function check_box2(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi2[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error2").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_2").empty();
+}else{
+	if(o<url1){ $("#error2").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error2").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error2").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error2").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_2").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+function check_box3(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi3[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error3").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_3").empty();
+}else{
+	if(o<url1){ $("#error3").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error3").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error3").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error3").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_3").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+function check_box4(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi4[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error4").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_4").empty();
+}else{
+	if(o<url1){ $("#error4").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error4").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error4").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error4").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_4").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+function check_box5(url, url1, url2, url3, url4, url5, url6){  
+
+ var x = document.getElementsByName("modi5[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error5").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_5").empty();
+}else{
+	if(o<url1){ $("#error5").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error5").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error5").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error5").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_5").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+function check_box6(url, url1, url2, url3, url4, url5, url6){  
+
+ var x = document.getElementsByName("modi6[]");
+      var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error6").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_6").empty();
+}else{
+	if(o<url1){ $("#error6").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error6").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error6").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error6").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_6").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+
+function get_mtp(url, url1, url2, url3, url4, url5, url6, url7, url8){ 
+
+ 
+ var x = document.getElementsByName("modi7[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  o++;
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+	
+if(document.getElementById(url).checked==true){
+	$("#error7").empty();
+	$("#count_7").html(o);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+}else{
+	if(o<url1){ $("#error7").empty();
+document.getElementById(url).checked=true;
+
+$("#count_7").html(o+1);
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error7").html("Item(s) over limit");
+	
+}
+}
+
+	$("#tmp_box").toggle().fast;
+	
+}
+</script></div>
+</body>
+</html>

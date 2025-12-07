@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Momo Crave</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">    
+
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+      
+      <style>  
+          @import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
+          @import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+          @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+          @import url('https://fonts.googleapis.com/css?family=Paytone+One&display=swap');
+          @font-face {
+              font-family: knightbrush;
+              src: url('./fonts/knightbrush.otf');
+          }
+          .right-img img{
+              position: relative;
+              top: 50%;
+              transform: translateY(-50%);
+              border-radius: 10px;
+              width: 800px;
+          }
+          h1.site-heading
+          { 
+              font-family: 'Crimson Text', serif;
+              font-weight: lighter;
+          }
+          h1.site-heading span.span1{
+              font-family: 'Paytone One', sans-serif;
+              text-transform: uppercase;
+              font-size: .9em;
+          }
+          h1.site-heading span.span2{
+              font-family: knightbrush;
+              font-weight: lighter;
+              font-size: 1.6em;
+          }
+          .logo{filter: invert(100%);}
+          .fa-pepper-hot{
+              color: #FC5B5D;
+              margin-left: 10px;
+          }
+        .overlay-notify{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0,0,0,.6);
+            text-align: center;
+            z-index: 2000;
+        }
+        p.status{
+            color: #fff;
+            font-size: 1.3em;
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 30px;
+        }
+        .center-align{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            background-color: #303030;
+            padding: 20px;
+        }
+        .overlay-notify input{
+            position: absolute;
+            background-color: #fd990a;
+            color: #fff;
+            border: none;
+            width: 100px;
+            padding: 10px;
+            cursor: pointer;
+            outline: none;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .myButton{
+            font-size: 1em;
+        }
+          .certification{
+              display: block;
+              position: absolute;
+              bottom: 30px;
+              left: 50%;
+              transform: translateX(-50%);
+          }
+          .certification #rest_circ5{
+              transform: scale(1.1)
+          }
+          .site-cover{
+              position: relative;
+          }
+          .load-more-row{
+              visibility: hidden;
+              opacity: 0;
+              height: 0;
+              transition: .4s;
+              pointer-events: none;
+          }
+          .load-more-row-show{
+              visibility: visible;
+              opacity: 1;
+              height: auto;
+              transition: .4s;
+              pointer-events: auto;
+          }
+          .load-more-btn, .show-less-btn{
+              position: relative;
+              top: 20px;
+              left: 50%;
+              transform: translateX(-50%);
+          }
+          .show-less-btn{
+              display: none;
+          }
+          pre{
+              color: #fff;
+          }
+          .sm-screen-h1,
+          .menu-price {
+              display: none;
+          }
+      </style>
+  </head>
+  <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
+      <div class="container">
+          <a class="navbar-brand" href="index.html"><img class="logo" src="images/logo.png" width="120px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="site-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="#section-home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#section-about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#section-order" class="nav-link">Order</a></li>
+            <li class="nav-item"><a href="#section-menu" class="nav-link">Menu</a></li>
+            <li class="nav-item"><a href="#section-news" class="nav-link">News</a></li>
+            <li class="nav-item"><a href="#section-gallery" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="#section-contact" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+    
+        <div class="overlay-notify">
+            <div class="center-align">
+                <p class="status"></p>
+                <br>
+        <!--        <button class="myButton" onclick="change()" value="Got it">Got it!</button>-->
+                <input type="button" class="myButton" value="Got it!"/>
+            </div>
+        </div> 
+      
+    <section class="site-cover" style="background-image: url(images/frymomos.jpg);" id="section-home">
+        <div class="black-overlay">
+            <div class="container">
+                <div class="row align-items-center justify-content-center text-center site-vh-100">
+                  <div class="col-md-12">
+                      <h1 class="site-heading lg-screen-h1 site-animate mb-3">Welcome To <span class="span1">Momo</span> <span class="span2">Crave</span></h1>
+                      <h1 class="site-heading sm-screen-h1 site-animate mb-3">Welcome To <br><pre><span class="span1">Momo</span> <span class="span2">Crave</span></pre></h1>
+                    <h2 class="h5 site-subheading mb-5 site-animate">Come and experience our flavorful &amp; colorful dumplings with other cuisines</h2>    
+                  </div>
+                </div>
+            </div>
+<!--             <div class="certification">
+                <link href="https://awards.infcdn.net/circ5_n.css" rel="stylesheet"/><div id="rest_circ5" onclick="if(event.target.nodeName.toLowerCase() != 'a') {window.open(this.querySelector('.circ_top_title').href);return 0;}"><div class="circ_cont"><div class="circ_img" style="background: url('https://awards.infcdn.net/img/star_red.svg') no-repeat center">&nbsp;</div><a href="https://restaurantguru.com/Momo-Crave-New-York" target="_blank" class="circ_top_title">Restaurant Guru 2020</a><span>Recommended</span><a href="https://restaurantguru.com/Momo-Crave-New-York" class="circ_bot_title" target="_blank">Momo Crave</a></div></div>
+            </div> -->
+        </div>
+    </section>
+    <!-- END section -->
+    
+    <section class="site-section" id="section-about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 site-animate mb-5">
+            <!--<h4 class="site-sub-title">Our Story</h4>-->
+            <h2 class="site-primary-title display-4">About Us</h2>
+            <p class="text-justify">At Momo Crave all of our momos (dumplings) are meticulously made from scratch, the same way they are made in Nepal. 
+              These momos venture out from the norm, however, with new and exciting twists that feature traditional Nepalese flavors intertwined with other cultural cuisines. </p>
+
+            <p class="mb-4 text-justify"> Come and experience this beautiful culinary fusion in our cozy atmosphere with prices that can't be beaten. It won't take long before you realize how we got our name...
+              <i><b>Momo Crave!</b></i>
+            </p>
+            <!--<p><a href="#" class="btn btn-secondary btn-lg">Learn More About Us</a></p>-->
+          </div>
+          <div class="col-md-1"></div>
+          <div class="right-img col-md-6 site-animate img" data-animate-effect="fadeInRight">
+            <img src="images/inside.jpg" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    
+
+    <section class="site-section bg-light" id="section-order">
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-md-12 text-center mb-5 site-animate">
+            <!--<h4 class="site-sub-title">Our Offers</h4>-->
+            <h2 class="display-4">Order Online</h2>
+          </div>
+          <div class="col-md-12">
+            <div class="owl-carousel site-owl">
+
+              <div class="item">
+                <div class="media d-block mb-4 text-center site-media site-animate border-0" style="background-color: transparent;">
+                  <a href="https://www.seamless.com/menu/momo-crave-3807-69th-st-woodside/890555" target="_blank"><img src="images/seamless.png" class="img-fluid" style="width: 170px;position: relative;left: 50%;transform: translateX(-50%);"></a>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="media d-block mb-4 text-center site-media site-animate border-0" style="background-color: transparent;">
+                  <a href="https://postmates.com/merchant/momo-crave-woodside" target="_blank"><img src="images/postmateslogo.png" class="img-fluid" style="width: 300px;"></a>
+                </div>
+              </div>
+              
+              <div class="item">
+                <div class="media d-block mb-4 text-center site-media site-animate border-0" style="background-color: transparent;">
+                  <a href="https://www.grubhub.com/restaurant/momo-crave-3807-69th-st-woodside/890555" target="_blank"><img src="images/grubhub.png" class="img-fluid" style="width: 220px; position: relative;left: 50%;transform: translateX(-50%);"></a>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="media d-block mb-4 text-center site-media site-animate border-0" style="background-color: transparent;">
+                  <a href="https://www.doordash.com/store/momo-crave-queens-602143/en-US" target="_blank"><img src="images/doordash.png" class="img-fluid" style="width: 220px; position: relative;left: 50%;transform: translateX(-50%);"></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="site-section" id="section-menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center mb-5 site-animate">
+            <h2 class="display-4">Menu</h2>
+            <div class="row justify-content-center">
+              <div class="col-md-7">
+<!--                <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 text-center">
+
+            <ul class="nav site-tab-nav nav-pills mb-5" id="pills-tab" role="tablist">
+                <li class="nav-item site-animate">
+                    <a class="nav-link active" id="pills-momo-tab" data-toggle="pill" href="#pills-momo" role="tab" aria-controls="pills-momo" aria-selected="true">Momo</a>
+                </li>
+                <li class="nav-item site-animate">
+                    <a class="nav-link" id="pills-rice-tab" data-toggle="pill" href="#pills-rice" role="tab" aria-controls="pills-rice" aria-selected="false">Rice</a>
+                </li>
+                <li class="nav-item site-animate">
+                    <a class="nav-link" id="pills-noodle-tab" data-toggle="pill" href="#pills-noodle" role="tab" aria-controls="pills-noodle" aria-selected="false">Noodle</a>
+                </li>
+                <li class="nav-item site-animate">
+                    <a class="nav-link" id="pills-fried-tab" data-toggle="pill" href="#pills-fried" role="tab" aria-controls="pills-fried" aria-selected="false">Fried</a>
+                </li>    
+                <li class="nav-item site-animate">
+                    <a class="nav-link" id="pills-bara-tab" data-toggle="pill" href="#pills-bara" role="tab" aria-controls="pills-bara" aria-selected="false">Bara</a>
+                </li>
+                <li class="nav-item site-animate">
+                    <a class="nav-link" id="pills-beverages-tab" data-toggle="pill" href="#pills-beverages" role="tab" aria-controls="pills-beverages" aria-selected="false">Beverages</a>
+                </li>
+            </ul>
+
+            <div class="tab-content text-left">
+              <div class="tab-pane fade show active" id="pills-momo" role="tabpanel" aria-labelledby="pills-momo-tab">
+                <div class="row">
+                  <div class="col-md-6 site-animate">
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/jhol-momo.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Steam Momo</h5>
+                        <h6 class="text-primary menu-price">$7.00</h6>
+                      </div>
+                    </div>
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/fried.png" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Fried Momo</h5>
+                        <h6 class="text-primary menu-price">$7.00</h6>
+                      </div>
+                    </div>
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/tandoori.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Tandoori Momo</h5>
+                        <p>Fried momo marinated with special tandoori masala and grilled together with mixed peppers and onions</p>
+                        <h6 class="text-primary menu-price">$8.00</h6>
+                      </div>
+                    </div>
+                      
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/sandeko.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Sandeko Momo <i class="fas fa-pepper-hot"></i></h5>
+                        <p>Marinated fried momo with spicy tangy sauce, mixed together with roasted soybean, onion, tomatoes and cilantro</p>
+                        <h6 class="text-primary menu-price">$8.00</h6>
+                      </div>
+                    </div>
+                      
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/tacos.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Taco Momo</h5>
+                        <p>Fried momo topped with avocado, black bean paste and salsa</p>
+                        <h6 class="text-primary menu-price">$8.00</h6>
+                      </div>
+                    </div>
+                      
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/cheese.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Cheese Momo</h5>
+                        <h6 class="text-primary menu-price">$7.00</h6>
+                      </div>
+                    </div>   
+                  </div>
+                    
+                  <div class="col-md-6 site-animate">
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/kothey.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Kothey Momo</h5>
+                        <p>Pan fried momo</p>
+                        <h6 class="text-primary menu-price">$7.00</h6>
+                      </div>
+                    </div>
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/chili.png" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Chili Momo <i class="fas fa-pepper-hot"></i></h5>
+                        <p>Fried momo sautéed with special chilli sauce, onions, peppers, tomato and garlic</p>
+                        <h6 class="text-primary menu-price">$8.00</h6>
+                      </div>
+                    </div>
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/chaat.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Chaat Momo</h5>
+                        <p>Fried momo mixed with yogurt, spicy tangy tamarind chutney, green chutney, onion and cilantro</p>
+                        <h6 class="text-primary menu-price">$8.00</h6>
+                      </div>
+                    </div>
+                    
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/sukuti.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Sukuti Momo <i class="fas fa-pepper-hot"></i></h5>
+                        <p>Fried momo sautéed with garlic, ginger, sukuti (jerky) and marinated with special tangy spicy sauce, onion and cilantro</p>  
+                        <h6 class="text-primary menu-price">$9.00</h6>
+                      </div>
+                    </div>
+                      
+                      <div class="media menu-item">
+                      <img class="mr-3" src="images/sizzler.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Sizzler Momo</h5>
+                        <p>Shallow fried momo served with special sauce and stir-fried vegetables on a hot plate.</p>  
+                        <h6 class="text-primary menu-price">$9.00</h6>
+                      </div>
+                    </div>
+  
+                  </div>  
+                </div>
+              </div>
+                
+              <div class="tab-pane fade" id="pills-rice" role="tabpanel" aria-labelledby="pills-rice-tab">
+                <div class="row">
+                  <div class="col-md-6 site-animate">
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/samay.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Samay Baji</h5>
+                        <p>A wide selection of platter with flattened rice, ground lentil patties, spiced potato, mixed pickle, spiced black gram and special marinated chicken</p>
+                        <h6 class="text-primary menu-price">$10.00</h6>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-md-6 site-animate">
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/fried%20rice.png" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Fried Rice</h5>
+                        <p>Stir fried rice with mixed vegetables/choice of meat</p>
+                        <h6 class="text-primary menu-price">$7.00</h6>
+                      </div>
+                    </div>
+
+                    
+                  </div>
+                </div>
+              </div>
+                
+              <div class="tab-pane fade" id="pills-noodle" role="tabpanel" aria-labelledby="pills-noodle-tab">
+                <div class="row">
+                  <div class="col-md-6 site-animate">
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/chowmein.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Chow Mein</h5>
+                        <p>Stir fried noodle with mixed vegetable, onions, peppers and choice of meat</p>
+                        <h6 class="text-primary menu-price">$8.00</h6>
+                      </div>
+                    </div>
+                    
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/chowmein.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Sukuti Chow Mein</h5>
+                        <p>Stir fried noodle with mixed vegetable, onions, peppers and jerky meat</p>
+                        <h6 class="text-primary menu-price">$9.00</h6>
+                      </div>
+                    </div>
+                      
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/hotsour.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Hot &amp; Sour Soup</h5>
+                        <h6 class="text-primary menu-price">$5.00</h6>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-md-6 site-animate">
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/thukpa.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Thukpa</h5>
+                        <p>Soup base hand-pulled noodle with mixed vegetable/choice of meat</p>
+                        <h6 class="text-primary menu-price">$8.00</h6>
+                      </div>
+                    </div>
+                      
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/thenthuk.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Thenthuk</h5>
+                        <p>Soup base hand-pulled noodle with mixed vegetable/choice of meat</p>
+                        <h6 class="text-primary menu-price">$8.00</h6>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            
+              <div class="tab-pane fade" id="pills-fried" role="tabpanel" aria-labelledby="pills-fried-tab">
+                <div class="row">
+                  <div class="col-md-6 site-animate">
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/drumsticks.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Chicken Drumsticks</h5>
+                        <p>Stir fried noodle with mixed vegetable, onions, peppers and choice of meat</p>
+                        <h6 class="text-primary menu-price">$6.00</h6>
+                      </div>
+                    </div>
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/chickenchili.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Chicken Chili</h5>
+                        <p>Fried boneless chicken sautéed with onion, garlic, tomatoes, green chilli, mixed peppers and special chilli sauce</p>
+                        <h6 class="text-primary menu-price">$7.00</h6>
+                      </div>
+                    </div>  
+
+                  </div>
+                  <div class="col-md-6 site-animate">
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/potato.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Potato Chili</h5>
+                        <p>Fried potatoes sautéed with onion, garlic, tomatoes, green chilli, mixed peppers and special chilli sauce</p>
+                        <h6 class="text-primary menu-price">$6.00</h6>
+                      </div>
+                    </div>
+                      
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/katti.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Katti Roll</h5>
+                        <p>Soup base noodle with mixed vegetable/choice of meat</p>
+                        <h6 class="text-primary menu-price">$6.00</h6>
+                      </div>
+                    </div>  
+
+                  </div>
+                </div>
+              </div>    
+                
+              <div class="tab-pane fade" id="pills-bara" role="tabpanel" aria-labelledby="pills-bara-tab">
+                <div class="row justify-content-center">
+                  <div class="col-md-7">
+                    <p class="lead" style="text-align: center;">Bara also called Wo are thick savory pancakes made from lentil paste mixed with spices</p>
+                  </div>
+                </div>  
+                <div class="row">
+                  <div class="col-md-6 site-animate">
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/bara.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Plain Bara</h5>
+                        <h6 class="text-primary menu-price">$2.00</h6>
+                      </div>
+                    </div>
+                      
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/eggbara.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Egg Bara</h5>
+                        <h6 class="text-primary menu-price">$3.00</h6>
+                      </div>
+                    </div>  
+
+                  </div>
+                  <div class="col-md-6 site-animate">
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/chickenbara.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Chicken or Beef Bara</h5>
+                        <h6 class="text-primary menu-price">$4.00</h6>
+                      </div>
+                    </div>
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/mixbara.JPG" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Mix Bara</h5>
+                        <h6 class="text-primary menu-price">$5.00</h6>
+                      </div>
+                    </div>
+                      
+                  </div>
+                </div>
+              </div>        
+                
+              <div class="tab-pane fade" id="pills-beverages" role="tabpanel" aria-labelledby="pills-beverages-tab">
+                <div class="row">
+                  <div class="col-md-6 site-animate">
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/cola.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Soda</h5>
+                        <h6 class="text-primary menu-price">$1.00</h6>
+                      </div>
+                    </div>
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/seltzer.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Seltzer Water</h5>
+                        <h6 class="text-primary menu-price">$1.00</h6>
+                      </div>
+                    </div>
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/lemonade.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Lemonade</h5>
+                        <h6 class="text-primary menu-price">$1.00</h6>
+                      </div>
+                    </div>  
+
+                  </div>
+                  <div class="col-md-6 site-animate">
+
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/orangejuice.jpeg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Orange Juice</h5>
+                        <h6 class="text-primary menu-price">$2.00</h6>
+                      </div>
+                    </div>
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/snapple.jpg" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Snapple</h5>
+                        <h6 class="text-primary menu-price">$2.00</h6>
+                      </div>
+                    </div>
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/lassi.png" class="img-fluid">
+                      <div class="media-body">
+                        <h5 class="mt-0">Mango Lassi</h5>
+                          <p>Yogurt-based creamy drink, blended with mango fruit and seasonings</p>
+                        <h6 class="text-primary menu-price">$2.00</h6>
+                      </div>
+                    </div>  
+                    <div class="media menu-item">
+                      <img class="mr-3" src="images/lassi.jpg" class="img-fluid" >
+                      <div class="media-body">
+                        <h5 class="mt-0">Momo Crave Special Lassi</h5>
+                          <p>Yogurt-based creamy drink, blended with khoa and seasonings</p>
+                        <h6 class="text-primary menu-price">$4.00</h6>
+                      </div>
+                    </div>  
+  
+
+                      
+                  </div>
+                </div>
+              </div>        
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="site-section bg-light" id="section-news">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-12 text-center mb-5 site-animate">
+            <h2 class="display-4">News</h2>
+          </div>
+
+          <div class="col-md-12">
+            <div class="media d-block mb-4 text-center site-media site-animate">
+              <img src="images/nytimes-banner.jpg" class="img-fluid" >
+              <div class="media-body p-md-5 p-4">
+<!--                <h5 class="mt-0 h4">Chef Special Menu</h5>-->
+                  <img src="images/nytimes.png" width="300px;">
+                <p class="mb-4">Momos That Stand Out in a Crowd.<br>by: <span style="color: #fd990a;">Jeenah Moon</span>
+                  </p>
+
+                <p class="mb-0"><a href="https://www.nytimes.com/2018/11/09/dining/momo-crave-review.html" class="btn btn-primary btn-sm" target="_blank">Read More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="media d-block mb-4 text-center site-media site-animate">
+              <img src="images/grubhubNewsArticle.jpg" class="img-fluid" >
+              <div class="media-body p-md-5 p-4">
+                  <img src="images/grubstreetlogo.png" width="300px;">
+                  <p class="mb-4">The Absolute Best Momos in New York.<br>by: <span style="color: #fd990a;">Joe DiStefano</span>
+                  </p>
+                <p class="mb-0"><a href="https://www.grubstreet.com/bestofnewyork/the-absolute-best-momos-in-nyc.html" class="btn btn-primary btn-sm" target="_blank">Read More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="site-section" id="section-gallery">
+      <div class="container">
+        <div class="row site-custom-gutters">
+
+          <div class="col-md-12 text-center mb-5 site-animate">
+            <h2 class="display-4">Gallery</h2>
+            <div class="row justify-content-center">
+              <div class="col-md-7">
+                <p class="lead">Follow us on Instagram <a href="https://www.instagram.com/momocrave/?hl=en" target="_blank">@momocrave</a> to see more.</p>
+              </div>
+            </div>
+          </div>
+            
+          <div class="col-md-4 site-animate">
+            <a href="images/nytimes-banner.jpg" class="site-thumbnail image-popup">
+              <img src="images/nytimes-banner.jpg" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-md-4 site-animate">
+            <a href="images/16.jpg" class="site-thumbnail image-popup">
+              <img src="images/16.jpg" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-md-4 site-animate">
+            <a href="images/momo%20fusion.jpg" class="site-thumbnail image-popup">
+              <img src="images/momo%20fusion.jpg" class="img-fluid">
+            </a>
+          </div>
+
+          <div class="col-md-4 site-animate">
+            <a href="images/chillimomogallery.jpg" class="site-thumbnail image-popup">
+              <img src="images/chillimomogallery.jpg" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-md-4 site-animate">
+            <a href="images/chaatmomogallery.jpg" class="site-thumbnail image-popup">
+              <img src="images/chaatmomogallery.jpg" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-md-4 site-animate">
+            <a href="images/sukutigallery.jpg" class="site-thumbnail image-popup">
+              <img src="images/sukutigallery.jpg" class="img-fluid">
+            </a>
+          </div>
+            <button class="btn btn-primary btn-sm load-more-btn" >Load More</button>
+        </div>
+          
+          <div class="row site-custom-gutters load-more-row">
+            
+          <div class="col-md-4 site-animate">
+            <a href="images/9.jpg" class="site-thumbnail image-popup">
+              <img src="images/9.jpg" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-md-4 site-animate">
+            <a href="images/11.jpg" class="site-thumbnail image-popup">
+              <img src="images/11.jpg" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-md-4 site-animate">
+            <a href="images/13.jpg" class="site-thumbnail image-popup">
+              <img src="images/13.jpg" class="img-fluid">
+            </a>
+          </div>
+
+          <div class="col-md-4 site-animate">
+            <a href="images/21.jpg" class="site-thumbnail image-popup">
+              <img src="images/21.jpg" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-md-4 site-animate">
+            <a href="images/23.jpg" class="site-thumbnail image-popup">
+              <img src="images/23.jpg" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-md-4 site-animate">
+            <a href="images/28.jpg" class="site-thumbnail image-popup">
+              <img src="images/28.jpg" class="img-fluid">
+            </a>
+          </div>
+        </div>
+          <button class="btn btn-primary btn-sm show-less-btn" >Show Less</button>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="site-section bg-light" id="section-contact">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12 text-center mb-5 site-animate get-in-touch">
+            <h2 class="display-4">Get In Touch</h2>
+            
+          </div>
+
+          <div class="col-md site-animate">
+            <p style="text-align: center;"><img src="images/o.jpg" alt="" class="img-fluid"></p>
+            <p class="text-black">
+                Open Mon - Sun | Closed on Tue
+            </p> 
+              
+            <div class="row justify-content-center">
+              <div class="col-md-7">
+                <p class="lead" style="text-align: center; font-size: 1em;">12pm - 10pm</p>
+              </div>
+            </div>  
+              
+            <p class="text-black">
+              Address: 
+            </p> 
+            <div class="row justify-content-center">
+              <div class="col-md-7">
+                <p class="lead" style="text-align: center; font-size: 1em;"> 38-07 69th St<br>Woodside, NY 11377</p>
+              </div>
+            </div>   
+              
+            <p class="text-black">
+              Phone:
+            </p> 
+            <div class="row justify-content-center">
+              <div class="col-md-7">
+                <p class="lead" style="text-align: center; font-size: 1em;">&#40;718&#41; 255 1714</p>
+              </div>
+            </div>   
+              
+            <p class="text-black">
+              Email:
+            </p> 
+            <div class="row justify-content-center">
+              <div class="col-md-7">
+                <p class="lead" style="text-align: center; font-size: 1em;"><a href="mailto:momocrave@gmail.com">momocrave@gmail.com</a></p>
+              </div>
+            </div>     
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    
+
+    <footer class="site-footer site-bg-dark site-section">
+      <div class="container">
+        <div class="row site-animate">
+           <div class="col-md-12 text-center">
+            <div class="site-footer-widget mb-4">
+              <ul class="site-footer-social list-unstyled ">
+                <li class="site-animate"><a href="https://www.google.com/search?sxsrf=ALeKk002xX3FB1j8Q7rjEiwLYcEpHl39_Q%3A1582738241344&source=hp&ei=QatWXtzrEbOIytMPveGP6Ac&q=momo+crave&oq=momo+cr&gs_l=psy-ab.3.0.0l10.181.1286..2138...0.0..1.315.1007.4j1j1j1......0....1..gws-wiz.......35i39j0i131j0i10.kMw8srheE9Q#lrd=0x89c25fc5800af73d:0xa37c6cd8382d23d6,1,,," target="_blank"><i class="fab fa-google" style="position: relative;top: 50%;transform: translateY(-50%);font-size: 30px;"></i></a></li><li class="site-animate"><a href="https://www.yelp.com/biz/momo-crave-woodside" target="_blank"><i class="fab fa-yelp" style="position: relative;top: 50%;transform: translateY(-50%);font-size: 30px;"></i></a></li>
+                <li class="site-animate"><a href="https://www.facebook.com/momocrave/" target="_blank"><i class="fab fa-facebook-f" style="position: relative;top: 50%;transform: translateY(-50%);font-size: 30px;"></i></a></li>
+                <li class="site-animate"><a href="https://www.instagram.com/momocrave" target="_blank"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12 text-center">
+            <p>Momo Crave <script>document.write(new Date().getFullYear());</script> All rights reserved | by <a href="mailto:whoisanup@gmail.com" style="text-decoration: none;">AnupsDesign</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    
+    <!-- loader -->
+    <div id="site-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+    <script src="js/date-script.js"></script>    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    
+    <script src="js/jquery.animateNumber.min.js"></script>
+
+    <script src="js/main.js"></script>
+
+      <script>
+          $('.load-more-btn').click(()=>{
+              $('.load-more-btn').css("display","none")
+              $('.show-less-btn').css("display","block")
+              $('.load-more-row').addClass("load-more-row-show")
+          })
+          $('.show-less-btn').click(()=>{
+              $('.load-more-btn').css("display","block")
+              $('.show-less-btn').css("display","none")
+              $('.load-more-row').removeClass("load-more-row-show")
+          })
+      </script>
+  </body>
+</html>

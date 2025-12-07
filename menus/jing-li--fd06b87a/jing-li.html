@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+            <title>Jing Li</title>
+    
+    <link href="https://onefork.nyc/assets/bootstrap-exentriq/css/exentriq-bootstrap-material-ui.min.css" rel="stylesheet" defer />
+    <link href="https://onefork.nyc/frontend/css/bootstrap.css" rel="stylesheet">
+    <link rel="icon" href="https://onefork.nyc/">
+    <link href="https://onefork.nyc/frontend/css/DateTimePicker.min.css" rel="stylesheet">
+    <link href="https://onefork.nyc/frontend/css/jquery.fancybox.css?v=2.1.5" rel="stylesheet">
+    <link href="https://onefork.nyc/frontend/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://onefork.nyc/AdminLTE/plugins/fontawesome-free/css/all.min.css">
+    <link href="https://onefork.nyc/frontend/css/toggle.css" rel="stylesheet">
+    <link href="https://onefork.nyc/phone-intl-tel-input/css/intlTelInput.css" rel="stylesheet" />
+
+    <script src="https://onefork.nyc/assets/lazysizes.min.js" async></script>
+
+<script src="https://www.google.com/recaptcha/enterprise.js?render=explicit&onload=onRecaptchaLoad" async defer></script>
+
+
+            
+                    <style>
+                /* definition */
+                @font-face {
+                    font-family: "IMFePIsc28P";
+                    src: url("https://onefork.nyc/fonts/IMFePIsc28P.ttf") format('truetype');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+
+                body {
+                    font-family: "IMFePIsc28P" !important;
+                }
+
+                h1, h2, h3, h4, h5, h6 {
+                    font-family: "IMFePIsc28P" !important;
+                }
+            </style>
+        
+
+        <style>
+            .book-table .book-table-full .green-btn {
+                border-color: #202020;
+                background: #ffffff;
+                color: #000000;
+            }
+
+            .book-table .book-table-full .green-btn:hover {
+                background: #202020;
+                color: #000000;
+            }
+
+            .our-menu-title .our-menu-title-info::before {
+                border-color: #202020;
+            }
+
+            .our-menu-title .our-menu-title-info::after {
+                border-color: #202020;
+            }
+
+            .our-breakfast .our-breakfast-full .our-breakfast-info .our-breakfast-img {
+                border-color: #202020 !important;
+            }
+
+            .our-breakfast .our-breakfast-full .our-breakfast-info span {
+                color: #202020;
+            }
+
+
+            .scrollToTop {
+                background: #202020;
+                border-color: #202020;
+                color: #000000;
+            }
+
+            .scrollToTop:hover {
+                background: #ffffff;
+                border-color: #202020;
+                color: #202020;
+            }
+
+            .our-breakfast .our-breakfast-full .our-breakfast-info h3 a{
+                color:#ffffff;
+            }
+
+        </style>
+
+                    <style>
+                body {
+                    background:#202020;
+                }
+
+                .light-mode {
+                    background:#ffffff;
+                }
+            </style>
+        
+        <style>
+
+            body {
+                transition: background 0.2s linear;
+            }
+
+            .footer {
+                transition: background 0.2s linear;
+                color: #ffffff !important;
+                background:transparent;
+            }
+
+            .footer .footer-bottom p a {
+                color: #ffffff !important;
+            }
+
+            .light-mode .section-title {
+                color:#000000;
+            }
+
+            .light-mode .our-menu-title {
+                color:#000000;
+            }
+
+            .light-mode .footer {
+                background:transparent;
+                color:#000000 !important;
+            }
+
+            .light-mode .footer .footer-bottom p a {
+                color: #000000 !important;
+            }
+
+            .light-mode .our-breakfast .our-breakfast-full .our-breakfast-info h3 {
+                color:#000000;
+            }
+
+            .light-mode .our-breakfast .our-breakfast-full .our-breakfast-info h3 a{
+                color:#000000;
+            }
+
+            .light-mode .our-breakfast .our-breakfast-full .our-breakfast-info .section-sentence {
+                color:#333333;
+            }
+
+
+
+            .modal-title {
+                color: black !important;
+            }
+            
+            .iti {
+                width: 100%;
+            }
+
+            .iti input, .iti input[type=text], .iti input[type=tel] {
+                text-align: left;
+            }
+
+            .iti__flag-container {
+                color: black !important;
+            }
+
+
+
+
+
+
+
+            .scrolling-wrapper {
+                display: flex;
+                flex-wrap: nowrap;
+                -webkit-overflow-scrolling: touch;
+                margin-bottom:8px;
+                align-items: center;
+                overflow-x: scroll;
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+            }
+
+            .scrolling-wrapper::-webkit-scrollbar {
+                display: none;
+            }
+
+            .our-breakfast .our-breakfast-full .our-breakfast-info .our-breakfast-img {
+                display: inline-block;
+                width: auto;
+                padding: 1px;
+                border: 2px solid #B26E30;
+                border-radius: 8%;
+            }
+
+            .card {
+                font-size:12px;
+                flex: 0 0 auto;
+                padding:8px;
+                border-radius:10px;
+                margin:4px;
+                color:#ca3926;
+            }
+
+            .food_title {
+                color: #ffffff !important;
+            }
+
+            .food_description {
+                color: #ffffff !important;
+            }
+
+            .food_price {
+                color: #ffffff !important;
+            }
+
+            .our-menu-name {
+                background: #000000;
+                transition: 0.4s;
+            }
+
+            .light-mode .our-menu-name {
+                background: #eeeeee;
+            }
+
+
+            .light-mode .food_title {
+                color: #000000 !important;
+            }
+
+            .light-mode .food_description {
+                color: #000000 !important;
+            }
+
+            .light-mode .food_price {
+                color: #000000 !important;
+            }
+            .grid-food .menu-column {
+                height: auto !important;
+            }
+
+
+
+            .scroll-video-content {
+                position: relative;
+                margin: 10px 5x 0px 5px;
+            }
+
+            .scroll-video-content video {
+                width: 200px;
+                height: 150px;
+                display: block;
+                border-radius:10px;
+            }
+
+            .scroll-image-content {
+                width: 200px;
+                height: 150px;
+                margin:0px; 
+                border-radius:10px; 
+                position:relative;
+            }
+
+            .like-button {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                background-color: white;
+                color: #000000;
+                border: none;
+                border-radius: 50%;
+                padding:8px;
+
+                font-size: 0.6em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+            .button-liked {
+                color: #e74c3c;
+            }
+
+            .like-button:hover {
+                transform: scale(1.1);
+            }
+
+            @media  screen and (max-width: 480px) {
+
+                .scroll-video-content video {
+                    width: 120px;
+                    height:100px;
+                }
+
+                .scroll-image-content {
+                    width: 120px;
+                    height:100px;
+                }
+                
+                .grid-food .our-breakfast .our-breakfast-full .our-breakfast-info .our-breakfast-img img {
+                    max-height: 190px;
+                    max-width: 220px;
+                }
+            }
+
+            @media  screen and (min-width: 992px){
+
+                .our-breakfast .our-breakfast-full .our-breakfast-info .our-breakfast-img img {
+                width: 100%;
+                height: 160px;
+                max-width: 300px;
+                max-height: 230px;
+                }
+            }
+
+        </style>
+
+
+
+    </head>
+<body>
+
+<script>
+    function toggleMode() {
+        if (document.getElementById('chk').checked) {
+            toggleDarkMode()
+        } else {
+            toggleLightMode()
+        }
+    }
+
+    function toggleDarkMode() {
+        document.querySelector('body').classList.remove('light-mode');
+        window.localStorage.setItem("theme-85", "dark");
+    }
+
+    function toggleLightMode() {
+        document.querySelector('body').classList.add('light-mode');
+        window.localStorage.setItem("theme-85", "light");
+    }
+
+    const currentTheme = window.localStorage.getItem('theme-85') ? window.localStorage.getItem('theme-85') : 'light';
+
+    if (currentTheme) {
+        if (currentTheme === 'dark') {
+            toggleDarkMode();
+        } else if (currentTheme === "light") {
+            toggleLightMode();
+        }
+    }
+</script>
+
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        
+        
+            </div>
+</section>
+
+
+    <!-- Banner -->
+            <div class="banner" style="background-image:url('https://onefork.nyc/uploads/backgroundCover/85.jpg?t=1765053227'); background-size:cover; background-position:center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="banner-info" style="text-align:center">
+                            <a href="https://onefork.nyc/menu/jing-li">
+								<img src="https://onefork.nyc/uploads/logo/85.png?t=1765053227" alt="" style="animation:none">
+							</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#discover" class="arrow-down"><i class="fa fa-angle-down"></i></a>
+        </div>
+    
+	
+	<style>
+		.video-content {
+		  position: relative;
+		  margin: 10px 5x 0px 5px;
+		}
+		.video-content video {
+		  width: 100%;
+		  display: block;
+		  height:200px;
+		  border-radius:10px;
+		}
+
+        .image-content {
+            margin:0px; 
+            border-radius:10px; 
+            height:200px; 
+            position:relative;
+        }
+
+
+
+	</style>
+
+
+    <div class="book-table">
+        <div class="container">
+            <div class="row">
+                <div class="book-table-full">
+
+                                            <style>
+                            @media  screen and (max-width: 480px) {
+                                .video-content video {
+                                    height:160px;
+                                }
+
+                                .image-content {
+                                    height:160px;
+                                }
+                            }
+                        </style>
+                                                                                    <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:10px">
+                                    <a href="https://onefork.nyc/menu/jing-li/dinner-4-course-prix-fixe">
+                                                                                    <div class="image-content" style="background:url('https://onefork.nyc/uploads/category/2193-1753818827.JPG?t=1765053227'); background-size: cover">
+                                                <h5 style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%); font-size:1em;text-shadow: 2px 2px #000000;">Dinner 4 Course Prix Fixe $39</h5>
+                                            </div>
+                                                                            </a>
+                                </div>
+                                                                                                                <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:10px">
+                                    <a href="https://onefork.nyc/menu/jing-li/Lunch%204%20Course%20Prix%20Fixe">
+                                                                                    <div class="image-content" style="background:url('https://onefork.nyc/uploads/category/2195-1757952004.JPG?t=1765053227'); background-size: cover">
+                                                <h5 style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%); font-size:1em;text-shadow: 2px 2px #000000;">LUNCH 4 COURSE PRIX FIXE $25</h5>
+                                            </div>
+                                                                            </a>
+                                </div>
+                                                                                                                <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:10px">
+                                    <a href="https://onefork.nyc/menu/jing-li/appetizers">
+                                                                                    <div class="image-content" style="background:url('https://onefork.nyc/uploads/category/1865.jpg?t=1765053227'); background-size: cover">
+                                                <h5 style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%); font-size:1em;text-shadow: 2px 2px #000000;">頭盤 Appetizers</h5>
+                                            </div>
+                                                                            </a>
+                                </div>
+                                                                                                                <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:10px">
+                                    <a href="https://onefork.nyc/menu/jing-li/dim-sum-soup">
+                                                                                    <div class="image-content" style="background:url('https://onefork.nyc/uploads/category/1866.jpg?t=1765053227'); background-size: cover">
+                                                <h5 style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%); font-size:1em;text-shadow: 2px 2px #000000;">點心 Dim Sum &amp; 湯 Soup</h5>
+                                            </div>
+                                                                            </a>
+                                </div>
+                                                                                                                <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:10px">
+                                    <a href="https://onefork.nyc/menu/jing-li/rice-noodles">
+                                                                                    <div class="image-content" style="background:url('https://onefork.nyc/uploads/category/1867.jpg?t=1765053227'); background-size: cover">
+                                                <h5 style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%); font-size:1em;text-shadow: 2px 2px #000000;">飯面 Rice &amp; Noodles</h5>
+                                            </div>
+                                                                            </a>
+                                </div>
+                                                                                                                <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:10px">
+                                    <a href="https://onefork.nyc/menu/jing-li/signature-dishes">
+                                                                                    <div class="image-content" style="background:url('https://onefork.nyc/uploads/category/1944.jpg?t=1765053227'); background-size: cover">
+                                                <h5 style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%); font-size:1em;text-shadow: 2px 2px #000000;">主廚臻選 Signature Dishes</h5>
+                                            </div>
+                                                                            </a>
+                                </div>
+                                                                                                                <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:10px">
+                                    <a href="https://onefork.nyc/menu/jing-li/vegetable-sides">
+                                                                                    <div class="image-content" style="background:url('https://onefork.nyc/uploads/category/1869.jpg?t=1765053227'); background-size: cover">
+                                                <h5 style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%); font-size:1em;text-shadow: 2px 2px #000000;">蔬菜 Vegetable &amp; Sides</h5>
+                                            </div>
+                                                                            </a>
+                                </div>
+                                                                                                                <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:10px">
+                                    <a href="https://onefork.nyc/menu/jing-li/ma-la-szechuan">
+                                                                                    <div class="image-content" style="background:url('https://onefork.nyc/uploads/category/1868.jpg?t=1765053227'); background-size: cover">
+                                                <h5 style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%); font-size:1em;text-shadow: 2px 2px #000000;">賞味湘川 Ma-La Szechuan</h5>
+                                            </div>
+                                                                            </a>
+                                </div>
+                                                                                                                <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:10px">
+                                    <a href="https://onefork.nyc/menu/jing-li/dessert">
+                                                                                    <div class="image-content" style="background:url('https://onefork.nyc/uploads/category/1883.JPG?t=1765053227'); background-size: cover">
+                                                <h5 style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%); font-size:1em;text-shadow: 2px 2px #000000;">甜点 Dessert</h5>
+                                            </div>
+                                                                            </a>
+                                </div>
+                                                                                                                <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:10px">
+                                    <a href="https://onefork.nyc/menu/jing-li/drinking-menu">
+                                                                                    <div class="image-content" style="background:url('https://onefork.nyc/uploads/category/2108-1726867756.jpg?t=1765053227'); background-size: cover">
+                                                <h5 style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%); font-size:1em;text-shadow: 2px 2px #000000;">Drinking Menu</h5>
+                                            </div>
+                                                                            </a>
+                                </div>
+                                                                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="promoModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="margin:60px auto; padding:24px">
+            <div class="modal-content" style="background: transparent">
+                <div class="modal-body" style="padding:0px;background: #000000;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position:absolute;top:-24px;right:0;opacity:1"><i class="fas fa-times" style="color:#ffffff"></i></button>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<style>
+    @font-face {
+        font-family: 'Digital';
+        src: URL('https://onefork.nyc/frontend/digital-7.ttf') format('truetype');
+    }
+
+    .unique-checkbox .checkbox {
+        opacity: 0;
+        position: absolute;
+    }
+
+    .scrolling-wrapper > .active {
+        color: #ffffff;
+        background: #ca3926;
+        border: 1px solid #ca3926;
+    }
+
+    .unique-checkbox .label {
+        font-family: 'Digital';
+        background-color: #111;
+        border-radius: 50px;
+        cursor: pointer;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+        position: relative;
+        height: 26px;
+        width: 50px;
+    }
+
+    .unique-checkbox .label .ball {
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 2px;
+        height: 18px;
+        width: 18px;
+        transform: translateX(0px);
+        transition: transform 0.2s linear;
+    }
+
+    .unique-checkbox .checkbox:checked + .label .ball {
+        transform: translateX(18px);
+    }
+
+    .unique-checkbox .fa-moon {
+        color: #f1c40f;
+    }
+
+    .unique-checkbox .fa-sun {
+        color: #f39c12;
+    }
+</style>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="footer-full">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="footer-info">
+                            <div class="footer-info-post">
+
+                                <div style="text-align: center">
+
+                                </div>
+                                
+                                <br />
+
+                                                                    <br />
+                                    <div class="theme-switch-wrapper" style="padding:10px; text-align:center;">
+                                        <div class="unique-checkbox">
+                                            <input type="checkbox" class="checkbox" id="chk" onclick="toggleMode()"/>
+                                            <label class="label" for="chk">
+                                                <i class="fas fa-moon" style="font-size:14px"></i>
+                                                <i class="fas fa-sun" style="font-size:14px"></i>
+                                                <div class="ball"></div>
+                                            </label>
+                                        </div>
+                                        <br />
+                                    </div>
+                                
+
+                                                                    <p class="footer-about">If you have food allergy, please speak to the owner, manager, chef or your server<br>18% gratuity for party of 6 or more</p>
+                                                                <br />
+                                                                    <div class="counter-count" style="font-family:digital;letter-spacing:2px">
+                                        0000081099
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p><a href="https://onebrandingny.com">POWERED BY ONE BRANDING NY</a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scroll To Top -->
+<a href="#" class="scrollToTop"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
+
+<script src="https://onefork.nyc/frontend/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://onefork.nyc/frontend/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://onefork.nyc/frontend/js/DateTimePicker.min.js"></script>
+<script type="text/javascript" src="https://onefork.nyc/frontend/js/viewportchecker.js"></script>
+<script type="text/javascript" src="https://onefork.nyc/frontend/js/script.js"></script>
+<script type="text/javascript" src="https://onefork.nyc/frontend/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="https://onefork.nyc/assets/bootstrap-exentriq/js/exentriq-bootstrap-material-ui.min.js" defer ></script>
+<script src="https://onefork.nyc/phone-intl-tel-input/js/intlTelInput.js"></script>
+
+<script type="text/javascript">
+
+    // fancybox //
+    $(document).ready(function() {
+        // Change title type, overlay closing speed
+        $(".fancybox").fancybox({
+            helpers: {
+                title : {
+                    type : 'outside'
+                },
+                overlay : {
+                    speedOut : 0
+                }
+            }
+        });
+    });
+</script>
+
+
+<script>
+    if (currentTheme) {
+        if (currentTheme === 'dark') {
+            document.getElementById('chk').checked = true;
+            toggleDarkMode();
+        } else if (currentTheme === "light") {
+            document.getElementById('chk').checked = false;
+            toggleLightMode();
+        }
+    }
+</script>
+
+
+
+
+</body>
+</html
+
+</body>
+</html>

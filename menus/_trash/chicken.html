@@ -1,0 +1,2976 @@
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title debug: Title is set to: Chicken - MEI KONG Restaurant -->
+    <title>Chicken - MEI KONG Restaurant</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Enjoy the best of Chinese, Pakistani, and Continental food at MEI KONG Restaurant. Also discover MEI MASALA for traditional dishes and MEI Cafe for a delightful
+">
+        <meta name="keywords" content="mei kong, mei kong restaurant, best top 10 restaurant in lahore, pakistani restaurant, Chinese restaurant, continental restaurant, best Chinese food in Lahore, mei masala, mei cafe">
+        
+        <link rel="icon" href="assets/images/site_favicon_1744876921.png" type="image/x-icon">
+        <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/dynamic-styles.php?v=1765047229">
+    <link rel="stylesheet" href="assets/css/dynamic-styles-direct.php?v=1765047229">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+        
+    <!-- Custom Header Script -->
+        
+    <script>
+        // Define global variables for use throughout the site
+        const CSRF_TOKEN = '65f708923fee2a647012489798004ca1fcbecee15a7190e8e0db4a2e2c454dc1';
+        const DISCOUNT_RATE = 20;
+    </script>
+    
+    <style>
+        /* Header layout */
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Add new auth buttons styling */
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+        }
+        
+        .login-signup-btn {
+            text-decoration: none;
+            color: var(--button-text-color) !important;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            background: var(--button-gradient, var(--cart-button-color));
+            border-radius: 4px;
+            box-shadow: var(--button-shadow);
+        }
+        
+        .login-signup-btn i {
+            margin-right: 8px;
+            font-size: 14px;
+        }
+        
+        .login-signup-btn:hover {
+            background: var(--button-hover-gradient, var(--button-hover-color));
+            color: var(--button-text-color) !important;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Change styling for the mobile sidebar login button */
+        .mobile-sidebar-nav .login-signup-btn {
+            background: var(--button-gradient, var(--cart-button-color));
+            color: var(--button-text-color);
+            padding: 8px 12px;
+            font-weight: 500;
+            border-radius: 4px;
+            box-shadow: var(--button-shadow);
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .mobile-sidebar-nav .login-signup-btn:hover {
+            background: var(--button-hover-gradient, var(--button-hover-color));
+            color: var(--button-text-color);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .auth-buttons {
+                display: none; /* Hide on mobile since we have the sidebar menu */
+            }
+        }
+        
+        /* Master categories menu styles */
+        .master-categories-menu {
+            margin-left: 8px;
+        }
+        
+        .master-categories-menu ul {
+            display: flex;
+            justify-content: flex-start;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .master-categories-menu ul li {
+            margin-right: 20px;
+            margin-left: 0;
+        }
+        
+        .master-categories-menu ul li a {
+            font-weight: 500;
+            color: #000000;
+            padding: 5px 0;
+            display: block;
+        }
+        
+        .master-categories-menu ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Branch announcement bar */
+        .branch-announcement-bar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .branch-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .branch-location {
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        
+        .branch-location i {
+            margin-right: 5px;
+        }
+        
+        .change-branch-btn {
+            margin-left: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        
+        .change-branch-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Branch closed tag */
+        .branch-status-tag {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8em;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: transform 0.3s ease-in-out;
+            transform-origin: top center;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .branch-status-tag i {
+            margin-right: 5px;
+        }
+        
+        .branch-status-tag:hover {
+            transform: translateY(3px);
+        }
+        
+        .branch-countdown {
+            margin-left: 8px;
+            font-weight: 400;
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        /* Branch time popup */
+        .branch-time-popup {
+            position: fixed;
+            top: 40px;
+            right: 10px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            width: 280px;
+            display: none;
+            color: #333;
+            text-align: left;
+            border-left: 5px solid #dc3545;
+        }
+        
+        .branch-time-popup h3 {
+            margin-top: 0;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            color: #dc3545;
+        }
+        
+        .branch-time-popup h3 i {
+            margin-right: 8px;
+        }
+        
+        .branch-time-popup p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        .branch-time-popup .hours {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        .branch-time-popup .countdown-wrapper {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #dc3545;
+        }
+        
+        /* Branch Selection Popup */
+        .branch-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-out;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 15px;
+        }
+        
+        .branch-popup-container {
+            background-color: white;
+            border-radius: 16px;
+            width: 95%;
+            max-width: 550px;
+            padding: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-height: calc(100vh - 40px);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: scaleIn 0.3s ease-out;
+        }
+        
+        @keyframes scaleIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .popup-header {
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 20px 15px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #ff6b6b 100%);
+            color: white;
+        }
+        
+        .popup-header h2 {
+            margin: 0;
+            color: white;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .popup-header h2 i {
+            margin-right: 10px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .popup-close {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+            transition: all 0.2s;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .popup-close:hover {
+            background: rgba(255,255,255,0.4);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        /* Delivery Delay Notice */
+        .delivery-delay-notice {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #5d6d7e 100%);
+            padding: 15px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            animation: slideDown 0.3s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Thunderstorm Sky Animation */
+        .delivery-delay-notice::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+            animation: thunderstorm 4s infinite;
+            z-index: 1;
+        }
+        
+        /* Lightning Flash Effect */
+        .delivery-delay-notice::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.3);
+            opacity: 0;
+            animation: lightning 6s infinite;
+            z-index: 2;
+        }
+        
+        /* Raindrops */
+        .delivery-delay-notice .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.8));
+            border-radius: 0 0 50% 50%;
+            animation: rain 1s linear infinite;
+            z-index: 3;
+        }
+        
+        .delivery-delay-notice .raindrop:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .delivery-delay-notice .raindrop:nth-child(2) { left: 20%; animation-delay: 0.2s; }
+        .delivery-delay-notice .raindrop:nth-child(3) { left: 30%; animation-delay: 0.4s; }
+        .delivery-delay-notice .raindrop:nth-child(4) { left: 40%; animation-delay: 0.6s; }
+        .delivery-delay-notice .raindrop:nth-child(5) { left: 50%; animation-delay: 0.8s; }
+        .delivery-delay-notice .raindrop:nth-child(6) { left: 60%; animation-delay: 1s; }
+        .delivery-delay-notice .raindrop:nth-child(7) { left: 70%; animation-delay: 1.2s; }
+        .delivery-delay-notice .raindrop:nth-child(8) { left: 80%; animation-delay: 1.4s; }
+        .delivery-delay-notice .raindrop:nth-child(9) { left: 90%; animation-delay: 1.6s; }
+        
+        .delivery-delay-notice .notice-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .delivery-delay-notice .notice-content i {
+            font-size: 16px;
+            color: #fff;
+            animation: thunderPulse 2s infinite;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        
+        @keyframes slideDown {
+            0% { transform: translateY(-10px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes thunderstorm {
+            0%, 100% { opacity: 0.3; }
+            25% { opacity: 0.5; }
+            50% { opacity: 0.4; }
+            75% { opacity: 0.6; }
+        }
+        
+        @keyframes lightning {
+            0%, 95%, 100% { opacity: 0; }
+            5%, 10% { opacity: 0.8; }
+            15%, 20% { opacity: 0; }
+            25%, 30% { opacity: 0.6; }
+        }
+        
+        @keyframes rain {
+            0% { 
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            10% { 
+                opacity: 1;
+            }
+            90% { 
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(60px);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes thunderPulse {
+            0%, 100% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.8;
+                transform: scale(1.1);
+            }
+            75% { 
+                opacity: 0.9;
+                transform: scale(1.05);
+            }
+        }
+        
+        /* Branch list */
+        .branch-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            max-height: 60vh;
+        }
+        
+        .branch-item {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            background-color: white;
+            position: relative;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .branch-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+        
+        .branch-item.closed {
+            opacity: 0.85;
+        }
+        
+        .branch-select-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 15px;
+            color: inherit;
+            text-decoration: none;
+            text-align: center;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Ripple effect on click */
+        .branch-select-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(var(--primary-color-rgb), 0.3);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%, -50%);
+            transform-origin: 50% 50%;
+            z-index: -1;
+        }
+        
+        .branch-select-btn:active::after {
+            animation: ripple 0.6s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% { transform: scale(0, 0) translate(-50%, -50%); opacity: 0.5; }
+            100% { transform: scale(20, 20) translate(-50%, -50%); opacity: 0; }
+        }
+        
+        .branch-icon {
+            width: 70px;
+            height: 70px;
+            background-color: #f9f9f9;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 2px solid #f0f0f0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .branch-item:hover .branch-icon {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .branch-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .branch-item:hover .branch-icon img {
+            transform: scale(1.1);
+        }
+        
+        .branch-icon i {
+            font-size: 28px;
+            color: var(--primary-color);
+        }
+        
+        .branch-details {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .branch-details h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            color: #333;
+            transition: color 0.3s;
+        }
+        
+        .branch-item:hover .branch-details h3 {
+            color: var(--primary-color);
+        }
+        
+        .branch-city {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        /* Status pill */
+        .status-pill {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 5px;
+            transition: all 0.3s;
+        }
+        
+        .status-pill.open {
+            background-color: #28a745 !important;
+            color: white !important;
+        }
+        
+        .status-pill.closed {
+            background-color: #dc3545;
+            color: white;
+        }
+        
+        .branch-item:hover .status-pill {
+            transform: scale(1.05);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+        
+        /* Mobile responsiveness for branch list */
+        @media (max-width: 768px) {
+            .branch-popup-container {
+                width: 100%;
+                height: 100%;
+                max-height: 100vh;
+                border-radius: 0;
+                margin: 0;
+            }
+            
+            .popup-header {
+                padding: 15px;
+            }
+            
+            .branch-list {
+                padding: 15px;
+                max-height: calc(100vh - 70px);
+                grid-template-columns: 1fr 1fr;
+                overflow-y: auto;
+                align-content: start;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .branch-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .branch-details h3 {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .branch-list {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .branch-select-btn {
+                flex-direction: row;
+                text-align: left;
+                padding: 15px;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            
+            .branch-icon {
+                margin-bottom: 0;
+                margin-right: 15px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .branch-details {
+                text-align: left;
+            }
+            
+            .status-pill {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+        }
+        
+        /* Right side navigation options */
+        .header-right-nav {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+        
+        .header-right-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header-right-nav ul li {
+            margin-left: 20px;
+        }
+        
+        .header-right-nav ul li:first-child {
+            margin-left: 0;
+        }
+        
+        .nav-option {
+            display: flex;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-option i {
+            margin-right: 5px;
+            font-size: 16px;
+            color: var(--primary-color);
+        }
+        
+        .nav-option:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Responsive adjustments for navigation */
+        @media (max-width: 992px) {
+            .nav-option-text {
+                display: none;
+            }
+            
+            .header-right-nav ul li {
+                margin-left: 15px;
+            }
+            
+            .nav-option i {
+                font-size: 18px;
+                margin-right: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-right-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="">
+    <!-- Mobile Menu Toggle Button -->
+    <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <!-- Mobile Sidebar Menu -->
+    <div class="mobile-sidebar">
+        <div class="mobile-sidebar-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="mobile-sidebar-header">
+            <div class="logo">
+                                                        <img src="assets/images/site_logo_1744876920.png" alt="MEI KONG Restaurant">
+                            </div>
+        </div>
+        <div class="mobile-sidebar-nav">
+            <ul>
+                <li><a href="index.php?branch=5"><i class="fas fa-home"></i> Home</a></li>
+                                <li>
+                    <a href="menu.php?master=7&branch=5">
+                        <i class="fas fa-utensils"></i> Chinese                    </a>
+                </li>
+                                <li>
+                    <a href="deals.php?branch=5">
+                        <i class="fas fa-tags"></i> Deals
+                    </a>
+                </li>
+                <li><a href="cart.php?branch=5"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                
+                <!-- Additional Navigation Options for Mobile -->
+                <li><a href="location.php?branch=5"><i class="fas fa-map-marker-alt"></i> Location</a></li>
+                <li><a href="contact.php?branch=5"><i class="fas fa-phone"></i> Contact</a></li>
+                <li><a href="reservation.php?branch=5"><i class="fas fa-calendar-alt"></i> Reservation</a></li>
+                
+                                <li><a href="login.php?branch=5" class="login-signup-btn">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Login / Signup</span>
+                </a></li>
+                            </ul>
+        </div>
+    </div>
+    
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="mobile-sidebar-backdrop"></div>
+
+    <!-- Message container for alerts -->
+    <div id="message-container"></div>
+    
+        
+        <!-- Branch Announcement Bar -->
+    <div class="branch-announcement-bar">
+        <div class="container">
+            <div class="branch-info">
+                <div class="branch-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>
+                        Bahria Town Branch 
+                                            </span>
+                </div>
+                <button id="show-branch-popup" class="change-branch-btn">Change</button>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Branch Selection Popup (hidden by default) -->
+    <div id="branch-popup" class="branch-popup-overlay" style="display: none;">
+        <div class="branch-popup-container">
+            <div class="popup-header">
+                <h3><i class="fas fa-store"></i> Select Your Nearest Branch</h3>
+                <button id="close-branch-popup" class="popup-close">&times;</button>
+            </div>
+            
+            <!-- Delivery Delay Notice -->
+            <div class="delivery-delay-notice">
+                <!-- Raindrops -->
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                
+                <div class="notice-content">
+                    <i class="fas fa-cloud-rain"></i>
+                    <span>Delivery delays possible due to rainy weather. We appreciate your patience!</span>
+                </div>
+            </div>
+            
+            <div class="branch-list">
+                                <div class="branch-item open">
+                    <a href="index.php?branch=5" class="branch-select-btn">
+                        <div class="branch-icon">
+                                                            <img src="assets/images/branches/default.png" alt="Bahria Town Branch icon">
+                                                    </div>
+                        <div class="branch-details">
+                            <h3>Bahria Town Branch</h3>
+                                                        <div class="branch-city">Lahore</div>
+                                                        
+                            <div class="status-pill open">
+                                OPEN                            </div>
+                        </div>
+                    </a>
+                </div>
+                                <div class="branch-item open">
+                    <a href="index.php?branch=1" class="branch-select-btn">
+                        <div class="branch-icon">
+                                                            <img src="assets/images/branches/default.png" alt="Barkat Market Branch icon">
+                                                    </div>
+                        <div class="branch-details">
+                            <h3>Barkat Market Branch</h3>
+                                                        <div class="branch-city">Lahore</div>
+                                                        
+                            <div class="status-pill open">
+                                OPEN                            </div>
+                        </div>
+                    </a>
+                </div>
+                                <div class="branch-item open">
+                    <a href="index.php?branch=3" class="branch-select-btn">
+                        <div class="branch-icon">
+                                                            <img src="assets/images/branches/default.png" alt="DHA Phase 4 Branch icon">
+                                                    </div>
+                        <div class="branch-details">
+                            <h3>DHA Phase 4 Branch</h3>
+                                                        <div class="branch-city">Lahore</div>
+                                                        
+                            <div class="status-pill open">
+                                OPEN                            </div>
+                        </div>
+                    </a>
+                </div>
+                                <div class="branch-item open">
+                    <a href="index.php?branch=2" class="branch-select-btn">
+                        <div class="branch-icon">
+                                                            <img src="assets/images/branches/default.png" alt="DHA Phase 5 Branch icon">
+                                                    </div>
+                        <div class="branch-details">
+                            <h3>DHA Phase 5 Branch</h3>
+                                                        <div class="branch-city">Lahore</div>
+                                                        
+                            <div class="status-pill open">
+                                OPEN                            </div>
+                        </div>
+                    </a>
+                </div>
+                                <div class="branch-item open">
+                    <a href="index.php?branch=4" class="branch-select-btn">
+                        <div class="branch-icon">
+                                                            <img src="assets/images/branches/default.png" alt="Faisal Town Branch icon">
+                                                    </div>
+                        <div class="branch-details">
+                            <h3>Faisal Town Branch</h3>
+                                                        <div class="branch-city">Lahore</div>
+                                                        
+                            <div class="status-pill open">
+                                OPEN                            </div>
+                        </div>
+                    </a>
+                </div>
+                                <div class="branch-item open">
+                    <a href="index.php?branch=6" class="branch-select-btn">
+                        <div class="branch-icon">
+                                                            <img src="assets/images/branches/default.png" alt="Sialkot Cantt Branch icon">
+                                                    </div>
+                        <div class="branch-details">
+                            <h3>Sialkot Cantt Branch</h3>
+                                                        <div class="branch-city">Sialkot</div>
+                                                        
+                            <div class="status-pill open">
+                                OPEN                            </div>
+                        </div>
+                    </a>
+                </div>
+                            </div>
+        </div>
+    </div>
+    
+    <!-- Logo Section -->
+    <div class="logo-section" style="text-align: center; padding: 5px 0; background: white; line-height: 0;">
+        <a href="index.php?branch=5">
+                                            <img src="assets/images/site_logo_1744876920.png" alt="MEI KONG Restaurant Logo" style="height: 80px; margin: 0;">
+                    </a>
+    </div>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="header-left">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.php?branch=5"><i class="fas fa-home"></i></a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Master Categories Menu (Desktop) - Left Aligned -->
+                                <div class="master-categories-menu">
+                    <ul>
+                                                <li>
+                            <a href="menu.php?master=7&branch=5">
+                                Chinese                            </a>
+                        </li>
+                                                <li>
+                            <a href="deals.php?branch=5">
+                                Deals
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                            </div>
+            
+            <!-- Navigation options on right side -->
+            <div class="header-right-nav">
+                <ul>
+                    <li><a href="location.php?branch=5" class="nav-option"><i class="fas fa-map-marker-alt"></i> <span class="nav-option-text">Location</span></a></li>
+                    <li><a href="contact.php?branch=5" class="nav-option"><i class="fas fa-phone"></i> <span class="nav-option-text">Contact</span></a></li>
+                    <li><a href="reservation.php?branch=5" class="nav-option"><i class="fas fa-calendar-alt"></i> <span class="nav-option-text">Reservation</span></a></li>
+                </ul>
+            </div>
+            
+            <div class="user-actions">
+                <div class="cart">
+                    <a href="cart.php?branch=5" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <span class="cart-text">Cart</span>
+                                            </a>
+                </div>
+                
+                <div class="user-menu">
+                                            <div class="auth-buttons">
+                            <a href="login.php?branch=5" class="login-signup-btn">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Login / Signup</span>
+                            </a>
+                        </div>
+                                    </div>
+            </div>
+            
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Mobile only - Master Categories moved here by JS -->
+            <div class="mobile-master-categories"></div>
+        </div>
+    </header>
+    
+    <div id="message-container">
+            </div>
+    
+    <!-- Script for branch selection popup -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const branchPopup = document.getElementById('branch-popup');
+        const showBranchPopupBtn = document.getElementById('show-branch-popup');
+        const closeBranchPopupBtn = document.getElementById('close-branch-popup');
+        
+        // Check if a branch parameter exists in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const hasBranchParam = urlParams.has('branch');
+        const branchValue = urlParams.get('branch');
+        
+        // Auto-show branch selector if no branch is selected or if branch parameter is empty
+        if (!hasBranchParam || branchValue === '' || branchValue === '0') {
+            // Show popup with slight delay to ensure everything is loaded
+            setTimeout(function() {
+                if (branchPopup) {
+                    branchPopup.style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling behind popup
+                }
+            }, 300);
+        }
+        
+        if (showBranchPopupBtn) {
+            showBranchPopupBtn.addEventListener('click', function() {
+                branchPopup.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling behind popup
+                
+                // Mark all branch links to redirect to home page when changing from topbar
+                const branchLinks = document.querySelectorAll('.branch-select-btn');
+                branchLinks.forEach(link => {
+                    // Get the branch ID from the current link
+                    const url = new URL(link.href);
+                    const branchId = url.searchParams.get('branch');
+                    // Simply redirect to index.php with the branch parameter
+                    link.href = 'index.php?branch=' + branchId;
+                });
+            });
+        }
+        
+        if (closeBranchPopupBtn) {
+            closeBranchPopupBtn.addEventListener('click', function() {
+                branchPopup.style.display = 'none';
+                document.body.style.overflow = ''; // Re-enable scrolling
+            });
+        }
+        
+        // Close popup when clicking outside of it
+        branchPopup.addEventListener('click', function(e) {
+            if (e.target === branchPopup) {
+                branchPopup.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close popup when Escape key is pressed
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && branchPopup.style.display === 'flex') {
+                branchPopup.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    </script>
+    
+    <main class="main-content">
+        <div class="container"> 
+<!-- Clean, Professional Menu Page -->
+<div class="menu-container">
+    <div class="container py-4" style="width: 100%; max-width: 100%; padding-left: 0; padding-right: 0;">
+        <!-- White Background Container -->
+        <div class="white-bg-container">
+            <!-- Category Navigation -->
+            <section class="categories-section">
+                <div class="categories-container">
+                                                                        <div class="category-item">
+                                <a href="menu.php?category=12&branch=5&master=7"
+                                   class="">
+                                    <div class="category-icon">
+                                                                                    <img src="assets/images/categories/67fac5ab8cad8-1744487851.jpg" alt="House Special">
+                                                                            </div>
+                                    <div class="category-name">House Special</div>
+                                </a>
+                            </div>
+                                                    <div class="category-item">
+                                <a href="menu.php?category=18&branch=5&master=7"
+                                   class="">
+                                    <div class="category-icon">
+                                                                                    <img src="assets/images/categories/67fac600c00d5-1744487936.webp" alt="Appetizers">
+                                                                            </div>
+                                    <div class="category-name">Appetizers</div>
+                                </a>
+                            </div>
+                                                    <div class="category-item">
+                                <a href="menu.php?category=24&branch=5&master=7"
+                                   class="">
+                                    <div class="category-icon">
+                                                                                    <img src="assets/images/categories/67fac7062c1ca-1744488198.webp" alt="Soups">
+                                                                            </div>
+                                    <div class="category-name">Soups</div>
+                                </a>
+                            </div>
+                                                    <div class="category-item">
+                                <a href="menu.php?category=30&branch=5&master=7"
+                                   class="active">
+                                    <div class="category-icon">
+                                                                                    <img src="assets/images/categories/67fe3352e5409-1744712530.webp" alt="Chicken">
+                                                                            </div>
+                                    <div class="category-name">Chicken</div>
+                                </a>
+                            </div>
+                                                    <div class="category-item">
+                                <a href="menu.php?category=36&branch=5&master=7"
+                                   class="">
+                                    <div class="category-icon">
+                                                                                    <img src="assets/images/categories/67ffa6c549a91-1744807621.webp" alt="Prawns">
+                                                                            </div>
+                                    <div class="category-name">Prawns</div>
+                                </a>
+                            </div>
+                                                    <div class="category-item">
+                                <a href="menu.php?category=42&branch=5&master=7"
+                                   class="">
+                                    <div class="category-icon">
+                                                                                    <img src="assets/images/categories/67ffa6d654021-1744807638.webp" alt="Fish">
+                                                                            </div>
+                                    <div class="category-name">Fish</div>
+                                </a>
+                            </div>
+                                                    <div class="category-item">
+                                <a href="menu.php?category=48&branch=5&master=7"
+                                   class="">
+                                    <div class="category-icon">
+                                                                                    <img src="assets/images/categories/67ffa6ee08996-1744807662.webp" alt="Beef">
+                                                                            </div>
+                                    <div class="category-name">Beef</div>
+                                </a>
+                            </div>
+                                                    <div class="category-item">
+                                <a href="menu.php?category=54&branch=5&master=7"
+                                   class="">
+                                    <div class="category-icon">
+                                                                                    <img src="assets/images/categories/67ffa703109d6-1744807683.webp" alt="Rice">
+                                                                            </div>
+                                    <div class="category-name">Rice</div>
+                                </a>
+                            </div>
+                                                    <div class="category-item">
+                                <a href="menu.php?category=60&branch=5&master=7"
+                                   class="">
+                                    <div class="category-icon">
+                                                                                    <img src="assets/images/categories/67ffa71627870-1744807702.webp" alt="Noodles">
+                                                                            </div>
+                                    <div class="category-name">Noodles</div>
+                                </a>
+                            </div>
+                                                            </div>
+            </section>
+
+            <!-- Menu Content -->
+            <div class="menu-content">
+                                                                                                                                                            <section id="category-30" class="category-section">
+                            <div class="category-header">
+                                <h2>Chicken</h2>
+                                                            </div>
+                            
+                            <div class="product-grid">
+                                                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8c0a1c8d8-1745652746.jpg" alt="Bangkok Chili Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Bangkok Chili Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="263" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8be0739f1-1745652704.webp" alt="Chicken 9 Lives">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Chicken 9 Lives</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="257" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8aee95841-1745652462.webp" alt="Chicken Chilli Dry (Without Gravy)">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Chicken Chilli Dry (Without Gravy)</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="226" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8dc2d0b7a-1745653186.webp" alt="Chicken Manchurian">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Chicken Manchurian</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="319" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8d23b957f-1745653027.webp" alt="Chicken with Almonds">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Chicken with Almonds</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="301" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8c56e54f2-1745652822.jpg" alt="Chicken with Black Pepper">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Chicken with Black Pepper</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="271" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8a8ba1c10-1745652363.webp" alt="Chicken with Cashew Nuts">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Chicken with Cashew Nuts</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="213" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8da036778-1745653152.webp" alt="Chicken with Mushroom & Vegetables">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Chicken with Mushroom & Vegetables</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="317" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8cb277dbe-1745652914.webp" alt="Chicken with Mushrooms in Garlic Sauce">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Chicken with Mushrooms in Garlic Sauce</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="284" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8c33158ae-1745652787.jpg" alt="Crispy Shanghai Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Crispy Shanghai Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="269" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/68f0af74ca919-1760604020.webp" alt="Dumpling">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Dumpling</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 650</span>
+                                                        Rs. 520                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="903" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/68f0afaf6fb56-1760604079.webp" alt="Dynamite Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Dynamite Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,350</span>
+                                                        Rs. 1,080                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="910" 
+                                                        data-customizable="0">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8c85d38b8-1745652869.webp" alt="Garlic Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Garlic Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="281" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/68f0b000c024f-1760604160.webp" alt="Honey Wings">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Honey Wings</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 750</span>
+                                                        Rs. 600                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="919" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8df2629bf-1745653234.webp" alt="Hot Braised Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Hot Braised Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="324" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <div class="no-image">No Image</div>
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">House Of Classic Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="892" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8b1b9a2f6-1745652507.webp" alt="Kung Pao Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Kung Pao Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="233" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8b4b56f4c-1745652555.webp" alt="Mongolian Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Mongolian Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="236" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8cfc203a9-1745652988.webp" alt="Oyster Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Oyster Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="299" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8ac36179d-1745652419.jpg" alt="Red Dragon Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Red Dragon Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="217" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8d76cb73b-1745653110.webp" alt="Sesame Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Sesame Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="308" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8bb7f028d-1745652663.webp" alt="Special Chicken Szechuan">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Special Chicken Szechuan</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="247" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8cd87f086-1745652952.webp" alt="Stir Fried Chicken with Basil">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Stir Fried Chicken with Basil</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="293" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8e3832412-1745653304.webp" alt="Stir Fried Chicken with Black Bean Sauce">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Stir Fried Chicken with Black Bean Sauce</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="337" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8e5c82b61-1745653340.webp" alt="Stir Fried Veggies & Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Stir Fried Veggies & Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="344" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8b77be7e8-1745652599.webp" alt="Sweet & Sour Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Sweet & Sour Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="245" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/680c8e1418925-1745653268.webp" alt="Sweet Chilli Chicken">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Sweet Chilli Chicken</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,650</span>
+                                                        Rs. 1,320                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="332" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="product-item">
+                                            <div class="product-image">
+                                                                                                    <img src="assets/images/products/68f0b0691b660-1760604265.webp" alt="Tenderloin Chicken (6Pcs)">
+                                                                                                                                                <div class="discount-badge">-20%</div>
+                                            </div>
+                                            <div class="product-details">
+                                                <h3 class="product-name">Tenderloin Chicken (6Pcs)</h3>
+                                                <div class="price-cart-row">
+                                                    <div class="product-price">
+                                                                                                                <span class="original-price">Rs. 1,250</span>
+                                                        Rs. 1,000                                                    </div>
+                                                    <button class="add-to-cart-btn" 
+                                                        data-id="924" 
+                                                        data-customizable="1">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                </div>
+                        </section>
+                                                                                                                                                                
+                                            <div class="view-all-categories" style="text-align: center; margin-top: 30px;">
+                            <a href="menu.php?branch=5&master=7" class="btn btn-dark">View All Categories</a>
+                        </div>
+                                        
+                            </div>
+            
+            <!-- Scroll to top button -->
+            <button id="scroll-to-top" class="scroll-top-btn">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Reset and Base Styles */
+.menu-container {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.menu-container * {
+    box-sizing: border-box;
+}
+
+/* Define CSS variables */
+:root {
+    --primary-color-rgb: 0, 123, 255; /* This should match your primary color */
+}
+
+/* Menu Selection Container */
+.menu-selection-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Add new styles for discount badge and original price */
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(191, 53, 51, 0.2);
+    z-index: 5;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.85rem;
+    font-weight: normal;
+    margin-right: 5px;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.price-cart-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.branch-selector, .master-category-selector {
+    margin: 10px 0;
+    min-width: 200px;
+}
+
+.branch-selector label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #495057;
+}
+
+.branch-selector select, .master-category-selector select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #495057;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Specific styles for master category selector without label */
+.master-category-selector {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 300px;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    .branch-selector, .master-category-selector {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+    }
+    
+    .master-category-selector {
+        margin-top: 0;
+    }
+    
+    /* Make product name smaller and add ellipsis on mobile */
+    .product-name {
+        font-size: 15px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        display: block;
+    }
+    
+    /* Customization Modal Mobile Fixes */
+    #customization-modal {
+        z-index: 9999;
+    }
+    
+    #customization-modal .modal-content.mobile-view {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100vh !important;
+        height: calc(var(--vh, 1vh) * 100) !important; /* Dynamic viewport height */
+        max-height: 100vh !important;
+        max-height: calc(var(--vh, 1vh) * 100) !important; /* Dynamic viewport height */
+        margin: 0;
+        border-radius: 0;
+        padding: 10px; /* Reduced padding */
+        padding-top: max(10px, env(safe-area-inset-top)); /* Safe area for notches */
+        padding-bottom: max(10px, env(safe-area-inset-bottom)); /* Safe area for home indicators */
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain; /* Prevent pull-to-refresh */
+    }
+    
+    #customization-modal .product-customization {
+        padding-bottom: 65px; /* Reduced padding even more */
+        height: auto;
+        min-height: calc(var(--vh, 1vh) * 100 - 65px);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #customization-modal .add-to-cart-btn {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        z-index: 999;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.15);
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-color);
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        animation: pulse-button 2s infinite;
+        bottom: env(safe-area-inset-bottom, 0); /* Respect safe area for iPhone X+ */
+    }
+    
+    /* Ensure the add-to-cart button is always visible */
+    #customization-modal .mobile-view .add-to-cart-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Add a pulse animation to make the button more noticeable */
+    @keyframes pulse-button {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+        50% {
+            transform: scale(1.03);
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+    
+    /* Improve close button position and size for mobile */
+    #customization-modal .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        z-index: 20;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Ensure total price is visible above sticky button */
+    #customization-modal .customization-total {
+        background-color: #fff;
+        padding: 8px 12px; /* Reduced padding */
+        margin-bottom: 50px; /* Reduced margin */
+        border-top: 1px solid #eee;
+        position: sticky;
+        bottom: 50px; /* Reduced bottom distance */
+        z-index: 5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        font-size: 16px; /* Slightly smaller font */
+    }
+    
+    /* Compress product image container */
+    #customization-modal .product-image-container {
+        text-align: center;
+        margin-bottom: 10px; /* Reduced margin */
+        max-height: 150px; /* Limit height */
+        overflow: hidden;
+    }
+    
+    #customization-modal .product-modal-image {
+        max-width: 100%;
+        height: auto;
+        max-height: 150px; /* Reduced height */
+        object-fit: contain;
+        border-radius: 8px;
+    }
+    
+    /* Compress product name and description */
+    #customization-modal h3 {
+        font-size: 18px; /* Smaller font */
+        margin: 8px 0; /* Reduced margin */
+        line-height: 1.2;
+        /* Add truncation */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+    
+    #customization-modal .product-description {
+        margin-bottom: 10px; /* Reduced margin */
+        color: #555;
+        font-size: 14px; /* Smaller font */
+        line-height: 1.3;
+        max-height: 60px; /* Limit height */
+        overflow-y: auto;
+    }
+    
+    /* Compress section headings */
+    #customization-modal h4 {
+        font-size: 16px; /* Smaller font */
+        margin: 5px 0 8px 0; /* Tighter margins */
+        color: #333;
+    }
+    
+    /* Make customization sections more compact */
+    #customization-modal .customization-section {
+        margin-bottom: 10px; /* Reduced margin */
+        padding-bottom: 8px; /* Reduced padding */
+    }
+    
+    /* Improve variant options on mobile */
+    #customization-modal .variant-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px; /* Reduced gap */
+        margin-bottom: 10px; /* Reduced margin */
+    }
+    
+    #customization-modal .variant-option {
+        flex: 1;
+        min-width: calc(50% - 8px); /* Adjusted for smaller gap */
+        border: 1px solid #eee; /* Thinner border */
+        border-radius: 6px; /* Smaller radius */
+        padding: 8px; /* Reduced padding */
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    
+    #customization-modal .variant-option .variant-name {
+        font-size: 14px; /* Smaller font */
+        margin-bottom: 2px;
+    }
+    
+    #customization-modal .variant-option .variant-price {
+        font-size: 13px; /* Smaller font */
+    }
+    
+    #customization-modal .variant-option.selected {
+        border-color: var(--primary-color);
+        background-color: rgba(var(--primary-color-rgb), 0.05);
+        transform: scale(1.02);
+    }
+    
+    /* Improve extras section on mobile */
+    #customization-modal .extra-items {
+        display: flex;
+        flex-direction: column;
+        gap: 6px; /* Reduced gap */
+    }
+    
+    #customization-modal .extra-item {
+        background-color: #f9f9f9;
+        border-radius: 6px; /* Smaller radius */
+        padding: 6px 8px; /* Reduced padding */
+    }
+    
+    #customization-modal .extra-item-content {
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Reduced gap */
+    }
+    
+    #customization-modal .extra-image {
+        width: 32px; /* Smaller image */
+        height: 32px; /* Smaller image */
+        object-fit: cover;
+        border-radius: 4px; /* Smaller radius */
+    }
+    
+    #customization-modal .extra-details {
+        flex: 1;
+        font-size: 13px; /* Smaller font */
+    }
+    
+    #customization-modal .extra-name {
+        margin-bottom: 0;
+        line-height: 1.2;
+    }
+    
+    #customization-modal .extra-price {
+        font-size: 12px; /* Smaller font */
+    }
+    
+    #customization-modal input[type="checkbox"] {
+        width: 18px; /* Slightly smaller */
+        height: 18px; /* Slightly smaller */
+        margin: 0;
+    }
+}
+
+/* White Background Container */
+.white-bg-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+/* Category Navigation */
+.category-navigation {
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+}
+
+.nav-item {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.nav-item a {
+    display: block;
+    padding: 10px 20px;
+    color: #495057;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-item.active a, 
+.nav-item a:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Category Sections */
+.category-section {
+    margin-bottom: 50px;
+}
+
+.category-section:last-child {
+    margin-bottom: 0;
+}
+
+.category-header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 15px;
+}
+
+.category-header h2 {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.category-description {
+    margin: 0;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.product-item {
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #d9d9d9;
+}
+
+.product-image {
+    position: relative;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+    background-color: #f8f9fa;
+}
+
+.product-image img {
+    width: auto;
+    max-width: 100%;
+    max-height: 180px;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.no-image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+}
+
+.product-details {
+    padding: 18px;
+}
+
+.product-name {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+}
+
+.add-to-cart-btn {
+    width: auto;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #a82d2b;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(191, 53, 51, 0.2);
+}
+
+/* Empty States */
+.no-categories,
+.no-products,
+.no-menu-content {
+    padding: 20px;
+    text-align: center;
+    color: #6c757d;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .white-bg-container {
+        padding: 15px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-item {
+        max-width: 100%;
+    }
+    
+    .white-bg-container {
+        padding: 15px 10px;
+        border-radius: 8px;
+    }
+    
+    /* More compact product details for mobile */
+    .product-details {
+        padding: 12px 10px;
+    }
+    
+    .product-name {
+        font-size: 14px !important;
+        margin-bottom: 6px;
+    }
+    
+    .price-cart-row {
+        align-items: center;
+    }
+    
+    .product-price {
+        font-size: 14px;
+    }
+    
+    .original-price {
+        font-size: 12px;
+    }
+    
+    .add-to-cart-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+/* Category Navigation Styles */
+.categories-section {
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    position: static;
+}
+
+/* Modified for better visibility */
+.categories-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 8px 0;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+}
+
+.categories-container::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    flex: 0 0 auto;
+    width: 85px !important;
+    text-align: center;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.category-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.category-item:hover {
+    transform: translateY(-3px);
+}
+
+.category-icon {
+    width: 65px !important;
+    height: 65px !important;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Category name styling */
+.category-name {
+    font-size: 13px !important;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
+}
+
+/* Active category indicator */
+.category-item a.active .category-icon {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(191, 53, 51, 0.25);
+}
+
+.category-item a.active .category-name {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.no-image {
+    color: #adb5bd;
+}
+
+/* Scroll to top button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn i {
+    font-size: 18px;
+}
+
+.scroll-top-btn:hover {
+    background-color: #a82d2b;
+    transform: translateY(-5px);
+}
+
+/* Mobile Cart Icon Styles */
+.mobile-cart-icon {
+    display: none;
+    position: fixed;
+    bottom: 80px; /* Higher position to avoid overlap with scroll-to-top */
+    right: 20px;
+    z-index: 1000;
+    animation: floatingAnimation 3s ease-in-out infinite;
+    transform-origin: center bottom;
+}
+
+.mobile-cart-icon a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    position: relative;
+    overflow: visible; /* Changed from hidden to visible to ensure the badge is fully shown */
+}
+
+.mobile-cart-icon a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-cart-icon a:hover:before,
+.mobile-cart-icon a:active:before {
+    opacity: 1;
+}
+
+.mobile-cart-icon a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-cart-badge {
+    position: absolute;
+    top: -10px; /* Moved higher to be more visible */
+    right: -10px; /* Moved further right to be more visible */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.2s ease-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
+    z-index: 10; /* Added z-index to ensure it appears above the cart icon */
+}
+
+/* Animation for badge update */
+.badge-updated {
+    animation: badgePulse 0.5s ease-out;
+}
+
+@keyframes badgePulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+        background-color: #ff5722;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Floating animation for the cart icon */
+@keyframes floatingAnimation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-6px) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-6px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Shake animation for the cart icon when items are added */
+@keyframes shakeCart {
+    0% { transform: translateX(0) rotate(0); }
+    15% { transform: translateX(-5px) rotate(-5deg); }
+    30% { transform: translateX(5px) rotate(5deg); }
+    45% { transform: translateX(-5px) rotate(-3deg); }
+    60% { transform: translateX(5px) rotate(3deg); }
+    75% { transform: translateX(-2px) rotate(-1deg); }
+    100% { transform: translateX(0) rotate(0); }
+}
+
+/* Display cart icon only on mobile and ensure it's visible */
+@media (max-width: 768px) {
+    .mobile-cart-icon {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .scroll-top-btn {
+        bottom: 140px; /* Move scroll-to-top higher to avoid overlap with cart */
+    }
+}
+
+@media (max-width: 576px) {
+    .scroll-top-btn {
+        width: 40px;
+        height: 40px;
+        bottom: 80px;
+        right: 15px;
+    }
+    
+    .scroll-top-btn i {
+        font-size: 16px;
+    }
+}
+
+/* Add scrollbar indicator on desktop */
+@media (min-width: 768px) {
+    .categories-container::-webkit-scrollbar {
+        height: 4px;
+        display: block;
+    }
+    
+    .categories-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    
+    .categories-container::-webkit-scrollbar-thumb {
+        background: #ddd;
+        border-radius: 10px;
+    }
+    
+    .categories-container::-webkit-scrollbar-thumb:hover {
+        background: #ccc;
+    }
+    
+    /* Remove the scroll hint gradient */
+    .categories-section::after {
+        display: none;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .section-title {
+        margin: 20px 0 12px;
+        font-size: 1.3rem;
+    }
+    
+    .categories-section {
+        padding: 8px;
+        margin-bottom: 30px;
+    }
+    
+    .categories-container {
+        gap: 12px;
+    }
+    
+    .category-item {
+        width: 75px !important;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Simple horizontal scrolling is enabled via CSS
+    
+    // Simple centering of active category
+    const activeCategory = document.querySelector('.category-item a.active');
+    if (activeCategory) {
+        setTimeout(() => {
+            activeCategory.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }, 100);
+    }
+    
+    // Check if branch parameter is in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const hasBranchParam = urlParams.has('branch');
+    
+    // If no branch parameter, automatically open the branch selection popup
+    if (!hasBranchParam) {
+        const branchPopup = document.getElementById('branch-popup');
+        if (branchPopup) {
+            // Slight delay to ensure everything is loaded
+            setTimeout(function() {
+                branchPopup.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling behind popup
+            }, 500);
+        }
+    }
+
+    // Scroll to top button functionality
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    
+    // Show button when page is scrolled down
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+    
+    // Scroll to top when button is clicked
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Mobile cart icon functionality
+    setupMobileCartIcon();
+});
+
+// Mobile Cart Icon Functions
+function setupMobileCartIcon() {
+    // Check if mobile cart icon already exists
+    if (!document.querySelector('.mobile-cart-icon')) {
+        // Create mobile cart icon
+        const mobileCartIcon = document.createElement('div');
+        mobileCartIcon.className = 'mobile-cart-icon';
+        
+        // Get cart count from the main cart
+        const cartCount = document.querySelector('.cart-count') ? 
+                          document.querySelector('.cart-count').textContent : '0';
+        
+        // Create cart link with branch parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentBranchId = urlParams.get('branch') || 0;
+        const branchParam = currentBranchId ? `?branch=${currentBranchId}` : '';
+        
+        mobileCartIcon.innerHTML = `
+            <a href="cart.php${branchParam}" id="mobile-cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="mobile-cart-badge" id="mobile-cart-badge">${cartCount}</span>
+            </a>
+        `;
+        
+        // Append to body
+        document.body.appendChild(mobileCartIcon);
+        
+        // Add a click effect when tapped (for mobile)
+        const mobileCartLink = document.getElementById('mobile-cart-link');
+        if (mobileCartLink) {
+            mobileCartLink.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.95)';
+            });
+            
+            mobileCartLink.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        }
+    }
+    
+    // Ensure the mobile cart is visible on mobile
+    ensureMobileCartVisibility();
+}
+
+function ensureMobileCartVisibility() {
+    const isMobileView = window.innerWidth <= 768;
+    const mobileCartIcon = document.querySelector('.mobile-cart-icon');
+    
+    if (mobileCartIcon && isMobileView) {
+        // Force the cart to be visible
+        mobileCartIcon.style.display = 'block';
+        mobileCartIcon.style.visibility = 'visible';
+        mobileCartIcon.style.opacity = '1';
+        
+        // Ensure it's properly positioned
+        mobileCartIcon.style.bottom = '80px'; // Higher position to avoid overlap with scroll-to-top
+        mobileCartIcon.style.right = '20px';
+        mobileCartIcon.style.zIndex = '9999';
+    }
+}
+
+// Global function to update the mobile cart badge
+function updateMobileCartBadge(count) {
+    const mobileBadge = document.getElementById('mobile-cart-badge');
+    const mobileCartIcon = document.querySelector('.mobile-cart-icon');
+    
+    if (mobileBadge) {
+        // Update count
+        mobileBadge.textContent = count;
+        
+        // Add badge animation
+        mobileBadge.classList.add('badge-updated');
+        setTimeout(() => {
+            mobileBadge.classList.remove('badge-updated');
+        }, 500);
+        
+        // Temporarily stop the floating animation and add a shake effect
+        if (mobileCartIcon) {
+            // Stop floating animation
+            mobileCartIcon.style.animation = 'none';
+            
+            // Add shake animation
+            setTimeout(() => {
+                mobileCartIcon.style.animation = 'shakeCart 0.5s ease-in-out';
+                
+                // After shake, restore floating animation
+                setTimeout(() => {
+                    mobileCartIcon.style.animation = 'floatingAnimation 3s ease-in-out infinite';
+                }, 500);
+            }, 10);
+        }
+    }
+}
+
+// Listen for cart update events (custom event from addToCart function)
+document.addEventListener('cart:updated', function(e) {
+    if (e.detail && e.detail.count) {
+        updateMobileCartBadge(e.detail.count);
+    }
+});
+
+// Listen for window resize to ensure mobile cart visibility
+window.addEventListener('resize', ensureMobileCartVisibility);
+
+// Ensure visibility after a delay (to override any CSS that might hide it)
+setTimeout(ensureMobileCartVisibility, 1000);
+
+// Add custom event listener to all add-to-cart buttons
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all add to cart buttons
+    const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+    addToCartBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // Set up a mutation observer for cart count elements
+            const cartCounts = document.querySelectorAll('.cart-count');
+            if (cartCounts.length > 0) {
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'childList') {
+                            const count = mutation.target.textContent;
+                            updateMobileCartBadge(count);
+                        }
+                    });
+                });
+                
+                // Observe each cart count element
+                cartCounts.forEach(element => {
+                    observer.observe(element, { childList: true });
+                });
+            }
+        });
+    });
+});
+
+// Set viewport height variable for mobile browsers
+function setVHVariable() {
+    // First we get the viewport height and we multiply it by 1% to get a value for a vh unit
+    let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+// Set the height initially
+setVHVariable();
+
+// Reset the height on resize and orientation change
+window.addEventListener('resize', setVHVariable);
+window.addEventListener('orientationchange', setVHVariable);
+
+// Fix for customization modal position on mobile
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('add-to-cart-btn') && 
+        e.target.getAttribute('data-customizable') === "1") {
+        
+        // Set the height when opening modal
+        setVHVariable();
+        
+        // Ensure scroll position is at top when modal opens
+        setTimeout(function() {
+            const modal = document.getElementById('customization-modal');
+            if (modal) {
+                modal.scrollTop = 0;
+                const modalContent = modal.querySelector('.modal-content');
+                if (modalContent) {
+                    modalContent.scrollTop = 0;
+                }
+            }
+        }, 50);
+    }
+});
+</script>
+
+        </div><!-- End container -->
+    </main><!-- End main-content -->
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                                            <img src="assets/images/footer_logo_1744961770.png" alt="MEI KONG Restaurant Footer Logo" style="max-height: 60px; width: auto; margin-bottom: 15px;">
+                                        <h3>MEI KONG Restaurant</h3>
+                    <p>Enjoy the best of Chinese, Pakistani, and Continental food at MEI KONG Restaurant. Also discover MEI MASALA for traditional dishes and MEI Cafe for a delightful
+</p>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                                        <p class="current-branch"><i class="fas fa-store"></i> <strong>Bahria Town Branch</strong></p>
+                    <p><i class="fas fa-map-marker-alt"></i> 167- A Sector- C, Commerical Gul Mohar block Bahria Town, Lahore, 53720, Lahore</p>
+                                        <p><i class="fas fa-phone"></i> 042-111-400-600</p>
+                    <p><i class="fas fa-envelope"></i> info@meikong.com.pk</p>
+                </div>
+                
+                <div class="footer-branches">
+                                        <div class="all-branches">
+                        <h5>Our Branches</h5>
+                        <ul class="branch-list-footer">
+                                                        <li><a href="index.php?branch=5">Bahria Town Branch - Lahore</a></li>
+                                                        <li><a href="index.php?branch=1">Barkat Market Branch - Lahore</a></li>
+                                                        <li><a href="index.php?branch=3">DHA Phase 4 Branch - Lahore</a></li>
+                                                        <li><a href="index.php?branch=2">DHA Phase 5 Branch - Lahore</a></li>
+                                                        <li><a href="index.php?branch=4">Faisal Town Branch - Lahore</a></li>
+                                                        <li><a href="index.php?branch=6">Sialkot Cantt Branch - Sialkot</a></li>
+                                                    </ul>
+                    </div>
+                                    </div>
+                
+                <div class="footer-contact">
+                    <h4>Hours</h4>
+                    <p class="timing-entry">
+                        <span class="day-name">Monday</span>
+                        <span class="timing-hours">12:00 PM - 12:00 AM</span>
+                    </p>
+                    <p class="timing-entry">
+                        <span class="day-name">Tuesday</span>
+                        <span class="timing-hours">12:00 PM - 12:00 AM</span>
+                    </p>
+                    <p class="timing-entry">
+                        <span class="day-name">Wednesday</span>
+                        <span class="timing-hours">12:00 PM - 12:00 AM</span>
+                    </p>
+                    <p class="timing-entry">
+                        <span class="day-name">Thursday</span>
+                        <span class="timing-hours">12:00 PM - 12:00 AM</span>
+                    </p>
+                    <p class="timing-entry">
+                        <span class="day-name">Friday</span>
+                        <span class="timing-hours">12:00 PM - 01:00 AM</span>
+                    </p>
+                    <p class="timing-entry">
+                        <span class="day-name">Saturday</span>
+                        <span class="timing-hours">12:00 PM - 01:00 AM</span>
+                    </p>
+                    <p class="timing-entry">
+                        <span class="day-name">Sunday</span>
+                        <span class="timing-hours">12:00 PM - 01:00 AM</span>
+                    </p>
+                    <p class="ordering-alert"><span>⏰ Online ordering stops 10 minutes before closing time!</span></p>
+                </div>
+            </div>
+            
+            <div class="footer-social-row">
+                <div class="social-icons">
+                                            <a href="https://www.facebook.com/meikongrestaurants/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="http://instagram.com/meikong.pk" target="_blank"><i class="fab fa-instagram"></i></a>
+                                            <a href="https://www.tiktok.com/@meikongrestaurantspk" target="_blank"><i class="fab fa-tiktok"></i></a>
+                                            <a href="https://pk.linkedin.com/company/mei-kong-restaurants" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 All Rights Reserved 
+                 | Developed by <a href="https://www.nadirable.com/" target="_blank">Nadir Technologies</a>                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="cart-items-container"></div>
+        </div>
+    </div>
+    
+    <!-- CSRF Token for AJAX requests -->
+    <script>
+        const CSRF_TOKEN = "65f708923fee2a647012489798004ca1fcbecee15a7190e8e0db4a2e2c454dc1";
+    </script>
+    
+    <!-- JavaScript Files -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>  

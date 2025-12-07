@@ -1,0 +1,1584 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.justhalalny.com/',
+        AccountUUID: 'eed03a52a6de46509ec69fc0e1fc790e',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '8bc47b01',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Wed Jul 02 05:29:54 UTC 2025',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'home',
+        InitialPageUuid: '99750a1770b743079bbfe185dea50f0e',
+        InitialPageId: '1181691037',
+        InitialEncodedPageAlias: 'aG9tZQ==',
+        InitialHeaderUuid: '372433fc70fe45f7b4a5f1ba8ae1d132',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: true,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: -1,
+            NavbarLiveHomePage: 'https://www.justhalalny.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.justhalalny.com/">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon"
+      href="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/57.png"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/8bc47b01/site_favicon_16_1750828485219.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    :root {
+  --color_1: rgba(181,24,18,1);
+  --color_2: rgba(49, 155, 78, 1);
+  --color_3: rgba(211, 163, 49, 1);
+  --color_4: rgba(238,133,24,1);
+  --color_5: rgba(13, 13, 13, 1);
+  --color_6: rgba(255, 255, 255, 1);
+}
+</style>
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+<style id="criticalCss">
+    @charset "UTF-8";.videobgframe,.videobgwrapper{position:absolute;height:100%}.display_None,.dmPopupMask{display:none}.clearfix:after,.dmDesktopBody:not(.editGrid) [data-anim-extended]{visibility:hidden}@font-face{font-family:Roboto;font-style:normal;font-weight:100;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:FontAwesome;font-display:block;src:url(https://static.cdn-website.com/fonts/fontawesome-webfont.eot?v=6);src:url(https://static.cdn-website.com/fonts/fontawesome-webfont.eot?#iefix&v=6) format("embedded-opentype"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.woff?v=6) format("woff"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.ttf?v=6) format("truetype"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.svg#fontawesomeregular?v=6) format("svg");font-weight:400;font-style:normal}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Barlow;font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/barlow/v12/7cHpv4kjgoGqM7E_DMs5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Barlow;font-style:italic;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/barlow/v12/7cHrv4kjgoGqM7E_Cfs7wH8.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:500;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Barlow;font-style:normal;font-weight:500;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/barlow/v12/7cHqv4kjgoGqM7E3_-gs51os.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Barlow;font-style:normal;font-weight:600;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/barlow/v12/7cHqv4kjgoGqM7E30-8s51os.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:900;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.videobgwrapper{overflow:hidden;z-index:0;width:100%;top:0;left:0;border-radius:inherit}.videobgframe{width:101%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}.dmPopup,.dmPopupMask{left:0;position:fixed}#dm video.videobgframe{margin:0}:root{--color_1:rgba(181,24,18,1);--color_2:rgba(49, 155, 78, 1);--color_3:rgba(211, 163, 49, 1);--color_4:rgba(238,133,24,1);--color_5:rgba(13, 13, 13, 1);--color_6:rgba(255, 255, 255, 1)}.dmInner{min-height:100vh!important;position:relative;min-width:768px!important}.dmRespRow .dmRespColsWrapper .dmRespCol[data-gallery-bg],[data-video-bg]{min-height:100px}.dmDisplay_None{display:none!important}.clearfix:after{clear:both;line-height:0;height:0}.clearfix:after,.clearfix:before{content:' ';display:table}.clearfix{display:inline-block}#dm .dmWidget .icon{font-size:26px}body.dmRoot #dm .dmOuter .dmInner .dmWidget .icon.hasFontIcon{height:26px;margin-top:-13px;line-height:normal;text-align:center;background-image:none}.dmRoot .hasFontIcon{background-image:none!important}.dmPopupMask{margin:0;width:10px;z-index:1000000999;top:0}#dmRoot .dmPopup,.dmPopup,.dmPopupClose:before,[data-display-type=block]{display:block}.dmPopup{text-align:left;top:10px;width:93%;z-index:1000009999!important;box-sizing:border-box;background:#f5f5f5;overflow-y:auto;height:100%}.dmPopup .dmPopupTitle{text-align:left;font:700 19px Helvetica,Arial;margin:20px 20px 35px;color:#999}#dmPopup{opacity:0}.dmPopupClose,.dmPopupClose:before{position:absolute;visibility:visible}.dmPopupClose{border-radius:25px;width:27px;height:27px;z-index:1;background-color:rgba(255,255,255,.4);top:12px;right:12px}.dmPopupClose:before{font-size:20px;color:#000;top:3px;right:3px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar{width:5px;height:5px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-track{background:rgba(0,0,0,.1)}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-thumb{background:#c8c8c8;box-shadow:inset 0 1px 2px #454545;border-radius:45px}.dmRespRow.fullBleedMode>.dmRespColsWrapper{width:100%!important;max-width:100%!important}.dmRespRow.fullBleedMode{padding-left:0!important;padding-right:0!important}#dm .dmRespRow .dmRespColsWrapper{display:flex}#dm .hasBackgroundOverlay:not(.dmPopupPage):not(.layout-drawer){position:relative!important}#dm .hasBackgroundOverlay:not(.hasExtraLayerOverlay):before{display:block!important;position:absolute!important;top:0!important;left:0!important;width:100%!important;height:100%!important;content:' '!important;border-radius:inherit}img,video{display:inline-block}#dm .hasBackgroundOverlay.dmRespCol>.dmNewParagraph,#dm .hasBackgroundOverlay.dmRespCol>[data-element-type],.hasExtraLayerOverlay.dmRespCol>.dmNewParagraph,.hasExtraLayerOverlay.dmRespCol>[data-element-type]{position:relative}#dm .hasBackgroundOverlay>.bgExtraLayerOverlay{width:100%!important;height:100%!important;position:absolute;top:0;left:0}#dm .dmInner .dmWidget.align-center,.align-center{margin-left:auto;margin-right:auto}.text-align-center{text-align:center}body.fix-mobile-scrolling{overflow:initial}#dmRoot{text-decoration-skip-ink:none}.video-ssr .videobgframe{object-fit:cover}@media (min-width:1025px) and (max-width:1399px){[data-hidden-on-desktop]{display:none!important}}body{-webkit-overflow-scrolling:touch}@media (min-width:1025px){:root{--btn-text-font-size:17px}}@media (min-width:768px) and (max-width:1024px){[data-hidden-on-tablet]{display:none!important}:root{--btn-text-font-size:17px}}nav{display:block}html{font-family:Source Sans Pro;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}img{border:0;max-width:100%;-ms-interpolation-mode:bicubic}button{font-family:inherit;font-size:100%;margin:0;line-height:normal;text-transform:none;-webkit-appearance:button}button::-moz-focus-inner{border:0;padding:0}*,:after,:before{box-sizing:border-box}.dmRespRow.dmRespRowNoPadding{padding:0}.dmRespRow{padding-top:15px;padding-bottom:15px}.dmRespRow .dmRespRow:after,.dmRespRow .dmRespRow:before,.dmRespRow:after,.dmRespRow:before{content:' ';display:table}.dmRespRow .dmRespRow:after,.dmRespRow:after{clear:both}.dmRespRow,.dmRespRow .dmRespColsWrapper{max-width:960px;position:relative;margin:0 auto;width:100%}@media screen and (min-width:1200px){.rows-1200 .dmRespRow:not(.fullBleedMode) .dmRespColsWrapper{max-width:1200px}}.dmRespRow .dmRespCol{position:relative;width:100%;display:inline-block;vertical-align:top;float:left}.dmRespRow .dmRespCol>*{max-width:100%}.dmRespRow .dmRespRow{width:auto;margin-top:0;margin-bottom:0;max-width:none}.dmDesktopBody .dmRespRow .large-1{position:relative;width:8.33333%}.dmDesktopBody .dmRespRow .large-3{position:relative;width:25%}.dmDesktopBody .dmRespRow .large-5{position:relative;width:41.66667%}.dmDesktopBody .dmRespRow .large-6{position:relative;width:50%}.dmDesktopBody .dmRespRow .large-7{position:relative;width:58.33333%}.dmDesktopBody .dmRespRow .large-8{position:relative;width:66.66667%}.dmDesktopBody .dmRespRow .large-12{position:relative;width:100%}[class*=' dm-common-icons-']{speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:dm-common-icons!important}.dm-common-icons-close:before{content:'\e901'}#dm div.dmContent [class*=' icon-'],[class*=' icon-']{font-family:FontAwesome!important;font-weight:400;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased}[class*=' icon-']:before{text-decoration:none;display:inline-block;speak:none}a [class*=' icon-']{display:inline}[class*=' icon-']{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}.icon-circle-arrow-right:before{content:'\f0a9'}.icon-angle-down:before{content:'\f107'}.animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}#dm .dmRespRow .dmRespCol>.dmWidget{overflow:initial}@media (min-width:768px){#dm .dmRespRow .dmRespCol>.dmWidget{width:280px;max-width:100%}}@media (max-width:767px){#dm .dmInner .dmWidget{width:100%}}#dm .dmInner .dmWidget:not(.displayNone){display:inline-block}#dm .dmInner .dmWidget.flexButton:not(.displayNone){display:flex}#dm .dmInner .dmWidget.flexButton{display:flex;align-items:center;justify-content:center;padding:10px 7px}#dm .dmInner .dmWidget.flexButton .text{padding:0!important;flex-grow:1;max-width:-webkit-max-content;max-width:max-content}#dm .dmInner .dmWidget.flexButton:after{display:none}#dm .dmInner .dmWidget{text-decoration:none;margin:10px 0;clear:both;position:relative;text-align:center;line-height:22px;box-shadow:none;background-image:none;padding:0;height:auto;border-style:solid;white-space:nowrap}#dm .dmInner .dmWidget:after{content:'';display:inline-block;height:100%;vertical-align:middle;width:0;margin-right:-.25em}#dm .dmInner .dmWidget .iconBg{position:absolute;left:0;width:50px;top:50%;margin-top:-13px}#dm .dmWidget .text{display:inline-block;vertical-align:middle;font-size:1.125em;line-height:normal;white-space:normal;padding:10px 7px;max-width:98%}html:not(.ios-preview) #dm .hasStickyHeader .dmInner div.dmHeaderContainer{position:fixed!important;z-index:101;width:100%;min-width:768px}body:not(.responsiveTablet) #dm .dmInner .dmBody .hide-for-large,body:not(.responsiveTablet) .hide-for-large{display:none!important}.imageWidget{position:relative}.imageWidget a{font-style:italic;text-align:center}.imageWidget img[width][height]{height:auto}.dmNewParagraph[data-version]{line-height:initial}.dmNewParagraph[data-version] .text-align-center{text-align:center!important}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner div,#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner h3,#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner:not(:has(>.caption-link)) div,#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner:not(:has(>.caption-link)) h3,.dmHeader,.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner,.dmPhotoGalleryHolder,.online-order{text-align:center}.dmNewParagraph[data-version] h1,.dmNewParagraph[data-version] h2,.dmNewParagraph[data-version] p{margin-top:0;margin-bottom:0}.dmNewParagraph[data-version] a{vertical-align:initial}.dmPhotoGallery{margin:10px 0;width:100%;overflow:hidden;min-height:1px;clear:both}.dmPhotoGallery .image-container{position:relative}.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner h3{margin:0;line-height:normal;font-size:21px}.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-text,.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-title{max-width:100%}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs{list-style:none;position:relative}#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner:not(:has(>.caption-link)){justify-content:center;align-items:center}#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner .caption-button{margin:10px auto}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner{align-items:center}#dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder{width:100%;padding:0;display:none}#dm .dmPhotoGallery.newPhotoGallery .photogallery-row{display:flex}#dm .dmPhotoGallery.newPhotoGallery .layout-container.square{display:flex;width:100%;flex-direction:column}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column{display:flex;flex-direction:column;padding:0;width:100%;margin:0}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column.column-4{width:25%}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs{position:relative;overflow:hidden}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs .image-container{width:100%;overflow:hidden;background:url(https://dd-cdn.multiscreensite.com/runtime-img/galleryLoader.gif) center no-repeat}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs .image-container.revealed{background:0}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs .image-container a{display:flex;flex-direction:column;background-size:cover;padding-top:100%}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs .image-container a img{display:none!important}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .thumbnailInnerWrapper{overflow:hidden;transform:translateZ(0)}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .image-container{overflow:hidden}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .image-container a{background-repeat:no-repeat;background-position:center}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner{display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;z-index:1;background-color:rgba(255,255,255,.9);color:#333;padding:15px;height:100%;box-sizing:border-box}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-button{margin:10px auto;max-width:100%}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-button .text{padding:10px 20px!important}#dm .dmPhotoGallery.newPhotoGallery.text-layout-over .photoGalleryThumbs .caption-container{height:100%;width:100%;position:absolute;top:0;left:0;padding:inherit}#dm .dmPhotoGallery.newPhotoGallery.text-layout-over .photoGalleryThumbs .caption-inner{display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;min-height:0!important;padding:10px;transform:scale(1.05);opacity:0;filter:alpha(opacity=0)}#dm .dmRespRow.dmRespRowNoPadding,.dmContent,.dmInner ul:not(.defaultList),DIV.dmBody{padding:0}img[width][height]{height:auto}*{border:0 solid #333;scrollbar-arrow-color:#fff;scrollbar-track-color:#F2F2F2;scrollbar-face-color:silver;scrollbar-highlight-color:silver;scrollbar-3dlight-color:silver;scrollbar-shadow-color:silver;scrollbar-darkshadow-color:silver;scrollbar-width:12px}body{width:100%;overflow:hidden;-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important}A IMG{border:none}h1,h2,h3,ul{margin-left:0;margin-right:0}#dm video{max-width:100%!important;display:block;margin:10px auto}.dmInner *{-webkit-font-smoothing:antialiased}.clearfix,a,img,li,ul{vertical-align:top}#iscrollBody,#site_content{position:relative}.dmOuter{word-wrap:break-word}.dmInner{font-size:16px;background:#fff;color:#666}.dmDesktopBody .dmInner{min-width:960px}.dmInner a{color:#463939}.dmHeader{background:#68ccd1;color:#666;position:relative;width:100%;max-width:100%}DIV.dmBody{clear:both}.dmContent{margin:0}#site_content ul:not(.defaultList){-webkit-padding-start:0;-moz-padding-start:0;list-style-position:inside}#innerBar{position:relative;height:36px;width:100%;font-size:20px;margin:0;z-index:80}.dmRespRowsWrapper{max-width:960px;margin:0 auto}.dmRespCol>[dmle_extension]:not(:first-child){margin-top:10px}.dmLargeBody .imageWidget:not(.displayNone){display:inline-block;max-width:100%}.imageWidget:not(.displayNone) img{width:100%}h3{font-weight:400;font-size:23px}#dm .dmRespColsWrapper{display:block}.dmNewParagraph{text-align:left;margin:8px 0;padding:2px 0}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol,.dmLargeBody .fHeader .dmRespRow .dmRespCol{padding-left:.75%;padding-right:.75%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:first-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:first-child{padding-left:0;padding-right:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:last-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:last-child{padding-right:0;padding-left:1.5%}.dmLargeBody .fHeader .dmRespRow .dmRespCol:only-child{padding-left:0;padding-right:0}#innerBar.lineInnerBar{display:table;width:100%;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;font-size:20px;margin-top:30px;margin-bottom:30px;background-color:transparent;color:#666}#innerBar .titleLine{display:table-cell;vertical-align:middle;width:50%}.dmPageTitleRow:not(#innerBar){display:none}.titleLine hr{min-height:1px;background-color:rgba(102,102,102,.2)}.dmStandardDesktop{display:block}#dmFirstContainer .dmRespRowsWrapper:after,#dmFirstContainer .dmRespRowsWrapper:before{content:"";display:table}.dmInner a{outline:0;vertical-align:inherit}.dmLinksMenu>ul{display:block;margin:0;font-size:inherit}.dmStandardDesktop{margin:0 auto}.dmSpacer{border:0;height:15px}.dmPhotoGalleryHolder{font-size:medium!important;margin:0;list-style:none}#dm .dmPhotoGallery .dmPhotoGalleryHolder{width:100%;padding:0}body{background-color:#eee}.main-navigation.unifiednav{-js-display:flex;display:flex;justify-content:flex-start;align-items:stretch;overflow:visible}.main-navigation.unifiednav ul{list-style:none;padding:0;margin:0;font-size:1rem}.main-navigation.unifiednav .unifiednav__container{-js-display:flex;display:flex;justify-content:flex-start;list-style:none}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap{-js-display:flex;display:flex;justify-content:flex-start;position:relative;font-weight:400}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::before{content:'';align-self:center;font-weight:700}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item{-js-display:flex;display:flex;justify-content:flex-start;align-items:center;flex-direction:row;color:inherit;text-decoration:none;position:relative;padding:12px 15px;margin:0;font-weight:inherit;letter-spacing:.03em}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:0 15px}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item .nav-item-text{white-space:nowrap}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{content:'';width:100%;height:0;border:0 solid transparent;border-top-color:currentColor;display:block;opacity:0}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{opacity:1}.main-navigation.unifiednav.effect-top-bottom{padding:calc(12px - .2em - 2px) 15px}.main-navigation.unifiednav.effect-top-bottom .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{margin-bottom:.2em;transform:translate3d(0,-8px,0)}.main-navigation.unifiednav.effect-top-bottom .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav.effect-top-bottom .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{border-top-width:2px}.main-navigation.unifiednav.effect-top-bottom .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after{margin-top:.2em;transform:translate3d(0,8px,0)}.main-navigation.unifiednav.effect-top-bottom .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav.effect-top-bottom .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{transform:translate3d(0,0,0)}.main-navigation.unifiednav .unifiednav__container .unifiednav__item:not(.unifiednav__item_has-sub-nav) .icon{display:none}.main-navigation.unifiednav:not(.unifiednav_vertical)>.unifiednav__container{justify-content:inherit}#dm .p_hfcontainer nav.main-navigation.unifiednav{min-width:9em!important;text-align:initial!important}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL][data-show-vertical-sub-items=HOVER]>.unifiednav__container:not([data-depth])>.unifiednav__item-wrap .unifiednav__item.dmNavItemSelected>.nav-item-text .icon::before{transform:rotate(180deg)}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container{flex-wrap:wrap;justify-content:inherit}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container .nav-item-text::before{text-align:left}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{content:''}#dm .dmBody .dmRespRowsWrapper{max-width:none;background-color:transparent}.dmLargeBody .dmRespRow{width:100%;max-width:none;margin-left:0;margin-right:0;padding-left:40px;padding-right:40px}.dm-bfs.dm-layout-home div.dmInner{background-color:#fff}.dmStandardDesktop .dmHeader{background-color:#68ccd1;max-width:100%}.standardHeaderLayout .dmHeader{float:none;display:block;height:auto}#dm .dmInner div.u_hcontainer,div.u_1319371239{float:none!important;left:0!important;min-width:0!important;top:0!important}#dm div.dmRespCol>*{line-height:1.5}#dm div.dmContent h1,#dm div.dmContent h2,#dm div.dmContent h3,#dm div.dmInner{line-height:initial}#dm div.dmInner h1,#dm div.dmInner h2,#dm div.dmInner h3{font-family:Montserrat,"Montserrat Fallback"}#dm DIV.dmInner{background-repeat:no-repeat;background-image:url(https://irt-cdn.multiscreensite.com/ce0bb35f932b47bb809d0e37905542ba/dms3rep/multi/site_background_education-2087x1173.jpg);background-size:cover;background-position:50% 0}#dm div.dmOuter div.dmInner{background-position:center center;background-repeat:repeat;background-size:auto}#dm .dmNewParagraph a,#dm div.dmNewParagraph a{text-decoration:underline;color:rgba(147,147,147,1)}#dm div.dmInner,#dm div.dmInner .dmRespCol{color:rgba(147,147,147,1);font-family:Roboto,"Roboto Fallback"}.dmLargeBody .dmBody .dmRespRowsWrapper{background-color:transparent}#dm .dmRespCol div.dmNewParagraph,#dm div.dmInner,#dm div.dmInner .dmRespCol,.dmPhotoGallery .caption-text.caption-text{color:var(--color_1);font-family:Barlow,"Barlow Fallback";font-weight:400}#dm .dmNewParagraph a,#dm div.dmNewParagraph a{color:var(--color_2)}#dm div.dmContent h1,#dm div.dmNewParagraph p{color:#000;direction:ltr;text-decoration:none}#dm div.dmNewParagraph p{font-family:Barlow,"Barlow Fallback";font-weight:400;font-style:normal;line-height:1.5}#dm div.dmContent h1{font-family:"Eligated Bold";font-weight:500;font-style:normal;text-transform:uppercase}#dm div.dmContent h2,#dm div.dmContent h3{direction:ltr;font-family:"Eligated Bold";font-weight:600;font-style:normal;text-transform:uppercase;color:#000}#dm div.dmContent .dmNewParagraph[data-version] h1{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h1 *,#dm div.dmContent h2{text-decoration:none}#dm div.dmContent .dmNewParagraph[data-version] h2{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h2 *,#dm div.dmContent h3,.online-order a{text-decoration:none}.online-order{position:fixed;bottom:0;right:0;padding-bottom:40px;padding-right:40px;color:#000;font-family:Roboto,"Roboto Fallback";animation-name:floating;animation-duration:3s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}.online-order a{margin:auto;color:#fff}.online-order p{margin:auto}.online-order a.online-text{display:block;background:#319b4e;border:2px solid #fff;font-size:13px;padding:5px 10px;border-radius:20px;margin-bottom:9px}.online-order a img{border:2px solid #fff;border-radius:50px;width:50px;background-color:#319b4e;padding:7px}@keyframes floating{0%,100%{transform:translate(0,0)}50%{transform:translate(0,15px)}}#dm DIV.dmOuter DIV.dmInner{background-image:none;background-color:rgba(255,255,255,1)}#dm div.dmInner,#dm div.dmInner .dmRespCol{font-size:16px}#dm .dmContent .dmRespRow .dmRespCol{margin:0;padding:0}#dm div.dmContent h1{font-size:100px}#dm div.dmContent h2{font-size:48px}#dm div.dmContent h3{font-size:30px}@media all{:root{--btn-border-l-color:rgba(0, 0, 0, 0);--btn-border-r-color:rgba(0, 0, 0, 0);--btn-border-b-width:0px;--btn-text-direction:ltr;--btn-border-radius:6px;--btn-border-t-width:0px;--btn-border-tl-radius:var(--btn-border-radius);--btn-border-br-radius:var(--btn-border-radius);--btn-border-bl-radius:var(--btn-border-radius);--btn-bg-color:rgba(211,163,49,1);--btn-border-r-width:0px;--btn-border-tr-radius:var(--btn-border-radius);--btn-border-b-color:rgba(0, 0, 0, 0);--btn-border-l-width:0px;--border-style:solid;--btn-border-t-color:rgba(0, 0, 0, 0);--btn-text-align:center;--btn-text-color:rgba(255,255,255,1);--btn-text-decoration:none;--btn-text-font-weight:400;--btn-text-font-family:Eligated Bold;--btn-icon-color:rgb(247, 247, 247);--btn-icon-fill:rgb(247, 247, 247);--btn-icon-wrpr-display:block;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:rgba(49,155,78,1);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:rgba(0,0,0,0);--btn-hover-text-color:var(--btn-text-color);--btn-hover-text-font-weight:var(--btn-text-font-weight);--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style)}}@media (min-width:0px) and (max-width:767px){:root{--btn-text-font-size:15px}}#dm .dmWidget:not([data-buttonstyle]):not(.button_2){background-clip:border-box;border-radius:6px;padding:0 0 0 40px}#dm .dmWidget:not([data-buttonstyle]):not(.button_2).flexButton{padding:10px 7px 10px 47px}#dm .dmWidget:not([data-buttonstyle]):not(.button_2) .text{padding:10px 7px}#dm .dmWidget:not([data-buttonstyle]):not(.button_2) .iconBg{display:block}#dm div.dmInner #site_content .dmWidget,#dm div.dmInner .dmHeader .dmWidget{background-color:var(--btn-bg-color);border-color:var(--btn-border-color);border-bottom-color:var(--btn-border-b-color);border-left-color:var(--btn-border-l-color);border-right-color:var(--btn-border-r-color);border-top-color:var(--btn-border-t-color);border-radius:var(--btn-border-radius);border-bottom-left-radius:var(--btn-border-bl-radius);border-bottom-right-radius:var(--btn-border-br-radius);border-top-left-radius:var(--btn-border-tl-radius);border-top-right-radius:var(--btn-border-tr-radius);border-width:var(--btn-border-width);border-bottom-width:var(--btn-border-b-width);border-left-width:var(--btn-border-l-width);border-right-width:var(--btn-border-r-width);border-top-width:var(--btn-border-t-width);direction:var(--btn-text-direction);text-align:var(--btn-text-align)}#dm div.dmInner #site_content .dmWidget span.text{color:var(--btn-text-color);font-family:var(--btn-text-font-family);font-size:var(--btn-text-font-size);font-weight:var(--btn-text-font-weight);text-decoration:var(--btn-text-decoration)}#dm .p_hfcontainer .main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before,#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{font-size:14px!important}#dm div.dmInner #site_content .dmWidget span.icon,#dm div.dmInner .dmHeader .dmWidget span.icon{color:var(--btn-icon-color);fill:var(--btn-icon-fill)}#dm div.dmInner #site_content .dmWidget:not([data-buttonstyle]) .iconBg,#dm div.dmInner .dmHeader .dmWidget:not([data-buttonstyle]) .iconBg{display:var(--btn-icon-wrpr-display)}#dm .p_hfcontainer div.u_1011018909,#dm .p_hfcontainer div.u_1319371239,div.u_1319371239{min-height:auto!important;display:block!important;position:relative!important}#dm .p_hfcontainer div.u_1011018909 img{border-radius:0!important;-moz-border-radius:0!important;-webkit-border-radius:0!important}#dm .dmInner div.dmHeader,#dm .dmInner div.dmHeader.u_hcontainer,#dm .dmInner div.u_hcontainer{background-color:var(--color_4)!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important}#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{font-size:16px!important}#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav.effect-top-bottom .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav.effect-top-bottom .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{border-top-color:var(--color_3)!important}#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected{color:rgba(211,163,49,1)!important}#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:0 20px!important;margin:0!important}#dm .p_hfcontainer .u_1392664590{justify-content:center!important;padding-left:27px!important;padding-right:27px!important;text-align:center!important}#dm .p_hfcontainer div.u_1861705244{background-color:rgba(13,13,13,1)!important}#dm .p_hfcontainer .u_1011018909{width:100%!important}#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{color:rgba(255,255,255,1)!important;font-family:'Eligated Bold'!important;font-weight:400!important;text-transform:uppercase!important;font-size:16px!important}#dm .dmInner div.u_hcontainer{width:100%!important;position:relative!important;height:auto!important;max-width:100%!important;text-align:center!important;padding:25px 0 20px!important;margin:0 auto!important}#dm .dmInner div.dmHeader.u_hcontainer{padding-bottom:20px!important;padding-top:25px!important}#dm .dmInner div.fHeader .dmHeader[freeheader=true]{padding-top:12px!important;padding-bottom:12px!important}.fHeader #hcontainer.dmHeader[freeheader=true]{padding-top:initial!important;padding-bottom:initial!important}#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}#dm .dmInner div.fHeader.dmHeaderContainer #hcontainer.dmHeader[freeheader=true]{margin:0!important;padding:0!important}#dm .p_hfcontainer div.u_1234197626{background-color:rgba(181,24,18,1)!important;width:auto!important;margin:0!important;padding:5px 40px!important}div.u_1319371239{background-image:url(https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/phone-call-1920w.png),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important;background-repeat:no-repeat!important;background-size:contain!important;width:160.55px!important;height:auto!important;max-width:100%!important;margin:8px auto!important;padding:2px 0 2px 35px!important}#dm .p_hfcontainer div.u_1427300107{margin:0!important;padding:0!important}#dm .p_hfcontainer div.u_1861705244{width:auto!important;padding:5px 40px!important;margin:0!important}#dm .dmBody div.u_1458400181,#dm .dmBody div.u_1585249151{width:calc(100% - 0px)!important;height:auto!important;max-width:100%!important}#dm .p_hfcontainer div.u_1011018909,#dm .p_hfcontainer div.u_1817814576{padding:0!important;float:none!important;left:0!important;text-align:center!important}#dm .p_hfcontainer div.u_1011018909{top:0!important;width:calc(100% - 0px)!important;max-width:137.36px!important;min-width:25px!important;height:auto!important;margin:-1px 220.41px 0 0!important}#dm .p_hfcontainer a.u_1392664590,#dm .p_hfcontainer div.u_1817814576,#dm .p_hfcontainer nav.u_1112353738{max-width:100%!important;min-width:0!important;height:auto!important;top:0!important}#dm .p_hfcontainer div.u_1817814576{width:auto!important;position:relative!important;min-height:auto!important;margin:25px 0 0!important}#dm .p_hfcontainer div.u_1959818229{margin:0!important;padding:0 5.67px 0 0!important}#dm .p_hfcontainer a.u_1392664590{min-height:50px!important;width:160px!important;float:none!important;left:0!important;position:relative!important;padding:15px 7px 10px 47px!important;margin:0 0 0 23.54px!important}#dm .p_hfcontainer div.u_1677919435{padding:0!important}#dm .p_hfcontainer div.u_1246161842{padding:0!important;margin:0!important}#dm .p_hfcontainer nav.u_1112353738{color:#fff!important;float:none!important;left:0!important;width:1124.66px!important;position:relative!important;justify-content:flex-end!important;align-items:stretch!important;text-align:right!important;min-height:auto!important;padding:7px 10px 6.8px!important;margin:26px 0 0 auto!important}#dm .p_hfcontainer div.u_1319371239{background-image:url(https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/phone-call+%281%29-1920w.png),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important;float:none!important;top:0!important;left:0!important;width:calc(100% - 13px)!important;height:auto!important;max-width:157.22px!important;min-width:25px!important;padding:0 0 0 40px!important;margin:9px auto 0!important}.stickyHeaderSpacer{height:157.34px!important}#dm .dmBody div.u_1346854455{background-repeat:no-repeat!important;background-image:url(https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/unnamed-1920w.webp),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important;background-size:cover!important}#dm .dmBody .u_1346854455:before,#dm .dmBody .u_1346854455>.bgExtraLayerOverlay{opacity:.5!important;background-color:#fff!important}#dm .dmBody div.u_1620106714{background-repeat:no-repeat!important;background-image:url(https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/o-1920w.jpg),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important;background-size:cover!important}#dm .dmBody div.u_1458400181 .photoGalleryThumbs .image-container{border-radius:15px!important}#dm .dmBody div.u_1585249151 img{border-radius:30px!important}#dm .dmBody .u_1472798959,#dm .dmBody .u_1585249151{width:100%!important}#dm .dmBody div.u_1472798959 img{border-radius:30px 0!important}#dm .dmBody div.u_1346854455:before,#dm .dmBody div.u_1346854455>.bgExtraLayerOverlay{background-color:rgba(1,1,1,1)!important;opacity:.75!important}#dm .dmBody .u_1096479563,#dm .dmBody .u_1787363836{justify-content:center!important;padding-left:27px!important;padding-right:27px!important;text-align:center!important}#dm .dmBody div.u_1610279401{background-color:rgba(255,251,245,1)!important;background-image:url(https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/65105787_9575634-2d63c1c4-1920w.png),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important}#dm .dmBody .u_1610279401:before{opacity:.5!important;background-color:#fff!important}#dm .dmBody div.u_1610279401:before{background-color:rgba(255,251,245,1)!important}#dm .d-page-1716942098 DIV.dmInner{background-repeat:no-repeat!important;background-size:cover!important;background-attachment:fixed!important;background-position:50% 50%!important}#dm .dmBody div.u_1243667655{float:none!important;top:0!important;left:0!important;width:auto!important;position:relative!important;height:auto!important;max-width:none!important;min-width:0!important;text-align:center!important;margin:0!important;padding:0!important}#dm .dmBody div.u_1458400181,#dm .dmBody div.u_1472798959,#dm .dmBody div.u_1585249151{float:none!important;top:0!important;left:0!important;position:relative!important;min-height:auto!important;min-width:25px!important;text-align:start!important}#dm .dmBody div.u_1620106714{background-position:50% 50%!important;margin:0!important;padding:0!important}#dm .dmBody div.u_1346854455{margin:0!important;padding:100px 50px!important}#dm .dmBody .u_1458400181 .layout-container,#dm .dmBody .u_1458400181 .photoGalleryThumbs{padding:5px!important}#dm .dmBody div.u_1458400181{padding:0!important;margin:23px auto 10px!important}#dm .dmBody div.u_1670095433{padding:0!important}#dm .dmBody div.u_1585249151{padding:0!important;margin:0 auto!important}#dm .dmBody div.u_1472798959{width:230px!important;height:230px!important;max-width:249.89px!important;padding:0!important;margin:120px 0 0 -80px!important}#dm .dmBody div.u_1610279401{width:auto!important;background-repeat:no-repeat!important;background-size:contain!important;background-position:100% 50%!important;background-attachment:fixed!important;margin:0!important;padding:70px 40px!important}#dm .dmBody a.u_1096479563,#dm .dmBody a.u_1787363836{height:auto!important;min-height:50px!important;width:160px!important;max-width:100%!important;min-width:0!important;padding:15px 7px 10px 47px!important;float:none!important;top:0!important;left:0!important;position:relative!important}#dm .dmBody a.u_1096479563{margin:20px 536.82px 10px 0!important}#dm .dmBody a.u_1787363836{text-align:center!important;margin:25px 440px 10px 0!important}#dm .dmBody div.u_1490703467{height:580px!important;float:none!important;top:0!important;left:0!important;width:calc(100% - 0px)!important;position:relative!important;min-height:auto!important;max-width:619.33px!important;min-width:25px!important;text-align:center!important;padding:0!important;margin:0!important}.font-size-18,.size-18{font-size:18px!important}.font-size-50,.size-50{font-size:50px!important}#\31 096479563,#\31 112353738,#\31 122930702,#\31 123806809,#\31 125411221,#\31 127107590,#\31 139659297,#\31 165189452,#\31 173148036,#\31 253858808,#\31 295542790,#\31 328282163,#\31 350285099,#\31 356388295,#\31 373542273,#\31 392527488,#\31 392664590,#\31 418311176,#\31 431985319,#\31 623681391,#\31 632601117,#\31 660183428,#\31 766424207,#\31 770628583,#\31 787363836,#\31 862170680,#\31 863279645,#\31 914255413,#\31 954590214,#\31 957627773,#\31 962889897,#\31 996480765{order:0;flex-direction:row} #dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder:not(.photo-gallery-done) {display: none;} @media (max-width:767px){ [data-hidden-on-mobile] {display:none!important}}
+    .dmDesktopBody [data-anim-desktop]:not([data-anim-desktop='none']) {
+      visibility: hidden;
+    }
+
+    
+</style>
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Poppins Fallback";
+  src: local('Arial');
+  ascent-override: 92.326%;
+  descent-override: 30.7753%;
+  line-gap-override: 8.793%;
+  size-adjust: 113.7274%;
+}@font-face {
+  font-family: "Dancing Script Fallback";
+  src: local('Arial');
+  ascent-override: 114.0713%;
+  descent-override: 34.7173%;
+  size-adjust: 80.6513%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Barlow Fallback";
+  src: local('Arial');
+  ascent-override: 103.1323%;
+  descent-override: 20.6265%;
+  size-adjust: 96.9628%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.justhalalny.com/">
+<script type="application/ld+json">
+    {
+        "@context" : "https://schema.org",
+        "@type" : "WebSite",
+        "name" : "Just Halal Fusion",
+        "url" : "https://www.justhalalny.com/"
+    }
+</script>
+  <title>
+    Home | Just Halal Fusion
+  </title>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Home | Just Halal Fusion"/>
+  <meta name="twitter:image" content="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/1200-1920w.png"/>
+  <meta property="og:title" content="Home | Just Halal Fusion"/>
+  <meta property="og:image" content="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/1200-1920w.png"/>
+<script type="application/ld+json">
+{
+  "@context" : {
+    "@vocab" : "http://schema.org/"
+  },
+  "@type" : "Restaurant",
+  "name" : "Just Halal Fusion",
+  "address" : {
+    "@type" : "PostalAddress",
+    "streetAddress" : "205-02 Hillside Avenue",
+    "addressLocality" : "New York",
+    "addressRegion" : "New York",
+    "postalCode" : "11423",
+    "addressCountry" : "US"
+  },
+  "geo" : {
+    "@type" : "GeoCoordinates",
+    "latitude" : "40.720571",
+    "longitude" : "-73.759998"
+  },
+  "url" : "https://www.justhalalny.com",
+  "telephone" : "(718) 464-0517",
+  "email" : "justhalalfusion@gmail.com",
+  "logo" : "https://irp.cdn-website.com/8bc47b01/dms3rep/multi/freepik_br_e7e5be05-9799-4cae-8b46-3197828302a8-9b5ca9b5.png",
+  "sameAs" : [ "https://instagram.com/just.halal.ny/" ],
+  "openingHoursSpecification" : [ {
+    "@type" : "OpeningHoursSpecification",
+    "dayOfWeek" : [ "Wednesday", "Thursday", "Tuesday", "Monday", "Sunday", "Saturday" ],
+    "opens" : "11:30",
+    "closes" : "10:30"
+  } ],
+  "@id" : "https://www.justhalalny.com"
+}
+</script>
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="home"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-home hasAnimations rows-1200 hasStickyHeader hamburger-reverse dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" headerlayout="b58ba5b5703b4cd7b5f5f7951565dc87===horizontal-layout-5" layout="78f5c343822e4eb3aac27f4ad5d13812===header"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="dmRespRow u_1234197626" id="1234197626"> <div class="dmRespColsWrapper" id="1632601117"> <div class="dmRespCol large-12 medium-12 small-12" id="1922328050"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1854059276" style="transition: opacity 1s ease-in-out;"><p class="text-align-center" style=""><span style="text-decoration: underline; color: var(--color_6); display: unset;">Elevating Taste Embracing Diversity!</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow dmDefaultListContentRow u_1861705244 fullBleedChanged fullBleedMode" style="text-align:center" id="1861705244"> <div class="dmRespColsWrapper" id="1914255413"> <div class="u_1677919435 small-12 dmRespCol large-1 medium-1" id="1677919435"> <div class="u_1011018909 imageWidget align-center" data-widget-type="image" id="1011018909" data-element-type="image"> <a href="/" id="1592327359"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/freepik_br_e7e5be05-9799-4cae-8b46-3197828302a8-9b5ca9b5-164w.png" id="1456770677" class="" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/freepik_br_e7e5be05-9799-4cae-8b46-3197828302a8-9b5ca9b5.png" width="604" height="452" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1246161842 dmRespCol small-12 large-8 medium-8" id="1246161842"> <span id="1630001966"></span> 
+ <nav class="u_1112353738 effect-top-bottom main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_2" data-show-vertical-sub-items="HOVER" id="1112353738" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_00  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="HOME" data-auto="page-text-style">HOME<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101921869  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="ABOUT" data-auto="page-text-style">ABOUT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menu" class="unifiednav__item  dmUDNavigationItem_010101971852  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="MENU" data-auto="page-text-style">MENU<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="https://justhalal.menu2order.com" class="unifiednav__item  dmUDNavigationItem_010101409106  " target="_blank" data-target-page-alias=""> <span class="nav-item-text " data-link-text="ORDER ONLINE" data-auto="page-text-style">ORDER ONLINE<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="https://justhalal.menu2order.com/giftcard" class="unifiednav__item  dmUDNavigationItem_010101937440  " target="_blank" data-target-page-alias=""> <span class="nav-item-text " data-link-text="GIFT CARD" data-auto="page-text-style">GIFT CARD<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/gallery" class="unifiednav__item  dmUDNavigationItem_01010197813  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="GALLERY" data-auto="page-text-style">GALLERY<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101139096  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="CONTACT" data-auto="page-text-style">CONTACT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="u_1427300107 dmRespCol small-12 large-3 medium-3" id="1427300107"> <div class="u_1817814576 dmRespRow" id="1817814576"> <div class="dmRespColsWrapper" id="1766424207"> <div class="dmRespCol large-6 medium-6 small-12 u_1959818229" id="1959818229"> <div class="u_1319371239 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1319371239" style="transition: none; text-align: left; display: block;"><p class="m-size-14 size-18"><a href="tel:(718) 464-0517" target="_blank" type="call" class="font-size-18 m-font-size-14" style="color:var(--color_6);font-weight:400;text-decoration:none;display:unset;font-family:'Eligated Bold';">(718) 464-0517</a></p></div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12" id="1177201642"> <a data-display-type="block" class="u_1392664590 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="https://justhalal.menu2order.com/" data-element-type="dButtonLinkId" id="1392664590" icon-name="icon-circle-arrow-right" target="_blank"> <span class="iconBg" aria-hidden="true" id="1300679402"> <span class="icon hasFontIconstar hasFontIcon icon-circle-arrow-right" id="1645076436"></span> 
+</span> 
+ <span class="text" id="1868957006">ORDER ONLINE</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true"></div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr/></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"></div> 
+ <div class="titleLine display_None"><hr/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_home dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="u_1243667655 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1243667655"> <div class="dmRespColsWrapper" id="1173148036"> <div class="dmRespCol small-12 u_1620106714 large-6 medium-6 dmSectionNoParallax" id="1620106714" data-gallery-bg="eyJzbGlkZXMiOlsiaHR0cHM6Ly9saXJwLmNkbi13ZWJzaXRlLmNvbS84YmM0N2IwMS9kbXMzcmVwL211bHRpL29wdC9QaWMxLWYwN2MzYWRjLTE5MjB3LmpwZyJdfQ=="> <div data-element-type="spacer" class="u_1490703467 dmSpacer" id="1490703467"></div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1346854455 hasBackgroundOverlay hasExtraLayerOverlay relativePos" id="1346854455" data-video-bg="eyJzcmMiOiJodHRwczovL3ZpZC5jZG4td2Vic2l0ZS5jb20vOGJjNDdiMDEvdmlkZW9zL0ZSTHJjU2ZTU1RIMEo0Y0R6VXlyX1Zpc2l0K3VzK3RvZGF5K2F0KzIwNS0wMitIaWxsc2lkZSthdmVudWUrJTJDK29yK2NoZWNrK291dCtvdXIrK3dlYnNpdGUranVzdGhhbGFsbnkuY29tK2ZvcitkZWFscyslMjYrZGV0YWlscytkZWxpdmVyeStpcythdmFpbGFibGUlMkMrYWxzbythdmFpbGFibGUrb24rdWJlckVhdHMlMkMrRG9vckRhc2glMkMrR3J1Ymh1YislMjYrZ29vZ2xlJTJDK2FsbCttZWF0K2lzK2NlcnRpZmllZCt6YWJpaGEraGEtdi5tcDQiLCJpZCI6Imh0dHBzOi8vdmlkLmNkbi13ZWJzaXRlLmNvbS84YmM0N2IwMS92aWRlb3MvRlJMcmNTZlNTVEgwSjRjRHpVeXJfVmlzaXQrdXMrdG9kYXkrYXQrMjA1LTAyK0hpbGxzaWRlK2F2ZW51ZSslMkMrb3IrY2hlY2srb3V0K291cisrd2Vic2l0ZStqdXN0aGFsYWxueS5jb20rZm9yK2RlYWxzKyUyNitkZXRhaWxzK2RlbGl2ZXJ5K2lzK2F2YWlsYWJsZSUyQythbHNvK2F2YWlsYWJsZStvbit1YmVyRWF0cyUyQytEb29yRGFzaCUyQytHcnViaHViKyUyNitnb29nbGUlMkMrYWxsK21lYXQraXMrY2VydGlmaWVkK3phYmloYStoYS12Lm1wNCIsInByb3ZpZGVyIjoiY2RuIiwiZW1iZWQiOiJodHRwczovL3ZpZC5jZG4td2Vic2l0ZS5jb20vOGJjNDdiMDEvdmlkZW9zL0ZSTHJjU2ZTU1RIMEo0Y0R6VXlyX1Zpc2l0K3VzK3RvZGF5K2F0KzIwNS0wMitIaWxsc2lkZSthdmVudWUrJTJDK29yK2NoZWNrK291dCtvdXIrK3dlYnNpdGUranVzdGhhbGFsbnkuY29tK2ZvcitkZWFscyslMjYrZGV0YWlscytkZWxpdmVyeStpcythdmFpbGFibGUlMkMrYWxzbythdmFpbGFibGUrb24rdWJlckVhdHMlMkMrRG9vckRhc2glMkMrR3J1Ymh1YislMjYrZ29vZ2xlJTJDK2FsbCttZWF0K2lzK2NlcnRpZmllZCt6YWJpaGEraGEtdi5tcDQiLCJyYXRpbyI6MS43Nzc3Nzc3Nzc3Nzc3Nzc3LCJ0aHVtYm5haWwiOiJodHRwczovL2lycC5jZG4td2Vic2l0ZS5jb20vOGJjNDdiMDEvZG1zM3JlcC9tdWx0aS9GUkxyY1NmU1NUSDBKNGNEelV5cl9WaXNpdCt1cyt0b2RheSthdCsyMDUtMDIrSGlsbHNpZGUrYXZlbnVlKyUyQytvcitjaGVjaytvdXQrb3VyKyt3ZWJzaXRlK2p1c3RoYWxhbG55LmNvbStmb3IrZGVhbHMrJTI2K2RldGFpbHMrZGVsaXZlcnkraXMrYXZhaWxhYmxlJTJDK2Fsc28rYXZhaWxhYmxlK29uK3ViZXJFYXRzJTJDK0Rvb3JEYXNoJTJDK0dydWJodWIrJTI2K2dvb2dsZSUyQythbGwrbWVhdCtpcytjZXJ0aWZpZWQremFiaWhhK2hhLnYyLjAwMDAwMDAuanBnIiwic3VwcG9ydEJnT25Nb2JpbGUiOnRydWUsInN1cHBvcnRCZ0xvb3AiOnRydWUsInBvc3RlciI6Imh0dHBzOi8vaXJwLmNkbi13ZWJzaXRlLmNvbS84YmM0N2IwMS9kbXMzcmVwL211bHRpL0ZSTHJjU2ZTU1RIMEo0Y0R6VXlyX1Zpc2l0K3VzK3RvZGF5K2F0KzIwNS0wMitIaWxsc2lkZSthdmVudWUrJTJDK29yK2NoZWNrK291dCtvdXIrK3dlYnNpdGUranVzdGhhbGFsbnkuY29tK2ZvcitkZWFscyslMjYrZGV0YWlscytkZWxpdmVyeStpcythdmFpbGFibGUlMkMrYWxzbythdmFpbGFibGUrb24rdWJlckVhdHMlMkMrRG9vckRhc2glMkMrR3J1Ymh1YislMjYrZ29vZ2xlJTJDK2FsbCttZWF0K2lzK2NlcnRpZmllZCt6YWJpaGEraGEudjIuMDAwMDAwMC5qcGcifQ==" data-video-bg-mobile="true" data-video-init="true"> <div class="videobgwrapper video-ssr" data-ratio="1.7777777777777777"> <video autoplay="autoplay" playsinline="playsinline" muted="muted" loop="loop" class="videobgframe" poster="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/FRLrcSfSSTH0J4cDzUyr_Visit+us+today+at+205-02+Hillside+avenue+%2C+or+check+out+our++website+justhalalny.com+for+deals+%26+details+delivery+is+available%2C+also+available+on+uberEats%2C+DoorDash%2C+Grubhub+%26+google%2C+all+meat+is+certified+zabiha+ha.v2.0000000-1920w.jpg" src="https://vid.cdn-website.com/8bc47b01/videos/FRLrcSfSSTH0J4cDzUyr_Visit+us+today+at+205-02+Hillside+avenue+%2C+or+check+out+our++website+justhalalny.com+for+deals+%26+details+delivery+is+available%2C+also+available+on+uberEats%2C+DoorDash%2C+Grubhub+%26+google%2C+all+meat+is+certified+zabiha+ha-v.mp4" style="object-position: 50% 50%" id="videobgframe-1346854455"></video> 
+</div> 
+ <div class="bgExtraLayerOverlay"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1818172108" style="transition: opacity 1s ease-in-out;"> <h1 class="m-size-30 size-50" style="line-height: 1.2;"><span class="m-font-size-30 font-size-50" m-font-size-set="true" style="color: var(--color_6); display: unset;">The Best in Modern, Western, Mexican &amp; Traditional Middle Eastern Food</span></h1> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1605776396" style="transition: opacity 1s ease-in-out;"><p><span class="" style="text-transform:uppercase;color:var(--color_3);font-weight:600;display:unset;font-family:Barlow, 'Barlow Fallback';"><span style="text-transform:uppercase;color:var(--color_3);font-weight:600;display:unset;font-family:Barlow, 'Barlow Fallback';">Best Middle</span> 
+</span><span style="text-transform:uppercase;color:var(--color_3);font-weight:500;display:unset;font-family:Barlow, 'Barlow Fallback';">eastern food in Hollis</span></p></div> 
+ <a data-display-type="block" class="u_1096479563 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="https://justhalal.menu2order.com/" data-element-type="dButtonLinkId" id="1096479563" icon-name="icon-circle-arrow-right" target="_blank"> <span class="iconBg" aria-hidden="true" id="1181535305"> <span class="icon hasFontIconstar hasFontIcon icon-circle-arrow-right" id="1102604034"></span> 
+</span> 
+ <span class="text" id="1120204026">ORDER ONLINE</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1610279401 hasBackgroundOverlay" id="1610279401"> <div class="dmRespColsWrapper" id="1863279645"> <div class="dmRespCol small-12 medium-6 large-6 u_1629399404" id="1629399404"> <div class="dmRespRow u_1670095433" id="1670095433"> <div class="dmRespColsWrapper" id="1123806809"> <div class="u_1382245401 dmRespCol small-12 large-7 medium-7" id="1382245401"> <div class="u_1585249151 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1585249151" data-anim-extended="eyJkZXNrdG9wIjp7InRyaWdnZXIiOiJ2aWV3cG9ydCIsImFuaW1hdGlvbiI6ImZhZGVJbkNvbWJvIiwicmV2ZXJzZSI6ZmFsc2UsImludGVuc2l0eSI6MSwidmlld3BvcnRUaHJlc2hvbGRzIjp7InRvcCI6IjUwJSIsImJvdHRvbSI6IjAlIn0sImRlbGF5IjowLCJkdXJhdGlvbiI6MSwiZGlyIjoibGVmdCJ9fQ=="><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/348s-e21c1051-ec7a4a26-419w.jpg" alt="" id="1202318262" class="" width="348" height="260" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/348s-e21c1051-ec7a4a26.jpg" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+ <div class="u_1150939386 dmRespCol small-12 large-5 medium-5" id="1150939386"> <div class="u_1472798959 imageWidget align-center hide-for-small" data-element-type="image" data-widget-type="image" id="1472798959" data-anim-extended="eyJkZXNrdG9wIjp7InRyaWdnZXIiOiJ2aWV3cG9ydCIsImFuaW1hdGlvbiI6ImZhZGVJbkNvbWJvIiwicmV2ZXJzZSI6ZmFsc2UsImludGVuc2l0eSI6MSwidmlld3BvcnRUaHJlc2hvbGRzIjp7InRvcCI6IjUwJSIsImJvdHRvbSI6IjAlIn0sImRlbGF5IjowLCJkdXJhdGlvbiI6MSwiZGlyIjoicmlnaHQifX0="><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/348s-448764cf-276w.jpg" alt="" id="1694239989" class="" width="348" height="348" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/348s-448764cf.jpg" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol small-12 medium-6 large-6 u_1967856242" id="1967856242"> <div class="u_1947237337 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1947237337" style="transition: opacity 1s ease-in-out;"><p><span style="text-transform:uppercase;color:var(--color_1);font-weight:500;display:unset;font-family:Barlow, 'Barlow Fallback';">About Us</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1017290971" style="transition: opacity 1s ease-in-out;"> <h2><span style="display: unset;">A Fusion of Flavors</span></h2> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1030686736" style="transition: opacity 1s ease-in-out;"><p><span style="display: unset;">At Just Halal, we pride ourselves on offering an eclectic menu that brings together the vibrant flavors of Mexico with the rich culinary traditions of the Middle East. From sizzling fajitas to succulent kebabs, our dishes are crafted with care using only the finest ingredients. Whether you're craving a classic burrito or eager to try something new, we've got you covered.</span></p></div> 
+ <a data-display-type="block" class="u_1787363836 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/about" data-element-type="dButtonLinkId" id="1787363836" icon-name="icon-circle-arrow-right"> <span class="iconBg" aria-hidden="true" id="1980329040"> <span class="icon hasFontIconstar hasFontIcon icon-circle-arrow-right" id="1524086609"></span> 
+</span> 
+ <span class="text" id="1638545613">READ MORE</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1939921560 dmRespRow" style="text-align: center;" id="1939921560" data-page-element-type="section" data-page-element-id="1541436034"> <div class="dmRespColsWrapper" id="1127107590"> <div class="dmRespCol small-12 medium-12 large-12 u_1299322374" id="1299322374"> <span id="1565330335"></span> 
+ <div class="u_1041126749 dmNewParagraph" id="1041126749" style="transition: opacity 1s ease-in-out;" data-element-type="paragraph" data-version="5"> <h2 class="text-align-center"><span style="color: rgb(7, 7, 7); display: initial;">Why people love our food and service</span></h2> 
+</div> <div data-element-type="html" class="dmCustomHtml" id="1629340918"> <script type="text/javascript" src="https://reputationhub.site/reputation/assets/review-widget.js">
+
+
+                                                                                                                                                                                    
+
+                </script> 
+ <iframe class="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/72QGqkSCmxQdljVlnxHi?widgetId=6861e414273099d22424ff9e" frameborder="0" scrolling="no" style="min-width: 100%; width: 100%;"></iframe> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow fullBleedChanged fullBleedMode u_1017610122" id="1017610122"> <div class="dmRespColsWrapper" id="1962889897"> <div class="dmRespCol small-12 u_1327378279 medium-6 large-6" id="1327378279"> <div class="u_1325008273 dmRespRow" id="1325008273"> <div class="dmRespColsWrapper" id="1165189452"> <div class="u_1722852998 dmRespCol small-12 large-5 medium-5" id="1722852998"> <div data-element-type="html" class="u_1550508421 dmCustomHtml" id="1550508421"> <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/just.halal.ny/?hl=en" data-instgrm-version="14"></blockquote> 
+ <script async="" src="//www.instagram.com/embed.js">
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+
+                      </script> 
+</div> 
+</div> 
+ <div class="u_1424602172 dmRespCol small-12 large-7 medium-7" id="1424602172"> <div class="widget-128151 dmCustomWidget" data-lazy-load="" data-title="" id="1143519790" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="128151275e4145de9c457a6ae729489e" data-widget-version="114" data-widget-config="eyJ1cmwiOiJodHRwczovL3d3dy5mYWNlYm9vay5jb20vSnVzdC5IYWxhbC5OWUMvIiwiaXNMYXJnZUhlYWRlciI6dHJ1ZSwiaXNTaG93Q292ZXJQaG90byI6dHJ1ZSwiaXNGcmllbmRzUGhvdG9zIjp0cnVlLCJ0aW1lbGluZSI6dHJ1ZSwid2lkdGgiOiIzNDAiLCJoZWlnaHQiOiI1MDAiLCJoZWlnaHRfbW9iaWxlIjoiNTAwIn0="> <div class="fallback" style="width:340px;"><!--<span class="fallback-text">Click to add Facebook feed</span>--><!--<svg xmlns="http://www.w3.org/2000/svg" width="62" height="46" viewBox="0 0 62 46">--><!--        <g fill="#FFF" fill-rule="evenodd">--><!--        <path d="M24.65.057H18.8c-6.75 0-11.025 4.343-11.025 11.2v5.257H1.7c-.45 0-.9.457-.9.915v7.542c0 .458.45.915.9.915h6.075v18.971c0 .457.45.914.9.914h7.875c.45 0 .9-.457.9-.914V25.886h6.975c.45 0 .9-.457.9-.915V17.43c0-.229 0-.458-.225-.686-.225-.229-.45-.229-.675-.229H17.45v-4.343c0-2.057.45-3.2 3.15-3.2h4.05c.45 0 .9-.457.9-.914V.971c0-.457-.45-.914-.9-.914z"/>--><!--        <path fill-rule="nonzero" d="M61.325 34.343h-29.7V.057h29.7v34.286zm-27-2.514H58.85V2.57H34.325V31.83z"/>--><!--        <path d="M37.7 7.143h17.775v2.743H37.7zM37.7 11.943h17.775v2.743H37.7zM37.7 17.2h17.775v10.057H37.7z"/>--><!--    </g>--><!--</svg>--></div> 
+ <div class="fb-page" data-facebook-widget="true" data-href="https://www.facebook.com/Just.Halal.NYC/" data-tabs="timeline,," data-small-header="false" data-hide-cover="false" data-show-facepile="true" data-height="500" data-adapt-container-width="true"> <blockquote cite="https://www.facebook.com/Just.Halal.NYC/" class="fb-xfbml-parse-ignore"> <a href="https://www.facebook.com/Just.Halal.NYC/"></a> 
+</blockquote> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol small-12 u_1738137521 medium-6 large-6" id="1738137521"> <div class="u_1584090246 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1584090246" style="transition: opacity 1s ease-in-out;"> <h2><span style="display: unset; color: var(--color_6);">dOWNLOAD OUR MOBILE APP</span></h2> 
+</div> 
+ <div class="u_1102956072 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1102956072"><p><span style="color: var(--color_6); display: unset;">Download our app and get 5% discounted prices on your first order!</span></p></div> 
+ <div class="u_1003010095 dmRespRow" id="1003010095" mode="2"> <div class="dmRespColsWrapper" id="1350285099"> <div class="u_1186076886 dmRespCol small-6 large-5 medium-5" id="1186076886"> <div class="u_1046546786 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1046546786"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/App-store-263w.png" alt="" id="1620111938" class="" width="1084" height="326" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/App-store.png" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+ <div class="u_1646652588 dmRespCol small-6 large-7 medium-7" id="1646652588"> <div class="u_1025999172 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1025999172"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/Google-Play-store-263w.png" alt="" id="1667244944" class="" width="1084" height="326" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/Google-Play-store.png" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1177462636 fullBleedChanged fullBleedMode" id="1177462636"> <div class="dmRespColsWrapper" id="1392527488"> <div class="dmRespCol global small-12 u_1425794975 large-3 medium-3" id="1425794975"> <div class="u_1281332783 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1281332783"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/2cf38308-7316-42b3-983f-dedb8b146293-198w.webp" alt="" id="1767842809" class="" width="384" height="384" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/2cf38308-7316-42b3-983f-dedb8b146293.webp" onerror="handleImageLoadError(this)"/></div> 
+ <div class="u_1897964692 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1897964692" style="transition: opacity 1s ease-in-out;"><p class="size-30 m-size-24 text-align-center"><span style="display:unset;font-family:'Eligated Bold';" class="font-size-30 m-font-size-24">sMASH BURGER</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1798989711"><p class="text-align-center"><span style="display: unset;">Grassed fed hormones free beef burger with caramelized butterry onions</span></p></div> 
+</div> 
+ <div class="dmRespCol global small-12 u_1991357365 large-3 medium-3" id="1991357365"> <div class="u_1478447772 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1478447772"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/78634cec-c21c-4017-b1bc-9aaf3fa08a96-198w.webp" alt="" id="1721178502" class="" width="384" height="384" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/78634cec-c21c-4017-b1bc-9aaf3fa08a96.webp" onerror="handleImageLoadError(this)"/></div> 
+ <div class="u_1498753403 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1498753403" style="transition: opacity 1s ease-in-out;"><p class="size-30 m-size-24 text-align-center"><span style="display:unset;font-family:'Eligated Bold';" class="font-size-30 m-font-size-24">BAJA FISH TACO</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1191787405"><p class="text-align-center"><span class="" style="display: unset;"><span style="display: unset;">Mouthwatering delicious baja fish taco with our homemade chipotle sauce cabbage &amp; cilantro.</span> 
+</span></p></div> 
+</div> 
+ <div class="dmRespCol global small-12 large-3 medium-3 u_1571129911" id="1571129911"> <div class="u_1088997129 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1088997129"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/19f9e52c-539c-46c7-b88c-910f78a9e890-198w.webp" alt="" id="1908175806" class="" width="384" height="384" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/19f9e52c-539c-46c7-b88c-910f78a9e890.webp" onerror="handleImageLoadError(this)"/></div> 
+ <div class="u_1346722393 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1346722393" style="transition: opacity 1s ease-in-out;"><p class="size-30 m-size-24 text-align-center"><span style="display:unset;font-family:'Eligated Bold';" class="font-size-30 m-font-size-24">mOCKTAILS</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1581534948"><p class="text-align-center"><span style="display: unset;">Vibrant and fruity Mango &amp; Watermelon Mojito Mocktail, bursting with ripe mangoes</span></p></div> 
+</div> 
+ <div class="dmRespCol global small-12 u_1985055757 large-3 medium-3" id="1985055757"> <div class="u_1090783085 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1090783085"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/81a2dc77-d2db-44db-9be2-b9666ae18c58-198w.webp" alt="" id="1483525308" class="" width="384" height="384" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/81a2dc77-d2db-44db-9be2-b9666ae18c58.webp" onerror="handleImageLoadError(this)"/></div> 
+ <div class="u_1789009940 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1789009940" style="transition: opacity 1s ease-in-out;"><p class="size-30 m-size-24 text-align-center"><span style="display:unset;font-family:'Eligated Bold';" class="font-size-30 m-font-size-24">cHICKEN PLATTER</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1600134992"><p class="text-align-center"><span style="display: unset;">Classic chicken platter with seasoned yellow basmati rice</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1932791548 hasBackgroundOverlay" id="1932791548"> <div class="dmRespColsWrapper" id="1373542273"> <div class="dmRespCol large-12 medium-12 small-12" id="1847612787"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1565815827" style="transition: opacity 1s ease-in-out;"> <h2 class="text-align-center"><span style="display: unset; color: var(--color_6);">Where Tradition Meets Innovation in Queens, NY</span></h2> 
+</div> 
+ <div class="dmNewParagraph u_1949081709" data-element-type="paragraph" data-version="5" id="1949081709" style="transition: none; text-align: left; display: block;"><p class="text-align-center"><span style="color: var(--color_6); display: unset;">&ldquo;Just Halal&rdquo; is a halal restaurant serving the best in modern, Western, Mexican &amp; traditional Middle eastern food. All meat being served is certified Zabiha Halal. We are located in Queens NY, parking is available on premise.</span></p></div> 
+ <a data-display-type="block" class="u_1957627773 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/contact" data-element-type="dButtonLinkId" id="1957627773" icon-name="icon-circle-arrow-right"> <span class="iconBg" aria-hidden="true" id="1420138121"> <span class="icon hasFontIconstar hasFontIcon icon-circle-arrow-right" id="1882403412"></span> 
+</span> 
+ <span class="text" id="1284930948">CONTACT US</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow fullBleedChanged fullBleedMode u_1361434263" id="1361434263"> <div class="dmRespColsWrapper" id="1862170680"> <div class="dmRespCol large-12 medium-12 small-12" id="1398849594"> <div data-element-type="html" class="u_1509064874 dmCustomHtml" id="1509064874"> <marquee width="100%" class="text-slide" loop="infinite"> <h1 class="big">&bull; TACOS &bull; SANDWICHES &bull; KABAB &bull; MOCKTAILS &bull; BEEF STEAK</h1> 
+</marquee> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1301647699 mobile-columns-reversed" id="1301647699"> <div class="dmRespColsWrapper" id="1356388295"> <div class="dmRespCol small-12 medium-6 large-6" id="1267421020"> <div class="u_1640383360 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1640383360" style="transition: opacity 1s ease-in-out;"><p><span style="text-transform:uppercase;color:var(--color_1);font-weight:500;display:unset;font-family:Barlow, 'Barlow Fallback';">easy ordering</span></p></div> 
+ <div class="u_1695744526 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1695744526" style="transition: opacity 1s ease-in-out;"> <h2 style="line-height: 1.2;"><span style="display: unset; font-weight: 500;">Easy Ordering, Every Time</span></h2> 
+</div> 
+ <div class="u_1698915892 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1698915892" style="transition: opacity 1s ease-in-out;"><p><span style="display: unset;">We know that life can get busy, which is why we've made ordering from Just Halal a breeze. With our convenient delivery, takeout, and dine-in options, you can enjoy our delicious food wherever and whenever you please. Simply place your order online or stop by our restaurant to experience our hospitality firsthand.</span></p></div> 
+</div> 
+ <div class="dmRespCol small-12 medium-6 large-6" id="1620994711"> <div class="dmRespRow u_1166090250" id="1166090250"> <div class="dmRespColsWrapper" id="1996480765"> <div class="u_1176328641 dmRespCol small-12 large-5 medium-5" id="1176328641"> <div class="u_1334888958 imageWidget align-center hide-for-small" data-element-type="image" data-widget-type="image" id="1334888958" data-anim-extended="eyJkZXNrdG9wIjp7InRyaWdnZXIiOiJ2aWV3cG9ydCIsImFuaW1hdGlvbiI6ImZhZGVJbkNvbWJvIiwicmV2ZXJzZSI6ZmFsc2UsImludGVuc2l0eSI6MSwidmlld3BvcnRUaHJlc2hvbGRzIjp7InRvcCI6IjUwJSIsImJvdHRvbSI6IjAlIn0sImRlbGF5IjowLCJkdXJhdGlvbiI6MSwiZGlyIjoibGVmdCJ9fQ=="><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/471749142_18132064234377717_8241636155631595794_n-276w.jpg" alt="" id="1666042018" class="" width="1440" height="1440" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/471749142_18132064234377717_8241636155631595794_n.jpg" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+ <div class="u_1418743955 dmRespCol small-12 large-7 medium-7" id="1418743955"> <div class="u_1498755659 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1498755659" data-anim-extended="eyJkZXNrdG9wIjp7InRyaWdnZXIiOiJ2aWV3cG9ydCIsImFuaW1hdGlvbiI6ImZhZGVJbkNvbWJvIiwicmV2ZXJzZSI6ZmFsc2UsImludGVuc2l0eSI6MSwidmlld3BvcnRUaHJlc2hvbGRzIjp7InRvcCI6IjUwJSIsImJvdHRvbSI6IjAlIn0sImRlbGF5IjowLCJkdXJhdGlvbiI6MSwiZGlyIjoicmlnaHQifX0="><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/unnamed-1a727b03-419w.jpg" alt="" id="1648319500" class="" width="243" height="174" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/unnamed-1a727b03.jpg" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1719543640 hasBackgroundOverlay" id="1719543640"> <div class="dmRespColsWrapper" id="1418311176"> <div class="dmRespCol large-12 medium-12 small-12 u_1725850393 content-removed" id="1725850393"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1502635870" data-styletopreserve="{"background-image":""}"> <h2 class="text-align-center" style="line-height: 1;"><span style="display: unset;">Try our most popular items</span></h2> 
+</div> 
+ <div class="u_1887120670 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1887120670" style="transition: opacity 1s ease-in-out;"><p class="text-align-center"><span style="display: unset;">Treat yourself to our must-try list that has everyone talking</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1784322928 hasBackgroundOverlay" id="1784322928"> <div class="dmRespColsWrapper" id="1954590214"> <div class="dmRespCol small-12 u_1445571697 large-3 medium-3" id="1445571697"> <div class="imageWidget align-center u_1868254031" data-element-type="image" data-widget-type="image" id="1868254031"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/87b8d257-f912-4df6-a39b-ef958664c73f-1bb11b19-306w.webp" alt="" id="1897405014" class="" width="384" height="384" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/87b8d257-f912-4df6-a39b-ef958664c73f-1bb11b19.webp" onerror="handleImageLoadError(this)"/></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1556731595" style="transition: opacity 1s ease-in-out;"> <h4><span style="color: var(--color_1); display: unset;">kofta beef kabab</span></h4> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1277044025" style="transition: opacity 1s ease-in-out;"><p class="m-size-14 size-18" style="letter-spacing: 0.2em; line-height: 1;"><span class="m-font-size-14 font-size-18" style="color: var(--color_3); display: unset;">★★★★★</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1647743325"><p><span style="display: unset;">Juicy seasoned kofta kabab grilled served with special basmati rice, salad &amp; hummus &amp; pita</span></p></div> 
+</div> 
+ <div class="dmRespCol small-12 u_1921460504 large-3 medium-3" id="1921460504"> <div class="imageWidget align-center u_1078552651" data-element-type="image" data-widget-type="image" id="1078552651"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/805ecbc8-995a-4754-9bdc-760e5cf29a3d-306w.webp" alt="" id="1389909211" class="" width="384" height="384" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/805ecbc8-995a-4754-9bdc-760e5cf29a3d.webp" onerror="handleImageLoadError(this)"/></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1019298157" style="transition: opacity 1s ease-in-out;"> <h4><span style="color: var(--color_1); display: unset;">beef steak platter</span></h4> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1354716503" style="transition: opacity 1s ease-in-out;"><p class="m-size-14 size-18" style="letter-spacing: 0.2em; line-height: 1;"><span class="m-font-size-14 font-size-18" style="color: var(--color_3); display: unset;">★★★★★</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1904406803"><p><span style="display: unset;">Tender beef steak served with seasoned basmati rice and salad</span></p></div> 
+</div> 
+ <div class="dmRespCol small-12 u_1803621803 large-3 medium-3" id="1803621803"> <div class="imageWidget align-center u_1815604044" data-element-type="image" data-widget-type="image" id="1815604044"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/e7f4beec-0aef-45fb-907a-332c7d0f0448-306w.webp" alt="" id="1015687769" class="" width="384" height="384" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/e7f4beec-0aef-45fb-907a-332c7d0f0448.webp" onerror="handleImageLoadError(this)"/></div> 
+ <div class="u_1100193412 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1100193412" style="transition: opacity 1s ease-in-out;"> <h4><span style="color: var(--color_1); display: unset;">birria tacos</span></h4> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1578518496" style="transition: opacity 1s ease-in-out;"><p class="m-size-14 size-18" style="letter-spacing: 0.2em; line-height: 1;"><span class="m-font-size-14 font-size-18" style="color: var(--color_3); display: unset;">★★★★★</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1251757538"><p><span style="display: unset;">Slow cooked beef Birria tacos made to order with shredded soft tender beef.</span></p></div> 
+</div> 
+ <div class="dmRespCol small-12 large-3 medium-3 u_1135740540" id="1135740540"> <div class="imageWidget align-center u_1730619297" data-element-type="image" data-widget-type="image" id="1730619297"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/b893fb63-02e7-438a-8b06-a5c3d5609fc8-306w.webp" alt="" id="1957300240" class="" width="384" height="384" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/b893fb63-02e7-438a-8b06-a5c3d5609fc8.webp" onerror="handleImageLoadError(this)"/></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1383953873" style="transition: opacity 1s ease-in-out;"> <h4><span style="color: var(--color_1); display: unset;">Crispy chicken sandwich</span></h4> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1639910959" style="transition: opacity 1s ease-in-out;"><p class="m-size-14 size-18" style="letter-spacing: 0.2em; line-height: 1;"><span class="m-font-size-14 font-size-18" style="color: var(--color_3); display: unset;">★★★★★</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1805914635"><p><span class="" style="display: unset;"><span style="display: unset;">Buttermilk fried crispy chicken sandwich served on a brioche bun chipotle sauce cabbage &amp; cheese.</span> 
+</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1177516758 hasBackgroundOverlay" id="1177516758"> <div class="dmRespColsWrapper" id="1122930702"> <div class="dmRespCol large-12 medium-12 small-12" id="1312779472"> <a data-display-type="block" class="u_1431985319 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/menu" data-element-type="dButtonLinkId" id="1431985319" icon-name="icon-circle-arrow-right"> <span class="iconBg" aria-hidden="true" id="1615723366"> <span class="icon hasFontIconstar hasFontIcon icon-circle-arrow-right" id="1121183023"></span> 
+</span> 
+ <span class="text" id="1568535450">VIEW FULL MENU</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow fullBleedChanged fullBleedMode u_1878768674" id="1878768674"> <div class="dmRespColsWrapper" id="1295542790"> <div class="dmRespCol large-12 medium-12 small-12" id="1532597093"> <div data-element-type="html" class="u_1883198735 dmCustomHtml" id="1883198735"> <marquee width="100%" class="text-slide" loop="infinite"> <h1 class="big">&bull; TACOS &bull; SANDWICHES &bull; KABAB &bull; MOCKTAILS &bull; BEEF STEAK</h1> 
+</marquee> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1783964075 hasBackgroundOverlay" id="1783964075"> <div class="dmRespColsWrapper" id="1660183428"> <div class="dmRespCol large-12 medium-12 small-12" id="1779140311"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1436483283" style="transition: opacity 1s ease-in-out;"> <h2 style="line-height: 62px;" class="text-align-center"><span style="display: unset; color: var(--color_6);">Order From Our Website</span><span style="display: initial;"><span class="ql-cursor">﻿</span></span></h2> 
+</div> 
+ <div class="u_1934554457 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1934554457"><p style="line-height: 22px;" class="text-align-center"><span style="display: unset; color: var(--color_6);">Order directly from our website to save money in fees, get faster service, earn free food via our rewards program, and support local business.</span><span style="display: initial;"><span class="ql-cursor">﻿</span></span></p></div> 
+ <a data-display-type="block" class="u_1623681391 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="https://justhalal.menu2order.com/" data-element-type="dButtonLinkId" id="1623681391" icon-name="icon-circle-arrow-right" target="_blank"> <span class="iconBg" aria-hidden="true" id="1220636777"> <span class="icon hasFontIconstar hasFontIcon icon-circle-arrow-right" id="1695241919"></span> 
+</span> 
+ <span class="text" id="1511045153">ORDER ONLINE</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1421219340 fullBleedChanged fullBleedMode" id="1421219340"> <div class="dmRespColsWrapper" id="1139659297"> <div class="dmRespCol large-12 medium-12 small-12" id="1403013489"> <div class="dmPhotoGallery newPhotoGallery dmPhotoGalleryResp u_1972295815 photo-gallery-done text-layout-over captionAlignment-center_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="6" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1972295815" data-placeholder="false" data-rows-to-show="100" data-image-hover-effect="zoomout" data-image-animation="slideInLeft"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-6" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1872073748" data-image-url="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/87b8d257-f912-4df6-a39b-ef958664c73f.webp" style="background-image: url('https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/87b8d257-f912-4df6-a39b-ef958664c73f-640w.webp');"><img id="1939184077" data-src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/87b8d257-f912-4df6-a39b-ef958664c73f-1920w.webp" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1475367646" class="caption-container u_1475367646" style="display:none"> <span class="caption-inner"> <a id="1145909032" class="caption-button dmWidget  clearfix u_1145909032" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-6" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1861113945" data-image-url="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/258s.jpg" style="background-image: url('https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/258s-640w.jpg');"><img id="1757245232" data-src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/258s-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1336222813" class="caption-container u_1336222813" style="display:none"> <span class="caption-inner"> <a id="1572556795" class="caption-button dmWidget  clearfix u_1572556795" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-6" data-index="2"> <div index="2" class="photoGalleryThumbs animated  " data-index="2"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1633838664" data-image-url="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/348s-448764cf.jpg" style="background-image: url('https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/348s-448764cf-640w.jpg');"><img id="1264021948" data-src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/348s-448764cf-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1968313068" class="caption-container u_1968313068" style="display:none"> <span class="caption-inner"> <a id="1063999311" class="caption-button dmWidget  clearfix u_1063999311" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-6" data-index="3"> <div index="3" class="photoGalleryThumbs animated  " data-index="3"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1824650468" data-image-url="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/348s-ea044099.jpg" style="background-image: url('https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/348s-ea044099-640w.jpg');"><img id="1308883609" data-src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/348s-ea044099-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1194747151" class="caption-container u_1194747151" style="display:none"> <span class="caption-inner"> <a id="1926733012" class="caption-button dmWidget  clearfix u_1926733012" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-6" data-index="4"> <div index="4" class="photoGalleryThumbs animated  " data-index="4"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1273597250" data-image-url="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/348s-e21c1051.jpg" style="background-image: url('https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/348s-e21c1051-640w.jpg');"><img id="1693539302" data-src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/348s-e21c1051-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1764584685" class="caption-container u_1764584685" style="display:none"> <span class="caption-inner"> <a id="1032807237" class="caption-button dmWidget  clearfix u_1032807237" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-6" data-index="5"> <div index="5" class="photoGalleryThumbs animated  " data-index="5"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1650100201" data-image-url="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/348s.jpg" style="background-image: url('https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/348s-640w.jpg');"><img id="1139201447" data-src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/348s-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1684402852" class="caption-container u_1684402852" style="display:none"> <span class="caption-inner"> <a id="1464805242" class="caption-button dmWidget  clearfix u_1464805242" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="dmRespRow u_1632155419" style="text-align: center;" id="1632155419"> <div class="dmRespColsWrapper" id="1253858808"> <div class="u_1063824722 dmRespCol small-12 large-3 medium-3" id="1063824722"> <div class="u_1922228026 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1922228026"> <a href="/" id="1304294722"><img src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/freepik_br_e7e5be05-9799-4cae-8b46-3197828302a8-9b5ca9b5-219w.png" alt="" id="1529286694" class="" width="604" height="452" data-dm-image-path="https://irp.cdn-website.com/8bc47b01/dms3rep/multi/freepik_br_e7e5be05-9799-4cae-8b46-3197828302a8-9b5ca9b5.png" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div class="u_1448503597 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1448503597" style="transition: opacity 1s ease-in-out;"><p><span class="" style="color: rgb(255, 255, 255); display: unset;"><span style="color: rgb(255, 255, 255); display: unset;">At Just Halal, we pride ourselves on offering an eclectic menu that brings together the vibrant flavors of Mexico with the rich culinary traditions of the Middle East.</span> 
+</span></p></div> 
+ <div class="u_1587056626 align-center text-align-center dmSocialHub gapSpacing" id="1587056626" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://instagram.com/just.halal.ny/" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style9" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.facebook.com/Just.Halal.NYC/" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style9" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol small-12 large-3 medium-3 u_1740152030" id="1740152030"> <div class="u_1010737391 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1010737391" style="transition: none; text-align: left; display: block;"> <h4><span style="display: unset; color: var(--color_6);">QUICK LINKS</span></h4> 
+</div> 
+ <nav class="u_1328282163 unifiednav_vertical effect-text-color main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_2" layout-sub="" data-show-vertical-sub-items="HOVER" id="1328282163" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="https://lirp.cdn-website.com/8bc47b01/dms3rep/multi/opt/freepik_br_b03f1376-20d7-4c69-acef-f9e6205401c7-ad7a2db9-1920w.png" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmNavItemSelected    " target="" data-target-page-alias="home" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="HOME" data-auto="page-text-style">HOME<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item    " target="" data-target-page-alias="about"> <span class="nav-item-text " data-link-text="ABOUT" data-auto="page-text-style">ABOUT<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menu" class="unifiednav__item    " target="" data-target-page-alias="menu"> <span class="nav-item-text " data-link-text="MENU" data-auto="page-text-style">MENU<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="http://justhalalfusion@gmail.com" class="unifiednav__item    " target="_blank" data-target-page-alias=""> <span class="nav-item-text " data-link-text="ORDER ONLINE" data-auto="page-text-style">ORDER ONLINE<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="https://justhalal.menu2order.com/giftcard" class="unifiednav__item    " target="_blank" data-target-page-alias=""> <span class="nav-item-text " data-link-text="GIFT CARD" data-auto="page-text-style">GIFT CARD<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmNavItemSelected    " target="" data-target-page-alias="events" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="HOME" data-auto="page-text-style">HOME<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/gallery" class="unifiednav__item    " target="" data-target-page-alias="gallery"> <span class="nav-item-text " data-link-text="GALLERY" data-auto="page-text-style">GALLERY<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/hiring" class="unifiednav__item    " target="" data-target-page-alias="hiring"> <span class="nav-item-text " data-link-text="HIRING" data-auto="page-text-style">HIRING<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item    " target="" data-target-page-alias="contact"> <span class="nav-item-text " data-link-text="CONTACT" data-auto="page-text-style">CONTACT<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="u_1483814560 dmRespCol small-12 large-4 medium-4" id="1483814560"> <div class="u_1449154976 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1449154976" style="transition: none; text-align: left; display: block;"> <h4><span style="color: var(--color_6); display: unset;">RESTAURANT HOURS</span></h4> 
+</div> 
+ <div class="u_1667456945 default dmHoursOfOperation" id="1667456945" dmle_extension="open_hours" data-element-type="open_hours" time_format="12" wr="true" displaytitle="false" lang="" forcedisplay="false" icon="true" surround="true" adwords=""> <dl class="open-hours-data"> <div class="open-hours-item"> <dt day="0">Monday</dt> 
+ <dd> <time>11:30 am</time> 
+- <time>10:30 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="1">Tuesday</dt> 
+ <dd> <time>11:30 am</time> 
+- <time>10:30 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="2">Wednesday</dt> 
+ <dd> <time>11:30 am</time> 
+- <time>10:30 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="3">Thursday</dt> 
+ <dd> <time>11:30 am</time> 
+- <time>10:30 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="4">Friday</dt> 
+ <dd>Closed</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="5">Saturday</dt> 
+ <dd> <time>11:30 am</time> 
+- <time>10:30 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="6">Sunday</dt> 
+ <dd> <time>11:30 am</time> 
+- <time>10:30 pm</time> 
+</dd> 
+</div> 
+</dl> 
+</div> 
+</div> 
+ <div class="u_1258093617 dmRespCol small-12 large-2 medium-2" id="1258093617"> <div class="u_1953851738 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1953851738" style="transition: none; text-align: left; display: block;"> <h4><span style="color: var(--color_6); display: unset;">CONTACT</span></h4> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1038200533" style="transition: opacity 1s ease-in-out;"><p style="line-height: 1.5;"><span style="color:var(--color_6);font-weight:600;display:unset;font-family:Barlow, 'Barlow Fallback';">Call Us:</span></p><p style="line-height: 1.5;"><a href="tel:(718) 464-0517" runtime_url="tel:(718) 464-0517" type="call" style="color:var(--color_6);font-weight:normal;display:unset;text-decoration:none;font-family:Barlow, 'Barlow Fallback';">(718) 464-0517</a></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1994125389" style="transition: opacity 1s ease-in-out;"><p style="line-height: 1.5;"><span style="color:var(--color_6);font-weight:600;display:unset;font-family:Barlow, 'Barlow Fallback';">Address:</span></p><p style="line-height: 1.5;"><span style="color:var(--color_6);font-weight:normal;display:unset;font-family:Barlow, 'Barlow Fallback';">20502 Hillside Avenue Hollis, NY 11423</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1989596686" id="1989596686"> <div class="dmRespColsWrapper" id="1770628583"> <div class="dmRespCol large-12 medium-12 small-12" id="1857564555"> <div data-element-type="html" class="dmCustomHtml u_1510096401" id="1510096401"> <div class="online-order"> <p> <a href="https://justhalal.menu2order.com/" target="_blank" class="online-text">Order Online</a> 
+</p> 
+ <a href="https://justhalal.menu2order.com/" target="_blank"><img src="https://lirp.cdn-website.com/d4cbde71/dms3rep/multi/opt/order-food-1920w.png" class="online-order-zoom" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1429542061" id="1429542061"> <div class="dmRespColsWrapper" id="1125411221"> <div class="dmRespCol small-12 medium-12 large-12" id="1857823410"> <div class="u_1077067299 widget-1f5975 dmCustomWidget" data-lazy-load="" data-title="" id="1077067299" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="1f5975986930429f819d4cd2154b5c4a" data-widget-version="25" data-widget-config="eyJjb3B5cmlnaHRUZXh0IjoiPHAgY2xhc3M9XCJydGVCbG9ja1wiPkFsbCBSaWdodHMgUmVzZXJ2ZWQgfCBKdXN0IEhhbGFsIEZ1c2lvbjwvcD4ifQ=="> <div class="copyright"> <div>&copy; 2025&nbsp;</div> 
+ <div><p class="rteBlock">All Rights Reserved | Just Halal Fusion</p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link rel="preload" href="https://irp.cdn-website.com/fonts/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dancing+Script:ital,wght@0,400..700;1,400..700&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;subset=latin-ext&amp;display=swap"  as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<style>
+@font-face {
+  font-family: "Eligated Bold";
+  src: url("https://irp.cdn-website.com/8bc47b01/fonts/Eligated+Bold-e7da_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="preload" as="style" fetchpriority="low" onload="loadCSS(this)" href="https://static.cdn-website.com/mnlt/production/5965/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link rel="preload" href="https://irp.cdn-website.com/WIDGET_CSS/16597e3e21e9a4b427f48418508c8356.css" id="widgetCSS" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="home"] #dm [data-show-on-page-only="home"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/8bc47b01/files/8bc47b01_withFlex_1.min.css?v=48" id="siteGlobalCss" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<!-- Page CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/8bc47b01/files/8bc47b01_home_withFlex_1.min.css?v=48" id="homeCssLink" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<style id="pagestyle" type="text/css">
+    
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-18, .size-18, .size-18 > font { font-size: 18px !important; }.font-size-50, .size-50, .size-50 > font { font-size: 50px !important; }.font-size-30, .size-30, .size-30 > font { font-size: 30px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script>
+    window.customWidgetsFunctions["128151275e4145de9c457a6ae729489e~114"] = function (element, data, api) {
+        ///There is a problem with changing the width, because widget resizing is off.
+element.style.setProperty('width', data.config.width + 'px', 'important');
+
+    };
+</script>
+<script>
+    window.customWidgetsFunctions["1f5975986930429f819d4cd2154b5c4a~25"] = function (element, data, api) {
+        null
+    };
+</script>
+<script>
+    if (!window.customWidgetsStrings["128151275e4145de9c457a6ae729489e"]) {
+        window.customWidgetsStrings["128151275e4145de9c457a6ae729489e"] = {};
+    }
+    var value = "dGVzdCBlbmJn";
+    window.customWidgetsStrings["128151275e4145de9c457a6ae729489e"]["FacebookFeed.widgetTitle"] = atob(
+        value);
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5965";
+    var build = "2025-11-26T13_50_16";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-11-26T13_50_16";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5965';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5965';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =false;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5965/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5965/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '8bc47b01'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 8bc47b01 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>

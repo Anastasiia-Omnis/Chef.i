@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta name="robots" content="noindex">
+              <title>Page not found</title>
+            </head>
+            <body>
+              <h1 id="message"></h1>
+              <p><a href="https://demolenyc.com">Home</a></p>
+              <script>
+                function reloadError() {
+                  window.sessionStorage.setItem("path", "/takeout-menu");
+
+                  var timeleft = 5;
+
+                  window.document.getElementById('message').innerHTML ="Oops. There is some problem. The page will be automatically reloaded in " + timeleft + " seconds.";
+
+                  var timer = setInterval(function(){
+                    timeleft -= 1;
+
+                    if(timeleft <= 0){
+                      clearInterval(timer);
+                      window.location.reload()
+                    } else {
+                      window.document.getElementById('message').innerText ="Oops. There is some problem. The page will be automatically reloaded in " + timeleft + " seconds.";
+                    }
+                  }, 1000);
+                }
+
+                function defaultError() {
+                  window.document.getElementById('message').innerHTML ="Oops. This page does not exist!";
+                  sessionStorage.removeItem("path")
+                }
+
+                addEventListener("DOMContentLoaded", (event) => {
+                  if (!window.sessionStorage.getItem("path")) {
+                    reloadError()
+                  } else if (window.sessionStorage.getItem("path") === "/takeout-menu") {
+                    defaultError()
+                  } else {
+                    reloadError()
+                  }
+                });
+              </script>
+            </body>
+          </html>

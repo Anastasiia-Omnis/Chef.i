@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lex Restaurant</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta charset="UTF-8">
+  
+  <meta name="description" content="" />  
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.lexrestaurant.com" />
+
+  <link rel="icon" type="image/x-icon" href="https://chowly-coo-configuration-assets.nyc3.digitaloceanspaces.com/chowly-coo-prod-configuration-assets/public/assets/Favicon-314-f082020f-357b-483e-aa3f-6d3c7e7c921c.jpg">
+  <link rel="canonical" href="https://www.lexrestaurant.com" />
+
+  
+
+  
+
+  <link rel="stylesheet" href="/assets/site-9253bcb7f2f6ad3e18a84ee3894612d75ee7049e4f806c8eeb1d10324f70a8e4.css" data-turbo-track="reload" />
+  <link rel="stylesheet" href="/assets/icons-8a8adf1b209dcf6019c445e5477d00b79192f6726b65fd7cf29cf43036ec3917.css" data-turbo-track="reload" />
+
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-4a1c1d27c11faa4dbac51fff4126422169b85739cdee3e8b89ea183bc17a2c23.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-f3765a09513ca1417099ce92257ef54b9d4cf3a7addc7dcbb1d6d848d307ee8a.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "site": "/assets/site-4b047adea2bfbedbd09cb582dd17c2c15e218d15c9dc17cfa26985c983bcea78.js",
+    "local-time": "/assets/local-time-821d43d4efe5c285055b57aea1a1f04a89a1019f689de214873d5af45a3ab3d7.js",
+    "jquery": "/assets/jquery-9292661fe0d8c5ef2ef35f5ca64d541d70c87e9f6d7f2716d646591a295b7f36.js",
+    "jquery-mask-plugin": "/assets/jquery-mask-plugin-12f491759485d6e50f909cf5fb641f245011016ab91b9043c057666fe07a99c0.js",
+    "alpinejs": "/assets/alpinejs-1330ff78f6252d676b60ac1291d71df4f04e542899717f8ee4d03a79dec27045.js",
+    "swiper": "/assets/swiper-7f75dbb82de8bbee0e764cde34bb5d2b466cf29a41dbcec463259a2c0c272bc5.js",
+    "libraries/vidbg": "/assets/libraries/vidbg-ca103f7572673d0e7e3cc8a6a59b200f7ab3da61da78a43e532949d800635fa5.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/site-4b047adea2bfbedbd09cb582dd17c2c15e218d15c9dc17cfa26985c983bcea78.js">
+<link rel="modulepreload" href="/assets/jquery-9292661fe0d8c5ef2ef35f5ca64d541d70c87e9f6d7f2716d646591a295b7f36.js">
+<link rel="modulepreload" href="/assets/jquery-mask-plugin-12f491759485d6e50f909cf5fb641f245011016ab91b9043c057666fe07a99c0.js">
+<link rel="modulepreload" href="/assets/alpinejs-1330ff78f6252d676b60ac1291d71df4f04e542899717f8ee4d03a79dec27045.js">
+<link rel="modulepreload" href="/assets/swiper-7f75dbb82de8bbee0e764cde34bb5d2b466cf29a41dbcec463259a2c0c272bc5.js">
+<script type="module">import "site"</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0..1,0&icon_names=17mp,add_card,ads_click,app_promo,attach_money,award_star,bakery_dining,bookmark_star,breakfast_dining,brightness_alert,cake,cake_add,cleaning_bucket,coffee,credit_card,date_range,directions_bus,drag_click,emoji_food_beverage,explosion,fastfood,featured_seasonal_and_gifts,fiber_new,file_map,file_map_stack,fireplace,food_bank,fork_spoon,glass_cup,home_pin,kid_star,local_bar,local_dining,local_fire_department,local_pizza,location_on,lunch_dining,mail,mark_email_unread,motorcycle,online_prediction,open_in_phone,phone_enabled,pin_drop,potted_plant,priority,quick_reorder,ramen_dining,restaurant,rice_bowl,sell,sentiment_excited,set_meal,settings_cell,shopping_bag,skillet_cooktop,smartphone,soup_kitchen,sports_football,star,star_rate,stockpot,trophy,volunteer_activism,wifi_calling_bar_1,wine_bar&display=block"
+        rel="preload" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0..1,0&icon_names=17mp,add_card,ads_click,app_promo,attach_money,award_star,bakery_dining,bookmark_star,breakfast_dining,brightness_alert,cake,cake_add,cleaning_bucket,coffee,credit_card,date_range,directions_bus,drag_click,emoji_food_beverage,explosion,fastfood,featured_seasonal_and_gifts,fiber_new,file_map,file_map_stack,fireplace,food_bank,fork_spoon,glass_cup,home_pin,kid_star,local_bar,local_dining,local_fire_department,local_pizza,location_on,lunch_dining,mail,mark_email_unread,motorcycle,online_prediction,open_in_phone,phone_enabled,pin_drop,potted_plant,priority,quick_reorder,ramen_dining,restaurant,rice_bowl,sell,sentiment_excited,set_meal,settings_cell,shopping_bag,skillet_cooktop,smartphone,soup_kitchen,sports_football,star,star_rate,stockpot,trophy,volunteer_activism,wifi_calling_bar_1,wine_bar&display=block"
+      rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css"
+        rel="preload" as="style">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css"
+      rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css"
+        rel="preload" as="style">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css"
+      rel="stylesheet">
+    
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcsffgqAAAAANLXQa19TOl4LbE2V7eS6PfaYhiT" defer></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkzXdhpOE3VmUpHjl1ZqL5VBuLpJmMrkc&libraries=maps,marker"
+    async></script>
+  
+  <script>
+    if (!window.origin.includes('http://localhost')) {
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
+      heap.load((window.origin.includes('chowly.dev') ? '3177339425' : '3745098455'));
+    }
+  </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto Slab:wght@400;700&amp;family=Roboto Slab:wght@400;700&amp;display=swap"
+          rel="preload" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto Slab:wght@400;700&amp;family=Roboto Slab:wght@400;700&amp;display=swap"
+          rel="stylesheet">
+
+  <style>
+    
+    :root {
+        /* Light theme colors */
+        --bg-primary: white;
+        --bg-secondary: #F2F2F2;
+        --bg-form: white;
+        --text-primary: #212121;
+        --text-secondary: #666;
+        --text-muted: #666666;
+        --border-primary: #ad0660​;
+        --border-secondary: #D7D7D7;
+        --stroke-primary: #ad0660​;
+        --stroke-secondary: currentColor;
+        --active-bg-opacity: 8%;
+        --active-text: #ad0660​;
+        --hover-bg-opacity: 8%;
+        --hover-text: #ad0660​;
+        --link-text: #666;
+        --link-hover: black;
+        --social-bg: #666;
+        --social-text: white;
+        --placeholder-text: #D7D7D7;
+        --focus-border: #777777;
+        --button-bg: transparent;
+        --button-text: #ad0660​;
+        --button-border: #ad0660​;
+        --button-hover-bg: transparent;
+        --button-hover-border: #ad0660​;
+        --brand-primary: #ad0660​;
+        --brand-overlay: rgba(173,6,96,0.08);
+        --brand-overlay-heavy: rgba(173,6,96,0.80);
+        --dim-overlay: rgba(0,0,0,0.4);
+    }
+    
+    body {
+        background: linear-gradient(180deg, rgba(173, 6, 96, 0.08) 0px, rgba(173, 6, 96, 0.00) 520px);
+    }
+
+    .grecaptcha-badge { visibility: hidden; }
+  </style>
+
+  
+  <link rel="stylesheet" href="/assets/vidbg-d74c25397b2a53260e208d026a127f645b2925b6042f570eafa2694b1405e867.css" />
+
+  <script src="/assets/libraries/vidbg-ca103f7572673d0e7e3cc8a6a59b200f7ab3da61da78a43e532949d800635fa5.js"></script>
+  <script src="/assets/banner-component-330f4ff874e01955f96214905294848a54bce38acf140c6aef116d81dd2bb2a3.js"></script>
+
+  <script async>
+    window.chowlyApiHost = 'https://api.chowlyinc.com';
+    window.siteHost = 'https://sites.chowly.app';
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","locations":[{"@type":"Restaurant","name":"Lex Restaurant","address":{"@type":"PostalAddress","streetAddress":"1370 Lexington Ave New","addressLocality":"York","addressRegion":"NY","postalCode":"10128","addressCountry":"US"},"telephone":"2128605903","url":"https://www.lexrestaurant.com#location-46786","priceRange":"$$","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Sunday","opens":"12:00:00","closes":"22:00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Monday","opens":"12:00:00","closes":"22:00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Tuesday","opens":"12:00:00","closes":"22:00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Wednesday","opens":"12:00:00","closes":"22:00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Thursday","opens":"12:00:00","closes":"22:00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Friday","opens":"12:00:00","closes":"22:00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Saturday","opens":"12:00:00","closes":"22:00:00"}],"hasMenu":{"@type":"Menu","name":"Menu","hasMenuSection":[{"@type":"MenuSection","name":"Appetizers","hasMenuItem":[{"@type":"MenuItem","name":"Caesar Salad","description":"Classic Caesar salad with crisp romaine, Parmesan, croutons and signature Caesar dressing","offers":{"@type":"Offer","price":"18.49","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Baby Spinach Salad","description":"With apple, bacon, Blue cheese","offers":{"@type":"Offer","price":"19.55","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Caprese Salad","description":"Fresh mozzarella, ripe tomatoes, roasted red peppers and basil leaves","offers":{"@type":"Offer","price":"19.55","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Steamed Mussels","description":"With white wine or marinara sauce","offers":{"@type":"Offer","price":"22.65","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Fried Calamari","description":"Crispy calamari rings garnished with fresh parsley, served with a zesty marinara sauce and a lemon wedge","offers":{"@type":"Offer","price":"23.65","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Maryland Crab Cakes","offers":{"@type":"Offer","price":"23.65","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Sautéed Shrimp","description":"Over cannellini beans","offers":{"@type":"Offer","price":"23.65","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Prosciutto Parma \u0026 Melon","offers":{"@type":"Offer","price":"23.65","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Soup of the Day","description":"Please contact the restaurant for daily selection","offers":{"@type":"Offer","price":"15.40","priceCurrency":"USD"}},{"@type":"MenuItem","name":"French Onion Soup","offers":{"@type":"Offer","price":"15.40","priceCurrency":"USD"}}]},{"@type":"MenuSection","name":"Sandwiches","hasMenuItem":[{"@type":"MenuItem","name":"Hamburger","offers":{"@type":"Offer","price":"22.65","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Cheeseburger","offers":{"@type":"Offer","price":"22.65","priceCurrency":"USD"}},{"@type":"MenuItem","name":"B.L.T Triple Decker Sandwich","offers":{"@type":"Offer","price":"20.55","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Tuna Melt Sandwich","offers":{"@type":"Offer","price":"20.55","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Grilled Chicken Breast Sandwich","offers":{"@type":"Offer","price":"20.55","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Grilled Portabello Sandwich","description":"With pesto and mozzarella","offers":{"@type":"Offer","price":"17.49","priceCurrency":"USD"}}]},{"@type":"MenuSection","name":"Pasta","hasMenuItem":[{"@type":"MenuItem","name":"Penne Alla Vodka","description":"With salmon or chicken","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Bucatini Ala Amatriciana","description":"with Pancattan, Onions, crushed red pepper in Tomato Sauce","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Spinach \u0026 Ricotta Ravioli","description":"Delicate ravioli filled with spinach and ricotta, served in a rich tomato cream sauce","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Fusilli ala Melanza E Ricotta","description":"Mozzarella, eggplant and plum tomato sauce","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Pappardella","description":"In slowly cooked ragout of veal flavored with sage","offers":{"@type":"Offer","price":"32.95","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Rigatoni","description":"With Italian Sausage, peppers, onions, Mozzarella","offers":{"@type":"Offer","price":"30.85","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Angel Hair Pasta","description":"With shrimp and arugula in a light tomato sauce","offers":{"@type":"Offer","price":"34.99","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Penne in Tomato Sauce","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Farfalle","description":"with Bacon, Peas \u0026 Mushrooms in pink sauce","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Linguini","offers":{"@type":"Offer","price":"34.99","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Spaghetti Bolognese","offers":{"@type":"Offer","price":"32.95","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Fettuccini Ala Toscana","description":"with Chicken, Shitake, and Marsala Sundried Tomatos in Cream Sauce","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Tortellini","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Risotto","description":" with Porcini Mushrooms, Parmesan \u0026 Truffle Oil","offers":{"@type":"Offer","price":"34.99","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Linguini Alla Fruitti Del Mare","offers":{"@type":"Offer","price":"34.99","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Seafood Risotto","description":"Clams, muscles, salmon, and calamari over risotto","offers":{"@type":"Offer","price":"41.15","priceCurrency":"USD"}}]},{"@type":"MenuSection","name":"Entrée Salads","hasMenuItem":[{"@type":"MenuItem","name":"Cobb Salad","description":"With chicken breast, roasted peppers, eggs, bacon, blue cheese and tomato","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Grilled Chicken Salad","description":"With mustard vinaigrette, Parmesan cheese and pine nuts","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Grilled Chicken Caesar Salad","description":"Grilled chicken served with crisp romaine lettuce, Parmesan cheese, croutons and zesty Caesar dressing","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Grilled Portabello Salad","description":"With goat cheese, mixed greens and balsamic vinaigrette","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Salad Nicoise","description":"Tuna, Eggs, Tomatoes, String Beans, Potatoes \u0026 Olives","offers":{"@type":"Offer","price":"28.79","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Grilled Chicken Breast Paillard","description":"with Sautéed Portobello over Mixed Greens","offers":{"@type":"Offer","price":"30.85","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Grilled Shrimp Salad","description":"Over spinach, hearts of palm, walnuts and feta cheese","offers":{"@type":"Offer","price":"33.95","priceCurrency":"USD"}}]},{"@type":"MenuSection","name":"Entrée","hasMenuItem":[{"@type":"MenuItem","name":"Chicken Spezzato","description":"with Zucchini Peppers in Tomato Sauce","offers":{"@type":"Offer","price":"30.85","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Chicken Caprese","description":"with Tomato \u0026 Mozzarella","offers":{"@type":"Offer","price":"30.85","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Chicken Peperonata","description":"with Peppers, Green Olives in White Wine Sauce","offers":{"@type":"Offer","price":"30.85","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Grilled Salmon","description":"With lemon and white wine sauce","offers":{"@type":"Offer","price":"40.15","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Branzino","description":"Mediterranean Sea Bass with Lemon, Garlic, Capers in White Wine Sauce","offers":{"@type":"Offer","price":"41.15","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Sole","description":"Stuffed with shrimp and crab meat","offers":{"@type":"Offer","price":"41.15","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Veal Milanese","description":"Over arugula and tomato","offers":{"@type":"Offer","price":"40.15","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Veal Picatta","description":"With potato and vegetable","offers":{"@type":"Offer","price":"40.15","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Veal Saltimbocca","description":"with Prociutto S age, Swiss Cheese, Marsala Wine Sauce","offers":{"@type":"Offer","price":"41.15","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Porter House Steak (16 Oz)","description":"16 oz Porterhouse steak, choice of meat temperature: medium, medium rare, medium well, rare, well done","offers":{"@type":"Offer","price":"49.39","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Chicken Scarpariello","description":"Sautéed in white wine, rosemary, garlic and lemon","offers":{"@type":"Offer","price":"30.85","priceCurrency":"USD"}},{"@type":"MenuItem","name":"New Zealand Rack of Lamb","description":"in Borolo Sauce","offers":{"@type":"Offer","price":"49.39","priceCurrency":"USD"}},{"@type":"MenuItem","name":"Chicken Parmigiano","description":"Over linguini and tomato sauce","offers":{"@type":"Offer","price":"30.85","priceCurrency":"USD"}}]}]},"areaServed":["carnegie","carnegie village","museum lane","92nd street y","the met"]}]}
+  </script>
+</head>
+<body data-organization-id="47152">
+  <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+  
+  <main id="main-content" role="main" data-maglev-dropzone>
+    <section class="grid grid-cols-2 gap-0 justify-center">
+      <div class="bg-[var(--brand-primary)] w-full h-[40px] flex justify-center items-center px-4 col-span-2" role="banner" id="section-Mj2zQ6U3" data-maglev-section-id="Mj2zQ6U3" data-maglev-section-type="site_notification_01">
+    <section class="flex items-center space-x-2 max-w-[1440px] w-full justify-center">
+        <div class="w-[30px] h-[30px] overflow-hidden">
+            <i class="text-white mds-food_bank" data-maglev-id="Mj2zQ6U3.icon" aria-hidden="true"></i>
+        </div>
+        <span data-maglev-id="Mj2zQ6U3.title" class="text-white text-[14px] font-normal leading-[24px] text-center line-clamp-2 overflow-hidden"><h2><strong>Great Italian Food on Lexington Ave, NY</strong></h2></span>
+    </section>
+</div><header class="sticky top-0 z-50 bg-[var(--bg-primary)] py-[16px] xl:py-[12px] shadow-md w-full col-span-2" id="section-eEg8xLvv" data-maglev-section-id="eEg8xLvv" data-maglev-section-type="standard_nav_01">
+  <div class="flex justify-between items-center px-4 xl:px-8 mx-auto w-full">
+      <div class="flex items-center">
+          <div class="w-20 h-[60px] md:h-[64px] xl:h-[72px] rounded-lg flex-shrink-0 mr-4 xl:mr-8">
+            <a href="/" aria-label="Lex Restaurant home">
+              <img src="https://chowly-coo-configuration-assets.nyc3.digitaloceanspaces.com/chowly-coo-prod-configuration-assets/public/assets/Logo-918-11d59e6b-eb1e-4d93-9dc7-92dda0ce5218.jpg" alt="Lex Restaurant logo" class="w-full h-full object-contain rounded-lg">
+            </a>
+          </div>
+
+          <nav role="navigation" aria-label="Main navigation" class="hidden xl:block">
+            <ul class="flex">
+
+
+                <li>
+                  <a data-maglev-id="bFRJ_kg_UjY.link" class="flex text-[var(--text-muted)] hover:bg-[var(--brand-primary)]/[var(--hover-bg-opacity)] items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-md mr-3" aria-current="false" href="/"><span data-maglev-id="bFRJ_kg_UjY.link.text">Home</span></a>
+                </li>
+
+                <li>
+                  <a data-maglev-id="OiMOpxf_MqA.link" class="flex text-[var(--text-muted)] hover:bg-[var(--brand-primary)]/[var(--hover-bg-opacity)] items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-md mr-3" aria-current="false" href="/about"><span data-maglev-id="OiMOpxf_MqA.link.text">About</span></a>
+                </li>
+
+                <li>
+                  <a data-maglev-id="G5vy-UePjJY.link" class="flex text-[var(--text-muted)] hover:bg-[var(--brand-primary)]/[var(--hover-bg-opacity)] items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-md mr-3" aria-current="false" href="/make-reservation"><span data-maglev-id="G5vy-UePjJY.link.text">Make A Reservation</span></a>
+                </li>
+
+                <li>
+                  <a data-maglev-id="WafTaiw3.link" class="flex bg-[var(--brand-primary)]/[var(--active-bg-opacity)] text-[var(--active-text)] items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-md mr-3" aria-current="page" href="/our-menu"><span data-maglev-id="WafTaiw3.link.text">Our Menu</span></a>
+                </li>
+
+                <li class="relative">
+                  <button id="more-menu-button" class="flex text-[var(--text-muted)] hover:bg-[var(--brand-primary)]/[var(--hover-bg-opacity)] items-center justify-center gap-2 py-2 px-3 text-sm font-semibold rounded-md mr-3">
+                    More
+                    <svg id="more-arrow" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div id="more-dropdown" class="hidden fixed left-0 right-0 w-full z-50 transition-all duration-300">
+                    <div class="mx-auto max-w-7xl bg-[var(--bg-secondary)] shadow-lg p-6 rounded-lg dropdown-top-shadow">
+                      <div class="grid grid-cols-3 gap-4">
+                          <div class="w-full mb-2">
+                            <a data-maglev-id="WkF0mkjT4Ko.link" class="text-[var(--text-muted)] hover:bg-[var(--brand-primary)]/[var(--hover-bg-opacity)] inline-block py-2 px-4 text-sm font-medium rounded-md" aria-current="false" href="/contact"><span data-maglev-id="WkF0mkjT4Ko.link.text">Contact</span></a>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+            </ul>
+          </nav>
+      </div>
+
+      <div class="xl:hidden">
+          <button id="menu-toggle" class="focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="var(--stroke-primary)">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+          </button>
+      </div>
+
+      <a href="/stores" class="hidden xl:inline-flex items-center justify-center h-12 px-8 bg-[var(--brand-primary)] text-white text-base font-semibold rounded-md hover:brightness-90">Order Now</a>
+  </div>
+
+  <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-[var(--bg-primary)] z-50 overflow-y-auto" aria-hidden="true">
+      <div class="flex justify-between items-center px-4 py-4 sticky top-0 bg-[var(--bg-primary)] z-10">
+          <div class="w-20 h-[60px] md:h-[64px] xl:h-[72px] rounded-lg flex-shrink-0 mr-4 xl:mr-8">
+              <img src="https://chowly-coo-configuration-assets.nyc3.digitaloceanspaces.com/chowly-coo-prod-configuration-assets/public/assets/Logo-918-11d59e6b-eb1e-4d93-9dc7-92dda0ce5218.jpg" alt="Lex Restaurant logo" class="w-full h-full object-contain rounded-lg">
+          </div>
+          <button id="menu-close" class="focus:outline-none" aria-label="Close menu">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="var(--stroke-primary)">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+          </button>
+      </div>
+
+      <nav role="navigation" aria-label="Mobile navigation" class="pb-32">
+        <ul class="flex flex-col items-start px-5 space-y-6 mt-8">
+
+            <li>
+              <a data-maglev-id="bFRJ_kg_UjY.link" class="text-[var(--text-muted)] hover:bg-[var(--brand-primary)]/[var(--hover-bg-opacity)] py-2 px-4 text-sm font-semibold pl-3" aria-current="false" href="/"><span data-maglev-id="bFRJ_kg_UjY.link.text">Home</span></a>
+            </li>
+
+            <li>
+              <a data-maglev-id="OiMOpxf_MqA.link" class="text-[var(--text-muted)] hover:bg-[var(--brand-primary)]/[var(--hover-bg-opacity)] py-2 px-4 text-sm font-semibold pl-3" aria-current="false" href="/about"><span data-maglev-id="OiMOpxf_MqA.link.text">About</span></a>
+            </li>
+
+            <li>
+              <a data-maglev-id="G5vy-UePjJY.link" class="text-[var(--text-muted)] hover:bg-[var(--brand-primary)]/[var(--hover-bg-opacity)] py-2 px-4 text-sm font-semibold pl-3" aria-current="false" href="/make-reservation"><span data-maglev-id="G5vy-UePjJY.link.text">Make A Reservation</span></a>
+            </li>
+
+            <li>
+              <a data-maglev-id="WafTaiw3.link" class="bg-[var(--brand-primary)]/[var(--active-bg-opacity)] text-[var(--active-text)] py-2 px-4 text-sm font-semibold pl-3" aria-current="page" href="/our-menu"><span data-maglev-id="WafTaiw3.link.text">Our Menu</span></a>
+            </li>
+
+            <li>
+              <a data-maglev-id="WkF0mkjT4Ko.link" class="text-[var(--text-muted)] hover:bg-[var(--brand-primary)]/[var(--hover-bg-opacity)] py-2 px-4 text-sm font-semibold pl-3" aria-current="false" href="/contact"><span data-maglev-id="WkF0mkjT4Ko.link.text">Contact</span></a>
+            </li>
+        </ul>
+      </nav>
+
+      <div class="fixed bottom-0 left-0 w-full flex flex-col items-center space-y-8 py-8 bg-[var(--bg-primary)] border-[var(--border-secondary)]">
+          <div class="flex justify-center w-full">
+            <a href="/stores" class="inline-flex h-12 px-8 justify-center items-center gap-2 flex-shrink-0 rounded-[6px] bg-[var(--brand-primary)] text-white text-[15px] font-semibold leading-[150%] hover:brightness-90">Order Now</a>
+          </div>
+      </div>
+  </div>
+</header>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      menuToggle.setAttribute('aria-expanded', 'true');
+  });
+
+  menuClose.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuToggle.setAttribute('aria-expanded', 'false');
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const moreButton = document.getElementById('more-menu-button');
+    const moreDropdown = document.getElementById('more-dropdown');
+    const moreArrow = document.getElementById('more-arrow');
+
+    if (moreButton && moreDropdown && moreArrow) {
+      let isOpen = false;
+      let isHoveringButton = false;
+      let isHoveringDropdown = false;
+      let dropdownTimeout;
+
+      function showDropdown() {
+        clearTimeout(dropdownTimeout);
+        moreDropdown.classList.remove('hidden');
+        moreDropdown.style.opacity = '1';
+        moreArrow.classList.add('rotate-180');
+        isOpen = true;
+      }
+
+      function hideDropdown() {
+        moreDropdown.style.opacity = '0';
+        moreArrow.classList.remove('rotate-180');
+
+        dropdownTimeout = setTimeout(() => {
+          moreDropdown.classList.add('hidden');
+          isOpen = false;
+        }, 300); // Same as transition duration
+      }
+
+      function toggleDropdown() {
+        if (isOpen) {
+          hideDropdown();
+        } else {
+          showDropdown();
+        }
+      }
+
+      function updateDropdownVisibility() {
+        if (isHoveringButton || isHoveringDropdown) {
+          showDropdown();
+        } else {
+          hideDropdown();
+        }
+      }
+
+      // Click functionality
+      moreButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleDropdown();
+      });
+
+      // Also allow hover functionality
+      moreButton.addEventListener('mouseenter', () => {
+        isHoveringButton = true;
+        updateDropdownVisibility();
+      });
+
+      moreButton.addEventListener('mouseleave', () => {
+        isHoveringButton = false;
+        toggleDropdown();
+
+      });
+
+      moreDropdown.addEventListener('mouseenter', () => {
+        isHoveringDropdown = true;
+        updateDropdownVisibility();
+      });
+
+      moreDropdown.addEventListener('mouseleave', () => {
+        isHoveringDropdown = false;
+        toggleDropdown();
+
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(e) {
+        if (isOpen && !moreButton.contains(e.target) && !moreDropdown.contains(e.target)) {
+          hideDropdown();
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  .rotate-180 {
+    transform: rotate(180deg);
+    transition: transform 300ms;
+  }
+
+  #more-dropdown {
+    opacity: 0;
+    transition: opacity 300ms;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    right: 0;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 50;
+    transform: translateX(calc(-50% + 10vw));
+  }
+
+  .dropdown-top-shadow {
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06),
+                0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+</style>
+<section class="w-full xl:w-[1200px] h-auto flex-shrink-0 rounded-lg mx-auto my-10 relative flex flex-col items-start justify-center px-10 xl:px-20 py-10 xl:py-20 col-span-2" id="section-1jSZgTqj" data-maglev-section-id="1jSZgTqj" data-maglev-section-type="custom_html_01">
+  
+<div class="menu-wrapper">
+  <style>
+    .menu-wrapper { all: initial; display: block; font-family: system-ui, sans-serif; max-width: 1200px; margin: 0 auto; padding: 1rem; }
+    .menu-wrapper * { box-sizing: border-box; }
+    .menu-wrapper .menu-category { margin-bottom: 3rem; }
+    .menu-wrapper .category-name { font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; }
+    .menu-wrapper .menu-items-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 768px) {
+      .menu-wrapper .menu-items-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .menu-wrapper .menu-item { margin-bottom: 1.5rem; }
+    .menu-wrapper .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; }
+    .menu-wrapper .item-name { font-weight: 600; font-size: 1.1rem; }
+    .menu-wrapper .item-price { font-weight: 600; white-space: nowrap; margin-left: 1rem; }
+    .menu-wrapper .item-description { font-size: 0.95rem; line-height: 1.4; }
+    
+    .menu-wrapper .category-name { color: #111; border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem; }
+    .menu-wrapper .item-name { color: #222; }
+    .menu-wrapper .item-price { color: #333; }
+    .menu-wrapper .item-description { color: #666; }
+  </style>
+    <div class="menu-category">
+      <h2 class="category-name">Appetizers</h2>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Caesar Salad</span>
+            <span class="item-price">$17.95</span>
+          </div>
+          <div class="item-description">Classic Caesar salad with crisp romaine, Parmesan, croutons and signature Caesar dressing</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Baby Spinach Salad</span>
+            <span class="item-price">$18.95</span>
+          </div>
+          <div class="item-description">With apple, bacon, Blue cheese</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Caprese Salad</span>
+            <span class="item-price">$18.95</span>
+          </div>
+          <div class="item-description">Fresh mozzarella, ripe tomatoes, roasted red peppers and basil leaves</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Steamed Mussels</span>
+            <span class="item-price">$21.95</span>
+          </div>
+          <div class="item-description">With white wine or marinara sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Fried Calamari</span>
+            <span class="item-price">$22.95</span>
+          </div>
+          <div class="item-description">Crispy calamari rings garnished with fresh parsley, served with a zesty marinara sauce and a lemon wedge</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Maryland Crab Cakes</span>
+            <span class="item-price">$22.95</span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Sautéed Shrimp</span>
+            <span class="item-price">$22.95</span>
+          </div>
+          <div class="item-description">Over cannellini beans</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Prosciutto Parma & Melon</span>
+            <span class="item-price">$22.95</span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Soup of the Day</span>
+            <span class="item-price">$14.95</span>
+          </div>
+          <div class="item-description">Please contact the restaurant for daily selection</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">French Onion Soup</span>
+            <span class="item-price">$14.95</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h2 class="category-name">Sandwiches</h2>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Hamburger</span>
+            <span class="item-price">$21.95 </span>
+          </div>
+          <div class="item-description">Served with French fries</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Cheeseburger</span>
+            <span class="item-price">$21.95</span>
+          </div>
+          <div class="item-description">Served with French fries</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">B.L.T Triple Decker Sandwich</span>
+            <span class="item-price">$19.95 </span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Tuna Melt Sandwich</span>
+            <span class="item-price">$19.95 </span>
+          </div>
+          <div class="item-description">Served with French fries</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Grilled Chicken Breast Sandwich</span>
+            <span class="item-price">$19.95 </span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Grilled Portabello Sandwich</span>
+            <span class="item-price">$16.95</span>
+          </div>
+          <div class="item-description">With pesto and mozzarella</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h2 class="category-name">Pasta</h2>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Penne Alla Vodka</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">With salmon or chicken</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Bucatini Ala Amatriciana</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">with Pancattan, Onions, crushed red pepper in Tomato Sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Spinach & Ricotta Ravioli</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">Delicate ravioli filled with spinach and ricotta, served in a rich tomato cream sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Fusilli ala Melanza E Ricotta</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">Mozzarella, eggplant and plum tomato sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Pappardella</span>
+            <span class="item-price">$31.95</span>
+          </div>
+          <div class="item-description">In slowly cooked ragout of veal flavored with sage</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Rigatoni</span>
+            <span class="item-price">$29.95</span>
+          </div>
+          <div class="item-description">With Italian Sausage, peppers, onions, Mozzarella</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Angel Hair Pasta</span>
+            <span class="item-price">$33.95</span>
+          </div>
+          <div class="item-description">With shrimp and arugula in a light tomato sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Penne in Tomato Sauce</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">With basil</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Farfalle</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">with Bacon, Peas & Mushrooms in pink sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Linguini</span>
+            <span class="item-price">$33.95</span>
+          </div>
+          <div class="item-description">With white clam sauce garlic and parsley</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Spaghetti Bolognese</span>
+            <span class="item-price">$33.95</span>
+          </div>
+          <div class="item-description">Spaghetti with a rich, hearty bolognese sauce, topped with freshly grated Parmesan cheese and garnished with chopped parsley</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Fettuccini Ala Toscana</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">with Chicken, Shitake, and Marsala Sundried Tomatos in Cream Sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Tortellini</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">Homemade spinach tortellini with four-cheese sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Seafood Risotto</span>
+            <span class="item-price">$39.95</span>
+        </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Mushroom Risotto</span>
+            <span class="item-price">$33.95</span>
+          </div>
+          <div class="item-description"> with Porcini Mushrooms, Parmesan & Truffle Oil</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Linguini Alla Fruitti Del Mare</span>
+            <span class="item-price">$33.95</span>
+          </div>
+          <div class="item-description">Mixed seafood in a light marinara sauce</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h2 class="category-name">Entrée Salads</h2>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Cobb Salad</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">With chicken breast, roasted peppers, eggs, bacon, blue cheese and tomato</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Grilled Chicken Salad</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">With mustard vinaigrette, Parmesan cheese and pine nuts</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Grilled Chicken Caesar Salad</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">Grilled chicken served with crisp romaine lettuce, Parmesan cheese, croutons and zesty Caesar dressing</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Grilled Portabello Salad</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">With goat cheese, mixed greens and balsamic vinaigrette</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Salad Nicoise</span>
+            <span class="item-price">$27.95</span>
+          </div>
+          <div class="item-description">Tuna, Eggs, Tomatoes, String Beans, Potatoes & Olives</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Grilled Chicken Breast Paillard</span>
+            <span class="item-price">$29.95</span>
+          </div>
+          <div class="item-description">with Sautéed Portobello over Mixed Greens</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Grilled Shrimp Salad</span>
+            <span class="item-price">$32.95</span>
+          </div>
+          <div class="item-description">Over spinach, hearts of palm, walnuts and feta cheese</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h2 class="category-name">Entrée</h2>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Chicken Spezzato</span>
+            <span class="item-price">$29.95</span>
+          </div>
+          <div class="item-description">with Zucchini Peppers in Tomato Sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Chicken Caprese</span>
+            <span class="item-price">$29.95</span>
+          </div>
+          <div class="item-description">with Tomato & Mozzarella</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Chicken Peperonata</span>
+            <span class="item-price">$29.95</span>
+          </div>
+          <div class="item-description">with Peppers, Green Olives in White Wine Sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Grilled Salmon</span>
+            <span class="item-price">$38.95</span>
+          </div>
+          <div class="item-description">With lemon and white wine sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Branzino</span>
+            <span class="item-price">$39.95</span>
+          </div>
+          <div class="item-description">Mediterranean Sea Bass with Lemon, Garlic, Capers in White Wine Sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Sole</span>
+            <span class="item-price">$39.95</span>
+          </div>
+          <div class="item-description">Stuffed with shrimp and crab meat</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Veal Milanese</span>
+            <span class="item-price">$38.95</span>
+          </div>
+          <div class="item-description">Over arugula and tomato</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Veal Picatta</span>
+            <span class="item-price">$38.95</span>
+          </div>
+          <div class="item-description">With potato and vegetable</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Veal Saltimbocca</span>
+            <span class="item-price">$39.95</span>
+          </div>
+          <div class="item-description">with Prociutto S age, Swiss Cheese, Marsala Wine Sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Porter House Steak (16 Oz)</span>
+            <span class="item-price">$47.95</span>
+          </div>
+          <div class="item-description">16 oz Porterhouse steak, choice of meat temperature: medium, medium rare, medium well, rare, well done</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Chicken Scarpariello</span>
+            <span class="item-price">$29.95</span>
+          </div>
+          <div class="item-description">Sautéed in white wine, rosemary, garlic and lemon</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">New Zealand Rack of Lamb</span>
+            <span class="item-price">$47.95</span>
+          </div>
+          <div class="item-description">in Borolo Sauce</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header">
+            <span class="item-name">Chicken Parmigiano</span>
+            <span class="item-price">$29.95</span>
+          </div>
+          <div class="item-description">Over linguini and tomato sauce</div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</section>
+    </section>
+  </main>
+  
+
+</body>
+</html>

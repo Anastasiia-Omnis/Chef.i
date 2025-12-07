@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+		<title>PIZZA - Weborder</title>
+
+		<meta name="description" content="Order food online" />
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	
+<link rel="stylesheet" href="/custom/bootstrap.css" />
+
+<link rel="stylesheet" href="/Content/bootstrap-datepicker.css" />
+
+<link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1549984893" />
+
+	<link rel="stylesheet" href="/custom/CustomSite_vars.css" />
+<link href="/Content/css-5.1.688.2115?v=L60d4WYzibgLvIekkSxbY029QmEexidpG3VNbIebXdE1" rel="stylesheet"/>
+	<link rel="stylesheet" href="/custom/Specials.css" />
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/Scripts/umd/popper.min.js"></script>
+<script src="/Scripts/bootstrap.min.js"></script>
+<script src="/Scripts/bootstrap-datepicker.min.js"></script>
+<script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="/Scripts/jquery.blockUI.js"></script>
+
+
+<script type="text/javascript">
+		
+		if (top.location != self.location) {
+			top.location = self.location.href;
+		}
+		
+
+	function WeborderRoot(pValue) {
+		return pValue.replace("~/", '/');
+	}
+
+	var GLOBAL__SESSION_TIMEOUT_WARNING_CAPTION="Stay logged in?";
+var GLOBAL__SESSION_TIMEOUT_WARNING_MESSAGE="Your Weborder session will expire in <b><span id='timeout'></span></b> seconds.<br/>Would you like to stay signed in?";
+var GENERAL__CULTURE="en-US";
+
+
+	var CULTURE_CODE = GENERAL__CULTURE.split("-")[1];
+
+
+
+
+	var COUNTRY_CODE_3_CHAR = "USA";
+
+</script>
+
+	<link href="/custom/CustomSite.css" type="text/css" rel="stylesheet" />
+		<link href="/custom/site_overrides.css" type="text/css" rel="stylesheet" />
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+		<!--InstanceID: 8818-->
+	
+
+	
+
+
+
+		<div class="container navBarContainer">
+			<div class="row navBarTopRow">
+				<div class="col-12 navbarRow">
+					<header class="navbar">
+						<div class="navBarLogo">
+								<a href="/Ordering">
+									<img alt="Organization Logo" src="/custom/logo.png" />
+								</a>
+						</div>
+
+						<div class="navBarRight ">
+							<div class="d-flex flex-column h-100">
+
+
+								<div class="d-flex mt-auto align-items-center">
+										<div id="cartIconAndLink" class="flex-grow-1 text-right">
+											<div class="d-inline-flex align-items-center">
+
+												<div>
+													<button class="pr-1 pl-1 pb-1 orderDetailsButton" type="button" role="navigation" data-toggle="collapse" data-target="#navbarOrderDetails" aria-label="Order Details Button">
+														<div class="d-flex align-items-center">
+															<div class="mr-2 cartTotal d-none d-lg-block mt-auto">
+Pickup																	from
+Westfield															</div>
+															<svg width="26" height="26" class="orderDetailsIcon">
+																<use xlink:href="/Images/svg/Icons.svg#location" />
+															</svg>
+														</div>
+													</button>
+												</div>
+
+
+
+
+												<div class="ml-2">
+													<a class="nav-item nav-link px-0" href="/Cart/" style="position:relative" aria-label="Cart Button">
+														<svg width="40" height="40" class="cart">
+															<use xlink:href="/Images/svg/Icons.svg#cart" />
+																
+																	<text x="22" y="18" text-anchor="middle">0</text>
+																
+														</svg>
+													</a>
+												</div>
+
+												<div class="ml-2 cartTotal d-none d-lg-block">
+													<a class="nav-item nav-link px-0" href="/Cart/">
+														<div class="cartTotalValue">
+$0.00														</div>
+													</a>
+												</div>
+
+											</div>
+										</div>
+
+										<button class="pr-1 pl-1 pb-1 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-label="Menu Toggler" role="navigation">
+											<svg width="30" height="30">
+												<use xlink:href="/Images/svg/Icons.svg#toggler" />
+											</svg>
+										</button>
+								</div>
+							</div>
+
+									<div class="collapse navbar-collapse flex-shrink-1 flex-grow-0" id="navbarOrderDetails">
+										<div id="navBarWrapper" class="ml-auto">
+
+											<div class="row">
+												<div class="col-12 odOrderType pl-2">Pickup from: </div>
+											</div>
+
+											<hr class="my-1 mx-0" />
+
+											<div class="row">
+												<div class="col-12 col-md-6">
+														<div class="odStoreAddress">
+															Westfield<br/>107 E Broad St<br/>Westfield, NJ 07090<br/>
+														</div>
+																											<div>
+															<a class="odChangeLink" href="/GetAddress?ReturnURL=~/Ordering">Change Pickup</a>
+														</div>
+												</div>
+
+												<div class="col-12 col-md-6 odStoreInfo">
+													<div class="odStoreName font-weight-bold">
+														Westfield
+													</div>
+													<div class="odTodayHoursCaption mt-1 font-weight-bold">
+														Today's Hours:
+													</div>
+													<div class="odTodayHoursValue pl-1">
+														11:00am - 10:00pm
+													</div>
+													<div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								<div class="collapse navbar-collapse flex-shrink-1 flex-grow-0" id="navbarMenu">
+									<div id="navBarWrapper" class="ml-auto">
+
+
+
+
+
+
+										<div id="navbarMenuItems" class="navbar-nav ml-auto ">
+											<a class="nav-item nav-link" href="/Ordering">
+												<div class="d-flex align-items-center">
+													<svg width="20" height="20">
+																<use xlink:href="/Images/svg/Icons.svg#burger" />
+													</svg>
+													<span>
+														FULL MENU
+													</span>
+												</div>
+											</a>
+
+												<a class="nav-item nav-link" href="/Cart/">
+													<div class="d-flex align-items-center">
+														<svg width="20" height="20">
+															<use xlink:href="/Images/svg/Icons.svg#plate" />
+														</svg>
+														<span>
+															MY ORDER
+														</span>
+													</div>
+												</a>
+
+												<a class="nav-item nav-link" href="/Login/Simple">
+													<div class="d-flex align-items-center">
+														<svg width="20" height="20">
+															<use xlink:href="/Images/svg/Icons.svg#user" />
+														</svg>
+														<span>
+															SIGN IN
+														</span>
+													</div>
+												</a>
+
+										</div>
+									</div>
+								</div>
+						</div>
+
+					</header>
+				</div>
+			</div>
+
+				<div class="row storeAndHoursBanner">
+					<div class="col">
+							<h2 class="topBannerSubHeader">
+								WESTFIELD - 11:00am - 10:00pm
+							</h2>
+					</div>
+				</div>
+
+
+			<div class="row navBarSpacer">
+
+			</div>
+
+			<div class="row navBarHeaderWrapper">
+				<div id="navBarHeaderRow">
+
+
+<div id="groupsMenu">
+	<a class="btn" id="mgLeft">
+		<svg width="20" height="20">
+			<use xlink:href="/Images/svg/Icons.svg#previous" />
+		</svg>
+	</a>
+	<ul>
+			<li class="active">
+				<a href="/Items/Index/1017">
+					PIZZA
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1021">
+					SLICES
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1018">
+					ROLLS &amp; CALZONES
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1011">
+					APPETIZERS
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1009">
+					SOUP
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1012">
+					SALADS
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1013">
+					PASTA
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1014">
+					BAKED DINNERS
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1016">
+					HOT &amp; COLD HEROS
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1027">
+					DINNERS
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1029">
+					WRAPS
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1023">
+					EXTRAS
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1030">
+					KIDS CORNER
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1062">
+					DESSERTS
+				</a>
+			</li>
+			<li class="">
+				<a href="/Items/Index/1008">
+					BEVERAGES
+				</a>
+			</li>
+	</ul>
+	<a class="btn" id="mgRight">
+		<svg width="20" height="20">
+			<use xlink:href="/Images/svg/Icons.svg#next" />
+		</svg>
+	</a>
+</div>
+				</div>
+			</div>
+
+			<div class="row navBarSpacer">
+
+			</div>
+		</div>
+		<div class="container mainContainer">
+			<div class="row">
+
+
+						<div id="leftColumn" class="d-none col-lg-2 d-lg-block px-0 flex-grow-0">
+							
+
+
+
+
+<div class="container px-0 leftGroups leftGroupsContainer">
+		<div class="leftGroupsLink active">
+			<a href="/Items/Index/1017">
+				<div class="d-flex align-items-center">
+						<img alt="PIZZA thumbnail" border="0" src="/custom/images/PizzaThumb.png" />
+
+					<div class="py-1">
+						PIZZA
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1021">
+				<div class="d-flex align-items-center">
+						<img alt="SLICES thumbnail" border="0" src="/custom/images/PizzaSliceThumb.png" />
+
+					<div class="py-1">
+						SLICES
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1018">
+				<div class="d-flex align-items-center">
+						<img alt="ROLLS &amp; CALZONES thumbnail" border="0" src="/custom/images/CalzoneThumb.png" />
+
+					<div class="py-1">
+						ROLLS &amp; CALZONES
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1011">
+				<div class="d-flex align-items-center">
+						<img alt="APPETIZERS thumbnail" border="0" src="/custom/images/AppsThumb.png" />
+
+					<div class="py-1">
+						APPETIZERS
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1009">
+				<div class="d-flex align-items-center">
+						<img alt="SOUP thumbnail" border="0" src="/custom/images/SoupThumb.png" />
+
+					<div class="py-1">
+						SOUP
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1012">
+				<div class="d-flex align-items-center">
+						<img alt="SALADS thumbnail" border="0" src="/custom/images/SaladThumb.png" />
+
+					<div class="py-1">
+						SALADS
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1013">
+				<div class="d-flex align-items-center">
+						<img alt="PASTA thumbnail" border="0" src="/custom/images/PastaSpaghettiPlateThumb.png" />
+
+					<div class="py-1">
+						PASTA
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1014">
+				<div class="d-flex align-items-center">
+						<img alt="BAKED DINNERS thumbnail" border="0" src="/custom/images/BakedZitiThumb.png" />
+
+					<div class="py-1">
+						BAKED DINNERS
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1016">
+				<div class="d-flex align-items-center">
+						<img alt="HOT &amp; COLD HEROS thumbnail" border="0" src="/custom/images/SubThumb.png" />
+
+					<div class="py-1">
+						HOT &amp; COLD HEROS
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1027">
+				<div class="d-flex align-items-center">
+						<img alt="DINNERS thumbnail" border="0" src="/custom/images/ChickenParmThumb.png" />
+
+					<div class="py-1">
+						DINNERS
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1029">
+				<div class="d-flex align-items-center">
+						<img alt="WRAPS thumbnail" border="0" src="/custom/images/wrapThumb.png" />
+
+					<div class="py-1">
+						WRAPS
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1023">
+				<div class="d-flex align-items-center">
+						<img alt="EXTRAS thumbnail" border="0" src="/custom/images/thumbMarinara.png" />
+
+					<div class="py-1">
+						EXTRAS
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1030">
+				<div class="d-flex align-items-center">
+						<img alt="KIDS CORNER thumbnail" border="0" src="/custom/images/CrayonsThumb.png" />
+
+					<div class="py-1">
+						KIDS CORNER
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1062">
+				<div class="d-flex align-items-center">
+						<img alt="DESSERTS thumbnail" border="0" src="/custom/images/cake_choc_thumb.png" />
+
+					<div class="py-1">
+						DESSERTS
+					</div>
+				</div>
+			</a>
+
+		</div>
+		<div class="leftGroupsLink ">
+			<a href="/Items/Index/1008">
+				<div class="d-flex align-items-center">
+						<img alt="BEVERAGES thumbnail" border="0" src="/custom/images/DrinksThumb.png" />
+
+					<div class="py-1">
+						BEVERAGES
+					</div>
+				</div>
+			</a>
+
+		</div>
+
+
+
+
+
+</div>
+
+
+
+						</div>
+				<div id="mainColumn" class="col col-lg-7 col-xl-8 pb-4 ">
+
+					
+
+	<div id="wiGroupImage" class="text-center">
+		<img alt="PIZZA image" style="max-width:100%" src="/custom/images/PizzaGroup.jpg" />
+	</div>
+
+
+
+
+
+
+
+
+<div class="container px-0">
+
+		<div class="row no-gutters">
+
+
+
+
+		<div class="col-12 col-sm-6 col-xl-6 px-1 py-2">
+			<div class="card newItemCard">
+				<div class="row no-gutters newItemCardRow">
+
+					<div class="col my-2 d-flex flex-column ml-1 mr-1">
+						<div class="newItemName">17&quot; PIZZA</div>
+						<div class="newItemDescription mt-1 flex-grow-1">
+Eight (8) slices. All Gourmet Pizzas are available on whole wheat. Thin crust available on request						</div>
+
+							<div class="newItemPrice mb-1 mt-1">$15.95</div>
+					</div>
+				</div>
+
+					<a href="/Item/New/3461" class="hiddenCardLink" aria-label="Order 17&quot; PIZZA"></a>
+			</div>
+		</div>
+
+
+
+
+
+		<div class="col-12 col-sm-6 col-xl-6 px-1 py-2">
+			<div class="card newItemCard">
+				<div class="row no-gutters newItemCardRow">
+
+					<div class="col my-2 d-flex flex-column ml-1 mr-1">
+						<div class="newItemName">10&quot; PERSONAL</div>
+						<div class="newItemDescription mt-1 flex-grow-1">
+						</div>
+
+							<div class="newItemPrice mb-1 mt-1">$9.95</div>
+					</div>
+				</div>
+
+					<a href="/Item/New/3434" class="hiddenCardLink" aria-label="Order 10&quot; PERSONAL"></a>
+			</div>
+		</div>
+
+
+
+
+
+		<div class="col-12 col-sm-6 col-xl-6 px-1 py-2">
+			<div class="card newItemCard">
+				<div class="row no-gutters newItemCardRow">
+
+					<div class="col my-2 d-flex flex-column ml-1 mr-1">
+						<div class="newItemName">14&quot; PAN</div>
+						<div class="newItemDescription mt-1 flex-grow-1">
+Six (6) Slices						</div>
+
+							<div class="newItemPrice mb-1 mt-1">$17.50</div>
+					</div>
+				</div>
+
+					<a href="/Item/New/2898" class="hiddenCardLink" aria-label="Order 14&quot; PAN"></a>
+			</div>
+		</div>
+
+
+
+
+
+		<div class="col-12 col-sm-6 col-xl-6 px-1 py-2">
+			<div class="card newItemCard">
+				<div class="row no-gutters newItemCardRow">
+
+					<div class="col my-2 d-flex flex-column ml-1 mr-1">
+						<div class="newItemName">16&quot; SICILIAN</div>
+						<div class="newItemDescription mt-1 flex-grow-1">
+Twelve (12) Slices						</div>
+
+							<div class="newItemPrice mb-1 mt-1">$20.00</div>
+					</div>
+				</div>
+
+					<a href="/Item/New/2899" class="hiddenCardLink" aria-label="Order 16&quot; SICILIAN"></a>
+			</div>
+		</div>
+
+
+
+
+
+		<div class="col-12 col-sm-6 col-xl-6 px-1 py-2">
+			<div class="card newItemCard">
+				<div class="row no-gutters newItemCardRow">
+
+					<div class="col my-2 d-flex flex-column ml-1 mr-1">
+						<div class="newItemName">12&quot; MINI SICILIAN</div>
+						<div class="newItemDescription mt-1 flex-grow-1">
+Six (6) Slices						</div>
+
+							<div class="newItemPrice mb-1 mt-1">$13.00</div>
+					</div>
+				</div>
+
+					<a href="/Item/New/3117" class="hiddenCardLink" aria-label="Order 12&quot; MINI SICILIAN"></a>
+			</div>
+		</div>
+
+		</div>
+</div>
+
+
+
+
+
+
+				</div>
+
+					<div id="rightColumn" class="col-lg-3 col-xl-2 d-none d-lg-block px-0">
+						
+
+<div class="container px-0 rightGuestCheck">
+
+	
+
+	<div id="wiGuestCheckWithCheckoutButtons">
+
+
+		<div id="wiSideGuestCheck">
+			<div class="card guestCheck">
+	<div class="card-header">
+		<div class="card-title">Your Order</div>
+	</div>
+	<div class="card-body py-2">
+		<div class="guestCheckItems">
+			
+		</div>
+
+		<div class="container px-0 guestCheckSummary">
+
+
+				<div class="row">
+					<div>
+						Sub Total:
+					</div>
+					<div>
+						$0.00
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div>
+						Tax:
+					</div>
+					<div>
+						$0.00
+					</div>
+				</div>
+
+			<div class="row">
+				<div>
+					Total:
+				</div>
+				<div class="font-weight-bold">
+					$0.00
+				</div>
+			</div>
+
+
+
+
+
+			<div class="row">
+				<div>
+					Service Method:
+				</div>
+				<div>
+						<a href="/GetAddress?ReturnURL=~/Ordering">Pickup</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+
+
+<script>
+	var ITEM_SCREEN__DELETE_ITEM_CAPTION="Delete Item?";
+var ITEM_SCREEN__DELETE_ITEM_MESSAGE="Are you sure you wish to delete <<ItemName>> from your order?";
+var GROUP_ORDERS__FINISHED_CAPTION="Done ordering?";
+var GROUP_ORDERS__FINISHED_MESSAGE="Your items have been added to the group order. Are you done?";
+;
+
+
+	$(document).ready(function () {
+
+		$("a.wcGuestCheckDeleteItem[data-item-index]").click(function (e) {
+			e.preventDefault();
+			DeleteGuestcheckItem($(this).attr("data-item-index"), $(this).attr("data-item-name"));
+		});
+
+
+		$(".goParticipantDone").click(function (e) {
+			MBConfirm(GROUP_ORDERS__FINISHED_MESSAGE, GROUP_ORDERS__FINISHED_CAPTION,
+				function () {
+					location.href = WeborderRoot("~/GroupOrders/ThankYou");
+				});
+		});
+
+	});
+
+	function DeleteGuestcheckItem(pIndexID, pItemName) {
+		MBConfirm(ITEM_SCREEN__DELETE_ITEM_MESSAGE.replace("<<ItemName>>", pItemName), ITEM_SCREEN__DELETE_ITEM_CAPTION, function () {
+			$.ajax({
+				type: "POST",
+				url: WeborderRoot("~/Item/Delete/" + pIndexID),
+				success: function () {
+					location.href = location.href;
+				}
+
+			});
+		});
+	}
+
+
+</script>
+
+
+		</div>
+
+
+	</div>
+
+
+	
+
+</div>
+
+
+
+					</div>
+			</div>
+		</div>
+			<footer class="container footerContainer">
+				<div class="row">
+					<div class="col-12 text-center">
+						
+					</div>
+				</div>
+				<div class="row">
+					<div id="poweredByPrismLogo" class="col-12 mt-4 mb-4 mx-auto text-center">
+						<a href="http://www.microworks.com" target="_top">
+								<img alt="Powered by Prism POS Logo" src="/Images/PoweredByPrismPOSLogo.png" border="0" />
+						</a>
+						<br />
+						<a href="http://www.microworks.com" target="_top">
+							Online Ordering<br />
+							by Microworks
+						</a>
+					</div>
+				</div>
+			</footer>
+
+
+	
+
+	
+
+<div class="modal" id="MB" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"></h5>
+			</div>
+
+			<div class="modal-body">
+
+			</div>
+
+			<div class="modal-footer">
+				<button id="mbOK" class="btn btn-primary" data-dismiss="modal">OK</button>
+				<button id="mbYes" class="btn btn-primary" data-dismiss="modal">Yes</button>
+				<button id="mbNo" class="btn btn-primary" data-dismiss="modal">No</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="/bundles/Base-5.1.688.2115?v=eSnSvPB1Z60tXlpkAJwTQKDNhKp6OcCG24hQbnHRxWs1"></script>
+
+
+<script src="/bundles/CallCenter-5.1.688.2115?v=veF4AUa7hKO52a7psMaf2nfl5mAhEf_ou2Qsobv4b7E1"></script>
+
+
+
+
+	<script>
+		$(document).ready(function () {
+			StartSessionCountdownTimer(20);
+		});
+	</script>
+
+	<input type="hidden" id="clientWidth" value="9999" />
+	<input type="hidden" id="clientHeight" value="9999" />
+
+
+
+
+
+	
+	<script>
+		$(document).ready(function () {
+			$("#groupSizeDropdown").change(function () {
+				location.href = WeborderRoot("~/Items/index/" + $("#groupSizeDropdown").val());
+			});
+
+		});
+
+	</script>
+
+
+
+
+</body>
+</html>

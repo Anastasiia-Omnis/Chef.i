@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="generator" content="Square Online">
+    <link rel="shortcut icon" type="image/x-icon" href="/square.ico">
+    <link rel="preload" href="https://cdn3.editmysite.com/app/website/css/site.acfeaade2c36fe1d9c6e.css" as="style">
+
+    <style>
+        .loading-view {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .loading-container {
+            width: 62px;
+            height: 54px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 12px;
+        }
+
+        @media (min-width: 840px) {
+            .loading-container {
+                width: 72px;
+                height: 54px;
+                grid-gap: 12px;
+            }
+        }
+
+        .dot-container {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#c2cdb920, #c2cdb9);
+            /* Base64 encoded simple circle SVG /resources/assets/js/prime/src/site/components/ui/circle.svg */
+            mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xIC0xIDIgMiI+Cgk8Y2lyY2xlIHI9IjEiLz4KPC9zdmc+Cg==');
+            -webkit-mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xIC0xIDIgMiI+Cgk8Y2lyY2xlIHI9IjEiLz4KPC9zdmc+Cg==');
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            mask-size: 100% auto;
+            -webkit-mask-size: 100% auto;
+            mask-position: bottom;
+            -webkit-mask-position: bottom;
+            animation: loading-view-movement;
+            animation-delay: 0s;
+            animation-duration: 3750ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0.8, 0, 0.8, 1);
+        }
+
+        .dot-container:nth-of-type(2) {
+            animation-delay: 130ms;
+        }
+
+        .dot-container:nth-of-type(3) {
+            animation-delay: 260ms;
+        }
+
+        @keyframes loading-view-movement {
+            /* up and down for 3s, stop for 750ms */
+            0%, 27%, 54% {
+                mask-position: bottom;
+                -webkit-mask-position: bottom;
+            }
+
+            14%, 41%, 68% {
+                mask-position: top;
+                -webkit-mask-position: top;
+            }
+
+            27%, 54%, 81%, 100% {
+                mask-position: bottom;
+                -webkit-mask-position: bottom;
+            }
+        }
+    </style>
+
+            <link rel="manifest" href="/manifest.webmanifest">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="default">
+            <meta name='apple-mobile-web-app-title' content='Jackie Smalls'>
+            <meta name='theme-color' content='#c2cdb9'>
+            <meta name='msapplication-TileColor' content='#c2cdb9'>
+            <link rel='apple-touch-icon' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/icon_180x180_ios_OTY4OD.png?width=180'>
+            <meta name='msapplication-TileImage' content='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/icon_180x180_ios_OTY4OD.png?width=144'>
+            <link rel='apple-touch-icon' sizes='120x120' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/icon_180x180_ios_OTY4OD.png?width=120'>
+            <link rel='apple-touch-icon' sizes='152x152' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/icon_180x180_ios_OTY4OD.png?width=152'>
+            <link rel='apple-touch-icon' sizes='167x167' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/icon_180x180_ios_OTY4OD.png?width=167'>
+            <link rel='apple-touch-icon' sizes='180x180' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/icon_180x180_ios_OTY4OD.png?width=180'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=750&height=1334&fit=crop' media='(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=1242&height=2208&fit=crop' media='(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=1125&height=2436&fit=crop' media='(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=828&height=1792&fit=crop' media='(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=1242&height=2688&fit=crop' media='(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=1170&height=2532&fit=crop' media='(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=1284&height=2778&fit=crop' media='(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=1536&height=2048&fit=crop' media='(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=1620&height=2160&fit=crop' media='(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=1668&height=2224&fit=crop' media='(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=1668&height=2388&fit=crop' media='(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)'>
+            <link rel='apple-touch-startup-image' href='/uploads/b/d9463870-a152-11ec-98d9-55ee229ae393/splash_2048x4435_ODQ5Mz.jpg?width=2048&height=2732&fit=crop' media='(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)'>
+    
+                        
+            
+    
+        <script defer src="https://cdn3.editmysite.com/app/checkout/assets/checkout/system.c3b89b0b94f4ef0671b1.js" data-cookieconsent="ignore"></script>
+    
+    
+        <script type="systemjs-importmap" src="https://cdn3.editmysite.com/app/checkout/assets/checkout/imports.en.4a144a6d45e5ee6d.js" data-cookieconsent="ignore"></script>
+    
+    
+            <script type="systemjs-importmap" src="https://cdn3.editmysite.com/app/checkout/assets/checkout/locale-imports-map.53b77b6fdaa80406.json" data-cookieconsent="ignore"></script>
+    
+    
+    <script defer type="text/javascript" src="https://cdn3.editmysite.com/app/website/js/runtime.e7fe0578a8a7092fd032.js" data-cookieconsent="ignore"></script>
+    <script defer type="text/javascript" src="https://cdn3.editmysite.com/app/website/js/vue-modules.4a41b3ba298bf4563d97.js" data-cookieconsent="ignore"></script>
+    <script defer type="text/javascript" src="https://cdn3.editmysite.com/app/website/js/languages/en.0a2e9b03ab51e13ce7f2.js" data-cookieconsent="ignore"></script>
+    <script defer type="text/javascript" src="https://cdn3.editmysite.com/app/website/js/site.da29e93c2348ccc4df9b.js" data-cookieconsent="ignore"></script>
+
+    
+    <meta property="og:type" content="website" />
+    
+    <script data-cookieconsent="ignore">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    </script>
+
+            
+    
+    <!--square-online-feature-flags-->
+<script type="application/javascript" data-cookieconsent="ignore" data-role="square-online-featureflags">
+    window.__DYNAMIC_BOOTSTRAP__ ??= {};
+
+    Object.assign(window.__DYNAMIC_BOOTSTRAP__, {
+        featureFlags: {"ecom.website.deprecated-layouts":false,"marketing-enable-drive-repeat-purchase-campaign":true,"ecom.website.facebook-food":true,"ecom.website.theme-export":false,"ecom.website.chamber-via-fastly":true,"ecom.square-online-published-catalog-cache-version":"2023-11-13","ecom.checkout.open_tabs":true,"ecom.website.photo-reviews":true,"ecom.checkout.cmi-sentry-integration":true,"ecom.checkout.cmi.bootstrap-tracking-snowplow":true,"ecom.checkout.cmi.bootstrap-tracking-ga":true,"ecom.website.order-confirmation-page.website-redirect":true,"ecom.checkout.cmi.locale-view-splitting":true,"ecom.checkout.open_tabs_gc_coupon":true,"ecom.cmi-cart":true,"ecom.checkout.cmi.theme-fonts":false,"ecom-fulfillment-api-v-2":false,"ecom.omnichannel-discounts-frontend":true,"ecom.omnichannel-discounts-category-api":false,"ecom-improved-tipping-experience":true,"ecom.splash.loyalty":true,"ecom.website.published-site.datadog-rum":true,"ecom.website.editor.datadog-rum":true,"ecom-website-published-site-datadog-rum-bot-filter":true,"ecom-use-tracking-inventory":false,"ecom.image-controls.width-fix":true,"ecom.gradient-backgrounds":true,"ecom.website.form-fraud-blocking":true,"ecom.website.form-fraud-auto-ban":true,"ecom.website.code-editor":false,"ecom.shopping.pdp-layouts-m1":true,"ecom.chamber.subscriptions":true,"ecom.tuba.subscriptions-paid-shipping-rates":true,"ecom-cko-enhanced-logging":true,"ecom-cko-unified-logging":true,"ecom.shopping.so-coupons-sunset-integrations":true,"ecom.order-online-text-layouts":true,"ecom.appointment-improvements":true,"ecom.appointment-improvements-m2":true,"ecom.tuba.committed-inventory-m1":true,"ecom.splash-improvements":true,"ecom-themes-onboarding":true,"ecom.shopping.featured-categories-paid-layouts":true,"ecom.website.ai-text.short-form":true,"ecom.website.ai-text.long-form":true,"ecom.website.metered-request.override":false,"ecom.website.async-create-theme":false,"ecom.chamber.spi.serve-items":true,"ecom.can_use_cart_sharing":true,"ecom.website.ai.editor-prototype":false,"ecom.website.ai.page-seo":false,"ecom.appointment-direct-booking":true,"ecom-service-cutover-fe-request-augmentations":true,"ecom.catalog.so-item-library-deprecation-3":true,"ecom.kiosk-photo-card":true,"ecom.website.system-page.cart":false,"ecom-enable-kiosk-large-catalog-layout":false,"ecom-hide-instagram":false,"ecom-enable-kiosk-item-preloading":true,"ecom-brand-api-sync":true,"ecom.service-cutover.enable-tuba-traffic":true,"ecom-show-order-online":true,"websdk-use-new-afterpay-buttons":true,"ecom-checkout-should-check-is-decouple-checkout":true,"ecom-prime-use-store-info-v29":true,"ecom-checkout-decouple-open-tabs":true,"ecom-checkout-force-pci-compliance":false,"ecom-website-hide-food-beverage-themes":false,"ecom-orbit-to-monochrome":true,"ecom-website-fix-dine-in-location-selection":true},
+    });
+</script>
+<!--end-square-online-feature-flags-->
+
+    <script type="application/javascript" data-cookieconsent="ignore">
+        window.__BOOTSTRAP_STATE__ = {"siteData":{"site":{"id":"d9463870-a152-11ec-98d9-55ee229ae393","properties":{"classicSiteID":"794728348401257761","catalogSiteId":"794728348401257761","selectedVertical":"restaurant","verticalV4":"quick-serve-restaurant","language":"en","squareMerchantId":"MLS7TFX5WEN71","siteCatalogVersion":"d959b084-dd2a-4a61-8513-6b90312761f2","appSiteCartNativePayControlGroup":false,"appSiteCartNativePayTestGroup":false,"isKioskSite":false,"squareSyncUserId":"e25e943c-493e-4a82-b490-6ba34b0ee292","isServiceCutoverEnabled":true,"createdPostMenusMigration":false,"migratedSquareOnlineSiteToMenus":false,"profiles_redirect_enabled":null,"profiles_redirect_url":null,"onboarded":{"guidance":{"version":"1","complete":true,"welcomeComplete":true,"templateSwitcher":false,"instagramMiniSiteTipDismissed":true,"ostEditSitePreviewTipDismissed":false,"guidanceMobileTrafficDismissedCount":3},"onboardingComplete":true,"onboardingProgress":{"step":0,"type":null},"isSiteDesignOnboarded":true,"isAdcAnnouncementDismissed":true,"isFontsAnnouncementDismissed":true,"isThemesAnnouncementDismissed":true,"isVideoBannerAnnouncementDismissed":true},"publishedAt":1745589355,"completedFtux":{"IS_SPLASH_OO_SCHOOLTIP_DISMISSED":true},"site_versions":{"editor":{"v0":"d97a39f0-a152-11ec-aebd-53fbfe8b246b","v1":"471294a0-a154-11ec-8c21-553968f5313c","v2":"471e91d0-a154-11ec-b9ae-1dac50388376","v3":"47225c50-a154-11ec-a957-a13f2dd7d225","v4":"47266c40-a154-11ec-b3f1-a10bb0c440f3","v5":"472c5cf0-a154-11ec-b13f-33c8d6b505ef","v6":"5060eb90-3630-11ee-8b3e-274f94fc7f81","v7":"50737a70-3630-11ee-b939-478535eb5b31","v8":"0fc5e870-f293-11ee-a1ce-c1d7e236e23e"},"published":{"v5":"f60d90a0-a7d0-11ed-b7a4-0d10732453ef","v6":"92766bb0-ba70-11ed-a84f-2782cd584f76","v7":"3b75b5c0-155b-11ee-af07-63117aa7af53","v8":"28bbdef0-6430-11ee-b769-4f9798e35688"}},"websiteNotices":{"siteSettingsTrial":true},"siteIconSettings":{"updatedAt":1647017256,"splash_images":{"config":{"size":"2048","radius":0,"fontset":{"url":"\/weebly\/data\/tmp\/6e4fd78faff1a6003079.ttf","provider":"google"},"fontPath":"\/weebly\/data\/tmp\/6e4fd78faff1a6003079.ttf","iconType":"free","imageUrl":null,"language":"en","siteTitle":"Jackie Smalls","customColor":"#c2cdb9","primaryColor":"#c2cdb9","contrastColor":"#000000"},"2048x4435":"\/uploads\/b\/d9463870-a152-11ec-98d9-55ee229ae393\/splash_2048x4435_ODQ5Mz.jpg"},"ios_icon_images":{"config":{"size":"180","radius":0,"fontset":{"url":"\/weebly\/data\/tmp\/78939538b6423020d655.ttf","provider":"google"},"fontPath":"\/weebly\/data\/tmp\/78939538b6423020d655.ttf","iconType":"free","imageUrl":null,"language":"en","siteTitle":"Jackie Smalls","customColor":"#c2cdb9","primaryColor":"#c2cdb9","contrastColor":"#000000"},"180x180":"\/uploads\/b\/d9463870-a152-11ec-98d9-55ee229ae393\/icon_180x180_ios_OTY4OD.png"},"android_icon_images":{"config":{"size":"512","radius":256,"fontset":{"url":"\/weebly\/data\/tmp\/e34c05b37161798eea83.ttf","provider":"google"},"fontPath":"\/weebly\/data\/tmp\/e34c05b37161798eea83.ttf","iconType":"free","imageUrl":null,"language":"en","siteTitle":"Jackie Smalls","customColor":"#c2cdb9","primaryColor":"#c2cdb9","contrastColor":"#000000"},"512x512":"\/uploads\/b\/d9463870-a152-11ec-98d9-55ee229ae393\/icon_512x512_android_NTUzMz.png"}},"selectedDeviceView":"desktop","order_fulfillment_guides":"pickup","domain":{"custom_domain":"www.jackiesmalls.com","subdomain":"882405349473181330.square.site","site_id":794728348401257761}}},"pagesMeta":[{"id":"024341e0-21dd-11f0-9cc0-db6fc8940a76","name":"About","route":"about","title":"About","featureType":null,"description":"","hidden":false},{"id":"024378b0-21dd-11f0-965b-3971cdc819ed","name":"Catering Menu","route":"catering-menu","title":"Catering Menu","featureType":null,"description":"","hidden":false},{"id":"0243a670-21dd-11f0-81d3-27c7f9efa60c","name":"Contact","route":"contact-us","title":"Contact Us","featureType":null,"description":"","hidden":false},{"id":"0243e610-21dd-11f0-8ac4-abef06a7db75","name":"Gallery","route":"gallery","title":"Gallery","featureType":null,"description":"","hidden":false},{"id":"02442c10-21dd-11f0-aa57-310f56a2ef9b","name":"Home","route":"home","title":"Home","featureType":null,"description":"","hidden":false},{"id":"02448e20-21dd-11f0-8b9e-c51e0873145c","name":"Join our team!","route":"join-our-team","title":"Join our team!","featureType":null,"description":"","hidden":false},{"id":"0244c440-21dd-11f0-b486-2d3f6f81e52b","name":"MENU","route":"menu","title":"MENU","featureType":null,"description":"","hidden":false}],"customPagesMeta":[],"artifactsMeta":[],"snapshot":{"id":"0242b220-21dd-11f0-818b-853094958c2e","site_id":"d9463870-a152-11ec-98d9-55ee229ae393","properties":{"seo":{"page":{"024378b0-21dd-11f0-965b-3971cdc819ed":{"title":"Catering Menu","description":""},"0243a670-21dd-11f0-81d3-27c7f9efa60c":{"title":"Contact Us","description":""}}},"logo":"\/uploads\/b\/ae24f05fb7ee132581cd0764d095d9faa848713b5ee5dc768718e10ecd7d7a0b\/0D69DF05-CA2A-4A91-B28A-CC96EE67EA95_1647014345.jpeg","color":{"primaryColor":"#c2cdb9","secondaryColors":[],"siteColorProfile":"primary-light-bold"},"title":"Jackie Smalls","social":[{"icon":"email","user":"EatJackieSmalls@gmail.com","selected":true},{"icon":"facebook","user":"","selected":false},{"icon":"instagram","user":"EatJackieSmalls","selected":true},{"icon":"linkedin","user":"","selected":false},{"icon":"pinterest","user":"","selected":false},{"icon":"snapchat","user":"","selected":false},{"icon":"tiktok","user":"","selected":false},{"icon":"twitter","user":"","selected":false},{"icon":"vimeo","user":"","selected":false},{"icon":"yelp","user":"","selected":false},{"icon":"youtube","user":"","selected":false}],"fontset":{"name":"karla","version":"0.1.0"},"homepage":{"type":"page","typeID":"02442c10-21dd-11f0-aa57-310f56a2ef9b"},"routeMap":{"":"02442c10-21dd-11f0-aa57-310f56a2ef9b","home":"02442c10-21dd-11f0-aa57-310f56a2ef9b","menu":"0244c440-21dd-11f0-b486-2d3f6f81e52b","about":"024341e0-21dd-11f0-9cc0-db6fc8940a76","gallery":"0243e610-21dd-11f0-8ac4-abef06a7db75","contact-us":"0243a670-21dd-11f0-81d3-27c7f9efa60c","catering-menu":"024378b0-21dd-11f0-965b-3971cdc819ed","join-our-team":"02448e20-21dd-11f0-8b9e-c51e0873145c"},"styleset":{"name":"square","version":"0.1.0"},"framework":{"name":"birdseye","version":"0.1.0"},"onboarded":false,"openGraph":{"page":{"024378b0-21dd-11f0-965b-3971cdc819ed":{"title":"Catering Menu","description":""},"0243a670-21dd-11f0-81d3-27c7f9efa60c":{"title":"Contact Us","description":""}}},"blocksMeta":{"27fcdf71-092f-11ed-b5d7-abd0f5e9e2d6":"VcbAkC","321079d1-a157-11ec-9ab2-190ff4fc1d92":"bBfqYV","331a0521-a158-11ec-9c92-6f569e18348e":"oTEaAL","49d829e1-a158-11ec-9c92-6f569e18348e":"aWypok","4a0ad2a1-a158-11ec-9c92-6f569e18348e":"xwaZdP","5325b6d0-a157-11ec-9ab2-190ff4fc1d92":"GMIaJW","8533c801-a158-11ec-9c92-6f569e18348e":"fsVUgR","859b6371-a158-11ec-9c92-6f569e18348e":"NUQlTV","d97d23d0-a152-11ec-9e5c-93b53f54cb9c":"wygInS","d97d23d1-a152-11ec-9e5c-93b53f54cb9c":"KqlwsE","d97d23d2-a152-11ec-9e5c-93b53f54cb9c":"UgIqoh","d97d23d3-a152-11ec-9e5c-93b53f54cb9c":"GHxfOo","d97d23d4-a152-11ec-9e5c-93b53f54cb9c":"VWqXAm","da154521-a152-11ec-9e5c-93b53f54cb9c":"kwrxPJ","dc7ea401-a152-11ec-a05b-79415c67f8fd":"qJgbeV","dcb655d1-a152-11ec-a05b-79415c67f8fd":"zWCgRY","e0b72b51-a157-11ec-9c92-6f569e18348e":"wBPUWF","e1185e20-a157-11ec-9c92-6f569e18348e":"xBMISH","f90d0361-a7cc-11ed-a674-b3635f7a685f":"rTpoMe","ff750c81-092e-11ed-b5d7-abd0f5e9e2d6":"IrDqsi"},"navigation":[{"link":{"page":{"pageID":"02442c10-21dd-11f0-aa57-310f56a2ef9b"}},"type":"page"},{"link":{"page":{"pageID":"0244c440-21dd-11f0-b486-2d3f6f81e52b"}},"type":"page","children":[]},{"link":{"page":{"pageID":"024378b0-21dd-11f0-965b-3971cdc819ed"}},"type":"page"},{"link":{"page":{"pageID":"0243e610-21dd-11f0-8ac4-abef06a7db75"}},"type":"page","children":[]},{"link":{"page":{"pageID":"0243a670-21dd-11f0-81d3-27c7f9efa60c"}},"type":"page","children":[],"expanded":true},{"link":{"giftCards":true},"type":"giftCards","title":"Gift cards"},{"link":{"page":{"pageID":"02448e20-21dd-11f0-8b9e-c51e0873145c"}},"type":"page"}],"buttonstyle":"pill","customFonts":[],"featuresets":["restaurant","giftCards"],"contentAreas":{"cart":{"id":"d97d4ae2-a152-11ec-9e5c-93b53f54cb9c","hidden":false,"content":{"id":"d97d23d3-a152-11ec-9e5c-93b53f54cb9c","type":"block","layout":"cart-1","purpose":"cart@^1.3.6","elements":[{"id":"d97d23dd-a152-11ec-9e5c-93b53f54cb9c","purpose":"text","properties":{}}],"properties":{"shortID":"GHxfOo","verticalsHidden":true}}},"footer":{"id":"d9d72ab0-a152-11ec-9e5c-93b53f54cb9c","hidden":false,"content":{"id":"d97d23d0-a152-11ec-9e5c-93b53f54cb9c","type":"block","layout":"footer-7","purpose":"footer@^1.2.1","elements":[{"id":"d97d23e2-a152-11ec-9e5c-93b53f54cb9c","purpose":"newsletter","properties":{"type":"subscription","fields":[{"id":"d97d23e3-a152-11ec-9e5c-93b53f54cb9c","type":"action-input","label":"","required":true,"properties":{},"instructions":""}],"hidden":true,"schema":{"id":"d97d23e4-a152-11ec-9e5c-93b53f54cb9c","hash":"235ac50b23c4113209bb8985a32cfee6"}}},{"id":"d97d23de-a152-11ec-9e5c-93b53f54cb9c","purpose":"logo","properties":{"type":"logo","scale":85,"hidden":true}},{"id":"d97d23df-a152-11ec-9e5c-93b53f54cb9c","purpose":"text","properties":{"fontSize":"medium"}},{"id":"d97d23e0-a152-11ec-9e5c-93b53f54cb9c","purpose":"social","properties":{"presetColor":"brand"}},{"id":"d97d23e1-a152-11ec-9e5c-93b53f54cb9c","purpose":"cookie-management-settings","properties":{}}],"properties":{"shortID":"wygInS","colorProfile":"primary-bold","newsletterTitle":{"hidden":true}}}},"header":{"id":"d97d4ae0-a152-11ec-9e5c-93b53f54cb9c","hidden":false,"content":{"id":"d97d23d1-a152-11ec-9e5c-93b53f54cb9c","type":"block","layout":"header-4","purpose":"header@^1.2.2","elements":[{"id":"d97d23d5-a152-11ec-9e5c-93b53f54cb9c","purpose":"logo","properties":{"type":"title","scale":27}},{"id":"d97d23d6-a152-11ec-9e5c-93b53f54cb9c","purpose":"social","properties":{}},{"id":"d97d23d7-a152-11ec-9e5c-93b53f54cb9c","purpose":"navigation","properties":{}},{"id":"d97d23d8-a152-11ec-9e5c-93b53f54cb9c","purpose":"hamburger","properties":{}},{"id":"d97d23d9-a152-11ec-9e5c-93b53f54cb9c","purpose":"cart","properties":{}}],"properties":{"shortID":"KqlwsE","background":{"transparentOverBanner":true},"actionButton":{"link":{"tab":false,"link":{"page":{"pageID":"02442c10-21dd-11f0-aa57-310f56a2ef9b","sectionID":"db497f61-a152-11ec-a05b-79415c67f8fd"},"external":"https:\/\/order.online\/business\/jackie-smalls-11154052"},"type":"external"},"label":"Order now","hidden":false,"presetStyle":"secondary"},"disableSearch":false,"verticalsHidden":true}}},"navMobile":{"id":"d97d4ae1-a152-11ec-9e5c-93b53f54cb9c","hidden":false,"content":{"id":"d97d23d2-a152-11ec-9e5c-93b53f54cb9c","type":"block","layout":"navigation-mobile","purpose":"nav-mobile@^1.2.1","elements":[{"id":"d97d23da-a152-11ec-9e5c-93b53f54cb9c","purpose":"navigation","properties":{}},{"id":"d97d23db-a152-11ec-9e5c-93b53f54cb9c","purpose":"close","properties":{}},{"id":"d97d23dc-a152-11ec-9e5c-93b53f54cb9c","purpose":"social","properties":{}}],"properties":{"shortID":"UgIqoh","verticalsHidden":true}}},"freeFooter":{"id":"d97d4ae3-a152-11ec-9e5c-93b53f54cb9c","hidden":false,"content":{"id":"d97d23d4-a152-11ec-9e5c-93b53f54cb9c","type":"block","layout":"free-footer-1","purpose":"free-footer@^1.0.0","elements":[],"properties":{"bgColor":"light","shortID":"VWqXAm","verticalsHidden":true}}}},"pageOverrides":{},"pageTemplates":{"splash":"02452a40-21dd-11f0-a556-d72893d99697","product":"02458930-21dd-11f0-a62f-2b6ab6cf7747","shopAll":"02461190-21dd-11f0-82eb-ddb50ca174ef","category":"02461190-21dd-11f0-82eb-ddb50ca174ef","giftCards":"024558f0-21dd-11f0-bb18-93c14e6c6242","leaveReview":"0245e450-21dd-11f0-aa5c-415fa9e084c6","orderOnline":"02463ef0-21dd-11f0-bf20-bf15d1b3ae67","instagramFeed":"0245b9a0-21dd-11f0-aa59-cf600e2428e1","searchResults":"02461190-21dd-11f0-82eb-ddb50ca174ef"}},"version":8},"user":{"id":141077067,"properties":{"isSquareSyncUser":true,"country":"US"}},"billingFeatures":{"billingFeatures":{"embed_restricted_widgets":true,"com_gifting":true,"com_authorizenet_payment":false,"com_digital_products":true,"com_coupons":true,"com_product_reviews":true,"com_product_limit":-1,"popup_announcement":true,"popup_coupons":true,"popup_lead_capture":true,"community_support":true,"free_ssl_security":true,"custom_domain_connection":true,"advanced_site_stats":true,"password_protection":true,"video_backgrounds":true,"hd_video_and_audio":true,"membership_registration":true,"membership_settings":true,"online_store":true,"accept_paypal_payments":true,"product_badges":true,"product_modifiers":true,"in_store_pickup":true,"shipping_calculator":true,"chat_and_email_support":true,"phone_support":true,"priority_support":true,"advanced_ecommerce_stats":true,"seo":true,"unlimited_storage":true,"members":-1,"abandoned_cart_emails":true,"integrated_shipping_labels":true,"tax_calculator":true,"no_weebly_ads":true,"site_search":true,"product_search":true,"square_gift_cards":true,"inventory_management":true,"integrated_facebook_ads":true,"real_time_shipping_calculator":false,"age_confirmation":true,"square_processing_rate_id":"ECOM_SOS_PERFORMANCE","square_processing_rate_display":{"USD":[{"percent":"2.9","flat":30,"type":"all"}],"AUD":[{"percent":"2.2","flat":0,"type":"all"}],"CAD":[{"percent":"2.8","flat":30,"type":"all"}],"EUR":[{"percent":"1.4","flat":25,"type":"intra-eu"},{"percent":"2.9","flat":25,"type":"non-eu"}],"GBP":[{"percent":"1.4","flat":25,"type":"intra-eu"},{"percent":"2.5","flat":25,"type":"non-eu"}],"JPY":[{"percent":"3.6","flat":0,"type":"non-jcb"},{"percent":"3.6","flat":0,"type":"jcb"}]},"favicon_customization":true,"site_code_customization":true,"instagram_feed_tagging":true,"quick_shop":true,"scheduleEnabled":false,"smartGroupsEnabled":false,"socialAdsEnabled":true,"lifetimeEmails":2,"emailsPerMonth":2,"recipientsPerEmail":500,"recipientsPerMonth":1000,"automations":0,"automatedRecipientsPerMonth":0,"enabledLeadFormTypes":["popup"],"allowsPurchasingCredits":false,"insights_overview":true,"insights_sales":true,"insights_products":true,"custom_fonts":true,"com_shipping_settings":true,"com_manage_gift_cards":true,"com_create_shipping_label_discount":true,"customer_accounts":true,"com_stripe_payment":false,"com_product_sync":true,"com_product_variant_limit":-1,"com_shipping_labels_tier":"weebly_cpp_tier","com_transaction_fee":"0.00","form_file_upload":true,"product_scheduled_actions":true,"custom_site_icon":true,"video_uploading":10485760,"buyer_customer_accounts":true,"personalized_order_screen":true,"personalized_recommendations":true,"easy_reordering":true,"self_serve_ordering":true,"ecom_preorders":true,"order_text_alerts":true,"time_based_categories":true,"advanced_order_limits":true,"modifier_images":true,"free_fulfillment_meter":true,"spd_fees_amount":0,"twenty_four_seven_support":false,"advanced_design_controls":true,"order_item_quantity_limit":true,"stock_media":true,"so_buyer_subscriptions":true,"item_badge_customization":true,"shop_all_item_layouts":true,"icon_sets":true,"banner_slides":true,"priority_phone_support":false,"pdp_layouts":true,"full_height_banners":true,"scrolling_text":true,"featured_item_layouts":true,"mega_menu":true,"appts_customization":true,"premium_text_image_layout":true,"featured_category_layouts":true,"ai_generated_content":true,"image_shapes":true,"group_ordering":true,"inventory_bundles":true,"com_square_transaction_best_discount":true},"isTrial":false},"siteFeatures":{"embed_restricted_widgets":true,"com_gifting":true,"com_authorizenet_payment":false,"com_digital_products":true,"com_coupons":true,"com_product_reviews":true,"com_product_limit":-1,"popup_announcement":true,"popup_coupons":true,"popup_lead_capture":true,"community_support":true,"free_ssl_security":true,"custom_domain_connection":true,"advanced_site_stats":true,"password_protection":true,"video_backgrounds":true,"hd_video_and_audio":true,"membership_registration":true,"membership_settings":true,"online_store":true,"accept_paypal_payments":true,"product_badges":true,"product_modifiers":true,"in_store_pickup":true,"shipping_calculator":true,"chat_and_email_support":true,"phone_support":true,"priority_support":true,"advanced_ecommerce_stats":true,"seo":true,"unlimited_storage":true,"members":-1,"abandoned_cart_emails":true,"integrated_shipping_labels":true,"tax_calculator":true,"no_weebly_ads":true,"site_search":true,"product_search":true,"square_gift_cards":true,"inventory_management":true,"integrated_facebook_ads":true,"real_time_shipping_calculator":false,"age_confirmation":true,"square_processing_rate_id":"ECOM_SOS_PERFORMANCE","square_processing_rate_display":{"USD":[{"percent":"2.9","flat":30,"type":"all"}],"AUD":[{"percent":"2.2","flat":0,"type":"all"}],"CAD":[{"percent":"2.8","flat":30,"type":"all"}],"EUR":[{"percent":"1.4","flat":25,"type":"intra-eu"},{"percent":"2.9","flat":25,"type":"non-eu"}],"GBP":[{"percent":"1.4","flat":25,"type":"intra-eu"},{"percent":"2.5","flat":25,"type":"non-eu"}],"JPY":[{"percent":"3.6","flat":0,"type":"non-jcb"},{"percent":"3.6","flat":0,"type":"jcb"}]},"favicon_customization":true,"site_code_customization":true,"instagram_feed_tagging":true,"quick_shop":true,"scheduleEnabled":false,"smartGroupsEnabled":false,"socialAdsEnabled":true,"lifetimeEmails":2,"emailsPerMonth":2,"recipientsPerEmail":500,"recipientsPerMonth":1000,"automations":0,"automatedRecipientsPerMonth":0,"enabledLeadFormTypes":["popup"],"allowsPurchasingCredits":false,"insights_overview":true,"insights_sales":true,"insights_products":true,"custom_fonts":true,"com_shipping_settings":true,"com_manage_gift_cards":true,"com_create_shipping_label_discount":true,"customer_accounts":true,"com_stripe_payment":false,"com_product_sync":true,"com_product_variant_limit":-1,"com_shipping_labels_tier":"weebly_cpp_tier","com_transaction_fee":"0.00","form_file_upload":true,"product_scheduled_actions":true,"custom_site_icon":true,"video_uploading":10485760,"buyer_customer_accounts":true,"personalized_order_screen":true,"personalized_recommendations":true,"easy_reordering":true,"self_serve_ordering":true,"ecom_preorders":true,"order_text_alerts":true,"time_based_categories":true,"advanced_order_limits":true,"modifier_images":true,"free_fulfillment_meter":true,"spd_fees_amount":0,"twenty_four_seven_support":false,"advanced_design_controls":true,"order_item_quantity_limit":true,"stock_media":true,"so_buyer_subscriptions":true,"item_badge_customization":true,"shop_all_item_layouts":true,"icon_sets":true,"banner_slides":true,"priority_phone_support":false,"pdp_layouts":true,"full_height_banners":true,"scrolling_text":true,"featured_item_layouts":true,"mega_menu":true,"appts_customization":true,"premium_text_image_layout":true,"featured_category_layouts":true,"ai_generated_content":true,"image_shapes":true,"group_ordering":true,"inventory_bundles":true,"com_square_transaction_best_discount":true},"featureset":{"pages":["orderOnline","giftCards"],"quickShop":false,"search":false,"blocks":[]},"page":{"id":"0244c440-21dd-11f0-b486-2d3f6f81e52b","site_snapshot_id":"0242b220-21dd-11f0-818b-853094958c2e","properties":{"name":"MENU","route":"menu","title":"MENU","description":"","contentAreas":{"banner":{"id":"321079d0-a157-11ec-9ab2-190ff4fc1d92","hidden":true,"content":{"id":"321079d1-a157-11ec-9ab2-190ff4fc1d92","type":"block","layout":"banner-1","purpose":"banner@^1.1.0","elements":[{"id":"321079d2-a157-11ec-9ab2-190ff4fc1d92","purpose":"title-1","properties":{}},{"id":"321079d3-a157-11ec-9ab2-190ff4fc1d92","purpose":"image-1","properties":{}},{"id":"321079d4-a157-11ec-9ab2-190ff4fc1d92","purpose":"button-1","properties":{}}],"properties":{"styles":{"minHeight":"560px"},"shortID":"bBfqYV","background":{"type":"default"}}}},"userContent":{"id":"321079d5-a157-11ec-9ab2-190ff4fc1d92","hidden":false,"content":{"id":"321079d6-a157-11ec-9ab2-190ff4fc1d92","type":"container","cells":[{"id":"53258fc0-a157-11ec-9ab2-190ff4fc1d92","type":"cell","content":{"id":"5325b6d0-a157-11ec-9ab2-190ff4fc1d92","type":"block","layout":"embed-pdf-1","purpose":"embed-pdf@^1.0.0","properties":{"text":{"hidden":true,"fontSize":"medium"},"title":{"fontSize":"medium"},"shortID":"GMIaJW","pdfSource":"\/uploads\/b\/d9463870-a152-11ec-98d9-55ee229ae393\/c89e88c0-21dc-11f0-aa57-25af73c53862.pdf","primaryButton":{"hidden":true},"secondaryButton":{"hidden":true}}}}]}}}}}},"storeInfo":{"merchant_id":"MLS7TFX5WEN71","buyer_customer_accounts_enabled":true,"currency":"USD","locale":"en_US","language":"en","syncing_disabled":true,"return_policy":null,"shipping_policy":null,"max_donation_amount":5000,"store_mode":"cart","payment_method_support":{"visa":true,"mastercard":true,"amex":true,"discover":true,"jcb":true,"interac":false,"paypal":false,"apple_pay":true,"google_pay":true,"cash_app":true,"square_pay":true},"show_pdp_buy_now_button":true,"allowed_to_sell":true,"accepting_orders":false,"has_payment_processor":true,"is_group_ordering_enabled":false,"product_reviews_enabled":false,"show_on_sale_section":true,"show_low_stock_section":true,"show_out_of_stock_section":true,"shipping_location_ids":["11eca152bce68aeaa7d5ac1f6bbba828"],"fulfillment_support":{"delivery":false,"pickup":false,"shipping":true,"dine_in":false,"manual":false,"digital":false},"seller_preferred_fulfillment":"delivery","locations_counts":{"pickup":0,"delivery":0,"dine_in":0,"pickup_or_delivery":0,"brick_and_mortar_fulfillment":0,"shipping":1,"total":1},"has_subscribable_items":false,"has_shippable_product":false,"has_time_based_categories":false,"product_setting_low_stock_threshold":5,"category_hierarchy_root_ids":{"site_category_id":null,"id":null}},"commerceLinks":{"products":{},"categories":{},"meta":{"pagination":{"products":[],"categories":{"per_page":2500,"current_page":1,"total_pages":1}}}},"autoNavLinks":[{"link":{"page":{"pageID":"02442c10-21dd-11f0-aa57-310f56a2ef9b"}},"type":"page"},{"link":{"page":{"pageID":"0244c440-21dd-11f0-b486-2d3f6f81e52b"}},"type":"page","children":[]},{"link":{"page":{"pageID":"024378b0-21dd-11f0-965b-3971cdc819ed"}},"type":"page"},{"link":{"page":{"pageID":"0243e610-21dd-11f0-8ac4-abef06a7db75"}},"type":"page","children":[]},{"link":{"page":{"pageID":"0243a670-21dd-11f0-81d3-27c7f9efa60c"}},"type":"page","children":[],"expanded":true},{"link":{"giftCards":true},"type":"giftCards","title":"Gift cards"},{"link":{"page":{"pageID":"02448e20-21dd-11f0-8b9e-c51e0873145c"}},"type":"page"}],"blogPostLinks":{},"featureFlags":{"ecom.website.deprecated-layouts":false,"marketing-enable-drive-repeat-purchase-campaign":true,"ecom.website.facebook-food":true,"ecom.website.theme-export":false,"ecom.website.chamber-via-fastly":true,"ecom.square-online-published-catalog-cache-version":"2023-11-13","ecom.checkout.open_tabs":true,"ecom.website.photo-reviews":true,"ecom.checkout.cmi-sentry-integration":true,"ecom.checkout.cmi.bootstrap-tracking-snowplow":true,"ecom.checkout.cmi.bootstrap-tracking-ga":true,"ecom.website.order-confirmation-page.website-redirect":true,"ecom.checkout.cmi.locale-view-splitting":true,"ecom.checkout.open_tabs_gc_coupon":true,"ecom.cmi-cart":true,"ecom.checkout.cmi.theme-fonts":false,"ecom-fulfillment-api-v-2":false,"ecom.omnichannel-discounts-frontend":true,"ecom.omnichannel-discounts-category-api":false,"ecom-improved-tipping-experience":true,"ecom.splash.loyalty":true,"ecom.website.published-site.datadog-rum":true,"ecom.website.editor.datadog-rum":true,"ecom-website-published-site-datadog-rum-bot-filter":true,"ecom-use-tracking-inventory":false,"ecom.image-controls.width-fix":true,"ecom.gradient-backgrounds":true,"ecom.website.form-fraud-blocking":true,"ecom.website.form-fraud-auto-ban":true,"ecom.website.code-editor":false,"ecom.shopping.pdp-layouts-m1":true,"ecom.chamber.subscriptions":true,"ecom.tuba.subscriptions-paid-shipping-rates":true,"ecom-cko-enhanced-logging":true,"ecom-cko-unified-logging":true,"ecom.shopping.so-coupons-sunset-integrations":true,"ecom.order-online-text-layouts":true,"ecom.appointment-improvements":true,"ecom.appointment-improvements-m2":true,"ecom.tuba.committed-inventory-m1":true,"ecom.splash-improvements":true,"ecom-themes-onboarding":true,"ecom.shopping.featured-categories-paid-layouts":true,"ecom.website.ai-text.short-form":true,"ecom.website.ai-text.long-form":true,"ecom.website.metered-request.override":false,"ecom.website.async-create-theme":false,"ecom.chamber.spi.serve-items":true,"ecom.can_use_cart_sharing":true,"ecom.website.ai.editor-prototype":false,"ecom.website.ai.page-seo":false,"ecom.appointment-direct-booking":true,"ecom-service-cutover-fe-request-augmentations":true,"ecom.catalog.so-item-library-deprecation-3":true,"ecom.kiosk-photo-card":true,"ecom.website.system-page.cart":false,"ecom-enable-kiosk-large-catalog-layout":false,"ecom-hide-instagram":false,"ecom-enable-kiosk-item-preloading":true,"ecom-brand-api-sync":true,"ecom.service-cutover.enable-tuba-traffic":true,"ecom-show-order-online":true,"websdk-use-new-afterpay-buttons":true,"ecom-checkout-should-check-is-decouple-checkout":true,"ecom-prime-use-store-info-v29":true,"ecom-checkout-decouple-open-tabs":true,"ecom-checkout-force-pci-compliance":false,"ecom-website-hide-food-beverage-themes":false,"ecom-orbit-to-monochrome":true,"ecom-website-fix-dine-in-location-selection":true},"lightning":{},"datadog":{"publishedSite":{"service":"spi-ecom-square-online-buyer-journey","applicationId":"0a9b10e6-9671-4e1d-bd0b-2f283f0d29ee","clientToken":"pubc6e7a7143c494f34f1366112ef7c1e2c","env":"production","rum":{"sampleRate":100,"sessionReplaySampleRate":100,"traceSampleRate":10}}}};
+    </script>
+
+        
+    <script type="application/javascript" data-cookieconsent="ignore">
+        window.stopSiteLoadingAnimation = () => {
+            const loadingElement = document.querySelector('.loading-view');
+            loadingElement?.remove();
+        };
+    </script>
+
+    
+    <script type="application/javascript" data-cookieconsent="ignore">
+    /**
+     * PCI Compliance Flag
+     *
+     * This flag indicates if scripts have been filtered for PCI compliance (OpenTabs SSO Checkout route).
+     * This value is set only for buyer dashboard/site view to prevent infinite loading loops.
+     *
+     * Do NOT include this file in editor-frame.blade.php as it affects seller dashboard.
+     */
+    window.IS_PCI_SCRIPTS_FILTERED = false;
+</script>
+    <script type="application/javascript" data-cookieconsent="ignore">
+    // used for editor-frame and pub site bootstrap
+    window.APP_ENV = 'production';
+    window.APP_ORIGIN = 'https://square.online';
+    window.APP_URL = 'https://www.weebly.com';
+    window.ASSET_BASE = '/app/website';
+    window.ASSETS_PUBLIC_PATH = 'https://cdn3.editmysite.com/app/website/';
+    window.CMS_API_PATH ='/app/website/cms';
+    window.DEPRECATED_IMAGE_HOST = 'https://images.editor.website';
+    window.FRAME_ORIGIN = 'https://sandbox.square.online';
+    window.GENERATE_GOOGLE_MAP_BASE = 'https://www.editmysite.com';
+    window.IMAGE_HOST = 'https://ae24f05fb7ee132581cd.cdn6.editmysite.com';
+    window.IS_DRAFT = false;
+    window.IS_MAGIC_MIRROR = false;
+    window.IS_THEME_PREVIEW = false;
+    window.IS_ENHANCED_PREVIEW = false;
+    window.DRAFT_ORIGIN = 'https://drafts.editmysite.com';
+    window.PUBLISHED_CMS_API_PREFIX = '/app/cms';
+    window.SENTRY_DSN = 'https://13e49d785d8d4f828038b6136f3b48ba@sentry.io/1263158';
+    window.RELEASE = 'prime-1e7f8d6';
+    window.URL_BASE = '';
+    window.XSRF_COOKIE_NAME = 'publishedsite-xsrf';
+    window.FASTLY_URL_BASE = 'https://cdn5.editmysite.com';
+    window.SQUARE_WEB_PAYMENTS_SDK = 'https://web.squarecdn.com/v1/square.js'
+    window.PUBLIC_SQUARE_URL_BASE = 'squareup.com';
+    window.PUBLIC_SQUARE_APPTS_URL_BASE = 'app.squareup.com';
+    window.ENABLE_FRONTEND_LOCAL_DEV_CACHE = '';
+    window.GOOGLE_TAG_DEVELOPER_ID = 'developer_id.dOTM2Yj';
+    window.IS_SQUARE_GO = false;
+
+            window.IS_PUBLISHED_MAGIC_MIRROR = false;
+    
+    // state
+    window.SUBDOMAIN_BASE = 'square.site';
+
+</script>
+
+    <!--square-online-snowplow-->
+
+<script data-cookieconsent="statistics">
+    (function (p, l, o, w, i, n, g) {
+    var id = i + '-script';
+    if (!l.getElementById(i)) {
+        n = l.createElement(o);
+        g = l.getElementsByTagName(o)[0];
+        n.id = id;
+        n.async = 1;
+        n.src = w;
+        g.parentNode.insertBefore(n, g);
+    }
+})(window, document, "script", "https://cdn3.editmysite.com/app/website/static/js/wsnbn/snowday262.js", "snowday");
+</script>
+
+
+<script data-cookieconsent="ignore" data-role="square-online-snowplow">
+
+(function (p, l, o, w, i, n, g) {
+    if (!p[i]) {
+        p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || [];
+        p.GlobalSnowplowNamespace.push(i);
+        p[i] = function () {
+            (p[i].q = p[i].q || []).push(arguments);
+        };
+        p[i].q = p[i].q || [];
+    }
+})(window, document, '', '', "snowday");
+
+var r = [99, 104, 101, 99, 107, 111, 117, 116, 46, 40, 119, 101, 101, 98, 108, 121, 124, 101, 100, 105, 116, 109, 121, 115, 105, 116, 101, 41, 46, 99, 111, 109];
+var snPlObR = function(arr) {
+    var s = '';
+    for (var i = 0 ; i < arr.length ; i++){
+        s = s + String.fromCharCode(arr[i]);
+    }
+    return s;
+};
+var s = snPlObR(r);
+
+var regEx = new RegExp(s);
+
+window._W = {
+    Analytics: {
+        trackers: {
+            wSP: snowday,
+        },
+        user_id: '141077067',
+        site_id: '794728348401257761',
+    },
+};
+
+(function(app_id, ec_hostname, discover_root_domain) {
+    var track = window._W.Analytics.trackers.wSP;
+    if (!track) return;
+    track('newTracker', app_id, ec_hostname, {
+        appId: app_id,
+        post: true,
+        platform: 'web',
+        discoverRootDomain: discover_root_domain,
+        cookieDomain: document.location.hostname,
+        cookieName: '_snow_',
+        contexts: {
+            webPage: true,
+            performanceTiming: true,
+            gaCookies: true
+        },
+        crossDomainLinker: function (linkElement) {
+            return regEx.test(linkElement.href);
+        },
+        respectDoNotTrack: document.cookie.indexOf('gdpr-kb') === -1
+    });
+    track('trackPageView', _W.Analytics.user_id+':'+_W.Analytics.site_id);
+    track('crossDomainLinker', function (linkElement) {
+        return regEx.test(linkElement.href);
+    });
+})(
+    '_wn',
+    'ec.editmysite.com',
+    true
+);
+</script>
+<!--end-square-online-snowplow-->
+
+
+            
+        
+
+    
+    <link rel="stylesheet" href="https://cdn3.editmysite.com/app/website/css/site.acfeaade2c36fe1d9c6e.css">
+</head>
+<body>
+    <div class="loading-view">
+        <div
+            class="loading-container"
+        >
+            <div
+                class="dot-container"
+            ></div>
+            <div
+                class="dot-container"
+            ></div>
+            <div
+                class="dot-container"
+            ></div>
+        </div>
+    </div>
+    <div id="app"></div>
+
+                
+        <link rel="stylesheet" type="text/css" href="https://cdn3.editmysite.com/app/checkout/assets/checkout/css/wcko.ab3c9a235015813040ca.css" />
+    </body>
+</html>

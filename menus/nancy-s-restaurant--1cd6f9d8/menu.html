@@ -1,0 +1,1624 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.nancysrestaurant.net/',
+        AccountUUID: '0aa2c4d9ee8a4e298000b98ed92f11bf',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: 'c2095d51',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Mon Aug 25 20:08:58 UTC 2025',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'home',
+        InitialPageUuid: '43f501f98abf4becab802ebda77afad1',
+        InitialPageId: '1179867824',
+        InitialEncodedPageAlias: 'aG9tZQ==',
+        InitialHeaderUuid: '62aa1d4da7a441f6ba42769a28cb2b77',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: true,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'LEFT',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 4,
+            NavbarLiveHomePage: 'https://www.nancysrestaurant.net/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.nancysrestaurant.net/">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="icon" type="image/x-icon" href="https://irp-cdn.multiscreensite.com/b061b6c5/site_favicon_16_1574415939998.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    
+</style>
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+<style id="criticalCss">
+    @charset "UTF-8";.display_None,.dmPopupMask{display:none}#dm .dmInner div.u_hcontainer,.dmRespRow.fullBleedMode>.dmRespColsWrapper{max-width:100%!important;width:100%!important}@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:100 700;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/josefinsans/v33/Qw3aZQNVED7rKGKxtqIqX5EUDXx4.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Tangerine;font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/tangerine/v17/IurY6Y5j_oScZZow4VOxCZZM.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Montserrat;font-style:normal;font-weight:100 900;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/montserrat/v30/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Lato;font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/lato/v24/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Lato;font-style:italic;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/lato/v24/S6u8w4BMUTPHjxsAXC-q.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Lato;font-style:italic;font-weight:700;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/lato/v24/S6u_w4BMUTPHjxsI5wq_Gwft.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.dmInner{min-height:100vh!important;position:relative;min-width:768px!important}.dmPopup,.dmPopupMask{position:fixed;left:0}.dmDisplay_None{display:none!important}.clearfix:after{clear:both;visibility:hidden;line-height:0;height:0}.clearfix:after,.clearfix:before{content:" ";display:table}.clearfix{display:inline-block}#dm .dmWidget .icon{font-size:26px}body.dmRoot #dm .dmOuter .dmInner .dmWidget .icon.hasFontIcon{height:26px;margin-top:-13px;line-height:normal;text-align:center;background-image:none}#dm .dmBody div.u_1620106714,.dmRoot .hasFontIcon{background-image:none!important}.dmPopupMask{margin:0;width:10px;z-index:1000000999;top:0}#dmRoot .dmPopup,.dmPopup,.dmPopupClose:before,[data-display-type=block]{display:block}.dmPopup{text-align:left;top:10px;width:93%;z-index:1000009999!important;box-sizing:border-box;background:#f5f5f5;overflow-y:auto;height:100%}.dmPopup .dmPopupTitle{text-align:left;font:700 19px Helvetica,Arial;margin:20px 20px 35px;color:#999}#dm .dmInner .dmWidget,#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner div,#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-top_center .photoGalleryThumbs .caption-container .caption-inner:not(:has(>.caption-link)) div,.dmPhotoGalleryHolder,.text-align-center{text-align:center}.lh-1,button{line-height:normal}#dmPopup{opacity:0}.dmPopupClose,.dmPopupClose:before{position:absolute;visibility:visible}.dmPopupClose{border-radius:25px;width:27px;height:27px;z-index:1;background-color:rgba(255,255,255,.4);top:12px;right:12px}.dmPopupClose:before{font-size:20px;color:#000;top:3px;right:3px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar{width:5px;height:5px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-track{background:rgba(0,0,0,.1)}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-thumb{background:#c8c8c8;box-shadow:inset 0 1px 2px #454545;border-radius:45px}.dmRespRow.fullBleedMode{padding-left:0!important;padding-right:0!important}#dm .dmRespRow .dmRespColsWrapper{display:flex}#dm .hasBackgroundOverlay:not(.dmPopupPage):not(.layout-drawer){position:relative!important}#dm .hasBackgroundOverlay:not(.hasExtraLayerOverlay):before{display:block!important;position:absolute!important;top:0!important;left:0!important;width:100%!important;height:100%!important;content:" "!important;border-radius:inherit}#dm .dmInner .dmWidget.align-center,.align-center{margin-left:auto;margin-right:auto}body.fix-mobile-scrolling{overflow:initial}body,svg:not(:root){overflow:hidden}#dmRoot{text-decoration-skip-ink:none}@media (min-width:1025px) and (max-width:1399px){[data-hidden-on-desktop]{display:none!important}}body{-webkit-overflow-scrolling:touch}@media (min-width:1025px){:root{--btn-text-font-size:16px}}@media (min-width:768px) and (max-width:1024px){[data-hidden-on-tablet]{display:none!important}:root{--btn-text-font-size:16px}}nav{display:block}html{font-family:Source Sans Pro;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}h1{font-size:2em;margin:.67em 0}b{font-weight:700}hr{box-sizing:content-box;height:0}img{border:0;max-width:100%;-ms-interpolation-mode:bicubic;display:inline-block}button{font-family:inherit;font-size:100%;margin:0;text-transform:none;-webkit-appearance:button}button::-moz-focus-inner{border:0;padding:0}*,:after,:before{box-sizing:border-box}.dmRespRow.dmRespRowNoPadding{padding:0}#dm .dmContent .dmRespRow,.dmRespRow{padding-top:15px}.dmRespRow{padding-bottom:15px}.dmRespRow .dmRespRow:after,.dmRespRow .dmRespRow:before,.dmRespRow:after,.dmRespRow:before{content:" ";display:table}.dmRespRow .dmRespRow:after,.dmRespRow:after{clear:both}.dmRespRow,.dmRespRow .dmRespColsWrapper{max-width:960px;position:relative;margin:0 auto;width:100%}.dmRespRow .dmRespCol{position:relative;width:100%;display:inline-block;vertical-align:top;float:left}.dmRespRow .dmRespCol>*{max-width:100%}.dmRespRow .dmRespRow{width:auto;margin-top:0;margin-bottom:0;max-width:none}.dmDesktopBody .dmRespRow .large-4{position:relative;width:33.33333%}.dmDesktopBody .dmRespRow .large-5{position:relative;width:41.66667%}.dmDesktopBody .dmRespRow .large-6{position:relative;width:50%}.dmDesktopBody .dmRespRow .large-7{position:relative;width:58.33333%}.dmDesktopBody .dmRespRow .large-12{position:relative;width:100%}[class*=" dm-common-icons-"]{speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:dm-common-icons!important}.dm-common-icons-close:before{content:"\e901"}#dm div.dmContent [class*=" icon-"],[class*=" icon-"]{font-family:FontAwesome!important;font-weight:400;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased}[class*=" icon-"]:before{text-decoration:none;display:inline-block;speak:none}a [class*=" icon-"]{display:inline}[class*=" icon-"]{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}.icon-star:before{content:"\f005"}.icon-angle-down:before{content:"\f107"}#dm .dmRespRow .dmRespCol>.dmWidget{overflow:initial}@media (min-width:768px){#dm .dmRespRow .dmRespCol>.dmWidget{width:280px;max-width:100%}}@media (max-width:767px){#dm .dmInner .dmWidget{width:100%}}#dm .dmInner .dmWidget:not(.displayNone){display:inline-block}#dm .dmInner .dmWidget:not(.flexButton):not(.displayNone)[data-display-type=block]{display:block}#dm .dmInner .dmWidget{text-decoration:none;margin:10px 0;clear:both;position:relative;line-height:22px;box-shadow:none;background-image:none;padding:0;height:auto;border-style:solid;white-space:nowrap}#dm .dmInner .dmWidget:after{content:"";display:inline-block;height:100%;vertical-align:middle;width:0;margin-right:-.25em}#dm .dmInner .dmWidget .iconBg{position:absolute;left:0;width:50px;top:50%;margin-top:-13px}#dm .dmWidget .text{display:inline-block;vertical-align:middle;font-size:1.125em;line-height:normal;white-space:normal;padding:10px 7px;max-width:98%}.dmHeader,.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-text{max-width:100%}html:not(.ios-preview) #dm .hasStickyHeader .dmInner div.dmHeaderContainer{position:fixed!important;z-index:101;width:100%;min-width:768px}body:not(.responsiveTablet) #dm .dmInner .dmBody .hide-for-large,body:not(.responsiveTablet) .hide-for-large{display:none!important}#dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder{width:100%;padding:0;display:none}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs .image-container a img{display:none!important}.dmNewParagraph[data-version]{line-height:initial}.dmNewParagraph[data-version] .text-align-center{text-align:center!important}.dmNewParagraph[data-version] h1{margin-top:0;margin-bottom:0}.graphicWidget{width:200px;height:200px;margin:10px auto;text-align:center}.graphicWidget svg.svg{width:100%;height:100%;color:#000;fill:#000}.imageWidget{position:relative}.imageWidget a{font-style:italic;text-align:center}*{border:0 solid #333;scrollbar-arrow-color:#fff;scrollbar-track-color:#F2F2F2;scrollbar-face-color:silver;scrollbar-highlight-color:silver;scrollbar-3dlight-color:silver;scrollbar-shadow-color:silver;scrollbar-darkshadow-color:silver;scrollbar-width:12px}body{width:100%;-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important}A IMG{border:none}h1,h2,h3,h4,ul{margin-left:0;margin-right:0}.dmInner *{-webkit-font-smoothing:antialiased}.clearfix,a,img,li,ul{vertical-align:top}#iscrollBody,#site_content{position:relative}.dmOuter{word-wrap:break-word}.dmInner{font-size:16px;background:#fff;color:#666}.dmDesktopBody .dmInner{min-width:960px}.dmInner a{color:#463939}.dmInner ul:not(.defaultList){padding:0}.dmHeader{background:#68ccd1;color:#666;text-align:center;position:relative;width:100%}DIV.dmBody{padding:0;clear:both}.dmContent{margin:0;padding:0}#site_content ul:not(.defaultList){-webkit-padding-start:0;-moz-padding-start:0;list-style-position:inside}#innerBar{position:relative;height:36px;width:100%;font-size:20px;margin:0;z-index:80}#dm .dmRespRow.dmRespRowNoPadding{padding:0}.dmRespRowsWrapper{max-width:960px;margin:0 auto}.dmRespCol>[dmle_extension]:not(:first-child){margin-top:10px}.dmLargeBody .imageWidget:not(.displayNone){display:inline-block;max-width:100%}.imageWidget:not(.displayNone) img{width:100%}h3{font-weight:400;font-size:23px}#dm .dmRespColsWrapper{display:block}.dmNewParagraph{text-align:left;margin:8px 0;padding:2px 0}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol,.dmLargeBody .fHeader .dmRespRow .dmRespCol{padding-left:.75%;padding-right:.75%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:first-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:first-child{padding-left:0;padding-right:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:last-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:last-child{padding-right:0;padding-left:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:only-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:only-child{padding-left:0;padding-right:0}#innerBar.lineInnerBar{display:table;width:100%;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;font-size:20px;margin-top:30px;margin-bottom:30px;background-color:transparent;color:#666}#innerBar .titleLine{display:table-cell;vertical-align:middle;width:50%}.dmPageTitleRow:not(#innerBar){display:none}.titleLine hr{min-height:1px;background-color:rgba(102,102,102,.2)}.dmStandardDesktop{display:block}#dmFirstContainer .dmRespRowsWrapper:after,#dmFirstContainer .dmRespRowsWrapper:before{content:"";display:table}.dmInner a{outline:0;vertical-align:inherit}.dmLinksMenu>ul{display:block;margin:0;font-size:inherit}.standardHeaderLayout .dmHeader{float:none;display:block;height:auto}.dmStandardDesktop{margin:0 auto}#dm .dmDivider{display:block;margin:10px 0}.dmPhotoGalleryHolder{font-size:medium!important;margin:0;list-style:none}#dm .dmPhotoGallery .dmPhotoGalleryHolder{width:100%;padding:0}body{background-color:#eee}.dmDivider{min-height:2px;border:currentColor;color:grey;background:0 0}#dm .dmDividerWrapper{display:block}.main-navigation.unifiednav{display:flex;justify-content:flex-start;align-items:stretch;overflow:visible}.main-navigation.unifiednav ul{list-style:none;padding:0;margin:0;font-size:1rem}.main-navigation.unifiednav .unifiednav__container{display:flex;justify-content:flex-start;list-style:none}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap{display:flex;justify-content:flex-start;position:relative;font-weight:400}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::before{content:'';-ms-grid-row-align:center;align-self:center;font-weight:700}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item{display:flex;justify-content:flex-start;align-items:center;flex-direction:row;color:inherit;text-decoration:none;position:relative;padding:12px 15px;margin:0;font-weight:inherit;letter-spacing:.03em}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:0 15px}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item .nav-item-text{white-space:nowrap}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{content:'';width:100%;height:0;border:0 solid transparent;border-top-color:currentColor;display:block;opacity:0}#dm .dmWidget:not([data-buttonstyle]) .iconBg,.main-navigation.unifiednav .unifiednav__container .unifiednav__item:not(.unifiednav__item_has-sub-nav) .icon{display:none}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{opacity:1}.main-navigation.unifiednav.effect-text-color{padding:12px 15px}.main-navigation.unifiednav.effect-text-color .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected{color:#9a9a9a}.main-navigation.unifiednav:not(.unifiednav_vertical)>.unifiednav__container{justify-content:inherit}#dm .p_hfcontainer nav.main-navigation.unifiednav{min-width:9em!important;text-align:initial!important}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container{flex-wrap:wrap;justify-content:inherit}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container .nav-item-text::before{text-align:left}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before,#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])[data-divider]:not([data-direction=RIGHT]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{content:''}#dm .dmBody .dmRespRowsWrapper{max-width:none;background-color:transparent}.dmLargeBody .dmRespRow{width:100%;max-width:none;margin-left:0;margin-right:0;padding-left:40px;padding-right:40px}.dm-bfs.dm-layout-home div.dmInner{background-color:#fff}.dmStandardDesktop .dmHeader{background-color:#68ccd1;max-width:100%}#dm div.dmContent h1{color:#666}#dm div.dmRespCol>*{line-height:2}#dm div.dmContent h1,#dm div.dmContent h1 *,#dm div.dmContent h2,#dm div.dmContent h3,#dm div.dmContent h3 *,#dm div.dmContent h4,#dm div.dmContent h4 *,#dm div.dmInner{line-height:initial}#dm div.dmContent h3{color:#fff}#dm div.dmInner h1,#dm div.dmInner h2,#dm div.dmInner h3,#dm div.dmInner h4{font-family:Montserrat,"Montserrat Fallback"}#dm div.dmContent h2{color:#333}#dm DIV.dmInner{background-repeat:no-repeat;background-image:url(https://irt-cdn.multiscreensite.com/ce0bb35f932b47bb809d0e37905542ba/dms3rep/multi/site_background_education-2087x1173.jpg);background-size:cover;background-position:50% 0}#dm div.dmOuter div.dmInner{background-position:center center;background-repeat:repeat;background-size:auto}#dm div.dmContent h4{color:#333;font-family:Montserrat,"Montserrat Fallback";font-weight:400;color:rgba(0,0,0,1)}.dmLargeBody .dmBody .dmRespRowsWrapper{background-color:transparent}#dm div.dmContent h1{font-family:Montserrat,"Montserrat Fallback";font-weight:700;color:rgba(0,0,0,1)}#dm div.dmInner,#dm div.dmInner .dmRespCol,.dmPhotoGallery .caption-text.caption-text{color:rgba(0,0,0,1)}#dm div.dmContent h2{font-family:Tangerine,"Tangerine Fallback";color:rgba(233,185,71,1);font-weight:400}#dm div.dmContent h3{font-family:Montserrat,"Montserrat Fallback";color:rgba(0,0,0,1);font-weight:700}#dm .dmRespCol div.dmNewParagraph,#dm div.dmInner,#dm div.dmInner .dmRespCol,.dmPhotoGallery .caption-text.caption-text{font-family:Lato,"Lato Fallback";font-weight:400}#dm DIV.dmOuter DIV.dmInner{background-image:none;background-color:rgba(255,255,255,1)}#dm div.dmInner,#dm div.dmInner .dmRespCol{font-size:16px}#dm div.dmContent h4{font-size:20px}#dm .dmContent .dmRespRow .dmRespCol{padding-top:0}#dm div.dmContent h2{font-size:84px}#dm div.dmContent h1{font-size:50px}#dm div.dmContent h3{font-size:35px}@media all{:root{--btn-text-direction:ltr;--btn-border-r-color:var(--btn-border-color);--btn-border-l-color:var(--btn-border-color);--btn-border-b-width:var(--btn-border-width);--btn-border-width:1px;--btn-border-radius:0px;--btn-border-t-width:var(--btn-border-width);--btn-border-tl-radius:var(--btn-border-radius);--btn-border-br-radius:var(--btn-border-radius);--btn-border-bl-radius:var(--btn-border-radius);--btn-bg-color:rgba(0, 0, 0, 0);--btn-border-color:rgb(233, 185, 71);--btn-border-tr-radius:var(--btn-border-radius);--btn-border-r-width:var(--btn-border-width);--btn-border-b-color:var(--btn-border-color);--btn-border-l-width:var(--btn-border-width);--btn-border-t-color:var(--btn-border-color);--btn-text-align:center;--btn-text-color:rgb(233, 185, 71);--btn-text-decoration:none;--btn-text-font-weight:400;--btn-text-font-family:Lato,"Lato Fallback";--btn-icon-color:rgb(247, 247, 247);--btn-icon-fill:rgb(247, 247, 247);--btn-icon-wrpr-display:none;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:rgb(233, 185, 71);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:rgba(0, 0, 0, 0);--btn-hover-text-color:rgb(255, 255, 255);--btn-hover-text-font-weight:var(--btn-text-font-weight);--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style)}}@media (min-width:0px) and (max-width:767px){:root{--btn-text-font-size:16px}}#dm .dmWidget:not([data-buttonstyle]){overflow:initial;background-clip:border-box;border-radius:1px}#dm .dmWidget:not([data-buttonstyle]) .text{padding:16px 0}@media (min-width:768px){#dm .dmRespRow .dmRespCol>.dmWidget{width:222px}}#dm div.dmInner #site_content .dmWidget,#dm div.dmInner .dmHeader .dmWidget{background-color:var(--btn-bg-color);border-color:var(--btn-border-color);border-bottom-color:var(--btn-border-b-color);border-left-color:var(--btn-border-l-color);border-right-color:var(--btn-border-r-color);border-top-color:var(--btn-border-t-color);border-radius:var(--btn-border-radius);border-bottom-left-radius:var(--btn-border-bl-radius);border-bottom-right-radius:var(--btn-border-br-radius);border-top-left-radius:var(--btn-border-tl-radius);border-top-right-radius:var(--btn-border-tr-radius);border-width:var(--btn-border-width);border-bottom-width:var(--btn-border-b-width);border-left-width:var(--btn-border-l-width);border-right-width:var(--btn-border-r-width);border-top-width:var(--btn-border-t-width);direction:var(--btn-text-direction);text-align:var(--btn-text-align)}#dm div.dmInner #site_content .dmWidget span.text{color:var(--btn-text-color);font-family:var(--btn-text-font-family);font-size:var(--btn-text-font-size);font-weight:var(--btn-text-font-weight);text-decoration:var(--btn-text-decoration)}#dm div.dmInner #site_content .dmWidget span.icon,#dm div.dmInner .dmHeader .dmWidget span.icon{color:var(--btn-icon-color);fill:var(--btn-icon-fill)}#dm div.dmInner #site_content .dmWidget:not([data-buttonstyle]) .iconBg,#dm div.dmInner .dmHeader .dmWidget:not([data-buttonstyle]) .iconBg{display:var(--btn-icon-wrpr-display)}#dm .p_hfcontainer .main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{font-size:14px!important}#dm .dmInner div.dmHeader,#dm .dmInner div.dmHeader.u_hcontainer,#dm .dmInner div.u_hcontainer{background-color:rgba(0,0,0,0)!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important}#dm .p_hfcontainer nav.u_1746104418.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{color:rgba(255,255,255,1)!important;font-size:14px!important}#dm .p_hfcontainer .u_1746104418.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .u_1746104418.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{font-size:14px!important}#dm .p_hfcontainer .u_1746104418.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding-top:0!important;padding-left:15px!important;padding-right:10px!important}#dm .p_hfcontainer a.u_1594595887{border-color:rgba(255,255,255,1)!important}#dm .p_hfcontainer a.u_1594595887 span.text{color:rgba(255,255,255,1)!important}#dm .p_hfcontainer div.u_1114802179{border-top-width:1px!important;border-top-style:solid!important;border-top-color:rgba(197,197,197,1)!important;border-bottom-width:1px!important;border-bottom-style:solid!important;border-bottom-color:rgba(197,197,197,1)!important}#dm .p_hfcontainer nav.u_1746104418.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected{color:rgba(233,185,71,1)!important}#dm .dmInner div.u_hcontainer{float:none!important;top:0!important;left:0!important;position:relative!important;height:auto!important;min-width:0!important;text-align:center!important;padding:25px 0 20px!important;margin:0 auto!important}#dm .p_hfcontainer div.u_1187725087,div.u_1187725087{min-width:25px!important;text-align:center!important;float:none!important;top:0!important;left:0!important;position:relative!important}#dm .dmInner div.dmHeader.u_hcontainer{padding-bottom:20px!important;padding-top:25px!important}.fHeader #hcontainer.dmHeader[freeheader=true]{padding-top:initial!important;padding-bottom:initial!important}#dm .p_hfcontainer div.u_1862847908{padding-top:0!important;padding-bottom:15px!important}#dm .p_hfcontainer div.u_1235511238{padding-left:0!important}#dm .p_hfcontainer div.u_1638755639{padding:0!important}#dm .dmInner div.fHeader .dmHeader[freeheader=true]{margin-bottom:0!important;margin-top:0!important;padding:0!important}#dm .p_hfcontainer nav.u_1746104418.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer nav.u_1746104418.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}div.u_1187725087{width:calc(100% - 185px)!important;height:auto!important;max-width:76px!important;display:block!important;padding:0!important}#dm .p_hfcontainer div.u_1187725087{width:calc(100% - 52px)!important;height:auto!important;max-width:73px!important;padding:0!important;margin:0 auto!important}#dm .p_hfcontainer div.u_1738701961{float:none!important;top:0!important;left:0!important;width:auto!important;position:relative!important;height:auto!important;max-width:100%!important;min-width:0!important;text-align:center!important;padding:15px 40px!important;margin:0!important}#dm .p_hfcontainer div.u_1863782056{margin-top:0!important;padding:0 40px!important}#dm .p_hfcontainer nav.u_1746104418{float:none!important;top:0!important;left:0!important;width:calc(100% - 32px)!important;position:relative!important;height:auto!important;max-width:1190px!important;justify-content:center!important;align-items:stretch!important;min-width:25px!important;text-align:start!important;padding:7px 15px 6.8px!important;margin:5px 16px!important}#dm .p_hfcontainer a.u_1594595887,#dm .p_hfcontainer div.u_1460435683,#dm .p_hfcontainer div.u_1706819508{float:none!important;left:0!important;position:relative!important;padding:0!important;top:0!important;text-align:center!important}#dm .p_hfcontainer div.u_1460435683{width:203.17px!important;height:auto!important;max-width:100%!important;min-width:0!important;display:block!important;margin:10px auto 0!important}#dm .p_hfcontainer a.u_1594595887{width:calc(100% - 85px)!important;height:53px!important;max-width:216px!important;min-width:25px!important;margin:26px auto 10px!important}#dm .p_hfcontainer div.u_1706819508{width:73px!important;height:73px!important;max-width:100%!important;min-width:0!important;display:block!important;margin:0 auto 0 0!important}#dm .dmBody .u_1139101178,#dm .dmBody .u_1214542267,#dm .dmBody .u_1505594179,#dm .dmBody .u_1509183794,#dm .dmBody .u_1613766169,#dm .dmBody .u_1623967512,#dm .dmBody .u_1637239741,#dm .dmBody .u_1746009253,#dm .dmBody .u_1987837860{display:none!important}.stickyHeaderSpacer{height:171.8px!important}#dm .dmBody .u_1620106714:before{opacity:.5!important;background-color:#fff!important}#dm .dmBody div.u_1620106714:before{background-color:rgba(0,0,0,1)!important;opacity:.3!important}#dm .dmBody div.u_1620106714{background-repeat:no-repeat!important;background-size:cover!important}#dm .dmBody div.u_1658630846 .svg{color:rgba(237,21,47,1)!important;fill:rgba(237,21,47,1)!important}#dm .dmBody div.u_1367152331 hr{background:no-repeat!important;height:0!important;background-size:initial!important;min-height:0!important;border-color:currentColor!important;border-width:3px!important;border-top-style:double!important;color:rgba(197,179,88,1)!important}#dm .d-page-1716942098 DIV.dmInner,#dm .dmBody div.u_1243667655{background-repeat:no-repeat!important;background-size:cover!important}#dm .dmBody h4.u_1145716535{background-color:rgba(0,0,0,.63)!important}#dm .dmBody .u_1243667655:before{opacity:.5!important;background-color:rgba(0,0,0,.8)!important}#dm .dmBody div.u_1243667655:before{background-color:rgba(0,0,0,.8)!important;opacity:.19!important}#dm .d-page-1716942098 DIV.dmInner{background-attachment:fixed!important;background-position:50% 50%!important;background-color:rgba(255,255,255,1)!important}#dm .dmBody div.u_1620106714{background-position:50% 50%!important;padding-top:0!important;padding-bottom:0!important}#dm .dmBody div.u_1658630846{width:68px!important;height:68px!important}#dm .dmBody div.u_1999556807,#dm .dmBody h2.u_1899709395{width:calc(100% - 0px)!important;height:auto!important;padding:2px 0!important;float:none!important;position:relative!important;min-width:25px!important;max-width:100%!important;left:0!important}#dm .dmBody div.u_1999556807{top:0!important;text-align:left!important;margin:8px 0!important}#dm .dmBody h2.u_1899709395{display:block!important;top:0!important;text-align:center!important;margin:28px auto 8px!important}#dm .dmBody div.u_1919684128{padding:60px 80px!important}#dm .dmBody a.u_1312481200{float:none!important;top:0!important;left:0!important;width:calc(100% - 369px)!important;position:relative!important;height:53px!important;max-width:220px!important;min-width:25px!important;text-align:center!important;padding:0!important;margin:47px auto 10px!important}#dm .dmBody div.u_1243667655,#dm .dmBody div.u_1367152331,#dm .dmBody div.u_1543768760{float:none!important;top:0!important;height:auto!important}#dm .dmBody div.u_1635450794{padding:100px 80px!important}#dm .dmBody div.u_1367152331{width:187px!important;display:block!important;left:0!important;position:relative!important;max-width:100%!important;min-width:0!important;text-align:start!important;padding:10px 0!important;margin:0 auto!important}#dm .dmBody div.u_1543768760,#dm .dmBody h3.u_1693918675{width:calc(100% - 0px)!important;position:relative!important}#dm .dmBody div.u_1543768760{display:block!important;left:0!important;max-width:100%!important;min-width:25px!important;padding:2px 0!important;margin:74px auto 8px!important}#dm .dmBody div.u_1243667655{background-image:url(https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/IMG_7096-fce741c8-1920w.jpg),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important;left:0!important;width:auto!important;position:relative!important;max-width:none!important;min-width:0!important;text-align:center!important;background-attachment:initial!important;background-position:0 50%!important;margin:-200px 0 0!important;padding:300px 40px 220px!important}#dm .dmBody h3.u_1693918675,#dm .dmBody h4.u_1145716535{float:none!important;top:0!important;left:0!important;height:auto!important;min-width:25px!important;text-align:center!important;padding:2px 0!important}#dm .dmBody h3.u_1693918675{max-width:100%!important;margin:-8px auto 8px!important}#dm .dmBody h4.u_1145716535{display:block!important;width:calc(100% - 234px)!important;position:relative!important;max-width:492px!important;font-size:26px!important;margin:8px auto!important}#dm .dmBody a.u_1143002585 span.text{color:rgba(0,0,0,1)!important;font-weight:700!important;font-style:italic!important;font-size:24px!important}#dm .dmBody a.u_1143002585{background-color:rgba(255,255,255,1)!important;border-style:solid!important;border-width:3px!important;box-shadow:rgba(0,0,0,.25) 0 3px 11px 0!important;-moz-box-shadow:rgba(0,0,0,.25) 0 3px 11px 0!important;-webkit-box-shadow:rgba(0,0,0,.25) 0 3px 11px 0!important;width:193px!important;height:68px!important}.font-size-96,.size-96{font-size:96px!important}.font-size-26{font-size:26px!important}#\31 168366357,#\31 173148036,#\31 353744775,#\31 420134841,#\31 433707032,#\31 607763167,#\31 665004395,#\31 692682275,#\31 715441523,#\31 741256697,#\31 746104418,#\31 752397811,#\31 885230380,#\31 941648434,#\31 992676487{order:0;flex-direction:row} #dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder:not(.photo-gallery-done) {display: none;} @media (max-width:767px){ [data-hidden-on-mobile] {display:none!important}}
+    .dmDesktopBody [data-anim-desktop]:not([data-anim-desktop='none']) {
+      visibility: hidden;
+    }
+
+    
+</style>
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Petit Formal Script Fallback";
+  src: local('Arial');
+  ascent-override: 81.9524%;
+  descent-override: 21.2439%;
+  size-adjust: 121.1283%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Poppins Fallback";
+  src: local('Arial');
+  ascent-override: 92.326%;
+  descent-override: 30.7753%;
+  line-gap-override: 8.793%;
+  size-adjust: 113.7274%;
+}@font-face {
+  font-family: "Lato Fallback";
+  src: local('Arial');
+  ascent-override: 101.3181%;
+  descent-override: 21.865%;
+  size-adjust: 97.4159%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Fjalla One Fallback";
+  src: local('Arial');
+  ascent-override: 114.9994%;
+  descent-override: 28.2767%;
+  size-adjust: 87.7212%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Tangerine Fallback";
+  src: local('Arial');
+  ascent-override: 152.5598%;
+  descent-override: 50.8533%;
+  size-adjust: 49.1611%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Josefin Sans Fallback";
+  src: local('Arial');
+  ascent-override: 72.9195%;
+  descent-override: 24.3065%;
+  size-adjust: 102.8531%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.nancysrestaurant.net/">
+<script type="application/ld+json">
+    {
+        "@context" : "https://schema.org",
+        "@type" : "WebSite",
+        "name" : "Nancy Restaurant",
+        "url" : "https://www.nancysrestaurant.net/"
+    }
+</script>
+  <title>
+    Nancy's Restaurant | Floral Park,NY
+  </title>
+  <meta name="keywords" content="floral park restaurant, american restaurant, dinner, lunch, brunch, live music, catering, party reservations, Nancy's Restaurant, Nancy Restaurant"/>
+  <meta name="description" content="Family owned and operated for over fifty years, Nancy’s restaurant and tap room is a much loved gathering place for the neighbors of Floral Park. Adorned with English hunting scenes, a charming fireplace, and a cathedral ceiling, this restaurant’s winning flavors and warm ambiance"/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Nancy's Restaurant | Floral Park,NY"/>
+  <meta name="twitter:description" content="Family owned and operated for over fifty years, Nancy’s restaurant and tap room is a much loved gathering place for the neighbors of Floral Park. Adorned with English hunting scenes, a charming fireplace, and a cathedral ceiling, this restaurant’s winning flavors and warm ambiance"/>
+  <meta name="twitter:image" content="https://lirp.cdn-website.com/b061b6c5/dms3rep/multi/opt/nancys-fav-1920w.png"/>
+  <meta property="og:description" content="Family owned and operated for over fifty years, Nancy’s restaurant and tap room is a much loved gathering place for the neighbors of Floral Park. Adorned with English hunting scenes, a charming fireplace, and a cathedral ceiling, this restaurant’s winning flavors and warm ambiance"/>
+  <meta property="og:title" content="Nancy's Restaurant | Floral Park,NY"/>
+  <meta property="og:image" content="https://lirp.cdn-website.com/b061b6c5/dms3rep/multi/opt/nancys-fav-1920w.png"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="home"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite mac safariFix dmLargeBody "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-home hasAnimations hasStickyHeader inMiniHeaderMode layout-drawer_fixed-header dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" headerlayout="b58ba5b5703b4cd7b5f5f7951565dc87===horizontal-layout-5" data-scrollable-target="body" data-scrollable-target-threshold="1" data-scroll-responder-id="1" preserve-sticky-header="true" logo-size-target="70%" layout="7f3c1de367df47d5b45ab63d33101c7b===header" mini-header-show-only-navigation-row="true"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="dmRespRow dmDefaultListContentRow u_1863782056 fullBleedChanged fullBleedMode" style="text-align:center" id="1863782056"> <div class="dmRespColsWrapper" id="1607763167"> <div class="u_1638755639 small-12 dmRespCol large-4 medium-4" id="1638755639"> <div class="u_1738701961 dmRespRow" id="1738701961"> <div class="dmRespColsWrapper" id="1992676487"> <div class="dmRespCol large-6 medium-6 small-12" id="1243723212"> <div class="u_1187725087 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1187725087"> <a id="1369308052" class="" target="_blank" href="https://www.google.com/search?bih=969&biw=1920&rlz=1C1CHBF_enUS879US879&hl=en&ei=ToNFXr2jO-yH5wLPmJq4DQ&q=nancys+restaurant&oq=nancys+res&gs_l=psy-ab.1.0.0l8j0i10.2184.5015..6273...0.1..0.158.878.10j1....2..0....1..gws-wiz.....6..0i71j0i362i308i154i357j0i273j0i131j0i67..23%3A164g99g96g87g80g91g69g71g70g68g73g0g11j24%3A1g1g1g1g1g1g1g1g1g1g1g0g1.5jRBoSvP2QQ" file="false"><img src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/google-review-button-87w.png" id="1169331133" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/google-review-button.png" alt="The google logo has a red , yellow , green and blue circle around it." onerror="handleImageLoadError(this)" height="73.0" width="73.0"/></a> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12" id="1087076048"> <div class="u_1706819508 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1706819508"> <a id="1879490343" class="" target="_blank" href="https://www.instagram.com/nancys_restaurant/" file="false"><img src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/IG+Logo-87w.png" id="1556697846" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/IG+Logo.png" alt="A purple and orange instagram logo with a white circle in the middle" onerror="handleImageLoadError(this)" height="73.0" width="73.0"/></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1235511238 dmRespCol small-12 large-4 medium-4" id="1235511238"> <span id="1382261607"></span> 
+ <div class="u_1460435683 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1460435683"> <a id="1093053687" href="/" file="false"><img src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/nancy-footer-logo-243w.png" id="1680505555" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/nancy-footer-logo.png" alt="A white background with a few lines on it" onerror="handleImageLoadError(this)" height="86.34375" width="203.171875"/></a> 
+</div> 
+</div> 
+ <div class="dmRespCol large-4 medium-4 small-12" id="1127668208"> <a data-display-type="block" class="u_1594595887 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/contact" data-element-type="dButtonLinkId" id="1594595887"> <span class="iconBg" id="1001682453"> <span class="icon hasFontIcon icon-star" id="1522213845"></span> 
+</span> 
+ <span class="text" id="1061445853">MAKE A RESERVATION</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1862847908" id="1862847908"> <div class="dmRespColsWrapper" id="1741256697"> <div class="dmRespCol large-12 medium-12 small-12 u_1114802179" id="1114802179"> <script src="" id="1197527112">
+
+
+                     
+
+          </script> 
+ <nav class="u_1746104418 effect-text-color main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1746104418" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="HORIZONTAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_00  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="
+         HOME
+        " data-auto="page-text-style">HOME<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101200826  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         ABOUT
+        " data-auto="page-text-style">ABOUT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/private-parties" class="unifiednav__item  dmUDNavigationItem_010101910695  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         PRIVATE PARTIES
+        " data-auto="page-text-style">PRIVATE PARTIES<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/to-go" class="unifiednav__item  dmUDNavigationItem_010101864015  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         TO-GO MENU
+        " data-auto="page-text-style">TO-GO MENU<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/trays-to-go" class="unifiednav__item  dmUDNavigationItem_010101963532  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         TRAYS TO GO
+        " data-auto="page-text-style">TRAYS TO GO<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/gallery" class="unifiednav__item  dmUDNavigationItem_010101238808  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         GALLERY
+        " data-auto="page-text-style">GALLERY<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/social" class="unifiednav__item  dmUDNavigationItem_010101334300  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         SOCIAL
+        " data-auto="page-text-style">SOCIAL<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/events" class="unifiednav__item  dmUDNavigationItem_01010123146  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         EVENTS
+        " data-auto="page-text-style">EVENTS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101943230  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         CONTACT
+        " data-auto="page-text-style">CONTACT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true"></div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr/></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"></div> 
+ <div class="titleLine display_None"><hr/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_home dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="u_1243667655 dmRespRow dmSectionNoParallax hasBackgroundOverlay" style="text-align: center;" id="1243667655" data-gallery-bg="eyJzbGlkZXMiOlsiaHR0cHM6Ly9saXJwLWNkbi5tdWx0aXNjcmVlbnNpdGUuY29tL2MyMDk1ZDUxL2RtczNyZXAvbXVsdGkvb3B0L0lNR183MDk2LWZjZTc0MWM4LTE5MjB3LmpwZyIsImh0dHBzOi8vbGlycC1jZG4ubXVsdGlzY3JlZW5zaXRlLmNvbS9jMjA5NWQ1MS9kbXMzcmVwL211bHRpL29wdC9JTUdfNTkwMS0wMDdmOTMwOC0xOTIwdy5qcGciLCJodHRwczovL2xpcnAtY2RuLm11bHRpc2NyZWVuc2l0ZS5jb20vYzIwOTVkNTEvZG1zM3JlcC9tdWx0aS9vcHQvSU1HXzcxMDMtMTkyMHcuanBnIiwiaHR0cHM6Ly9saXJwLWNkbi5tdWx0aXNjcmVlbnNpdGUuY29tL2MyMDk1ZDUxL2RtczNyZXAvbXVsdGkvb3B0L0lNR181OTAyLWM2Mjc3NmZlLTE5MjB3LmpwZyIsImh0dHBzOi8vbGlycC1jZG4ubXVsdGlzY3JlZW5zaXRlLmNvbS9jMjA5NWQ1MS9kbXMzcmVwL211bHRpL29wdC9pbWFnZTEtMGMzNTVhMzgtMTkyMHcucG5nIiwiaHR0cHM6Ly9saXJwLWNkbi5tdWx0aXNjcmVlbnNpdGUuY29tL2MyMDk1ZDUxL2RtczNyZXAvbXVsdGkvb3B0L0lNR183MDk3LTE4MjM1NDQ3LTE5MjB3LmpwZyIsImh0dHBzOi8vbGlycC1jZG4ubXVsdGlzY3JlZW5zaXRlLmNvbS9jMjA5NWQ1MS9kbXMzcmVwL211bHRpL29wdC9pbWFnZTAtNDk5Njc1MTUtMTkyMHcucG5nIl0sInRyYW5zaXRpb24iOiJmYWRlIiwic3BlZWQiOiI2In0="> <div class="dmRespColsWrapper" id="1173148036"> <div class="dmRespCol small-12 medium-12 large-12 u_1620106714 content-removed" id="1620106714"> <span id="1479169930"></span> 
+ <div class="u_1543768760 dmNewParagraph" data-element-type="paragraph" id="1543768760" style="transition: none 0s ease 0s; display: block; line-height: initial; margin-top: 0px !important; text-align: center;" data-version="5"> <h1 class="text-align-center size-96 m-size-40"><span class="font-size-96 m-font-size-40" style="color:rgb(233, 185, 71);font-weight:400;display:initial;font-family:Tangerine, 'Tangerine Fallback';" m-font-size-set="true">Nancy's Restaurant</span></h1> 
+</div> <div class="u_1367152331 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1367152331" layout="divider-style-3"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1769922721"/></div> 
+ <h4 class="u_1145716535 dmNewParagraph" data-element-type="paragraph" id="1145716535" style="transition: none 0s ease 0s; display: block;"><div><span style="" class="font-size-26 lh-1"><b style=""><font style="color: rgb(255, 255, 255);">CONTEMPORARY AMERICAN FARE</font></b></span></div></h4> <a data-display-type="block" class="u_1143002585 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/to-go" data-element-type="dButtonLinkId" id="1143002585" target="_blank"> <span class="iconBg" id="1254130096"> <span class="icon hasFontIcon icon-star" id="1063823780"></span> 
+</span> 
+ <span class="text" id="1745993848">TO-GO MENU</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1919684128 dmRespRow fullBleedChanged fullBleedMode hide-for-small hide-for-large" id="1919684128"> <div class="dmRespColsWrapper" id="1665004395"> <div class="u_1581600553 dmRespCol small-12 large-5 medium-5" id="1581600553"> <div class="graphicWidget u_1658630846" data-element-type="graphic" data-widget-type="graphic" id="1658630846"> <svg version="1.1" id="1598212594" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" class="svg u_1598212594" data-icon-custom="true" data-icon-name="restaurant.svg"> <title id="1228961837">A black and white silhouette of a horse 's head on a white background.</title> 
+ <g id="1595239748"> <g id="1304389112"> <path d="M386.438,357.055L137.992,108.608c-1.661-1.661-3.953-2.534-6.292-2.418c-2.346,0.122-4.53,1.232-6.01,3.054
+			c-0.462,0.569-11.327,14.202-12.111,37.356c-1.007,29.773,14.246,60.636,45.34,91.73l62.233,62.233
+			c5.365,5.365,12.499,8.32,20.089,8.32c7.588,0,14.722-2.955,20.087-8.32c0.427-0.427,0.913-0.516,1.247-0.516
+			c0.333,0,0.819,0.09,1.246,0.516l10.058,10.058c0.385,0.385,0.226,1.377-0.133,2.157c-4.909,10.735-2.599,23.559,5.751,31.908
+			l59.655,59.656c6.519,6.519,15.081,9.778,23.643,9.778c8.563,0,17.125-3.259,23.643-9.778
+			C399.476,391.305,399.476,370.092,386.438,357.055z M374.711,392.613c-6.569,6.569-17.258,6.569-23.828,0l-59.655-59.656
+			c-3.476-3.476-4.439-8.811-2.395-13.279c3.347-7.321,2.082-15.479-3.225-20.785l-10.058-10.058
+			c-3.466-3.466-8.075-5.375-12.976-5.375c-4.902,0-9.51,1.91-12.976,5.375c-2.233,2.233-5.201,3.462-8.358,3.462
+			c-3.157,0-6.126-1.23-8.359-3.462l-62.233-62.233c-48.158-48.158-42.879-83.249-36.647-98.526l240.71,240.709
+			C381.281,375.355,381.281,386.044,374.711,392.613z" id="1841348479"></path> 
+</g> 
+</g> 
+ <g id="1570462812"> <g id="1579504629"> <path d="M393.943,125.661c-3.239-3.239-8.491-3.239-11.728,0l-52.931,52.931c-3.24,3.239-3.24,8.491,0,11.73
+			c1.619,1.619,3.742,2.43,5.864,2.43c2.122,0,4.245-0.809,5.864-2.43l52.931-52.932
+			C397.181,134.151,397.181,128.899,393.943,125.661z" id="1399379651"></path> 
+</g> 
+</g> 
+ <g id="1193742154"> <g id="1484151405"> <path d="M371.41,96.357c-3.239-3.239-8.491-3.239-11.728,0l-53.954,53.954c-8.272,8.271-13.154,18.78-13.394,28.833l-0.37,15.434
+			l-15.036,15.036c-3.239,3.239-3.239,8.491,0,11.728c1.619,1.62,3.741,2.43,5.864,2.43c2.122,0,4.245-0.81,5.864-2.43
+			l17.383-17.383c1.506-1.506,2.375-3.535,2.427-5.665l0.45-18.753c0.138-5.749,3.33-12.292,8.54-17.503l53.953-53.953
+			C374.649,104.846,374.649,99.594,371.41,96.357z" id="1579877982"></path> 
+</g> 
+</g> 
+ <g id="1407547085"> <g id="1273095186"> <path d="M229.627,325.534c-3.238-3.239-8.489-3.239-11.728,0l-66.353,66.353c-3.183,3.183-7.414,4.935-11.914,4.935
+			s-8.732-1.753-11.914-4.935c-3.183-3.183-4.935-7.414-4.935-11.914c0-4.501,1.753-8.732,4.935-11.914l64.05-64.05
+			c3.239-3.239,3.239-8.491,0-11.728c-3.239-3.239-8.491-3.239-11.728,0l-64.05,64.05c-6.315,6.315-9.793,14.712-9.793,23.643
+			c0,8.932,3.479,17.328,9.793,23.643c6.314,6.315,14.712,9.793,23.643,9.793c8.931,0,17.327-3.479,23.643-9.793l66.353-66.353
+			C232.866,334.023,232.866,328.771,229.627,325.534z" id="1158901056"></path> 
+</g> 
+</g> 
+ <g id="1545120021"> <g id="1312478358"> <path d="M424.489,149.438c-3.239-3.239-8.491-3.239-11.728,0l-53.952,53.952c-5.125,5.125-11.695,8.106-17.676,8.042
+			l-19.496-0.296c-2.221-0.031-4.405,0.842-5.99,2.428l-17.384,17.384c-3.239,3.239-3.239,8.491,0,11.728
+			c1.619,1.619,3.742,2.43,5.864,2.43c2.122,0,4.245-0.809,5.864-2.43l14.902-14.902l15.988,0.242
+			c10.504,0.161,21.301-4.542,29.656-12.898l53.952-53.952C427.728,157.927,427.728,152.676,424.489,149.438z" id="1377782675"></path> 
+</g> 
+</g> 
+ <g id="1183108522"> <g id="1712051403"> <path d="M437.019,74.981C388.668,26.628,324.38,0,256,0S123.332,26.628,74.981,74.981S0,187.62,0,256
+			s26.628,132.668,74.981,181.019S187.62,512,256,512s132.668-26.628,181.019-74.981S512,324.38,512,256
+			S485.372,123.332,437.019,74.981z M425.291,425.291c-45.22,45.219-105.341,70.122-169.291,70.122s-124.071-24.903-169.291-70.122
+			C41.491,380.071,16.587,319.949,16.587,256S41.491,131.929,86.709,86.709C131.929,41.491,192.051,16.587,256,16.587
+			s124.071,24.903,169.291,70.122c45.219,45.22,70.122,105.341,70.122,169.291S470.509,380.071,425.291,425.291z" id="1226420540"></path> 
+</g> 
+</g> 
+ <g id="1029667164"></g> 
+ <g id="1419203777"></g> 
+ <g id="1859758111"></g> 
+ <g id="1575132737"></g> 
+ <g id="1392753955"></g> 
+ <g id="1792695523"></g> 
+ <g id="1708555992"></g> 
+ <g id="1187253849"></g> 
+ <g id="1184914959"></g> 
+ <g id="1198231951"></g> 
+ <g id="1693659825"></g> 
+ <g id="1070976101"></g> 
+ <g id="1954052927"></g> 
+ <g id="1792655113"></g> 
+ <g id="1082954608"></g> 
+</svg> 
+</div> 
+ <h2 class="u_1899709395 dmNewParagraph" data-element-type="paragraph" id="1899709395" style="transition: opacity 1s ease-in-out 0s;">WELCOME</h2></div> 
+ <div class="u_1540803557 dmRespCol small-12 large-7 medium-7" id="1540803557"> <div class="u_1999556807 dmNewParagraph" data-element-type="paragraph" id="1999556807" style="transition: opacity 1s ease-in-out 0s;">Family owned and operated for over fifty years, Nancy&rsquo;s Restaurant and tap room is a beloved gathering place for the local community and Floral Park neighbors. Its comfortable atmosphere and rustic charm includes an inviting fireplace, soaring cathedral ceiling, and English hunting prints. Chef David Sanders&rsquo; inspired American cuisine, combined with friendly and caring service, enhances this casual but quality dining experience.&nbsp;</div></div> 
+</div> 
+</div> 
+ <div class="u_1635450794 dmRespRow fullBleedChanged fullBleedMode hide-for-medium" id="1635450794"> <div class="dmRespColsWrapper" id="1353744775"> <div class="u_1748620402 dmRespCol small-12 medium-12 large-12" id="1748620402"> <h2 class="dmNewParagraph" data-element-type="paragraph" id="1220687512" style="text-align: center; transition: opacity 1s ease-in-out 0s;">Welcome to</h2> <h3 class="u_1693918675 dmNewParagraph" data-element-type="paragraph" id="1693918675" style="text-align: center; transition: opacity 1s ease-in-out 0s;"><span style="font-family:'Josefin Sans', 'Josefin Sans Fallback';"><b>NANCY'S RESTAURANT</b></span></h3> <div class="u_1118910697 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1118910697" layout="divider-style-8"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1615419699"/></div> 
+ <div class="u_1815032915 dmNewParagraph" data-element-type="paragraph" id="1815032915" style="transition: opacity 1s ease-in-out 0s;">Family owned and operated for over fifty years, Nancy&rsquo;s Restaurant and tap room is a beloved gathering place for the local community and Floral Park neighbors. Its comfortable atmosphere and rustic charm includes an inviting fireplace, soaring cathedral ceiling, and English hunting prints. Chef David Sanders&rsquo; inspired American cuisine, combined with friendly and caring service, enhances this casual but quality dining experience.&nbsp;</div></div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1929036621 dmSectionParallaxNew fullBleedChanged fullBleedMode hasBackgroundOverlay" id="1929036621" data-video-bg="eyJzcmMiOiJodHRwczovL3lvdXR1LmJlL1M0TmdIamYxazlJIiwiaWQiOiJTNE5nSGpmMWs5SSIsInByb3ZpZGVyIjoieW91dHViZSIsImVtYmVkIjoiaHR0cHM6Ly93d3cueW91dHViZS5jb20vZW1iZWQvUzROZ0hqZjFrOUkiLCJyYXRpbyI6MC41NjI1LCJ0aHVtYm5haWwiOiJodHRwczovL2ltZy55b3V0dWJlLmNvbS92aS9TNE5nSGpmMWs5SS8wLmpwZyJ9"> <div class="dmRespColsWrapper" id="1885230380"> <div class="dmRespCol large-12 medium-12 small-12" id="1755930162"> <div class="u_1107544649 dmNewParagraph text-align-center" data-element-type="paragraph" id="1107544649" style="line-height:initial;transition:opacity 1s ease-in-out 0s;" data-version="5"> <h4 class="text-align-center"><span style="color:rgb(255, 255, 255);" class="lh-1 font-size-36"><b style="font-weight:bold;">OUR TALENTED CHEF CREATES FLAVORFUL CONTEMPORARY AMERICAN FARE WITH AN EMPHASIS ON FRESHNESS.</b></span></h4> 
+</div> <div class="u_1122263367 dmNewParagraph" data-element-type="paragraph" id="1122263367" style="transition: opacity 1s ease-in-out 0s; display: block;"><font style="color: rgb(255, 255, 255);">In addition to our standard selection of delicious entrees, we also feature a long list of nightly specials. From our oysters on a half shell to the garlic and parsley crusted rack of lamb, you&rsquo;re sure to find a dish you&rsquo;ll love. And don&rsquo;t forget to leave room for our sinful desserts! You won&rsquo;t want to miss our house-made apple tart or silky cr&egrave;me brulee.</font></div></div> 
+</div> 
+</div> 
+ <div class="dmRespRow fullBleedChanged fullBleedMode u_1165853022" id="1165853022"> <div class="dmRespColsWrapper" id="1420134841"> <div class="dmRespCol large-12 medium-12 small-12" id="1755073130"> <h2 class="dmNewParagraph" data-element-type="paragraph" id="1574729861" style="text-align: center; transition: opacity 1s ease-in-out 0s;">Delicious</h2> <h3 class="dmNewParagraph" data-element-type="paragraph" id="1166338024" style="text-align: center; transition: opacity 1s ease-in-out 0s;">MENU</h3> <div class="dmPhotoGallery newPhotoGallery dmPhotoGalleryResp u_1939323598 photo-gallery-done text-layout-bottom captionAlignment-top_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="3" data-element-type="dPhotoGalleryId" data-desktop-text-layout="bottom" id="1939323598" data-placeholder="false" data-desktop-caption-alignment="top_center" data-image-hover-effect="shine" data-rows-to-show="100" data-link-gallery="true" data-mobile-columns="1"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-3" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1399528608" data-dm-force-device="mobile" class="u_1831982622 has-link" href="/lunch-menudc1144c7" data-image-url="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/e9a90157-02f7-4ca1-b0ea-3d119e1c9e9c.jpg" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/e9a90157-02f7-4ca1-b0ea-3d119e1c9e9c-640w.jpg');"><img id="1873596188" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/e9a90157-02f7-4ca1-b0ea-3d119e1c9e9c-1920w.jpg" alt="A white bowl filled with meat and parsley on a plate." aria-labelledby="1399528608" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1160620620" class="caption-container u_1160620620" style="display:none"> <span class="caption-inner"> <h3 id="1399528608" class="caption-title u_1399528608">LUNCH</h3> 
+ <a id="1413527786" class="caption-button dmWidget  clearfix u_1413527786" href="/lunch-menudc1144c7" target="_blank" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">MENU</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1077118948" data-dm-force-device="mobile" class="u_1983910713" data-image-url="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/69c7f1fc-0c10-4a21-b803-4af0aff77367-fbb785bf.jpg" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/69c7f1fc-0c10-4a21-b803-4af0aff77367-fbb785bf-640w.jpg');"><img id="1470362922" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/69c7f1fc-0c10-4a21-b803-4af0aff77367-fbb785bf-1920w.jpg" alt="A white plate topped with steak mashed potatoes and carrots" aria-labelledby="1077118948" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1941879427" class="caption-container u_1941879427" style="display:none"> <span class="caption-inner"> <h3 id="1077118948" class="caption-title u_1077118948">DINNER</h3> 
+ <a id="1668499897" class="caption-button dmWidget  clearfix u_1668499897" href="/dinner-menu" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">MENU</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="2"> <div index="2" class="photoGalleryThumbs animated  " data-index="2"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1589296664" data-dm-force-device="mobile" class="u_1951400042" data-image-url="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/23fa73d8-598a-4820-97b6-509defcb84df.jpg" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/23fa73d8-598a-4820-97b6-509defcb84df-640w.jpg');"><img id="1883730232" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/23fa73d8-598a-4820-97b6-509defcb84df-1920w.jpg" alt="A close up of lobsters on a plate with lettuce" aria-labelledby="1589296664" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1539131754" class="caption-container u_1539131754" style="display:none"> <span class="caption-inner"> <h3 id="1589296664" class="caption-title u_1589296664">BUFFET</h3> 
+ <a id="1329294431" class="caption-button dmWidget  clearfix u_1329294431" href="/buffet-menu" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">MENU</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-3" data-index="3"> <div index="3" class="photoGalleryThumbs animated  " data-index="3"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1873349256" data-dm-force-device="mobile" class="u_1004252683" data-image-url="https://irp.cdn-website.com/c2095d51/dms3rep/multi/IMG_5902.jpg" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/IMG_5902-640w.jpg');"><img id="1223319664" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/IMG_5902-1920w.jpg" alt="A white plate topped with scallops and corn on the cob." aria-labelledby="1873349256" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1902082469" class="caption-container u_1902082469" style="display:none"> <span class="caption-inner"> <h3 id="1873349256" class="caption-title u_1873349256">NANCY&rsquo;S 3 COURSE SUNSET MENU</h3> 
+ <a id="1250972005" class="caption-button dmWidget  clearfix u_1250972005" href="/nancy-s-3-course-sunset-menu" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">MENU</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="4"> <div index="4" class="photoGalleryThumbs animated  " data-index="4"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1053910772" data-dm-force-device="mobile" class="u_1280133858 has-link" href="/nancy-s-4-course-menu" data-image-url="https://irp.cdn-website.com/c2095d51/dms3rep/multi/IMG_3439.JPG" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/IMG_3439-640w.JPG');"><img id="1161197637" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/IMG_3439-1920w.JPG" alt="A white plate topped with scallops corn and greens" aria-labelledby="1053910772" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1853596703" class="caption-container u_1853596703" style="display:none"> <span class="caption-inner"> <h3 id="1053910772" class="caption-title u_1053910772">NANCY&rsquo;S FOUR COURSE MENU</h3> 
+ <a id="1696517961" class="caption-button dmWidget  clearfix u_1696517961" href="/nancy-s-4-course-menu" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">MENU</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="5"> <div index="5" class="photoGalleryThumbs animated  " data-index="5"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1660706735" data-dm-force-device="mobile" class="u_1105081469 has-link" href="/children-s-menu" data-image-url="https://irp.cdn-website.com/c2095d51/dms3rep/multi/6beaa4e1-1967-4e99-b572-396415a6ef83.jpg" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/6beaa4e1-1967-4e99-b572-396415a6ef83-640w.jpg');"><img id="1408228500" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/6beaa4e1-1967-4e99-b572-396415a6ef83-1920w.jpg" alt="A white plate topped with fried food with mayonnaise on it" aria-labelledby="1660706735" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1630383210" class="caption-container u_1630383210" style="display:none"> <span class="caption-inner"> <h3 id="1660706735" class="caption-title u_1660706735">CHILDREN&rsquo;S MENU</h3> 
+ <a id="1250815012" class="caption-button dmWidget  clearfix u_1250815012" href="/children-s-menu" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">MENU</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-3" data-index="6"> <div index="6" class="photoGalleryThumbs animated  " data-index="6"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1014037432" data-dm-force-device="mobile" class="u_1469435619 has-link" href="/four-course-menu" data-image-url="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/a22ffdba-f38d-49d2-9615-d415891aa663.jpg" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/a22ffdba-f38d-49d2-9615-d415891aa663-640w.jpg');"><img id="1173384596" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/a22ffdba-f38d-49d2-9615-d415891aa663-1920w.jpg" alt="A white plate topped with a piece of meat and carrots" aria-labelledby="1014037432" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1575588486" class="caption-container u_1575588486" style="display:none"> <span class="caption-inner"> <h3 id="1014037432" class="caption-title u_1014037432">4 COURSE PARTY</h3> 
+ <a id="1477531311" class="caption-button dmWidget  clearfix u_1477531311" href="/four-course-menu" target="_blank" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">MENU</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="7"> <div index="7" class="photoGalleryThumbs animated  " data-index="7"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1770480200" data-dm-force-device="mobile" class="u_1499153539" data-image-url="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/dedad5d9-6fc0-4dc8-b8a2-4191deb7b2de.jpg" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/dedad5d9-6fc0-4dc8-b8a2-4191deb7b2de-640w.jpg');"><img id="1847432811" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/dedad5d9-6fc0-4dc8-b8a2-4191deb7b2de-1920w.jpg" alt="A white plate topped with a biscuit ice cream and strawberries" aria-labelledby="1770480200" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1137133786" class="caption-container u_1137133786" style="display:none"> <span class="caption-inner"> <h3 id="1770480200" class="caption-title u_1770480200">DESSERTS</h3> 
+ <a id="1193539796" class="caption-button dmWidget  clearfix u_1193539796" href="/desserts" target="_blank" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">MENU</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="8"> <div index="8" class="photoGalleryThumbs animated  " data-index="8"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1412217912" data-dm-force-device="mobile" class="u_1989566153" data-image-url="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/9220f1e3-f82d-4445-a7b4-7d4066462b39.jpg" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/9220f1e3-f82d-4445-a7b4-7d4066462b39-640w.jpg');"><img id="1893838421" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/9220f1e3-f82d-4445-a7b4-7d4066462b39-1920w.jpg" alt="A bowl of french onion soup on a plate on a table." aria-labelledby="1412217912" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1014374460" class="caption-container u_1014374460" style="display:none"> <span class="caption-inner"> <h3 id="1412217912" class="caption-title u_1412217912">HAPPY HOUR</h3> 
+ <a id="1865414470" class="caption-button dmWidget  clearfix u_1865414470" href="/happy-hour" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">MENU</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1967811424 dmSectionParallaxNew hasBackgroundOverlay" id="1967811424"> <div class="dmRespColsWrapper" id="1168366357"> <div class="dmRespCol large-12 medium-12 small-12" id="1506549878"> <h2 class="dmNewParagraph" data-element-type="paragraph" id="1443908484" style="text-align: center; transition: opacity 1s ease-in-out 0s;">Private Parties</h2> <h3 class="u_1577910109 dmNewParagraph" data-element-type="paragraph" id="1577910109" style="text-align: center; transition: opacity 1s ease-in-out 0s;"><font style="color: rgb(255, 255, 255);">Plan your events on our restaurant</font></h3> <a data-display-type="block" class="u_1185805606 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/private-parties" data-element-type="dButtonLinkId" id="1185805606"> <span class="iconBg" id="1658437726"> <span class="icon hasFontIcon icon-star" id="1774359210"></span> 
+</span> 
+ <span class="text" id="1992778477">LEARN MORE</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow fullBleedChanged fullBleedMode u_1493893774" id="1493893774"> <div class="dmRespColsWrapper" id="1752397811"> <div class="u_1006546471 dmRespCol small-12 medium-4 large-4" id="1006546471"> <div class="graphicWidget u_1835839813" data-element-type="graphic" data-widget-type="graphic" id="1835839813"> <svg version="1.1" id="1765876611" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" class="svg u_1765876611" data-icon-custom="true" data-icon-name="beer.svg"> <title id="1045735591">A black and white drawing of a cloud on a white background.</title> 
+ <g id="1576566395"> <g id="1941728143"> <path d="M286,451.29c-5.52,0-10,4.48-10,10c0,5.52,4.48,10,10,10c5.52,0,10-4.48,10-10S291.52,451.29,286,451.29z" id="1874765415"></path> 
+</g> 
+</g> 
+ <g id="1695110995"> <g id="1771367688"> <path d="M145.5,200.29c-5.523,0-10,4.477-10,10v191c0,5.523,4.477,10,10,10s10-4.477,10-10v-191
+			C155.5,204.767,151.023,200.29,145.5,200.29z" id="1404993273"></path> 
+</g> 
+</g> 
+ <g id="1378545182"> <g id="1684313298"> <path d="M225.5,200.29c-5.523,0-10,4.477-10,10v191c0,5.523,4.477,10,10,10s10-4.477,10-10v-191
+			C235.5,204.767,231.023,200.29,225.5,200.29z" id="1158173591"></path> 
+</g> 
+</g> 
+ <g id="1173118240"> <g id="1804830546"> <path d="M426.5,161h-50v-30.259c15.675-11.751,23.125-31.613,18.707-51.224c-4.133-18.39-19.313-33.398-37.768-37.345
+			c-9.811-2.105-19.692-1.36-28.695,2.063C319.716,30.002,303.862,21,286.5,21c-6.544,0-12.939,1.269-18.852,3.711
+			C250.91,8.922,228.843,0,206,0c-30.216,0-58.396,15.393-75.03,40.579C78.7,37.687,35.5,79.156,35.5,130.29v120
+			c0,16.542,13.682,30,30.5,30c3.689,0,7.224-0.671,10.5-1.893V462c0,27.57,22.43,50,50,50h200c27.57,0,50-22.43,50-50v-30h50
+			c27.57,0,50-22.43,50-50V211C476.5,183.43,454.07,161,426.5,161z M356.5,452h-30.51c-5.523,0-10,4.477-10,10s4.477,9.9,10,9.9
+			h28.79c-4.128,11.639-15.244,20.1-28.28,20.1h-200c-13.036,0-24.152-8.361-28.28-20h147.79c5.523,0,10-4.477,10-10
+			s-4.477-10-10-10H96.5V250.07v-70.564c22.463-3.391,41.914-17.538,52.14-38.505c2.086,0,3.924,0.722,5.309,2.081
+			c11.286,11.098,26.22,17.209,42.051,17.209c16.408,0,31.725-6.495,43.135-18.295c0.61-0.632,1.473-0.995,2.365-0.995
+			c15.567,0,25.753,3.325,30.277,9.881c3.729,5.405,3.726,12.915,3.723,18.95v40.459c0,13.036,8.361,24.152,20,28.28v162.72
+			c0,5.523,4.477,10,10,10s10-4.477,10-10V238.57c11.639-4.128,20-15.243,20-28.28v-70.464c7.005,1.398,14.154,1.407,21,0.007V452z
+			 M330.033,116.947c-3.1-1.577-6.796-1.43-9.762,0.389c-2.965,1.818-4.772,5.046-4.772,8.524v84.43c0,5.514-4.486,10-10,10
+			c-5.514,0-10-4.486-10-10v-40.452c0.003-7.876,0.008-19.779-7.261-30.315C279.759,127.232,264.034,121,241.5,121
+			c-6.29,0-12.396,2.589-16.749,7.099c-7.602,7.862-17.813,12.191-28.751,12.191c-10.553,0-20.507-4.073-28.035-11.477
+			c-5.133-5.039-11.996-7.813-19.325-7.813c-7.579,0-14.623,4.397-17.946,11.202c-8.382,17.164-25.35,27.927-44.28,28.089
+			c-5.489,0.047-9.915,4.51-9.915,10v79.525C76.147,255.705,71.568,260.29,66,260.29c-5.691,0-10.5-4.58-10.5-10v-120
+			c0-38.596,31.582-69.852,70.407-69.852c3.017,0,6.05,0.192,9.081,0.581c4.045,0.519,7.998-1.471,9.993-5.026
+			C157.437,33.792,180.818,20,206,20c19.73,0,38.752,8.615,52.187,23.637c3.256,3.642,8.668,4.398,12.799,1.785
+			C275.559,42.529,280.924,41,286.5,41c12.73,0,24.108,8.061,28.313,20.057c1.023,2.92,3.341,5.203,6.277,6.181
+			c2.935,0.978,6.159,0.542,8.729-1.182c6.816-4.57,15.134-6.107,23.429-4.327c10.8,2.31,20.03,11.428,22.446,22.179
+			C381.386,109.172,355.489,129.896,330.033,116.947z M376.5,221h40v151h-40V221z M456.5,382c0,16.542-13.458,30-30,30h-50v-20h50
+			c5.523,0,10-4.477,10-10V211c0-5.523-4.477-10-10-10h-50v-20h50c16.542,0,30,13.458,30,30V382z" id="1340576883"></path> 
+</g> 
+</g> 
+ <g id="1046595016"></g> 
+ <g id="1489244771"></g> 
+ <g id="1840379748"></g> 
+ <g id="1113913738"></g> 
+ <g id="1279487005"></g> 
+ <g id="1883679416"></g> 
+ <g id="1263899696"></g> 
+ <g id="1405274933"></g> 
+ <g id="1840263300"></g> 
+ <g id="1186124033"></g> 
+ <g id="1128185276"></g> 
+ <g id="1939090334"></g> 
+ <g id="1085624722"></g> 
+ <g id="1553947959"></g> 
+ <g id="1239890807"></g> 
+</svg> 
+</div> 
+ <h4 class="dmNewParagraph" data-element-type="paragraph" id="1518613777" style="text-align: center; transition: opacity 1s ease-in-out 0s;">TAP ROOMS</h4></div> 
+ <div class="u_1389996371 dmRespCol small-12 medium-4 large-4" id="1389996371"> <div class="graphicWidget u_1700510989" data-element-type="graphic" data-widget-type="graphic" id="1700510989"> <svg version="1.1" id="1273809323" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" class="svg u_1273809323" data-icon-custom="true" data-icon-name="tray.svg"> <title id="1362991059">A black and white image of a rainbow on a white background.</title> 
+ <g id="1364806161"> <g id="1188724876"> <path d="M456.354,334.396c-0.495-0.828-1.016-1.621-1.536-2.321c-5.171-7.228-12.86-12.006-21.632-13.449
+			c-8.73-1.442-17.579,0.614-24.781,5.786l-95.403,68.122h-99.669c-4.702,0-8.533-3.823-8.533-8.533s3.831-8.533,8.533-8.533H268.8
+			c16.469,0,29.867-13.397,29.867-29.867c0-0.094-0.009-0.879-0.017-0.964c-0.529-16.461-14.413-29.295-30.532-28.902h-111.01
+			c-9.839,0.085-19.422,3.61-26.974,9.907l-41.728,34.731c-1.946,1.63-3.072,4.028-3.072,6.562v102.4
+			c0,4.719,3.823,8.533,8.533,8.533h211.721c13.858-0.017,27.358-4.898,38.025-13.73l103.45-85.478
+			C461.116,368.648,465.195,349.21,456.354,334.396z M436.685,365.133L332.74,450.987c-7.629,6.315-17.28,9.796-27.162,9.813H102.4
+			v-89.865l38.664-32.188c4.54-3.78,10.283-5.897,16.12-5.948l111.206-0.008c7.074-0.009,12.979,5.342,13.21,12.809
+			c0,7.057-5.743,12.8-12.8,12.8h-55.467c-14.114,0-25.6,11.486-25.6,25.6s11.486,25.6,25.6,25.6h102.4
+			c1.775,0,3.507-0.555,4.975-1.587l97.638-69.726c3.516-2.526,7.791-3.507,12.075-2.825c4.275,0.708,8.013,3.029,10.581,6.613
+			c0.256,0.35,0.486,0.708,0.708,1.075C446.029,350.379,444.023,359.876,436.685,365.133z" id="1518450039"></path> 
+</g> 
+</g> 
+ <g id="1813451338"> <g id="1211836598"> <path d="M93.611,349.867H0v17.067h85.077v128H0V512h93.611c4.71,0,8.533-3.814,8.533-8.533V358.4
+			C102.144,353.681,98.321,349.867,93.611,349.867z" id="1919848871"></path> 
+</g> 
+</g> 
+ <g id="1287718781"> <g id="1008841955"> <path d="M42.667,426.667c-14.114,0-25.6,11.486-25.6,25.6c0,14.114,11.486,25.6,25.6,25.6s25.6-11.486,25.6-25.6
+			C68.267,438.153,56.781,426.667,42.667,426.667z M42.667,460.8c-4.702,0-8.533-3.823-8.533-8.533c0-4.71,3.831-8.533,8.533-8.533
+			c4.702,0,8.533,3.823,8.533,8.533C51.2,456.977,47.369,460.8,42.667,460.8z" id="1351021662"></path> 
+</g> 
+</g> 
+ <g id="1062549278"> <g id="1288605813"> <path d="M503.467,264.533H8.533c-4.71,0-8.533,3.814-8.533,8.533c0,32.93,26.795,59.733,59.733,59.733h392.533
+			c32.93,0,59.733-26.803,59.733-59.733C512,268.348,508.186,264.533,503.467,264.533z M452.267,315.733H59.733
+			c-20.608,0-37.845-14.686-41.805-34.133h476.143C490.112,301.047,472.875,315.733,452.267,315.733z" id="1158529252"></path> 
+</g> 
+</g> 
+ <g id="1894214853"> <g id="1762949408"> <path d="M256,42.667c-122.334,0-221.867,99.533-221.867,221.867v8.533c0,4.719,3.823,8.533,8.533,8.533h426.667
+			c4.719,0,8.533-3.814,8.533-8.533v-8.533C477.867,142.199,378.342,42.667,256,42.667z M51.2,264.533
+			c0-112.922,91.878-204.8,204.8-204.8s204.8,91.878,204.8,204.8H51.2z" id="1398688431"></path> 
+</g> 
+</g> 
+ <g id="1409534331"> <g id="1571554549"> <path d="M115.644,140.006c-5.965,6.707-11.494,13.884-16.435,21.342l14.225,9.429c4.506-6.793,9.54-13.338,14.967-19.439
+			L115.644,140.006z" id="1050181423"></path> 
+</g> 
+</g> 
+ <g id="1673069033"> <g id="1076548121"> <path d="M256,76.8c-47.923,0.026-93.551,18.133-128.469,50.961l11.691,12.433c31.744-29.85,73.224-46.302,116.787-46.327L256,76.8
+			z" id="1146768594"></path> 
+</g> 
+</g> 
+ <g id="1196967634"> <g id="1009687379"> <rect x="230.4" width="51.2" height="17.067" id="1954598625"></rect> 
+</g> 
+</g> 
+ <g id="1321658067"> <g id="1801595507"> <rect x="247.467" y="8.533" width="17.067" height="42.667" id="1804231230"></rect> 
+</g> 
+</g> 
+ <g id="1435268224"></g> 
+ <g id="1290217099"></g> 
+ <g id="1084721560"></g> 
+ <g id="1689143092"></g> 
+ <g id="1616672104"></g> 
+ <g id="1955796902"></g> 
+ <g id="1549008511"></g> 
+ <g id="1959642820"></g> 
+ <g id="1261695263"></g> 
+ <g id="1515115761"></g> 
+ <g id="1535234996"></g> 
+ <g id="1211707535"></g> 
+ <g id="1723809363"></g> 
+ <g id="1323925922"></g> 
+ <g id="1192495459"></g> 
+</svg> 
+</div> 
+ <h4 class="dmNewParagraph" data-element-type="paragraph" id="1147512345" style="text-align: center; transition: opacity 1s ease-in-out 0s;">BANQUETS</h4></div> 
+ <div class="u_1503606909 dmRespCol small-12 medium-4 large-4" id="1503606909"> <div class="graphicWidget u_1383327198" data-element-type="graphic" data-widget-type="graphic" id="1383327198"> <svg id="1450748497" enable-background="new 0 0 64 64" height="512" viewbox="0 0 64 64" width="512" xmlns="http://www.w3.org/2000/svg" class="svg u_1450748497" data-icon-custom="true" data-icon-name="shopping-bag.svg"> <title id="1039542371">A black and white drawing of a shopping bag on a white background.</title> 
+ <path d="m56.917 14.623c-.006-.015-.019-.024-.025-.038-.048-.101-.104-.199-.188-.282l-1.996-1.998c-.391-.391-1.023-.391-1.414 0-.001.001-.002.001-.003.002l-1.292 1.292-1.008-1.01v-3.589c0-.13-.026-.26-.077-.382-.051-.123-.124-.234-.217-.326l-2.703-2.702v-2.589c0-.553-.447-1-1-1h-11.996c-.553 0-1 .447-1 1v2.585l-2.704 2.704c-.094.093-.169.205-.221.33-.031.077-.036.159-.048.24-.006.048-.028.09-.028.14v3.594l-.289-.289c-.391-.391-1.023-.391-1.414 0-.001.001-.002.001-.003.002l-1.292 1.292-1.003-1.005v-5.594c0-3.859-3.141-7-7-7s-7 3.141-7 7v5.604l-.995.995-1.292-1.294c-.391-.391-1.023-.391-1.414 0-.001.001-.002.001-.003.002l-1.996 1.996c-.027.027-.038.063-.063.094-.058.072-.117.144-.153.23-.051.123-.077.253-.077.384v.001 47.988c0 .553.447 1 1 1h35.992 12c.144 0 .279-.033.403-.088.031-.014.056-.04.085-.058.092-.053.177-.11.246-.188.011-.011.024-.014.034-.025.031-.037.041-.082.065-.122.037-.059.074-.114.098-.181s.032-.136.042-.207c.006-.045.026-.084.026-.131v-47.979c.002-.136-.024-.271-.077-.398zm-16.918-1.024-1.292-1.294c-.391-.391-1.023-.391-1.414 0-.002.002-.002.004-.004.006l-1.288 1.288-1.292-1.294c-.391-.391-1.023-.391-1.414 0-.001.001-.002.001-.003.002l-.295.295v-2.602h9.993v2.587l-.282-.282c-.391-.391-1.023-.391-1.414 0-.001.001-.002.001-.003.002zm6.71-1.294c-.391-.391-1.023-.391-1.414 0-.001.001-.002.001-.003.002l-.302.302v-2.609h4.001v2.608l-.99.99zm-.305-4.305.586-.586.586.586zm-.41-3h-9.996v-.999h9.996zm-10.582 2h9.164l-1 1h-9.164zm9.583 8.432 1.006-1.006 1.29 1.291c.195.195.451.293.707.293.001 0 .002-.001.003-.001s.002.001.003.001c.256 0 .512-.098.707-.293l.284-.284v42.099l-4 3.333zm5 43.871 3.237 2.697h-6.475zm1-1.772v-42.108l.294.294c.195.195.451.293.707.293.001 0 .002-.001.003-.001s.002.001.003.001c.256 0 .512-.098.707-.293l1.291-1.291.995.996v45.442zm-30.999-55.531c2.757 0 5 2.243 5 5v5.604l-.995.995-1.292-1.294c-.391-.391-1.023-.391-1.414 0-.001.001-.002.001-.003.002l-1.292 1.292-1.292-1.294c-.391-.391-1.023-.391-1.414 0-.001.001-.002.001-.003.002l-1.292 1.292-1.003-1.005v-5.594c0-2.757 2.243-5 5-5zm-10.993 13.424.998-.998 1.29 1.291c.195.195.451.293.707.293.001 0 .002-.001.003-.001s.002.001.003.001c.256 0 .512-.098.707-.293l1.29-1.29 1.288 1.29c.195.195.451.293.707.293.001 0 .002-.001.003-.001s.002.001.003.001c.256 0 .512-.098.707-.293l1.291-1.291 1.29 1.291c.195.195.451.293.707.293.001 0 .002-.001.003-.001s.002.001.003.001c.256 0 .512-.098.707-.293l1.291-1.291 1.29 1.291c.195.195.451.293.707.293.001 0 .002-.001.003-.001s.002.001.003.001c.256 0 .512-.098.707-.293l1.29-1.29 1.288 1.29c.195.195.451.293.707.293.001 0 .002-.001.003-.001s.002.001.003.001c.256 0 .512-.098.707-.293l1.291-1.291 1.276 1.277c.183.191.436.313.721.313.278 0 .529-.114.71-.297.001-.001.002-.001.003-.002l1.291-1.291 1.29 1.291c.195.195.451.293.707.293.001 0 .002-.001.003-.001s.002.001.003.001c.256 0 .512-.098.707-.293l1.29-1.29 1.288 1.29c.195.195.451.293.707.293.001 0 .002-.001.003-.001s.002.001.003.001c.256 0 .512-.098.707-.293l1.291-1.291.995.996v46.578h-33.992z" id="1600179900"></path> 
+ <path d="m18.001 11h3.995c.553 0 1-.447 1-1s-.447-1-1-1h-3.995c-.553 0-1 .447-1 1s.447 1 1 1z" id="1427953816"></path> 
+ <path d="m25.996 41.989c4.411 0 8-3.589 8-8s-3.589-8-8-8-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.692-6 6-6z" id="1058879254"></path> 
+ <path d="m25.996 37.989c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .898-2 2-2z" id="1435916306"></path> 
+ <path d="m35.994 44.002h-19.996c-.553 0-1 .447-1 1s.447 1 1 1h19.996c.553 0 1-.447 1-1s-.447-1-1-1z" id="1961980519"></path> 
+ <path d="m35.994 47.005h-19.996c-.553 0-1 .447-1 1s.447 1 1 1h19.996c.553 0 1-.447 1-1s-.447-1-1-1z" id="1279436076"></path> 
+ <path d="m30.994 50.008h-9.996c-.553 0-1 .447-1 1s.447 1 1 1h9.996c.553 0 1-.447 1-1s-.447-1-1-1z" id="1693671659"></path> 
+</svg> 
+</div> 
+ <h4 class="dmNewParagraph" data-element-type="paragraph" id="1749378009" style="text-align: center; transition: opacity 1s ease-in-out 0s;">FOOD-TO-GO</h4></div> 
+</div> 
+</div> 
+ <div class="u_1600040608 dmRespRow hasBackgroundOverlay dmSectionParallaxNew" id="1600040608"> <div class="dmRespColsWrapper" id="1433707032"> <div class="dmRespCol large-12 medium-12 small-12" id="1891297229"> <div class="dmNewParagraph text-align-center" data-element-type="paragraph" id="1685195899" style="transition: opacity 1s ease-in-out 0s; text-align: center;" data-version="5"> <h2><span style="display: initial;">Short Info</span></h2> 
+</div> <h3 class="dmNewParagraph u_1011457914" data-element-type="paragraph" id="1011457914" style="transition: none 0s ease 0s; display: block;"><div style="text-align: center;"><span style="background-color: transparent;"><font style="color: rgb(255, 255, 255);">GET IN TOUCH</font></span></div></h3> <div class="u_1451163530 dmRespRow fullBleedChanged fullBleedMode" id="1451163530"> <div class="dmRespColsWrapper" id="1692682275"> <div class="dmRespCol small-12 medium-4 large-4" id="1665730488"> <div class="u_1519880918 graphicWidget" data-element-type="graphic" data-widget-type="graphic" id="1519880918"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 70 70" id="1731641175" class="svg u_1731641175" data-icon-name="wp-phone"> <title id="1840360591">A black and white silhouette of a telephone on a white background.</title> 
+ <g id="1192453426"> <path d="M25.3,44.8C35.7,55.3,44.2,56,46.6,56c3.9,0,9.4-5,9.4-6.3v-2.5c0-0.6-0.4-1.1-1-1.3l-10-3.2c-0.5-0.2-1,0-1.4,0.3L40,46.8
+		c-0.4,0.4-1.1,0.5-1.6,0.2c-1.5-0.9-4.8-2.9-8.6-6.8c-3.8-3.8-5.9-7.1-6.8-8.6c-0.3-0.5-0.2-1.2,0.2-1.6l3.7-3.7
+		c0.4-0.4,0.5-0.9,0.3-1.4l-3.2-10c-0.2-0.6-0.7-1-1.3-1h-2.5C19,14.1,14,19.7,14,23.5C14,25.8,14.8,34.3,25.3,44.8L25.3,44.8z" id="1081406903"></path> 
+</g> 
+</svg> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" id="1246448775" style="transition: opacity 1s ease-in-out 0s;" data-version="5"> <h6 class="m-text-align-center text-align-center"><span style="display: initial; color: rgb(255, 255, 255);">CONTACT INFORMATION</span></h6> 
+</div> <div class="dmNewParagraph" data-element-type="paragraph" id="1589774399" style="transition:opacity 1s ease-in-out 0s;line-height:initial;" data-version="5"><p class="m-text-align-center size-20 text-align-center"><span class="font-size-20" style="display: initial; color: rgb(255, 255, 255);">(718) 343-4616</span></p></div></div> 
+ <div class="dmRespCol small-12 medium-4 large-4" id="1322187847"> <div class="u_1245385386 graphicWidget" data-element-type="graphic" data-widget-type="graphic" id="1245385386"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 70 70" id="1535910894" class="svg u_1535910894" data-icon-name="wp-clock"> <title id="1416042345">A black and white clock icon on a white background.</title> 
+ <g id="1268565799"> <path d="M35,60c-13.8,0-25-11.2-25-25s11.2-25,25-25c13.8,0,25,11.2,25,25S48.8,60,35,60z M35,12c-12.7,0-23,10.3-23,23
+		s10.3,23,23,23c12.7,0,23-10.3,23-23S47.7,12,35,12z" id="1895873067"></path> 
+ <path d="M35,14c-11.6,0-21,9.4-21,21s9.4,21,21,21c11.6,0,21-9.4,21-21S46.6,14,35,14z M36,35c0,0.3-0.1,0.5-0.3,0.7l-8,8
+		C27.5,43.9,27.3,44,27,44c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.7-7.7V19c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1V35z" id="1008070469"></path> 
+</g> 
+</svg> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" id="1061161112" style="transition: opacity 1s ease-in-out 0s;" data-version="5"> <h6 class="text-align-center m-text-align-center"><span style="color: rgb(255, 255, 255); display: initial;">KITCHEN OPPERATING HOURS</span></h6> 
+</div> <div class="u_1684355275 default dmHoursOfOperation" id="1684355275" dmle_extension="open_hours" data-element-type="open_hours" time_format="12" wr="true" displaytitle="false" lang="" forcedisplay="false" icon="true" surround="true" adwords=""> <dl class="open-hours-data"> <div class="open-hours-item"> <dt day="0">Monday</dt> 
+ <dd>Closed</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="1">Tuesday</dt> 
+ <dd>Closed</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="2">Wednesday</dt> 
+ <dd> <time>12:30 pm</time> 
+- <time>9:00 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="3">Thursday</dt> 
+ <dd> <time>12:30 pm</time> 
+- <time>9:00 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="4">Friday</dt> 
+ <dd> <time>12:30 pm</time> 
+- <time>9:00 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="5">Saturday</dt> 
+ <dd> <time>12:00 pm</time> 
+- <time>9:00 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="6">Sunday</dt> 
+ <dd> <time>12:00 pm</time> 
+- <time>8:30 pm</time> 
+</dd> 
+</div> 
+</dl> 
+</div> 
+</div> 
+ <div class="dmRespCol small-12 medium-4 large-4" id="1485177272"> <div class="u_1440588974 graphicWidget" data-element-type="graphic" data-widget-type="graphic" id="1440588974"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" id="1927977029" class="svg u_1927977029" data-icon-name="food_and_drinks_fork_knife"> <title id="1806416032">kitchen icon</title> 
+ <path d="M23.22,10.47c1.24-1.53,1.9-1.82,3.11.09,6.36,10,12.63,20.07,19.27,29.89,5.75,8.5,11.95,16.7,18,25q6.1,8.46,12.21,16.91c1.58,2.18,1.27,3.79-1,5.24L71.12,90c-2.12,1.34-3.61,1-4.86-1.17q-5-8.73-10-17.49C52.15,64.24,48.06,57.16,44,50c-.55-1-1-1.09-2-.64-4.29,1.92-7-2.85-9.14-7-3.43-6.61-6.73-13.28-10-20C21.84,20.33,21.17,13,23.22,10.47Z" id="1216679506"></path> 
+ <path d="M55.11,50.37c-1-1.43-2.73-4.34-3.82-5.73,0-1.09,1.39-2.2,1.93-2.72a2.41,2.41,0,0,0,.56-2.59c-.65-2.5-1.33-5-.43-7.63a23,23,0,0,1,2.93-5.21c3.61-5.4,7.26-10.78,10.9-16.16a1.61,1.61,0,0,1,2.39-.6,1.55,1.55,0,0,1,.5,2.37q-5,8.13-10,16.25c-.37.6-.93,1.21-.07,1.89s1.52.61,2.2-.41c3.53-5.34,7.18-10.61,10.67-16,.87-1.33,1.51-1.35,2.43-.84a1.79,1.79,0,0,1,.48,2.72C72.37,21.13,69,26.61,65.66,32c-.58.93-.57,1.55.45,2.09s1.3-.05,1.74-.71Q73,25.66,78.26,17.92c1.18-1.76,1.76-2.33,3-1.38a1.43,1.43,0,0,1,.3,2.22c-4.23,6.78-8.4,13.6-12.7,20.35a9,9,0,0,1-6.52,4.3c-.09,0-4,1.24-5.35,3.44C56.9,47.2,55.54,50.14,55.11,50.37Z" id="1445984808"></path> 
+ <path d="M44.28,54.74c1.44,2.5,2.73,4.79,4.06,7.06a1.19,1.19,0,0,1,0,1.37c-4.64,8.06-10.88,18-15.53,26.1a2.72,2.72,0,0,1-4,1c-1.48-.88-2.93-1.82-4.37-2.76-1.82-1.18-2.11-2.69-.81-4.49q8.43-11.72,16.88-23.41C41.2,58.64,43.5,55.82,44.28,54.74Z" id="1527238184"></path> 
+</svg> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" id="1668385424" style="transition: opacity 1s ease-in-out 0s;" data-version="5"> <h6 class="m-text-align-center text-align-center"><span style="display: initial; color: rgb(255, 255, 255);">RESERVATION</span></h6> 
+</div> <div class="dmNewParagraph" data-element-type="paragraph" id="1504158976" background-image="" :="" style="line-height:initial;" data-version="5"><p class="m-text-align-center size-16 text-align-center"><span class="font-size-16" style="display: initial; color: rgb(255, 255, 255);">255-41 Jericho Tpk,</span></p><p class="m-text-align-center size-16 text-align-center"><span class="font-size-16" style="display: initial; color: rgb(255, 255, 255);">Floral Park, NY 11001</span></p></div> <a data-display-type="block" class="u_1993210456 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/contact" data-element-type="dButtonLinkId" id="1993210456"> <span class="iconBg" id="1784755552"> <span class="icon hasFontIcon icon-star" id="1999519486"></span> 
+</span> 
+ <span class="text" id="1392920804">MAKE A RESERVATION</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1725022310 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1725022310"> <div class="dmRespColsWrapper" id="1715441523"> <div class="dmRespCol small-12 medium-3 large-3 u_1059077326" id="1059077326"> <div class="u_1917773391 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1917773391"> <a id="1797591664" href="/" file="false"><img src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/nancy-footer-logo-259w.png" id="1656813842" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/nancy-footer-logo.png" alt="A white background with a few lines on it" onerror="handleImageLoadError(this)" height="92.9375" width="216.0"/></a> 
+</div> 
+</div> 
+ <div class="dmRespCol small-12 medium-3 large-3 u_1355795272" id="1355795272"> <h5 class="u_1261506143 dmNewParagraph" id="1261506143" data-element-type="paragraph"><div style="text-align: left;"><span style="color: rgb(255, 255, 255); font-size: 16px;">255-41 Jericho Tpk,</span></div><div style="text-align: left;"><span style="color: rgb(255, 255, 255); font-size: 16px;">Floral Park,NY</span></div></h5></div> 
+ <div class="dmRespCol small-12 medium-3 large-3 u_1312630635" id="1312630635"> <h5 class="u_1244732896 dmNewParagraph" id="1244732896" data-element-type="paragraph"><div style="text-align: left;"><font color="#ffffff"><b><span style="font-weight: 700;" class="font-size-16 lh-1">Contact Us</span></b></font></div></h5> <h5 class="u_1559294044 dmNewParagraph" id="1559294044" style="display: block;" data-element-type="paragraph"><div style="text-align: left;"><span style="color: rgb(255, 255, 255); font-size: 16px;">(718) 343-4616</span></div></h5></div> 
+ <div class="dmRespCol small-12 medium-3 large-3 u_1302681912" id="1302681912"> <div class="u_1456107631 align-center text-align-center dmSocialHub gapSpacing" id="1456107631" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.facebook.com/nancysfireside" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="http://www.yelp.com/biz/nancys-restaurant-floral-park" target="_blank" dm_dont_rewrite_url="true" aria-label="yelp" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Yelp&apos;)"> <span class="dmSocialYelp dm-social-icons-yelp oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="http://www.tripadvisor.com/Restaurant_Review-g47727-d2495999-Reviews-Nancy_s_Restaurant-Floral_Park_New_York.html" target="_blank" dm_dont_rewrite_url="true" aria-label="tripadvisor" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Tripadvisor&apos;)"> <span class="dmSocialTripadvisor dm-social-icons-tripadvisor oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.instagram.com/nancys_restaurant/" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1982995013"> <div class="dmRespColsWrapper" id="1941648434"> <div class="dmRespCol large-12 medium-12 small-12" id="1579499437"> <div class="u_1233247867 dmNewParagraph" data-element-type="paragraph" id="1233247867" style="transition: opacity 1s ease-in-out 0s;">&copy; 2019 Nancy's Restaurant. All Rights Reserved.</div></div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link rel="preload" href="https://irp.cdn-website.com/fonts/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Petit+Formal+Script:ital,wght@0,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Fjalla+One:ital,wght@0,400&family=Tangerine:ital,wght@0,400;0,700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Droid+Serif:ital,wght@0,400;0,700&amp;subset=latin-ext&amp;display=swap"  as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="preload" as="style" fetchpriority="low" onload="loadCSS(this)" href="https://static.cdn-website.com/mnlt/production/5986/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link rel="preload" href="https://irp.cdn-website.com/WIDGET_CSS/72d88eacbb6606a8112d1b3ad89c2b53.css" id="widgetCSS" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="home"] #dm [data-show-on-page-only="home"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/c2095d51/files/c2095d51_withFlex_1.min.css?v=256" id="siteGlobalCss" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<!-- Page CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/c2095d51/files/c2095d51_home_withFlex_1.min.css?v=256" id="homeCssLink" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<style id="pagestyle" type="text/css">
+    
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-96, .size-96, .size-96 > font { font-size: 96px !important; }.font-size-26, .size-26, .size-26 > font { font-size: 26px !important; }.font-size-36, .size-36, .size-36 > font { font-size: 36px !important; }.font-size-20, .size-20, .size-20 > font { font-size: 20px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5986";
+    var build = "2025-12-03T11_48_22";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-12-03T11_48_22";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5986';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5986';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =false;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5986/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5986/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: 'c2095d51'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: c2095d51 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>

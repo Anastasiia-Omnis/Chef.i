@@ -1,0 +1,1407 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.sayolarestaurantnj.com/',
+        AccountUUID: 'd9d146843fc741a29c9701e7fa62bc85',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '2c6422af',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Wed Nov 12 02:24:01 UTC 2025',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'flamenco-menu',
+        InitialPageUuid: '003fa7cfe1224855b69d342d2ab73740',
+        InitialPageId: '1187980888',
+        InitialEncodedPageAlias: 'ZmxhbWVuY28tbWVudQ==',
+        InitialHeaderUuid: '17a427257c2848108181c55fad885514',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: true,
+        cookiesNotificationMarkup: ' <div>We use cookies to ensure that we give you the best experience on our website. To learn more, go to the Privacy Page.<\/div> \n',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'LEFT',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 5,
+            NavbarLiveHomePage: 'https://www.sayolarestaurantnj.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 23;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.sayolarestaurantnj.com/flamenco-menu">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon"
+      href="https://irp-cdn.multiscreensite.com/2c6422af/dms3rep/multi/Sayola-Montclair-%28Amazing-Inside%29.jpg"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp-cdn.multiscreensite.com/2c6422af/site_favicon_16_1594579406768.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Petit+Formal+Script:ital,wght@0,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fjalla+One:ital,wght@0,400&family=Monoton:ital,wght@0,400&family=Lexend+Deca:ital,wght@0,100..900;1,100..900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&amp;subset=latin-ext&amp;display=swap"  />
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="stylesheet" type="text/css" href="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/WIDGET_CSS/8f5026e27a5a37006109bf383f44e491.css" id="widgetCSS" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="flamenco-menu"] #dm [data-show-on-page-only="flamenco-menu"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/2c6422af/files/2c6422af_1.min.css?v=313" id="siteGlobalCss" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody a.span.textonly
+{
+	color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.dmform-error
+{
+	font-style:normal !important;
+}
+*#dm *.dmBody div.dmforminput textarea
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.dmforminput *.fileUploadLink
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.checkboxwrapper span
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.radiowrapper span
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody nav.u_1144820115
+{
+	color:black !important;
+}
+*#dm *.dmBody div.u_1115808402 img[dm_changed]
+{
+	box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+	-moz-box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+	-webkit-box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+}
+*#dm *.dmBody div.u_1115808402 img
+{
+	box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+	-moz-box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+	-webkit-box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+}
+*#dm *.dmBody *.u_1115808402
+{
+	width:100% !important;
+}
+*#dm *.dmBody div.u_1533191133 img[dm_changed]
+{
+	box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+	-moz-box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+	-webkit-box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+}
+*#dm *.dmBody div.u_1533191133 img
+{
+	box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+	-moz-box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+	-webkit-box-shadow:rgba(0,0,0,0.25) 0px 3px 11px 0px !important;
+}
+*#dm *.dmBody *.u_1533191133
+{
+	width:100% !important;
+}
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.d-page-1716942098 DIV.dmInner
+{
+	background-repeat:no-repeat !important;
+	background-size:cover !important;
+	background-attachment:fixed !important;
+	background-position:50% 50% !important;
+}
+*#dm *.d-page-1716942098 DIV#dmSlideRightNavRight
+{
+	background-repeat:no-repeat !important;
+	background-image:none !important;
+	background-size:cover !important;
+	background-attachment:fixed !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1115808402
+{
+	important:true !important;
+	width:100% !important;
+}
+*#dm *.dmBody div.u_1243667655
+{
+	margin-left:0px !important;
+	padding-top:69px !important;
+	padding-left:40px !important;
+	padding-bottom:23px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:40px !important;
+	margin-right:0px !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:center !important;
+}
+*#dm *.dmBody div.u_1533191133
+{
+	important:true !important;
+	width:100% !important;
+	margin-left:0px !important;
+	padding-top:52px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+	padding-right:0px !important;
+}
+
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Petit Formal Script Fallback";
+  src: local('Arial');
+  ascent-override: 81.9524%;
+  descent-override: 21.2439%;
+  size-adjust: 121.1283%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Poppins Fallback";
+  src: local('Arial');
+  ascent-override: 92.326%;
+  descent-override: 30.7753%;
+  line-gap-override: 8.793%;
+  size-adjust: 113.7274%;
+}@font-face {
+  font-family: "Fjalla One Fallback";
+  src: local('Arial');
+  ascent-override: 114.9994%;
+  descent-override: 28.2767%;
+  size-adjust: 87.7212%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Monoton Fallback";
+  src: local('Arial');
+  ascent-override: 82.2336%;
+  descent-override: 28.5698%;
+  size-adjust: 140.4867%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lexend Deca Fallback";
+  src: local('Arial');
+  ascent-override: 90.4521%;
+  descent-override: 22.613%;
+  size-adjust: 110.5558%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sayolarestaurantnj.com/flamenco-menu">
+
+  <title>
+    Flamenco Show Menu | Sayola Retaurant | New Jersey
+  </title>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Flamenco Show Menu | Sayola Retaurant | New Jersey"/>
+  <meta name="twitter:image" content="https://lirp.cdn-website.com/2c6422af/dms3rep/multi/opt/Sayola+Montclair%2C+NJ-9-1920w.jpg"/>
+  <meta property="og:title" content="Flamenco Show Menu | Sayola Retaurant | New Jersey"/>
+  <meta property="og:image" content="https://lirp.cdn-website.com/2c6422af/dms3rep/multi/opt/Sayola+Montclair%2C+NJ-9-1920w.jpg"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="flamenco-menu"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper hamburgerLayout-var5 null hamburgerLayout">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="Hamburger" class="runtime-module-container dm-bfs dm-layout-sec hasAnimations hasStickyHeader inMiniHeaderMode layout-drawer_fixed-header dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var"> <div id="site_content"> <div class="p_hfcontainer"> <div id="hamburger-drawer" class="hamburger-drawer layout-drawer" layout="5ff40d2f36ae4e5ea1bc96b2e2fcf67e===header" data-origin="top"> <div class="u_1731542689 dmRespRow" style="text-align: center;" id="1731542689"> <div class="dmRespColsWrapper" id="1646083769"> <div class="u_1193396620 dmRespCol small-12 medium-12 large-12 empty-column" id="1193396620"></div> 
+</div> 
+</div> 
+ <div class="u_1447514878 dmRespRow middleDrawerRow" style="text-align: center;" id="1447514878"> <div class="dmRespColsWrapper" id="1506258586"> <div class="dmRespCol small-12 u_1487489553 medium-12 large-12" id="1487489553"> <nav class="u_1859120127 effect-text-color main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_4" layout-sub="" data-show-vertical-sub-items="HIDE" id="1859120127" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmUDNavigationItem_00  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Home
+        " data-auto="page-text-style">Home<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/flamenco-menu" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_010101475078  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="Flamenco Show Menu" data-auto="page-text-style">Flamenco Show Menu<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menus" class="unifiednav__item  dmUDNavigationItem_010101540615  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Tenafly Menus
+        " data-auto="page-text-style">Tenafly Menus<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/montclair-menus-1" class="unifiednav__item  dmUDNavigationItem_010101454595  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Montclair Menus
+        " data-auto="page-text-style">Montclair Menus<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/event-menu" class="unifiednav__item  dmUDNavigationItem_010101808900  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="New Year's Menu" data-auto="page-text-style">New Year's Menu<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/gallery" class="unifiednav__item  dmUDNavigationItem_010101237521  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Gallery
+        " data-auto="page-text-style">Gallery<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101943230  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Contact Us
+        " data-auto="page-text-style">Contact Us<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/our-privacy-policy" class="unifiednav__item  dmUDNavigationItem_010101121964  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Our Privacy Policy" data-auto="page-text-style">Our Privacy Policy<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1287984720" style="text-align: center;" id="1287984720"> <div class="dmRespColsWrapper" id="1094321529"> <div class="u_1998036028 dmRespCol small-12 medium-12 large-12" id="1998036028"> <div class="u_1582063457 align-center text-align-center dmSocialHub gapSpacing" id="1582063457" dmle_extension="social_hub" data-element-type="social_hub" extractelementdata="true" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.sayolarestaurantnj.com/linktree-pages" target="_blank" dm_dont_rewrite_url="true" aria-label="Social network" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Custom1&apos;)"> <span class="dmSocialCustom1 oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""> <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewbox="0 0 417 512.238"> <path fill="#fff" fill-rule="nonzero" d="M171.274 344.942h74.09v167.296h-74.09V344.942zM0 173.468h126.068l-89.622-85.44 49.591-50.985 85.439 87.829V0h74.086v124.872L331 37.243l49.552 50.785-89.58 85.241L417 173.268v70.502H290.252l90.183 87.63L331 381.192 208.519 258.11 86.037 381.192l-49.591-49.591 90.218-87.631H0v-70.502z"></path> 
+</svg> 
+</span> 
+</a> 
+ <a href="https://instagram.com/sayolarestaurant" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://tripadvisor.com/" target="_blank" dm_dont_rewrite_url="true" aria-label="tripadvisor" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Tripadvisor&apos;)"> <span class="dmSocialTripadvisor dm-social-icons-tripadvisor oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://facebook.com/sayolarestaurant/" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="http://yelp.com/biz/" target="_blank" dm_dont_rewrite_url="true" aria-label="yelp" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Yelp&apos;)"> <span class="dmSocialYelp dm-social-icons-yelp oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="layout-drawer-overlay" id="layout-drawer-overlay"></div> 
+</div> 
+ <div class="site_content"> <div id="hamburger-header-container" class="hamburger-header-container p_hfcontainer"> <div id="hamburger-header" class="hamburger-header p_hfcontainer" layout="44dc38f951e9489490b055748e10ba9f===header"> <div class="u_1705692124 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1705692124"> <div class="dmRespColsWrapper" id="1469942216"> <div class="u_1655486006 dmRespCol small-12 large-4 medium-4" id="1655486006"> <div data-element-type="spacer" class="dmSpacer" id="1753150322"></div> 
+</div> 
+ <div class="dmRespCol large-4 medium-4 small-12 u_1394416941" id="1394416941"> <div class="u_1977823279 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1977823279"> <a id="1318767093"><img src="https://lirp.cdn-website.com/2c6422af/dms3rep/multi/opt/Sayola+cream-1920w.png" alt="" id="1421208293" class="" data-dm-image-path="https://irp.cdn-website.com/2c6422af/dms3rep/multi/Sayola+cream.png" width="1920" height="1378" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1648749285 dmRespCol small-12 large-4 medium-4" id="1648749285"> <a data-display-type="block" class="u_1516943300 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/gallery" id="1516943300" data-element-type="dButtonLinkId" data-buttonstyle="BORDER_SHORT"> <span class="iconBg" id="1861476955"> <span class="icon hasFontIcon icon-star" id="1964918011"></span> 
+</span> 
+ <span class="text" id="1438302258">Our Locations</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <button class="layout-drawer-hamburger hamburger-on-header" id="layout-drawer-hamburger" aria-label="menu" aria-controls="hamburger-drawer" aria-expanded="false"> <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+</button> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_flamenco-menu dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="u_1243667655 dmRespRow" style="text-align: center;" id="1243667655"> <div class="dmRespColsWrapper" id="1173148036"> <div class="dmRespCol small-12 u_1620106714 medium-12 large-12" id="1620106714"> <div class="imageWidget align-center u_1115808402 hasFullWidth" data-element-type="image" data-widget-type="image" id="1115808402"><img src="https://lirp.cdn-website.com/2c6422af/dms3rep/multi/opt/FLAMENCO+2025+PREFIX+80PP-2-1920w.jpg" alt="" id="1488377198" class="" data-dm-image-path="https://irp.cdn-website.com/2c6422af/dms3rep/multi/FLAMENCO+2025+PREFIX+80PP-2.jpg" width="1728" height="2112" onerror="handleImageLoadError(this)"/></div> 
+ <div class="imageWidget align-center u_1533191133 hasFullWidth" data-element-type="image" data-widget-type="image" id="1533191133"><img src="https://lirp.cdn-website.com/2c6422af/dms3rep/multi/opt/Flamenco+----+-2c0e2567-1920w.png" alt="" id="1588453372" class="" data-dm-image-path="https://irp.cdn-website.com/2c6422af/dms3rep/multi/Flamenco+----+-2c0e2567.png" width="1728" height="2112" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="sticky-widgets-container-global" id="1584463050"></div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1177717869 dmRespRow" id="1177717869"> <div class="dmRespColsWrapper" id="1010120876"> <div class="dmRespCol large-12 medium-12 small-12 u_1705497039" id="1705497039"> <div class="u_1126594395 dmRespRow" id="1126594395"> <div class="dmRespColsWrapper" id="1405153762"> <div class="dmRespCol small-12 large-6 medium-6 u_1630398474" id="1630398474"> <div class="u_1456107631 align-center text-align-center dmSocialHub gapSpacing" id="1456107631" dmle_extension="social_hub" data-element-type="social_hub" extractelementdata="true" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.sayolarestaurantnj.com/linktree-pages" target="_blank" dm_dont_rewrite_url="true" aria-label="Social network" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Custom3&apos;)"> <span class="dmSocialCustom3 oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""> <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewbox="0 0 417 512.238"> <path fill="#fff" fill-rule="nonzero" d="M171.274 344.942h74.09v167.296h-74.09V344.942zM0 173.468h126.068l-89.622-85.44 49.591-50.985 85.439 87.829V0h74.086v124.872L331 37.243l49.552 50.785-89.58 85.241L417 173.268v70.502H290.252l90.183 87.63L331 381.192 208.519 258.11 86.037 381.192l-49.591-49.591 90.218-87.631H0v-70.502z"></path> 
+</svg> 
+</span> 
+</a> 
+ <a href="https://www.instagram.com/sayolarestaurant" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.facebook.com/sayolarestaurant/" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.google.com/maps/place/Sayola/@40.9311493,-73.9611241,15z/data=!4m5!3m4!1s0x0:0xc8a3acab9affed01!8m2!3d40.9312049!4d-73.9610339?hl=en" target="_blank" dm_dont_rewrite_url="true" aria-label="google_my_business" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;GoogleMyBusiness&apos;)"> <span class="dmSocialGoogleMyBusiness dm-social-icons-google-my-business oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.yelp.com/biz/sayola-restaurant-tenafly" target="_blank" dm_dont_rewrite_url="true" aria-label="yelp" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Yelp&apos;)"> <span class="dmSocialYelp dm-social-icons-yelp oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.waze.com/ul?ll=40.93116,-73.96111" target="_blank" dm_dont_rewrite_url="true" aria-label="waze" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Waze&apos;)"> <span class="dmSocialWaze dm-social-icons-waze oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.tripadvisor.com/Restaurant_Review-g46863-d11441323-Reviews-Sayola_Restaurant-Tenafly_New_Jersey.html" target="_blank" dm_dont_rewrite_url="true" aria-label="tripadvisor" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Tripadvisor&apos;)"> <span class="dmSocialTripadvisor dm-social-icons-tripadvisor oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12" id="1987382749"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient u_1358871366" file="false" href="/" data-element-type="dButtonLinkId" id="1358871366" target="_blank"> <span class="iconBg" id="1774499149"> <span class="icon hasFontIcon icon-star" id="1548068404"></span> 
+</span> 
+ <span class="text" id="1024830621">Book a Table!</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1868845282 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1868845282"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1860585272"/></div> 
+ <div class="u_1448038725 dmRespRow" id="1448038725"> <div class="dmRespColsWrapper" id="1804379117"> <div class="dmRespCol small-12 u_1409535956 medium-4 large-4" id="1409535956"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1444983385"><p class="text-align-center"><span style="display: unset; color: rgb(255, 255, 255); font-weight: bold;">Locations</span><span style="color: rgb(255, 255, 255); font-weight: 100;">&nbsp;</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1630530161"> <h5 class="text-align-center"><span style="display: unset; color: rgb(255, 255, 255);">50 Prospect Terrace.&nbsp;</span></h5> 
+ <h5 class="text-align-center"><span style="display: unset; color: rgb(255, 255, 255);">Tenafly, NJ 07670</span></h5> 
+ <h5 class="text-align-center"><a href="tel:2018712182" target="_blank" style="display: initial; color: rgb(255, 255, 255);">(201) 871 - 2182</a></h5> 
+ <h5 class="text-align-center"><br/></h5> 
+ <h5 class="text-align-center" style="line-height: 1;"><span style="display: initial; color: rgb(255, 255, 255);">38 Valley Rd.&nbsp;</span></h5> 
+ <h5 class="text-align-center" style="line-height: 1;"><span style="display: initial; color: rgb(255, 255, 255);">Montclair, NJ 07042</span></h5> 
+ <h5 class="text-align-center" style="line-height: 1;"><a href="tel:8623334499" target="_blank" style="display: initial; color: rgb(255, 255, 255);">(862) 333 - 4499</a><span style="display: initial;"><br/></span></h5> 
+</div> 
+</div> 
+ <div class="u_1316516175 dmRespCol small-12 medium-4 large-4" id="1316516175"> <div class="u_1610146904 dmNewParagraph" data-element-type="paragraph" id="1610146904" style="transition: none 0s ease 0s; display: block;"><div><font color="#ffffff"><span style="caret-color: rgb(255, 255, 255);"><b><span style="font-weight: 100;">&nbsp;</span>Tenafly Hours</b></span></font></div></div> <div class="u_1051090730 default dmHoursOfOperation" id="1051090730" dmle_extension="open_hours" data-element-type="open_hours" time_format="12" wr="true" displaytitle="false" forcedisplay="false" icon="true" surround="true" adwords=""> <dl class="open-hours-data"> <div class="open-hours-item"> <dt day="0">Monday</dt> 
+ <dd>Closed</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="1">Tue - Thu</dt> 
+ <dd> <time>4:00 pm</time> 
+- <time>10:00 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="4">Fri - Sat</dt> 
+ <dd> <time>4:00 pm</time> 
+- <time>11:00 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="6">Sunday</dt> 
+ <dd> <time>12:00 pm</time> 
+- <time>9:00 pm</time> 
+</dd> 
+</div> 
+</dl> 
+</div> 
+</div> 
+ <div class="u_1692360036 dmRespCol small-12 medium-4 large-4" id="1692360036"> <div class="u_1112685070 dmNewParagraph" data-element-type="paragraph" id="1112685070" style="transition: none 0s ease 0s; display: block;"><div><span style=""><font style="color: rgb(255, 255, 255);"><span style="font-weight: 700;">Montclair Hours</span></font></span></div></div> <div class="u_1459127815 default dmHoursOfOperation" id="1459127815" dmle_extension="open_hours" data-element-type="open_hours" time_format="12" wr="true" lang="" displaytitle="false" forcedisplay="false" icon="true" surround="true" adwords=""> <dl class="open-hours-data"> <div class="open-hours-item"> <dt day="0">Monday</dt> 
+ <dd>Closed</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="1">Tue - Thu</dt> 
+ <dd> <time>4:00 pm</time> 
+- <time>10:00 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="4">Fri - Sat</dt> 
+ <dd> <time>4:00 pm</time> 
+- <time>11:00 pm</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="6">Sunday</dt> 
+ <dd> <time>12:00 pm</time> 
+- <time>9:00 pm</time> 
+</dd> 
+</div> 
+</dl> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1964672526"> <div class="dmRespColsWrapper" id="1250985563"> <div class="dmRespCol large-12 medium-12 small-12" id="1672081363"> <div class="widget-1f5975 u_1613480378 dmCustomWidget" data-lazy-load="" data-title="" id="1613480378" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="1f5975986930429f819d4cd2154b5c4a" data-widget-version="25" data-widget-config="eyJyZXZlcnNlRmxhZyI6bnVsbCwiY29weXJpZ2h0VGV4dCI6IjxwIGNsYXNzPVwicnRlQmxvY2tcIj5BbGwgUmlnaHRzIFJlc2VydmVkIHwgU2F5b2xhIFJlc3RhdXJhbnQgfCA8YSB2YWx1ZT1cIm91ci1wcml2YWN5LXBvbGljeVwiIGxhYmVsPVwiXCIgdHlwZT1cInBhZ2VcIiBocmVmPVwiL291ci1wcml2YWN5LXBvbGljeVwiIGRhdGEtcnVudGltZS11cmw9XCIvb3VyLXByaXZhY3ktcG9saWN5XCI+T3VyIFByaXZhY3kgUG9saWN5PC9hPiB8IFBvd2VyZWQgYnkgPGEgdmFsdWU9XCJodHRwOi8vd3d3LnNreW1hcmtldGluZy51c1wiIGxhYmVsPVwiXCIgdHlwZT1cInVybFwiIHRhcmdldD1cIl9ibGFua1wiIGhyZWY9XCJodHRwOi8vd3d3LnNreW1hcmtldGluZy51c1wiIGRhdGEtcnVudGltZS11cmw9XCJodHRwOi8vd3d3LnNreW1hcmtldGluZy51c1wiPlNreSBNYXJrZXRpbmcgVVM8L2E+PC9wPiJ9"> <div class="copyright"> <div>&copy; 2025&nbsp;</div> 
+ <div><p class="rteBlock">All Rights Reserved | Sayola Restaurant | <a value="our-privacy-policy" label="" type="page" href="/our-privacy-policy" data-runtime-url="/our-privacy-policy">Our Privacy Policy</a> 
+| Powered by <a value="http://www.skymarketing.us" label="" type="url" target="_blank" href="http://www.skymarketing.us" data-runtime-url="http://www.skymarketing.us">Sky Marketing US</a></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script>
+    window.customWidgetsFunctions["1f5975986930429f819d4cd2154b5c4a~25"] = function (element, data, api) {
+        null
+    };
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5968";
+    var build = "2025-11-27T12_19_14";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-11-27T12_19_14";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = ' <div>We use cookies to ensure that we give you the best experience on our website. To learn more, go to the Privacy Page.<\/div> \n';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5968';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5968';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'google';
+    
+    rtCommonProps["google.places.key"] = 'QUl6YVN5RHA3bUlueV9qUEk5Nml1czhaWHppV19WckY3SkhfQmVJ';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'google';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =false;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '2c6422af'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 2c6422af -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Begin Body End Markup -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '237372987120213');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=237372987120213&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code --><!--  End Body End Markup -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>

@@ -1,0 +1,1598 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.ungarocoalfiredpizzacafe.com/',
+        AccountUUID: '1132f3df63884da2a541685719801596',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '82270944',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Tue Nov 04 01:29:44 UTC 2025',
+        ExternalUid: null,
+        IsSiteMultilingual: true,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'home',
+        InitialPageUuid: 'f9f624836d68444d90852fc74911c42a',
+        InitialPageId: '1187423345',
+        InitialEncodedPageAlias: 'aG9tZQ==',
+        InitialHeaderUuid: '6594e9772ad44124bba4fa0d58823191',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: true,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'LEFT',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 4,
+            NavbarLiveHomePage: 'https://www.ungarocoalfiredpizzacafe.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 25;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<link rel="manifest" href="/manifest.json">
+<!-- Tell the browser it's a PWA -->
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Tell iOS it's a PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.ungarocoalfiredpizzacafe.com/">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon"
+      href="https://irp.cdn-website.com/82270944/dms3rep/multi/UNGARO+-+Transparent+Black.png"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/82270944/site_favicon_16_1625487151116.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+body #dm #\31 739946266:not(.photo-gallery-done):not([data-widget-initialized]) { height: 6037.0px !important; min-height: initial;}
+</style>
+<style id="cssVariables" type="text/css">
+    
+</style>
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+<style id="criticalCss">
+    @charset "UTF-8";.clearfix:after,.slides:after{line-height:0;clear:both;visibility:hidden}.clearfix:after,.clearfix:before,.dmRespRow:after,.dmRespRow:before,.slides:after{content:" "}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:300;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/sourcesanspro/v23/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/dmserifdisplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0g.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Verdana;font-style:normal;font-weight:400;src:local("Verdana"),url(https://dd-cdn.multiscreensite.com/fonts/additionalfonts/28f652d19e80fbde11.woff) format("woff");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215;font-display:swap}@font-face{font-family:FontAwesome;font-display:block;src:url(https://static.cdn-website.com/fonts/fontawesome-webfont.eot?v=6);src:url(https://static.cdn-website.com/fonts/fontawesome-webfont.eot?#iefix&v=6) format("embedded-opentype"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.woff?v=6) format("woff"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.ttf?v=6) format("truetype"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.svg#fontawesomeregular?v=6) format("svg");font-weight:400;font-style:normal}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/sourcesanspro/v23/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Cardo;font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/cardo/v21/wlp_gwjKBV1pqhv43IE.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:700;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/sourcesanspro/v23/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Cardo;font-style:normal;font-weight:700;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/cardo/v21/wlpygwjKBV1pqhND-ZQW-WM.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.dmInner{min-height:100vh!important;position:relative;min-width:768px!important}.dmPopup,.dmPopupMask{position:fixed;left:0}.clearfix:after{height:0}.clearfix:after,.clearfix:before{display:table}.clearfix{display:inline-block}#dm .dmWidget .icon{font-size:26px}body.dmRoot #dm .dmOuter .dmInner .dmWidget .icon.hasFontIcon{height:26px;margin-top:-13px;line-height:normal;text-align:center;background-image:none}.dmRoot .hasFontIcon{background-image:none!important}.dmPopupMask{margin:0;display:none;width:10px;z-index:1000000999;top:0}#dmRoot .dmPopup,.dmPopup,.dmPopupClose:before,[data-display-type=block]{display:block}.dmPopup{text-align:left;top:10px;width:93%;z-index:1000009999!important;box-sizing:border-box;background:#f5f5f5;overflow-y:auto;height:100%}.dmPopup .dmPopupTitle{text-align:left;font:700 19px Helvetica,Arial;margin:20px 20px 35px;color:#999}#dmPopup{opacity:0}.dmPopupClose,.dmPopupClose:before{position:absolute;visibility:visible}.dmPopupClose{border-radius:25px;width:27px;height:27px;z-index:1;background-color:rgba(255,255,255,.4);top:12px;right:12px}.dmPopupClose:before{font-size:20px;color:#000;top:3px;right:3px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar{width:5px;height:5px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-track{background:rgba(0,0,0,.1)}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-thumb{background:#c8c8c8;box-shadow:inset 0 1px 2px #454545;border-radius:45px}.youtubeExt{width:640px;height:360px}.innerYoutubeExt{width:100%;height:100%;position:relative;padding-top:30px;padding-bottom:56.25%;overflow:hidden}.youtube-padding-fix .innerYoutubeExt{padding-bottom:0}.dmRespRow.fullBleedMode>.dmRespColsWrapper{width:100%!important;max-width:100%!important}.dmRespRow.fullBleedMode{padding-left:0!important;padding-right:0!important}#dm .dmRespRow .dmRespColsWrapper{display:flex}#dm .dmInner .dmWidget.align-center,.align-center{margin-left:auto;margin-right:auto}.text-align-center{text-align:center}body.fix-mobile-scrolling{overflow:initial}#siteSidebar>.sbcontainer{width:100%}#dmRoot{text-decoration-skip-ink:none}#dm .flexslider .slides li:first-child>img{width:100%;height:100%;object-fit:contain;position:absolute;display:block}img,video{display:inline-block}#dm .flexslider[sliderscriptparams*="'stretch':true"] .slides li:first-child img{object-fit:cover}body{-webkit-overflow-scrolling:touch}@media (min-width:1025px){:root{--btn-text-font-size:21px}}@media (min-width:768px) and (max-width:1024px){.button_2,:root{--btn-text-font-size:21px}}nav{display:block}html{font-family:Source Sans Pro;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}strong{font-weight:700}hr{box-sizing:content-box;height:0}img{border:0;max-width:100%;-ms-interpolation-mode:bicubic}button{font-family:inherit;font-size:100%;margin:0;line-height:normal;text-transform:none;-webkit-appearance:button}button::-moz-focus-inner{border:0;padding:0}*,:after,:before{box-sizing:border-box}.dmRespRow{padding-top:15px;padding-bottom:15px}.dmRespRow:after,.dmRespRow:before{display:table}.dmRespRow:after{clear:both}.dmRespRow,.dmRespRow .dmRespColsWrapper{max-width:960px;position:relative;margin:0 auto;width:100%}.dmRespRow .dmRespCol{position:relative;width:100%;display:inline-block;vertical-align:top;float:left}.dmRespRow .dmRespCol>*{max-width:100%}.dmDesktopBody .dmRespRow .large-3{position:relative;width:25%}.dmDesktopBody .dmRespRow .large-6{position:relative;width:50%}.dmDesktopBody .dmRespRow .large-12{position:relative;width:100%}.sideheader{position:relative!important}[class*=" dm-common-icons-"]{speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:dm-common-icons!important}.dm-common-icons-close:before{content:"\e901"}#dm div.dmContent [class*=" icon-"],[class*=" icon-"]{font-family:FontAwesome!important;font-weight:400;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased}[class*=" icon-"]:before{text-decoration:none;display:inline-block;speak:none}a [class*=" icon-"]{display:inline}[class*=" icon-"]{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}.icon-star:before{content:"\f005"}.icon-phone:before{content:"\f095"}.icon-angle-right:before{content:"\f105"}.icon-angle-down:before{content:"\f107"}.animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}#dm .dmRespRow .dmRespCol>.dmWidget{overflow:initial}@media (min-width:768px){#dm .dmRespRow .dmRespCol>.dmWidget{width:280px;max-width:100%}}@media (max-width:767px){#dm .dmInner .dmWidget{width:100%}}#dm .dmInner .dmWidget:not(.displayNone){display:inline-block}#dm .dmInner .dmWidget:not(.flexButton):not(.displayNone)[data-display-type=block]{display:block}#dm .dmInner .dmWidget.flexButton:not(.displayNone){display:flex}#dm .dmInner .dmWidget.flexButton{display:flex;align-items:center;justify-content:center;padding:10px 7px}#dm .dmInner .dmWidget.flexButton .text{padding:0!important;flex-grow:1;max-width:-webkit-max-content;max-width:max-content}#dm .dmInner .dmWidget.flexButton:after{display:none}#dm .dmInner .dmWidget{text-decoration:none;margin:10px 0;clear:both;position:relative;text-align:center;line-height:22px;box-shadow:none;background-image:none;padding:0;height:auto;border-style:solid;white-space:nowrap}#dm .dmInner .dmWidget.slide-button{margin-bottom:0}#dm .dmInner .dmWidget:after{content:"";display:inline-block;height:100%;vertical-align:middle;width:0;margin-right:-.25em}#dm .dmInner .dmWidget .iconBg{position:absolute;left:0;width:50px;top:50%;margin-top:-13px}#dm .dmWidget .text{display:inline-block;vertical-align:middle;font-size:1.125em;line-height:normal;white-space:normal;padding:10px 7px;max-width:98%}#dm .dmWidget.slide-button:after{display:none}@media (max-width:767px){#dm .dmInner .small-6 .dmWidget .iconBg{left:10px}}.dmImageSlider{height:350px;position:relative}.flexslider{-webkit-transform:translate3d(0,0,0)}body:not(.responsiveTablet) #dm .dmInner .dmBody .hide-for-large,body:not(.responsiveTablet) .hide-for-large{display:none!important}.hasGenericSidebar .dmLayoutWrapper{flex-grow:1;width:75%}#dmRoot .dmInner .hasGenericSidebar #dmFirstContainer,.dmLargeBody #dm .hasGenericSidebar.hasGenericSidebar.sidebarLeft #dmFirstContainer{width:100%}.hasGenericSidebar .dmLayoutWrapper #iscrollBody{overflow-x:initial;overflow-y:initial}#dm .hasGenericSidebar{-js-display:flex;display:flex;max-width:none}#dm .hasGenericSidebar .genericSidebar{width:25%;flex:0 0 auto;-ms-flex-positive:0}#dm .hasGenericSidebar.sidebarLeft .genericSidebar{order:0}#dm .hasGenericSidebar.sidebarLeft .dmLayoutWrapper{flex-grow:1;width:75%;min-width:auto}#dm .hasGenericSidebar.sidebarLeft .dmLayoutWrapper .dmRespRowsWrapper,#dm .hasGenericSidebar.sidebarLeft .dmLayoutWrapper .dmRespRowsWrapper .dmRespRow{max-width:none}#dm .hasGenericSidebar.sidebarLeft #siteSidebar.genericSidebar{display:block!important}#dm .hasGenericSidebar #siteSidebar.genericSidebar{position:fixed!important;height:100%;width:25%;z-index:1;min-width:64px}#dm .hasGenericSidebar #siteSidebar.genericSidebar #sbcontainer{display:flex;flex-direction:column;justify-content:space-between;height:100%;overflow:auto}#dm .hasGenericSidebar #siteSidebar.genericSidebar #sbcontainer .dmRespRow{padding-left:20px;padding-right:20px}#dm .hasGenericSidebar #siteSidebar.genericSidebar #sidebarHamburger{opacity:0;position:absolute;top:50%;left:50%;transform:translate(-50%);padding:13px 9px;z-index:7;width:40px;height:40px;background-color:transparent;color:#787878;display:flex;flex-direction:column;border:0;justify-content:space-between;align-items:stretch;outline:0;border-radius:0}#dm .hasGenericSidebar #siteSidebar.genericSidebar #sidebarHamburger .hamburger__slice{display:block;height:0;width:100%;border:1px solid currentColor;transform-origin:center}#dm .hasGenericSidebar #siteSidebarSpacer{width:25%;min-width:64px}@media screen and (max-width:1259px){#dm .hasGenericSidebar:not(.sidebarExpanded) #siteSidebar.genericSidebar,#dm .hasGenericSidebar:not(.sidebarExpanded) #siteSidebarSpacer{max-width:calc(100% - 960px)}#dm .hasGenericSidebar:not(.sidebarExpanded) #siteSidebar.genericSidebar .dmRespRow{padding-left:10px!important;padding-right:10px!important}}@media screen and (max-width:1150px){#dm .hasGenericSidebar:not(.sidebarExpanded):not(.forceSidebarFull) #siteSidebar.genericSidebar,#dm .hasGenericSidebar:not(.sidebarExpanded):not(.forceSidebarFull) #siteSidebarSpacer{max-width:64px}#dm .hasGenericSidebar:not(.sidebarExpanded):not(.forceSidebarFull) #siteSidebar .dmNewParagraph,#dm .hasGenericSidebar:not(.sidebarExpanded):not(.forceSidebarFull) #siteSidebar [data-element-type]{display:none!important}#dm .hasGenericSidebar:not(.sidebarExpanded):not(.forceSidebarFull) #siteSidebar .dmRespRow{padding-left:4px!important;padding-right:4px!important}#dm .hasGenericSidebar:not(.sidebarExpanded):not(.forceSidebarFull) #siteSidebar .dmRespRow:first-of-type [data-element-type=image]:first-of-type{display:inline-block!important;min-width:100%!important}#dm .hasGenericSidebar:not(.sidebarExpanded):not(.forceSidebarFull) #sidebarHamburger{opacity:1!important}}#dm [data-element-type=dYouTubeId] video{margin:0;width:100%;height:100%}[data-video-uploaded=true] .innerYoutubeExt{padding-top:0}.slides{margin:0;padding:0;list-style:none}.flexslider,.flexslider .slides>li{height:100%;overflow:hidden;position:relative}.flexslider{padding:0;-webkit-transform:translateZ(0);direction:ltr;margin:0;zoom:1;opacity:1!important}.flexslider .slides{height:100%;zoom:1}.flexslider .slides>li{display:none;text-align:center}.flexslider .slides img{width:100%;display:block;margin:auto}.slides:after{display:block;height:0}html[xmlns] .slides{display:block}.flexslider .color-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.25);display:block}.flexslider .slides>li .slide-inner{font-weight:700;color:#fff;position:absolute;z-index:1;visibility:hidden}.flexslider .slides>li .slide-inner *{line-height:normal}.flexslider .slides>li .slide-inner .slide-title{margin:0}.flexslider .slides>li .slide-inner .slide-text{margin:0;font-size:19px;font-weight:400;white-space:pre-line}#dm .dmInner .flexslider .slides>li .slide-inner .slide-button{margin-top:20px;margin-left:auto;margin-right:auto}.flexslider .slides>li[layout=center] .slide-inner{max-width:70%;max-height:80%}#dm .flexslider .slides .dmWidget .text{max-width:100%;width:100%;padding:10px 20px!important}#dm .dmInner .flexslider.ed-version .slide-button{-js-display:inline-flex;display:inline-flex;justify-content:center;align-items:center}.flexslider:not([position]):not([layout]) .slides>li[layout=center][position=center] .slide-inner{right:auto!important;bottom:auto!important;text-align:center}.flexslider.ed-version .slides img{display:none}.flexslider.ed-version:not([layout]) .slides>li[layout=center]{-ms-flex-pack:center;-ms-flex-align:center;display:flex!important;justify-content:center;align-items:center}.flexslider.ed-version:not([layout]) .slides>li[layout=center] .slide-inner{position:static!important;top:auto!important;left:auto!important;margin:0!important}.flexslider.ed-version:not([layout]) .slides>li[layout=center] .slide-inner .slide-button.slide-button-invisible{display:none!important}.flexslider.ed-version:not([layout]) .slide-inner{max-width:70%;max-height:80%;background-color:transparent;top:50%!important;left:50%!important;right:auto!important;width:auto}.flexslider.ed-version:not([layout]) .slide-inner .slide-title{display:block!important;text-align:center!important}.dmNewParagraph[data-version]{line-height:initial}.dmNewParagraph[data-version] .text-align-center{text-align:center!important}.dmNewParagraph[data-version] [class*=size-]{width:auto!important;height:auto!important}.dmNewParagraph[data-version] h2,.dmNewParagraph[data-version] h3,.dmNewParagraph[data-version] p{margin-top:0;margin-bottom:0}.dmNewParagraph[data-version] a{vertical-align:initial}@media (max-width:767px){.dmRoot .dmNewParagraph[data-version] .m-text-align-center{text-align:center!important}}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner div,#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner h3,#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner:not(:has(>.caption-link)) div,#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner:not(:has(>.caption-link)) h3,.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner,.dmPhotoGalleryHolder,.imageWidget a{text-align:center}.imageWidget{position:relative}.imageWidget a{font-style:italic}.imageWidget img[width][height]{height:auto}.dmPhotoGallery{margin:10px 0;width:100%;overflow:hidden;min-height:1px}.dmPhotoGallery .image-container{position:relative}.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner h3{margin:0;line-height:normal;font-size:21px}.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-text,.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-title{max-width:100%}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs{list-style:none;position:relative}#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner:not(:has(>.caption-link)){justify-content:center;align-items:center}#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner .caption-button{margin:10px auto}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner{align-items:center}#dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder{width:100%;padding:0;display:none}#dm .dmPhotoGallery.newPhotoGallery .photogallery-row{display:flex}#dm .dmPhotoGallery.newPhotoGallery .layout-container.square{display:flex;width:100%;flex-direction:column}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column{display:flex;flex-direction:column;padding:0;width:100%;margin:0}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column.column-2{width:50%}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column.column-4{width:25%}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs{position:relative;overflow:hidden}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs .image-container{width:100%;overflow:hidden;background:url(https://dd-cdn.multiscreensite.com/runtime-img/galleryLoader.gif) center no-repeat}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs .image-container.revealed{background:0}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs .image-container a{display:flex;flex-direction:column;background-size:cover;padding-top:100%}#dm .dmBody .u_1288974686,#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs .image-container a img{display:none!important}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .thumbnailInnerWrapper{overflow:hidden;transform:translateZ(0)}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .image-container{overflow:hidden}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .image-container a{background-repeat:no-repeat;background-position:center}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner{display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;z-index:1;background-color:rgba(255,255,255,.9);color:#333;padding:15px;height:100%;box-sizing:border-box}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-button{margin:10px auto;max-width:100%}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-button .text{padding:10px 20px!important}#dm .dmPhotoGallery.newPhotoGallery[data-image-hover-effect=zoomout] .photoGalleryThumbs .image-container{-webkit-mask-image:-webkit-radial-gradient(#fff,#000)}#dm .dmPhotoGallery.newPhotoGallery[data-image-hover-effect=opacity] .photoGalleryThumbs .image-container a{opacity:1}#dm .dmPhotoGallery.newPhotoGallery[data-link-gallery=true] .image-container a.has-link{z-index:1px}img[width][height]{height:auto}*{border:0 solid #333;scrollbar-arrow-color:#fff;scrollbar-track-color:#F2F2F2;scrollbar-face-color:silver;scrollbar-highlight-color:silver;scrollbar-3dlight-color:silver;scrollbar-shadow-color:silver;scrollbar-darkshadow-color:silver;scrollbar-width:12px}A IMG{border:none}h2,h3,ul{margin-left:0;margin-right:0}#dm video{max-width:100%!important;display:block;margin:10px auto}.dmInner *{-webkit-font-smoothing:antialiased}.clearfix,a,img,li,ul{vertical-align:top}#iscrollBody,#site_content{position:relative}.dmOuter{word-wrap:break-word}.dmInner{font-size:16px;background:#fff;color:#666}.dmDesktopBody .dmInner{min-width:960px}.dmInner a{color:#463939;outline:0;vertical-align:inherit}.dmInner ul:not(.defaultList){padding:0}DIV.dmBody{padding:0;clear:both}.dmContent{margin:0;padding:0}#site_content ul:not(.defaultList){-webkit-padding-start:0;-moz-padding-start:0;list-style-position:inside}.dmRespRowsWrapper{max-width:960px;margin:0 auto}.dmRespCol>[dmle_extension]:not(:first-child){margin-top:10px}.dmLargeBody .imageWidget:not(.displayNone){display:inline-block;max-width:100%}#dm .dmRespColsWrapper,.dmStandardDesktop{display:block}.imageWidget:not(.displayNone) img{width:100%}h3{font-weight:400;font-size:23px}.dmNewParagraph{text-align:left;margin:8px 0;padding:2px 0}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol{padding-left:.75%;padding-right:.75%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:first-child{padding-left:0;padding-right:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:last-child{padding-right:0;padding-left:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:only-child{padding-left:0;padding-right:0}#dmFirstContainer .dmRespRowsWrapper:after,#dmFirstContainer .dmRespRowsWrapper:before{content:"";display:table}.dmLinksMenu>ul{display:block;margin:0;font-size:inherit}.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespColsWrapper .dmRespCol:not(.content-removed).empty-column{min-height:100px}.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespCol:not(.content-removed).empty-column,.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespCol:not(.content-removed):empty{min-height:1px}#dm .dmInner .dmWidget{color:#f7f7f7;background-color:#68ccd1}#dm .dmDivider{display:block;margin:10px 0}.youtubeExt{margin-top:10px;margin-bottom:10px;max-width:100%}.dmImageSlider,.dmPhotoGallery{clear:both}.dmPhotoGalleryHolder{font-size:medium!important;margin:0;list-style:none}#dm .dmPhotoGallery .dmPhotoGalleryHolder{width:100%;padding:0}body{width:100%;overflow:hidden;-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important;background-color:#eee}.dmDivider{min-height:2px;border:currentColor;color:grey;background:0 0}#dm .dmDividerWrapper{display:block}.main-navigation.unifiednav{display:flex;justify-content:flex-start;align-items:stretch;overflow:visible}.main-navigation.unifiednav ul{list-style:none;padding:0;margin:0;font-size:1rem}.main-navigation.unifiednav .unifiednav__container{display:flex;justify-content:flex-start;list-style:none}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap{display:flex;justify-content:flex-start;position:relative;font-weight:400}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::before{content:'';-ms-grid-row-align:center;align-self:center;font-weight:700}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item{display:flex;justify-content:flex-start;align-items:center;flex-direction:row;color:inherit;text-decoration:none;position:relative;padding:12px 15px;margin:0;font-weight:inherit;letter-spacing:.03em}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:0 15px}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item .nav-item-text{white-space:nowrap}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{content:'';width:100%;height:0;border:0 solid transparent;border-top-color:currentColor;display:block;opacity:0}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{opacity:1}.main-navigation.unifiednav.effect-text-color{padding:12px 15px}.main-navigation.unifiednav.effect-text-color .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected{color:#9a9a9a}.main-navigation.unifiednav .unifiednav__container .unifiednav__item:not(.unifiednav__item_has-sub-nav) .icon{display:none}.main-navigation.unifiednav .unifiednav__container[data-depth]{position:absolute;top:0;left:0;flex-direction:column;opacity:0;z-index:100;background-color:#faf9f9}.main-navigation.unifiednav .unifiednav__container[data-depth='0']{top:100%;transform:translateY(-10px)}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap .unifiednav__container>.unifiednav__item-wrap{flex-direction:column}.main-navigation.unifiednav .unifiednav__container[data-depth]>.unifiednav__item-wrap .unifiednav__item{padding:15px 30px 15px 15px;margin:0}.main-navigation.unifiednav .unifiednav__container[data-depth]>.unifiednav__item-wrap:not(:last-child)::after{content:''!important;width:100%;height:0;color:#ececec;-ms-grid-row-align:center;align-self:center;border:0 solid currentColor}.main-navigation.unifiednav.unifiednav_vertical .unifiednav__container[data-depth]{left:0}.main-navigation.unifiednav.unifiednav_vertical .unifiednav__container>.unifiednav__item-wrap:not(:last-child)::after{content:''!important}.main-navigation.unifiednav.unifiednav_vertical .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item{flex:1 1 auto}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item.unifiednav__item_has-sub-nav .icon{display:initial;padding-left:10px;margin-left:0}#dm .p_hfcontainer nav.main-navigation.unifiednav{min-width:9em!important;text-align:initial!important}#dm .main-navigation.unifiednav .unifiednav__container[data-depth]{background-color:transparent}#dm .main-navigation.unifiednav .unifiednav__container[data-depth]>.unifiednav__item-wrap:not(:last-child)::after{color:#d1d1d1}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container{flex-direction:column;flex:1 1 100%}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item{padding:8px 0;margin:0}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item.unifiednav__item_has-sub-nav .icon{padding-left:15px}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item .nav-item-text{white-space:initial}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap{flex-direction:column}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap .unifiednav__container[data-depth]{opacity:1;position:static;transform:translate(0)}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap .unifiednav__container[data-depth]>.unifiednav__item-wrap .unifiednav__item{justify-content:inherit;padding:8px 1em;margin:0;font-size:.8em}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after{content:''!important;width:100%;height:0;color:#d1d1d1;align-self:flex-start;border:0 solid currentColor}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL][layout-main=vertical_nav_layout_5] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:12px 0;justify-content:center}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL][layout-main=vertical_nav_layout_5] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__container[data-depth]>.unifiednav__item-wrap .unifiednav__item{padding:5px 0;justify-content:center}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL][layout-main=vertical_nav_layout_5] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after{border-top-width:1px;width:5%;-ms-grid-row-align:center;align-self:center}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL]:not([data-show-vertical-sub-items=HIDE]):not([data-show-vertical-sub-items=HOVER]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.unifiednav__item_has-sub-nav>.nav-item-text .icon::before,#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL][data-show-vertical-sub-items=SHOW] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.unifiednav__item_has-sub-nav>.nav-item-text .icon::before{transform:rotate(180deg)}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item.unifiednav__item_has-sub-nav .icon{display:inline-block;padding-right:0}#dm .dmBody .dmRespRowsWrapper{max-width:none;background-color:transparent}.dmLargeBody .dmRespRow{width:100%;max-width:none;margin-left:0;margin-right:0;padding-left:40px;padding-right:40px}.dm-bfs.dm-layout-home div.dmInner{background-color:#fff}#dm div.dmRespCol>*{line-height:1.5}#dm div.dmContent h3{color:#666}#dm div.dmContent h2{font-family:Cardo,"Cardo Fallback";color:rgba(26,26,26,1);font-size:45px}#dm div.dmContent h3{color:rgba(33,34,38,1);font-family:Cardo,"Cardo Fallback";font-weight:400;text-decoration:none;font-style:normal;direction:ltr;font-size:26px}.dmLargeBody .dmBody .dmRespRowsWrapper{background-color:transparent}#dm div.dmInner,#dm div.dmInner .dmRespCol{font-family:'Source Sans Pro';color:rgba(33,34,38,1);font-weight:300;font-style:normal;font-size:18px}#dm .dmNewParagraph,#dm h2,#dm h3{direction:ltr;text-align:left}#dm .dmNewParagraph a,#dm div.dmNewParagraph a{text-decoration:underline;color:rgba(102,102,102,1)}#dm DIV.dmOuter DIV.dmInner{background-color:rgba(0,0,0,1)}@media all{:root{--btn-text-direction:ltr;--btn-border-r-color:var(--btn-border-color);--btn-border-l-color:var(--btn-border-color);--btn-border-b-width:var(--btn-border-width);--btn-border-width:3px;--btn-border-radius:0px;--btn-border-t-width:var(--btn-border-width);--btn-border-tl-radius:var(--btn-border-radius);--btn-border-br-radius:var(--btn-border-radius);--btn-border-bl-radius:var(--btn-border-radius);--btn-bg-color:rgba(0, 0, 0, 0);--btn-border-color:rgb(33, 34, 38);--btn-border-tr-radius:var(--btn-border-radius);--btn-border-r-width:var(--btn-border-width);--btn-bg-image:none;--btn-border-b-color:var(--btn-border-color);--btn-border-l-width:var(--btn-border-width);--btn-border-t-color:var(--btn-border-color);--btn-text-align:center;--btn-text-color:rgb(33, 34, 38);--btn-text-decoration:none;--btn-icon-color:rgb(247, 247, 247);--btn-icon-fill:rgb(247, 247, 247);--btn-icon-wrpr-display:none;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:rgb(33, 34, 38);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:rgba(0, 0, 0, 0);--btn-hover-text-color:rgb(255, 255, 255);--btn-hover-text-font-weight:var(--btn-text-font-weight);--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style)}.button_2{--btn-text-direction:ltr;--btn-border-r-color:var(--btn-border-color);--btn-border-l-color:var(--btn-border-color);--btn-border-b-width:var(--btn-border-width);--btn-border-width:3px;--btn-border-radius:0px;--btn-border-t-width:var(--btn-border-width);--btn-border-tl-radius:var(--btn-border-radius);--btn-border-br-radius:var(--btn-border-radius);--btn-border-bl-radius:var(--btn-border-radius);--btn-bg-color:rgb(33, 34, 38);--btn-border-color:rgba(0, 0, 0, 0);--btn-border-tr-radius:var(--btn-border-radius);--btn-border-r-width:var(--btn-border-width);--btn-bg-image:none;--btn-border-b-color:var(--btn-border-color);--btn-border-l-width:var(--btn-border-width);--btn-border-t-color:var(--btn-border-color);--btn-text-align:center;--btn-text-color:rgb(255, 255, 255);--btn-text-decoration:none;--btn-icon-color:rgb(247, 247, 247);--btn-icon-fill:rgb(247, 247, 247);--btn-icon-wrpr-display:none;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:rgb(33, 34, 38);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:rgba(0, 0, 0, 0);--btn-hover-text-color:rgb(255, 255, 255);--btn-hover-text-font-weight:var(--btn-text-font-weight);--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style)}}@media (min-width:0px) and (max-width:767px){.button_2,:root{--btn-text-font-size:21px}}#dm .button_2 .dmWidget:not([data-buttonstyle]),#dm .dmWidget:not([data-buttonstyle]){background-clip:border-box;border-radius:6px}#dm .button_2 .dmWidget:not([data-buttonstyle]) .text,#dm .dmWidget:not([data-buttonstyle]) .text,#dm .dmWidget:not([data-buttonstyle]).flexButton{padding:10px 7px}#dm .button_2 .dmWidget:not([data-buttonstyle]) .iconBg,#dm .dmWidget:not([data-buttonstyle]) .iconBg{display:none}#dm .dmOuter .dmInner .dmWidget[data-buttonstyle=FLAT_ROUND_ICON]{background-clip:border-box;border-radius:6px;padding:0 0 0 40px}#dm .dmOuter .dmInner .dmWidget[data-buttonstyle=FLAT_ROUND_ICON] .text{padding:10px 7px}#dm .dmOuter .dmInner .dmWidget[data-buttonstyle=FLAT_ROUND_ICON] .iconBg{display:block}#dm div.dmInner #site_content .dmWidget{background-color:var(--btn-bg-color);background-image:var(--btn-bg-image);border-color:var(--btn-border-color);border-bottom-color:var(--btn-border-b-color);border-left-color:var(--btn-border-l-color);border-right-color:var(--btn-border-r-color);border-top-color:var(--btn-border-t-color);border-radius:var(--btn-border-radius);border-bottom-left-radius:var(--btn-border-bl-radius);border-bottom-right-radius:var(--btn-border-br-radius);border-top-left-radius:var(--btn-border-tl-radius);border-top-right-radius:var(--btn-border-tr-radius);border-width:var(--btn-border-width);border-bottom-width:var(--btn-border-b-width);border-left-width:var(--btn-border-l-width);border-right-width:var(--btn-border-r-width);border-top-width:var(--btn-border-t-width);direction:var(--btn-text-direction);text-align:var(--btn-text-align)}#dm div.dmInner #site_content .dmWidget span.text{color:var(--btn-text-color);font-size:var(--btn-text-font-size);text-decoration:var(--btn-text-decoration)}#dm div.dmInner #site_content .dmWidget span.icon{color:var(--btn-icon-color);fill:var(--btn-icon-fill)}#dm .p_hfcontainer nav.u_1912667006.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item,#dm .p_hfcontainer nav.u_1912667006.main-navigation.unifiednav .unifiednav__container[data-depth] .unifiednav__item{color:rgba(247,225,137,1)!important}#dm div.dmInner #site_content .dmWidget:not([data-buttonstyle]) .iconBg{display:var(--btn-icon-wrpr-display)}#dm .p_hfcontainer nav.u_1912667006.main-navigation.unifiednav .unifiednav__container[data-depth]>.unifiednav__item-wrap:not(:last-child)::after{border-top-width:0!important}#dm .p_hfcontainer .u_1912667006.main-navigation.unifiednav:not([image]) .unifiednav__container[data-depth="0"]{top:calc(100% - 6px - 0px)!important}#dm .p_hfcontainer nav.u_1912667006.main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after{border-top-style:solid!important;border-top-width:2px!important}#dm .p_hfcontainer .u_1412285285:before{opacity:.5!important;background-color:#fff!important}#dm .dmBody div.u_1331780791,#dm .dmBody div.u_1714308411,#dm .p_hfcontainer div.u_1412285285,#dm .p_hfcontainer div.u_1771451897{background-color:rgba(0,0,0,1)!important}#dm .p_hfcontainer div.u_1412285285:before{opacity:.67!important}#dm .p_hfcontainer div.u_1412285285{background-repeat:no-repeat!important;background-image:none!important;background-size:cover!important}#dm .p_hfcontainer .u_1823649959{width:100%!important}.hasGenericSidebar #siteSidebarSpacer,.hasGenericSidebar .u_sideheader{width:19%!important}#dm .dmBody .u_1162992552,#dm .dmBody .u_1164625402,#dm .dmBody .u_1227143342,#dm .dmBody .u_1317342494,#dm .dmBody .u_1378159720,#dm .dmBody .u_1592968545,#dm .dmBody .u_1594056614,#dm .dmBody .u_1657413635,#dm .dmBody .u_1714548065,#dm .dmBody .u_1851307110,#dm .dmBody .u_1896284838,#dm .dmBody .u_1897906576,#dm .dmBody div.u_1856225233,#dm .p_hfcontainer .u_1383636120,#dm .p_hfcontainer .u_1388130559{width:100%!important}#dm .p_hfcontainer div.sbcontainer{background-color:rgba(247,247,245,1)!important;box-shadow:rgba(0,0,0,.25) 0 3px 11px 0!important;-moz-box-shadow:rgba(0,0,0,.25) 0 3px 11px 0!important;-webkit-box-shadow:rgba(0,0,0,.25) 0 3px 11px 0!important;border-style:solid!important;border-width:1px!important;border-color:rgba(208,212,219,1)!important}#dm .p_hfcontainer nav.u_1912667006.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected{font-weight:700!important;color:rgba(255,0,0,1)!important}#dm .p_hfcontainer nav.u_1912667006.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item,#dm .p_hfcontainer nav.u_1912667006.main-navigation.unifiednav .unifiednav__container[data-depth] .unifiednav__item{font-size:15px!important}#dm .p_hfcontainer div.u_1771451897{float:none!important;top:0!important;left:0!important;width:auto!important;position:relative!important;height:auto!important;max-width:none!important;min-width:0!important;text-align:center!important;padding:10px 40px 0!important;margin:0!important}#dm .p_hfcontainer div.u_1383636120,div.u_1388130559{max-width:100%!important;padding:0!important;float:none!important;top:0!important;left:0!important;text-align:center!important;width:calc(100% - 0px)!important;min-width:25px!important;important:true!important;min-height:auto!important}#dm .p_hfcontainer div.u_1383636120{position:relative!important;margin:0 auto!important}div.u_1388130559{position:relative!important}#dm .p_hfcontainer div.u_1412285285{float:none!important;top:0!important;left:0!important;width:auto!important;position:relative!important;height:auto!important;max-width:none!important;min-width:0!important;text-align:center!important;padding:10px 40px 0!important;margin:0!important}#dm .dmBody div.u_1423396011,#dm .dmBody div.u_1950079946,#dm .p_hfcontainer nav.u_1912667006{height:auto!important;max-width:100%!important}#dm .p_hfcontainer nav.u_1912667006{float:none!important;top:0!important;left:0!important;width:243.94px!important;position:relative!important;justify-content:center!important;align-items:stretch!important;min-width:0!important;text-align:center!important;min-height:auto!important;padding:7px 15px 7.2px 0!important;margin:0 auto!important}#dm .dmBody div.u_1856225233 .caption-container .caption-title{color:rgba(0,0,0,1)!important;font-family:Cardo!important;font-weight:700!important;font-size:28px!important}#dm .dmBody div.u_1856225233 .caption-inner{background-color:rgba(255,255,255,.6)!important}#dm .dmBody .u_1751606447{display:block!important}#dm .dmBody .u_1424551976,#dm .dmBody .u_1716451632,#dm .dmBody .u_1975472043{display:none!important}#dm .dmBody div.u_1856225233{background-color:rgba(0,0,0,0)!important}#dm .dmBody .u_1156750554{display:block!important}#dm .dmBody .u_1767669701,#dm .dmBody .u_1908761132{display:none!important}#dm .dmBody .u_1262661899{background-position:50% 50%!important}#dm .dmBody .u_1709077960{background-position:0 50%!important}#dm .dmBody .u_1364978580{display:block!important}#dm .dmBody .u_1934919156,#dm .dmBody .u_1988913118{display:none!important}#dm .dmBody .u_1690004204{display:block!important}#dm .dmBody .u_1689487438,#dm .dmBody .u_1711117369{display:none!important}#dm .dmBody .u_1858371813{display:block!important}#dm .dmBody .u_1000023153,#dm .dmBody .u_1046989198,#dm .dmBody .u_1058010985,#dm .dmBody .u_1111239203,#dm .dmBody .u_1133505333,#dm .dmBody .u_1162889487,#dm .dmBody .u_1163431910,#dm .dmBody .u_1198843299,#dm .dmBody .u_1257102299,#dm .dmBody .u_1303804571,#dm .dmBody .u_1310454822,#dm .dmBody .u_1312760024,#dm .dmBody .u_1376403028,#dm .dmBody .u_1386224688,#dm .dmBody .u_1494794960,#dm .dmBody .u_1539118865,#dm .dmBody .u_1541341159,#dm .dmBody .u_1569694355,#dm .dmBody .u_1582305058,#dm .dmBody .u_1588050969,#dm .dmBody .u_1607828514,#dm .dmBody .u_1625050839,#dm .dmBody .u_1625790324,#dm .dmBody .u_1709000591,#dm .dmBody .u_1752080453,#dm .dmBody .u_1806367108,#dm .dmBody .u_1844629751{display:none!important}#dm .dmBody div.u_1950079946 hr{background:url(https://dd-cdn.multiscreensite.com/divider-images/Divider-Decorative_03.png) center no-repeat!important;height:28px!important;background-size:initial!important;min-height:initial!important;border-color:currentColor!important;border-width:0!important;color:#212226!important}#dm .dmBody .u_1020934502,#dm .dmBody .u_1106862179{background-image:url(https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/Header_Image-1920w.png),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important}#dm .dmBody div.u_1037253628,#dm .dmBody div.u_1065757262,#dm .dmBody div.u_1067696273,#dm .dmBody div.u_1441514440{border-style:solid!important;border-width:1px!important;border-color:rgba(255,255,255,1)!important}#dm .dmBody div.u_1112149243,#dm .dmBody div.u_1813640513{border-style:solid!important;border-color:rgba(255,23,62,1)!important}#dm .dmBody div.u_1112149243{border-width:4px!important}#dm .dmBody div.u_1524266561,#dm .dmBody div.u_1813640513{background-color:rgba(0,0,0,0)!important}#dm .dmBody div.u_1813640513{border-width:12px!important}#dm .dmBody div.u_1162992552 img,#dm .dmBody div.u_1449481771{border-color:rgba(247,225,137,1)!important;border-style:solid!important}#dm .dmBody div.u_1593750450{background-color:rgba(230,30,30,1)!important}#dm .dmBody div.u_1994421420{background-color:rgba(255,255,255,1)!important}#dm .dmBody div.u_1611902021{background-color:rgba(0,0,0,1)!important}#dm .dmBody div.u_1128724148{background-color:rgba(0,0,0,0)!important}#dm .dmBody div.u_1050557966,#dm .dmBody div.u_1449481771,#dm .dmBody div.u_1641851724,#dm .dmBody div.u_1650581389,#dm .dmBody div.u_1659661323,#dm .dmBody div.u_1840832396{background-color:rgba(0,0,0,1)!important}#dm .dmBody div.u_1739946266 .caption-container .caption-text{color:rgba(0,0,0,1)!important;font-size:18px!important}#dm .dmBody .u_1739946266 .caption-button{text-align:CENTER!important}#dm .dmBody div.u_1128724148,#dm .dmBody div.u_1950079946{float:none!important;top:0!important;left:0!important;position:relative!important;text-align:center!important}#dm .dmBody div.u_1739946266 .caption-button span.text{font-family:Verdana!important}#dm .dmBody div.u_1739946266 .photoGalleryThumbs .image-container{border-radius:21px!important}#dm .dmBody .u_1000409789{background-position:50% 50%!important}#dm .dmBody .u_1580484151{background-image:url(https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1936-1920w.PNG),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important}#dm .dmBody div.u_1162992552 img{border-width:2px!important;border-radius:25px!important}#dm .dmBody div.u_1948850070 .color-overlay,#dm .dmBody div.u_1969080050 .color-overlay{background-color:rgba(0,0,0,0)!important}#dm .dmBody div.u_1449481771{border-width:5px!important}#dm .dmBody div.u_1659661323{border-style:solid!important;border-width:0!important;border-color:rgba(208,212,219,1)!important}#dm .dmBody a.u_1147607143 span.icon{color:rgba(255,23,62,1)!important;fill:rgba(255,23,62,1)!important}#dm .dmBody a.u_1147607143 span.text{color:rgba(239,200,66,1)!important;font-weight:700!important}#dm .dmBody a.u_1118536383 span.text{font-weight:700!important}#dm .dmBody a.u_1118536383{background-color:rgba(239,147,58,1)!important}#dm .dmBody div.u_1935646192{background-color:rgba(236,210,108,1)!important}#dm .dmBody div.u_1394757708{background-color:rgba(223,195,110,1)!important}#dm .dmBody div.u_1171298644{border-style:solid!important;border-color:rgba(236,210,108,1)!important;border-width:7px!important}#dm .dmBody a.u_1147607143{border-color:rgba(236,213,108,1)!important;border-style:solid!important;border-width:2px!important;border-radius:6px!important;-moz-border-radius:6px!important;-webkit-border-radius:6px!important;background-color:rgba(0,0,0,1)!important}#dm .dmBody div.u_1592968545 img{border-style:solid!important;border-width:5px!important;border-color:rgba(252,244,201,1)!important;border-radius:48px!important}#dm .dmBody div.u_1376264431{background-color:rgba(249,240,27,1)!important}#dm .dmBody div.u_1028638994,#dm .dmBody div.u_1876271231{background-color:rgba(0,0,0,1)!important}#dm .dmBody div.u_1876271231{border-style:solid!important;border-color:rgba(246,243,7,1)!important;border-width:10px!important}#dm .dmBody div.u_1714548065 img{border-style:solid!important;border-color:rgba(229,207,119,1)!important;border-width:2px!important;border-radius:0!important}#dm .dmBody div.u_1133714645{background-color:rgba(230,30,30,1)!important}#dm .dmBody div.u_1276407756{background-color:rgba(0,0,0,1)!important}#dm .dmBody div.u_1672764622{background-color:rgba(230,30,30,1)!important}#dm .dmBody div.u_1505126021{background-color:rgba(33,34,38,1)!important}#dm .dmBody div.u_1733512413{background-color:rgba(0,0,0,1)!important}#dm .dmBody div.u_1423396011{float:none!important;top:0!important;left:0!important;width:1062px!important;position:relative!important;min-width:0!important;display:block!important;padding:2px 0!important;margin:8px auto!important}#dm .dmBody div.u_1596993905,#dm .dmBody div.u_1811567618,#dm .dmBody div.u_1950079946{margin:0!important;padding:0!important}#dm .dmBody .u_1856225233 .caption-inner{padding-left:9px!important;padding-right:9px!important}#dm .dmBody div.u_1128724148{width:auto!important;height:auto!important;max-width:none!important;min-width:0!important;padding:25px 50px!important;margin:0!important}#dm .dmBody div.u_1950079946{width:calc(100% - 0px)!important;donedragging:true!important;display:block!important;min-width:25px!important}#dm .dmBody div.u_1156999806,#dm .dmBody div.u_1811567618{position:relative!important;min-width:0!important;text-align:start!important;float:none!important;top:0!important;left:0!important;max-width:100%!important}#dm .dmBody .u_1856225233 .layout-container,#dm .dmBody .u_1856225233 .photoGalleryThumbs{padding:0!important}#dm .dmBody div.u_1811567618{width:225.63px!important;height:417px!important}#dm .dmBody div.u_1156999806{width:225.63px!important;height:407px!important;padding:0!important;margin:0 auto!important}#dm .dmBody div.u_1053388343,#dm .dmBody div.u_1498905627{width:calc(100% - 0px)!important;min-width:25px!important;position:relative!important;padding:0!important}#dm .dmBody div.u_1498905627{display:block!important;float:none!important;top:0!important;left:0!important;height:419px!important;max-width:100%!important;text-align:center!important;margin:-15px 0 0!important}#dm .dmBody div.u_1037253628,#dm .dmBody div.u_1053388343,#dm .dmBody div.u_1441514440{top:0!important;left:0!important;margin:0!important;float:none!important}#dm .dmBody div.u_1053388343{height:407px!important;max-width:210px!important;text-align:start!important}#dm .dmBody div.u_1441514440{display:block!important;width:225.63px!important;position:relative!important;height:auto!important;max-width:100%!important;min-width:0!important;padding:2px 0!important}#dm .dmBody div.u_1037253628{display:block!important;width:225.61px!important;position:relative!important;height:auto!important;max-width:100%!important;min-width:0!important;padding:2px 0!important}#dm .dmBody div.u_1065757262,#dm .dmBody div.u_1067696273{width:225.63px!important;padding:2px 0!important;left:0!important;position:relative!important;max-width:100%!important;min-width:0!important;height:auto!important;top:0!important}#dm .dmBody div.u_1067696273{display:block!important;float:none!important;margin:0 auto!important}#dm .dmBody div.u_1065757262{display:block!important;float:none!important}#dm .dmBody div.u_1714308411{float:none!important;top:0!important;left:0!important;width:calc(100% - 0px)!important;position:relative!important;height:auto!important;max-width:100%!important;min-width:25px!important;padding:2px 0!important;margin:8px 0!important}#dm .dmBody div.u_1856225233{float:none!important;top:0!important;left:0!important;position:relative!important;height:auto!important;max-width:100%!important;min-width:0!important;text-align:center!important;display:block!important;padding:0!important;margin:0 auto!important}#dm .dmBody div.u_1378159720,#dm .dmBody div.u_1739946266,#dm .dmBody div.u_1948850070,#dm .dmBody div.u_1969080050{left:0!important;position:relative!important;max-width:100%!important;min-width:0!important;text-align:start!important}#dm .dmBody div.u_1331780791,#dm .dmBody div.u_1611902021{width:auto!important;padding:0 40px 15px!important}#dm .dmBody div.u_1611902021{margin:0!important}#dm .dmBody div.u_1524266561{float:none!important;top:0!important;left:0!important;width:100%!important;position:relative!important;height:auto!important;max-width:100%!important;min-width:0!important;padding:2px 0!important;margin:0 auto!important}#dm .dmBody div.u_1378159720{float:none!important;top:0!important;width:602px!important;height:auto!important;display:block!important;padding:0!important;margin:0 auto!important}#dm .dmBody div.u_1641851724{width:auto!important;margin:0!important;padding:0 0 15px!important}#dm .dmBody div.u_1948850070,#dm .dmBody div.u_1969080050{float:none!important;top:0!important;width:100%!important;height:350px!important;min-height:auto!important;important:true!important;padding:0!important;margin:0!important}#dm .dmBody div.u_1050557966{width:auto!important;padding:20px 0 0!important;margin:0!important}#dm .dmBody div.u_1739946266{display:block!important;float:none!important;top:0!important;width:1434px!important;height:auto!important;important:true!important;min-height:auto!important;padding:0!important;margin:0 auto!important}#dm .dmBody .u_1739946266 .layout-container,#dm .dmBody .u_1739946266 .photoGalleryThumbs{padding:5px!important}#dm .dmBody div.u_1739946266 .caption-button{height:99px!important;width:200px!important}#dm .dmBody div.u_1162992552,#dm .dmBody div.u_1659661323{float:none!important;top:0!important;left:0!important;position:relative!important;height:auto!important;max-width:100%!important;min-width:0!important;text-align:start!important}#dm .dmBody div.u_1162992552{width:282px!important;min-height:auto!important;display:block!important;padding:0!important;margin:0 auto!important}#dm .dmBody div.u_1659661323{width:auto!important;padding:0 40px 20px!important;margin:0!important}#dm .dmBody div.u_1824590037{margin:0!important;padding:0 0 16px!important}#dm .dmBody div.u_1657413635,#dm .dmBody div.u_1851307110{width:365.69px!important;height:auto!important;text-align:start!important;padding:0!important;float:none!important;top:0!important;left:0!important;position:relative!important;min-height:auto!important;max-width:100%!important;min-width:0!important}#dm .dmBody div.u_1657413635{margin:0 auto!important}#dm .dmBody a.u_1147607143{float:none!important;top:0!important;left:0!important;width:271px!important;position:relative!important;height:70px!important;max-width:100%!important;min-width:0!important;text-align:center!important;display:block!important;padding:0 0 0 46px!important}#dm .dmBody div.u_1743336722{float:none!important;top:0!important;left:0!important;width:100%!important;position:relative!important;height:auto!important;min-height:auto!important;max-width:100%!important;min-width:0!important;padding:2px 0!important;margin:0 auto!important}#dm .dmBody div.u_1394757708{width:auto!important;margin:0!important;padding:0 40px!important}#dm .dmBody div.u_1592968545,#dm .dmBody div.u_1714548065{min-height:auto!important;min-width:0!important;text-align:start!important;display:block!important;padding:0!important;margin:0 auto!important;float:none!important;top:0!important;left:0!important;position:relative!important;height:auto!important;max-width:100%!important}#dm .dmBody div.u_1714548065{width:480px!important}#dm .dmBody div.u_1592968545{width:598px!important}#dm .dmBody div.u_1028638994{float:none!important;top:0!important;left:0!important;width:calc(100% - 0px)!important;position:relative!important;height:auto!important;max-width:100%!important;min-width:25px!important;padding:2px 0!important;margin:8px 0!important}.font-size-32,.size-32{font-size:32px!important}.font-size-24,.size-24{font-size:24px!important}.font-size-30,.size-30{font-size:30px!important}.font-size-36{font-size:36px!important}.font-size-18,.size-18{font-size:18px!important}.dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop=none]),.dmDesktopBody:not(.editGrid) [data-anim-extended]{visibility:hidden}#\31 133522291,#\31 955422662,#sbcontainer,#sidebarHamburger{order:0}#\31 133522291,#\31 955422662{flex-direction:row}#\31 020934502,#\31 029207909,#\31 046770710,#\31 074238763,#\31 094659011,#\31 106862179,#\31 140116439,#\31 140278841,#\31 144814857,#\31 167657541,#\31 169562609,#\31 203891442,#\31 332148215,#\31 358086068,#\31 371971873,#\31 444292116,#\31 475312112,#\31 526939574,#\31 580484151,#\31 585852434,#\31 592328992,#\31 598673758,#\31 662737475,#\31 663917785,#\31 687931571,#\31 694519685,#\31 732307214,#\31 741010605,#\31 743487734,#\31 746132158,#\31 841737540,#\31 880496218,#\31 912667006{order:0;flex-direction:row} #dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder:not(.photo-gallery-done) {display: none;} @media (max-width:767px){ [data-hidden-on-mobile] {display:none!important}}
+    .dmDesktopBody [data-anim-desktop]:not([data-anim-desktop='none']) {
+      visibility: hidden;
+    }
+
+    
+</style>
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Cardo Fallback";
+  src: local('Arial');
+  ascent-override: 103.8482%;
+  descent-override: 38.1494%;
+  size-adjust: 95.354%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Arial Fallback";
+  src: local('Arial');
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "DM Serif Display Fallback";
+  src: local('Arial');
+  ascent-override: 103.2273%;
+  descent-override: 33.3795%;
+  size-adjust: 100.3611%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Verdana Fallback";
+  src: local('Arial');
+  ascent-override: 87.306%;
+  descent-override: 18.2329%;
+  size-adjust: 115.1549%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Bebas Neue Fallback";
+  src: local('Arial');
+  ascent-override: 116.5002%;
+  descent-override: 38.8334%;
+  size-adjust: 77.2531%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Oswald Fallback";
+  src: local('Arial');
+  ascent-override: 145.0682%;
+  descent-override: 35.1423%;
+  size-adjust: 82.2372%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "DM Sans Fallback";
+  src: local('Arial');
+  ascent-override: 94.3696%;
+  descent-override: 29.4905%;
+  size-adjust: 105.1186%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+<link rel="alternate" hreflang="en" href="https://www.ungarocoalfiredpizzacafe.com/" />
+
+<link rel="alternate" hreflang="x-default" href="https://www.ungarocoalfiredpizzacafe.com/" />
+
+<link rel="alternate" hreflang="it" href="https://www.ungarocoalfiredpizzacafe.com/it" />
+
+<link rel="alternate" hreflang="es-mx" href="https://www.ungarocoalfiredpizzacafe.com/es-mx" />
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ungarocoalfiredpizzacafe.com/">
+<script type="application/ld+json">
+    {
+        "@context" : "https://schema.org",
+        "@type" : "WebSite",
+        "name" : "Ungaro Coal Fired Pizza Cafe",
+        "url" : "https://www.ungarocoalfiredpizzacafe.com/"
+    }
+</script>
+  <title>
+    Ungaro Coal Fired Pizza Cafe-Staten Island NY -Forest Avenue
+  </title>
+  <meta name="keywords" content="pizza, staten island, ungaro, coal fired pizza, coal fired, westerleigh, portrichmond, wings, panini, salad, dessert, lunch, dinner, delivery, pickup, dine in, forest avenue, forest ave"/>
+  <meta name="description" content="100% True Coal Fired Oven Café serving true authentic hand crafted coal fired pizza, calzones, wings, panini, hand crafted salads &amp;amp; dessert. Dine In Delivery &amp;amp; Pickup Tue - Sun 12noon to 10pm Closed Monday. 1298 Forest Ave Staten Island, NY 10302 646-968-4777"/>
+  <meta name="facebook-domain-verification" content="j95kby1xhouccurk39jp07vgflhar5"/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Ungaro Coal Fired Pizza Cafe-Staten Island NY -Forest Avenue"/>
+  <meta name="twitter:description" content="100% True Coal Fired Oven Café serving true authentic hand crafted coal fired pizza, calzones, wings, panini, hand crafted salads &amp;amp; dessert. Dine In Delivery &amp;amp; Pickup Tue - Sun 12noon to 10pm Closed Monday. 1298 Forest Ave Staten Island, NY 10302 646-968-4777"/>
+  <meta name="twitter:image" content="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/UNGARO+-+Transparent+Black-1920w.png"/>
+  <meta property="og:description" content="100% True Coal Fired Oven Café serving true authentic hand crafted coal fired pizza, calzones, wings, panini, hand crafted salads &amp;amp; dessert. Dine In Delivery &amp;amp; Pickup Tue - Sun 12noon to 10pm Closed Monday. 1298 Forest Ave Staten Island, NY 10302 646-968-4777"/>
+  <meta property="og:title" content="Ungaro Coal Fired Pizza Cafe-Staten Island NY -Forest Avenue"/>
+  <meta property="og:image" content="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/UNGARO+-+Transparent+Black-1920w.png"/>
+<script type="application/ld+json">
+{
+  "@context" : {
+    "@vocab" : "http://schema.org/"
+  },
+  "@type" : "Restaurant",
+  "name" : "Ungaro Coal Fired Pizza Cafe",
+  "address" : {
+    "@type" : "PostalAddress",
+    "streetAddress" : "1298 Forest Ave",
+    "addressLocality" : "Staten Island",
+    "addressRegion" : "NY",
+    "postalCode" : "10302",
+    "addressCountry" : "US"
+  },
+  "geo" : {
+    "@type" : "GeoCoordinates",
+    "latitude" : "40.62624",
+    "longitude" : "-74.13315"
+  },
+  "url" : "https://www.ungarocoalfiredpizzacafe.com",
+  "telephone" : "646-968-4777",
+  "email" : "ungarocoalfiredpizzacafe@gmail.com",
+  "logo" : "https://irp.cdn-website.com/82270944/dms3rep/multi/UNGARO+-+Transparent+Black.png",
+  "sameAs" : [ "https://yelp.com/biz/ungaro-coal-fired-pizza-cafe-staten-island", "https://facebook.com/UngaroCoalFiredPizzaCafe", "https://instagram.com/UngaroCoalFiredPizzaCafe" ],
+  "openingHoursSpecification" : [ {
+    "@type" : "OpeningHoursSpecification",
+    "dayOfWeek" : [ "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+    "opens" : "12:00",
+    "closes" : "22:00"
+  } ],
+  "@id" : "https://www.ungarocoalfiredpizzacafe.com"
+}
+</script>
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="home"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper fullSidebarLayout-var5 null fullSidebarLayout">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="fullSideBarLayout" class="fullSidebarLayout dm-bfs dm-layout-home hasAnimations hasStickyHeader dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div id="site_content"> <div class="hasGenericSidebar sidebarLeft"> <div id="siteSidebar" class="genericSidebar sideheader u_sideheader u_siteSidebar p_hfcontainer" data-global-position="true" data-no-rows-wrapper="true" data-no-full-height="true" data-has-layouts="true" data-has-small-screen="true"> <div id="sbcontainer" class="sbcontainer" layout="e432cda0764b4255a28ec48b399dd413===header"> <div class="u_1771451897 dmRespRow" style="text-align: center;" id="1771451897"> <div class="dmRespColsWrapper" id="1955422662"> <div class="dmRespCol small-12 medium-12 large-12" id="1538594708"> <div class="imageWidget align-center u_1823649959" data-element-type="image" data-widget-type="image" id="1823649959"><img src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/UNGARO+-+Blk+BK+-+Gold+Font-5cfdee31-339w.png" alt="" id="1521110709" class="" data-dm-image-path="https://irp.cdn-website.com/82270944/dms3rep/multi/UNGARO+-+Blk+BK+-+Gold+Font-5cfdee31.png" width="1000" height="692" onerror="handleImageLoadError(this)"/></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1279513983" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center"><span style="font-weight: normal; color: rgb(247, 225, 137); display: initial;">1298 Forest Avenue, Staten Island, NY</span></p><p class="text-align-center"><span style="font-weight: normal; color: rgb(247, 225, 137); display: initial;">646.968.4777</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1412285285 dmRespRow middleDrawerRow" style="text-align: center;" id="1412285285"> <div class="dmRespColsWrapper" id="1371971873"> <div class="dmRespCol small-12 medium-12 large-12" id="1393022895"> <div class="u_1383636120 imageWidget align-center hasFullWidth" data-element-type="image" data-widget-type="image" id="1383636120"><img src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2082-339w.PNG" alt="" id="1750685241" class="" data-dm-image-path="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_2082.PNG" width="1000" height="177" onerror="handleImageLoadError(this)"/></div> 
+ <nav class="u_1912667006 unifiednav_vertical effect-text-color main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_5" layout-sub="" data-show-vertical-sub-items="SHOW" id="1912667006" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_00  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="
+         Home
+        " data-auto="page-text-style">Home<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101661768  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         About
+        " data-auto="page-text-style">About<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="https://menu.ungarocoalfiredpizzacafe.com" class="unifiednav__item  dmUDNavigationItem_010101230709  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Menu
+        " data-auto="page-text-style">Menu<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="https://menu.ungarocoalfiredpizzacafe.com" class="unifiednav__item  dmUDNavigationItem_010101208486  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Order Online
+        " data-auto="page-text-style">Order Online<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/package-specials" class="unifiednav__item  dmUDNavigationItem_01010173613  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Package Specials" data-auto="page-text-style">Package Specials<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/weekday-pickup-specials" class="unifiednav__item  dmUDNavigationItem_010101371223  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Tuesday -Thursday Pickup Specials" data-auto="page-text-style">Tuesday -Thursday Pickup Specials<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/catering" class="unifiednav__item  dmUDNavigationItem_010101298513  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Catering
+        " data-auto="page-text-style">Catering<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/reviewsdf9610dc" class="unifiednav__item  dmUDNavigationItem_010101984122  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Reviews" data-auto="page-text-style">Reviews<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/yelp" class="unifiednav__item  dmUDNavigationItem_010101272299  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Yelp Reviews" data-auto="page-text-style">Yelp Reviews<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="https://www.google.com/search?ibp=gwp;0,7&q=Ungaro+Coal+Fired+Pizza+Cafe&ludocid=14021804818267914029&localrlb=1&lsig=AB86z5XIdKzpH9qKur8B0wz01UZu#lkt=LocalPoiReviews&lpg=cid:CgIgAQ%3D%3D" class="unifiednav__item  dmUDNavigationItem_01010187860  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Google Reviews" data-auto="page-text-style">Google Reviews<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/in-the-news---videos" class="unifiednav__item  dmUDNavigationItem_010101558515  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="In The News - Videos" data-auto="page-text-style">In The News - Videos<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/in-the-news---articles" class="unifiednav__item  dmUDNavigationItem_010101967501  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="In The News - Articles & Features" data-auto="page-text-style">In The News - Articles &amp; Features<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101567797  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Contact
+        " data-auto="page-text-style">Contact<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+ <div class="u_1388130559 imageWidget align-center hasFullWidth" data-element-type="image" data-widget-type="image" id="1388130559"><img src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2082-613c8360-339w.PNG" alt="" id="1946183281" class="" data-dm-image-path="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_2082-613c8360.PNG" width="1000" height="177" onerror="handleImageLoadError(this)"/></div> 
+ <div class="u_1835886309 align-center text-align-center dmSocialHub gapSpacing" id="1835886309" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://facebook.com/UngaroCoalFiredPizzaCafe" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://instagram.com/UngaroCoalFiredPizzaCafe" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://yelp.com/biz/ungaro-coal-fired-pizza-cafe-staten-island" target="_blank" dm_dont_rewrite_url="true" aria-label="yelp" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Yelp&apos;)"> <span class="dmSocialYelp dm-social-icons-yelp oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="mailto:ungarocoalfiredpizzacafe@gmail.com" dm_dont_rewrite_url="true" aria-label="email" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Email&apos;)"> <span class="dmSocialEmail dm-social-icons-email oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://wa.me/646-968-4777" target="_blank" dm_dont_rewrite_url="true" aria-label="whatsapp" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Whatsapp&apos;)"> <span class="dmSocialWhatsapp dm-social-icons-whatsapp oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="sidebarHamburger" class="u_sidebarHamburger"> <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+</div> 
+</div> 
+ <div id="siteSidebarSpacer"></div> 
+ <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div id="desktopBodyBox"> <div id="iscrollBody"> <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_home dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="u_1050557966 dmRespRow fullBleedChanged fullBleedMode hide-for-small" id="1050557966"> <div class="dmRespColsWrapper" id="1167657541"> <div class="dmRespCol large-12 medium-12 small-12" id="1367503899"> <div class="u_1969080050 flex-container dmImageSlider dmNoMargin dmNoMark hasFullWidth hasFullWidthMobile" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1969080050"> <div class="flexslider ed-version arrows-visible" sliderscriptparams="{'stretch':true,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':false,'controlNav':false,'slideshowSpeed':5000,'animationDuration':600,'pausePlay':true,'pauseOnHover':false}" id="1487546771"> <ul class="slides" id="1946317998"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1020934502" class="u_1020934502" show-caption="false"><img dm="true" src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/Header_Image-1866w.png" id="1779449467" class="" onerror="handleImageLoadError(this)" height="350.0" width="1555.203125"/> <div class="color-overlay" id="1804427555"></div> 
+ <div class="slide-inner" id="1231792345"> <div class="text-wrapper" id="1597859236"> <h3 class="slide-title u_1539118865" id="1539118865">Slide title</h3> 
+ <div class="slide-text richText u_1312760024" id="1312760024">Write your caption here</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix slide-button-invisible" id="1276771071"> <span class="iconBg" id="1675589505"> <span class="icon hasFontIcon icon-star" id="1761193986"></span> 
+</span> 
+ <span class="text" id="1008905271">Button</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1650581389" id="1650581389" mode="2"> <div class="dmRespColsWrapper" id="1662737475"> <div class="dmRespCol large-6 medium-6 small-6" id="1883752694"> <div class="u_1657413635 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1657413635"> <a href="https://menu.ungarocoalfiredpizzacafe.com" id="1514748901" class="" file="false"><img src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_4852-438w.PNG" alt="" id="1123476618" class="" width="976" height="300" data-dm-image-path="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_4852.PNG" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 u_1534594388 small-6 content-removed" id="1534594388"> <div class="u_1851307110 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1851307110"> <a href="/catering" id="1905581328" file="false"><img src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_4853-438w.PNG" alt="" id="1613489806" class="" width="976" height="300" data-dm-image-path="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_4853.PNG" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1935646192 dmRespRow hide-for-medium hide-for-large" id="1935646192"> <div class="dmRespColsWrapper" id="1880496218"> <div class="dmRespCol large-12 medium-12 small-12" id="1212668316"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1788815390" style="transition: opacity 1s ease-in-out;"><p class="m-text-align-center m-size-24" style="line-height: 1;"><span style="display:initial;font-family:'Bebas Neue', 'Bebas Neue Fallback';" class="m-font-size-24" m-font-size-set="true">Home of &quot;</span><span class="m-font-size-24" style="font-weight:bold;display:initial;" droid="" serif";"=""><span style="font-weight:bold;display:initial;font-family:'Droid Serif';" class="m-font-size-24" m-font-size-set="true">The</span> 
+</span><span style="color:rgb(0, 0, 0);font-weight:bold;display:initial;font-family:'Droid Serif';" class="m-font-size-24" m-font-size-set="true">Four Corners</span><span style="display:initial;font-family:'Bebas Neue', 'Bebas Neue Fallback';" class="m-font-size-24" m-font-size-set="true">&quot;</span></p><p class="m-text-align-center m-size-24" style="line-height: 1;"><span style="display:initial;font-family:'Bebas Neue', 'Bebas Neue Fallback';" class="m-font-size-24" m-font-size-set="true">Coal Oven Thin Crust Square PIZZA</span></p><p class="m-size-24 m-text-align-center" style="line-height: 1;"><span style="font-weight:bold;display:initial;font-family:'Bebas Neue', 'Bebas Neue Fallback';" class="m-font-size-24" m-font-size-set="true">Featured in The New York TImes</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1840832396 dmRespRow hide-for-large hide-for-medium" id="1840832396"> <div class="dmRespColsWrapper" id="1592328992"> <div class="dmRespCol large-12 medium-12 small-12 content-removed" id="1142951892"> <div class="u_1227143342 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1227143342"> <a href="/" id="1907558530"><img src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/Nytimes_4corners-1920w.JPG" alt="" id="1657106823" class="" data-dm-image-path="https://irp.cdn-website.com/82270944/dms3rep/multi/Nytimes_4corners.JPG" width="600" height="400" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1389890264" style="transition: opacity 1s ease-in-out;"><p><span style="color: rgb(255, 255, 255); display: unset;">Photo: Heather Willensky for The New York Times</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1394757708 dmRespRow hide-for-small" id="1394757708"> <div class="dmRespColsWrapper" id="1746132158"> <div class="dmRespCol large-12 medium-12 small-12" id="1291299410"> <div class="dmNewParagraph u_1743336722" data-element-type="paragraph" data-version="5" id="1743336722" style="transition: opacity 1s ease-in-out; text-align: left; display: block;"><p class="m-size-24 text-align-center size-30"><span style="font-weight: bold; display: unset;" class="m-font-size-24 font-size-30">Home of &quot;</span><span style="font-weight: bold; display: unset; text-decoration: none;" class="font-size-36 m-font-size-29">The Four Corners</span><span style="font-weight: bold; display: unset;" class="m-font-size-24 font-size-30">&quot; Coal Oven Thin Crust Square PIZZA</span></p><p class="m-size-24 text-align-center size-30"><span style="display: unset; font-weight: bold;" class="m-font-size-24 font-size-30">Featured in The New York Times</span></p><p><span style="display: initial;"><br/></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1171298644 dmRespRow hide-for-small" id="1171298644"> <div class="dmRespColsWrapper" id="1732307214"> <div class="dmRespCol large-6 medium-6 small-12" id="1832325610"> <div class="imageWidget align-center u_1317342494" data-element-type="image" data-widget-type="image" id="1317342494"><img src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/Nytimes_4corners-558w.JPG" alt="" id="1945990512" class="" width="600" height="400" data-dm-image-path="https://irp.cdn-website.com/82270944/dms3rep/multi/Nytimes_4corners.JPG" onerror="handleImageLoadError(this)"/></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1268674875" style="transition: opacity 1s ease-in-out;"><p><span style="color: rgb(255, 255, 255); display: unset;">Photo: Heather Willensky for The New York Times</span></p></div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12" id="1693323477"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1930431753" style="transition: opacity 1s ease-in-out;"><p class="size-24 m-size-19"><span style="display: unset; color: rgb(255, 255, 255);" class="font-size-24 m-font-size-19">The dining room may be small, but the flavors are big at this hole in the wall that opened in Staten Island&rsquo;s Port Richmond section during the pandemic. If you want to try the depth of its bench, order the four corners, a square pie that takes you on a tour of sauces: margherita, pesto, vodka and bianca. The crust has a pleasing chew. Younger, discerning diners will appreciate the round margherita. SARA BONISTEEL</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1659661323 dmRespRow fullBleedChanged fullBleedMode" id="1659661323"> <div class="dmRespColsWrapper" id="1526939574"> <div class="dmRespCol large-12 medium-12 small-12 u_1824590037" id="1824590037"> <div class="u_1739946266 dmPhotoGallery newPhotoGallery dmPhotoGalleryResp hasFullWidth button_2 photo-gallery-done text-layout-bottom captionAlignment-center_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="4" data-element-type="dPhotoGalleryId" data-desktop-text-layout="bottom" id="1739946266" data-desktop-caption-alignment="center_center" data-image-hover-effect="opacity" data-rows-to-show="100" data-mobile-columns="2" data-mobile-caption-alignment="center_center" data-mobile-layout="square" data-placeholder="false" data-auto-adjust-columns="true" data-link-gallery="true"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-2" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1546972956" data-dm-force-device="mobile" class="u_1000409789" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_1904.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1904-640w.PNG');"><img id="1736067490" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1904-1920w.PNG" alt="" aria-labelledby="1546972956" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1627892409" class="caption-container u_1627892409" style=""> <span class="caption-inner"> <h3 id="1546972956" class="caption-title u_1546972956">Coal Oven Pizzas</h3> 
+ <a id="1979216522" class="caption-button dmWidget  clearfix u_1979216522" href="https://menu.ungarocoalfiredpizzacafe.com/" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">View Menu / Order</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-2" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1203883046" data-dm-force-device="mobile" class="u_1220217436" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_1903.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1903-640w.PNG');"><img id="1862358213" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1903-1920w.PNG" alt="" aria-labelledby="1203883046" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1405871709" class="caption-container u_1405871709" style=""> <span class="caption-inner"> <h3 id="1203883046" class="caption-title u_1203883046">Coal Fired Wings</h3> 
+ <div id="1376403028" class="caption-text u_1376403028">Folded pockets of deliciousness with gooey cheese and savory fillings.</div> 
+ <a id="1827466867" class="caption-button dmWidget  clearfix u_1827466867" href="https://menu.ungarocoalfiredpizzacafe.com/" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">View Menu / Order</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-2" data-index="2"> <div index="2" class="photoGalleryThumbs animated  " data-index="2"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1579474397" data-dm-force-device="mobile" class="u_1010636223" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/Rigatoni+bolognese+.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/Rigatoni+bolognese+-640w.PNG');"><img id="1175096611" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/Rigatoni+bolognese+-1920w.PNG" alt="" aria-labelledby="1579474397" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1294575568" class="caption-container u_1294575568" style="display:none"> <span class="caption-inner"> <h3 id="1579474397" class="caption-title u_1579474397">Pasta</h3> 
+ <a id="1060212649" class="caption-button dmWidget  clearfix u_1060212649" href="https://menu.ungarocoalfiredpizzacafe.com/" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">View Menu / Order</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-2" data-index="3"> <div index="3" class="photoGalleryThumbs animated  " data-index="3"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1574042183" data-dm-force-device="mobile" class="u_1905620436" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/Chickenfranchaise+entree.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/Chickenfranchaise+entree-640w.PNG');"><img id="1631248024" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/Chickenfranchaise+entree-1920w.PNG" alt="" aria-labelledby="1574042183" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1765505622" class="caption-container u_1765505622" style="display:none"> <span class="caption-inner"> <h3 id="1574042183" class="caption-title u_1574042183">Entrees</h3> 
+ <a id="1447068098" class="caption-button dmWidget  clearfix u_1447068098" href="https://menu.ungarocoalfiredpizzacafe.com/" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">View Menu / Order</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-2" data-index="4"> <div index="4" class="photoGalleryThumbs animated  " data-index="4"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1321907513" data-dm-force-device="mobile" class="u_1248053407" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_1910.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1910-640w.PNG');"><img id="1069738362" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1910-1920w.PNG" alt="" aria-labelledby="1321907513" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1223650629" class="caption-container u_1223650629" style=""> <span class="caption-inner"> <h3 id="1321907513" class="caption-title u_1321907513">Panini &amp; Wraps</h3> 
+ <div id="1162889487" class="caption-text u_1162889487">Toasty sandwiches filled with Italian flavors and melted cheese.</div> 
+ <a id="1106615541" class="caption-button dmWidget  clearfix u_1106615541" href="https://menu.ungarocoalfiredpizzacafe.com/" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">View Menu / Order</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-2" data-index="5"> <div index="5" class="photoGalleryThumbs animated  " data-index="5"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1411819348" data-dm-force-device="mobile" class="u_1527682882" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_1917.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1917-640w.PNG');"><img id="1400514829" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1917-1920w.PNG" alt="" aria-labelledby="1411819348" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1338062691" class="caption-container u_1338062691" style="display:none"> <span class="caption-inner"> <h3 id="1411819348" class="caption-title u_1411819348">Calzones</h3> 
+ <a id="1920309501" class="caption-button dmWidget  clearfix u_1920309501" href="https://menu.ungarocoalfiredpizzacafe.com/" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">View Menu / Order</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-2" data-index="6"> <div index="6" class="photoGalleryThumbs animated  " data-index="6"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1793515025" data-dm-force-device="mobile" class="u_1986929218" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_1922.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1922-640w.PNG');"><img id="1509862634" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1922-1920w.PNG" alt="" aria-labelledby="1793515025" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1386183305" class="caption-container u_1386183305" style="display:none"> <span class="caption-inner"> <h3 id="1793515025" class="caption-title u_1793515025">Hot &amp; Cold Heroes</h3> 
+ <a id="1120203031" class="caption-button dmWidget  clearfix u_1120203031" href="https://menu.ungarocoalfiredpizzacafe.com/" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">View Menu / Order</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-2" data-index="7"> <div index="7" class="photoGalleryThumbs animated  " data-index="7"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1788834214" data-dm-force-device="mobile" class="u_1091460717" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_1914.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1914-640w.PNG');"><img id="1134763451" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1914-1920w.PNG" alt="" aria-labelledby="1788834214" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1002839689" class="caption-container u_1002839689" style=""> <span class="caption-inner"> <h3 id="1788834214" class="caption-title u_1788834214">Insalata</h3> 
+ <div id="1111239203" class="caption-text u_1111239203">Crispy, saucy goodness that's perfect for sharing.</div> 
+ <a id="1483877369" class="caption-button dmWidget  clearfix u_1483877369" href="https://menu.ungarocoalfiredpizzacafe.com/" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">View Menu / Order</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-2" data-index="8"> <div index="8" class="photoGalleryThumbs animated  " data-index="8"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1992424561" data-dm-force-device="mobile" class="u_1709468441" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_1929.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1929-640w.PNG');"><img id="1353762438" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1929-1920w.PNG" alt="" aria-labelledby="1992424561" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1691152820" class="caption-container u_1691152820" style="display:none"> <span class="caption-inner"> <h3 id="1992424561" class="caption-title u_1992424561">Appetizers &amp; Platters</h3> 
+ <a id="1895151281" class="caption-button dmWidget  clearfix u_1895151281" href="https://menu.ungarocoalfiredpizzacafe.com/" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">View Menu / Order</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-2" data-index="9"> <div index="9" class="photoGalleryThumbs animated  " data-index="9"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1884968925" data-dm-force-device="mobile" class="u_1795888288" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_1931.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1931-640w.PNG');"><img id="1038548307" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_1931-1920w.PNG" alt="" aria-labelledby="1884968925" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1085367238" class="caption-container u_1085367238" style="display:none"> <span class="caption-inner"> <h3 id="1884968925" class="caption-title u_1884968925">Desserts</h3> 
+ <a id="1053809130" class="caption-button dmWidget  clearfix u_1053809130" href="https://menu.ungarocoalfiredpizzacafe.com/" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">View Menu / Order</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-2" data-index="10"> <div index="10" class="photoGalleryThumbs animated  " data-index="10"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1962603810" data-dm-force-device="mobile" class="u_1847777282" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_2072.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2072-640w.PNG');"><img id="1920416904" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2072-1920w.PNG" alt="" aria-labelledby="1962603810" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1713152704" class="caption-container u_1713152704" style="display:none"> <span class="caption-inner"> <h3 id="1962603810" class="caption-title u_1962603810">Dining</h3> 
+ <a id="1000023153" class="caption-button dmWidget  clearfix u_1000023153" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-2" data-index="11"> <div index="11" class="photoGalleryThumbs animated  " data-index="11"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1356280116" data-dm-force-device="mobile" class="u_1386908778" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_2074.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2074-640w.PNG');"><img id="1254689537" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2074-1920w.PNG" alt="" aria-labelledby="1356280116" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1683400733" class="caption-container u_1683400733" style="display:none"> <span class="caption-inner"> <h3 id="1356280116" class="caption-title u_1356280116">Specials</h3> 
+ <a id="1625790324" class="caption-button dmWidget  clearfix u_1625790324" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-2" data-index="12"> <div index="12" class="photoGalleryThumbs animated  " data-index="12"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1911073085" data-dm-force-device="mobile" class="u_1611316794 has-link" href="/catering" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_2075.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2075-640w.PNG');"><img id="1296326598" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2075-1920w.PNG" alt="" aria-labelledby="1911073085" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1898496307" class="caption-container u_1898496307" style="display:none"> <span class="caption-inner"> <h3 id="1911073085" class="caption-title u_1911073085">Catering/Private Parties</h3> 
+ <a id="1806367108" class="caption-button dmWidget  clearfix u_1806367108" href="/catering" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-2" data-index="13"> <div index="13" class="photoGalleryThumbs animated  " data-index="13"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1053711520" data-dm-force-device="mobile" class="u_1588374756 has-link" href="/reviews---in-the-news" data-image-url="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_2094.PNG" style="background-image: url('https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2094-640w.PNG');"><img id="1252567728" data-src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2094-1920w.PNG" alt="" aria-labelledby="1053711520" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1570167415" class="caption-container u_1570167415" style="display:none"> <span class="caption-inner"> <h3 id="1053711520" class="caption-title u_1053711520">Reviews &amp; In the News</h3> 
+ <a id="1588050969" class="caption-button dmWidget  clearfix u_1588050969" href="/reviews---in-the-news" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text"></span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1488371151 dmRespRow" id="1488371151"> <div class="dmRespColsWrapper" id="1029207909"> <div class="dmRespCol large-12 medium-12 small-12" id="1245601566"> <div class="dmNewParagraph u_1471733108" data-element-type="paragraph" data-version="5" id="1471733108" data-styletopreserve="{" background-image":""}"=""> <h3 class="text-align-center"><span class="" style="font-weight: bold; display: initial; color: rgb(255, 255, 255);"><span style="font-weight: bold; display: initial; color: rgb(255, 255, 255);">Free Delivery up to 2 Miles</span> 
+</span></h3> 
+ <h3 class="text-align-center"><span style="font-weight: bold; display: initial; color: rgb(255, 255, 255);">* We use our Own Drivers</span></h3> 
+ <h3 class="text-align-center"><span style="font-weight: bold; display: initial; color: rgb(255, 255, 255);">* No Extra Fees *</span></h3> 
+ <h3 class="text-align-center"><a href="https://menu.ungarocoalfiredpizzacafe.com" runtime_url="https://menu.ungarocoalfiredpizzacafe.com" type="url" style="display: initial; color: rgb(247, 225, 137);">&gt;&gt;</a><a href="https://menu.ungarocoalfiredpizzacafe.com" runtime_url="https://menu.ungarocoalfiredpizzacafe.com" type="url" style="display: initial; font-weight: bold; color: rgb(247, 225, 137);">Order Online Here&lt;&lt;</a></h3> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1666198996" style="transition: opacity 1s ease-in-out 0s;"> <h3 class="text-align-center"><span class="" style="font-weight: bold; display: initial; color: rgb(255, 255, 255);"><span style="font-weight: bold; display: initial; color: rgb(255, 255, 255);">Also Available</span> 
+</span></h3> 
+ <h3 class="text-align-center"><span style="font-weight: bold; display: initial; color: rgb(255, 255, 255);">3rd Party Online Delivery Services</span></h3> 
+</div> 
+ <div class="u_1480872821 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1480872821"> <a id="1359797959"><img src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/food-delivery-services2-430w.png" alt="" id="1964660814" class="" data-dm-image-path="https://irp.cdn-website.com/82270944/dms3rep/multi/food-delivery-services2.png" onerror="handleImageLoadError(this)" height="271.671875" width="359.0"/></a> 
+</div> 
+ <div data-element-type="html" class="u_1880463057 dmCustomHtml" id="1880463057"> <center></center> 
+ <a href="https://slicelife.com/restaurants/ny/staten-island/10302/ungaro-coal-fired-pizza-cafe/menu?utm_campaign=order_now_button&utm_medium=referral&utm_source=ungarocoalfiredpizzacafe.com&utm_content=slice_button"><img src="https://slicelink-assets-production.imgix.net/partner-buttons/slice-medium-yellow.svg" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1120372658 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1120372658"> <div class="dmRespColsWrapper" id="1687931571"> <div class="u_1837674598 dmRespCol small-12 medium-6 large-6" id="1837674598"> <div class="u_1488799972 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1488799972"><img src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2082-382w.PNG" alt="" id="1698141523" class="" data-dm-image-path="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_2082.PNG" width="1000" height="177" onerror="handleImageLoadError(this)"/></div> 
+ <div class="u_1120635192 dmNewParagraph" id="1120635192" data-element-type="paragraph" data-version="5" data-styletopreserve="{" background-image":""}"=""> <h2 class="m-size-24 text-align-center m-text-align-center size-38"><span style="text-decoration: underline; display: initial; color: rgb(247, 225, 137); background-color: transparent;" class="m-font-size-24 font-size-38" m-font-size-set="true">Pickup Hours</span></h2> 
+</div> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1477173025" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:500;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Mondays: Closed</span></p><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Tuesday - Friday : 11am to 10Pm</span></p><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Saturday : 11am to 10Pm</span></p><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Sunday : 11am to 9Pm</span></p></div> 
+ <div class="u_1762738318 dmNewParagraph" id="1762738318" data-element-type="paragraph" data-version="5" data-styletopreserve="{"background-image":""}" background-image":""}"=""> <h2 class="m-text-align-center text-align-center m-size-24 size-38"><span style="background-color: transparent; color: rgb(247, 225, 137); display: initial; text-decoration: underline;" class="font-size-38 m-font-size-24" m-font-size-set="true">Dine In &amp; Delivery Hours</span></h2> 
+</div> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1758065143" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:500;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Mondays: Closed</span></p><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Tuesday - Friday : 12noon to 10Pm</span></p><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Saturday : 12noon to 10Pm</span></p><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Sunday : 12noon to 9Pm</span></p></div> 
+ <div class="dmDividerWrapper clearfix u_1098940286" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1098940286" layout="divider-style-7"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1263215122"/></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1547464413" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Indoor Dining</span><span single-space="true" class="" style="font-weight: 700; display: initial; color: rgb(239, 200, 69);"> <span style="font-weight: 700; display: initial; color: rgb(239, 200, 69);"></span> 
+</span><span style="color:rgb(239, 200, 69);font-weight:normal;display:initial;text-decoration:none;font-family:'DM Sans', 'DM Sans Fallback';font-style:italic;" class="font-size-16 m-font-size-13">*Book In Advance</span></p><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Curbside Pickup</span></p><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Free Delivery Via our Website</span></p><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">&nbsp;(We use our own Drivers within 2 miles)</span></p><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Catering</span><span single-space="true" class="" style="font-weight: 700; display: initial; color: rgb(239, 200, 69);"> <span style="font-weight: 700; display: initial; color: rgb(239, 200, 69);"></span> 
+</span><span style="color:rgb(239, 200, 69);font-weight:normal;display:initial;font-family:'DM Sans', 'DM Sans Fallback';font-style:italic;" class="font-size-16 m-font-size-13">*Book In Advance</span></p><p class="text-align-center"><span style="color:rgb(239, 200, 69);font-weight:700;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Private Parties</span><span single-space="true" class="" style="font-weight: 700; display: initial; color: rgb(239, 200, 69);"> <span style="font-weight: 700; display: initial; color: rgb(239, 200, 69);"></span> 
+</span><span style="color:rgb(239, 200, 69);font-weight:normal;display:initial;font-family:'DM Sans', 'DM Sans Fallback';font-style:italic;" class="font-size-16 m-font-size-13">*Book In Advance</span></p></div> 
+ <div class="u_1474185131 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1474185131"><img src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/IMG_2082-990c72a3-382w.PNG" alt="" id="1631543192" class="" data-dm-image-path="https://irp.cdn-website.com/82270944/dms3rep/multi/IMG_2082-990c72a3.PNG" width="1000" height="177" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+ <div class="u_1321075413 dmRespCol small-12 medium-6 large-6" id="1321075413"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1274722420" style="transition: opacity 1s ease-in-out 0s;"> <h3 class="text-align-center"><span style="font-weight: bold; display: unset; color: rgb(255, 255, 255);">1298 Forest Ave</span></h3> 
+ <h3 class="text-align-center"><span style="font-weight: bold; display: unset; color: rgb(255, 255, 255);">Staten Island NY 10302</span></h3> 
+ <h3 class="text-align-center"><span style="font-weight: bold; display: unset; color: rgb(255, 255, 255);">646-968-4777</span></h3> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1725049324 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1725049324"> <div class="dmRespColsWrapper" id="1358086068"> <div class="u_1233943780 dmRespCol small-12 large-4 medium-4" id="1233943780"> <div class="u_1956471284 dmNewParagraph hide-for-small" id="1956471284" style="text-align: center; transition: none 0s ease 0s;" data-element-type="paragraph" data-version="5"> <h4 class="text-align-center m-text-align-left"><span style="background-color: transparent; color: rgb(247, 225, 137); display: initial;">Ungaro Coal Fired Pizza Cafe</span></h4> 
+ <h4 class="text-align-center m-text-align-left"><span style="background-color: transparent; color: rgb(247, 225, 137); display: initial;">1298 Forest Avenue</span></h4> 
+ <h4 class="text-align-center m-text-align-left"><span style="background-color: transparent; color: rgb(247, 225, 137); display: initial;">Staten Island, NY 10302</span></h4> 
+ <h4 class="text-align-center m-text-align-left"><span style="background-color: transparent; color: rgb(247, 225, 137); display: initial;">646.968.4777</span></h4> 
+</div></div> 
+ <div class="dmRespCol large-4 medium-4 small-12" id="1862262284"> <div class="u_1317456994 imageWidget align-center hide-for-small" data-element-type="image" data-widget-type="image" id="1317456994"><img src="https://lirp.cdn-website.com/82270944/dms3rep/multi/opt/UNGARO---Blk-BK---Gold-Font-5cfdee31-204h.png" alt="" id="1330142947" class="" data-dm-image-path="https://irp.cdn-website.com/82270944/dms3rep/multi/UNGARO---Blk-BK---Gold-Font-5cfdee31.png" width="543" height="561" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+ <div class="u_1830246780 dmRespCol small-12 large-4 medium-4" id="1830246780"> <div class="u_1568169928 default dmDefaultGradient align-center inlineMap" data-type="inlineMap" data-lat="40.62624" data-lng="-74.13315" data-address="Ungaro Coal Fired Pizza Cafe, 1298 Forest Ave Staten Island, NY 10302 USA" data-height="" data-msid="" data-mapurl="" data-lang="en" data-color-scheme="#ffffff" data-zoom="14" data-layout="layout4" data-popup-display="" data-popup-show="false" data-popup-title="" data-popup-title-visible="false" data-popup-description="" data-popup-description-visible="false" id="1568169928" dmle_extension="mapextension" data-element-type="mapextension" modedesktop="map" localization_key_addresstodisplay="googleTranslate.qmgIMPl.120" modemobile="button" localization_key_geocompleteaddress="googleTranslate.qmgIMPl.120" geocompleteaddress="Ungaro Coal Fired Pizza Cafe, 1298 Forest Ave Staten Island, NY 10302 USA" data-popup-display-desktop="" data-popup-display-mobile="" data-display-type="block" localization_key_description="googleTranslate.vQaVU6d.17" localization_key_zip="googleTranslate.gtNSgEF.23" localization_key_city="googleTranslate.oqvE5N3.18" localization_key_street="googleTranslate.KitYOM7.21" wr="true" addresstodisplay="Ungaro Coal Fired Pizza Cafe, 1298 Forest Ave Staten Island, NY 10302 USA" zoom="14" color-scheme="#ffffff" layout="layout4" localization_key_country_full="googleTranslate.5XjqJsL.22" modetablet="map" localization_key_country="googleTranslate.c8GxTMs.19" localization_key_state="googleTranslate.jYhbWwN.20" icon="true" surround="true" description="Find Us / Map" adwords="" icon-name="icon-map-marker" street="" city="" country="US" country_full="United States" state="" zip="" business="Ungaro Coal Fired Pizza Cafe" provider="mapbox" lon="-74.13315" lat="40.62624" dmmapsource="dm"> <div class="mapContainer" style="height: 100%; width: 100%; overflow: hidden; z-index: 0;"></div> 
+</div> 
+ <div class="u_1689717092 align-center text-align-center dmSocialHub gapSpacing" id="1689717092" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.facebook.com/UngaroCoalFiredPizzaCafe" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="http://instagram.com/UngaroCoalFiredPizzaCafe" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://yelp.com/biz/ungaro-coal-fired-pizza-cafe-staten-island" target="_blank" dm_dont_rewrite_url="true" aria-label="yelp" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Yelp&apos;)"> <span class="dmSocialYelp dm-social-icons-yelp oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.google.com/maps/place/Ungaro+Coal+Fired+Pizza+Cafe/@40.6261883,-74.1353885,17z/data=!3m1!4b1!4m5!3m4!1s0x89c24d5c2c5fd107:0xc297753106b83f2d!8m2!3d40.6262721!4d-74.1331599" target="_blank" dm_dont_rewrite_url="true" aria-label="google_my_business" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;GoogleMyBusiness&apos;)"> <span class="dmSocialGoogleMyBusiness dm-social-icons-google-my-business oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link rel="preload" href="https://irp.cdn-website.com/fonts/css2?family=Cardo:wght@400;700&family=Vidaloka:wght@400&family=DM+Serif+Display:wght@400&family=Bebas+Neue:wght@400&family=Oswald:wght@200..700&family=DM+Sans:wght@100..1000&family=Source+Sans+Pro:wght@200;300;400;600;700;900&family=Droid+Serif:wght@400;700&amp;subset=latin-ext&amp;display=swap"  as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="preload" as="style" fetchpriority="low" onload="loadCSS(this)" href="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link rel="preload" href="https://irp.cdn-website.com/WIDGET_CSS/8e5cd9ca741437e79a7f70c919dbf489.css" id="widgetCSS" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="home"] #dm [data-show-on-page-only="home"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/82270944/files/82270944_header_withFlex_1.min.css?v=1329" id="siteGlobalCss" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<!-- Page CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/82270944/files/82270944_home_withFlex_1.min.css?v=1329" id="homeCssLink" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<style id="pagestyle" type="text/css">
+    
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-30, .size-30, .size-30 > font { font-size: 30px !important; }.font-size-36, .size-36, .size-36 > font { font-size: 36px !important; }.font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-38, .size-38, .size-38 > font { font-size: 38px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5968";
+    var build = "2025-11-27T12_19_14";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-11-27T12_19_14";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5968';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5968';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =false;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =false;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DDJP3JY5ZR"></script>
+<script type="text/javascript" id="d_track_ga">
+  _dm_gaq.siteAlias = '82270944';
+  _dm_gaq.systemAggregatedGaqID = '';
+  _dm_gaq.externalGaqID = 'G-DDJP3JY5ZR';
+  _dm_gaq.gaAggregatedEventAttributes = {
+	  'site_alias':  _dm_gaq.siteAlias,
+	  'product': 'DM_DIRECT',
+	  'plan': 'BUSINESS_PLUS',
+	  'dfooter': 'false',
+	  'sitetype': '1',
+	  'pwaEnabled': 'true'
+  }
+
+  _dm_gaq.pushEvent = function(trackingId, event, category, label, value, additionalParams = {}) {
+	  const eventProps = {
+		  send_to: trackingId,
+		  event_category: category,
+		  event_label: label,
+		  value,
+		  ...additionalParams,
+		  ...(trackingId === _dm_gaq.systemAggregatedGaqID
+				  ? _dm_gaq.gaAggregatedEventAttributes : {})
+	  };
+	  gtag('event', event, eventProps);
+  }
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+  function pushInsiteImpressions(id) {
+	  _dm_insite.forEach((rule) => {
+		  _dm_gaq.pushEvent(id, 'insite_impression', 'insite', rule.ruleType + '__' + rule.ruleId);
+	  });
+  }
+
+if(_dm_gaq.systemAggregatedGaqID){
+	// track aggregated account
+	gtag('config', '', {
+		'send_page_view': false,
+		'anonymize_ip': true,
+		'transport_type': 'beacon',
+		'custom_map': {'dimension1': 'site_alias', 'dimension2': 'product', 'dimension3': 'dFooter', 'dimension4': 'sitetype'}
+	});
+	gtag('set', 'developer_id.dMDU5Nj', true);
+
+	_dm_gaq.pushEvent('', 'page_view');
+	pushInsiteImpressions(_dm_gaq.systemAggregatedGaqID);
+}
+
+if(_dm_gaq.externalGaqID && _dm_gaq.externalGaqID!= '') {
+	gtag('config', 'G-DDJP3JY5ZR', {
+		'send_page_view': false,
+		'anonymize_ip': true,
+		'transport_type': 'beacon',
+		'linker': {
+			'domains': ['ungarocoalfiredpizzacafe.com']
+		}
+	});
+	_dm_gaq.pushEvent('G-DDJP3JY5ZR', 'page_view');
+	pushInsiteImpressions(_dm_gaq.externalGaqID);
+}
+</script>
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '82270944'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 82270944 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Begin Body End Markup -->
+<meta name="facebook-domain-verification" content="j95kby1xhouccurk39jp07vgflhar5" /><!--  End Body End Markup -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>

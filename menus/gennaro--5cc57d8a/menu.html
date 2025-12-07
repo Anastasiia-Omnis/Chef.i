@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gennaro NYC | Authentic Italian Restaurant Upper West Side</title>
+  <meta name="description"
+        content="Gennaro NYC - Authentic Italian trattoria serving handmade pastas, antipasti, and fine wines on the Upper West Side of Manhattan." />
+
+  <!-- Font preload -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap">
+  </noscript>
+
+<!-- Safe wrapper for XML-looking data -->
+<script type="text/plain" id="user-data">
+<users>
+  <user>BB5562FD304AE4FB6E8CBE4C7ABD9779</user>
+</users>
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Gennaro NYC",
+    "image": "https://gennaronyc.com/img/gennaro-logo.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "665 Amsterdam Avenue",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10025",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-212-665-5348",
+    "url": "https://gennaronyc.com/",
+    "menu": "https://gennaronyc.com/menu.html",
+    "servesCuisine": "Italian",
+    "priceRange": "$$",
+    "acceptsReservations": "True"
+  }
+  </script>
+  
+  <style>
+    /* === Global resets & body === */
+    html, body {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      padding-bottom: 10px;
+      font-family: 'Libre Baskerville', serif;
+      background-image: url('img/your-background.webp?v=7');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .overlay-content { background-color: rgba(255,255,255,0); min-height: 100vh; padding: 20px; }
+
+
+    /* === Logo === */
+    .logo { text-align: center; margin-top: 0; margin-bottom: 35px; }
+    .logo img { display: block; margin: 0 auto; max-width: 250px; height: auto; box-shadow: 0 8px 16px rgba(0,0,0,0.4); }
+    @media (max-width: 600px) { .logo img { max-width: 275px; } }
+    @media (min-width: 601px) and (max-width: 1024px) { .logo img { max-width: 300px; } }
+    @media (min-width: 1025px) { .logo img { max-width: 450px; } }
+
+/* === Nav bar === */
+.menuDIV {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;           /* horizontal space between links */
+  margin-top: 15px;    /* vertical space from above */
+  padding: 10px 0;
+}
+
+.menuDIV a {
+  text-decoration: none;
+  color: #92000a;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: -3px;    /* vertical fine-tune only */
+}
+
+/* Small screens: Up to 600px */
+@media (max-width: 600px) {
+  .menuDIV {
+    gap: 21px;
+  }
+  .menuDIV a {
+    font-size: 10px;
+    margin-top: -2px;
+  }
+}
+
+/* Medium-small screens: 601px to 768px */
+@media (min-width: 601px) and (max-width: 768px) {
+  .menuDIV {
+    gap: 29px;
+  }
+  .menuDIV a {
+    font-size: 11px;
+    margin-top: -2px;
+  }
+}
+
+/* Medium screens: 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .menuDIV {
+    gap: 30px;
+  }
+  .menuDIV a {
+    font-size: 12px;
+    margin-top: 0px;
+  }
+}
+
+/* Large screens: 1025px and up */
+@media (min-width: 1025px) {
+  .menuDIV {
+    gap: 49px;
+  }
+  .menuDIV a {
+    font-size: 13px;
+    margin-top: 2px;
+  }
+}
+
+    /* === Slideshow container & images === */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 3/3;
+    }
+    #slideshow {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    #slideshow img.active { opacity: 1; z-index: 2; }
+
+/* === MEDIA QUERIES === */
+
+/* Mobile: Up to 600px */
+@media (max-width: 600px) {
+  .slideshow-container {
+    max-width: 340px;
+    border-radius: 20px;
+    aspect-ratio: 1 / 1; /* Optional: adjust for squarer shape on small screens */
+  }
+}
+
+/* Small Tablets: 601px–768px */
+@media (min-width: 601px) and (max-width: 768px) {
+  .slideshow-container {
+    max-width: 500px;
+    border-radius: 20px;
+  }
+}
+
+/* Medium Tablets: 769px–1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .slideshow-container {
+    max-width: 600px;
+    border-radius: 20px;
+  }
+}
+
+/* Large Screens: 1025px and up */
+@media (min-width: 1025px) {
+  .slideshow-container {
+    max-width: 700px;
+    border-radius: 20px;
+  }
+}
+
+
+    /* === Scrolling banner === */
+    .scrolling-banner { display: none; overflow: hidden; white-space: nowrap;
+      background-color: transparent; padding: 2px 10px; text-align: center;
+      line-height: 1.2; width: 100%; max-width: 340px; margin: 0 auto; }
+    .scrolling-banner span {
+      display: inline-block; padding-left: 100%; min-width: max-content;
+      animation-name: scroll-left; animation-timing-function: linear;
+      animation-iteration-count: infinite; animation-duration: 10s;
+      font-weight: bold; font-size: 11px; font-style: normal;
+    }
+    @media (min-width: 768px) {
+      .scrolling-banner span { animation-duration: 12s; }
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0%); } 100% { transform: translateX(-100%); }
+    }
+
+    /* === Daily specials pill === */
+    body.index-page .daily-special, body.menu-page .daily-special {
+      margin: 2px auto 15px; padding: 7px 12px;
+      border: 1px solid #ccc; border-radius: 30px; background-color: #fff;
+      text-align: center; max-width: 250px; font-size: 11px;
+    }
+    body.index-page .daily-special a, body.menu-page .daily-special a {
+      font-weight: normal; text-decoration: none; color: #92000a;
+    }
+    body.index-page .daily-special a:hover, body.menu-page .daily-special a:hover {
+      color: #C98085; text-decoration: underline;
+    }
+@media (max-width: 600px) {
+  body.index-page .daily-special,
+  body.menu-page .daily-special {
+    max-width: 258px;
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  body.index-page .daily-special,
+  body.menu-page .daily-special {
+    max-width: 300px;
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body.index-page .daily-special,
+  body.menu-page .daily-special {
+    max-width: 400px;
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+}
+
+@media (min-width: 1025px) {
+  body.index-page .daily-special,
+  body.menu-page .daily-special {
+    max-width: 500px;
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+}
+    
+    .announcement {
+  text-align: center;
+  margin: 20px auto 30px;
+  max-width: 600px;
+  color: #92000a;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.announcement-heading {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.announcement-text {
+  display: block;
+  font-size: 0.9rem;
+  color: #353839;
+  margin-bottom: 15px;
+}
+
+.CLOSED-text {
+  display: block;
+  font-size: 1rem;
+  color: #353839;
+  margin-bottom: 10px;
+}
+
+.announcement-thankyou {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* === MEDIA QUERIES === */
+
+/* ⬇️ Small screens: up to 600px */
+@media (max-width: 600px) {
+  .announcement-heading { font-size: 0.9rem; }
+  .announcement-text { font-size: 0.9rem; }
+  .CLOSED-text { font-size: 0.9rem; }
+  .announcement-thankyou { font-size: 0.75rem; }
+}
+
+/* ⬇️ Medium screens: 601px to 1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .announcement-heading { font-size: 1.05rem; }
+  .announcement-text { font-size: 1rem; }
+  .CLOSED-text { font-size: 1rem; }
+  .announcement-thankyou { font-size: 0.85rem; }
+}
+
+/* ⬇️ Large screens: above 1024px */
+@media (min-width: 1025px) {
+  .announcement-heading { font-size: 1.1rem; }
+  .announcement-text { font-size: 1.05rem; }
+  .CLOSED-text { font-size: 1.05rem; }
+  .announcement-thankyou { font-size: 0.9rem; }
+}
+    
+
+    /* === Subscribe box styling === */
+  .subscribe-box {
+  max-width: 300px;
+  margin: 10px auto;
+  background-color: rgba(201, 96, 101, 0.50);
+  padding: 2px 10px; /* 👈 more vertical and horizontal space */
+  border-radius: 20px;
+  border: 1px transparent; /* or solid #ccc; */
+  text-align: center;
+}
+
+    .subscribe-box h5 {
+      font-size: 10px;
+      margin: 2px 0 2px;
+      text-align: center;
+    }
+
+    .subscribe-box input[type="email"] {
+      width: 100%;
+      padding: 4px 0px; /* 👈 more vertical and horizontal space */
+      font-size: 10px;
+      font-weight: 600;
+      text-align: left;
+      border: 1px solid #aaa;
+      border-radius: 30px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+
+.subscribe-box input.button {
+  display: block;
+  margin-top: 2px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  padding: 3px 3px;
+  font-size: 10px;
+  background-color: #ab5256;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+    
+    .subscribe-box input[type="email"]:focus {
+  border: 1px solid #92000a; /* sets your custom border color */
+  outline: none;             /* removes default blue browser glow */
+        text-align: center !important;
+  box-shadow: 0 0 3px rgba(146, 0, 10, 0.3); /* optional elegant glow */
+}
+
+    .subscribe-box input.button:hover {
+      background-color: #92000a;
+    }
+
+/* === Reservation Modal Styles === */
+/*.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 20px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* === Reservation modal layout cleanup === */
+/* === Reservation modal layout cleanup === */
+.modal-content {
+  max-width: 520px;
+  padding: 18px 16px;
+  margin: 0 auto;
+}
+
+#reservationForm {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+/* labels */
+#reservationForm label {
+  display: block;
+  margin: 2px 0 4px;
+  font-weight: 600;
+  color: #92000a;
+  width: 100%;
+  max-width: 380px;
+  text-align: left;
+}
+
+/* pill boxes - consistent */
+#reservationForm input[type="text"],
+#reservationForm input[type="email"],
+#reservationForm input[type="date"],
+#reservationForm input[type="time"],
+#reservationForm input[type="number"],
+#reservationForm textarea {
+  width: 100%;
+  max-width: 380px;
+  height: 42px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+/* narrower date/time pills */
+#reservationForm input[type="date"],
+#reservationForm input[type="time"] {
+  max-width: 200px;
+}
+
+/* textarea bigger */
+#reservationForm textarea {
+  height: 110px;
+  border-radius: 14px;
+  resize: vertical;
+}
+
+/* guest warning */
+#guest-warning {
+  width: 100%;
+  max-width: 380px;
+  padding: 8px 12px;
+  background: #fdf8f8;
+  border-radius: 12px;
+  color: #555;
+  box-sizing: border-box;
+}
+
+/* submit button */
+#reservationForm button[type="submit"] {
+  width: 100%;
+  max-width: 260px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-top: 6px;
+}
+
+/* over-110 checkbox hidden by default */
+#over110-checkbox {
+.hidden { display: none !important; }
+  width: 100%;
+  max-width: 380px;
+}
+
+@media (min-width: 480px) {
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  #reservationForm input,
+  #reservationForm textarea {
+    font-size: 0.9rem;
+    padding: 7px 9px;
+  }
+}
+*/
+
+.footer {
+  margin-top: 20px;
+  margin-bottom: 90px;
+  /* text-align alone isn't enough */
+}
+
+.footer-info{
+  margin-top: 50px;
+  display: flex;              /* 👈 make it a flex container */
+  flex-direction: column;     /* stack items vertically */
+  align-items: center;        /* 👈 center ALL child blocks */
+  text-align: center;         /* center any inline text inside them */
+}
+
+.footer-restaurant-name {
+  display: block;
+  font-size: 1rem;
+  color: #92000a; /* stays red */
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.footer-address {
+  display: block;
+  font-size: .75rem;
+  color: #353839; /* muted black */
+  font-weight: normal;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.footer-phone {
+  margin-top: 12px;
+}
+
+.footer-phone-number {
+  display: block;
+  font-size: .9rem;
+  color: #92000a; /* red */
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 1.2;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+.footer-phone-number:focus,
+.footer-phone-number:active {
+  color: #92000a;
+  outline: none;
+}
+
+      .footer-phone-number span {
+  display: inline;
+  font-size: 1rem;
+  color: inherit;
+  font-weight: inherit;
+}
+
+.footer-phone-text {
+  font-size: .75rem;
+  color: #353839; /* muted black */
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.footer-restaurant-name:hover,
+.footer-phone-number:hover {
+  text-decoration: none;
+}
+
+.footer a:link,
+.footer a:visited,
+.footer a:hover,
+.footer a:active {
+  color: #92000a;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .footer-restaurant-name { font-size: 1.2rem; }
+  .footer-address { font-size: 0.9rem; }
+  .footer-phone-number { font-size: 1rem; }
+  .footer-phone-text { font-size: 0.9rem; }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .footer-restaurant-name { font-size: 1.5rem; }
+  .footer-address { font-size: 1rem; }
+  .footer-phone-number { font-size: 1.2rem; }
+  .footer-phone-text { font-size: 1rem; }
+}
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .footer-restaurant-name { font-size: 1.3rem; }
+  .footer-address { font-size: 1.05rem; }
+  .footer-phone-number { font-size: 1.3rem; }
+  .footer-phone-text { font-size: 1.05rem; }
+}
+
+.social-band {
+  margin-top: 20px;
+  text-align: center; 
+  display: flex; 
+  justify-content: center; 
+  gap: 12px;
+}
+
+.social-band a {
+  display: inline-block;
+  margin: 0 6px;
+  text-decoration: none;
+}
+
+.social-band img {
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.social-icons img {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+/* === MEDIA QUERIES === */
+
+  .subscribe-box input[type="email"],
+  .subscribe-box input.button {
+    font-size: 10px;
+  }
+
+  .social-icons img {
+    width: 10px;
+    height: 10px;
+  }
+
+/* Small screens: up to 600px */
+@media (max-width: 600px) {
+  .subscribe-box input[type="email"],
+  .subscribe-box input.button {
+    font-size: 9.5px;
+    justify-content: center;
+  }
+}
+
+/* Medium screens: 601px–1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .subscribe-box input[type="email"],
+  .subscribe-box input.button {
+    font-size: 10.5px;
+    justify-content: center;
+  }
+}
+
+/* Large screens: 1025px and above */
+@media (min-width: 1025px) {
+  .subscribe-box input[type="email"],
+  .subscribe-box input.button {
+    font-size: 11.5px;
+    justify-content: center;
+  }
+}
+/*
+/* ======= RESERVATION: opacity + readability fixes (ONLY modal) ======= */
+.hidden { display: none !important; } /* used by guest-warning etc. */
+
+.modal {
+  background-color: rgba(0,0,0,0.6) !important; /* darker overlay */
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+#reservationModal .modal-content {
+  background: rgba(255,255,255,0.96) !important; /* key: kills transparency */
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+  color: #222;
+  position: relative;
+}
+
+/* Close X styling */
+#reservationModal .close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 28px;
+  line-height: 1;
+  color: #92000a;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+#reservationModal .close:hover { background: rgba(146,0,10,0.08); }
+
+/* Pop-in animation (optional) */
+@keyframes modalPop {
+  from { transform: translateY(6px) scale(.98); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+#reservationModal[style*="display: block"] .modal-content { animation: modalPop .16s ease-out; }
+
+/* Lock scroll when open */
+body.modal-open { overflow: hidden; }
+
+#reservationForm button[type="submit"] {
+  background-color: #92000a !important; /* deep red */
+  color: #fff !important;               /* white text */
+  border: none !important;
+}
+
+#reservationForm button[type="submit"]:hover {
+  background-color: #b8000e !important; /* slightly lighter red on hover */
+}
+*/
+  </style>
+    <!-- iOS/Android status bar / toolbar tint -->
+<meta name="theme-color" content="#F8F4EC">
+<meta name="theme-color" content="#F8F4EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#F8F4EC" media="(prefers-color-scheme: dark)">
+  </head>
+
+<body class="index-page">
+  <div class="overlay-content">
+
+    <div class="logo">
+      <a href="index.html"><img src="img/logo.jpg?v=solstice4" alt="Gennaro NYC Logo"></a>
+    </div>
+
+    <div class="menuDIV">
+      <a href="story.html">STORY</a>
+      <a href="menu.html" id="menu-link">MENU</a>
+      <a href="wine.html">WINE</a>
+      <a href="press.html">PRESS</a>
+    </div>
+
+    <div class="scrolling-banner"><span id="banner-text"><!-- TEXT HERE --></span></div>
+
+    <div id="specials-link" class="daily-special"></div>
+
+    <div class="slideshow-container">
+      <div id="slideshow">
+        <img src="img/img01.jpg" class="active" alt="Dish 1">
+        <img src="img/img02.jpg" alt="Dish 2">
+        <img src="img/img03.jpg" alt="Dish 3">
+        <img src="img/img04.jpg" alt="Dish 4">
+        <img src="img/img05.jpg" alt="Dish 5">
+      </div>
+    </div>
+
+    <div class="announcement">
+      <div class="announcement-heading">...dear neighbors and community</div>
+      <div class="announcement-text">
+        WE ARE OPEN FOR<br>INDOOR &amp; SIDEWALK DINING<br>TAKEOUT &amp; DELIVERY<br>FROM 4:45 UNTIL 9:30PM<br>6 NIGHTS A WEEK
+      </div>
+      <div class="CLOSED-text">CLOSED TUESDAYS</div>
+      <div class="announcement-thankyou">Grazie mille for your support</div>
+    </div>
+
+    <div class="subscribe-box">
+      <form action="https://gennaronyc.us14.list-manage.com/subscribe/post?...">
+        <h5>Enter your email to receive our nightly specials menu with any exciting announcements</h5>
+        <input type="email" name="EMAIL" required placeholder="The email you'll share is treated to prosciutto, not spam">
+        <div style="position:absolute; left:-5000px;" aria-hidden="true">
+          <input type="text" name="b_cd6b6968eace17a0435dc8442_6501905487" tabindex="-1" value="">
+        </div>
+        <input type="submit" class="button" value="Subscribe">
+      </form>
+    </div>
+
+
+<!-- 🔔 Reservation Trigger Button -->
+<!--<div style="text-align:center; margin-top: 30px;">
+  <button id="openReservation"
+    style="padding: 5px 10px; font-size: 16px; background-color: #92000a; color: white; border: none; border-radius: 16px;">
+    Make a Reservation
+  </button>
+</div>-->
+
+<!--Reservation Modal -->
+<!--<div id="reservationModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3>Reserve a Table</h3>
+
+    <form id="reservationForm" action="https://formspree.io/f/myzpnqob" method="POST">
+      <div class="form-grid">
+        <input type="text" name="name" placeholder="Party Name *" required>
+        <input type="email" name="email" placeholder="Email (optional)">
+      </div>
+
+      <label for="phone">Phone Number *</label>
+      <input type="text" id="phone" name="phone" required placeholder="e.g. 212-555-1212">
+
+      <label for="reservation-date">Date *</label>
+      <input type="date" id="reservation-date" name="date" required>
+
+      <label for="guests">Number of Guests</label>
+      <input type="number" id="guests" name="guests" min="1" max="200" required inputmode="numeric" pattern="[0-9]*">
+
+      <p id="guest-warning" class="hidden"></p>
+      <div id="over110-checkbox" class="hidden">
+        <label><input type="checkbox" id="submitAnyway" style="margin-right:6px;">Check here if you’d still like to submit the form, leave us your notes, and we can contact you.</label>
+      </div>
+
+      <label for="reservation-time">Time *</label>
+      <input type="time" id="reservation-time" name="time" required>
+      <small>Please choose a time between 4:45 PM and 9:00 PM</small>
+
+      <textarea name="message" placeholder="Special occasion or notes..."></textarea>
+
+      <button type="submit">Confirm Reservation</button>
+    </form>
+  </div>
+</div>
+-->
+
+    <!-- FOOTER -->
+    
+    <div class="footer">
+  <div class="footer-info">
+<a href="https://www.google.com/maps/place/665+Amsterdam+Ave,+New+York,+NY+10025"
+   target="_blank" rel="noopener">
+  <span class="footer-restaurant-name">Gennaro Restaurant</span>
+</a>
+    
+    <span class="footer-address">
+      665 Amsterdam Avenue, NYC, NY 10025
+    </span>
+
+    <div class="footer-phone">
+<a href="tel:+12126655348" class="footer-phone-number">
+  <span>212-665-5348</span>
+</a>
+      <div class="footer-phone-text">
+        Call for delivery, take-out, reservations<br>or general inquiries.
+      </div>
+    </div>
+  </div>
+</div>
+
+      <style>
+  a.phone-link {
+    color: #92000a;
+    text-decoration: none;
+  }
+
+  a.phone-link:hover {
+    color: #C98085;
+    text-decoration: none;
+  }
+</style>
+
+<div class="social-band">
+  <a href="https://instagram.com/gennaronyc" target="_blank">
+    <img src="img/icons/instagram.png" alt="Instagram">
+  </a>
+  <a href="https://facebook.com/gennarouwsnyc" target="_blank">
+    <img src="img/icons/facebook.png" alt="Facebook">
+  </a>
+  <a href="https://twitter.com/gennaronyc" target="_blank">
+    <img src="img/icons/twitter.png" alt="Twitter">
+  </a>
+  <a href="tel:+12126655348">
+    <img src="img/icons/phone.png" alt="Call Us">
+  </a>
+  <a href="mailto:gennaro@gennaronyc.com">
+    <img src="img/icons/email.png" alt="Email Us">
+  </a>
+</div>
+
+  <!-- === Scripts restored exactly from working backup === -->
+  <!--<script>
+ document.addEventListener("DOMContentLoaded", () => {
+      const specialsDiv = document.getElementById("specials-link");
+      if (!specialsDiv) return;
+      
+      //sppx
+      const specialsURL = "https://mailchi.mp/c943bbcbe2fb/of-all-the-praise-thats-graced-our-floor-1-note-rings-clear-thru-our-door-the-foods-1st-rate-a-1st-class-score-so-come-tonight-for-more";
+      function updateSpecialsLink() {
+        const now = new Date(); const day = now.getDay(); const hour = now.getHours(); const minute = now.getMinutes();
+        const after515 = hour > 17 || (hour === 17 && minute >= 15);
+        const after930 = hour > 21 || (hour === 21 && minute >= 30);
+        const beforeMidnight = hour < 24;
+        if (day === 2) {
+          specialsDiv.innerHTML = 
+'<span style="color: grey;"><span class="closed-today">We’re closed today. Specials here Wednesday!</span></span>';
+        } else if (after515 && beforeMidnight) {
+          const linkText = after930 ? "These were tonight’s specials" : "Click here for tonight’s specials!";
+          specialsDiv.innerHTML = `<a href="${specialsURL}" target="_blank" style="color: #c2181a;">${linkText}</a>`;
+        } else {
+          specialsDiv.innerHTML = `<span style="color: grey;">Click here for tonight’s specials after 5:15pm</span>`;
+        }
+      }
+      updateSpecialsLink();
+      setInterval(updateSpecialsLink, 30000);
+    });
+  </script>-->
+  
+  <!--spx-->
+<script src="/specials.js?v=2025-12-5"
+        data-autorefresh="true"
+        data-virtual="false"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const scrollSpan = document.querySelector(".scrolling-banner span");
+      const duration = 10000;
+      const startTime = localStorage.getItem("scrollStartTime");
+      if (startTime && scrollSpan) {
+        const elapsed = Date.now() - parseInt(startTime);
+        const delay = -(elapsed % duration) / 1000;
+        scrollSpan.style.animation = `scroll-left 10s linear infinite`;
+        scrollSpan.style.animationDelay = `${delay}s`;
+      }
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slideshow = document.getElementById('slideshow');
+      if (!slideshow) return;
+      const images = slideshow.querySelectorAll('img');
+      if (!images.length) return;
+      let i = 0;
+      images.forEach(img => img.classList.remove('active'));
+      images[0].classList.add('active');
+      function nextSlide() {
+        images[i].classList.remove('active');
+        i = (i + 1) % images.length;
+        images[i].classList.add('active');
+      }
+      setInterval(nextSlide, 3000);
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const now = new Date(); const hour = now.getHours();
+      if (hour >= 4 || hour < 7) {
+        document.body.classList.add("dark");
+      }
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const phoneLink = document.getElementById("phone-link");
+      if (phoneLink) {
+        phoneLink.addEventListener("click", function () {
+          setTimeout(() => window.location.reload(), 2000);
+        });
+      }
+    });
+  </script>
+
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/cd6b6968eace17a0435dc8442/6f711b2e1d556aa0ea626db1a.js");</script>
+
+<!--<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // --- Elements ---
+  const modal         = document.getElementById("reservationModal");
+  const openBtn       = document.getElementById("openReservation");
+  const closeBtn      = document.querySelector("#reservationModal .close");
+  const form          = document.getElementById("reservationForm");
+  const guestInput    = document.getElementById("guests");
+  const guestWarning  = document.getElementById("guest-warning");
+  const over110Box    = document.getElementById("over110-checkbox");
+  const submitAnyway  = document.getElementById("submitAnyway");
+
+  // --- Modal controls ---
+  function openModal()  { modal.style.display = "block"; document.body.classList.add("modal-open"); }
+  function closeModal() { modal.style.display = "none";  document.body.classList.remove("modal-open"); }
+  openBtn?.addEventListener("click", openModal);
+  closeBtn?.addEventListener("click", closeModal);
+  window.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+  // --- Hidden flag for Formspree ---
+  function setExceedsFlag(checked) {
+    let f = form.querySelector("#exceeds110");
+    if (!f) {
+      f = document.createElement("input");
+      f.type = "hidden";
+      f.name = "exceeds110";
+      f.id   = "exceeds110";
+      form.appendChild(f);
+    }
+    f.value = checked ? "yes" : "no";
+  }
+
+  // --- Guest count logic (with your full tier messages) ---
+guestInput.addEventListener("input", function () {
+  const val = parseInt(this.value, 10);
+
+  // reset state on every change
+  guestWarning.classList.add("hidden");
+  over110Box.classList.add("hidden");
+  submitAnyway.checked = false;
+  setExceedsFlag(false);
+
+  if (!isNaN(val)) {
+    if (val >= 1 && val <= 11) {
+      guestWarning.innerHTML = "After confirming,  you'll be on our reserved list. We’ll not contact you — see you then!";
+      guestWarning.classList.remove("hidden");
+
+    } else if (val >= 12 && val <= 20) {
+      guestWarning.innerHTML = `After confirmation, we will list you, but you must call us at <a href="tel:+12126655348" style="color:#92000a;">212.665.5348</a> the day before or day of to guarantee space.`;
+      guestWarning.classList.remove("hidden");
+
+    } else if (val >= 21 && val <= 99) {
+      guestWarning.innerHTML = `For ${val} people, we will call you at the phone number you provide to confirm arrangements.`;
+      guestWarning.classList.remove("hidden");
+
+    } else if (val >= 100 && val <= 110) {
+      guestWarning.innerHTML = `For ${val} people, please call <a href="tel:+12126655348" style="color:#92000a;">212.665.5348</a> to confirm arrangements. We will hold your contact information and wait for your call.`;
+      guestWarning.classList.remove("hidden");
+
+    } else if (val > 110) {
+      guestWarning.innerHTML = `Sorry to say, we are a mid-sized trattoria. Our maximum capacity is 110. Hopefully you'll think of us for other occasions.`;
+      guestWarning.classList.remove("hidden");
+
+      // show the “submit anyway” checkbox ONLY for >110
+      over110Box.classList.remove("hidden");
+      setExceedsFlag(true);
+    }
+  }
+});
+
+  // Keep hidden flag in sync
+  submitAnyway.addEventListener("change", () => setExceedsFlag(submitAnyway.checked));
+-->
+<!--
+  // --- Closed dates ---
+  function isBlockedDate(dateStr) {
+    if (!dateStr) return true;
+    const d     = new Date(dateStr + "T00:00:00");
+    const day   = d.getDay();
+    const month = d.getMonth();
+    const date  = d.getDate();
+    if (day === 2) return true; // Tuesday
+    if (month === 11 && date === 25) return true; // Christmas
+    if (month === 10 && day === 4 && date >= 22 && date <= 28) return true; // Thanksgiving
+    if (month === 6 && date >= 2 && date <= 8) return true; // July 2–8
+    if (month === 6 && date === 9 && day === 2) return true; // July 9 if Tuesday
+    return false;
+  }
+
+  // --- Submit handler ---
+  form.addEventListener("submit", function (e) {
+    const fd         = new FormData(form);
+    const dateStr    = fd.get("date");
+    const timeStr    = fd.get("time") || "";
+    const phoneRaw   = fd.get("phone") || "";
+    const guestCount = parseInt(fd.get("guests"), 10) || 0;
+
+    // Date blocks
+    if (isBlockedDate(dateStr)) {
+      e.preventDefault();
+      alert("We are closed on the selected date. Please choose another day.");
+      return;
+    }
+
+    // Time window: 4:45 PM – 9:00 PM
+    const [hourStr, minuteStr] = timeStr.split(":");
+    const hour         = parseInt(hourStr, 10);
+    const minute       = parseInt(minuteStr, 10);
+    const totalMinutes = hour * 60 + minute;
+    const openMinutes  = 16 * 60 + 45;
+    const closeMinutes = 21 * 60;
+    if (isNaN(totalMinutes)) {
+      e.preventDefault();
+      alert("Please choose a reservation time.");
+      return;
+    }
+    if (totalMinutes < openMinutes) {
+      e.preventDefault();
+      alert("We open at 4:45 PM. Please select a later time.");
+      return;
+    }
+    if (totalMinutes > closeMinutes) {
+      e.preventDefault();
+      alert("Please call the restaurant for reservations after 9:00 PM.");
+      return;
+    }
+
+    // Phone validation
+    const digitsOnly = phoneRaw.replace(/\D/g, "");
+    if (digitsOnly.length < 10 || digitsOnly.length > 15) {
+      e.preventDefault();
+      alert("Please enter a valid phone number with 10 to 15 digits.");
+      return;
+    }
+
+    // Require checkbox for >110
+    if (guestCount > 110 && !submitAnyway.checked) {
+      e.preventDefault();
+      alert("Please check the box to submit anyway, and we will contact you.");
+      return;
+    }
+
+    // Hidden flag for Formspree
+    setExceedsFlag(guestCount > 110 && submitAnyway.checked);
+  });
+});
+</script>-->
+
+</body>
+</html>

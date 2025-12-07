@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+1<style type="text/css">
+#load{
+position:absolute;
+z-index:1;
+border:3px double #999;
+background:url(images/dot.png) repeat;
+width:100%;
+height:100%;
+top:0px;
+left:0px;
+text-align:center;
+line-height:300px;
+font-family:"Trebuchet MS", verdana, arial,tahoma;
+font-size:18pt;
+}
+</style>
+<link href="https://onlinemenunow.com/css/style_sheet.css"  type="text/css" rel="stylesheet"/>
+<LINK href="https://onlinemenunow.com/css/mobanwang.css" type=text/css rel=stylesheet>
+<title>New Kitchen</title>
+<meta name="description" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en" />
+
+<script type="text/javascript" src="https://onlinemenunow.com/js/jquery-1.91.js"></script>
+<script>
+$(document).ready(function(){
+  $("#close_cart").click(function(){
+    $("#cart_box").fadeOut().fast;
+  });
+});
+
+
+function get_detail(str, oid) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		$("#cart_box").fadeIn().fast;
+      document.getElementById("cart_box").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://onlinemenunow.com/get_info.php?q="+str+"&oid="+oid+"&id="+Math.random(),true);
+  xhttp.send();
+}
+function remove_product(action_, remove_pid) {
+ var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	document.getElementById("container_cart").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://onlinemenunow.com/save_info.php?oid=7609348&action_="+action_+"&remove_id="+remove_pid+"&id="+Math.random(),true);
+  xhttp.send();
+
+	
+}
+
+function save_product(action_, remove_pid, mod_value, modi_cnt) {
+		var pid=document.getElementById("pid").value;
+		var product_price=document.getElementById("product_price").value;
+		var qty_=document.getElementById("qty_box").value;
+		var request_=document.getElementById("request_").value;
+		request_.replace(/[^a-zA-Z ]/g, " ");
+
+var x = document.getElementsByName("size_");
+var i;
+for (i = 0; i < x.length; i++) {
+
+   if(x[i].checked== true){
+	   
+	var size_=x[i].value;
+	break;
+   
+  }
+}
+if(mod_value!=""){
+var chk_er="";
+if(document.modifier.elements["modi0[]"]){
+var modi_00="MOD_00";  var chk_opt0=""; var mod0_qty="";
+	 for(x=0; x<document.modifier.elements["modi0[]"].length; x++){
+        if(document.modifier.elements["modi0[]"][x].checked==true){
+			//var mod0_qty="modi_qty_"+document.modifier.elements["modi0[]"][x].value;
+			var tmp=document.modifier.elements["modi0[]"][x].value.split("::");
+   var mod0_qty="modi_qty_"+tmp[0];
+           chk_opt0=1;
+modi_00=modi_00+","+document.modifier.elements["modi0[]"][x].value+":"+document.getElementById(mod0_qty).value;
+        }
+    }
+		if(document.getElementById("opt0").value=="" &&  chk_opt0==""){
+		chk_er=1;
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi1[]"]){
+var modi_01="MOD_01"; var chk_opt1="";  var mod1_qty="";
+	 for(x=0; x<document.modifier.elements["modi1[]"].length; x++){
+        if(document.modifier.elements["modi1[]"][x].checked==true){
+			
+		var tmp=document.modifier.elements["modi1[]"][x].value.split("::");
+   var mod1_qty="modi_qty_"+tmp[0];        
+modi_01=modi_01+","+document.modifier.elements["modi1[]"][x].value+"::"+document.getElementById(mod1_qty).value;
+
+//alert(modi_01);
+chk_opt1=1;
+        }
+    }
+	if(document.getElementById("opt1").value=="" &&  chk_opt1==""){
+		chk_er=1;
+		$("#required_box").html("Please select required option");
+	}
+	
+}
+
+if(document.modifier.elements["modi2[]"]){
+var modi_02="MOD_02";   var chk_opt2=""; var mod2_qty="";
+	 for(x=0; x<document.modifier.elements["modi2[]"].length; x++){
+        if(document.modifier.elements["modi2[]"][x].checked==true){
+		var tmp=document.modifier.elements["modi2[]"][x].value.split("::");
+   var mod2_qty="modi_qty_"+tmp[0];	
+           chk_opt2=1;
+modi_02=modi_02+","+document.modifier.elements["modi2[]"][x].value+"::"+document.getElementById(mod2_qty).value;
+        }
+    }
+		if(document.getElementById("opt2").value=="" &&  chk_opt2==""){
+		chk_er=2;
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi3[]"]){
+var modi_03="MOD_03";  var chk_opt3=""; var mod3_qty="";
+	 for(x=0; x<document.modifier.elements["modi3[]"].length; x++){
+        if(document.modifier.elements["modi3[]"][x].checked==true){
+			var tmp=document.modifier.elements["modi3[]"][x].value.split("::");
+   var mod3_qty="modi_qty_"+tmp[0];
+           chk_opt3=1;
+modi_03=modi_03+","+document.modifier.elements["modi3[]"][x].value+"::"+document.getElementById(mod3_qty).value;
+        }
+    }
+	if(document.getElementById("opt3").value=="" &&  chk_opt3==""){
+		chk_er=3;
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi4[]"]){
+var modi_04="MOD_04";  var chk_opt4=""; var mod4_qty="";
+	 for(x=0; x<document.modifier.elements["modi4[]"].length; x++){
+        if(document.modifier.elements["modi4[]"][x].checked==true){
+			
+			var tmp=document.modifier.elements["modi4[]"][x].value.split("::");
+   var mod4_qty="modi_qty_"+tmp[0];
+   
+           chk_opt4=4;
+modi_04=modi_04+","+document.modifier.elements["modi4[]"][x].value+"::"+document.getElementById(mod4_qty).value;
+        }
+    }
+			if(document.getElementById("opt4").value=="" &&  chk_opt4==""){
+		chk_er=1;
+		$("#required_box").html("Please select required option");
+	}
+
+}
+
+if(document.modifier.elements["modi5[]"]){
+var modi_05="MOD_05";  var chk_opt5=""; var mod5_qty="";
+	 for(x=0; x<document.modifier.elements["modi5[]"].length; x++){
+        if(document.modifier.elements["modi5[]"][x].checked==true){
+			var tmp=document.modifier.elements["modi5[]"][x].value.split("::");
+   var mod5_qty="modi_qty_"+tmp[0];
+           chk_opt5=5;
+modi_05=modi_05+","+document.modifier.elements["modi5[]"][x].value+"::"+document.getElementById(mod5_qty).value;
+        }
+    }
+	if(document.getElementById("opt5").value=="" &&  chk_opt5==""){
+		
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi6[]"]){
+var modi_06="MOD_06";  var chk_opt6=""; var mod6_qty="";
+	 for(x=0; x<document.modifier.elements["modi6[]"].length; x++){
+        if(document.modifier.elements["modi6[]"][x].checked==true){
+           chk_opt6=6;
+		   var tmp=document.modifier.elements["modi6[]"][x].value.split("::");
+   var mod6_qty="modi_qty_"+tmp[0];
+modi_06=modi_06+","+document.modifier.elements["modi6[]"][x].value+"::"+document.getElementById(mod6_qty).value;
+        }
+    }
+	if(document.getElementById("opt6").value=="" &&  chk_opt6==""){
+		chk_er=6;
+		$("#required_box").html("Please select required option");
+	}
+}
+}
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	document.getElementById("container_cart").innerHTML = this.responseText;
+    }
+  };
+  if(chk_er=="" || modi_cnt<=0){
+  xhttp.open("GET", "https://onlinemenunow.com/save_info.php?oid=7609348&pid="+pid+"&product_price="+product_price+"&size_="+size_+"&qty_="+qty_+"&action_="+action_+"&remove_id="+remove_pid+"&request_="+request_+"&modi_01="+modi_01+"&modi_02="+modi_02+"&modi_03="+modi_03+"&modi_04="+modi_04+"&modi_05="+modi_05+"&modi_06="+modi_06+"&modi_00="+modi_00+"&id="+Math.random(),true);
+  xhttp.send();
+    $("#cart_box").fadeOut().fast;
+}
+}
+
+
+function del_qty(){
+	var qty_=document.getElementById("qty_box").value;
+	if(qty_>=2){
+	document.getElementById("qty_box").value=eval(document.getElementById("qty_box").value)-1;
+	}
+}
+
+function add_qty(){
+	var qty_=document.getElementById("qty_box").value;
+
+	document.getElementById("qty_box").value=eval(document.getElementById("qty_box").value)+1;
+
+}
+
+
+function remove_item(action_, remove_pid) {
+			
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+
+
+		
+      document.getElementById("container_cart").innerHTML = this.responseText;
+	 
+    }
+  };
+  xhttp.open("GET", "https://onlinemenunow.com/remove_item.php?action_="+action_+"&remove_id="+remove_pid+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+
+function get_ship(action_) {
+		
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		if(action_=="delivery"){
+	document.getElementById('delivery_').style.background = '#F90';	
+	document.getElementById('pickup_').style.background = '';
+	$("#pickup_box").fadeOut().fast;
+	$("#delivery_box").fadeIn().fast;
+	}
+		if(action_=="pickup"){
+	document.getElementById('delivery_').style.background = '';	
+	document.getElementById('pickup_').style.background = '#F90';	
+	$("#delivery_box").fadeOut().fast; 
+	$("#pickup_box").fadeIn().fast;
+		}	
+    }	
+  };
+  xhttp.open("GET", "https://onlinemenunow.com/get_ship.php?action_="+action_+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+
+function get_pay(action_) {
+		
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		if(action_=="cc"){
+	document.getElementById('cc').style.background = '#F90';	
+	document.getElementById('cash').style.background = '';
+$("#cc_box").fadeIn().fast;$("#cash_box").fadeOut().fast;
+$("#show_tip").fadeIn().fast;
+
+	}
+		if(action_=="cash"){
+	document.getElementById('cc').style.background = '';	
+	document.getElementById('cash').style.background = '#F90';	
+$("#cc_box").fadeOut().fast;$("#cash_box").fadeIn().fast;$("#show_tip").fadeOut().fast;
+		}	
+    }	
+  };
+  xhttp.open("GET", "https://onlinemenunow.com/get_pay.php?action_="+action_+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+function get_tip(action_) {
+		var cTip=document.getElementById('ct_tip').value; 
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		if(action_=="0.15"){
+	document.getElementById('tip_15').style.background = '#F90';	
+	document.getElementById('tip_18').style.background = '';
+	document.getElementById('tip_20').style.background = '';
+	document.getElementById('tip_custom').style.background = '';
+	}
+		if(action_=="0.18"){
+	document.getElementById('tip_15').style.background = '';
+	document.getElementById('tip_custom').style.background = '';	
+	document.getElementById('tip_18').style.background = '#F90';
+	document.getElementById('tip_20').style.background = '';
+	}
+		if(action_=="0.20"){
+	document.getElementById('tip_15').style.background = '';	
+	document.getElementById('tip_18').style.background = '';
+	document.getElementById('tip_custom').style.background = '';
+	document.getElementById('tip_20').style.background = '#F90';
+	}
+			if(action_=="customize"){
+
+	document.getElementById('tip_15').style.background = '';	
+	document.getElementById('tip_18').style.background = '';
+	document.getElementById('tip_20').style.background = '';
+	document.getElementById('tip_custom').style.background = '#F90';
+	}	
+    }	
+	document.getElementById("show_total").innerHTML = this.responseText;
+	$("#customize_tip").fadeOut().fast;
+  };
+  xhttp.open("GET", "https://onlinemenunow.com/get_tip.php?action_="+action_+"&c_tip="+cTip+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+
+
+
+function get_input_tip() {
+	var action_=document.getElementById('ct_tip').value; 
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	document.getElementById("show_total").innerHTML = this.responseText; 
+  };
+  xhttp.open("GET", "https://onlinemenunow.com/get_tip_amt.php?action_="+action_+"&id="+Math.random(),true);
+  xhttp.send();
+}
+
+}
+
+
+$(document).ready(function(){
+  $("#tip_custom").click(function(){
+
+    $("#customize_tip").toggle().fast;
+  });
+});
+
+</script>
+<script type="text/livescript">
+function copy_address(){
+	document.getElementById('delivery_street').value=document.getElementById('street').value;
+	document.getElementById('delivery_apt').value=document.getElementById('apt').value;
+	document.getElementById('delivery_city').value=document.getElementById('city').value;
+	document.getElementById('delivery_state').value=document.getElementById('state').value;
+	document.getElementById('delivery_zip_code').value=document.getElementById('zip_code').value;
+	
+}
+
+function chk_opt_box(url){
+document.getElementById(url).checked=true;
+}
+var ray={
+ajax:function(st)
+	{
+		this.show('load');
+	},
+show:function(el)
+	{
+		this.getID(el).style.display='';
+	},
+getID:function(el)
+	{
+		return document.getElementById(el);
+	}
+}
+
+
+</script>
+
+</head>
+<body><div id="load" style="display:none; z-index:9999999999999999; color:#FFFFFF; line-height:38px; font-size:32px; text-align:center; padding-top:200px;">Loading ..... Please wait.<br />
+  <img src="https://onlinemenunow.com/images/loader.gif" width="125" height="15" /></div>
+<div id="top"><a href="https://onlinemenunow.com/index.php/restaurant" target="_self"><img src="https://onlinemenunow.com/images/logo.png" height="38" width="50"alt=""  style="margin-top:2px; margin-left:2px;"/><span style="font-size:24px; line-height:80px;"></span></a>   <a href="https://onlinemenunow.com/index.php/login"  id="login" target="_self">Login/Register</a>
+</div>
+
+<div id="container_box">
+<script>
+
+function close_box(){
+    $("#cart_box").fadeOut().fast;
+}
+
+
+</script>
+
+<div id="container_m">
+<h6 style="background:#FFF;"><p  class="logo"> New Kitchen</p>
+<p style="line-height:24px; margin-bottom:15px;">8 Bowden Rd <br />Cedar Grove, NJ 07009<br />
+ Tel:973-571-2080</p>
+<p><img src="https://onlinemenunow.com/images/Pickup_icon.png" width="30" height="30" style="position:relative; top:10px;" /><strong>Pickup:</strong> 15 ~20Mins   &nbsp;  &nbsp;<img src="https://onlinemenunow.com/images/Delivery_icon.png" width="35" height="35" style="position:relative; top:10px;"  /> <strong>Delivery:</strong>  </p>
+
+<div id="time_shift">
+<strong style="padding-right:20px;">Business Hours</strong><br><div class="left_box"><strong>Mon:</strong> </div><div class="mid_box">11:00 am~10:00 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Tue:</strong></div><div class="mid_box"> Closed</div><div class="right_box">&nbsp; &nbsp; </div><div class="left_box"><strong>Wed:</strong> </div><div class="mid_box">11:00 am~10:00 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Thurs:</strong> </div><div class="mid_box">11:00 am~10:00 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Fri:</strong> </div><div class="mid_box">11:00 am~10:30 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Sat:</strong> </div><div class="mid_box">11:00 am~10:30 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Sun:</strong> </div><div class="mid_box">3:00 pm~9:30 pm&nbsp; &nbsp; </div><div class="right_box"></div></div>
+
+</h6><h5>
+
+</h5>
+
+<h1>Lunch Specials<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46054', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L1.Chicken Nuggets w Fried Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46055', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L1.Chicken Nuggets w French Fries</button><button type="button" class="btn_cate"  onclick="get_detail('46056', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L2.Boneless Sparerib w Fried Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46057', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L2.Boneless Sparerib w French Fries</button><button type="button" class="btn_cate"  onclick="get_detail('46058', '7609348')"><span style="float:right; margin-right:5px;">8.95</span>L3.Chicken Wings w Fried Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46059', '7609348')"><span style="float:right; margin-right:5px;">8.95</span>L3.Chicken Wings w French Fries</button><button type="button" class="btn_cate"  onclick="get_detail('46060', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L5.Chow Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46061', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L6.Broccoli w</button><button type="button" class="btn_cate"  onclick="get_detail('46062', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L7.Lo Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46063', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L8.Egg Foo Young</button><button type="button" class="btn_cate"  onclick="get_detail('46064', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L9.Mixed Vegetables w</button><button type="button" class="btn_cate"  onclick="get_detail('46065', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L10.Snow Peas w</button><button type="button" class="btn_cate"  onclick="get_detail('46066', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L11.Curry Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46067', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L12.Pepper Steak</button><button type="button" class="btn_cate"  onclick="get_detail('46068', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L13.Shrimp w Lobster Sauce</button><button type="button" class="btn_cate"  onclick="get_detail('46069', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L14.Garlic Sauce w<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46070', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L15.Hunan Style<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46071', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L16.Szechuan Style<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46072', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L17.Sweet   Sour </button><button type="button" class="btn_cate"  onclick="get_detail('46073', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L18.Moo Goo Gai Pan</button><button type="button" class="btn_cate"  onclick="get_detail('46074', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L19.Kung Pao<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46075', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L20.Sesame Sauce Chicken</button><button type="button" class="btn_cate"  onclick="get_detail('46076', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L21.Orange Chicken<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46077', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L22.General Tsos Chicken<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46078', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L23.String Bean w</button><button type="button" class="btn_cate"  onclick="get_detail('46079', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L24.Double Cook Pork<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46080', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L25.Eggplant Garlic Sauce w</button><button type="button" class="btn_cate"  onclick="get_detail('46081', '7609348')"><span style="float:right; margin-right:5px;">8.50</span>L26.Buddhist Delight</button>
+<h1>Heart Menu<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46082', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>H1.Shrimp w Snow Peas, Broccoli   Bean Sprouts</button><button type="button" class="btn_cate"  onclick="get_detail('46083', '7609348')"><span style="float:right; margin-right:5px;">14.00</span>H2.Scallop w Broccoli   Bean Sprouts</button><button type="button" class="btn_cate"  onclick="get_detail('46084', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>H3.Chicken   Baby Shrimp w Bean Sprouts   Broccoli</button><button type="button" class="btn_cate"  onclick="get_detail('46085', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>H4.Beef w Mixed Vegetables</button><button type="button" class="btn_cate"  onclick="get_detail('46086', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>H5.Chicken w Snow Peas,Broccoli   String Bean</button><button type="button" class="btn_cate"  onclick="get_detail('46087', '7609348')"><span style="float:right; margin-right:5px;">13.00</span>H6.Pork w Mushroom,Snow Pea   Bean Sprouts</button><button type="button" class="btn_cate"  onclick="get_detail('46088', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>H7.Beef w Chicken w Mixed Veg</button><button type="button" class="btn_cate"  onclick="get_detail('46089', '7609348')"><span style="float:right; margin-right:5px;">9.95</span>H8.Bean Curd w Veg   Bean Sprouts</button>
+<h1>Appetizers<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46090', '7609348')"><span style="float:right; margin-right:5px;">2.95</span>French Fries</button><button type="button" class="btn_cate"  onclick="get_detail('46091', '7609348')"><span style="float:right; margin-right:5px;">3.60</span>Vegetable Roll(2)</button><button type="button" class="btn_cate"  onclick="get_detail('46092', '7609348')"><span style="float:right; margin-right:5px;">1.60</span>Egg Roll</button><button type="button" class="btn_cate"  onclick="get_detail('46093', '7609348')"><span style="float:right; margin-right:5px;">3.60</span>Shrimp Spring Roll(2)</button><button type="button" class="btn_cate"  onclick="get_detail('46094', '7609348')"><span style="float:right; margin-right:5px;">4.75</span>Scallion Pancakes</button><button type="button" class="btn_cate"  onclick="get_detail('46095', '7609348')"><span style="float:right; margin-right:5px;">6.75</span>Fried Chicken Wings(4)</button><button type="button" class="btn_cate"  onclick="get_detail('46096', '7609348')"><span style="float:right; margin-right:5px;">6.75</span>Honey Chicken Wings(4)</button><button type="button" class="btn_cate"  onclick="get_detail('46097', '7609348')"><span style="float:right; margin-right:5px;">6.75</span>Buffalo Wings(4)<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46098', '7609348')"><span style="float:right; margin-right:5px;">4.50</span>Shrimp Toast</button><button type="button" class="btn_cate"  onclick="get_detail('46099', '7609348')"><span style="float:right; margin-right:5px;">4.50</span>Chicken Nugget(12)</button><button type="button" class="btn_cate"  onclick="get_detail('46100', '7609348')"><span style="float:right; margin-right:5px;">7.95</span>BBQ Spare Ribs</button><button type="button" class="btn_cate"  onclick="get_detail('46101', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Boneless Spare Ribs</button><button type="button" class="btn_cate"  onclick="get_detail('46102', '7609348')"><span style="float:right; margin-right:5px;">7.50</span>Beef Stick(4)</button><button type="button" class="btn_cate"  onclick="get_detail('46103', '7609348')"><span style="float:right; margin-right:5px;">4.75</span>Fried Wonton(12)</button><button type="button" class="btn_cate"  onclick="get_detail('46104', '7609348')"><span style="float:right; margin-right:5px;">4.75</span>Fantail Shrimp</button><button type="button" class="btn_cate"  onclick="get_detail('46105', '7609348')"><span style="float:right; margin-right:5px;">4.95</span>Cold Noodle w Sesame Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46106', '7609348')"><span style="float:right; margin-right:5px;">7.25</span>Steamed Dumpling(8)</button><button type="button" class="btn_cate"  onclick="get_detail('46107', '7609348')"><span style="float:right; margin-right:5px;">7.25</span>Fried Dumpling(8)</button><button type="button" class="btn_cate"  onclick="get_detail('46108', '7609348')"><span style="float:right; margin-right:5px;">6.75</span>Steamed Vegetable Dumpling(8)</button><button type="button" class="btn_cate"  onclick="get_detail('46109', '7609348')"><span style="float:right; margin-right:5px;">6.75</span>Fried Vegetable Dumpling(8)</button><button type="button" class="btn_cate"  onclick="get_detail('46110', '7609348')"><span style="float:right; margin-right:5px;">13.75</span>Pu Pu Platter(For 2)</button><button type="button" class="btn_cate"  onclick="get_detail('46111', '7609348')"><span style="float:right; margin-right:5px;">7.25</span>Chicken Stick(5)</button><button type="button" class="btn_cate"  onclick="get_detail('46112', '7609348')"><span style="float:right; margin-right:5px;">4.95</span>Fried Scallop(10)</button><button type="button" class="btn_cate"  onclick="get_detail('46113', '7609348')"><span style="float:right; margin-right:5px;">8.25</span>Fried Medium Shrimp(20)</button><button type="button" class="btn_cate"  onclick="get_detail('46114', '7609348')"><span style="float:right; margin-right:5px;">2.95</span>Fried Crab Stick(2)</button><button type="button" class="btn_cate"  onclick="get_detail('46115', '7609348')"><span style="float:right; margin-right:5px;">6.25</span>Crab Rangoon(8)</button><button type="button" class="btn_cate"  onclick="get_detail('46116', '7609348')"><span style="float:right; margin-right:5px;">6.25</span>Szechuan Wonton(12)<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46117', '7609348')"><span style="float:right; margin-right:5px;">6.50</span>Chicken Nugget w Fried Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46118', '7609348')"><span style="float:right; margin-right:5px;">6.50</span>Chicken Nugget w French Fries</button>
+<h1>Soup<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46123', '7609348')"><span style="float:right; margin-right:5px;">2.95</span>Chicken Noodle Soup</button><button type="button" class="btn_cate"  onclick="get_detail('46121', '7609348')"><span style="float:right; margin-right:5px;">2.95</span>Egg Drop Soup</button><button type="button" class="btn_cate"  onclick="get_detail('46119', '7609348')"><span style="float:right; margin-right:5px;">2.95</span>Hot   Sour Soup<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46120', '7609348')"><span style="float:right; margin-right:5px;">2.95</span>Wonton Soup</button><button type="button" class="btn_cate"  onclick="get_detail('46122', '7609348')"><span style="float:right; margin-right:5px;">2.95</span>Chicken Rice Soup</button><button type="button" class="btn_cate"  onclick="get_detail('46124', '7609348')"><span style="float:right; margin-right:5px;">2.95</span>Egg Drop Wonton Mixed Soup</button><button type="button" class="btn_cate"  onclick="get_detail('46125', '7609348')"><span style="float:right; margin-right:5px;">2.95</span>Hot   Sour Wonton Mixed Soup<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46126', '7609348')"><span style="float:right; margin-right:5px;">5.75</span>Chicken Corn Soup</button><button type="button" class="btn_cate"  onclick="get_detail('46127', '7609348')"><span style="float:right; margin-right:5px;">4.95</span>Vegetable w Bean Curd Soup</button><button type="button" class="btn_cate"  onclick="get_detail('46128', '7609348')"><span style="float:right; margin-right:5px;">6.75</span>House Special Soup</button>
+<h1>Chow Mein / Chop Suey<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46129', '7609348')"><span style="float:right; margin-right:5px;">5.95</span>Chicken Chow Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46130', '7609348')"><span style="float:right; margin-right:5px;">5.95</span>Roast Pork Chow Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46131', '7609348')"><span style="float:right; margin-right:5px;">5.95</span>Vegetable Chow Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46132', '7609348')"><span style="float:right; margin-right:5px;">6.25</span>Beef Chow Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46133', '7609348')"><span style="float:right; margin-right:5px;">6.25</span>Shrimp Chow Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46134', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>House Special Chow Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46136', '7609348')"><span style="float:right; margin-right:5px;">5.95</span>Chicken Chop Suey</button><button type="button" class="btn_cate"  onclick="get_detail('46137', '7609348')"><span style="float:right; margin-right:5px;">5.95</span>Roast Pork Chop Suey</button><button type="button" class="btn_cate"  onclick="get_detail('46138', '7609348')"><span style="float:right; margin-right:5px;">5.95</span>Vegetable Chop Suey</button><button type="button" class="btn_cate"  onclick="get_detail('46139', '7609348')"><span style="float:right; margin-right:5px;">6.25</span>Beef Chop Suey</button><button type="button" class="btn_cate"  onclick="get_detail('46140', '7609348')"><span style="float:right; margin-right:5px;">6.25</span>Shrimp Chop Suey</button><button type="button" class="btn_cate"  onclick="get_detail('46141', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>House Special Chop Suey</button>
+<h1>Fried Rice<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46142', '7609348')"><span style="float:right; margin-right:5px;">5.50</span>Roast Pork Fried Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46143', '7609348')"><span style="float:right; margin-right:5px;">5.75</span>Shrimp Fried Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46144', '7609348')"><span style="float:right; margin-right:5px;">5.75</span>Chicken Fried Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46145', '7609348')"><span style="float:right; margin-right:5px;">5.75</span>Beef Fried Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46146', '7609348')"><span style="float:right; margin-right:5px;">5.45</span>Vegetable Fried Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46147', '7609348')"><span style="float:right; margin-right:5px;">6.50</span>House Special Fried Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46148', '7609348')"><span style="float:right; margin-right:5px;">6.50</span>Young Chow Fried Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46149', '7609348')"><span style="float:right; margin-right:5px;">4.50</span>Plain Fried Rice</button>
+<h1>Poultry<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46150', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w Vegetable</button><button type="button" class="btn_cate"  onclick="get_detail('46151', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Moo Goo Gai Pan</button><button type="button" class="btn_cate"  onclick="get_detail('46152', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w Broccoli</button><button type="button" class="btn_cate"  onclick="get_detail('46153', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken Broccoli w Garlic Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46154', '7609348')"><span style="float:right; margin-right:5px;">13.00</span>Chicken w Lemon Sauce</button><button type="button" class="btn_cate"  onclick="get_detail('46155', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Kung Pao Chicken<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46156', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w Garlic Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46157', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w Cashew Nut</button><button type="button" class="btn_cate"  onclick="get_detail('46158', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w Almond </button><button type="button" class="btn_cate"  onclick="get_detail('46159', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w Mushroom</button><button type="button" class="btn_cate"  onclick="get_detail('46160', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Curry Chicken<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46161', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w Black Bean Sauce</button><button type="button" class="btn_cate"  onclick="get_detail('46162', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Hunan Chicken<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46163', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w String Bean</button><button type="button" class="btn_cate"  onclick="get_detail('46164', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w Snow Peas</button><button type="button" class="btn_cate"  onclick="get_detail('46165', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w Oyster Sauce</button><button type="button" class="btn_cate"  onclick="get_detail('46166', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w Bean Sprouts</button><button type="button" class="btn_cate"  onclick="get_detail('46167', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Chicken w Eggplant in Garlic Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46168', '7609348')"><span style="float:right; margin-right:5px;">13.00</span>Boneless Chicken</button><button type="button" class="btn_cate"  onclick="get_detail('46169', '7609348')"><span style="float:right; margin-right:5px;">7.85</span>Szechuan Chicken<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46170', '7609348')"><span style="float:right; margin-right:5px;">0.00</span>Pineapple Chicken</button><button type="button" class="btn_cate"  onclick="get_detail('46171', '7609348')"><span style="float:right; margin-right:5px;">0.00</span>Coconut Chicken</button>
+<h1>Beef<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46172', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Pepper Steak </button><button type="button" class="btn_cate"  onclick="get_detail('46173', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Beef w Broccoli</button><button type="button" class="btn_cate"  onclick="get_detail('46174', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Beef w Vegetable</button><button type="button" class="btn_cate"  onclick="get_detail('46175', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Kung Pao Beef<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46176', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Beef w Garlic Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46177', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Beef Szechuan Style<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46178', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Mongolian Beef</button><button type="button" class="btn_cate"  onclick="get_detail('46179', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Hunan Beef<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46180', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Beef w Black Bean Sauce</button><button type="button" class="btn_cate"  onclick="get_detail('46181', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Beef w String Beans</button><button type="button" class="btn_cate"  onclick="get_detail('46182', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Beef w Oyster Sauce</button><button type="button" class="btn_cate"  onclick="get_detail('46183', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Curry Beef<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46184', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Beef w Mushroom</button><button type="button" class="btn_cate"  onclick="get_detail('46185', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Beef w Snow Peas</button>
+<h1>Lo Mein<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46186', '7609348')"><span style="float:right; margin-right:5px;">4.50</span>Plain Lo Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46187', '7609348')"><span style="float:right; margin-right:5px;">5.75</span>Roast Pork Lo Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46188', '7609348')"><span style="float:right; margin-right:5px;">5.95</span>Beef Lo Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46189', '7609348')"><span style="float:right; margin-right:5px;">5.95</span>Shrimp Lo Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46190', '7609348')"><span style="float:right; margin-right:5px;">5.75</span>Chicken Lo Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46191', '7609348')"><span style="float:right; margin-right:5px;">6.50</span>House Special Lo Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46192', '7609348')"><span style="float:right; margin-right:5px;">5.45</span>Vegetable Lo Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46193', '7609348')"><span style="float:right; margin-right:5px;">9.50</span>Chow Mei Fun</button><button type="button" class="btn_cate"  onclick="get_detail('46194', '7609348')"><span style="float:right; margin-right:5px;">9.50</span>Chow Ho Fun</button><button type="button" class="btn_cate"  onclick="get_detail('46195', '7609348')"><span style="float:right; margin-right:5px;">9.50</span>Singapore Rice Noodle<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button>
+<h1>Sweet   Sour<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46196', '7609348')"><span style="float:right; margin-right:5px;">7.00</span>Sweet   Sour Pork </button><button type="button" class="btn_cate"  onclick="get_detail('46197', '7609348')"><span style="float:right; margin-right:5px;">7.00</span>Sweet   Sour Chicken</button><button type="button" class="btn_cate"  onclick="get_detail('46198', '7609348')"><span style="float:right; margin-right:5px;">8.00</span>Sweet   Sour Shrimp</button>
+<h1>Moo Shu<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46199', '7609348')"><span style="float:right; margin-right:5px;">9.75</span>Moo Shu Chicken</button><button type="button" class="btn_cate"  onclick="get_detail('46200', '7609348')"><span style="float:right; margin-right:5px;">10.00</span>Moo Shu Beef</button><button type="button" class="btn_cate"  onclick="get_detail('46202', '7609348')"><span style="float:right; margin-right:5px;">9.50</span>Moo Shu Pork</button><button type="button" class="btn_cate"  onclick="get_detail('46203', '7609348')"><span style="float:right; margin-right:5px;">10.50</span>Moo Shu Shrimp</button><button type="button" class="btn_cate"  onclick="get_detail('46204', '7609348')"><span style="float:right; margin-right:5px;">9.00</span>Moo Shu Vegetables</button>
+<h1>Egg Foo Young<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46205', '7609348')"><span style="float:right; margin-right:5px;">11.50</span>Roast Pork Egg Foo Young</button><button type="button" class="btn_cate"  onclick="get_detail('46206', '7609348')"><span style="float:right; margin-right:5px;">11.50</span>Shrimp Egg Foo Young</button><button type="button" class="btn_cate"  onclick="get_detail('46207', '7609348')"><span style="float:right; margin-right:5px;">11.50</span>Chicken Egg Foo Young</button><button type="button" class="btn_cate"  onclick="get_detail('46208', '7609348')"><span style="float:right; margin-right:5px;">11.50</span>Beef Egg Foo Young</button><button type="button" class="btn_cate"  onclick="get_detail('46209', '7609348')"><span style="float:right; margin-right:5px;">11.50</span>Vegetable Egg Foo Young</button><button type="button" class="btn_cate"  onclick="get_detail('46210', '7609348')"><span style="float:right; margin-right:5px;">11.50</span>House Special Egg Foo Young</button>
+<h1>Pork<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46211', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Roast Pork w Vegetable</button><button type="button" class="btn_cate"  onclick="get_detail('46212', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Hunan Pork<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46213', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Double Cooked Pork<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46214', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Pork w Garlic Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46215', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Shredded Pork w Ginger   Scallion</button><button type="button" class="btn_cate"  onclick="get_detail('46216', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Roast Pork w Almond Ding</button><button type="button" class="btn_cate"  onclick="get_detail('46217', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Roast Pork w Cashew Nut</button><button type="button" class="btn_cate"  onclick="get_detail('46218', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Roast Pork w Mushroom</button><button type="button" class="btn_cate"  onclick="get_detail('46220', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Pork w Black Bean Sauce</button><button type="button" class="btn_cate"  onclick="get_detail('46221', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Pork w String Beans</button><button type="button" class="btn_cate"  onclick="get_detail('46222', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Pork w Broccoli</button>
+<h1>Seafood<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46223', '7609348')"><span style="float:right; margin-right:5px;">8.45</span>Shrimp w Lobster Sauce</button><button type="button" class="btn_cate"  onclick="get_detail('46224', '7609348')"><span style="float:right; margin-right:5px;">8.45</span>Shrimp w Mixed Veg</button><button type="button" class="btn_cate"  onclick="get_detail('46225', '7609348')"><span style="float:right; margin-right:5px;">8.45</span>Shrimp w Peanuts in Hot Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46226', '7609348')"><span style="float:right; margin-right:5px;">8.45</span>Shrimp w Garlic Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46227', '7609348')"><span style="float:right; margin-right:5px;">8.45</span>Shrimp Szechuan Style<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46228', '7609348')"><span style="float:right; margin-right:5px;">8.45</span>Shrimp w Black Bean Sauce</button><button type="button" class="btn_cate"  onclick="get_detail('46229', '7609348')"><span style="float:right; margin-right:5px;">8.45</span>Shrimp w Broccoli</button><button type="button" class="btn_cate"  onclick="get_detail('46231', '7609348')"><span style="float:right; margin-right:5px;">8.45</span>Shrimp w Curry Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46232', '7609348')"><span style="float:right; margin-right:5px;">8.45</span>Shrimp w Snow Peas</button><button type="button" class="btn_cate"  onclick="get_detail('46233', '7609348')"><span style="float:right; margin-right:5px;">0.00</span>Tong Ting Shrimp </button><button type="button" class="btn_cate"  onclick="get_detail('46235', '7609348')"><span style="float:right; margin-right:5px;">8.45</span>Shrimp w Chinese Vegetable</button><button type="button" class="btn_cate"  onclick="get_detail('46236', '7609348')"><span style="float:right; margin-right:5px;">0.00</span>Shrimp w String Beans</button><button type="button" class="btn_cate"  onclick="get_detail('46237', '7609348')"><span style="float:right; margin-right:5px;">0.00</span>Pineapple Shrimp</button><button type="button" class="btn_cate"  onclick="get_detail('46239', '7609348')"><span style="float:right; margin-right:5px;">0.00</span>Coconut Shrimp</button>
+<h1>Vegetable<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46240', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Bean Curd w Vegetable </button><button type="button" class="btn_cate"  onclick="get_detail('46241', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Bean Curd Home Style<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46242', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Eggplant w Garlic Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46243', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Vegetable w Garlic Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46244', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Sautéed String Bean<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46245', '7609348')"><span style="float:right; margin-right:5px;">6.95</span>Broccoli w Garlic Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button>
+<h1>Special Combo Platters<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46246', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C1.Chicken Chow Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46247', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C1.Shrimp Chow Mein</button><button type="button" class="btn_cate"  onclick="get_detail('46248', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C2.Pepper Steak</button><button type="button" class="btn_cate"  onclick="get_detail('46249', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C3.BBQ Spare Ribs</button><button type="button" class="btn_cate"  onclick="get_detail('46250', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C4.Shrimp w Lobster Sauce</button><button type="button" class="btn_cate"  onclick="get_detail('46251', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C5.Egg Foo Young</button><button type="button" class="btn_cate"  onclick="get_detail('46252', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C6.Broccoli w </button><button type="button" class="btn_cate"  onclick="get_detail('46253', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C7.Double Cooked Pork<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46254', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C8.Roast Pork w Vegetable</button><button type="button" class="btn_cate"  onclick="get_detail('46255', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C9.Moo Goo Gai Pan</button><button type="button" class="btn_cate"  onclick="get_detail('46256', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C10.Sweet   Sour</button><button type="button" class="btn_cate"  onclick="get_detail('46257', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C11.Kung Pao Chicken<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46258', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C12.General Tsos Chicken<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46259', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C13.Sesame Chicken</button><button type="button" class="btn_cate"  onclick="get_detail('46260', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C14.Orange Chicken<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46261', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C15.Chicken w Garlic Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46262', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C16.Boneless Spare Ribs</button><button type="button" class="btn_cate"  onclick="get_detail('46263', '7609348')"><span style="float:right; margin-right:5px;">10.75</span>C17.Lo Mein</button>
+<h1>Chef Specialties<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46264', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S1.Hot Triple<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46265', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S2.Charues Angels </button><button type="button" class="btn_cate"  onclick="get_detail('46267', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S3.Four Seasons</button><button type="button" class="btn_cate"  onclick="get_detail('46270', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S4.Lucky Couple</button><button type="button" class="btn_cate"  onclick="get_detail('46271', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S6.Double Happiness</button><button type="button" class="btn_cate"  onclick="get_detail('46272', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S7.Orange Chicken<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46273', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S8.Orange Beef<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46274', '7609348')"><span style="float:right; margin-right:5px;">14.50</span>S8.Orange Shrimp<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46275', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S9.Sesame Chicken</button><button type="button" class="btn_cate"  onclick="get_detail('46276', '7609348')"><span style="float:right; margin-right:5px;">14.50</span>S10.Sesame Beef</button><button type="button" class="btn_cate"  onclick="get_detail('46277', '7609348')"><span style="float:right; margin-right:5px;">14.50</span>S10.Sesame Shrimp</button><button type="button" class="btn_cate"  onclick="get_detail('46278', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S11.General Toso Chicken<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46279', '7609348')"><span style="float:right; margin-right:5px;">14.50</span>S12.General Tsos Shrimp<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46280', '7609348')"><span style="float:right; margin-right:5px;">14.50</span>S12.General Tsos Beef<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46281', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S13.Triple Combination</button><button type="button" class="btn_cate"  onclick="get_detail('46282', '7609348')"><span style="float:right; margin-right:5px;">14.50</span>S14.House Special Steak Kew<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46283', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S15.Cantonese Pan Fried Noodle</button><button type="button" class="btn_cate"  onclick="get_detail('46284', '7609348')"><span style="float:right; margin-right:5px;">14.50</span>S16.Hawaii Five O</button><button type="button" class="btn_cate"  onclick="get_detail('46285', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S17.Ginger   Garlic Sauce<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46286', '7609348')"><span style="float:right; margin-right:5px;">16.25</span>S19.Seafood Delight</button><button type="button" class="btn_cate"  onclick="get_detail('46287', '7609348')"><span style="float:right; margin-right:5px;">16.25</span>S20.Happy Family</button><button type="button" class="btn_cate"  onclick="get_detail('46288', '7609348')"><span style="float:right; margin-right:5px;">16.25</span>S20.Seafood w Hunan Style<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46289', '7609348')"><span style="float:right; margin-right:5px;">13.25</span>S21.Garlic Sauce Triple Crown<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate"  onclick="get_detail('46290', '7609348')"><span style="float:right; margin-right:5px;">13.50</span>S22.Couple Sautéed Scallion<img src="https://onlinemenunow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button>
+<h1>Side Order<span class="btn_cate_desc" style="color:#F00;"> </span></h1>
+<button type="button" class="btn_cate"  onclick="get_detail('46291', '7609348')"><span style="float:right; margin-right:5px;">1.50</span>White Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46292', '7609348')"><span style="float:right; margin-right:5px;">1.50</span>Brown Rice</button><button type="button" class="btn_cate"  onclick="get_detail('46293', '7609348')"><span style="float:right; margin-right:5px;">0.35</span>Fried Noodles</button><button type="button" class="btn_cate"  onclick="get_detail('46294', '7609348')"><span style="float:right; margin-right:5px;">0.30</span>Fortune Cookies (4)</button><button type="button" class="btn_cate"  onclick="get_detail('46295', '7609348')"><span style="float:right; margin-right:5px;">0.50</span>Almond Cookies(3)</button></div>
+<div id="container_cart">
+<div id="cart_top"><h2 style="font-size:32px; font-family:'Times New Roman', Times, serif; ">New Kitchen</h2>
+</div>
+<div id="cart_content" style="z-index:9999;">
+<h2 style="font-size:32px; font-family:'Times New Roman', Times, serif; color:#CCC; ">No Item(s) <br>Need to add something?</h2>
+	
+</div>
+
+<div id="cart_box"></div>
+<script type="text/javascript">
+
+
+
+function check_box0(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi0[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+	
+if(document.getElementById(url).checked==true){
+	$("#error0").empty();
+	$("#count_0").html(o);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+}else{
+	if(o<url1){ $("#error0").empty();
+document.getElementById(url).checked=true;
+document.getElementById(url5).value=o+1;
+$("#count_0").html(o+1);
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error0").html("Item(s) over limit");
+	
+}
+}
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+function check_box1(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi1[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error1").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_1").empty();
+}else{
+	if(o<url1){ $("#error1").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error1").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error1").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error1").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_1").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+function check_box2(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi2[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error2").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_2").empty();
+}else{
+	if(o<url1){ $("#error2").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error2").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error2").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error2").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_2").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+function check_box3(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi3[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error3").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_3").empty();
+}else{
+	if(o<url1){ $("#error3").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error3").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error3").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error3").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_3").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+function check_box4(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi4[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error4").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_4").empty();
+}else{
+	if(o<url1){ $("#error4").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error4").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error4").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error4").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_4").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+function check_box5(url, url1, url2, url3, url4, url5, url6){  
+
+ var x = document.getElementsByName("modi5[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error5").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_5").empty();
+}else{
+	if(o<url1){ $("#error5").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error5").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error5").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error5").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_5").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+function check_box6(url, url1, url2, url3, url4, url5, url6){  
+
+ var x = document.getElementsByName("modi6[]");
+      var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error6").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_6").empty();
+}else{
+	if(o<url1){ $("#error6").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error6").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error6").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error6").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_6").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+
+function get_mtp(url, url1, url2, url3, url4, url5, url6, url7, url8){ 
+
+ 
+ var x = document.getElementsByName("modi7[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  o++;
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+	
+if(document.getElementById(url).checked==true){
+	$("#error7").empty();
+	$("#count_7").html(o);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+}else{
+	if(o<url1){ $("#error7").empty();
+document.getElementById(url).checked=true;
+
+$("#count_7").html(o+1);
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error7").html("Item(s) over limit");
+	
+}
+}
+
+	$("#tmp_box").toggle().fast;
+	
+}
+</script></div>
+</body>
+</html>

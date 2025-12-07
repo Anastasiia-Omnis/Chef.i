@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta name='viewport' content='initial-scale=1.0, user-scalable=no'>
+    <meta charset='utf-8'>
+    <title>Sushi Jin</title>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link href="bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet">
+    <style>
+        .chef {
+            position: absolute;
+            max-width: 100%;
+            right: 0%;
+            animation: slideinright 3s;
+        }
+
+        .restaurant {
+            position: absolute;
+            max-width: 15%;
+            left: 0%;
+            top: 15%;
+            transform: translate(0, -50%);
+            transition: 0.3s;
+            animation: slideinleft 3s;
+        }
+
+        .details {
+            text-align: center;
+            padding: 0.5em;
+            z-index: 111111;
+        }
+
+        .details > div {
+            display: inline;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        @keyframes slideinright {
+            from {
+                right: -50%;
+                opacity: 0;
+            }
+
+            to {
+                right: 0%;
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideinleft {
+            from {
+                left: -50%;
+                opacity: 0;
+            }
+
+            to {
+                left: 0%;
+                opacity: 1;
+            }
+        }
+
+        .concept-pc {
+            position: absolute;
+            top: 260px;
+            left: 0;
+            width: 45%;
+            height: 400px;
+            overflow: scroll;
+        }
+
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .restaurant {
+                max-width: 60%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .concept-mb {
+                font-size: 14px !important;
+                font-weight: normal !important;
+            }
+
+            .btn-link-em {
+                top: 20px !important;
+            }
+
+            .btn-link-Reservation {
+                top: 0px !important;
+                font-size: 16px !important;
+                padding: 0;
+
+            }
+
+            @keyframes slideinleft {
+                from {
+                    left: 0%;
+                    opacity: 0;
+                }
+
+                to {
+                    left: 50%;
+                    opacity: 1;
+                }
+            }
+            .concept-pc {
+                display: none;
+            }
+        }
+
+        .gallery_item {
+
+            height: 450px;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 30px;
+
+        }
+
+        .gallery_container {
+            margin-top: 40px;
+        }
+
+        .gallery_item img {
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 900px) {
+            .concept-mb {
+                display: none !important;
+            }
+        }
+
+
+        /* 模拟纸张效果 */
+        .menu-card {
+            z-index: 11111;
+
+
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 60px;
+            font-family: "Helvetica Neue", sans-serif;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 顶部描述文字 */
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-weight: normal;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        /* 价格行样式 */
+        .price-row {
+            border-bottom: 0px solid #000; /* 原图没有下划线，保持留白 */
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .price-tag {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .price-per-person {
+            font-size: 1.2rem;
+            font-weight: normal;
+        }
+
+        /* 菜单列表 */
+        .course-list {
+            list-style: none;
+            padding-left: 0;
+            font-weight: normal;
+            font-size: 1.25rem;
+            line-height: 2; /* 增加行间距 */
+        }
+
+        .course-list li:before {
+            content: "-";
+            margin-right: 8px;
+        }
+
+        /* 右下角 Logo 区域 */
+        .logo-area {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            height: 100%;
+
+            max-width: 200px;
+            margin-left: 50px;
+
+        }
+
+
+        @media (max-width: 992px) {
+
+            body {
+                padding: 0 !important;
+            }
+
+            .menu-card {
+
+                margin: 20px auto;
+                padding: 20px;
+                margin-top: 0;
+
+            }
+
+            .btn-link-Reservation {
+                top: 5px !important;
+                right: 10px !important;
+                font-size: 16px !important;
+                padding: 0;
+            }
+
+            .course-list {
+                font-size: 14px;
+            }
+
+            .menu-card .mb-3.fw-bold {
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .price-tag {
+
+                font-size: 18px;
+            }
+
+            .intro-text {
+                font-size: 14px;
+
+            }
+            .gallery_item {
+
+                margin-bottom: 20px;
+            }
+            .gallery_container {
+                padding: 0;
+            }
+
+            .concept-mb {
+                text-align: left !important;
+            }
+
+            .details {
+                margin-top: 20px;
+                text-align: left;
+                padding: 20px;
+                z-index: 111111;
+            }
+
+            .omakase_price {
+                margin-bottom: 10px !important;
+            }
+
+            .logo-area {
+                margin-top: 0 !important;
+            }
+
+            .logo-area {
+                margin-left: 0;
+                max-width: 100% ; width: 100%;
+                justify-content: center !important;align-items: flex-start;
+                flex-direction: row;
+            }
+            .logo-area img {
+                max-width: 120px;
+            }
+        }
+
+
+    </style>
+</head>
+<body style="background-color:white;font-family: 'Arial', sans-serif; display: flex; justify-content: center; align-items: center; margin:0; min-height:100vh; box-sizing: border-box; padding:1em; flex-direction: column; overflow-x: hidden;">
+<div style="max-width: 1200px; max-height: 708px; position: relative;width: 100%;">
+    <a href="tel:646-609-6770"
+       style="position: absolute; right: 0 ; top: 0; color: black; text-decoration: none; font-size:20px; font-weight:bold; z-index: 1"
+       class="btn btn-link btn-link-Reservation">
+        Please contact 646-609-6770 for reservation.
+    </a>
+
+    <button type="button"
+            style="position: absolute; right: 0 ; top: 40px; color: black; text-decoration: none; font-size:20px; font-weight:bold; z-index: 1"
+            class="btn btn-link btn-link-em" data-toggle="modal" data-target="#exampleModal">
+        Join Mailing List
+    </button>
+
+
+    <img class="chef" src="Satoshi_Tachikawa.png" alt="Satoshi Tachikawa"/>
+    <img class="restaurant" src="logo.png" alt="" Sushi Jin, Comming Soon, By Satoshi Tachikawa/>
+    <img src="Satoshi_Tachikawa.png" style="opacity: 0; width: 100%; height: 100%;" alt="Satoshi Tachikawa">
+
+    <div class="concept-pc">
+
+        <h2>Our Concept</h2>
+        Sushi Jin serves "Omakase" based on its concept and philosophy. We believe that the Omakase dining is the only
+        way to truly experience the most authentic and best that Sushi has to offer.<br><br>
+
+        By ordering and eating only popular fish such as Tuna, Salmon, Hamachi, diners significantly limit their
+        experiences with the kind of flavors and textures fishes have to offer. Sushi can be prepared and enjoyed in a
+        variety of different styles simple and straightforward with light "Umami."<br><br>
+
+        Like in squid or octopus, stronger ocean flavored "Umami", and sweeter such as shrimp and crab. Enjoying a wide
+        variety of these tastes and textures through the course of a carefully crafted Omakase menu is truly the best
+        way to enjoy Sushi. We select wild , local, and sustainable fishes as much as possible. Much like traditional
+        from the local fish in Tokyo Bay.<br><br>
+
+        We believe that our surroundings should help shape the dining experience at our restaurant. Sushi is what we
+        live for, and we strive to study and improve everyday. In order to bring out the best in our ingredients and the
+        Umami inherent in our fish, we employ various traditional techniques such as Sujime (Marinating in vinegar),
+        Konbujime (Marinating with Konbu seaweed), aging, roasting, Shiojime (curing with salt), smoking, etc.<br><br>
+
+        With our skilled hands and years of experience, we believe it is our duty to carefully and skillfully craft our
+        Omakase menus so that our diners cab enjoy a truly beautiful and immersive Sushi experience. Like a Sushi
+        concierge, we hope to open your eyes to all that the world of traditional Sushi has to offer.a<br><br>
+
+        All of our Omakase menus change daily based on season, availability, and the "fisherman". <br><br>
+
+
+        <strong>
+            Note<br>
+        </strong>
+
+
+        Consuming raw or under-cooked meats, poultry, seafood, shellfish, or egg may increase your risk of foodborne
+        illness, especially if you have certain medical conditions.
+
+    </div>
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content" id="contactForm" name="sentMessage" novalidate="novalidate">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Join Mailing List</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <label for="last_name">Name</label>
+                    <input class="form-control" id="last_name" type="text" placeholder=" "
+                           required="required"
+                           data-validation-required-message="Please enter your last name.">
+                    <p class="help-block text-danger"></p>
+
+                    <div class="form-group">
+                        <label for="Email">Email <span>*</span></label>
+                        <input class="form-control" id="email" type="text" placeholder=" "
+                               required="required" data-validation-required-message="Please enter your email.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <div id="success"></div>
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                    <button id="sendMessageButton" type="submit" class="btn btn-dark">Join</button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModa2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content" id="contactForm2" name="sentMessage" novalidate="novalidate">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Reservation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="last_name2">Name<span>*</span></label>
+                        <input class="form-control" id="last_name2" type="text" placeholder=" "
+                               required="required"
+                               data-validation-required-message="Please enter your   name.">
+                        <p class="help-block text-danger"></p>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="email2">Email <span>*</span></label>
+                        <input class="form-control" id="email2" type="text" placeholder=" "
+                               required="required" data-validation-required-message="Please enter your email.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone <span>*</span></label>
+                        <input class="form-control" id="phone" type="text" placeholder=" "
+                               required="required" data-validation-required-message="Please enter your Phone.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Time">Time <span>*</span></label>
+
+                        <select class="form-control" id="time" required="required">
+                            <option>5:30PM</option>
+                            <option>7:00PM</option>
+                            <option>8:30PM</option>
+
+                        </select>
+                        <p class="help-block text-danger"></p>
+
+                        <!--<input class="form-control" id="Time" type="text" placeholder=" "-->
+                        <!--required="required" data-validation-required-message="Please enter your name.">-->
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Date">Date <span>*</span></label>
+
+                        <input type="text" class="form-control" id="date" required="required"
+                               data-validation-required-message="Please enter your date." readonly>
+
+                        <p class="help-block text-danger"></p>
+                        <!--<input class="form-control" id="Date" placeholder=" "-->
+                        <!--required="required" data-validation-required-message="Please enter your name.">-->
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="People">People <span>*</span></label>
+
+                        <select class="form-control" id="people" required="required">
+                            <option>1 person</option>
+                            <option>2 people</option>
+                            <option>3 people</option>
+                            <option>4 people</option>
+                            <option>5 people</option>
+                            <option>6 people</option>
+                            <option>7 people</option>
+                            <option>8 people</option>
+                            <option>9 people</option>
+                            <option>10 people</option>
+                            <option>11 people</option>
+                            <option>12 people</option>
+                            <option>13 people</option>
+                            <option>15 people</option>
+                            <option>Larger party</option>
+
+                        </select>
+                        <p class="help-block text-danger"></p>
+
+                        <!--<input class="form-control" id="People" type="text" placeholder=" "-->
+                        <!--required="required" data-validation-required-message="Please enter your name.">-->
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <div id="success2"></div>
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                    <button id="sendMessageButton2" type="submit" class="btn btn-dark">Submit</button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="details">
+
+    <div class="concept-mb" style=" ">
+
+        <h2>Our Concept</h2>
+        Sushi Jin serves "Omakase" based on its concept and philosophy. We believe that the Omakase dining is the only
+        way to truly experience the most authentic and best that Sushi has to offer.<br><br>
+
+        By ordering and eating only popular fish such as Tuna, Salmon, Hamachi, diners significantly limit their
+        experiences with the kind of flavors and textures fishes have to offer. Sushi can be prepared and enjoyed in a
+        variety of different styles simple and straightforward with light "Umami."<br><br>
+
+        Like in squid or octopus, stronger ocean flavored "Umami", and sweeter such as shrimp and crab. Enjoying a wide
+        variety of these tastes and textures through the course of a carefully crafted Omakase menu is truly the best
+        way to enjoy Sushi. We select wild , local, and sustainable fishes as much as possible. Much like traditional
+        from the local fish in Tokyo Bay.<br><br>
+
+        We believe that our surroundings should help shape the dining experience at our restaurant. Sushi is what we
+        live for, and we strive to study and improve everyday. In order to bring out the best in our ingredients and the
+        Umami inherent in our fish, we employ various traditional techniques such as Sujime (Marinating in vinegar),
+        Konbujime (Marinating with Konbu seaweed), aging, roasting, Shiojime (curing with salt), smoking, etc.<br><br>
+
+        With our skilled hands and years of experience, we believe it is our duty to carefully and skillfully craft our
+        Omakase menus so that our diners cab enjoy a truly beautiful and immersive Sushi experience. Like a Sushi
+        concierge, we hope to open your eyes to all that the world of traditional Sushi has to offer.a<br><br>
+
+        All of our Omakase menus change daily based on season, availability, and the "fisherman". <br><br>
+
+
+        <strong>
+            Note<br>
+        </strong>
+
+
+        Consuming raw or under-cooked meats, poultry, seafood, shellfish, or egg may increase your risk of foodborne
+        illness, especially if you have certain medical conditions.<br><br>
+
+    </div>
+
+
+    <div class="container">
+        <div class="menu-card text-left">
+
+            <div class="mb-5">
+                <h2 class="mb-3 fw-bold">Omakase <small class="fw-normal fs-4">(Chef's Choice Meal)</small></h2>
+                <div class="intro-text">
+                    <p class="mb-1">Generally, there is no specific menu when it comes to Omakase dinner
+                        Even though the chef might have idea of the ingredients he'll use and
+                        What will taste good when combined, you'll never get a specific list.
+                        Every omakase meal is personalized to make is special and unforgettable.</p>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-baseline mb-4 omakase_price">
+                <div class="section-title">Omakase</div>
+                <div class="price-tag">$160.00 <span class="price-per-person">per person</span></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-7">
+                    <ul class="course-list">
+                        <li>Four seasonal appetizers.</li>
+                        <li>Three varieties of Sashimi.</li>
+                        <li>Eleven Chef's Nigiri.</li>
+                        <li>Soup.</li>
+                        <li>Traditional Tamago.</li>
+                        <li>Dessert</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="logo-area mt-5 mt-md-0">
+                        <img src="menu_logo.png" alt="" class="w-100">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="gallery">
+        <!--        <h3>Gallery</h3>-->
+        <div class="container gallery_container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="gallery/1.jpg" class=" gallery_item" data-fancybox="images">
+                        <img src="gallery/1.jpg" alt="" class="w-100 h-100">
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="gallery/2.jpg" class=" gallery_item" data-fancybox="images">
+                        <img src="gallery/2.jpg" alt="" class="w-100 h-100">
+                    </a>
+                </div>
+
+
+                <div class="col-md-4">
+                    <a href="gallery/3.jpg" class=" gallery_item" data-fancybox="images">
+                        <img src="gallery/3.jpg" alt="" class="w-100 h-100">
+                    </a>
+                </div>
+
+
+                <div class="col-md-4">
+                    <a href="gallery/4.jpg" class=" gallery_item" data-fancybox="images">
+                        <img src="gallery/4.jpg" alt="" class="w-100 h-100">
+                    </a>
+                </div>
+
+
+                <div class="col-md-4">
+                    <a href="gallery/6.jpg" class=" gallery_item" data-fancybox="images">
+                        <img src="gallery/6.jpg" alt="" class="w-100 h-100">
+                    </a>
+                </div>
+
+
+                <div class="col-md-4">
+                    <a href="gallery/7.jpg" class=" gallery_item" data-fancybox="images">
+                        <img src="gallery/7.jpg" alt="" class="w-100 h-100">
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="" style="display: block">316 East 84th. Street New York NY 10028 Tel:&nbsp;646-609-6770
+        www.sushijinny.com
+    </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<!-- Contact form JavaScript -->
+<script src="mail/jqBootstrapValidation.js"></script>
+<script src="mail/contact_me.js"></script>
+<script src="mail/res_me.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script>
+
+
+    $(function () {
+        $('#date').datepicker({
+            autoclose: 1,//选择后自动关闭
+            todayHighlight: 1//今天高亮
+        });
+
+
+    });
+
+
+</script>
+
+</body>
+</html>

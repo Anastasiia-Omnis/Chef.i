@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title></title>
+<meta name="description" content="">
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<link rel="stylesheet" href="Assets/styles/normalize.css">
+<link rel="stylesheet" href="Assets/styles/main.css">
+<link rel="stylesheet" href="Assets/styles/site.css?v=3.3">
+<link href='//fonts.googleapis.com/css?family=BenchNine:700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto:900,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
+
+<script src="Assets/scripts/vendor/essemm.js"></script>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+<body class="food-bg">
+
+<!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  <div id="header-container">
+    <h1 class="title">Dakshin, True Taste, Since 2000</h1>
+    <div id="header">
+        <div id="logo"><a href="/"><img src="Assets/images/dakshin_logo.png" width="392" height="108"  alt=""/></a></div>
+        <div id="header-links">
+            <div style="position: absolute; left: -82px;">
+                <div class="header-text" style="padding-top: 2px;"> <strong>Contact us:</strong><br />
+                    Phone 1: (732) 494-6363<br />
+                    Phone 2: (732) 494-6303<br />
+                    Fax: (732) 494-4231 <br />
+                    Email: <a href="mailto:contactus@dakshinusa.com" style="color: white;">contactus@dakshinusa.com</a><br />
+                    </div>
+            </div>
+            <div id="shop-link" style="display: none;">
+                <a href="shop.php">
+                    <div class="header-btn"> <img src="Assets/images/shop_online.png" />
+                        <h3>Shop Online now!</h3>
+                        <div><small>Sweets, Snacks, and Pickles</small></div>
+                    </div>
+                </a>
+            </div>
+            <div id="catering-link" style="display: none;">
+                <a href="catering_order.php">
+                    <div class="header-btn"> <img src="Assets/images/catering_quote.png" />
+                        <h3>Catering Quote</h3>
+                        <div><small>Get started with your next catering event.</small></div>
+                    </div>
+                </a>
+            </div>
+            <div id="shop-link">
+                <a href="#">
+                    <div class="header-btn"> <img src="Assets/images/shop_online.png" />
+                        <h3>Shop Online now!</h3>
+                        <div><small>Coming soon!</small></div>
+                    </div>
+                </a>
+            </div>
+            <div id="catering-link">
+                <a href="catering_order.php">
+                    <div class="header-btn"> <img src="Assets/images/catering_quote.png" />
+                        <h3>Catering Quote</h3>
+                        <div><small>Get started with your next catering event.</small></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="width: 900px; margin: 0 auto;/* z-index: 10000; */">
+            <div class="main-nav">
+            <ul>
+  
+  
+      <li ><a href="menu.php">Menu</a></li>
+  
+      <li  class="selected" ><a href="catering.php">Catering</a>  <div class="down-arrow">&nbsp;</div></li>
+  
+      <li ><a href="shop.php">Shop</a></li>
+  
+      <li ><a href="events.php">Events</a></li>
+  
+      <li ><a href="location.php">Location</a></li>
+  
+      <li ><a href="contact.php">Contact</a></li>
+  
+</ul>
+        </div></div>
+        <section class="content"><style>
+.menu-items {
+    -webkit-column-count: auto; /* Chrome, Safari, Opera */
+    -moz-column-count: auto; /* Firefox */
+    column-count: auto;
+    -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 30px; /* Firefox */
+    column-gap: 30px;
+    display: block;
+    overflow-y: scroll;
+    height: 1030px;
+    width: 327px;
+    padding-bottom: 90px;
+}
+
+.menu{
+    width: 310px;
+    overflow: hidden;
+}
+
+span.price{
+    background-color: #84755E;
+}
+
+.price:hover{
+    cursor: pointer;
+      background-color: #645D4E;
+  padding: 1px 12px;
+  font-size: 12px;
+}
+
+.price:hover::before{
+    content: "Add to cart: ";
+}
+
+.right{
+    margin-left: 134px;
+}
+
+.menu-list-item{
+    font-weight: bold;
+    color: rgb(73, 66, 55);
+    white-space: nowrap;
+}
+
+.menu-list-item div {
+  overflow: hidden;
+  width: 250px;
+  height: 30px;
+}
+
+.progress-to-next{
+    margin: 20px 0;
+        background-color: #625844;
+  width: 70px;
+  padding: 0px;
+  text-align: center;
+  color: rgb(233, 211, 192);
+  font-style: italic;
+  cursor: pointer;
+    border-radius: 4px;
+      font-size: 14px;
+  line-height: 30px;
+}
+
+.progress-to-next:hover{
+        background-color: #716856;
+    -webkit-transition: background-color 0.5s ease;
+    transition: background-color 300ms ease;
+}
+
+input[type=radio] {
+    height: 10px;
+    width: 20px;
+}
+
+label {
+    display: inline;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#event_name {
+    width: 302px;
+    font-size: 118%;
+    background-color: #2C2A29;
+    color: #E4D4BD;
+    padding: 6px;
+    border-radius: 4px;
+    padding-left: 7px;
+}
+
+#event_description {
+    font-family: serif;
+    font-size: 86%;
+    font-style: italic;
+    letter-spacing: 0.05em;
+}
+
+#order-list {
+    border: 6px solid #92836B;
+    margin-top: 26px;
+}
+
+.btm-bdr{
+    background-color: rgba(146, 133, 112, 0.26);
+    padding: 3px;
+}
+
+h2 {
+    font-size: 1.15em;
+    margin: 0;
+    background-color: rgba(82, 67, 47, 0.35);
+    padding: 5px 8px;
+    border-left: 6px solid #A01B16;
+}
+</style>
+<table border="0" cellpadding="0" width="100%" id="food-menu-tbl">
+        <tbody><tr>
+        <td width="200" valign="top" style="  padding: 10px; padding-right: 0; padding-top: 46px; " >
+
+        <div class="food-menu">
+            
+            <div id="item-search">
+                <div id="search-icon">
+                    <img src="Assets/images/search.png" alt="" width="20" height="20">
+                </div>
+                <input type="text" name="item_search" id="item_search" placeholder="Search an Item">
+                <div class="search-close" style=""><i class="fa fa-times" aria-hidden="true" style="display: none;"></i></div>
+                <button><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </div>
+
+            <ul id="all-catering-holder" class="menu-holders"></ul>
+            <ul id="veg-catering-holder" class="menu-holders"></ul>
+            <ul id="packages-catering-holder" class="menu-holders"></ul>
+        </div></td>
+        <td class="left-line" width="5" style=" padding: 10px; " ></td>
+        <td valign="top" style=" padding: 10px; padding-top: 43px;" >
+            <div id="menu" class="menu"></div>
+        </td>
+        <td class="left-line" width="5" style=" padding: 10px; " ></td>
+        <td valign="top" width="229" style="position: relative; padding: 10px; padding-top: 34px;" >
+        	<form name="catering-order-form" id="catering-order-form" method="post" />
+           	<div id="arrow-1" class="right-arrow" style="display: none;">&nbsp;</div>
+            <div id="shop-sidebar">
+                    <div><input type="text" name="event_name" id="event_name" placeholder="Start here... Event Name" spellcheck="false" autofocus></div>
+                    <div id="shop-nav">
+                        <div id="eventNav" class="selected" >Details<span></span></div>
+                        <div id="shop-itemsNav">Order<span></span></div>
+                        <div id="addressNav">Address<span></span></div>
+                        <div id="summaryNav">Summary<span></span></div>
+                    </div>
+                    <h1 style="display: none;">Your order</h1>
+                    
+
+                    <div id="event" class="order-sections">
+                        <table width="100%" id="event-list" class="section-list" cellspacing="5" cellpadding="5">
+                            <tr >
+                                <th width="125" class="order-header-bg">Your name*:</th>
+                                <td><input type="text" name="name" id="name" class="type-to-disp" required spellcheck="false" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="order-header-bg">Mobile*:</th>
+                                <td><input type="text" name="mobile_no" id="mobile_no" class="type-to-disp" required spellcheck="false" /></td>
+                            </tr>
+                            <tr>
+                                <th class="order-header-bg">Work:</th>
+                                <td><input type="text" name="work_no" id="work_no" class="type-to-disp" spellcheck="false" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="order-header-bg">Email*:</th>
+                                <td><input type="text" name="email" id="email" spellcheck="false" required class="type-to-disp" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="order-header-bg" valign="top">Description:<br />
+                                    <small><em>A few words about your event</em></small></th>
+                                <td><textarea name="event_description" id="event_description"></textarea>
+                                </td>
+                            </tr>
+                          <tr>
+                            <th class="order-header-bg">Date/Time*:</th>
+                            <td>
+                                <input type="datetime-local" name="event_date_time" id="event_date_time" class="type-to-disp" required />
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class="order-header-bg">Head Count*:</th>
+                            <td>
+                                <input type="number" min="10" max="5000" step="5" name="head_count" id="head_count" class="type-to-disp" required />
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class="order-header-bg">Help required*:</th>
+                            <td>
+                                <input type="radio" name="help_required" id="help_required_yes" value="Yes" class="type-to-disp" required />
+                                <label for="help_required_yes">Yes</label>
+                                <input type="radio" name="help_required" id="help_required_no"  value="No" class="type-to-disp" required />
+                                <label for="help_required_no">No</label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class="order-header-bg">Help Count*:</th>
+                            <td>
+                                <input type="number" name="help_count" id="help_count" min="1" max="100" class="type-to-disp" required />
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class="order-header-bg">Delivery Required*:</th>
+                            <td>
+                                <input type="radio" name="delivery_required" id="delivery_required_yes" value="Yes" class="type-to-disp" required />
+                                <label for="delivery_required_yes">Yes</label>
+                                <input type="radio" name="delivery_required" id="delivery_required_no" value="No" class="type-to-disp" required />
+                                <label for="delivery_required_no">No</label>
+                            </td>
+                          </tr>
+                          <tr>
+                                <td align="right" colspan="2">
+                                    <div style="width: 100%">
+                                        <div class="progress-to-next" id="go-to-shop">Next</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+
+                    <div id="address" style="display: none;" class="order-sections">
+                       <table width="100%" id="address-list" class="section-list" cellspacing="5" cellpadding="5">
+                            <tr>
+                                <td align="right" colspan="2">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="order-header-bg" valign="top">Event Address*:</th>
+                                <td><textarea name="address" id="address" class="type-to-disp" spellcheck="false"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="order-header-bg" valign="top">Special Instructions:</th>
+                                <td><textarea name="special_instructions" class="type-to-disp" id="special_instructions" spellcheck="false"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" colspan="2">
+                                    <div style="width: 100%">
+                                        <div class="progress-to-next" id="go-to-summary">Next</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="summary" style="display: none;" class="order-sections">
+                            <div class='address-summary'>
+                                <div><h2>General:</h2></div>
+                                <table width="100%" cellpadding="4" cellspacing="0" border="0">
+                                            <tr>
+                                                <td valign="top" width="50%">
+                                                    <div class="btm-bdr"><small><strong>Name:</strong></small></div>
+                                                    <div id="name-disp">&nbsp;</div>
+                                                </td>
+                                                 <td valign="top"><div class="btm-bdr"><small><strong>Head Count:</strong></small></div>
+                                                <div id="head_count-disp">&nbsp;</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" width="50%">
+                                                    <div class="btm-bdr"><small><strong>Mobile:</strong></small></div>
+                                                    <div id="mobile_no-disp">&nbsp;</div>
+                                                </td>
+
+                                                <td valign="top"><div class="btm-bdr"><small><strong>Work Phone:</strong></small></div>
+                                                    <div id="work_no-disp">&nbsp;</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" width="50%" colspan="2">
+                                                    <div class="btm-bdr"><small><strong>Email:</strong></small></div>
+                                                    <div id="email-disp" style="width: 100%; overflow: hidden;">&nbsp;</div>
+                                                </td>
+
+                                               
+                                            </tr>
+                                            <tr>
+                                                 <td valign="top" width="50%">
+                                                    <div class="btm-bdr"><small><strong>Help Required / Count:</strong></small></div>
+                                                    <div><span id="help_required-disp"></span> / <span id="help_count-disp"></span></div>
+                                                </td>
+                                                <td valign="top"><div class="btm-bdr" ><small><strong>Delivery Required:</strong></small></div>
+                                                    <div id="delivery_required-disp">&nbsp;</div>
+                                                </td>
+                                                <tr>
+                                                <td valign="top" width="50%">
+                                                    <div class="btm-bdr"><small><strong>Event Date/Time:</strong></small></div>
+                                                    <div id="event_date_time-disp">&nbsp;</div>
+                                                </td>
+                                                <td valign="top">
+                                                    <div class="btm-bdr"><small><strong>Event Address:</strong></small></div>
+                                                    <div id="address-disp">&nbsp;</div>
+                                                </td>
+                                                </tr>
+                                                <tr>
+                                                <td valign="top" colspan="2"><div class="btm-bdr" ><small><strong>Special Instructions:</strong></small></div>
+                                                    <div id="comments-disp">&nbsp;</div>
+                                                </td>
+                                            </tr>
+                                       </table>
+
+                                <br /><div><h2>Your order:</h2></div>
+                            </div>
+                            <div class='acknowledgement' style="display: none;">
+                                <div class="sending email-sending-info" align="center">
+                                    <em>We are sending your order as an email......<br />
+                                        We'll also send a copy of the order to you! Please wait...</em>
+                                </div>
+                                <div class="sent email-sending-info" align="center">
+                                    <em>Thanks for reaching out to us. Someone from our office will get back to you.</em>
+                                </div>
+                                <div class="sending-error email-sending-info" align="center">
+                                    <em>Could not process your request!\n You can reach us at weborder@dakshinusa.com</em>
+                                </div>
+                            </div>
+                    </div>
+                    <div id="shop-items" style="display: none;" class="order-sections">
+                       <small style="
+    line-height: 18px !important;
+    display: block;
+    margin-top: 10px;
+    color: #2b2927;
+    letter-spacing: 0.03em;
+"><strong>Please note:</strong> While choosing a package, please choose specific number of items. Any additional items can also be added to customize and we will price it accordingly.</small>
+                        <table width="100%" id="order-list">
+
+                            <tr class="order-header-bg bordered-row">
+                                <th width="10"></th>
+                                <th width="20">#</th>
+                                <th>Items</th>
+                                <th width="20" align="left">Qty.</th>
+                            </tr>
+                            <tbody class="packages sections">
+                                <tr class="menu-hdrs">
+                                    <th colspan="4"><span class="menu-header-name">Package</span> <span class="info-txt">Click to add items to this section</span></th>
+                                </tr>
+                                <tr class="show-only-when-empty">
+                                    <td height="10" colspan="4">
+                                        <div class="std-msg-cat">Click on an menu item on the left to add it to this list</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody class="appetizers sections">
+                                <tr class="menu-hdrs">
+                                    <th colspan="4"><span class="menu-header-name">Appetizers</span> <span class="info-txt">Click to add items to this section</span></th>
+                                </tr>
+                                <tr class="show-only-when-empty">
+                                    <td height="10" colspan="4">
+                                        <div class="std-msg-cat">Click on an menu item on the left to add it to this list</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody class="main_course sections">
+                                <tr class="menu-hdrs">
+                                    <th colspan="4"><span class="menu-header-name">Main Course</span> <span class="info-txt">Click to add items to this section</span></th>
+                                </tr>
+                                <tr class="show-only-when-empty">
+                                    <td height="10" colspan="4">
+                                        <div class="std-msg-cat">Click on an menu item on the left to add it to this list</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                            <tbody class="rice sections">
+                                <tr class="menu-hdrs">
+                                    <th colspan="4"><span class="menu-header-name">Rice</span> <span class="info-txt">Click to add items to this section</span></th>
+                                </tr>
+                                <tr class="show-only-when-empty">
+                                    <td height="10" colspan="4">
+                                        <div class="std-msg-cat">Click on an menu item on the left to add it to this list</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody class="bread sections">
+                                <tr class="menu-hdrs">
+                                    <th colspan="4"><span class="menu-header-name">Bread</span> <span class="info-txt">Click to add items to this section</span></th>
+                                </tr>
+                                <tr class="show-only-when-empty">
+                                    <td height="10" colspan="4">
+                                        <div class="std-msg-cat">Click on an menu item on the left to add it to this list</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody class="desserts sections">
+                                <tr class="menu-hdrs">
+                                    <th colspan="4"><span class="menu-header-name">Desserts</span> <span class="info-txt">Click to add items to this section</span></th>
+                                </tr>
+                                <tr class="show-only-when-empty">
+                                    <td height="10" colspan="4">
+                                        <div class="std-msg-cat">Click on an menu item on the left to add it to this list</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody class="menu-list">
+
+                            </tbody>
+
+                        </table>
+
+                        <div style="width: 100%">
+                            <div class="progress-to-next" id="go-to-address">Next</div>
+                            <div class="progress-to-next" id="confirm-checkout" style="width: 170px; display: none;">Send an email!</div>
+                            <input type="hidden" name="menuitems" id= "menuitems" value="" />
+                            <input type="submit" name="button" id="button" value="Submit" style="visibility: hidden;">
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            <div style="display: none;">
+                <div  id="catering" class="restaurant">
+                    <img src="Assets/images/dakshincatering.png" />
+                    <div class="menu-options">
+                        <div id="all" class="selected">Veg and Non-Veg</div>
+                        <div id="veg-only">Vegetarian only</div>
+                    </div>
+                </div>
+
+                <div id="order-catering"><a href="catering_order.php"><img src="Assets/images/order-catering.png" /></a></div>
+            </div>
+           </form>
+        </td>
+        </tr>
+        </tbody></table>
+
+        <input type="hidden" name="menuname" id="menuname" value="catering" />
+        <input type="hidden" name="ordered-items" id="ordered-items" value="" />
+        </section>
+<div id="nav-bg"></div>
+<footer> Copyright &copy; 2025:: Dakshin Group of Restaurants :: contactus@dakshinusa.com | <a href="terms.php">Terms and Conditions</a> | <a href="privacy.php">Privacy Policy</a> | <a href="returns.php">Return Policy</a> | <a href="faq.php">FAQ</a></footer>
+<div id="layout-templates">
+    <script id="menu-item-tmpl" type="text/x-jquery-tmpl"><div id="${d.menu_type}-${d.cat}" class="category-items">
+	<div class="main-section">${$data.d.category} {{if d.term}}Search: ${d.term}{{/if}}</div>
+	<div class="section-desc">{{html $('<div/>').html(nlbr($data.d.category_description)).text()}}</div>
+	<div id="hide-sidebar">
+		<div class="menu-items">
+
+			{{each(i,v) $data.d.menu}}
+			<div class="item" id="${v.identifier}MenuItem" >
+				${$("#menu").data(v.identifier + "MenuItem", v), ""}
+				{{if v.menuitem_type !== "package"}}
+					{{if v.picture}}
+				    <div class="i-image left"><img src="http://files.oimsapp.com/cust_uploads/dakshin/oims/Assets/images/extUploads/menuitem_pictures/${v.picture}" width="110" /></div>
+				    {{else}}
+				    <div class="i-image left"><img src="http://files.oimsapp.com/cust_uploads/dakshin/oims/Assets/images/extUploads/menuitem_pictures/thumbs/item_alt.jpg?al" width="110" /></div>
+				    {{/if}}
+				    ${$data.ispackage = false, ""}
+			    {{/if}}
+			    <div {{if $data.ispackage == false}}class="right"{{/if}}>
+			        <div class="item-name">${v.menuitem_name}
+			        	{{each(a, b) (v.indicators || "").split("|||")}}
+			        		<span class="${b}"></span>
+			        	{{/each}}
+			        	<span class="{{if v.food_type == 'Non-Vegetarian'}}non-veg{{else}}veg{{/if}}"></span>
+			        </div>
+			        <div class="item-desc">
+			        	<div class="desc">{{html $('<div/>').html(nlbr(v.menuitem_description)).text()}}</div>
+
+			        		{{if v.price_category_arr}}
+
+
+    		                    {{each(i, u) v.price_category_arr}}
+
+    							{{if u.menuname == $data.d.menuname}}
+
+    		                        {{if u.p1}}
+    		                        <span class="price" >$${u.p1} {{if u.p1_name}}<small><em>(${u.p1_name})</em></small>{{/if}}
+    		                        <input type="hidden" id="${v.identifier}MenuItemP1" name="${v.identifier}MenuItemP1" value = "$${u.p1}" /></span>
+    		                        {{/if}}
+
+    		                        {{if u.p2}}
+    		                        <span class="price" >$${u.p2} {{if u.p2_name}}<small><em>(${u.p2_name})</em></small>{{/if}}
+    		                        <input type="hidden" id="${v.identifier}MenuItemP2" name="${v.identifier}MenuItemP2" value = "$${u.p2}" /></span>
+    		                        {{/if}}
+
+    		                        {{if u.p3}}
+    		                        <span class="price" >$${u.p3} {{if u.p3_name}}<small><em>(${u.p3_name})</em></small>{{/if}}
+    		                        <input type="hidden" id="${v.identifier}MenuItemP3" name="${v.identifier}MenuItemP3" value = "$${u.p3}" /></span>
+    		                        {{/if}}
+
+    		                        {{if u.p4}}
+    		                        <span class="price" >$${u.p4} {{if u.p4_name}}<small><em>(${u.p4_name})</em></small>{{/if}}
+    		                        <input type="hidden" id="${v.identifier}MenuItemP4" name="${v.identifier}MenuItemP4" value = "$${u.p4}" /></span>
+    		                        {{/if}}
+
+    		                    {{/if}}
+
+    		                    {{/each}}
+    	                    {{/if}}
+			       	</div>
+			    </div>
+			</div>
+			{{/each}}
+
+		</div>
+	</div>
+</div></script>
+    <script id="order-item-tmpl" type="text/x-jquery-tmpl"><tr class="order-item" id="${d.lineId}">
+    <td width="20" align="center" valign="top" class="trash"><img src="Assets/images/trash.png" class="remove-line" /></td>
+    <td width="20" align="center" valign="top" class="line-no"></td>
+    <td class="menu-list-item" valign="top"><div><span class="menu-item-name">${d.menuitem_name}</span> <small style="font-weight: normal;">${d.price_name || ""}</small></div></td>
+    <td width="20" align="center" valign="top" ><input type="number" class="qty" value="1" /></td>
+    {{if ($data.menuname != "catering")}}
+    <td width="50" align="right" valign="top" ><input type="text" class="unit-price" readonly value="${d.price}" /></td>
+    <td width="50" align="right" valign="top"><input type="text" class="ext-amt" readonly value="0.00" /></td>
+    {{/if}}
+</tr></script>
+    <script id="menu-category-tmpl" type="text/x-jquery-tmpl">{{each(i,v) $data.d}}
+<li>${v.menucategory_name}</li>
+{{/each}}</script>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="Assets/scripts/vendor/jquery-latest.min.js"><\/script>')</script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script></head>
+<script src="Assets/scripts/vendor/jquery.tmpl.min.js"></script>
+<script src="Assets/scripts/plugins.js"></script>
+<script src="Assets/scripts/main.js?v=1"></script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+</body>
+</html>
+<script type="text/javascript">
+		$(document).ready(function(e) {
+
+			$("#confirm-checkout").on("click", function(){
+				$("form").trigger("submit");
+			});
+
+			$("form").on("submit", function(){
+
+				$("#menuitems").val(getMenuDetails());
+
+								window.scrollTo(0,0);
+
+                $(".acknowledgement").show();
+
+								$(".address-summary, #shop-items").hide();
+
+                $(".email-sending-info").hide();
+
+                $(".sending").show();
+
+                /** Process Forms */
+				$.ajax({
+					type: "POST",
+					url: "process_forms.php",
+					data: $("#catering-order-form").serialize() + "&form_name=" + $("#catering-order-form").attr("id").replace("_form", ""),
+					success: function(t){
+						$("input[type=submit]").val("Submitted!!").css({"font-style": "normal"}).removeClass("ongoing");
+                        $(".email-sending-info").hide();
+                        $(".sent").show();
+						setTimeout(function(){
+							$("form").find("input[type=text]").val("");
+							$("form").find("textarea, select, email, input").val("");
+							$("form").find(":checked").removeAttr("checked");
+							$("input[type=submit]").val("Submit");
+							setTimeout(function(){
+								location.href = "./catering.php";
+							}, 1000);
+						}, 2000);
+
+
+					},
+					error: function(t){
+                        $(".email-sending-info").hide();
+                        $(".sending-error").show();
+					}
+				});
+
+				return false;
+			});
+
+			function getMenuDetails(){
+				var menuHeaders = $(".menu-header-name");
+				var menu = [];
+
+
+				$(menuHeaders).each(function(i, v){
+					var tempMenu = $.trim($(v).text()) + ":";
+
+
+				var tempIN = [];
+
+
+					$(v).parents(".sections").find(".menu-item-name").each(function(j, k){
+						tempIN.push($(k).text());
+					});
+
+
+					tempMenu += tempIN.join(",");
+					menu.push(tempMenu);
+
+				});
+
+				menu = menu.join("***");
+
+				return menu;
+			}
+		});
+
+</script>

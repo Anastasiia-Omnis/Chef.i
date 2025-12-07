@@ -1,0 +1,2079 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.nancysrestaurant.net/',
+        AccountUUID: '0aa2c4d9ee8a4e298000b98ed92f11bf',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: 'c2095d51',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Mon Aug 25 20:08:58 UTC 2025',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'lunch-menudc1144c7',
+        InitialPageUuid: '081ea07a96054022a16c0ac5e7bcd9eb',
+        InitialPageId: '1178835837',
+        InitialEncodedPageAlias: 'bHVuY2gtbWVudWRjMTE0NGM3',
+        InitialHeaderUuid: '62aa1d4da7a441f6ba42769a28cb2b77',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'LEFT',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 4,
+            NavbarLiveHomePage: 'https://www.nancysrestaurant.net/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.nancysrestaurant.net/lunch-menudc1144c7">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="icon" type="image/x-icon" href="https://irp-cdn.multiscreensite.com/b061b6c5/site_favicon_16_1574415939998.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Petit+Formal+Script:ital,wght@0,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Fjalla+One:ital,wght@0,400&family=Tangerine:ital,wght@0,400;0,700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Droid+Serif:ital,wght@0,400;0,700&amp;subset=latin-ext&amp;display=swap"  />
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="stylesheet" type="text/css" href="https://static.cdn-website.com/mnlt/production/5987/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/WIDGET_CSS/3e41411e0b650610eb664500c63c7378.css" id="widgetCSS" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="lunch-menudc1144c7"] #dm [data-show-on-page-only="lunch-menudc1144c7"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/c2095d51/files/c2095d51_1.min.css?v=256" id="siteGlobalCss" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody *.u_1975310943:before {
+  opacity:0.5 !important;
+  background-color:rgb(255,255,255) !important;
+}
+
+*#dm *.dmBody *.u_1975310943.before {
+  opacity:0.5 !important;
+  background-color:rgb(255,255,255) !important;
+}
+
+*#dm *.dmBody div.u_1975310943:before {
+  background-color:rgba(0,0,0,1) !important;
+  opacity:0.3 !important;
+}
+
+*#dm *.dmBody div.u_1975310943.before {
+  background-color:rgba(0,0,0,1) !important;
+  opacity:0.3 !important;
+}
+
+*#dm *.dmBody div.u_1975310943 {
+  background-repeat:no-repeat !important;
+  background-image:none !important;
+  background-size:cover !important;
+}
+
+*#dm *.dmBody *.u_1430644941:before {
+  opacity:0.5 !important;
+  background-color:rgb(0,0,0) !important;
+}
+
+*#dm *.dmBody *.u_1430644941.before {
+  opacity:0.5 !important;
+  background-color:rgb(0,0,0) !important;
+}
+
+*#dm *.dmBody *.u_1430644941>*.bgExtraLayerOverlay {
+  opacity:0.5 !important;
+  background-color:rgb(0,0,0) !important;
+}
+
+*#dm *.dmBody div.u_1430644941 {
+  background-repeat:no-repeat !important;
+  background-image:url(https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/7212a64c-3af8-446e-9a86-fcc5cdc069f8-2880w.jpg) !important;
+}
+
+*#dm *.dmBody div.u_1769639344 { background-color:rgba(255,255,255,0.9) !important; }
+
+*#dm *.dmBody div.u_1318869954 {
+  box-shadow:none !important;
+  -moz-box-shadow:none !important;
+  -webkit-box-shadow:none !important;
+  border-style:solid !important;
+  border-width:0 !important;
+  background-repeat:no-repeat !important;
+  background-image:none !important;
+}
+
+*#dm *.dmBody div.u_1999481793 *.menuItemDesc {
+  font-weight:normal !important;
+  color:rgba(0,0,0,1) !important;
+}
+
+*#dm *.dmBody div.u_1999481793 .menuItemDesc .rteBlock { color:rgba(0,0,0,1) !important; }
+
+*#dm *.dmBody div.u_1999481793 *.menuItemBox *.menuItemName {
+  color:rgba(0,0,0,1) !important;
+  font-family:Montserrat !important;
+}
+
+*#dm *.dmBody div.u_1999481793 *.menuItemBox *.menuItemPrice {
+  color:rgba(0,0,0,1) !important;
+  font-family:Montserrat !important;
+  color:#e9b947 !important;
+}
+
+*#dm *.dmBody div.u_1999481793 *.menuItemBox {
+  margin-bottom:11px !important;
+  border-bottom-width:1px !important;
+  border-bottom-style:dashed !important;
+}
+
+*#dm *.dmBody div.u_1999481793 *.menuCategory *.menuCategroyTitle {
+  color:rgba(0,0,0,1) !important;
+  font-family:Montserrat !important;
+  border-bottom-style:solid !important;
+  border-bottom-color:rgba(147,147,147,1) !important;
+  border-bottom-width:0 !important;
+  text-decoration:none !important;
+}
+
+*#dm *.dmBody *.u_1999481793 *.menuCategory *.menuCategroyTitle { text-align:CENTER !important; }
+
+*#dm *.dmBody div.u_1739037569 .menuItemBox .menuItemName { font-family:Montserrat !important; }
+
+*#dm *.dmBody div.u_1739037569 .menuItemBox .menuItemPrice {
+  font-family:Montserrat !important;
+  color:#e9b947 !important;
+}
+
+*#dm *.dmBody *.u_1655329152 { background-position:0 50% !important; }
+
+*#dm *.dmBody *.u_1316829425 { background-position:50% 0 !important; }
+
+*#dm *.dmBody h2.u_1160879252 {
+  font-weight:bold !important;
+  color:rgba(255,255,255,1) !important;
+}
+
+*#dm *.dmBody a.u_1208382378 { border-color:rgba(255,255,255,1) !important; }
+
+*#dm *.dmBody a.u_1208382378:hover {
+  background-color:rgba(255,255,255,1) !important;
+  background-image:none !important;
+}
+
+*#dm *.dmBody a.u_1208382378.hover {
+  background-color:rgba(255,255,255,1) !important;
+  background-image:none !important;
+}
+
+*#dm *.dmBody a.u_1208382378:hover span.text { color:rgba(0,0,0,1) !important; }
+
+*#dm *.dmBody a.u_1208382378.hover span.text { color:rgba(0,0,0,1) !important; }
+
+*#dm *.dmBody *.u_1547568568:before {
+  opacity:0.5 !important;
+  background-color:rgb(255,255,255) !important;
+}
+
+*#dm *.dmBody *.u_1547568568.before {
+  opacity:0.5 !important;
+  background-color:rgb(255,255,255) !important;
+}
+
+*#dm *.dmBody div.u_1547568568 {
+  background-color:rgba(0,0,0,1) !important;
+  background-repeat:no-repeat !important;
+  background-image:url(https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/557abd52-a595-49b2-81a6-94dec85794e9-2880w.jpg) !important;
+  background-size:cover !important;
+}
+
+*#dm *.dmBody div.u_1547568568:before {
+  background-color:rgba(0,0,0,1) !important;
+  opacity:0.5 !important;
+}
+
+*#dm *.dmBody div.u_1547568568.before {
+  background-color:rgba(0,0,0,1) !important;
+  opacity:0.5 !important;
+}
+
+*#dm *.dmBody div.u_1158393409 { background-color:rgba(255,255,255,0.9) !important; }
+
+*#dm *.dmBody div.u_1943517416 {
+  box-shadow:none !important;
+  -moz-box-shadow:none !important;
+  -webkit-box-shadow:none !important;
+  border-style:solid !important;
+  border-width:0 !important;
+  background-repeat:no-repeat !important;
+  background-image:none !important;
+}
+
+*#dm *.dmBody div.u_1430644941:before {
+  background-color:rgba(0,0,0,1) !important;
+  opacity:0.6 !important;
+}
+
+*#dm *.dmBody div.u_1430644941.before {
+  background-color:rgba(0,0,0,1) !important;
+  opacity:0.6 !important;
+}
+
+*#dm *.dmBody div.u_1430644941>.bgExtraLayerOverlay { opacity:0.6 !important; }
+
+*#dm *.dmBody div.u_1313195346 *.menuItemDesc {
+  font-weight:normal !important;
+  color:rgba(0,0,0,1) !important;
+}
+
+*#dm *.dmBody div.u_1313195346 .menuItemDesc .rteBlock { color:rgba(0,0,0,1) !important; }
+
+*#dm *.dmBody div.u_1313195346 *.menuCategory *.menuCategroyTitle {
+  color:rgba(0,0,0,1) !important;
+  font-family:Montserrat !important;
+  border-bottom-style:solid !important;
+  border-bottom-color:rgba(147,147,147,1) !important;
+  border-bottom-width:0 !important;
+  text-decoration:none !important;
+}
+
+*#dm *.dmBody *.u_1313195346 *.menuCategory *.menuCategroyTitle { text-align:CENTER !important; }
+
+*#dm *.dmBody div.u_1313195346 *.menuItemBox *.menuItemName {
+  color:rgba(0,0,0,1) !important;
+  font-family:Montserrat !important;
+}
+
+*#dm *.dmBody div.u_1313195346 *.menuItemBox *.menuItemPrice {
+  color:rgba(0,0,0,1) !important;
+  font-family:Montserrat !important;
+  color:#e9b947 !important;
+}
+
+*#dm *.dmBody div.u_1313195346 *.menuItemBox {
+  margin-bottom:11px !important;
+  border-bottom-width:1px !important;
+  border-bottom-style:dashed !important;
+}
+
+*#dm *.dmBody div.u_1921923590 .menuItemBox .menuItemName { font-family:Montserrat !important; }
+
+*#dm *.dmBody div.u_1921923590 .menuItemBox .menuItemPrice {
+  font-family:Montserrat !important;
+  color:#e9b947 !important;
+}
+
+*#dm *.dmBody *.u_1537070584 { background-position:50% 50% !important; }
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.dmBody h2.u_1156943446 {
+  display:block !important;
+  float:none !important;
+  top:0 !important;
+  left:0 !important;
+  width:100% !important;
+  position:relative !important;
+  height:auto !important;
+  padding-top:2px !important;
+  padding-left:0 !important;
+  padding-bottom:2px !important;
+  margin-right:auto !important;
+  margin-left:auto !important;
+  max-width:100% !important;
+  margin-top:0 !important;
+  margin-bottom:8px !important;
+  padding-right:0 !important;
+  min-width:0 !important;
+  text-align:center !important;
+}
+
+*#dm *.dmBody div.u_1975310943 {
+  background-position:50% 50% !important;
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+}
+
+*#dm *.dmBody div.u_1156943446 {
+  display:block !important;
+  float:none !important;
+  top:0 !important;
+  left:0 !important;
+  width:100% !important;
+  position:relative !important;
+  height:auto !important;
+  padding-top:2px !important;
+  padding-left:0 !important;
+  padding-bottom:2px !important;
+  margin-right:auto !important;
+  margin-left:0 !important;
+  max-width:100% !important;
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+  padding-right:0 !important;
+  min-width:0 !important;
+}
+
+*#dm *.dmBody div.u_1430644941 {
+  padding-top:300px !important;
+  padding-left:80px !important;
+  padding-bottom:100px !important;
+  padding-right:80px !important;
+  float:none !important;
+  top:0 !important;
+  left:0 !important;
+  width:auto !important;
+  position:relative !important;
+  height:auto !important;
+  max-width:none !important;
+  min-width:0 !important;
+  text-align:center !important;
+  background-attachment:fixed !important;
+  background-size:cover !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  margin-top:-200px !important;
+}
+
+*#dm *.dmBody div.u_1318869954 {
+  padding-top:80px !important;
+  padding-left:80px !important;
+  padding-right:80px !important;
+  padding-bottom:0 !important;
+  background-attachment:fixed !important;
+  background-size:cover !important;
+}
+
+*#dm *.dmBody div.u_1769639344 {
+  padding-top:20px !important;
+  padding-left:20px !important;
+  padding-bottom:20px !important;
+  padding-right:20px !important;
+}
+
+*#dm *.dmBody div.u_1999481793 *.menuItemBox *.menuItemName { font-size:16px !important; }
+
+*#dm *.dmBody div.u_1999481793 *.menuItemBox *.menuItemPrice { font-size:16px !important; }
+
+*#dm *.dmBody div.u_1999481793 *.menuItemDesc { font-size:14px !important; }
+
+*#dm *.dmBody div.u_1999481793 .menuItemDesc .rteBlock { font-size:14px !important; }
+
+*#dm *.dmBody div.u_1999481793 *.menuCategory *.menuCategroyTitle { font-size:36px !important; }
+
+*#dm *.dmBody div.u_1999481793 {
+  float:none !important;
+  top:0 !important;
+  left:0 !important;
+  width:calc(100% - 0px) !important;
+  position:relative !important;
+  height:auto !important;
+  padding-top:0 !important;
+  padding-left:0 !important;
+  padding-bottom:0 !important;
+  max-width:100% !important;
+  padding-right:0 !important;
+  min-width:25px !important;
+  text-align:center !important;
+  margin-right:auto !important;
+  margin-left:auto !important;
+  margin-top:-8px !important;
+  margin-bottom:0 !important;
+}
+
+*#dm *.dmBody div.u_1739037569 .menuCategory .menuCategroyTitle { font-size:36px !important; }
+
+*#dm *.dmBody div.u_1739037569 .menuItemDesc { font-size:14px !important; }
+
+*#dm *.dmBody div.u_1739037569 .menuItemDesc .rteBlock { font-size:14px !important; }
+
+*#dm *.dmBody *.u_1464976474 .photoGalleryThumbs { padding:10px !important; }
+
+*#dm *.dmBody *.u_1464976474 .layout-container { padding:10px !important; }
+
+*#dm *.dmBody *.u_1464976474 .photoGalleryViewAll { padding:0 20px !important; }
+
+*#dm *.dmBody *.u_1464976474 .photoGalleryThumbs .image-container a { padding-top:248px !important; }
+
+*#dm *.dmBody a.u_1208382378 {
+  height:54px !important;
+  width:222px !important;
+}
+
+*#dm *.dmBody h2.u_1160879252 {
+  display:block !important;
+  float:none !important;
+  top:0 !important;
+  left:0 !important;
+  width:calc(100% - 247px) !important;
+  position:relative !important;
+  height:auto !important;
+  padding-top:2px !important;
+  padding-left:0 !important;
+  padding-bottom:2px !important;
+  max-width:691px !important;
+  padding-right:0 !important;
+  min-width:25px !important;
+  text-align:center !important;
+  font-size:34px !important;
+  margin-right:auto !important;
+  margin-left:auto !important;
+  margin-top:8px !important;
+  margin-bottom:8px !important;
+}
+
+*#dm *.dmBody h2.u_1811349663 {
+  float:none !important;
+  top:0 !important;
+  left:0 !important;
+  width:calc(100% - 0px) !important;
+  position:relative !important;
+  height:auto !important;
+  padding-top:2px !important;
+  padding-left:0 !important;
+  padding-bottom:2px !important;
+  margin-right:auto !important;
+  margin-left:auto !important;
+  max-width:100% !important;
+  margin-top:-8px !important;
+  margin-bottom:8px !important;
+  padding-right:0 !important;
+  min-width:25px !important;
+  text-align:center !important;
+}
+
+*#dm *.dmBody div.u_1801498505 {
+  float:none !important;
+  top:0 !important;
+  left:0 !important;
+  width:146px !important;
+  position:relative !important;
+  height:auto !important;
+  padding-top:0 !important;
+  padding-left:0 !important;
+  padding-bottom:0 !important;
+  margin-right:auto !important;
+  margin-left:auto !important;
+  max-width:100% !important;
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+  padding-right:0 !important;
+  min-width:0 !important;
+  text-align:start !important;
+  display:block !important;
+}
+
+*#dm *.dmBody div.u_1547568568 {
+  padding-top:30px !important;
+  padding-bottom:30px !important;
+  padding-left:80px !important;
+  padding-right:80px !important;
+  background-position:50% 50% !important;
+}
+
+*#dm *.dmBody div.u_1158393409 {
+  padding-top:20px !important;
+  padding-left:20px !important;
+  padding-bottom:20px !important;
+  padding-right:20px !important;
+}
+
+*#dm *.dmBody div.u_1313195346 *.menuCategory *.menuCategroyTitle { font-size:36px !important; }
+
+*#dm *.dmBody div.u_1313195346 *.menuItemBox *.menuItemName { font-size:16px !important; }
+
+*#dm *.dmBody div.u_1313195346 *.menuItemBox *.menuItemPrice { font-size:16px !important; }
+
+*#dm *.dmBody div.u_1313195346 *.menuItemDesc { font-size:14px !important; }
+
+*#dm *.dmBody div.u_1313195346 .menuItemDesc .rteBlock { font-size:14px !important; }
+
+*#dm *.dmBody div.u_1313195346 {
+  float:none !important;
+  top:0 !important;
+  left:0 !important;
+  width:calc(100% - 0px) !important;
+  position:relative !important;
+  height:auto !important;
+  padding-top:0 !important;
+  padding-left:0 !important;
+  padding-bottom:0 !important;
+  max-width:100% !important;
+  padding-right:0 !important;
+  min-width:25px !important;
+  text-align:center !important;
+}
+
+*#dm *.dmBody div.u_1921923590 .menuCategory .menuCategroyTitle { font-size:36px !important; }
+
+*#dm *.dmBody div.u_1921923590 .menuItemDesc { font-size:14px !important; }
+
+*#dm *.dmBody div.u_1921923590 .menuItemDesc .rteBlock { font-size:14px !important; }
+
+*#dm *.dmBody *.u_1665212522 .photoGalleryThumbs { padding:10px !important; }
+
+*#dm *.dmBody *.u_1665212522 .layout-container { padding:10px !important; }
+
+*#dm *.dmBody *.u_1665212522 .photoGalleryViewAll { padding:0 20px !important; }
+
+*#dm *.dmBody *.u_1665212522 .photoGalleryThumbs .image-container a { padding-top:248px !important; }
+
+*#dm *.dmBody div.u_1687823500 {
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+  padding-right:0 !important;
+  padding-left:0 !important;
+}
+
+*#dm *.dmBody div.u_1943517416 {
+  padding-top:80px !important;
+  padding-left:80px !important;
+  padding-right:80px !important;
+  padding-bottom:60px !important;
+  background-attachment:fixed !important;
+  background-size:cover !important;
+  margin-left:0 !important;
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+  margin-right:0 !important;
+  width:auto !important;
+}
+
+*#dm *.dmBody div.u_1786710011 {
+  margin-left:0px !important;
+  padding-top:15px !important;
+  padding-left:40px !important;
+  padding-bottom:80px !important;
+  margin-top:0px !important;
+  margin-bottom:0px !important;
+  margin-right:0px !important;
+  padding-right:40px !important;
+  width:auto !important;
+}
+
+*#dm *.dmBody div.u_1992504574 {
+  margin-left:0px !important;
+  padding-top:15px !important;
+  padding-left:40px !important;
+  padding-bottom:80px !important;
+  margin-top:0px !important;
+  margin-bottom:0px !important;
+  margin-right:0px !important;
+  padding-right:40px !important;
+  width:auto !important;
+}
+
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Petit Formal Script Fallback";
+  src: local('Arial');
+  ascent-override: 81.9524%;
+  descent-override: 21.2439%;
+  size-adjust: 121.1283%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Poppins Fallback";
+  src: local('Arial');
+  ascent-override: 92.326%;
+  descent-override: 30.7753%;
+  line-gap-override: 8.793%;
+  size-adjust: 113.7274%;
+}@font-face {
+  font-family: "Lato Fallback";
+  src: local('Arial');
+  ascent-override: 101.3181%;
+  descent-override: 21.865%;
+  size-adjust: 97.4159%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Fjalla One Fallback";
+  src: local('Arial');
+  ascent-override: 114.9994%;
+  descent-override: 28.2767%;
+  size-adjust: 87.7212%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Tangerine Fallback";
+  src: local('Arial');
+  ascent-override: 152.5598%;
+  descent-override: 50.8533%;
+  size-adjust: 49.1611%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Josefin Sans Fallback";
+  src: local('Arial');
+  ascent-override: 72.9195%;
+  descent-override: 24.3065%;
+  size-adjust: 102.8531%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.nancysrestaurant.net/lunch-menudc1144c7">
+
+  <title>
+    Nancy's Dinner Menu - Nancy's Restaurant
+  </title>
+  <meta name="keywords" content="floral park restaurant, american restaurant, dinner, lunch, brunch, live music, catering, party reservations"/>
+  <meta name="description" content="Family owned and operated for over fifty years, Nancy’s restaurant and tap room is a much loved gathering place for the neighbors of Floral Park. Adorned with English hunting scenes, a charming fireplace, and a cathedral ceiling, this restaurant’s winning flavors and warm ambience make it a true dining experience."/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Nancy's Dinner Menu - Nancy's Restaurant"/>
+  <meta name="twitter:description" content="Family owned and operated for over fifty years, Nancy’s restaurant and tap room is a much loved gathering place for the neighbors of Floral Park. Adorned with English hunting scenes, a charming fireplace, and a cathedral ceiling, this restaurant’s winning flavors and warm ambience make it a true dining experience."/>
+  <meta name="twitter:image" content="https://lirp.cdn-website.com/b061b6c5/dms3rep/multi/opt/nancys-fav-1920w.png"/>
+  <meta property="og:description" content="Family owned and operated for over fifty years, Nancy’s restaurant and tap room is a much loved gathering place for the neighbors of Floral Park. Adorned with English hunting scenes, a charming fireplace, and a cathedral ceiling, this restaurant’s winning flavors and warm ambience make it a true dining experience."/>
+  <meta property="og:title" content="Nancy's Dinner Menu - Nancy's Restaurant"/>
+  <meta property="og:image" content="https://lirp.cdn-website.com/b061b6c5/dms3rep/multi/opt/nancys-fav-1920w.png"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="lunch-menudc1144c7"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1932293020"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-sec hasAnimations hasStickyHeader inMiniHeaderMode layout-drawer_fixed-header dmPageBody d-page-1585076173 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1585076173" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" headerlayout="b58ba5b5703b4cd7b5f5f7951565dc87===horizontal-layout-5" data-scrollable-target="body" data-scrollable-target-threshold="1" data-scroll-responder-id="1" preserve-sticky-header="true" logo-size-target="70%" layout="7f3c1de367df47d5b45ab63d33101c7b===header" mini-header-show-only-navigation-row="true"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="dmRespRow dmDefaultListContentRow u_1863782056 fullBleedChanged fullBleedMode" style="text-align:center" id="1863782056"> <div class="dmRespColsWrapper" id="1607763167"> <div class="u_1638755639 small-12 dmRespCol large-4 medium-4" id="1638755639"> <div class="u_1738701961 dmRespRow" id="1738701961"> <div class="dmRespColsWrapper" id="1992676487"> <div class="dmRespCol large-6 medium-6 small-12" id="1243723212"> <div class="u_1187725087 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1187725087"> <a id="1369308052" class="" target="_blank" href="https://www.google.com/search?bih=969&biw=1920&rlz=1C1CHBF_enUS879US879&hl=en&ei=ToNFXr2jO-yH5wLPmJq4DQ&q=nancys+restaurant&oq=nancys+res&gs_l=psy-ab.1.0.0l8j0i10.2184.5015..6273...0.1..0.158.878.10j1....2..0....1..gws-wiz.....6..0i71j0i362i308i154i357j0i273j0i131j0i67..23%3A164g99g96g87g80g91g69g71g70g68g73g0g11j24%3A1g1g1g1g1g1g1g1g1g1g1g0g1.5jRBoSvP2QQ" file="false"><img src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/google-review-button-1920w.png" id="1169331133" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/google-review-button.png" alt="The google logo has a red , yellow , green and blue circle around it." onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12" id="1087076048"> <div class="u_1706819508 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1706819508"> <a id="1879490343" class="" target="_blank" href="https://www.instagram.com/nancys_restaurant/" file="false"><img src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/IG+Logo-1920w.png" id="1556697846" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/IG+Logo.png" alt="A purple and orange instagram logo with a white circle in the middle" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1235511238 dmRespCol small-12 large-4 medium-4" id="1235511238"> <span id="1382261607"></span> 
+ <div class="u_1460435683 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1460435683"> <a id="1093053687" href="/" file="false"><img src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/nancy-footer-logo-1920w.png" id="1680505555" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/nancy-footer-logo.png" alt="A white background with a few lines on it" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="dmRespCol large-4 medium-4 small-12" id="1127668208"> <a data-display-type="block" class="u_1594595887 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/contact" data-element-type="dButtonLinkId" id="1594595887"> <span class="iconBg" id="1001682453"> <span class="icon hasFontIcon icon-star" id="1522213845"></span> 
+</span> 
+ <span class="text" id="1061445853">MAKE A RESERVATION</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1862847908" id="1862847908"> <div class="dmRespColsWrapper" id="1741256697"> <div class="dmRespCol large-12 medium-12 small-12 u_1114802179" id="1114802179"> <script src="" id="1197527112">
+
+
+                     
+
+          </script> 
+ <nav class="u_1746104418 effect-text-color main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1746104418" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="HORIZONTAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmUDNavigationItem_00  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         HOME
+        " data-auto="page-text-style">HOME<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101200826  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         ABOUT
+        " data-auto="page-text-style">ABOUT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/private-parties" class="unifiednav__item  dmUDNavigationItem_010101910695  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         PRIVATE PARTIES
+        " data-auto="page-text-style">PRIVATE PARTIES<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/to-go" class="unifiednav__item  dmUDNavigationItem_010101864015  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         TO-GO MENU
+        " data-auto="page-text-style">TO-GO MENU<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/trays-to-go" class="unifiednav__item  dmUDNavigationItem_010101963532  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         TRAYS TO GO
+        " data-auto="page-text-style">TRAYS TO GO<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/gallery" class="unifiednav__item  dmUDNavigationItem_010101238808  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         GALLERY
+        " data-auto="page-text-style">GALLERY<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/social" class="unifiednav__item  dmUDNavigationItem_010101334300  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         SOCIAL
+        " data-auto="page-text-style">SOCIAL<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/events" class="unifiednav__item  dmUDNavigationItem_01010123146  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         EVENTS
+        " data-auto="page-text-style">EVENTS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101943230  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         CONTACT
+        " data-auto="page-text-style">CONTACT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true"></div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr/></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"> <div class="innerPageTitle">LUNCH MENU</div> 
+</div> 
+ <div class="titleLine display_None"><hr/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_lunch-menudc1144c7"> <div id="allWrapper" class="allWrapper"> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="1" class="dmDefaultRespTmpl" id="1585076173"> <div class="innerPageTmplBox dmDefaultPage  dmRespRowsWrapper" id="1845912541"> <div class="u_1430644941 dmRespRow hasBackgroundOverlay dmSectionParallaxNew fullBleedChanged fullBleedMode" style="text-align: center;" id="1430644941"> <div class="dmRespColsWrapper" id="1164965959"> <div class="dmRespCol small-12 medium-12 large-12 u_1975310943" id="1975310943"> <span id="1428744464"></span> 
+ <div class="u_1156943446 dmNewParagraph" data-element-type="paragraph" id="1156943446" style="transition: none 0s ease 0s;" data-version="5"> <h1 class="m-text-align-center text-align-left"><span style="color: rgb(255, 255, 255); display: initial;">LUNCH MENU</span></h1> 
+</div></div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1318869954 dmSectionParallaxNew" id="1318869954"> <div class="dmRespColsWrapper" id="1460159936"> <div class="u_1769639344 dmRespCol small-12 medium-12 large-12" id="1769639344"> <h2 class="dmNewParagraph" data-element-type="paragraph" id="1056239533" style="text-align: center; transition: opacity 1s ease-in-out 0s;">Nancy's</h2> <div class="u_1999481793 default dmRestaurantMenu dmWs" id="1999481793" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" show_pics="false" num_columns="1" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-2" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" menu_data="W3sidGl0bGUiOiJBUFBFVElaRVJTIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6MSwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJIb3VzZSBNYWRlIE1venphcmVsbGEgU3RpY2tzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5tYXJpbmFyYSBzYXVjZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCAxMy45NSAvIENDIDE0LjUxIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IkZyaWVkIFp1Y2NoaW5pIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5ob3JzZXJhZGlzaCBjcmVhbSBzYXVjZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCAxMy45NSAvIENDIDE0LjUxIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoyLCJ0aXRsZSI6IlF1ZXNhZGlsbGEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPnJvYXN0ZWQgY2hpY2tlbiwgcGVwcGVyIGphY2sgY2hlZXNlLCBzYXV0w6llZCBvbmlvbnMsIHBpY28gZGUgZ2FsbG88L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQgMTQuOTUgLyBDQyAxNS41NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MywidGl0bGUiOiJCdWZmYWxvIEZyaWVkIFNocmltcCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+Ymx1ZSBjaGVlc2UgZHJlc3NpbmcsIGNhcnJvdHMsIGNlbGVyeTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCAxNS45NSAvIENDIDE2LjU5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo0LCJ0aXRsZSI6IlByaW5jZSBFZHdhcmQgSXNsYW5kIE11c3NlbHMiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPnJvYXN0ZWQgZ2FybGljLCB0b21hdG9lcywgZnJlc2ggdGh5bWUsIGNoYXJkb25uYXksIG5hdHVyYWwgbXVzc2VsIGp1czwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCAxNC45NSAvIENDIDE1LjU1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo1LCJ0aXRsZSI6IlRlbXB1cmEgRnJpZWQgQ2F1bGlmbG93ZXIiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPnNyaXJhY2hhIHJhbmNoIHNhdWNlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkIDEzLjk1IC8gQ0MgMTQuNTEifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjYsInRpdGxlIjoiVGFjb3MiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPigzKSBzaHJlZGRlZCBwb3JrIHNob3VsZGVyLCBNZXhpY2FuIHN0cmVldCBjb3JuLCBiZWFuIHNhbHNhPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkIDE0Ljk1IC8gQ0MgMTUuNTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjcsInRpdGxlIjoiTmFuY3nigJlzIE5hY2hvcyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+ZnJlc2ggdG9ydGlsbGEgY2hpcHMsIHBlcHBlciBqYWNrIGNoZWRkYXIsIHN0cmVldCBjb3JuLCBwdWxsZWQgcG9yaywgZnJlc2ggYmVhbiBzYWxzYSwgYmFieSBhcnVndWxhPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkIDExLjk1IC8gQ0MgMTIuNDMifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX1d"> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">APPETIZERS</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">House Made Mozzarella Sticks</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">marinara sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 13.95 / CC 14.51</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Fried Zucchini</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">horseradish cream sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 13.95 / CC 14.51</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Quesadilla</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">roasted chicken, pepper jack cheese, saut&eacute;ed onions, pico de gallo</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 14.95 / CC 15.55</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Buffalo Fried Shrimp</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">blue cheese dressing, carrots, celery</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 15.95 / CC 16.59</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Prince Edward Island Mussels</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">roasted garlic, tomatoes, fresh thyme, chardonnay, natural mussel jus</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 14.95 / CC 15.55</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Tempura Fried Cauliflower</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">sriracha ranch sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 13.95 / CC 14.51</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Tacos</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(3) shredded pork shoulder, Mexican street corn, bean salsa</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 14.95 / CC 15.55</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Nancy&rsquo;s Nachos</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">fresh tortilla chips, pepper jack cheddar, street corn, pulled pork, fresh bean salsa, baby arugula</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 11.95 / CC 12.43</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1992504574" id="1992504574"> <div class="dmRespColsWrapper" id="1137447053"> <div class="u_1252325369 dmRespCol small-12 large-7 medium-7" id="1252325369"> <div class="u_1739037569 default dmRestaurantMenu dmWs" id="1739037569" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" show_pics="false" num_columns="1" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-2" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" menu_data="W3sidGl0bGUiOiJTQUxBRFMiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjoxLCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNob3BwZWQgSWNlYmVyZyBTYWxhZCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+Y2FuZGllZCB3YWxudXRzLCBjcnVtYmxlZCBibHVlIGNoZWVzZSwgdG9tYXRvZXMsIGJhY29uLCBibHVlIGNoZWVzZSBkcmVzc2luZzwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCAxMS45NSAvIENDIDEyLjQzIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IkNvdW50cnkgU2FsYWQiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPmNyaXNweSBnb2F0IGNoZWVzZSBmcml0dGVyLCBtaXhlZCBncmVlbnMsIHRvbWF0b2VzLCBjYXJyb3RzLCBiYWNvbiwgY2FuZGllZCB3YWxudXRzLCByb2FzdGVkIGdhcmxpYyB2aW5haWdyZXR0ZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCAxMy45NSAvIENDIDE0LjUxIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoyLCJ0aXRsZSI6IkNhZXNhciBTYWxhZCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+YmFieSByb21haW5lLCBtaXhlZCBncmVlbnMsIGdhcmxpYyBjcm91dG9ucywgc2hhdmVkIHBhcm1lc2FuIGNoZWVzZSwgY2Flc2FyIGRyZXNzaW5nPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkIDEyLjk1IC8gQ0MgMTMuNDcifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjMsInRpdGxlIjoiUmFuY2ggU2FsYWQiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPmljZWJlcmcgbGV0dHVjZSwgbWl4ZWQgYmFieSBncmVlbnMsIGJhY29uLCBjYW5kaWVkIHdhbG51dHMsIHRvbWF0b2VzLCBjYXJyb3RzLCBjcm91dG9ucywgZWdncywgcmFuY2ggZHJlc3Npbmc8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQgMTEuOTUgLyBDQyAxMi40MyJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NCwidGl0bGUiOiJXYXJtIEJhYnkgU3BpbmFjaCBTYWxhZCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+YmFieSBzcGluYWNoLCBiYWNvbiwgbXVzaHJvb21zLCBlZ2dzLCBwYXJtaWdpYW5vLCBjYW5kaWVkIHdhbG51dHMsIGNyb3V0b25zLCB3YXJtIGJhY29uIHZpbmFpZ3JldHRlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkIDEzLjk1IC8gQ0MgMTQuNTEifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX1d"> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">SALADS</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Chopped Iceberg Salad</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">candied walnuts, crumbled blue cheese, tomatoes, bacon, blue cheese dressing</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 11.95 / CC 12.43</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Country Salad</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">crispy goat cheese fritter, mixed greens, tomatoes, carrots, bacon, candied walnuts, roasted garlic vinaigrette</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 13.95 / CC 14.51</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Caesar Salad</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">baby romaine, mixed greens, garlic croutons, shaved parmesan cheese, caesar dressing</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 12.95 / CC 13.47</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Ranch Salad</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">iceberg lettuce, mixed baby greens, bacon, candied walnuts, tomatoes, carrots, croutons, eggs, ranch dressing</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 11.95 / CC 12.43</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Warm Baby Spinach Salad</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">baby spinach, bacon, mushrooms, eggs, parmigiano, candied walnuts, croutons, warm bacon vinaigrette</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 13.95 / CC 14.51</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1687823500" id="1687823500"> <div class="dmRespColsWrapper" id="1987306741"> <div class="dmRespCol small-12 medium-12 large-12" id="1732218380"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1154803743" style="transition: opacity 1s ease-in-out 0s;"><p class="m-text-align-center"><span style="display: unset; font-style: italic;">Add Protein to any Salad<br/></span></p><p class="m-text-align-center"><span style="display: unset;">Add chicken&nbsp;</span><strong style="display: unset;">$</strong><span style="display: unset;">&nbsp;</span><strong style="display: unset;">8.95 / CC 9.31</strong></p><p class="m-text-align-center"><span style="display: unset;">Add shrimp&nbsp;</span><strong style="display: unset;">$ 11.95 / CC 12.43</strong></p><p><span style="display: unset;">Add steak&nbsp;</span><strong style="display: unset;">$ 12.95 / CC 13.47</strong></p><p><span style="display: unset;">Add salmon&nbsp;</span><strong style="display: unset;">$ 12.95 / CC 13.47</strong></p><p><br/></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1706204828 dmRespCol small-12 large-5 medium-5" id="1706204828"> <div class="dmPhotoGallery newPhotoGallery dmPhotoGalleryResp u_1464976474 photo-gallery-done text-layout-over captionAlignment-center_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="1" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1464976474" data-placeholder="false" data-rows-to-show="100" data-image-hover-effect="shine"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-1" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="A close up of a salad on a white plate on a table." data-dm-force-device="mobile" class="u_1316829425" data-image-url="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/ef353332-76d6-400b-adf7-261fd78dc6ab.jpg" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/ef353332-76d6-400b-adf7-261fd78dc6ab-640w.jpg');"><img id="1127983233" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/ef353332-76d6-400b-adf7-261fd78dc6ab-1920w.jpg" alt="A close up of a salad on a white plate on a table." aria-label="A close up of a salad on a white plate on a table." onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1641196182" class="caption-container u_1641196182" style="display:none"> <span class="caption-inner"> <a id="1990700239" class="caption-button dmWidget  clearfix u_1990700239" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-1" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="A close up of a salad in a bowl with tongs." data-dm-force-device="mobile" class="u_1655329152" data-image-url="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/0aab546e-90a2-45e6-bce2-6ab1f284e432.jpg" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/0aab546e-90a2-45e6-bce2-6ab1f284e432-640w.jpg');"><img id="1581946653" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/0aab546e-90a2-45e6-bce2-6ab1f284e432-1920w.jpg" alt="A close up of a salad in a bowl with tongs." aria-label="A close up of a salad in a bowl with tongs." onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1500158689" class="caption-container u_1500158689" style="display:none"> <span class="caption-inner"> <a id="1640374453" class="caption-button dmWidget  clearfix u_1640374453" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-1" data-index="2"> <div index="2" class="photoGalleryThumbs animated  " data-index="2"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="A pot filled with vegetables including broccoli carrots and mushrooms" data-dm-force-device="mobile" class="u_1936996048" data-image-url="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/1db78d68-4f5f-4c76-b8fb-8162c2216cf9.jpg" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/1db78d68-4f5f-4c76-b8fb-8162c2216cf9-640w.jpg');"><img id="1727056038" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/1db78d68-4f5f-4c76-b8fb-8162c2216cf9-1920w.jpg" alt="A pot filled with vegetables including broccoli carrots and mushrooms" aria-label="A pot filled with vegetables including broccoli carrots and mushrooms" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1665906509" class="caption-container u_1665906509" style="display:none"> <span class="caption-inner"> <a id="1047739524" class="caption-button dmWidget  clearfix u_1047739524" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1547568568 fullBleedChanged fullBleedMode hasBackgroundOverlay" id="1547568568"> <div class="dmRespColsWrapper" id="1976128477"> <div class="dmRespCol large-12 medium-12 small-12" id="1204771829"> <div class="u_1801498505 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1801498505"> <a id="1613275391"><img src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/nancy-footer-logo-1920w.png" id="1510800212" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/nancy-footer-logo.png" alt="A white background with a few lines on it" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <h3 class="u_1160879252 dmNewParagraph" data-element-type="paragraph" id="1160879252" style="text-align: center; transition: none 0s ease 0s; display: block;"><font style="color: rgb(255, 255, 255);">AVAILABLE FOR</font></h3> <h2 class="u_1811349663 dmNewParagraph" data-element-type="paragraph" id="1811349663" style="text-align: center; transition: opacity 1s ease-in-out 0s;">Private Parties</h2> <a data-display-type="block" class="u_1208382378 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/private-parties" data-element-type="dButtonLinkId" id="1208382378"> <span class="iconBg" id="1213660891"> <span class="icon hasFontIcon icon-star" id="1560317825"></span> 
+</span> 
+ <span class="text" id="1693838377">LEARN MORE</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1943517416 dmSectionParallaxNew" id="1943517416"> <div class="dmRespColsWrapper" id="1511918047"> <div class="u_1158393409 dmRespCol small-12 medium-12 large-12" id="1158393409"> <h2 class="dmNewParagraph" data-element-type="paragraph" id="1004102758" style="text-align: center; transition: opacity 1s ease-in-out 0s;">Nancy's</h2> <div class="u_1313195346 default dmRestaurantMenu dmWs" id="1313195346" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" show_pics="false" num_columns="1" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-2" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" menu_data="W3sidGl0bGUiOiJFTlRSw4lFJ1MiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjoxLCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6Ik5hbmN54oCZcyBTaWduYXR1cmUgSGFtYnVyZ2VyIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5DaG9vc2UgMiBUb3BwaW5nczogbGV0dHVjZSwgdG9tYXRvLCByYXcgb25pb24sIG1venphcmVsbGEsIEFtZXJpY2FuLCBjaGVkZGFyLCBibGV1LCBTd2lzcywgcGVwcGVyIGphY2ssIGZldGEsIGNvbGVzbGF3LCBzdHJlZXQgY29ybiwgcGlja2xlcywgc2F1dMOpZWQgb25pb25zPC9wPjxicj48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+QWRkIEJhY29uIOKAkyAkIDIuOTUgLyBDQyAzLjA3PC9wPjxicj48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+QWRkIFNhdXTDqWVkIE11c2hyb29tcyDigJMgJCAyLjk1IC8gQ0MgMy4wNzwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCAxNy45NSAvIENDIDE4LjY3In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IlBhbiBSb2FzdGVkIENyaXNweSBDaGlja2VuIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5icm9jY29saSByYWJlLCBzdHJlZXQgY29ybiwgcGFuIGp1czwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCAyMi45NSAvIENDIDIzLjgzIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoyLCJ0aXRsZSI6IkdyaWxsZWQgQXRsYW50aWMgU2FsbW9uIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5yYXRhdG91aWxsZSwgYmFieSBhcnVndWxhLCBiYXNpbCB2aW5haWdyZXR0ZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCAyNC45NSAvIENDIDI1Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjozLCJ0aXRsZSI6IkhhbmQgQ3JhZnRlZCBHbm9jY2hpIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5icmFpc2VkIGJlZWYgc2hvcnQgcmlicywgcGVhcywgcGFybWlnaWFubyByZWdnaWFubzwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCAyNC45NSAvIENDIDI1Ljk0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo0LCJ0aXRsZSI6IkdyaWxsZWQgUG9yayBDaG9wIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5zYXV0w6llZCBzcGFldHpsZSwgcm9hc3RlZCBicnVzc2VsIHNwcm91dHMsIG5hdHVyYWwgcGFuIGp1cywgc2lkZSBvZiBhcHBsZXNhdWNlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkIDI1Ljk1IC8gQ0MgMjYuOTkifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjUsInRpdGxlIjoiRmlzaCBhbmQgQ2hpcHMiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPm1hcmtldCBmcmVzaCBmbHVrZSwgaG91c2UgY3V0IGZyZW5jaCBmcmllcywgY29sZXNsYXcsIHRhcnRhciBzYXVjZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCAyNC45NSAvIENDIDI1Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo2LCJ0aXRsZSI6IkdyaWxsZWQgSGFuZ2VyIFN0ZWFrIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5NZXhpY2FuIHN0cmVldCBjb3JuLCBob3VzZSBjdXQgZnJlbmNoIGZyaWVzLCBuYXR1cmFsIHBhbiBqdXM8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQgMzEuOTUgLyBDQyAzMi4yMiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NywidGl0bGUiOiJDcmlzcHkgQ2hpY2tlbiBGaW5nZXJzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5iYXR0ZXIgZnJpZWQgY2hpY2tlbiBmaW5nZXJzLCBob3VzZSBjdXQgZnJlbmNoIGZyaWVzLCBob25leSBtdXN0YXJkIHNhdWNlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkIDE3Ljk1IC8gQ0MgMTguNjcifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX1d"> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">ENTR&Eacute;E'S</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Nancy&rsquo;s Signature Hamburger</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Choose 2 Toppings: lettuce, tomato, raw onion, mozzarella, American, cheddar, bleu, Swiss, pepper jack, feta, coleslaw, street corn, pickles, saut&eacute;ed onions</p> 
+<br/> <p class="rteBlock">Add Bacon &ndash; $ 2.95 / CC 3.07</p> 
+<br/> <p class="rteBlock">Add Saut&eacute;ed Mushrooms &ndash; $ 2.95 / CC 3.07</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 17.95 / CC 18.67</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Pan Roasted Crispy Chicken</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">broccoli rabe, street corn, pan jus</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 22.95 / CC 23.83</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Grilled Atlantic Salmon</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">ratatouille, baby arugula, basil vinaigrette</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 24.95 / CC 25.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Hand Crafted Gnocchi</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">braised beef short ribs, peas, parmigiano reggiano</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 24.95 / CC 25.94</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Grilled Pork Chop</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">saut&eacute;ed spaetzle, roasted brussel sprouts, natural pan jus, side of applesauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 25.95 / CC 26.99</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Fish and Chips</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">market fresh fluke, house cut french fries, coleslaw, tartar sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 24.95 / CC 25.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Grilled Hanger Steak</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Mexican street corn, house cut french fries, natural pan jus</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 31.95 / CC 32.22</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Crispy Chicken Fingers</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">batter fried chicken fingers, house cut french fries, honey mustard sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 17.95 / CC 18.67</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1404075459" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center"><span style="display: unset; font-style: italic;">All menu prices reflect our cash price. If a credit card is used for payment, a 4% credit card processing fee will be applied.</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1786710011" id="1786710011"> <div class="dmRespColsWrapper" id="1673427079"> <div class="u_1779213256 dmRespCol small-12 large-7 medium-7" id="1779213256"> <div class="u_1921923590 default dmRestaurantMenu dmWs" id="1921923590" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" show_pics="false" num_columns="1" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-2" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" menu_data="W3sidGl0bGUiOiJTSURFUyIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjIsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiUGFuIFJvYXN0IEJydXNzZWwgU3Byb3V0cyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48YnI+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQgOC45NSAvIENDIDkuMzEifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjEsInRpdGxlIjoiUm9hc3RlZCBGaW5nZXJsaW5nIFBvdGF0b2VzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxicj48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCA2Ljk1IC8gQ0MgNy4yMyJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJIb3VzZSBDdXQgRnJlbmNoIEZyaWVzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxicj48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCA4Ljk1IC8gQ0MgOS4zMSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MywidGl0bGUiOiJIb25leSBhbmQgVGh5bWUgUm9hc3RlZCBDYXJyb3RzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxicj48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCA2Ljk1IC8gQ0MgNy4yMyJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NCwidGl0bGUiOiJCcm9jY29saSBSYWJlIHdpdGggTG90cyBvZiBHYXJsaWMiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PGJyPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkIDkuOTUgLyBDQyAxMC4zNSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NSwidGl0bGUiOiJNZXhpY2FuIFN0cmVldCBDb3JuIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxicj48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJCA5Ljk1IC8gQ0MgMTAuMzUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjYsInRpdGxlIjoiUmF0YXRvdWlsbGUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiJCA3Ljk1IC8gQ0MgOC4yNyJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfV0="> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">SIDES</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Pan Roast Brussel Sprouts</div> 
+ <div class="menuItemDesc"> <div class="richText"><br/></div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 8.95 / CC 9.31</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Roasted Fingerling Potatoes</div> 
+ <div class="menuItemDesc"> <div class="richText"><br/></div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 6.95 / CC 7.23</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">House Cut French Fries</div> 
+ <div class="menuItemDesc"> <div class="richText"><br/></div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 8.95 / CC 9.31</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Honey and Thyme Roasted Carrots</div> 
+ <div class="menuItemDesc"> <div class="richText"><br/></div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 6.95 / CC 7.23</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Broccoli Rabe with Lots of Garlic</div> 
+ <div class="menuItemDesc"> <div class="richText"><br/></div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 9.95 / CC 10.35</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Mexican Street Corn</div> 
+ <div class="menuItemDesc"> <div class="richText"><br/></div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$ 9.95 / CC 10.35</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Ratatouille</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$ 7.95 / CC 8.27</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1678991576 dmRespCol small-12 large-5 medium-5" id="1678991576"> <div class="dmPhotoGallery newPhotoGallery dmPhotoGalleryResp u_1665212522 photo-gallery-done text-layout-over captionAlignment-center_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="1" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1665212522" data-placeholder="false" data-rows-to-show="100" data-image-hover-effect="shine"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-1" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="A white plate topped with a stack of vegetables and sauce." data-dm-force-device="mobile" class="u_1989107363" data-image-url="https://irp-cdn.multiscreensite.com/md/unsplash/dms3rep/multi/photo-1572453800999-e8d2d1589b7c.jpg" style="background-image: url('https://lirp.cdn-website.com/md/unsplash/dms3rep/multi/opt/photo-1572453800999-e8d2d1589b7c-640w.jpg');"><img id="1315933732" data-src="https://lirp.cdn-website.com/md/unsplash/dms3rep/multi/opt/photo-1572453800999-e8d2d1589b7c-1920w.jpg" alt="A white plate topped with a stack of vegetables and sauce." aria-label="A white plate topped with a stack of vegetables and sauce." onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1430667200" class="caption-container u_1430667200" style="display:none"> <span class="caption-inner"> <a id="1016751101" class="caption-button dmWidget  clearfix u_1016751101" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-1" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="A white plate topped with asparagus and a poached egg." data-dm-force-device="mobile" class="u_1604485294" data-image-url="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/IMG_3884.JPG" style="background-image: url('https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/IMG_3884-640w.JPG');"><img id="1157852948" data-src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/IMG_3884-1920w.JPG" alt="A white plate topped with asparagus and a poached egg." aria-label="A white plate topped with asparagus and a poached egg." onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1013289269" class="caption-container u_1013289269" style="display:none"> <span class="caption-inner"> <a id="1467381353" class="caption-button dmWidget  clearfix u_1467381353" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-1" data-index="2"> <div index="2" class="photoGalleryThumbs animated  " data-index="2"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="A close up of french fries in a frying pan." data-dm-force-device="mobile" class="u_1537070584" data-image-url="https://irp-cdn.multiscreensite.com/md/unsplash/dms3rep/multi/photo-1523475886877-7cc3b40b8093.jpg" style="background-image: url('https://lirp.cdn-website.com/md/unsplash/dms3rep/multi/opt/photo-1523475886877-7cc3b40b8093-640w.jpg');"><img id="1813795005" data-src="https://lirp.cdn-website.com/md/unsplash/dms3rep/multi/opt/photo-1523475886877-7cc3b40b8093-1920w.jpg" alt="A close up of french fries in a frying pan." aria-label="A close up of french fries in a frying pan." onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1512665630" class="caption-container u_1512665630" style="display:none"> <span class="caption-inner"> <a id="1268939072" class="caption-button dmWidget  clearfix u_1268939072" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1725022310 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1725022310"> <div class="dmRespColsWrapper" id="1715441523"> <div class="dmRespCol small-12 medium-3 large-3 u_1059077326" id="1059077326"> <div class="u_1917773391 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1917773391"> <a id="1797591664" href="/" file="false"><img src="https://lirp.cdn-website.com/c2095d51/dms3rep/multi/opt/nancy-footer-logo-1920w.png" id="1656813842" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/c2095d51/dms3rep/multi/nancy-footer-logo.png" alt="A white background with a few lines on it" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="dmRespCol small-12 medium-3 large-3 u_1355795272" id="1355795272"> <h5 class="u_1261506143 dmNewParagraph" id="1261506143" data-element-type="paragraph"><div style="text-align: left;"><span style="color: rgb(255, 255, 255); font-size: 16px;">255-41 Jericho Tpk,</span></div><div style="text-align: left;"><span style="color: rgb(255, 255, 255); font-size: 16px;">Floral Park,NY</span></div></h5></div> 
+ <div class="dmRespCol small-12 medium-3 large-3 u_1312630635" id="1312630635"> <h5 class="u_1244732896 dmNewParagraph" id="1244732896" data-element-type="paragraph"><div style="text-align: left;"><font color="#ffffff"><b><span style="font-weight: 700;" class="font-size-16 lh-1">Contact Us</span></b></font></div></h5> <h5 class="u_1559294044 dmNewParagraph" id="1559294044" style="display: block;" data-element-type="paragraph"><div style="text-align: left;"><span style="color: rgb(255, 255, 255); font-size: 16px;">(718) 343-4616</span></div></h5></div> 
+ <div class="dmRespCol small-12 medium-3 large-3 u_1302681912" id="1302681912"> <div class="u_1456107631 align-center text-align-center dmSocialHub gapSpacing" id="1456107631" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.facebook.com/nancysfireside" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="http://www.yelp.com/biz/nancys-restaurant-floral-park" target="_blank" dm_dont_rewrite_url="true" aria-label="yelp" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Yelp&apos;)"> <span class="dmSocialYelp dm-social-icons-yelp oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="http://www.tripadvisor.com/Restaurant_Review-g47727-d2495999-Reviews-Nancy_s_Restaurant-Floral_Park_New_York.html" target="_blank" dm_dont_rewrite_url="true" aria-label="tripadvisor" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Tripadvisor&apos;)"> <span class="dmSocialTripadvisor dm-social-icons-tripadvisor oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.instagram.com/nancys_restaurant/" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1982995013"> <div class="dmRespColsWrapper" id="1941648434"> <div class="dmRespCol large-12 medium-12 small-12" id="1579499437"> <div class="u_1233247867 dmNewParagraph" data-element-type="paragraph" id="1233247867" style="transition: opacity 1s ease-in-out 0s;">&copy; 2019 Nancy's Restaurant. All Rights Reserved.</div></div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5987";
+    var build = "2025-12-04T09_48_57";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-12-04T09_48_57";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5987';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5987';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =false;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5987/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5987/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: 'c2095d51'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: c2095d51 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>

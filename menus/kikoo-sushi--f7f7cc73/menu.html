@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <title>Kikoo Sushi | 212-533-2211 </title>
+
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Template CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style-magnific-popup.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/icons-main.css" rel="stylesheet">
+    <link href="css/icons-helper.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!-- RS5.0 Main Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
+
+    <!-- RS5.0 Layers and Navigation Styles -->
+    <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
+    <!-- Font Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!--headerIncludes--> <!-- 
+<script src="https://cf.chownowcdn.com/latest/static/integrations/ordering-modal.min.js" data-chownow-company-id="13777"></script>
+<style> body {margin: 0;position: relative;margin-bottom: 150px;}.cn-cta-container {display: none;}@media (max-width: 750px){ body {min-height: 100%;}.cn-button-text {width: 184px;height: 14px;font-family: Arial;font-size: 12px;font-weight: bold;font-style: normal;font-stretch: normal;line-height: normal;letter-spacing: 1.1px;}.cn-mobile-banner {background-color: #FFFFFF !important;border-radius: 4px;display: inline-block;width: 100%;height: 80%;color:#c30814;} .cn-cta-container {z-index: 999999; display: block;box-sizing: border-box;padding: 16px 32px 16px 32px;text-align: center;position: fixed;width: 100%;height: 72px;font-family: Arial;background-color: #c30814 !important; bottom: 0;left: 0;}.cn-cta-container{-webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7); -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7); box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);}} </style><div class="cn-cta-container"><div style="width: 100%; height: 125%;"><a class="chownow-order-online cn-mobile-banner"href="https://ordering.chownow.com/order/13777/locations"target="_blank"><span class="cn-button-text" style="display: inline-block; padding-top: 14px;">ORDER ONLINE</span></a></div></div>
+-->
+
+</head>
+
+
+<style>
+
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  transition: all 0.2s;
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  color:#EB1700;
+  opacity: 0.9;
+  z-index: 1111;
+  text-shadow:none;
+}
+.popup .close:hover {
+  color: #EB1700;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+/*Let's make it appear when the page loads*/
+.overlay:target:before {
+    display: none;
+}
+
+/*
+.overlay:before {
+  content:"";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 111;
+}*/
+
+.overlay .popup {
+ border-radius: 5px;
+width: 500px;
+position: fixed;
+top: 0;
+left: 36%;
+padding: 0px;
+margin: 100px auto;
+z-index: 111111;
+-webkit-transition: all 0.6s ease-in-out;
+-moz-transition: all 0.6s ease-in-out;
+transition: all 0.6s ease-in-out;
+}
+
+.overlay:target .popup {
+    top: -100%;
+    left: -100%;
+}
+
+@media screen and (max-width: 768px){
+  .box{
+    width: 70%;
+  }
+  .overlay .popup{
+      width: 96%;
+    left: 2%;
+
+  }
+}
+</style>
+
+
+<body>
+
+	<!--begin loader
+    <div id="loader">
+    	<div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+    	</div>
+    </div>
+   end loader -->
+
+    <!--begin header -->
+    <header class="header">
+
+        <!--begin nav -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+
+                  <!--begin container -->
+            <div class="container">
+
+                <!--begin navbar -->
+                <div class="navbar-header">
+                    <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                                                               <a  href="index.html"  class="logo__link navbar-brand brand scrool">
+                          <img src="images/logo2.png" alt="logo"  width="150">
+                        </a>
+
+                </div>
+
+                <div id="navbar-collapse-02" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>  <a href="index.html" class="menu__link">Home</a></li>
+                        <li><a href="about.html" class="menu__link">About Us</a></li>
+                        <li><a href="menu.pdf" target="_blank" >Menu</a></li>
+
+                        <li> <a href="gallery.html" class="menu__link">Gallery</a></li>
+                        <li>   <a href="contact.html" class="menu__link">Contact</a></li>
+                         <li>   <a href="https://www.opentable.com/r/kikoo-sushi-reservations-new-york?restref=1271731&lang=en-US&ot_source=Restaurant%20website" target="_blank" class="menu__link">Book Now</a></li>
+           <li><a class="chownow-order-online" style="background-color: #c30814 !important; color: #FFFFFF;  text-decoration: none; padding: 10px 20px;" href="https://eat.chownow.com/discover/restaurant/19312" target="_blank">ORDER ONLINE</a></li>
+
+                        
+
+
+                        <li class="social"><a href="#" target="_blank" class="first menu__link"><i class="fa fa-yelp"></i></a></li>
+                        <li class="social"><a href="#"  target="_blank" class="menu__link"><i class="fa fa-facebook"></i></a></li>
+
+
+                    </ul>
+                </div>
+                <!--end navbar -->
+
+            </div>
+            <!--end container -->
+
+
+
+        </nav>
+        <!--end nav -->
+
+    </header>
+    <!--end header -->
+
+    <!--begin home-hero-section -->
+    <div id="hero-section" class="home-hero-section">
+
+
+
+ <div id="demo-1" data-zs-src='["photos/001.jpg", "photos/002.jpg", "photos/003.jpg", "photos/004.jpg", "photos/005.jpg","photos/006.jpg", "photos/007.jpg" ]' data-zs-overlay="dots">
+        <div class="demo-inner-content">
+            <h1><img src="images/logo2.png" width="80%" style="opacity:0.8;"></h1>
+            <h1>Japanese Cuisine</h1>
+           <br />
+            <h1><div class="tp-caption Dining-BtnLight rev-btn noSwipe rs-hover-ready" id="slide-672-layer-7" style="margin:0 auto; padding:0 auto;" ><a href="menu.pdf" target="_blank"   style="color:#fff;">Discover Menu </a></div>
+        </div>
+    </div>
+        <!-- END REVOLUTION SLIDER -->
+
+    </div>
+    <!--end home-hero-section -->
+
+    <!--begin section-white-->
+    <section class="section-white">
+
+      <!--begin container-->
+      <div class="container">
+
+            <!--begin row-->
+            <div class="row">
+
+                <!--begin col-md-6-->
+                <div class="col-md-6 text-center padding-top-50 padding-bottom-50 wow slideInLeft">
+
+                    <span class="comic-text">Welcome</span>
+
+                    <h2 class="section-title">to Kikoo Sushi</h2>
+
+                    <p >We pick ingredients carefully and use only the freshest and natural ones to prepare every dish, and have been trying to cook them in a healthier way to provide the most nutritious food. Much attention has been attached to ensure you a cozy and inviting ambiance where you could enjoy not only the great meal but also the authentic atmosphere.</p>
+
+                    <a href="https://www.opentable.com/r/kikoo-sushi-reservations-new-york?restref=1271731&lang=en-US&ot_source=Restaurant%20website"  target="_blank" class="btn btn-lg btn-yellow">Book it Now</a>
+
+                </div>
+                <!--end col-md-6-->
+
+                <!--begin col-md-6-->
+                <div class="col-md-6 wow slideInRight">
+
+
+                                    <img src="images/food3.png" alt="picture" class="width-100">
+
+
+                </div>
+                <!--end col-md-6-->
+
+            </div>
+            <!--end row-->
+
+        </div>
+        <!--end container-->
+
+    </section>
+    <!--end section-white-->
+
+    <!--begin image-section -->
+    <section class="image-section">
+
+        <!--begin image-overlay -->
+        <div class="image-overlay"></div>
+        <!--end image-overlay -->
+
+        <!--begin container-->
+        <div class="container image-section-inside">
+
+            <!--begin row-->
+            <div class="row">
+
+                <!--begin col-md-10-->
+                <div class="col-md-10 col-md-offset-1 text-center">
+
+                    <span class="comic-text wow fadeIn"><font style="color:#ffffff;text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);">Welcome to Kikoo Sushi</font></span>
+
+                    <h3 class="section-title white wow bounceIn">We are a fine dining establishment specializing  <br />in traditional Japanese cuisine great for family dining or corporate gatherings.</h3>
+<a class="chownow-order-online" style="background-color: #c30814 !important; color: #FFFFFF;  text-decoration: none; padding: 10px 40px;" href="https://eat.chownow.com/discover/restaurant/19312" target="_blank">ORDER ONLINE</a>
+
+                </div>
+                <!--end col-md-6-->
+
+            </div>
+            <!--end row-->
+
+        </div>
+        <!--end container-->
+
+    </section>
+    <!--end image-section -->
+
+    <!--begin section-white-->
+
+
+
+
+    <!--begin section-white-->
+    <section class="section-white small-padding-bottom">
+
+        <!--begin container-->
+        <div class="container">
+
+            <!--begin row-->
+            <div class="row margin-bottom-40">
+
+                <!--begin col-md-12-->
+                <div class="col-md-12 text-center">
+
+                    <div class="text-center">
+
+                        <span class="comic-text wow fadeIn">The Kikoo Standard</span>
+
+                        <h2 class="section-title wow bounceIn">Delicious • Comfort  </h2>
+
+                    </div>
+
+                </div>
+                <!--end col-md-12-->
+
+            </div>
+            <!--end row-->
+
+            <!--begin row-->
+            <div class="row">
+
+                <!--begin col-md-4 -->
+                <div class="col-md-4 wow bounceInUp">
+
+                    <!--begin blog-item -->
+                    <div class="blog-item">
+
+
+                        <!--begin blog-item_inner -->
+                       <div class="blog-item-inner" style="background-image:url('images/a7.jpg');padding-top:250px;height:470px;">
+
+                            <h3 class="blog-title">Catering</h3>
+
+
+                            <p>We’ll help create the platter you need to impress your guests. Order by the platter or by your budget per person, either way Sushi-teria serves it up fresh! </p>
+
+
+
+                        </div>
+                        <!--end blog-item-inner -->
+
+                    </div>
+                    <!--end blog-item -->
+
+                </div>
+                <!--end col-md-4-->
+
+
+                <!--begin col-md-4 -->
+                  <div class="col-md-4 wow bounceInUp">
+
+                      <!--begin blog-item -->
+                      <div class="blog-item">
+
+                          <!--begin popup image -->
+                           <div class="blog-item-inner" style="background-image:url('images/a8.jpg');padding-top:250px;height:470px;">
+
+
+                                <h3 class="blog-title">Relaxing Atmosphere</h3>
+
+
+                              <p>We serve traditional authentic Japanese cuisine and use only the finest grade sushi in a pleasant, modern environment. </p>
+
+
+
+                          </div>
+                          <!--end blog-item-inner -->
+
+                      </div>
+                      <!--end blog-item -->
+
+                  </div>
+                  <!--end col-md-4-->
+
+                <!--begin col-md-4 -->
+                <div class="col-md-4 wow bounceInUp">
+
+                    <!--begin blog-item -->
+                    <div class="blog-item">
+
+                        <!--begin popup image -->
+                        <div class="blog-item-inner" style="background-image:url('images/a9.jpg');padding-top:250px;height:470px;">
+
+
+
+                            <h3 class="blog-title">Delicious Sushi</h3>
+
+
+                            <p>Offers a variety of dining experiences to suit any tastes.   Now all the sensations of the best in authentic Japanese dining can be experienced at Kikoo Japanese Restaurant. </p>
+
+
+
+                        </div>
+                        <!--end blog-item-inner -->
+
+                    </div>
+                    <!--end blog-item -->
+
+                </div>
+                <!--end col-md-4-->
+
+
+
+            </div>
+            <!--end row-->
+
+        </div>
+        <!--end container-->
+
+	</section>
+    <!--end section-white-->
+
+
+
+
+
+    <!--begin footer -->
+    <div class="footer">
+
+        <!--begin container -->
+        <div class="container">
+
+            <!--begin row -->
+            <div class="row footer-top">
+
+             <!--begin col-md-3 -->
+                <div class="col-md-3 padding-bottom-50">
+
+                     <img src="images/logo2.png" width="100%">
+
+                </div>
+                <!--end col-md-3 -->
+
+
+
+
+
+             <!--begin col-md-3 -->
+                <div class="col-md-5 padding-bottom-50">
+
+                    <h4>TEMPORARY BUSINESS HOURS</h4>
+
+                        <p class="contact_info">  Mon 3PM -10PM<br />
+Tue Closed<br />
+Wed - Thurs: 3PM - 10PM <br />
+Fri - Sat: 3PM - 10PM<br />
+Sun: 3PM - 10PM </p>
+
+      <!--              <p class="contact_info"> <font color="#db0814"> Lunch: </font>  Mon – Sat. : 11:30am - 3:00pm</p>
+
+                    <p class="contact_info"> 
+Mon 3PM -10PM<br />
+Tue Closed<br />
+Wed - Thurs: 3PM - 10PM <br />
+Fri - Sat: 3PM - 11PM<br />
+Sun: 3PM - 10PM
+ </p> -->
+
+
+
+                </div>
+                <!--end col-md-3 -->
+
+
+                <!--begin col-md-3 -->
+                <div class="col-md-4 padding-bottom-50">
+
+                	<h4>CONTACT DETAILS</h4>
+
+
+
+                    <p class="contact_info"><i class="fa fa-map-marker"></i> 998 Columbus Ave. New York, NY 10025 </p>
+
+                    <p class="contact_info"><i class="fa fa-phone"></i> 212-533-2211 </p>
+
+
+                </div>
+                <!--end col-md-3 -->
+
+            </div>
+            <!--end row -->
+
+
+ <!--   
+<div id="popup1" class="overlay">
+    <div class="popup">
+
+        <a class="close" href="#popup1">&times;</a>
+        <div class="content">
+<a href="#" target="_blank"><img src="promotion1.jpg"   width="100%"> </a>
+        </div>
+    </div>
+</div>   -->   
+
+
+            <!--begin row -->
+            <div class="row">
+
+                <!--begin footer-bottom -->
+                <div class="footer-bottom">
+
+                    <!--begin col-md-5 -->
+                    <div class="col-md-5">
+
+                        <!--begin copyright -->
+                        <div class="copyright ">
+                            <p>Kikoo Sushi © All rights Reseverd | <font style="color:rgba(255,255,255,0.4)">DESIGNED BY</font> <a href="http://amstudionyc.com/" target="_blank"><img src="images/amstudio.png" height="13"></a></p>
+
+                        </div>
+                        <!--end copyright -->
+
+                    </div>
+                    <!--end col-md-5 -->
+
+                    <!--begin col-md-2 -->
+                    <div class="col-md-2 text-center">
+
+                    	<a href="index.html#hero-section" class="scrool top-scroll"><i class="fa fa-angle-double-up"></i></a>
+
+                    </div>
+                    <!--end col-md-2 -->
+
+                    <!--begin col-md-5 -->
+                    <div class="col-md-5">
+
+                        <!--begin footer_social -->
+                        <ul class="footer_social">
+                            <li>
+                                Follow Us:
+                            </li>
+                            <li>
+                               <a href="#" target="_blank">
+                                   <i class="fa fa-yelp"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#"  target="_blank">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                        <!--end footer_social -->
+
+                    </div>
+                    <!--end col-md-5 -->
+
+                </div>
+                <!--end footer-bottom -->
+
+            </div>
+            <!--end row -->
+
+        </div>
+        <!--end container -->
+
+    </div>
+    <!--end footer -->
+
+
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nav.js"></script>
+    <script src="js/jquery.scrollTo-min.js"></script>
+    <script src="js/SmoothScroll.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/instafeed.js"></script>
+    <script src="js/instagram.js"></script>
+     <script src="js/index.js"></script>
+    <!-- RS5.0 Core JS Files -->
+    <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+
+    <!-- begin custom script-->
+    <script src="js/custom.js"></script>
+    <script src="js/plugins.js"></script>
+3
+
+        <link rel="stylesheet" type="text/css" href="dist/zoomslider.css" />
+    <script type="text/javascript" src="js/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="dist/jquery.zoomslider.min.js"></script>
+<script src="https://cdn.userway.org/widget.js" data-account="0FcSBmx8oS"></script>
+</body></html> 

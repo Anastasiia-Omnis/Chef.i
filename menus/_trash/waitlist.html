@@ -1,0 +1,1373 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="stylesheet" href="./css/reset.css"><link rel="stylesheet" href="./css/common.css"><link rel="stylesheet" href="./css/order.css"><script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ9PFDFHY9"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FZ9PFDFHY9');</script><script src="https://www.google.com/recaptcha/enterprise.js?render=6LfZlPYrAAAAAEE5pLbDbtVw_4Z-eE5Kd3SjQluj"></script><title>Waitlist</title><style>.close_scroll {
+    overflow: hidden;
+}
+.page_not_found {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #efefef;
+    text-align: center;
+}
+.page_not_found div {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 50px 20px 0px 20px;
+    color: #000;
+}
+#people_num_selects,.mdc-select__native-control{
+    z-index: 9;
+    position: relative;
+    background: transparent;
+    width: 100%;
+}
+#tabletype-desc-layer .desc_popup{
+    color: #000;
+}
+#tabletype-desc-layer .desc_popup .text{
+    word-break: break-all;
+}
+#tabletype-desc-layer .container{
+    height: 400px;
+    z-index: 9;
+}
+#tabletype-desc-layer #tabletype-desc-container{
+    height: 100%;
+    overflow-y: scroll;
+}
+#tabletype-desc-layer #tabletype-desc-container .title{
+    font-size: 30px;
+}
+#tabletype-desc-layer #tabletype-desc-mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.show_option_desc {
+    color: #CF2F22;
+    padding: 0 10px;
+}
+.content-wrap .radio-group .radio-item {
+    margin: 0;
+}
+.swal-button--confirm{
+    background-color: #F05B45;
+}
+.dialog {
+    z-index: 10;
+}
+#tip_wrong_text{
+    color: var(--primary-color);
+}
+.swal-button--confirm{
+    background-color: var(--primary-color);
+}
+#sname, #location_text, #stel_text{
+    color: var(--title_color);
+}
+.header .icon_location{
+    -webkit-mask: url(./img/location.svg) no-repeat;
+    mask: url(./img/location.svg) no-repeat;
+    -webkit-mask-size: 9px;
+    top: 2px;
+}
+.header .icon_call{
+    -webkit-mask: url(./img/call.svg) no-repeat;
+    mask: url(./img/call.svg) no-repeat;
+    -webkit-mask-size: 12px;
+    top: 2px;
+}
+.header .header_icon{
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    background-color: var(--title_color);
+    display: inline-block;
+    margin-right:3px;
+}
+input[type=checkbox] {
+    cursor: pointer;
+    position: relative;
+}
+input[type=checkbox]:after {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    content: " ";
+    color: #fff;
+    border-radius: 2px;
+}
+input[type=checkbox]:checked:after {
+    content: "✓";  
+    font-size: 12px;
+    background-color: var(--primary-color);
+    text-align: center;
+    line-height: 14px;
+}</style></head><body><div class="page_not_found"><div>The page you’re looking for can’t be found.</div></div><div class="app"><header class="header"><div class="header-inner flex-center"><div class="title-group"><p class="title" id="sname"> </p><div class="sub-title" id="location_text_container" style="display:none;"><div class="header_icon icon_location"></div><span id="location_text"></span></div><div class="sub-title" id="stel_text_container" style="display: none; text-decoration: underline; color: #0080FF;"><div class="header_icon icon_call"></div><a class="link" id="stel_text"></a></div></div><div class="logo"><image id="slogo" style="border-radius: 50%; width: 100%; height: 100%"></image></div></div><div class="radius-layer"></div></header><div class="main" style="position: relative"><p class="title" id="join_text" style="color: var(--primary-color); text-align: center;"></p><p class="title" style="position: absolute; top: 0; left: 0; width: 100%; height: 20px"><span class="notice" id="annoucement-show" style="display: none;"></span></p><div class="content-wrap"><div class="table-size-list" id="waiting-table-list" style="display: none;"><div class="table-size-item flex-col-center border-right"><span class="wait-num">&nbsp;</span><span class="table-size">&nbsp;</span></div><div class="table-size-item flex-col-center border-right"><span class="wait-num">&nbsp;</span><span class="table-size">&nbsp;</span></div><div class="table-size-item flex-col-center"><span class="wait-num">&nbsp;</span><span class="table-size">&nbsp;</span></div></div><div id="pro_zone" style="display: none;"><img src="./img/minipass/pro_banner.png" style="width: 100%; height: auto;"></div><p class="form-title" id="trying_text" style="color:black; font-size: 14px"></p><div class="form-wrap"><div class="form-group border-bottom"><p class="form-title" id="people_number_text">Number of Guests<span class="required">*</span></p><div class="mdc-select select-group"><select class="mdc-select__native-control" id="people_num_selects"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select><span class="icon-arrow-down"></span></div></div><div class="form-group border-bottom"><p class="form-title"><span id="customer_name_title">Your Name</span><span class="required">*</span></p><div class="input-group"><input id="customer_name" type="text"></div></div><div class="form-group border-bottom" id="note_zone" style="display: none;"><p class="form-title" id="note_text"></p><div class="input-group"><input id="remark" type="text"></div></div><div id="options_container"></div><div class="form-group phone-group"><p class="form-title"><span id="phone_title">Phone</span><span class="required">*</span></p><div class="phone-group-body flex"><div class="mdc-select phone-area select-group" id="zone_code"><select class="mdc-select__native-control"><option value="+1">+1</option><option value="+44">+44</option><option value="+60">+60</option><option value="+62">+62</option><option value="+65">+65</option><option value="+66">+66</option><option value="+81">+81</option><option value="+82">+82</option><option value="+84">+84</option><option value="+852">+852</option><option value="+853">+853</option><option value="+855">+855</option><option value="+86">+86</option><option value="+886">+886</option></select><span class="icon-arrow-down"></span></div><div class="input-group border-bottom"><input id="phone_num" type="text"></div></div><p class="tips" id="tel_tip_text">Please enter correct number, we will notify you via text message</p></div><div class="form-group email-group border-bottom" id="email_zone"><p class="form-title">E-mail<span class="required" id="need_email">*</span></p><div class="input-group"><input id="customer_email" type="text" aria-label="Your E-mail"></div></div><div class="verify-code-group flex" id="verify_code_zone" style="display:none"><div class="form-group"><p class="form-title"><span id="verify_code_text">Verify Code</span><span class="required">*</span></p><div class="input-group border-bottom"><input id="verify_code" type="text"></div><!-- <div class="tips error">The verify code is wrong</div>--><div class="tips" id="tip_zone">Send code to</div><span id="tip_text"></span></div><div class="btn btn-default" style="padding: 0; font-size: 15px; width: 175px; margin-left: 0px;"><div id="get_code_node">Get Code</div><div id="count_num_node" style="display: none;"><span class="mdc-button__label" id="count_num_text">60 seconds</span></div></div></div></div><div class="tickets-left"><span class="label" id="tickets_left_title">TICKETS LEFT : </span><span class="hight-light" id="left_tip_zone"></span><span class="hight-light" id="center_tip_zone">/</span><span class="hight-light" id="limit_tip_zone"></span></div><div class="mdc-layout-grid__inner" id="verify_code_err_zone" style="display: none; font-size: 13px; color: red;"><div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4" style="text-align: center"><span id="tip_wrong_text"></span></div></div><label class="mms-approval-body" for="argee_send_message"> <input id="argee_send" name="argee_send_message" type="checkbox" value="1" checked style="margin-top: 10px;"><div id="receive_promo_tip" style="font-size: 13px; margin-left:20px;margin-top: -23px;line-height:20px">Receive promo & updates message from this restaurant</div></label><div id="robot" style="margin-top: 10px; display: none;"></div><div style="text-align: center;position: relative; z-index: 2"><div class="join-btn btn btn-primary" id="submit" style="display: inline-block; width: auto; height: 48px; line-height: 48px;">Join Waitlist</div></div></div></div><div class="services"><p>By joining in, you agree to Minitable Tech, Inc</p><p><a class="link" href="https://www.minitable.net/terms-of-use" target="_blank">Terms of Service</a> and<a class="link" href="https://www.minitable.net/privacy-policy" target="_blank">Privacy Policy</a></p></div><div class="footer poweredby"><a style="color: var(--primary-color)" href="https://minitable.net" target="_blank">powered by minitable</a></div><div class="dialog flex-center dialog-error" id="annoucement-layer" style="display:none"><div class="main"><div class="header">Notice</div><div class="body"><p style="padding: 0 20px; " id="annoucement-layer-content"></p></div><div class="footer"><div class="icon-group flex-center" id="annoucement-close"><span class="icon icon-left"></span></div></div></div></div><div class="dialog flex-center dialog-error" id="wrong-link-layer" style="display:none"><div class="main"><div class="header">Error Link</div><div class="body"><p style="padding: 0 20px; ">Waitlist link is out of date, please contact the host for the lastest version.</p></div><div class="footer"></div></div></div><div class="dialog flex-center dialog-error" id="location-layer" style="display:none"><div class="main"><div class="body" style="max-height: none;"><p id="location_tip_header" style="padding: 0 2px;font-size: 20px;color: red;text-align: center;">You are too far away from the restaurant and can’t join waitlist.</p><p id="location_tip_header2" style="padding: 0 2px;font-size: 20px;color: red;text-align: center;"> </p><p id="location_tip_body" style="padding: 0 2px; text-align: center; margin-top: 5px;"></p><p id="location_tip_body2" style="padding: 0 2px; text-align: center; margin-top: 5px;">The website will request your location. Please ensure your browser allow location access. </p><p id="location_tip_body3" style="padding: 0 2px; text-align: center; margin-top: 5px;"></p><p id="location_tip_body4" style="padding: 0 2px; text-align: center; margin-top: 5px;"></p></div><div class="footer" style="display: none;"><div class="icon-group flex-center" id="confirm_location" style="width: 150px;"><span id="confirm_location_text">OK</span></div></div></div></div><div class="modal" id="tabletype-desc-layer" style="display:none"><div id="tabletype-desc-mask"></div><div class="container"><div id="tabletype-desc-container"></div><div class="close" id="tabletype-desc-close">X</div></div><script id="desc_popup_tmpl" type="x-tmpl-mustache">{{#data}}
+    <div class="desc_popup">
+        <div class="title">{{table_type}}</div>
+        {{#img}}
+            <div className="img">
+                <img src="{{img}}" alt="" />
+            </div>
+        {{/img}}
+        {{#description}}
+            <div class="text"></div>
+        {{/description}}
+    </div>
+{{/data}}</script></div><div class="modal" id="pro_desc_layer" style="display:none;"><div id="tabletype-desc-mask"></div><div class="container" style="padding: 0; overflow: hidden; width: 320px; height: 600px; color: #000;"><div style="width: 100%; height: 210px;"><img src="../img/minipass/pro_layer.png" style="width: 100%; height: auto;"></div><div style="margin-top: 20px;"><h3 style="text-align: center; font-weight: 500;">Smarter Waitlist Access with</h3><h1 style="text-align: center; margin-top: 10px; color: #7427ff; font-weight: bold;">MinipassPro - WaitWise</h1></div><div style="padding: 10px 20px 0; font-size: 12px;"><p>Tired of endless waiting? Time to upgrade to Minipass Pro and unlock WaitWise AI, so you can predict wait times and join at the best moment—no more guessing!</p><p style="margin-top: 5px;">🔹 AI-powered wait time predictions</p><p>🔹 Optimal join time suggestions</p><p>🔹 Less waiting, more enjoying</p><p style="margin-top: 5px;">🚀 Upgrade to Minipass Pro now! Download APP and go to your Account Page to get started.</p></div><div style="text-align: center; margin-top: 10px;"><div class="btn btn-primary" id="submit_pro_layer" style="display: inline-block; background-color: #7427ff; width: 270px; height: 40px; line-height: 40px; font-size: 14px;">Download Minitable app</div><div class="btn btn-primary" id="close_pro_layer" style="display: inline-block; margin-top: 10px; border: 1px solid #7427ff; color: #7427ff; background-color: #fff; width: 270px; height: 40px; line-height: 40px; font-size: 14px;">Close</div></div></div></div><script id="option_item_tmpl" type="x-tmpl-mustache">{{#data}}
+    <div class="form-group" style="display: {{display}}" id="{{id}}">
+        <p class="form-title">
+            {{#required}}
+                <span class="required">*</span>
+            {{/required}}
+            {{ option_name }}
+        </p>
+        <div>
+            {{#newValues}}
+                <div class="radio-wrap">
+                    <div class="radio-group" style="padding: 5px 0px 5px 20px;">
+                        <label class="radio-item">
+                            <input value="{{ value }}" name="{{ option_name }}" onclick="radioClick(this)" type="radio"/>
+                            <span class="radio" id="{{ value }}"></span>
+                            <span class="label" style="margin-right: 0px; margin-left: 6px;">{{ value }}</span>
+                        </label>
+                        {{#showDescBtn}}
+                            <span class="show_option_desc" data-father-index="{{father_index}}" data-index="{{index}}" style="color:var(--primary-color)">?</span>
+                        {{/showDescBtn}}
+                    </div>
+                    <div class="radio-group-sub" style="display:none">
+                        {{#sub}}
+                                <div class="radio-group" style="padding: 5px 0px 5px 40px;">
+                                    <label class="radio-item">
+                                        <input value="{{ value_sub }}" name="{{ option_name }}-{{ value }}" onclick="radioClick(this)" type="radio"/>
+                                        <span class="radio" id="{{ value_sub }}"></span>
+                                        <span class="label" style="margin-right: 0px; margin-left: 6px;">{{ value_sub }}</span>
+                                    </label>
+                                    {{#showDescBtnSub}}
+                                        <span class="show_option_desc" data-father-index="{{father_index}}" data-index="{{index}}" data-sub-index="{{sub_index}}" style="color:var(--primary-color)">?</span>
+                                    {{/showDescBtnSub}}
+                                </div>
+                        {{/sub}}
+                    </div>
+                </div>
+            {{/newValues}}
+            {{#has_other}}
+                <div class="form-group border-bottom other_content_container" style="display: none;">
+                    <div class="input-group" style="display: flex">
+                        <p class="form-title" style="width: 50px; margin-top:8px">
+                            other<span class="required">*</span>:
+                        </p>
+                        <input class="other_content" type="text" placeholder="Please input other content" />
+                    </div>
+                </div>
+            {{/has_other}}
+        </div>
+    </div>
+{{/data}}</script></div><script src="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script><script>var _this = {
+    data: {
+        sid: '',
+        date: '',
+        time: '',
+        title: '',
+        count: 60,
+        timer: -1,
+        people_num: 2,
+        enable: 0,
+        option_dict: {},
+        option_required_dict: {},
+        option_show_dict: {},
+        need_verify: 1,
+        code: '+1',
+        status: 0,
+        open_time_range: [],
+        lock: false,
+        aj_lock: false,
+        max_distance_enable: 0,
+        max_distance: 0,
+        longitude: '',
+        latitude: '',
+        is_near: 0,
+        need_email: 1,
+        is_android: navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Linux') > -1,
+        is_human: 0,
+        human_token: '',
+        cluster: 'north_america',
+        country: 'United States',
+        country_code_dict: {
+            'United States': '+1',
+            'China': '+86',
+            'Singapore': '+65',
+            'Thailand': '+66',
+            'Vietnam': '+84',
+            'Japan': '+81',
+            'Cambodia': '+855',
+            'United Kingdom': '+44',
+        },
+        sms_language: 'eng',
+        show_waiting_info: 0,
+    }
+};
+
+var minpassAppUrl='https://apps.apple.com/app/apple-store/id1626268909?pt=124978031&ct=H5-popupwindow&mt=8'
+
+var bindEvent = function() {
+    var MDCSelect = mdc.select.MDCSelect;
+    var select = new MDCSelect(document.querySelector('.mdc-select'));
+    select.listen('MDCSelect:change', () => {
+        //- alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
+        _this.data.people_num = select.value;
+
+        for (var j = 0; j < _this.data.option_list.length; j++) {
+            var option_people_num_min = _this.data.option_list[j].people_num_min;
+            var option_people_num_max = _this.data.option_list[j].people_num_max;
+            var _id = _this.data.option_list[j].id;
+
+            if (option_people_num_min > 0) {
+                if (_this.data.people_num * 1 < option_people_num_min * 1) {
+                    _this.data.option_show_dict[_this.data.option_list[j].option_name] = false;
+                    $('#' + _id).hide();
+                    continue;
+                } else {
+                    _this.data.option_show_dict[_this.data.option_list[j].option_name] = true;
+                    $('#' + _id).show();
+                }
+            }
+            if (option_people_num_max > 0) {
+                if (_this.data.people_num * 1 > option_people_num_max * 1) {
+                    _this.data.option_show_dict[_this.data.option_list[j].option_name] = false;
+                    $('#' + _id).hide();
+                } else {
+                    _this.data.option_show_dict[_this.data.option_list[j].option_name] = true;
+                    $('#' + _id).show();
+                }
+            }
+        }
+    });
+
+    var code_select = new MDCSelect(document.querySelector('#zone_code'));
+    code_select.listen('MDCSelect:change', () => {
+        _this.data.code = code_select.value;
+    });
+    
+    $('#get_code_node').on('click', function() {
+        let _zone_code = _this.data.code || '';
+        let _phone_num = $('#phone_num').val() || '';
+
+        if (!_zone_code || !_phone_num) {
+            tools.show_tip('Input telephone！');
+            return;
+        }
+
+        //- if (!_this.data.is_human) {
+        //-     tools.show_tip('Please verify you are a human.');
+        //-     return;
+        //- }
+
+        _phone_num = _phone_num.replace(/[\(\)\-\+]/g, '');
+
+        grecaptcha.enterprise.ready(async () => {
+            const token = await grecaptcha.enterprise.execute('6LfZlPYrAAAAAEE5pLbDbtVw_4Z-eE5Kd3SjQluj', {action: 'VERIFY_CODE'});
+
+            tools.getVerifyCodeAj({
+                sid: _this.data.sid,
+                phone_num: _zone_code + ' ' + _phone_num,
+                sname: _this.data.title,
+                recaptcha_token: token
+            });
+        });
+    });
+
+    $('#phone_num').on('keyup', function(e) {
+        if (e.keyCode != 8 && !_this.data.is_android) {
+            var temp = e.target.value.replace(/[\(\)\-]/g, '');
+            var phone_num = '';
+
+            if (_this.data.code == '+1') {
+                phone_num = temp.replace(/(\d{1,3})(\d{1,3})?(\d{1,4})?/, function(a,b,c,d){
+                    if (b) {
+                        if (!c) {
+                            return '(' + b + ')';
+                        }
+                        if (!d) {
+                            return '(' + b + ')' + c;
+                        }
+                        return '(' + b + ')' + c + '-' + d;
+                    }
+                });
+            } else if (_this.data.code == '+65') {
+                phone_num = temp.replace(/(\d{1,4})(\d{1,4})/, function(a,b,c){
+                    if (b) {
+                        if (!c) {
+                            return b;
+                        }
+                        return b + '-' + c;
+                    }
+                });
+            } else {
+                phone_num = temp;
+            }
+
+            $('#phone_num').val(phone_num);
+        }
+
+        if ($('#phone_num').val() != '') {
+            $('#tip_text').html('  ' + _this.data.code + ' ' + $('#phone_num').val());
+            $('#tip_zone').show();
+            $('#tip_text').show();
+        } else {
+            $('#tip_zone').hide();
+            $('#tip_text').hide();
+        }
+    });
+
+    $('#phone_num').on('blur', function(e) {
+        if (_this.data.is_android) {
+            var temp = e.target.value.replace(/[\(\)\-]/g, '');
+            var phone_num = '';
+
+            if (_this.data.code == '+1') {
+                phone_num = temp.replace(/(\d{1,3})(\d{1,3})?(\d{1,4})?/, function(a,b,c,d){
+                    if (b) {
+                        if (!c) {
+                            return '(' + b + ')';
+                        }
+                        if (!d) {
+                            return '(' + b + ')' + c;
+                        }
+                        return '(' + b + ')' + c + '-' + d;
+                    }
+                });
+            } else if (_this.data.code == '+65') {
+                phone_num = temp.replace(/(\d{1,4})(\d{1,4})/, function(a,b,c){
+                    if (b) {
+                        if (!c) {
+                            return b;
+                        }
+                        return b + '-' + c;
+                    }
+                });
+            } else {
+                phone_num = temp;
+            }
+
+            $('#phone_num').val(phone_num);
+        }
+    });
+
+    $('#zone_code .mdc-select__native-control').on('change', function(e) {
+        var data= $(this).val();
+        if ($('#phone_num').val() != '') {
+            $('#tip_text').html('  ' + data + ' ' + $('#phone_num').val());
+            $('#tip_zone').show();
+            $('#tip_text').show();
+        } else {
+            $('#tip_zone').hide();
+            $('#tip_text').hide();
+        }
+    });
+
+    $('#submit').on('click', function() {
+        var _customer_name = $('#customer_name').val() || '';
+        let _zone_code = _this.data.code || '';
+        let _phone_num = $('#phone_num').val() || '';
+        let _people_num = _this.data.people_num;
+        let _code = $('#verify_code').val() || '';
+        var _customer_email = $('#customer_email').val() || '';
+        var _remark = $('#remark').val() || '';
+        var token = tools.getUrlParam('token') || '';
+
+        var _argee_enable = $('input[name="argee_send_message"]:checked').val() || '0';
+
+        if (!_customer_name) {
+            tools.show_tip('Please input your name');
+            return;
+        }
+
+        if (_this.data.need_verify == 1 && !_code) {
+            tools.show_tip('Please input verify code');
+            return;
+        }
+
+        if (!_zone_code || !_phone_num) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        _phone_num = _phone_num.replace(/[\(\)\-\+]/g, '');
+        if (_zone_code == '+1' && _phone_num.length != 10) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        if (_zone_code == '+65' && _phone_num.length != 8) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        if (_zone_code == '+66' && ((_phone_num.length < 9 || _phone_num.length > 10) || (_phone_num.length == 10 && _phone_num[0] != '0'))) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        if (_zone_code == '+60' && (_phone_num.length != 9 && _phone_num.length != 10)) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        if (_zone_code == '+62' && (_phone_num.length != 10 && _phone_num.length != 11 && _phone_num.length != 12)) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        if (_zone_code == '+852' && _phone_num.length != 8) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        if (_zone_code == '+853' && _phone_num.length != 8) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        if (_zone_code == '+886' && _phone_num.length != 9) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        // 越南 / 日本 / 英国 /柬埔寨
+        if (_zone_code == '+84' && (_phone_num.length < 9 || _phone_num.length > 10)) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        if (_zone_code == '+855' && (_phone_num.length < 8 || _phone_num.length > 11)) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        if (_zone_code == '+81' && _phone_num.length != 11) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        if (_zone_code == '+44' && _phone_num.length != 11) {
+            tools.show_tip(_this.lang[_this.data.language]['correct_number_tip']);
+            return;
+        }
+
+        if (_this.data.need_email == 1 && !_customer_email) {
+            tools.show_tip('Please input customer E-mail');
+            return;
+        }
+
+        var email_reg=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+        if (_customer_email && _customer_email.search(email_reg) == -1){
+            tools.show_tip('Please enter a valid email address');
+            return;
+        }
+        var flag = false;
+        var temp_arr = [];
+        for (var o in _this.data.option_required_dict) {
+            if (!_this.data.option_show_dict[o]) {
+                continue;
+            }
+            var _target = $('input[name="' + o + '"]:checked');
+            var _val = _target.val() || '';
+            if (_val === 'other') {
+                var _other_content = $(_target[0].parentNode.parentNode.parentNode.parentNode).find('.other_content').val() || '';
+                if (_other_content == '') {
+                    tools.show_tip('Other content is required');
+                    flag = true;
+                    break;
+                }
+                _val = _val + ':' + _other_content;
+            }
+            if (_this.data.option_required_dict[o] == 1) {
+                if (_val === '') {
+                    tools.show_tip('Please make a choice in the ' + o);
+                    flag = true;
+                    break;
+                }
+            }
+            var subText=''
+            if (_val !== '') {
+                var length = $('input[name="' + o + '"]:checked')
+                    .parent()
+                    .parent()
+                    .siblings('.radio-group-sub')
+                    .children('.radio-group').length
+                if (length > 0) {
+                    var _sub_target = $('input[name="' + o + '-' + _target.val() + '"]:checked')
+                    if (!_sub_target.val()) {
+                        tools.show_tip('Please make a choice in the ' + o + ' ' + _target.val());
+                        flag = true
+                        break;
+                    }
+                    subText = '@@' + _target.val() + '=' + encodeURIComponent(_sub_target.val())
+                }
+            }
+
+            temp_arr.push(o + '=' + encodeURIComponent(_val) + subText)
+        }
+
+        if (flag) {
+            return;
+        }
+
+        var ua = navigator.userAgent;
+        var browser_type = '';
+
+        try {
+            if (ua.indexOf('minipass') > -1) {
+                browser_type = 'minipass';
+            } else if (ua.indexOf('Android') > -1) {
+                browser_type = 'android';
+            } else if (ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('Mac') > -1) {
+                browser_type = 'ios';
+            } else {
+                browser_type = 'other';
+            }
+        } catch (e) {
+            browser_type = 'other';
+        }
+
+        gtag("event", "Join_waitlist_h5_submit", {
+            sid: _this.data.sid,
+            browser_type: browser_type
+        });
+
+        tools.editMmsApprovalAj({
+            sid: _this.data.sid,
+            phone_num: _zone_code + ' ' + _phone_num,
+            enable: _argee_enable,
+            name: _customer_name
+        });
+
+        if (_this.data.max_distance_enable == 1) {
+            if (_this.data.is_near == 1) {
+                tools.addPreorderAj({
+                    sid: _this.data.sid,
+                    phone_num: _zone_code + ' ' + _phone_num,
+                    customer_name: _customer_name,
+                    people_num: _people_num,
+                    code: _code,
+                    email: _customer_email,
+                    guest_note: _remark,
+                    sname: _this.data.title,
+                    options: temp_arr.join('&'),
+                    token,
+                    sms_language: _this.data.sms_language
+                });
+            }
+        } else {
+            tools.addPreorderAj({
+                sid: _this.data.sid,
+                phone_num: _zone_code + ' ' + _phone_num,
+                customer_name: _customer_name,
+                people_num: _people_num,
+                code: _code,
+                email: _customer_email,
+                guest_note: _remark,
+                sname: _this.data.title,
+                options: temp_arr.join('&'),
+                token,
+                sms_language: _this.data.sms_language
+            });
+        }
+    });
+
+    $('#options_container').delegate('input[type="radio"]', 'change', function(e) {
+        if (e.currentTarget.value == 'other') {
+            $(e.currentTarget.parentNode.parentNode.parentNode.parentNode).find('.other_content_container').show();
+        } else {
+            $(e.currentTarget.parentNode.parentNode.parentNode.parentNode).find('.other_content_container').hide();
+        }
+    });
+
+    $('#annoucement-close').on('click', function(e) {
+        $('#annoucement-layer').hide();
+    });
+    $('#annoucement-show').on('click', function(e) {
+        $('#annoucement-layer').show();
+    });
+    $('#tabletype-desc-close').on('click', function(e) {
+        $('#tabletype-desc-layer').hide();
+        $('body').removeClass('close_scroll')
+    });
+    $('#tabletype-desc-mask').on('click', function(e) {
+        $('#tabletype-desc-layer').hide();
+        $('body').removeClass('close_scroll')
+    });
+    $('#options_container').delegate('.show_option_desc', 'click', function (e) {
+        let father_index = $(e.currentTarget).attr('data-father-index')
+        let index = $(e.currentTarget).attr('data-index')
+        var sub_index = $(e.currentTarget).attr('data-sub-index')
+        let table_type = ''
+        let img = ''
+        let description = ''
+        if (sub_index === undefined) {
+            table_type = _this.data.option_list[father_index].newValues[index].value
+            img = _this.data.option_list[father_index].newValues[index].img
+            description = _this.data.option_list[father_index].newValues[index].desc
+        } else {
+            table_type = _this.data.option_list[father_index].newValues[index].value + '-' + _this.data.option_list[father_index].newValues[index].sub[sub_index].value_sub
+            img = _this.data.option_list[father_index].newValues[index].sub[sub_index].img_sub
+            description = _this.data.option_list[father_index].newValues[index].sub[sub_index].desc_sub
+        }
+        var rendered = ''
+        var template = $('#desc_popup_tmpl').html()
+        Mustache.parse(template)
+        let data = {
+            table_type: table_type,
+            img: img,
+            description: description,
+        }
+        rendered = Mustache.render(template, {
+            data,
+        })
+        $('#tabletype-desc-container').html(rendered)
+        $('#tabletype-desc-container .text').html(description)
+        $('#tabletype-desc-layer').show()
+        $('body').addClass('close_scroll')
+    })
+    $('#pro_zone').on('click', function() {
+        $('#pro_desc_layer').show();
+        gtag("event", "Join_waitlist_h5_membership_ad_click", {
+            sid: _this.data.sid
+        });
+    });
+    $('#close_pro_layer').on('click', function() {
+        $('#pro_desc_layer').hide();
+    });
+    $('#submit_pro_layer').on('click', function() {
+        gtag("event", "Join_waitlist_h5_membership_download_click", {
+            sid: _this.data.sid
+        });
+        window.open(minpassAppUrl);
+    });
+};
+
+var initPlugins = function() {
+    _this.data.sid = tools.getUrlParam('sid') || '';
+    _this.data.title = window.localStorage.getItem(_this.data.sid + '_sname') || '';
+    
+    if (_this.data.title) {
+        document.title = _this.data.title;
+        $('#sname').html(_this.data.title);
+    }
+
+    try {
+        // 获取 waitlist_enable
+        tools.getAj();
+        tools.getWaitwiseSetting();
+        
+        //多语言
+        _this.lang = {"chn":{"test":"测试","Join the Waitlist":"Join the Waitlist","Trying to get a seat? Leave your information and join the waitlist.":"Trying to get a seat? Leave your information and join the waitlist.","tip_wrong_text":"Wrong verify code","submit":"加入排队 (JOIN WAITLIST)","people_number_text":"人数(Number of guests)","tel_tip_text":"<p>请输入正确电话号码，避免收不到短信提醒</p><p style=\"margin: 0;\">Please enter correct number, we will notify you via text message.</p>","queue_list":"parties waiting ahead","location_tip_header2":"请在距离餐厅 %s mile(s) 范围内加入排队。","location_tip_body2":"网站将需要您的位置信息，请允许浏览器访问位置信息。","wait_complete_text":"您的餐桌即将就绪","wait_in_queue_text":"{0}个{1}桌正在排队等待","share_text":"Share and let your friends know the status","share_link_text":"Share this link to your friends","goto_preorder":"Go to pre-order","leave_text":"Something wrong? Leave waitlist(取消排队)","reservation_info_text":"Reservation Info","date_text":"Date","time_text":"time","table_type_text":"Table Type","name_text":"Name","note_text":"Note","phone_text":"Phone","verify_code_text":"验证码(Verify code)","verify_code":"Verify code","tip_zone":"Send code to","get_code_node":"Get code","submit_reservation":"提交预约(Make a reservation)","customer_name":"姓名(Your name)","phone_num":"电话(Telephone)","invite_text":"邀请/INVITE","invite_content":"<span>邀请好友共享排队状态，获得短信通知</span><br/><span>Share and let your friends know the status</span>","copy_url":"复制邀请链接/copy link","new_reservation":"新建预约/new reservation","layer_head2":"<p>排队预点单</p>","layer_body2":"<p>早下单，不用饿得慌</p>","layer_go_order":"Order now (立即下单)","layer_cancel":"Later (稍后下单)","iPhone":"如果您是苹果手机用户，请前往 设置 → 隐私 → 定位服务 → 允许网站访问位置信息。设置完毕后，请刷新该页面。","help":"如果您有任何问题，欢迎找我们的前台协助。谢谢！","location_tip_header":"You are too far away from the restaurant and can’t join waitlist.","leave_note_ph":"备注(Note)","phone_title":"电话(Phone)","tickets_left_title":"TICKETS LEFT :","leave_reservation_text":"Something wrong? Cancel the reservation(取消预约)","layer_confirm_head":"Confirm your waitlist<p>(请确认您的排队)</p>","layer_confirm_body":"You are near the top. Please return and see the host<p>(您在排队号已被叫号，请到前台报道。)</p>","layer_confirm_btn":"Confirm(确认)","layer_cancel_btn":"Cancel(取消)","status_out_of_date":"排队已过期<br/>Out of date","status_no_show":"您已过号<br/>You are No Show","status_canceled":"排位已取消<br/>Canceled","status_seated":"您已入座<br/>Seated","status_completed":"用餐完成。谢谢光临！<br/>Completed. Thank you!","status_left":"您已离开排队<br/>You have left the waitlist","status_checkedin":"已签到<br/>Checked in","status_near_top":"您的餐桌即将就绪<br/>You're near the top of the list","status_count_ahead":"${count}个${party_type}桌正在排队等待<br/> ${count} ${party_type} parties waiting ahead","cancel_limit_hours_tip":"根据这家餐厅的规定，客人可以在提交预约后的 ${cancel_limit_hours} 小时内线上取消预约。请电话联系餐厅进行取消预约。","cancel_limit_before_hours_tip":"根据这家餐厅的规定，客人只能提前 ${cancel_limit_before_hours} 小时线上取消预约。如您需要取消预约，请电话联系餐厅。","contact_restaurant":"联系餐厅(Contact Restaurant)","waiting_number_text":"您的等候号码是","closed":"已关闭 (Closed)","no_tickets":"票已售罄 (No tickets left)","not_available_now":"当前不可用 (Not available now)","your_email":"您的邮箱 (Your email)","success":"成功 (Success)","your_wait_code_is":"您的等候码是 ${code} (your wait code is ${code})","correct_number_tip":"请输入正确的电话号码 (Please enter the correct phone number)","currently_closed":"暂时关闭 (Currently closed)","vip_only":"仅限VIP (VIP only)","cancel_to_callahead_tip":"您的预约已取消。是否要加入${reserve_time}的提前呼叫等候名单？ (Your reservation has been canceled. Would you like to join the call ahead waitlist for the ${reserve_time}?)","party_of_x":"${party_size}人(${party_type}) (party of ${party_size}(${party_type}))","receive_promo_tip":"接收来自该餐厅的促销和更新信息 (Receive promo & updates message from this restaurant)","preorder_foods_list_title":"预点单 (Preorder)"},"eng":{"test":"test","Join the Waitlist":"Join the Waitlist","Trying to get a seat? Leave your information and join the waitlist.":"Trying to get a seat? Leave your information and join the waitlist.","tip_wrong_text":"Wrong verify code","submit":"JOIN WAITLIST","people_number_text":"Number of guests","tel_tip_text":"Please enter correct number, we will notify you via text message","queue_list":"parties waiting ahead (팀이 앞에 있습니다. 기다려 주셔서 감사드립니다.)","location_tip_header2":"","location_tip_body":"Please join the waitlist within {0} mile(s) around the restaurant.","location_tip_body2":"The website will request your location. Please ensure your browser allow location access.","wait_complete_text":"Your table is almost ready","wait_in_queue_text":"{0} {1}({2} people) parties waiting ahead","share_text":"Share and let your friends know the status","share_link_text":"Share this link to your friends","goto_preorder":"Go to pre-order","leave_text":"Something wrong? Leave waitlist","reservation_info_text":"Reservation Info","date_text":"Date","time_text":"time","table_type_text":"Table Type","name_text":"Name","note_text":"Note","phone_text":"Phone","verify_code_text":"Verify code","verify_code":"Verify code","tip_zone":"Send code to","get_code_node":"Get code","submit_reservation":"Make a reservation","customer_name":"Your name","phone_num":"Telephone","invite_text":"INVITE","invite_content":"<span>Share and let your friends know the status</span>","copy_url":"Copy link","new_reservation":"New reservation","layer_head2":"","layer_body2":"","layer_go_order":"Order now","layer_cancel":"Later","iPhone":"","help":"","location_tip_header":"You are too far away from the restaurant and can’t join waitlist.","leave_note_ph":"Please leave a note for any special occasions.","phone_title":"Phone","tickets_left_title":"TICKETS LEFT :","leave_reservation_text":"Something wrong? Cancel the reservation","layer_confirm_head":"Please Confirm","layer_confirm_body":"You are near the top. Please return and see the host","layer_confirm_btn":"Confirm","layer_cancel_btn":"Cancel","status_out_of_date":"Out of date","status_no_show":"You are No Show","status_canceled":"Canceled","status_seated":"Seated","status_completed":"Completed. Thank you!","status_left":"You have left the waitlist","status_checkedin":"Checked in","status_near_top":"You're near the top of the list","status_count_ahead":"${count} ${party_type} parties waiting ahead","cancel_limit_hours_tip":"Account to this restaurant’s policy, reservations can only be canceled online within ${cancel_limit_hours} hrs after being submitted. To cancel your reservation, Please contact the restaurant.","cancel_limit_before_hours_tip":"Account to this restaurant’s policy, guests can cancel reservations online at least ${cancel_limit_before_hours} hrs before. To cancel your reservation, please call the restaurant.","contact_restaurant":"Contact Restaurant","waiting_number_text":"Your waiting number is","closed":"Closed","no_tickets":"No tickets left","not_available_now":"Not available now","your_email":"Your email","success":"Success","your_wait_code_is":"your wait code is","correct_number_tip":"Please enter the correct phone number","currently_closed":"Currently closed","vip_only":"VIP only","cancel_to_callahead_tip":"Your reservation has been canceled. Would you like to join the call ahead waitlist for the ${reserve_time}?","party_of_x":"party of ${party_size}(${party_type})","receive_promo_tip":"Receive promo & updates message from this restaurant","preorder_foods_list_title":"Preorder"},"jpn":{"test":"テスト(test)","join_the_waitlist":"ウェイトリストに参加(Join the Waitlist)","trying_to_get_a_seat":"席を確保したいですか？情報を入力してウェイトリストに参加してください。(Trying to get a seat? Leave your information and join the waitlist.)","tip_wrong_text":"認証コードが間違っています(Wrong verify code)","submit":"ウェイトリストに参加(JOIN WAITLIST)","people_number_text":"ゲストの人数(Number of guests)","tel_tip_text":"正しい番号を入力してください。テキストメッセージで通知します。(Please enter correct number, we will notify you via text message)","queue_list":"前に待っているグループ（チームが前にいます。お待ちいただきありがとうございます。）(parties waiting ahead (팀이 앞에 있습니다. 기다려 주셔서 감사드립니다.))","location_tip_header2":"","location_tip_body":"レストランの周囲 {0} マイル以内でウェイトリストに参加してください。(Please join the waitlist within {0} mile(s) around the restaurant.)","location_tip_body2":"ウェブサイトが位置情報をリクエストします。ブラウザの位置情報アクセスを許可してください。(The website will request your location. Please ensure your browser allow location access.)","wait_complete_text":"あなたのテーブルの準備がほぼ整いました(Your table is almost ready)","wait_in_queue_text":"{0} {1}（{2} 人）前に待っているグループ({0} {1}({2} people) parties waiting ahead)","share_text":"友達と共有して、状況を知らせましょう(Share and let your friends know the status)","share_link_text":"このリンクを友達と共有(Share this link to your friends)","goto_preorder":"事前注文へ(Go to pre-order)","leave_text":"問題が発生しましたか？ウェイトリストから離脱(Something wrong? Leave waitlist)","reservation_info_text":"予約情報(Reservation Info)","date_text":"日付(Date)","time_text":"時間(time)","table_type_text":"テーブルタイプ(Table Type)","name_text":"名前(Name)","note_text":"メモ(Note)","phone_text":"電話番号(Phone)","verify_code_text":"認証コード(Verify code)","verify_code":"認証コード(Verify code)","tip_zone":"コードを送信(Send code to)","get_code_node":"コードを取得(Get code)","submit_reservation":"予約を確定(Make a reservation)","customer_name":"お名前(Your name)","phone_num":"電話番号(Telephone)","invite_text":"招待(INVITE)","invite_content":"<span>友達と共有して状況を知らせましょう</span>(<span>Share and let your friends know the status</span>)","copy_url":"リンクをコピー(Copy link)","new_reservation":"新規予約(New reservation)","layer_head2":"","layer_body2":"","layer_go_order":"今すぐ注文(Order now)","layer_cancel":"後で(Later)","iPhone":"","help":"","location_tip_header":"レストランから遠すぎるため、ウェイトリストに参加できません。(You are too far away from the restaurant and can’t join waitlist.)","leave_note_ph":"特別なリクエストがあればメモを残してください。(Please leave a note for any special occasions.)","phone_title":"電話番号(Phone)","tickets_left_title":"残りチケット(TICKETS LEFT):","leave_reservation_text":"問題が発生しましたか？予約をキャンセル(Something wrong? Cancel the reservation)","layer_confirm_head":"確認してください(Please Confirm)","layer_confirm_body":"あなたはリストの上位にいます。戻ってホストに確認してください。(You are near the top. Please return and see the host)","layer_confirm_btn":"確認(Confirm)","layer_cancel_btn":"キャンセル(Cancel)","status_out_of_date":"期限切れ<br/>Out of date","status_no_show":"来店されませんでした<br/>You are No Show","status_canceled":"キャンセル済み<br/>Canceled","status_seated":"着席済み<br/>Seated","status_completed":"完了しました。ありがとうございました！<br/>Completed. Thank you!","status_left":"ウェイトリストから離脱しました<br/>You have left the waitlist","status_checkedin":"チェックイン済み<br/>Checked in","status_near_top":"リストの上位にいます<br/>You're near the top of the list","status_count_ahead":"前に ${count} ${party_type} のグループが待っています<br/>${count} ${party_type} parties waiting ahead","cancel_limit_hours_tip":"このレストランのポリシーにより、予約は提出後${cancel_limit_hours}時間以内にのみオンラインでキャンセルできます。予約をキャンセルする場合は、レストランにご連絡ください。","cancel_limit_before_hours_tip":"このレストランのポリシーにより、ゲストは予約の${cancel_limit_before_hours}時間前までオンラインでキャンセルできます。予約をキャンセルする場合は、レストランにお電話ください。","contact_restaurant":"レストランに連絡(Contact Restaurant)","waiting_number_text":"あなたの待ち番号は","closed":"閉店 (Closed)","no_tickets":"チケットなし (No tickets left)","not_available_now":"現在利用不可 (Not available now)","your_email":"メールアドレス (Your email)","success":"成功 (Success)","your_wait_code_is":"ウェイトコードは ${code} です (your wait code is ${code})","correct_number_tip":"正しい電話番号を入力してください (Please enter the correct phone number)","currently_closed":"一時休業中 (Currently closed)","vip_only":"VIP限定 (VIP only)","cancel_to_callahead_tip":"予約がキャンセルされました。${reserve_time} のコールアヘッド待機リストに参加しますか？ (Your reservation has been canceled. Would you like to join the call ahead waitlist for the ${reserve_time}?)","party_of_x":"${party_size}名様(${party_type}) (party of ${party_size}(${party_type}))","receive_promo_tip":"このレストランからのプロモーション・更新情報を受け取る (Receive promo & updates message from this restaurant)","preorder_foods_list_title":"事前注文 (Preorder)"},"khm":{"test":"សាកល្បង(test)","join_the_waitlist":"ចូលរង់ចាំតុ(Join the Waitlist)","trying_to_get_a_seat":"កំពុងស្វែងរកកន្លែងអង្គុយ? ទុកព័ត៌មានរបស់អ្នក ហើយចូលរង់ចាំតុ។(Trying to get a seat? Leave your information and join the waitlist.)","tip_wrong_text":"លេខកូដផ្ទៀងផ្ទាត់មិនត្រឹមត្រូវ(Wrong verify code)","submit":"ចូលរង់ចាំតុ(JOIN WAITLIST)","people_number_text":"ចំនួនអ្នកភ្ញៀវ(Number of guests)","tel_tip_text":"សូមបញ្ចូលលេខត្រឹមត្រូវ យើងនឹងជូនដំណឹងតាមសារជាអត្ថបទ។(Please enter correct number, we will notify you via text message.)","queue_list":"ក្រុមនៅពីមុខ (មានក្រុមនៅពីមុខ។ អរគុណសម្រាប់ការរង់ចាំ។)(parties waiting ahead (팀이 앞에 있습니다. 기다려 주셔서 감사드립니다.))","location_tip_header2":"","location_tip_body":"សូមចូលរង់ចាំតុនៅក្នុងចម្ងាយ {0} ម៉ាយពីភោជនីយដ្ឋាន។(Please join the waitlist within {0} mile(s) around the restaurant.)","location_tip_body2":"គេហទំព័រនឹងស្នើសុំទីតាំងរបស់អ្នក។ សូមធានាថា browser របស់អ្នកអនុញ្ញាតឲ្យចូលប្រើទីតាំង។(The website will request your location. Please ensure your browser allow location access.)","wait_complete_text":"តុរបស់អ្នក hampir siap(Your table is almost ready)","wait_in_queue_text":"{0} {1} ({2} នាក់) ក្រុមនៅពីមុខ({0} {1} ({2} people) parties waiting ahead)","share_text":"ចែករំលែកដើម្បីឲ្យមិត្តភក្តិដឹងអំពីស្ថានភាព(Share and let your friends know the status)","share_link_text":"ចែករំលែកតំណនេះទៅមិត្តភក្តិ(Share this link to your friends)","goto_preorder":"បញ្ជាទិញមុន(Go to pre-order)","leave_text":"មានបញ្ហាឬ? ចាកចេញពីបញ្ជីរង់ចាំ(Something wrong? Leave waitlist)","reservation_info_text":"ព័ត៌មានការកក់(Reservation Info)","date_text":"កាលបរិច្ឆេទ(Date)","time_text":"ម៉ោង(Time)","table_type_text":"ប្រភេទតុ(Table Type)","name_text":"ឈ្មោះ(Name)","note_text":"កំណត់សម្គាល់(Note)","phone_text":"លេខទូរស័ព្ទ(Phone)","verify_code_text":"លេខកូដផ្ទៀងផ្ទាត់(Verify code)","verify_code":"លេខកូដផ្ទៀងផ្ទាត់(Verify code)","tip_zone":"ផ្ញើលេខកូដទៅ(Send code to)","get_code_node":"ទទួលលេខកូដ(Get code)","submit_reservation":"ធ្វើការកក់(Make a reservation)","customer_name":"ឈ្មោះរបស់អ្នក(Your name)","phone_num":"លេខទូរស័ព្ទ(Telephone)","invite_text":"អញ្ជើញ(INVITE)","invite_content":"<span>ចែករំលែក ដើម្បីឲ្យមិត្តភក្តិដឹងអំពីស្ថានភាព</span>(<span>Share and let your friends know the status</span>)","copy_url":"ចម្លងតំណ(Copy link)","new_reservation":"ការកក់ថ្មី(New reservation)","layer_head2":"","layer_body2":"","layer_go_order":"បញ្ជាទិញឥឡូវ(Order now)","layer_cancel":"ក្រោយមក(Later)","iPhone":"","help":"","location_tip_header":"អ្នកនៅឆ្ងាយពេកពីភោជនីយដ្ឋាន ហើយមិនអាចចូលរង់ចាំតុបានទេ។(You are too far away from the restaurant and can’t join waitlist.)","leave_note_ph":"សូមទុកកំណត់សម្គាល់សម្រាប់ឱកាសពិសេសណាមួយ។(Please leave a note for any special occasions.)","phone_title":"លេខទូរស័ព្ទ(Phone)","tickets_left_title":"សំបុត្រដែលនៅសល់៖(TICKETS LEFT :)","leave_reservation_text":"មានបញ្ហាឬ? បោះបង់ការកក់(Something wrong? Cancel the reservation)","layer_confirm_head":"សូមអះអាង(Please Confirm)","layer_confirm_body":"អ្នកនៅក្បែរ​កំពូលបញ្ជី។ សូមត្រឡប់មក ហើយជួបអ្នកទទួលភ្ញៀវ។(You are near the top. Please return and see the host.)","layer_confirm_btn":"អះអាង(Confirm)","layer_cancel_btn":"បោះបង់(Cancel)","status_out_of_date":"ផុតកំណត់<br/>Out of date","status_no_show":"អ្នកមិនបានមកទេ<br/>You are No Show","status_canceled":"បានបោះបង់<br/>Canceled","status_seated":"អង្គុយរួចហើយ<br/>Seated","status_completed":"បញ្ចប់។ អរគុណ!<br/>Completed. Thank you!","status_left":"អ្នកបានចាកចេញពីបញ្ជីរង់ចាំ<br/>You have left the waitlist","status_checkedin":"បានចូលរួម<br/>Checked in","status_near_top":"អ្នកនៅក្បែរ​កំពូលបញ្ជី<br/>You're near the top of the list","status_count_ahead":"មាន ${count} ${party_type} ក្រុមនៅពីមុខ<br/>${count} ${party_type} parties waiting ahead","cancel_limit_hours_tip":"យោងតាមគោលនយោបាយរបស់ភោជនីយដ្ឋាននេះការកក់ទុកអាចត្រូវបានលុបចោលតាមអនឡាញ់ក្នុងរយៈពេល${cancel_limit_hours} ម៉ោងបន្ទាប់ពីកក់ទុក។ ដើម្បីលុបចោលការកក់ទុក សូមទាក់ទងជាមួយភោជនីយដ្ឋាន។","cancel_limit_before_hours_tip":"យោងតាមគោលនយោបាយរបស់ភោជនីយដ្ឋាននេះ ភ្ញៀវអាចលុបចោលការកក់ទុកតាមអនឡាញ់យ៉ាងហោចណាស់ ${cancel_limit_before_hours} ម៉ោងមុនពេលកក់ទុក។ ដើម្បីលុបចោលការកក់ទុក សូមទូរស័ព្ទទៅភោជនីយដ្ឋាន។","contact_restaurant":"ទាក់ទងភោជនីយដ្ឋាន(Contact Restaurant)","waiting_number_text":"លេខរង់ចាំរបស់អ្នកគឺ","closed":"បិទ (Closed)","no_tickets":"អស់សំបុតរ (No tickets left):","not_available_now":"មិនមាននៅពេលនេះ (Not available now)","your_email":"អ៊ីមែលរបស់អ្នក (Your email)","success":"ជោគជ័យ (Success)","your_wait_code_is":"លេខកូររងចាំរបស់អ្នកគឺ ${code} (your wait code is ${code})","correct_number_tip":"សូមបញ្ចូលលេខទូរស័ព្ទដែលត្រឹមត្រូវ (Please enter the correct phone number)","currently_closed":"បិទបណ្តោះអាសន្ន (Currently closed)","vip_only":"សម្រាប់តែ VIP (VIP only)","cancel_to_callahead_tip":"ការកក់ទីរបស់អ្នកត្រូវបានលុបចោល។ តើអ្នកចង់ចូលរួមបញ្ជីរងចាំមុនសម្រាប់ ${reserve_time} ទេ? (Your reservation has been canceled. Would you like to join the call ahead waitlist for the ${reserve_time}?)","party_of_x":"ក្រុម ${party_size}(${party_type}) (party of ${party_size}(${party_type}))","receive_promo_tip":"ទទួលសារផ្សព្វផ្សាយនិងព័ត៌មានអាទិភាពពីភោជនីយដ្ឋាននេះ (Receive promo & updates message from this restaurant)","preorder_foods_list_title":"ការកក់មុន (Preorder)"},"kor":{"test":"test","Join the Waitlist":"Join the Waitlist (대기자명단에 등록하기)","Trying to get a seat? Leave your information and join the waitlist.":"Trying to get a seat? Leave your information and join the waitlist. (자리가 필요하신가요? 정보를 남기고 대기자 명단에 등록하세요.)","tip_wrong_text":"Wrong verify code","submit":"Join Waitlist (대기자명단에 등록)","people_number_text":"Number of guests (손님 수)","tel_tip_text":" Please enter correct number, we will notify you via text message (정확한 번호를 입력해 주시면 문자로 안내해 드리겠습니다.)","queue_list":"parties waiting ahead","location_tip_header2":"레스토랑에서 %s mile(s) 거리 이내에서 대기열에 합류하십시오.","location_tip_body2":"웹 사이트에서 사용자의 위치를 요청합니다. 브라우저에서 위치 액세스를 허용하도록 해주시기 바랍니다.","wait_complete_text":"테이블이 거의 준비되었습니다","wait_in_queue_text":"{0} {1}({2} 명)팀이 앞에 있습니다. 기다려 주셔서 감사드립니다.","share_text":"Share and let your friends know the status (공유하고 친구에게 상태를 알리세요) ","share_link_text":"Share this link to your friends (이 링크를 친구에게 공유하기)","goto_preorder":"Go to pre-order (미리 주문하기)","leave_text":"Something wrong? Leave waitlist (문제가 생겼나요? 대기자명단 취소하기)","reservation_info_text":"Reservation Info (예약 정보)","date_text":"Date (날짜)","time_text":"time (시간) ","table_type_text":"Table Type (테이블 종류)","name_text":"Name (이름)","note_text":"Note (노트)","phone_text":"Phone (연락처)","verify_code_text":"Verify code (확인 코드)","verify_code":"Verify code (확인 코드)","tip_zone":"Send code to (코드를 보내다)","get_code_node":"Get code (코드 받기) ","submit_reservation":"Make a Reservation (예약 하기) ","customer_name":" Your Name (손님 이름)","phone_num":"Telephone (전화번호)","invite_text":"Invite (초대하기) ","invite_content":"<span> Share and let your friends know the status (친구에게 예약 상태를 공유하세요)</span>","copy_url":"Copy link (링크 복사)","new_reservation":"New Reservation (새 예약)","layer_head2":"<p>음식을 미리 주문하세요.</p>","layer_body2":"<p>기다리는 시간을 절약하세요!</p>","layer_go_order":"Order now(지금 당장 주문하세요)","layer_cancel":"Later(나중에)","iPhone":"iPhone 사용자의 경우 시스템 설정(System Setting)으로 이동하세요. → 개인정보(Privacy) → 위치 서비스(Location Services) 설정에서 위치 접근을 허용으로 설정 변경 후 페이지를 새로 고침 해주세요.","help":"대기자 목록(Waitlist)에 문제가 있는 경우 호스트에게 도움을 요청해주시기 바랍니다. 감사합니다.","location_tip_header":"You are too far away from the restaurant and can’t join waitlist. 식당 근처에서 웨이팅에 등록하세요.","leave_note_ph":"특별한 경우를 위해 메모를 남겨주세요.","phone_title":"Phone(연락처)","tickets_left_title":"TICKETS LEFT(남은 티켓):","leave_reservation_text":"Something wrong? Cancel the reservation (문제가 생기셨나요? 예약을 취소하세요)","layer_confirm_head":"Confirm your waitlist<p>(대기자 명단 확인)</p>","layer_confirm_body":"You are near the top. Please return and see the host<p>(손님의 차례가 되셨습니다. 직원에게 알려 주시기 바랍니다)</p>","layer_confirm_btn":"Confirm(확인)","layer_cancel_btn":"Cancel(취소)","status_out_of_date":"유효기간이 지난 링크입니다<br/>Out of date","status_no_show":"손님은 No-Show 되셨습니다 <br/You are No Show","status_canceled":"취소됨<br/>Canceled","status_seated":"자리에 앉으셨습니다<br/>Seated","status_completed":"완료됨. 감사합니다!<br/>Completed. Thank you!","status_left":"손님은 대기자 명단에서 나가셨습니다<br/>You have left the waitlist","status_checkedin":"'체크인<br/>Checked in","status_near_top":"손님은 대기자 명단 맨 위에 있습니다<br/>You're near the top of the list","status_count_ahead":"현재 ${party_type} 그룹 ${count}팀이 대기중입니다<br/>${count} ${party_type} parties waiting ahead","cancel_limit_hours_tip":"이 레스토랑의 규정에 따르면, 온라인을 통한 예약을 온라인에서 직접 취소하시려면 접수 후 ${cancel_limit_hours} 시간 이내까지만 가능합니다. 이후 예약을 취소하시려면 레스토랑에 전화로 문의 부탁드립니다.","cancel_limit_before_hours_tip":"이 레스토랑의 규정에 따르면, 온라인을 통한 예약을 온라인에서 직접 취소하시려면 접수 후 ${cancel_limit_before_hours} 시간 이내까지만 가능합니다. 이후 예약을 취소하시려면 레스토랑에 전화로 문의 부탁드립니다.","contact_restaurant":"레스토랑에 문의해 주세요(Contact Restaurant)","waiting_number_text":"귀하의 대기 번호는","closed":"영업 종료 (Closed)","no_tickets":"매진 (No tickets left)","not_available_now":"현재 이용 불가 (Not available now)","your_email":"이메일 주소 (Your email)","success":"성공 (Success)","your_wait_code_is":"대기 번호: ${code} (your wait code is ${code})","correct_number_tip":"정확한 전화번호를 입력해 주세요 (Please enter the correct phone number)","currently_closed":"임시 휴업 (Currently closed)","vip_only":"VIP 전용 (VIP only)","cancel_to_callahead_tip":"예약이 취소되었습니다. ${reserve_time} 콜 어헤드 대기 목록에 참여하시겠습니까? (Your reservation has been canceled. Would you like to join the call ahead waitlist for the ${reserve_time}?)","party_of_x":"${party_size}명(${party_type}) (party of ${party_size}(${party_type}))","receive_promo_tip":"이 레스토랑의 프로모션 및 업데이트 메시지 수신 (Receive promo & updates message from this restaurant)","preorder_foods_list_title":"미리 주문 (Preorder)"},"tha":{"test":"ทดสอบ","Join the Waitlist":"Join the Waitlist (เข้าร่วมรายการรอ)","Trying to get a seat? Leave your information and join the waitlist.":"Trying to get a seat? Leave your information and join the waitlist. (พยายามหาที่นั่ง? ทิ้งข้อมูลของคุณและเข้าร่วมรายการรอ)","tip_wrong_text":"Wrong verify code (รหัสยืนยันไม่ถูกต้อง)","submit":"Join Waitlist (เข้าร่วมรายการรอ)","people_number_text":"Number of guests (จำนวนแขก)","tel_tip_text":"Please enter correct number, we will notify you via text message (กรุณาใส่หมายเลขที่ถูกต้อง เราจะแจ้งให้คุณทราบทางข้อความ)","queue_list":"parties waiting ahead (ปาร์ตี้ที่รออยู่ข้างหน้า)","location_tip_header2":"","location_tip_body":"กรุณาเข้าร่วมรายการรอในระยะ {0} ไมล์รอบร้านอาหาร","location_tip_body2":"เว็บไซต์จะขอเข้าถึงตำแหน่งของคุณ กรุณาให้สิทธิ์เบราว์เซอร์ของคุณในการเข้าถึงตำแหน่ง","wait_complete_text":"โต๊ะของคุณเกือบพร้อมแล้ว","wait_in_queue_text":"มีปาร์ตี้ {0} {1} ({2} คน) รออยู่ข้างหน้า","share_text":"Share and let your friends know the status (แชร์และบอกให้เพื่อนของคุณทราบสถานะ)","share_link_text":"Share this link to your friends (แชร์ลิงก์นี้ให้เพื่อนของคุณ)","goto_preorder":"Go to pre-order (ไปที่การสั่งล่วงหน้า)","leave_text":"Something wrong? Leave waitlist (มีปัญหา? ออกจากรายการรอ)","reservation_info_text":"Reservation Info (ข้อมูลการจอง)","date_text":"Date (วันที่)","time_text":"time (เวลา)","table_type_text":"Table Type (ประเภทโต๊ะ)","name_text":"Name (ชื่อ)","note_text":"Note (หมายเหตุ)","phone_text":"Phone (โทรศัพท์)","verify_code_text":"Verify code (รหัสยืนยัน)","verify_code":"Verify code (รหัสยืนยัน)","tip_zone":"Send code to (ส่งรหัสไปยัง)","get_code_node":"Get code (รับรหัส)","submit_reservation":"Make a Reservation (ทำการจอง)","customer_name":"Your Name (ชื่อของคุณ)","phone_num":"Telephone (โทรศัพท์)","invite_text":"Invite (เชิญ)","invite_content":"<span> Share and let your friends know the status (แชร์และบอกให้เพื่อนของคุณทราบสถานะ)</span>","copy_url":"Copy link (คัดลอกลิงก์)","new_reservation":"New Reservation (การจองใหม่)","layer_head2":"","layer_body2":"","layer_go_order":"Order now (สั่งซื้อตอนนี้)","layer_cancel":"Later (ภายหลัง)","iPhone":"","help":"","location_tip_header":"You are too far away from the restaurant and can’t join waitlist. (คุณอยู่ไกลเกินไปจากร้านอาหารและไม่สามารถเข้าร่วมรายการรอได้)","leave_note_ph":"กรุณาทิ้งหมายเหตุสำหรับโอกาสพิเศษใด ๆ","phone_title":"Phone(โทรศัพท์)","tickets_left_title":"TICKETS LEFT (ตั๋วที่เหลือ):","leave_reservation_text":"Something wrong? Cancel the reservation (มีปัญหา? ยกเลิกการจอง)","layer_confirm_head":"Confirm your waitlist<p>(กรุณายืนยัน)</p>","layer_confirm_body":"You are near the top. Please return and see the host<p>(คุณใกล้จะถึงคิวแล้ว กรุณากลับมาและพบเจ้าหน้าที่)</p>","layer_confirm_btn":"Confirm (ยืนยัน)","layer_cancel_btn":"Cancel (ยกเลิก)","status_out_of_date":"ล้าสมัยแล้ว <br/>Out of date","status_no_show":"คุณไม่ได้มา <br/>You are No Show","status_canceled":"ยกเลิกแล้ว <br/>Canceled","status_seated":"นั่งแล้ว <br/>Seated","status_completed":"เสร็จสิ้น ขอบคุณ! <br/>Completed. Thank you!","status_left":"คุณออกจากรายชื่อรอแล้ว <br/>You have left the waitlist","status_checkedin":"เช็คอินแล้ว <br/>Checked in","status_near_top":"คุณอยู่ใกล้อันดับต้น ๆ ของรายการ <br/>You're near the top of the list","status_count_ahead":"รออยู่ข้างหน้า ${count} กลุ่ม ${party_type} <br/>${count} ${party_type} parties waiting ahead","cancel_limit_hours_tip":"ตามนโยบายของร้านอาหารนี้การจองสามารถยกเลิกออนไลน์ได้ภายใน${cancel_limit_hours} ชั่วโมงหลังจากทำการจอง หากต้องการยกเลิกการจอง กรุณาติดต่อร้านอาหาร","cancel_limit_before_hours_tip":"ตามนโยบายของร้านอาหารนี้ ลูกค้าสามารถยกเลิกการจองออนไลน์ได้อย่างน้อย ${cancel_limit_before_hours} ชั่วโมงล่วงหน้า หากต้องการยกเลิกการจอง กรุณาติดต่อร้านอาหาร","contact_restaurant":"ติดต่อร้านอาหาร(Contact Restaurant)","waiting_number_text":"หมายเลขรอของคุณคือ","closed":"ปิด (Closed)","no_tickets":"ไม่มีตั๋วเหลือ (No tickets left)","not_available_now":"ไม่พร้อมบริการในขณะนี้ (Not available now)","your_email":"อีเมลของคุณ (Your email)","success":"สำเร็จ (Success)","your_wait_code_is":"รหัสการรอของคุณคือ (your wait code is)","correct_number_tip":"กรุณากรอกหมายเลขโทรศัพท์ที่ถูกต้อง (Please enter the correct phone number)","currently_closed":"ปิดให้บริการชั่วคราว (Currently closed)","vip_only":"สำหรับสมาชิก VIP เท่านั้น (VIP only)","cancel_to_callahead_tip":"การจองของคุณถูกยกเลิกแล้ว ต้องการเข้าร่วมรายชื่อรอโทรล่วงหน้าสำหรับ ${reserve_time} หรือไม่? (Your reservation has been canceled. Would you like to join the call ahead waitlist for the ${reserve_time}?)","party_of_x":"กลุ่ม ${party_size} (${party_type}) (party of ${party_size}(${party_type}))","receive_promo_tip":"รับข้อความโปรโมชั่นและอัปเดตจากร้านอาหารนี้ (Receive promo & updates message from this restaurant)","preorder_foods_list_title":"สั่งล่วงหน้า (Preorder)"},"vie":{"test":"Kiểm tra(test)","join_the_waitlist":"Tham gia danh sách chờ(Join the Waitlist)","trying_to_get_a_seat":"Bạn đang cố gắng tìm chỗ ngồi? Hãy để lại thông tin của bạn và tham gia danh sách chờ.(Trying to get a seat? Leave your information and join the waitlist.)","tip_wrong_text":"Mã xác nhận không đúng(Wrong verify code)","submit":"THAM GIA DANH SÁCH CHỜ(JOIN WAITLIST)","people_number_text":"Số lượng khách(Number of guests)","tel_tip_text":"Vui lòng nhập số chính xác, chúng tôi sẽ thông báo cho bạn qua tin nhắn.(Please enter correct number, we will notify you via text message.)","queue_list":"Nhóm phía trước (Có nhóm phía trước. Cảm ơn bạn đã chờ đợi.)(parties waiting ahead (Có nhóm phía trước. Cảm ơn bạn đã chờ đợi.))","location_tip_header2":"","location_tip_body":"Vui lòng tham gia danh sách chờ trong phạm vi {0} dặm quanh nhà hàng.(Please join the waitlist within {0} mile(s) around the restaurant.)","location_tip_body2":"Trang web sẽ yêu cầu truy cập vị trí của bạn. Vui lòng đảm bảo trình duyệt của bạn cho phép truy cập vị trí.(The website will request your location. Please ensure your browser allow location access.)","wait_complete_text":"Bàn của bạn gần như đã sẵn sàng(Your table is almost ready)","wait_in_queue_text":"{0} {1} ({2} người) nhóm đang chờ phía trước({0} {1} ({2} people) parties waiting ahead)","share_text":"Chia sẻ để bạn bè của bạn biết trạng thái(Share and let your friends know the status)","share_link_text":"Chia sẻ liên kết này với bạn bè(Share this link to your friends)","goto_preorder":"Đi đến đặt hàng trước(Go to pre-order)","leave_text":"Có vấn đề gì không? Rời khỏi danh sách chờ(Something wrong? Leave waitlist)","reservation_info_text":"Thông tin đặt chỗ(Reservation Info)","date_text":"Ngày(Date)","time_text":"Thời gian(Time)","table_type_text":"Loại bàn(Table Type)","name_text":"Tên(Name)","note_text":"Ghi chú(Note)","phone_text":"Số điện thoại(Phone)","verify_code_text":"Mã xác nhận(Verify code)","verify_code":"Mã xác nhận(Verify code)","tip_zone":"Gửi mã đến(Send code to)","get_code_node":"Nhận mã(Get code)","submit_reservation":"Xác nhận đặt chỗ(Make a reservation)","customer_name":"Tên của bạn(Your name)","phone_num":"Số điện thoại(Telephone)","invite_text":"MỜI(INVITE)","invite_content":"<span>Chia sẻ để bạn bè của bạn biết trạng thái</span>(<span>Share and let your friends know the status</span>)","copy_url":"Sao chép liên kết(Copy link)","new_reservation":"Đặt chỗ mới(New reservation)","layer_head2":"","layer_body2":"","layer_go_order":"Đặt hàng ngay(Order now)","layer_cancel":"Để sau(Later)","iPhone":"","help":"","location_tip_header":"Bạn đang ở quá xa nhà hàng nên không thể tham gia danh sách chờ.(You are too far away from the restaurant and can’t join waitlist.)","leave_note_ph":"Vui lòng để lại ghi chú cho các dịp đặc biệt.(Please leave a note for any special occasions.)","phone_title":"Số điện thoại(Phone)","tickets_left_title":"VÉ CÒN LẠI (TICKETS LEFT):","leave_reservation_text":"Có vấn đề gì không? Hủy đặt chỗ(Something wrong? Cancel the reservation)","layer_confirm_head":"Vui lòng xác nhận(Please Confirm)","layer_confirm_body":"Bạn sắp đến lượt. Vui lòng quay lại và gặp nhân viên tiếp đón.(You are near the top. Please return and see the host.)","layer_confirm_btn":"Xác nhận(Confirm)","layer_cancel_btn":"Hủy(Cancel)","status_out_of_date":"Hết hạn <br/>Out of date","status_no_show":"Bạn đã không đến <br/>You are No Show","status_canceled":"Đã hủy <br/>Canceled","status_seated":"Đã ngồi <br/>Seated","status_completed":"Hoàn tất. Cảm ơn bạn! <br/>Completed. Thank you!","status_left":"Bạn đã rời khỏi danh sách chờ <br/>You have left the waitlist","status_checkedin":"Đã check-in <br/>Checked in","status_near_top":"Bạn sắp đến lượt <br/>You're near the top of the list","status_count_ahead":"Hiện phía trước còn ${count} ${party_type} đang chờ <br/>${count} ${party_type} parties waiting ahead","cancel_limit_hours_tip":"Theo quy định của nhà hàng, đặt chỗ chỉ có thể hủy trực tuyến trong vòng ${cancel_limit_hours} giờ sau khi đặt. Để hủy đặt chỗ, vui lòng liên hệ nhà hàng.","cancel_limit_before_hours_tip":"Theo quy định của nhà hàng, khách có thể hủy đặt chỗ trực tuyến ít nhất ${cancel_limit_before_hours} giờ trước giờ đặt. Để hủy đặt chỗ, vui lòng gọi điện cho nhà hàng.","contact_restaurant":"Liên hệ nhà hàng(Contact Restaurant)","waiting_number_text":"Số chờ của bạn là","closed":"Đóng cửa (Closed)","no_tickets":"Hết vé (No tickets left)","not_available_now":"Hiện không có sẵn (Not available now)","your_email":"Email của bạn (Your email)","success":"Thành công (Success)","your_wait_code_is":"Mã chờ của bạn là ${code} (your wait code is ${code})","correct_number_tip":"Vui lòng nhập đúng số điện thoại (Please enter the correct phone number)","currently_closed":"Tạm thời đóng cửa (Currently closed)","vip_only":"Chỉ dành cho VIP (VIP only)","cancel_to_callahead_tip":"Đặt chỗ của bạn đã bị hủy. Bạn có muốn tham gia danh sách chờ gọi trước cho ${reserve_time} không? (Your reservation has been canceled. Would you like to join the call ahead waitlist for the ${reserve_time}?)","party_of_x":"Nhóm ${party_size}(${party_type}) (party of ${party_size}(${party_type}))","receive_promo_tip":"Nhận tin khuyến mãi & cập nhật từ nhà hàng này (Receive promo & updates message from this restaurant)","preorder_foods_list_title":"Đặt hàng trước (Preorder)"}}
+
+        var _now_date = new Date();
+        var _year = _now_date.getFullYear();
+        var _month = _now_date.getMonth() + 1;
+        var _day = _now_date.getDate();
+        var _hour = _now_date.getHours();
+        var _min = _now_date.getMinutes();
+        _this.data.date = _year + '/' + _month + '/' + _day;
+        _this.data.time = _hour + ':' + _min;
+
+        tools.verifyLinkTokenAj();
+        tools.getPeopleSettingAj();
+        tools.getWaitingListAj();
+        tools.getAnnouceAj();
+
+        _this.data.sms_language = Intl.DateTimeFormat().resolvedOptions().locale;
+        _this.data.sms_language = _this.data.sms_language === 'zh-CN' ? 'chn' : 'eng';
+    } catch (e) {
+        sweetAlert("Error", e.message, "error");
+    }
+};
+var radioClick = function(e) {
+    var name = $(e).prop('name')
+    $(":radio[name='"+name+"']:not(:checked)").attr('tag', 0)
+    if ($(e).attr('tag') == 1) {
+        $(e).prop('checked', false)
+        $(e).attr('tag', 0)
+    } else {
+        $(e).attr('tag', 1)
+    }
+    var checked=$(e).prop('checked')
+    $(":radio[name='"+name+"']").parent().parent().siblings(".radio-group-sub").hide()
+    if(checked){
+        $(e).parent().parent().siblings(".radio-group-sub").show()
+    }
+}
+var tools = {
+    getWaitwiseSetting: function() {
+        $.ajax({
+            type: 'get',
+            url: '/weapp/user/minipass/setting',
+            data: {
+                sid: _this.data.sid,
+            },
+            success: function(res) {
+                if (res.data.code === 100000) {
+                    var waitwise_enable = res.data.data.waitwise_enable;
+                    if (waitwise_enable === 1) {
+                        $('#pro_zone').show();
+                    }
+                }
+            },
+            error: function() {}
+        });
+    },
+    setLocationTip: function() {
+        if (_this.data.max_distance_enable == 1) {
+            var _miles = (_this.data.max_distance * 1 / 1.6093).toFixed(2);
+            //- $('#location_tip_header2').html(_this.lang[_this.data.language]['location_tip_header2'].replace('%s',''+_miles));
+            //- $('#location_tip_body2').html(_this.lang[_this.data.language]['location_tip_body2']);
+            //- $('#location-layer').show();
+            if (_this.data.language == 'eng'){
+                $('#location_tip_header2').html(_this.lang[_this.data.language]['location_tip_header2'].replace('%s',''+_miles));
+                $('#location_tip_body').html(_this.lang[_this.data.language]['location_tip_body'].replace(/\{0\}/g, ''+_miles));
+                $('#location_tip_body2').html(_this.lang[_this.data.language]['location_tip_body2']);
+            }else{
+                $('#location_tip_header2').html(_this.lang[_this.data.language]['location_tip_header2'].replace('%s',''+_miles));
+                $('#location_tip_body2').html(_this.lang[_this.data.language]['location_tip_body2']);
+            }
+            $('#location-layer').show();
+            let onSuccess = (position)=>{
+                let longitude = position.coords.longitude;
+                let latitude = position.coords.latitude;
+                let dis = tools.getDistance(_this.data.latitude,_this.data.longitude,latitude, longitude);
+
+                if(dis > _this.data.max_distance * 1){
+                    _this.data.is_near = 0;
+                    //- if (_this.data.language == 'eng') {
+                    //-     $('#location_tip_header').html('');
+                    //-     $('#location_tip_body').html('For iPhone users, please go to the System Settings →  Privacy → Location Services to allow location access. After setting, please refresh the page.');
+                    //-     $('#location_tip_body2').html('If you have any troubles joining the waitlist, please ask our host for help. Thank you.');
+                    //- } else {
+                    //-     $('#location_tip_body').html('如果您是苹果手机用户，请前往 设置 → 隐私 → 定位服务 → 允许网站访问位置信息。设置完毕后，请刷新该页面。');
+                    //-     $('#location_tip_body2').html('如果您有任何问题，欢迎找我们的前台协助。谢谢！');
+                    //- }
+                    //- $('#location_tip_body').css('text-align', 'left');
+                    //- $('#location_tip_body2').css('text-align', 'left');
+                } else {
+                    $('#location-layer').hide();
+                    _this.data.is_near = 1;
+                }
+            }
+            let onError = (error)=>{
+                $('#location_tip_body').html('For iPhone users, please go to the System Settings →  Privacy → Location Services to allow location access. After setting, please refresh the page.');
+                $('#location_tip_body3').html('If you have any troubles joining the waitlist, please ask our host for help. Thank you.');
+                //- $('#location_tip_body').html('For iPhone users, please go to the System Settings →  Privacy → Location Services to allow location access. After setting, please refresh the page.');
+                $('#location_tip_body2').html(_this.lang[_this.data.language]['iPhone']);
+                //- $('#location_tip_body3').html('If you have any troubles joining the waitlist, please ask our host for help. Thank you.');
+                $('#location_tip_body4').html(_this.lang[_this.data.language]['help']);
+                $('#location_tip_body').css('text-align', 'left');
+                $('#location_tip_body2').css('text-align', 'left');
+                $('#location_tip_body3').css('text-align', 'left');
+                $('#location_tip_body4').css('text-align', 'left');
+            };
+
+            if (navigator.geolocation){
+                let options = {
+                    enableHighAccuracy: true,
+                    maximumAge:1000
+                };
+                navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+            }
+        }
+    },
+    getAnnouceAj: function() {
+        $.ajax({
+            type: 'get',
+            url: '/weapp/user/preorder/annoucement/get',
+            data: {
+                sid: _this.data.sid,
+                date: _this.data.date,
+                time: _this.data.time
+            },
+            success: function(res) {
+                if (res.data.code === 100000) {
+                    var annoucement_data = res.data.data.annoucement_data;
+                    if (annoucement_data.annoucement_content) {
+                        $('#annoucement-layer').show();
+                        $('#annoucement-layer-content').html(annoucement_data.annoucement_content);
+                        $('#annoucement-layer-content').css('color', annoucement_data.font_color);
+                        $('#annoucement-show').show();
+                        //- $('#annoucement_text').html(annoucement_data.annoucement_content);
+                        //- $('#annoucement_text').css('color', annoucement_data.font_color);
+                    } else {
+                        $('#annoucement-layer').hide();
+                        $('#annoucement-layer-content').html();
+                        $('#annoucement-show').hide();
+                        //- $('#annoucement_text').html('');
+                    }
+                }
+            },
+            error: function() {}
+        });
+    },
+    verifyLinkTokenAj: function(token) {
+        $.ajax({
+            type: 'get',
+            url: '/weapp/user/preorder/verify_link_token',
+            data: {
+                sid: _this.data.sid,
+                token: tools.getUrlParam('token') || '',
+            },
+            success: function(res) {
+                if (res.data.code === 100000) {
+                    var result = res.data.data
+                    if(!result){
+                        $('#wrong-link-layer').show();
+                    }
+                }
+            },
+            error: function() {}
+        });
+    },
+    getPeopleSettingAj: function() {
+        $.ajax({
+            type: 'get',
+            url: '/weapp/user/preorder/people_setting/get',
+            data: {
+                sid: _this.data.sid
+            },
+            success: function(res) {
+                if (res.data.code === 100000) {
+                    var people_num_min = res.data.data.people_num_min || 1;
+                    var people_num_max = res.data.data.people_num_max || 20;
+
+                    var tmpl = '';
+                    for (var i = people_num_min; i < people_num_max * 1 + 1; i++) {
+                        if (i == people_num_min) {
+                            tmpl += '<option value="' + i + '" selected>' + i + '</option>';
+                        } else {
+                            tmpl += '<option value="' + i + '">' + i + '</option>';
+                        }
+                    }
+
+                    _this.data.people_num = people_num_min * 1;
+                    tools.getSettingAj();
+                    $('#people_num_selects').html(tmpl);
+                }
+            },
+            error: function() {
+                tools.getSettingAj();
+            }
+        });
+    },
+    getWaitingListAj: function() {
+        $.ajax({
+            type: 'get',
+            url: '/weapp/user/preorder/list',
+            data: {
+                sid: _this.data.sid
+            },
+            success: function(res) {
+                if (res.data.code === 100000) {
+                    var preorder_dict = res.data.data.partytype_list;
+                    var partytype_dict = res.data.data.partytype;
+
+                    var party_tags = partytype_dict.party_tags || '';
+                    var party_ranges = partytype_dict.party_ranges || '';
+                    var party_names = partytype_dict.party_names || '';
+
+                    var partytype_name_list = '';
+                    var partytype_value_list = '';
+                    var total = party_tags.split(',').length;
+
+                    var template = ''
+                    for (var i = 0; i < total; i++) {
+                        var table_name = party_names.split(',')[i] + '(' + party_ranges.split(',')[i] + ')';
+                        var waiting_num = preorder_dict[party_tags.split(',')[i]];
+                        var border_style = i != total - 1 ? 'border-right' : ''
+                        template += '<div class="table-size-item flex-col-center ' + border_style + '">'
+                            + '<span class="wait-num">' + waiting_num + '</span>'
+                            + '<span class="table-size">' + table_name + '</span>'
+                        + '</div>'
+                    }
+                    $('#waiting-table-list').html(template);
+                }
+            },
+            error: function() {}
+        });
+    },
+    getSettingAj: function() {
+        $.ajax({
+            type: 'get',
+            url: '/weapp/user/preorder/setting/get',
+            data: {
+                sid: _this.data.sid
+            },
+            success: function(res) {
+                if (res.data.code === 100000) {
+                    let theme_color = res.data.data.setting.theme_color;
+                    let title_color = res.data.data.setting.title_color;
+
+                    document.documentElement.style.setProperty('--primary-color', theme_color);
+                    document.documentElement.style.setProperty('--title_color', title_color);
+
+                    _this.data.show_waitcode = res.data.data.setting.show_waitcode;
+                    _this.data.show_waiting_info = res.data.data.setting.show_waiting_info;
+                    _this.data.enable = res.data.data.enable || 0;
+                    _this.data.need_verify = res.data.data.need_verify;
+                    _this.data.option_list = res.data.data.option_list;
+                    _this.data.need_email = res.data.data.need_email;
+
+                    if (_this.data.show_waiting_info == 1) {
+                        $('#waiting-table-list').show();
+                    }
+
+                    let limit_data = res.data.data.limit_data || {};
+                    let _store_data = res.data.data.store_info;
+                    let _limit_mode = res.data.data.setting.limit_mode;
+                    _this.data.status = res.data.data.status || 1;
+                    _this.data.open_time_range = limit_data.avai_range || [];
+
+                    if (limit_data.avai_range && limit_data.avai_range.length > 0) {
+                        if (_this.data.status == 1 || _this.data.status == 3) {
+                            $('#limit_tip_zone').html(limit_data.total_count);
+                            $('#left_tip_zone').html(limit_data.left_count);
+                        }
+                    }
+
+                    if(limit_data.limit_style==2){
+                        $('.tickets-left').hide();
+                    }
+
+                    document.title = _store_data.sname;
+                    _this.data.title = _store_data.sname;
+                    _this.data.language = _store_data.language;
+                    //- _this.data.language = 'kor'//测试用，正式请修改
+                    _this.data.longitude = _store_data.longitude
+                    _this.data.latitude = _store_data.latitude
+                    _this.data.max_distance = res.data.data.setting.max_distance;
+                    _this.data.max_distance_enable = res.data.data.setting.max_distance_enable || 0;
+                    $('#sname').html(_store_data.sname);
+                    $('#slogo').attr('src', _store_data.slogo);
+
+                    // 显示地址
+                    var street_address = _store_data.street_address;
+                    var locality = _store_data.locality;
+                    var postal_code = _store_data.postal_code;
+                    var stel = _store_data.stel;
+
+                    var show_location_text = '';
+
+                    if (street_address) {
+                        show_location_text += street_address;
+                    }
+
+                    if (locality) {
+                        show_location_text += ', ' + locality;
+                    }
+
+                    if (postal_code) {
+                        show_location_text += ', ' + postal_code;
+                    }
+
+                    if (show_location_text) {
+                        $('#location_text').html(show_location_text);
+                        $('#location_text_container').show();
+                    }
+
+                    if (stel) {
+                        $('#stel_text').html(stel);
+                        $('#stel_text').attr('href', 'tel:' + stel);
+                        $('#stel_text_container').show();
+                    }
+
+                    tools.setLanguage();
+                    window.localStorage.setItem(_this.data.sid + '_sname', _store_data.sname);
+
+                    tools.setLocationTip();
+
+                    if (_this.data.need_verify == 0) {
+                        $('#verify_code_zone').hide();
+                        //- $('#robot').hide();
+                    } else {
+                        $('#verify_code_zone').show();
+                        //- $('#robot').show();
+                    }
+
+                    if (_this.data.need_email == 2) {
+                        $('#need_email').hide();
+                    }
+
+                    if (_this.data.need_email == 0) {
+                        $('#email_zone').hide();
+                    }
+                    if (res.data.data.setting.show_guest_note == 1) {
+                        $('#note_zone').show();
+                    }
+
+                    if (_this.data.enable == 0 || (limit_data.left_count == 0 && limit_data.limit_style==1)) {
+                        $('#submit').html(_this.lang[_this.data.language]['closed']);
+                        $($('#submit')[0].parentNode).attr('disabled', 'disabled');
+                        $('#customer_name').attr('disabled', 'disabled');
+                        $('#verify_code').attr('disabled', 'disabled');
+                        $('#zone_code').attr('disabled', 'disabled');
+                        $('#phone_num').attr('disabled', 'disabled');
+                        $('.mdc-select__native-control').attr('disabled', 'disabled');
+                        $('#get_code_node').attr('disabled', 'disabled');
+                        $('#robot').attr('disabled', 'disabled');
+
+                        if (_this.data.status == 3) {
+                            $('#submit').html(_this.lang[_this.data.language]['no_tickets']);
+                        } else if (_this.data.status == 2) {
+                            $('#submit').html(_this.lang[_this.data.language]['not_available_now']);
+                        }
+
+                        tools.show_closed_alert(limit_data,_limit_mode);
+                        _this.data.lock = true;
+
+                        setTimeout(function() {
+                            _this.data.lock = false;
+                        }, 3200);
+                        
+                        $(document.body).on('click', function(e) {
+                            if (_this.data.lock) {
+                                return;
+                            }
+
+                            _this.data.lock = true;
+                            tools.show_closed_alert(limit_data,_limit_mode);
+
+                            setTimeout(function() {
+                                _this.data.lock = false;
+                            }, 3200);
+                        });
+                    }
+
+                    var rendered = '';
+                    var template = $('#option_item_tmpl').html();
+                    Mustache.parse(template);
+
+                    for (var i = 0; i < _this.data.option_list.length; i++) {
+                        _this.data.option_list[i].values = _this.data.option_list[i].values_sub || _this.data.option_list[i].values
+                        
+                        _this.data.option_dict[_this.data.option_list[i].option_name] = ''
+                        _this.data.option_required_dict[_this.data.option_list[i].option_name] = _this.data.option_list[i].required
+                        _this.data.option_show_dict[_this.data.option_list[i].option_name] = true
+
+                        _this.data.option_list[i].id = 'option_id_' + i
+                        var option_people_num_min = _this.data.option_list[i].people_num_min
+                        var option_people_num_max = _this.data.option_list[i].people_num_max
+                        var _display = ''
+
+                        _this.data.option_list[i].newValues = []
+                        for (let j = 0; j < _this.data.option_list[i].values.length; j++) {
+                            var item = _this.data.option_list[i].values[j]
+                            var itemImg = _this.data.option_list[i].images[j] || ''
+                            var itemDesc = _this.data.option_list[i].descriptions[j] || ''
+                            item = item.split('|')
+                            itemImg = itemImg.split('|')
+                            itemDesc = itemDesc.split('|')
+                            var showDescBtn = itemImg[0] || itemDesc[0] ? true : false
+                            var newOption = {
+                                value: item[0],
+                                img: itemImg[0],
+                                desc: itemDesc[0],
+                                showDescBtn,
+                                sub: [],
+                                father_index: i,
+                                index: j
+                            }
+                            if (item.length > 1) {
+                                for (let k = 1; k < item.length; k++) {
+                                    var showDescBtnSub = itemImg[k] || itemDesc[k] ? true : false
+                                    const subItem = {
+                                        value_sub: item[k],
+                                        img_sub: itemImg[k],
+                                        desc_sub: itemDesc[k],
+                                        showDescBtnSub,
+                                        father_index: i,
+                                        index: j,
+                                        sub_index: k - 1
+                                    }
+                                    newOption.sub.push(subItem)
+                                }
+                            }
+                            _this.data.option_list[i].newValues.push(newOption)
+                        }
+                        if (option_people_num_min > 0) {
+                            if (_this.data.people_num < option_people_num_min) {
+                                _this.data.option_show_dict[_this.data.option_list[i].option_name] = false
+                                _display = 'none'
+                            }
+                        }
+                        if (option_people_num_max > 0) {
+                            if (_this.data.people_num > option_people_num_max) {
+                                _this.data.option_show_dict[_this.data.option_list[i].option_name] = false
+                                _display = 'none'
+                            }
+                        }
+                        _this.data.option_list[i].display = _display
+                    }
+
+                    rendered += Mustache.render(template, {
+                        data: _this.data.option_list
+                    });
+
+                    $('#options_container').html(rendered);
+                } else {
+                    sweetAlert("Error", res.data.msg, "error");
+                }
+            },
+            error: function() {}
+        });
+    },
+    show_closed_alert(limit_data,limit_mode) {
+        if (_this.data.status == 0) {
+            sweetAlert({
+                title: "Waitlist is currently not available",
+                text: 'Please contact the restaurant or refresh the page.',
+                type: 'warning',
+                timer: 3000
+            });
+        } else if (_this.data.status == 2 && limit_data.avai_range.length > 0) {
+            sweetAlert({
+                title: "Waitlist is currently not available",
+                text: 'Online waitlist hours: ' + limit_data.avai_range.join(';'),
+                type: 'warning',
+                timer: 3000
+            });
+        } else if (_this.data.status == 3) {
+            $('#submit').html(_this.data.language === 'chn' ? '无法排队(No tickets left)' : 'No tickets left');
+            if(limit_mode==1){
+                sweetAlert({
+                    title: "Waitlist is currently not available",
+                    text: 'No ticket left online, please contact the restaurant.',
+                    type: 'warning',
+                    timer: 3000
+                });
+            }else{
+                sweetAlert({
+                    title: "Waitlist is currently full",
+                    text: 'Please wait for available space and refresh the page.',
+                    type: 'warning',
+                    timer: 3000
+                });
+            }
+        } else {
+            sweetAlert({
+                title: "Waitlist is currently not available",
+                text: 'Please contact the restaurant or refresh the page.',
+                type: 'warning',
+                timer: 3000
+            });
+        }  
+    },
+    show_tip: function(_msg) {
+        $('#verify_code_err_zone').find('span').html(_msg);
+        $('#verify_code_err_zone').show();
+        setTimeout(function() {
+            $('#verify_code_err_zone').hide();
+        }, 3000);
+    },
+    addPreorderAj: function(post_data) {
+        if (_this.data.aj_lock) { return; }
+        _this.data.aj_lock = true;
+        $.ajax({
+            type: 'get',
+            url: '/weapp/user/v2/preorder/add',
+            data: post_data,
+            success: function(res) {
+                if (res.data.code === 100000) {
+                    //判断是否显示排队code
+                    if(_this.data.show_waitcode == 1){
+                        var wait_code_tmpl = _this.lang[_this.data.language]['your_wait_code_is'];
+                        wait_code_tmpl = wait_code_tmpl.replace(/\$\{code\}/g, res.data.data.wait_code);
+
+                        sweetAlert(_this.lang[_this.data.language]['success'], wait_code_tmpl, "success");
+                    }else{
+                        sweetAlert(_this.lang[_this.data.language]['success'], '', "success");
+                    }
+                    setTimeout(function() {
+                        window.location.replace(res.data.data.url);
+                    }, 2000);
+                } else if (res.data.code === 100010) {
+                    sweetAlert("Error", res.data.msg, "error");
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 1500);
+                } else if (res.data.code === 100011) {
+                    sweetAlert("Error", res.data.msg, "error");
+                    _this.data.aj_lock = false;
+                } else if (res.data.code === 100005) {
+                    sweetAlert("Error", res.data.msg, "error");
+                    _this.data.aj_lock = false;
+                } else {
+                    _this.data.aj_lock = false;
+                    tools.show_tip('验证码错误(Wrong verify code)');
+                }
+            },
+            error: function() {
+                _this.data.aj_lock = false;
+            }
+        });
+    },
+    editMmsApprovalAj: function(post_data) {
+        $.ajax({
+            type: 'post',
+            url: '/weapp/user/guest/edit_mms_approval',
+            data: post_data,
+            success: function(res) {
+                if (res.data.code === 100000) {
+                    console.log('edit mms_approval ok');
+                }
+            },
+            error: function() {}
+        });
+    },
+    getVerifyCodeAj: function(post_data) {
+        $.ajax({
+            type: 'get',
+            url: '/weapp/user/verifycode/get',
+            data: post_data,
+            success: function(res) {
+                if (res.data.code === 100000) {
+                    //- sweetAlert("Success", 'Please pay attention to the message', "success");
+                    $('#verify_code_tip_zone').show();
+                    $('#get_code_node').hide();
+                    $('#count_num_node').show();
+                    _this.data.timer = setInterval(function() {
+                        if (_this.data.count == 0) {
+                            clearInterval(_this.data.timer);
+                            $('#get_code_node').show();
+                            $('#count_num_node').hide();
+                            $('#count_num_text').html('60 seconds');
+                            _this.data.count = 60;
+                        }
+                        _this.data.count--;
+                        $('#count_num_text').html(_this.data.count + ' seconds');
+                    }, 1000);
+                } else {
+                    //- sweetAlert("Oops", res.data.msg, "error");
+                }
+            },
+            error: function() {}
+        });
+    },
+    getAj: function() {
+        $.ajax({
+            type: 'get',
+            url: '/weapp/user/store/get',
+            async: false,
+            data: {
+                sid: _this.data.sid
+            },
+            success: function(res) {
+                if (res.data.code === 100000) {
+                    let _store_data = res.data.data.store_data;
+
+                    if (_store_data.ticket_show == 0) {
+                        $('.tickets-left').hide();
+                    }
+                    
+                    if (_store_data.waitlist_enable == 0) {
+                        $('.app').hide();
+                        $('.page_not_found').show();
+                        return;
+                    }
+
+                    //- document.title = _store_data.sname;
+                    //- _this.data.title = _store_data.sname;
+                    //- _this.data.language = _store_data.language_client;
+                    //- $('#sname').html(_store_data.sname);
+                    //- $('#slogo').html(_store_data.slogo);
+                    //- tools.setLanguage();
+                    _this.data.cluster = _store_data.cluster;
+                    _this.data.country = _store_data.country;
+
+                    _this.data.code = _this.data.country_code_dict[_this.data.country] || '+1';
+                    $('#zone_code select')[0].value = _this.data.code;
+                    
+                }
+            },
+            error: function() {}
+        });
+    },
+    setLanguage() {
+        $('#customer_email').attr('placeholder', _this.lang[_this.data.language]['your_email']);
+        $('#remark').attr('placeholder', _this.lang[_this.data.language]['leave_note_ph']);
+        $('#note_text').html(_this.lang[_this.data.language]['note_text'])
+        $('#location_tip_header').html(_this.lang[_this.data.language]['location_tip_header'])
+        $('#customer_name').attr('placeholder', _this.lang[_this.data.language]['customer_name']);
+        $('#customer_name_title').html(_this.lang[_this.data.language]['customer_name']);
+        $('#phone_num').attr('placeholder', _this.lang[_this.data.language]['phone_num']);
+        $('#verify_code').attr('placeholder', _this.data.language === 'chn' ? '验证码(Verify code)' : 'Verify code');
+        $('#join_text').html(_this.lang[_this.data.language]['Join the Waitlist'])
+        $('#trying_text').html(_this.lang[_this.data.language]['Trying to get a seat? Leave your information and join the waitlist.'])
+        $('#tip_wrong_text').html(_this.lang[_this.data.language]['tip_wrong_text']);
+        $('#submit').html(_this.lang[_this.data.language]['submit']);
+        $('#people_number_text').html(_this.lang[_this.data.language]['people_number_text']);
+        $('#tel_tip_text').html(_this.lang[_this.data.language]['tel_tip_text']);
+        $('#phone_title').html(_this.lang[_this.data.language]['phone_title']);
+        $('#tickets_left_title').html(_this.lang[_this.data.language]['tickets_left_title']);
+        $('#receive_promo_tip').html(_this.lang[_this.data.language]['receive_promo_tip']);
+        $('#get_code_node').html(_this.lang[_this.data.language]['get_code_node'])
+        $('#verify_code_text').html(_this.lang[_this.data.language]['verify_code_text'])
+        $('#tip_zone').html(_this.lang[_this.data.language]['tip_zone'])
+    },
+    getUrlParam: function(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return '';
+    },
+    getDistance: function(lat1,  lng1,  lat2,  lng2){
+        var radLat1 = lat1*Math.PI / 180.0;
+        var radLat2 = lat2*Math.PI / 180.0;
+        var a = radLat1 - radLat2;
+        var  b = lng1*Math.PI / 180.0 - lng2*Math.PI / 180.0;
+        var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) +
+            Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)));
+        s = s *6378.137 ;// EARTH_RADIUS;
+        s = Math.round(s * 10000) / 10000;
+        return s;
+    },
+    verifyNotRobot: function(args) {
+        _this.data.is_human = 1;
+        _this.data.human_token = args;
+    },
+    expiredRobot: function() {
+        _this.data.is_human = 0;
+        _this.data.human_token = '';
+    },
+    errorRobot: function(err) {
+        _this.data.is_human = 0;
+        _this.data.human_token = '';
+    },
+};
+
+var initRecaptcha = function() {
+    grecaptcha.render('robot', {
+        'sitekey': '6LcCX8AlAAAAAExazajm9drX0FtM7ec4GEPe4SXi',
+        'theme': 'light',
+        'size': 'normal',
+        'callback': tools.verifyNotRobot,
+        'expired-callback': tools.expiredRobot,
+        'error-callback': tools.errorRobot
+    });
+};
+
+var main = function() {
+    initPlugins();
+    
+    try {
+        bindEvent();
+    } catch (e) {
+        sweetAlert("Error", e.message, "error");
+    }
+};
+
+main();</script></body></html>

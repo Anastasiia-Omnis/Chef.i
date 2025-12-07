@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <title>Tito Rad's Grill</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome">
+        <meta name="description" content="Finest Filipino Cuisine - Located in Queens NY">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+		<link rel="stylesheet" type="text/css" href="style.css" />
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<script type="text/javascript" src="jquery.min.js"></script>		
+
+		<script type="text/javascript"> 
+			function slideSwitch() {
+			var $active = $('#slideshow .active');
+			if ( $active.length == 0 ) $active = $('#slideshow img:last');
+				var $next =  $active.next().length ? $active.next()
+				: $('#slideshow img:first');
+
+				$active.addClass('last-active');
+
+				$next.css({opacity: 0.0})
+					.addClass('active')
+				//adjust value to change the time taken to fade between images
+					.animate({opacity: 1.0}, 3000, function() {
+					$active.removeClass('active last-active');
+				});
+			}
+
+			$(function() {
+				//adjust value to change the interval between each image change
+					setInterval( "slideSwitch()", 9000 );
+			});
+		</script>
+		
+		<script type="text/javascript">
+			  $(document).ready(function() {
+				$("#bookmarkme").click(function() {
+				  if (window.sidebar) { // Mozilla Firefox Bookmark
+					window.sidebar.addPanel(location.href,document.title,"");
+				  } else if(window.external) { // IE Favorite
+					window.external.AddFavorite(location.href,document.title); }
+				  else if(window.opera && window.print) { // Opera Hotlist
+					this.title=document.title;
+					return true;
+					}
+			  }
+			});		
+		</script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+			
+			$('#fade').cycle();
+			});
+
+		</script>		
+		
+    </head>
+
+	<body style="width:1000px; font-size:12px; font-family:myFirstFont; margin:auto;">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+		<!-- Start Header Part- -->
+
+		<div style="float:left; width:1000px; background-color:#93a722; height:166px;">
+			<div style="float:left; margin-top:0px; margin-left:0px; margin-right:10px; height:166px; text-align:center;">
+			<span style="margin-left:20px"><a href="index.html"><img alt="Tito Rad's Grill" src="img/logo.gif" width="200" /></a></span>
+			</div>
+			<div style="float:right; margin-top:0px; margin-left:0px; margin-right:10px; height:166px; text-align:center;">
+				<div style="font-size:14px; font-weight:bold; color:#fefefe; padding-top:30px; ">
+				<a href="/" class="active">HOME</a>  |  
+				<!-- <a href="/menu/" class="example">OUR MENU</a>  | -->  
+				<a href="menu/TitoRads-FullMenu-20250311.pdf" class="example">Download Full Menu</a> |
+				<a href="menu/TitoRads-CateringMenu-20221106.pdf" class="example">Catering Menu</a> |
+				<a id="bookmarkme" href="#" rel="sidebar">Bookmark this site</a> |
+				*
+				</div>
+			</div>
+		</div>
+
+		<br style="clear: both" />
+
+		<!-- End Header Part- -->
+		
+		<!-- Start Content Part -->
+		<div style="margin-top:0px; margin-left:0px; margin-right:10px; height:342px; background-color:#ffffff; text-align:center; width:100%;">
+			<div id="slideshow" style="margin:auto;">
+			  <img alt="Inihaw Na Panga" src="img/img1.jpg" class="active" width="1000" height="342" title="" />
+			  <img alt="Krispy Pata" src="img/img2.jpg" width="1000" height="342" title="" />
+			  <img alt="Shanghai Lumpia" src="img/img3.jpg" width="1000" height="342" title="" />
+			  <img alt="Halo-Halo" src="img/img4.jpg" width="1000" height="342" title="" />
+			</div>
+		</div>
+
+		<div style="margin-top:0px; margin-left:0px; margin-right:10px; height:115px; background-color:#93a722; text-align:center; width:100%;">
+			<div style="font-size:24px; font-weight:bold; color:#ffffff; padding-top:30px; ">Finest Filipino Cuisine</div>
+		</div>
+
+		<!-- End Content Part -->
+		<!-- Start footer section -->
+		<div style="width:100%; float:left; padding:0 0 10px 0; background-color:#2c2d31;">
+			
+			
+			<div style="width:20%; float:left; background-color:#2c2d31; color:#ffffff; padding-left:20px; padding-top:20px;"><b style="font-size:18px;">FEATURED DISH</b><br /><br />
+			<img alt="Inihaw Na Panga" src="img/food2s.jpg" width="167" />
+			<br /><br />
+			<b style="font-size:14px;">INIHAW NA PANGA</b>
+			</div>
+			
+			<div style="width:49%; float:left; background-color:#2c2d31; color:#ffffff; padding-left:20px; padding-top:20px; "><b style="font-size:18px;">WELCOME</b><br /><br />
+			<p>
+			Tito Rad's Grill offers authentic Filipino dishes just like how grandma used to make it. The dishes ranges from the simple comfort food and all-time favorite Adobong Baboy to the delightful Kare Kare. All ingredients are carefully chosen, freshly cooked and prepared to satisfy your craving for "lutong bahay" (a taste of home).
+			<br /><br />
+			For those having difficulty choosing, an absolutely must-try dish is the Inihaw na Panga (Grilled Tuna Jaw) or the Tuna Belly cooked anyway you want -- grilled, adobo, fried, in coconut milk or in a soup.
+			<br /><br />
+			Tito Rad's is synonymous to good service, relaxed ambiance and great food. The perfect Filipino dining experience!
+			</p>
+			<br /><br />
+			<b style="font-size:16px;">FOOD HISTORY</b>
+			<br />
+			<p>
+			<b style="font-size:14px;">Lumpiang Shanghai</b>
+			<br /><br />
+			<img alt="Lumpia Shanghai" src="img/food1.jpg" />
+			<br /><br />
+			Lumpia/h are pastries of the Philippines and Indonesia of Chinese origin and are similar to spring rolls. The term lumpia derives from lunpia in the Hokkien language. The recipe, both fried and fresh versions, was brought by the Chinese immigrants from the Fujian province of China to Southeast Asia and became popular where they settled in the Philippines and Indonesia. In the Netherlands, it is spelled loempia which is the old Indonesian spelling for lumpia and has also become the generic name for "spring roll" in Dutch. 
+			<br /><br />
+			This type of lumpia is filled with ground pork, minced onion, carrots, and spices with the mixture held together by beaten egg. It may sometimes contain green peas. Both lumpiang shanghai and the sweet and sour sauce are served with attests to the Chinese influence. This variety is by standard an inch in diameter and approximately 4-6 inches in length. However, most restaurants and street vendors often serve lumpia shanghai in smaller diameters, typically one-half to three-quarter inches, and is served with a spicy sauce instead of a sweet and sour sauce.
+			</p>
+		  </div>
+			
+			<div style="width:25%; float:left; background-color:#2c2d31; color:#ffffff; padding-left:20px; padding-top:20px;"><b style="font-size:18px;">CONTACT US</b><br /><br />
+			<img alt="Tito Rad's Grill" src="img/storefront_s.jpg" />
+			<br /><br />
+			<p>
+			49-10 Queens Boulevard<br />
+			Woodside, NY 11377<br />
+			<br />
+			Tel. <span style="color:red">(718) 205-7299</span><br />
+			or <span style="color:red">(718) 205-7295</span><br />
+			Fax. <span style="color:red">(718) 205-4178</span><br />
+			Email <span style="color:red">TitoRads@yahoo.com</span><br />
+			<br />
+			Business Hours:<br />
+			Open 7 days a week<br />
+			Mon - Fri 11-8<br>
+			Sat - Sun 10-8<br>
+			<br />
+			Handicap Accessible<br />
+			<br />
+			<a href="http://www.facebook.com/titorads" target="_blank"><img alt="FaceBook" src="img/social1.jpg" /></a>
+			<a href="https://twitter.com/hashtag/titorads" target="_blank"><img alt="Twitter" src="img/social2.jpg" /></a>
+			<a href="http://www.yelp.com/biz/tito-rads-grill-and-restaurant-woodside" target="_blank"><img alt="Yelp" src="img/social3.jpg" /></a>
+			</p>
+			</div>
+			
+			
+			
+		<div style="width:30%; float:left; background-color:#2c2d31; color:#ffffff; padding-left:20px; padding-top:10px; padding-right:0px; text-align:left; color:#c1c0c0;">Copyright © Tito Rad's Grill. All rights reserved. | Powered by: WebComplete.com | websvr052
+			</div>
+		</div>
+		<!-- End footer section -->
+
+		
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+		
+    </body>
+</html>

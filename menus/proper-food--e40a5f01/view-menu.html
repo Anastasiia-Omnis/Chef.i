@@ -1,0 +1,1392 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><link rel="preload" as="script" href="/wp-content/themes/properfood_ws/scripts/build/main.js"><link rel="preload" as="script" href="https://code.jquery.com/jquery-3.6.0.min.js"><link rel="preload" as="script" href="https://properfood.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"><link rel="preload" as="script" href="https://properfood.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"><link
+rel="preload" as="script" href="/wp-content/themes/properfood_ws/scripts/axios.js"><link rel="preload" as="script" href="/wp-content/themes/properfood_ws/scripts/underscore.js"><link rel="preload" as="script" href="/wp-content/themes/properfood_ws/scripts/utils.js"><link rel="preload" as="script" href="/wp-content/themes/properfood_ws/scripts/menu.js"><link rel="preload" as="script" href="https://properfood.com/wp-content/themes/properfood_ws/js/iosbugfix.min.js?ver=10150507"><link
+rel="preload" as="script" href="https://properfood.com/wp-content/themes/properfood_ws/js/custom.js"><link rel="preload" as="script" href="https://properfood.com/wp-content/plugins/readabler/js/hotkeys.min.js?ver=2.0.3"><link rel="preload" as="script" href="https://properfood.com/wp-content/plugins/readabler/js/simple-keyboard.min.js?ver=2.0.3"><link rel="preload" as="script" href="https://properfood.com/wp-content/plugins/readabler/js/readabler.min.js?ver=2.0.3"><link
+rel="preload" as="script" href="https://properfood.com/wp-content/plugins/yikes-inc-easy-mailchimp-extender/public/js/yikes-mc-ajax-forms.min.js?ver=6.4.6"><link rel="preload" as="script" href="https://properfood.com/wp-content/plugins/yikes-inc-easy-mailchimp-extender/public/js/form-submission-helpers.min.js?ver=6.4.6"><link rel="preload" as="script" href="https://rawgit.com/ruyadorno/simple-slider/master/dist/simpleslider.min.js"><script data-o10n='[[ø],ø,ø,[[[1,"\/wp-content\/themes\/properfood_ws\/scripts\/build\/main.js",null,null,null,null],[1,"https:\/\/code.jquery.com\/jquery-3.6.0.min.js",null,null,null,null],[1,"https:\/\/properfood.com\/wp-includes\/js\/jquery\/jquery.min.js?ver=3.7.1",null,null,null,null],[1,"https:\/\/properfood.com\/wp-includes\/js\/jquery\/jquery-migrate.min.js?ver=3.4.1",null,null,null,null],[1,"\/wp-content\/themes\/properfood_ws\/scripts\/axios.js",null,null,null,null],[1,"\/wp-content\/themes\/properfood_ws\/scripts\/underscore.js",null,null,null,null],[1,"\/wp-content\/themes\/properfood_ws\/scripts\/utils.js",null,null,null,null],[1,"\/wp-content\/themes\/properfood_ws\/scripts\/menu.js",null,null,null,null],[1,"https:\/\/properfood.com\/wp-content\/themes\/properfood_ws\/js\/iosbugfix.min.js?ver=10150507",null,null,null,null],[1,"https:\/\/properfood.com\/wp-content\/themes\/properfood_ws\/js\/custom.js",null,null,null,null],[1,"https:\/\/properfood.com\/wp-content\/plugins\/readabler\/js\/hotkeys.min.js?ver=2.0.3",null,null,null,null],[1,"https:\/\/properfood.com\/wp-content\/plugins\/readabler\/js\/simple-keyboard.min.js?ver=2.0.3",null,null,null,null],[1,"https:\/\/properfood.com\/wp-content\/plugins\/readabler\/js\/readabler.min.js?ver=2.0.3",null,null,null,null],[1,"https:\/\/properfood.com\/wp-content\/plugins\/yikes-inc-easy-mailchimp-extender\/public\/js\/yikes-mc-ajax-forms.min.js?ver=6.4.6",null,null,null,null],[1,"https:\/\/properfood.com\/wp-content\/plugins\/yikes-inc-easy-mailchimp-extender\/public\/js\/form-submission-helpers.min.js?ver=6.4.6",null,null,null,null],[1,"https:\/\/rawgit.com\/ruyadorno\/simple-slider\/master\/dist\/simpleslider.min.js",null,null,null,null]],25,[21],[21],ø,[],ø,µ]]'>!function(){function aa(a,c,b){c||(c=l);return b?c.querySelectorAll(a):c.querySelector(a)}var m=window,l=m.document,ba=l.documentElement,ca=l.head||"head".getElementsByTagName(void 0)[0],URL=m.URL,navigator=m.navigator,da=l.addEventListener,v=l.currentScript||aa("script[data-o10n]",ca);
+if(v){var y;y=v.getAttribute("data-o10n");if(-1!==y.indexOf("\u00f8:"))for(var ea=/\u00f8:(\d+)/g,fa=ea.exec(y),ga;fa;){ga=[];for(var ha=parseInt(fa[1]),z=0;z<ha;z++)ga.push("null");y=y.replace(fa[0],ga.join(","));fa=ea.exec(y)}y=y.replace(/\u00f8/g,"null").replace(/\u00ac/g,"false").replace(/\u00b5/g,"true");try{y=JSON.parse(y)}catch(a){y=!1}}if(!y)throw Error("<script data-o10n>");var ia=!1,ja=l.location.href,ka=l.createElement("a");ka.href=ja;
+var la=ka.host.toLowerCase(),ma=y[0]&&y[0][0]?y[0][0]:"/wp-content/cache/o10n/",na=ka.protocol+"//"+la+ma,oa=/^([a-z0-9]{2})([a-z0-9]{2})([a-z0-9]{2})/g,pa=/^([0-9]+)\|([0-9]+)\|/g;function qa(){}if(m.o10n)var A=m.o10n.constructor.prototype;else m.o10n=new qa,A=qa.prototype;function ra(a,c,b){b||(b=l);if(a instanceof Array)for(var d=a.length,e=0;e<d;e++)ra(a[e],c,b);else if(da)b.addEventListener(a,c,!1);else if(b.attachEvent)"DOMContentLoaded"===a&&(a="load",b=m),b.attachEvent("on"+a,c);else try{b["on"+a]=c}catch(f){}}function B(a,c){ia?a(c):C.once("r",function(){a(c)})}ra("DOMContentLoaded",function(){ia=!0;C.g("r")});var sa=!1;try{sa=l.createElement("link").relList.supports("preload")}catch(a){}
+function D(){return Math.round(+new Date/1E3)}var requestIdleCallback="requestIdleCallback"in m&&m.requestIdleCallback?m.requestIdleCallback:!1;function E(a,c,b){requestIdleCallback?requestIdleCallback(a,{timeout:10>c?1E3*c:c}):b?b(a):a()}var requestAnimationFrame;
+if("function"===typeof m.requestAnimationFrame)requestAnimationFrame=m.requestAnimationFrame;else for(var ta=["moz","webkit","ms","o"],ua=ta.length,z=0;z<ua;++z)if("function"===typeof m[ta[z]+"RequestAnimationFrame"]){requestAnimationFrame=m[ta[z]+"RequestAnimationFrame"];break}RAF=requestAnimationFrame?function(a,c){c&&1<c?requestAnimationFrame(function(){RAF(a,c-1)}):requestAnimationFrame(a)}:function(a){setTimeout(a,0)};
+function G(a,c){for(var b in c)c.hasOwnProperty(b)&&a.setAttribute(b,c[b])}function va(a,c){var b=a.cloneNode();c&&G(b,c);return b}function wa(a){-1!==a.indexOf(la)&&(a=a.split(la)[1]);-1!==a.indexOf(ma)&&(a="cache/"+a.split(ma)[1]);return a}function xa(a,c,b,d,e){d&&d[0]?(c=ma+c,d[26]&&c.substr(0,d[26].length)===d[26]&&(c=c.substr(d[26].length-1)),c=d[0]+c):c=na+c;return c=e?c+(a.replace(pa,"$1/$2/")+b):c+(a.replace(oa,"$1/$2/$3/")+b)};function ya(){}
+ya.prototype={on:function(a,c,b){var d=this.e||(this.e={});(d[a]||(d[a]=[])).push({fn:c,s:b});return this},once:function(a,c,b){function d(){e.off(a,d);c.apply(b,arguments)}var e=this;d.o=c;return this.on(a,d,b)},g:function(a){var c=[].slice.call(arguments,1),b=((this.e||(this.e={}))[a]||[]).slice(),d=0,e=b.length;for(d;d<e;d++)b[d].fn.apply(b[d].s,c);return this},off:function(a,c){var b=this.e||(this.e={}),d=b[a],e=[];if(d&&c)for(var f=0,g=d.length;f<g;f++)d[f].fn!==c&&d[f].fn.o!==c&&e.push(d[f]);
+e.length?b[a]=e:delete b[a];return this}};var C=new ya;A.on=function(a,c,b){C.on(a,c,b)};A.once=function(a,c,b){C.once(a,c,b)};A.off=function(a,c){C.off(a,c)};var H=[,];function J(a,c){-1===a?(J(0,c),J(1,c)):!0===H[a]?c():(H[a]||(H[a]=[]),H[a].push(c))}function za(a){type=1===a?1:0;if(!0!==H[type]&&(a=H[type]instanceof Array?H[type].splice(0):!1,H[type]=!0,a))for(var c=a.shift();c;)c(),c=a.shift()}B(za,1);A.ready=B;A.idle=E;A.raf=RAF;A.f=function(){za(1)};za();
+function tb(a){var c;try{c=new Blob([a],{type:"application/javascript"})}catch(b){c=new (m.BlobBuilder||m.WebKitBlobBuilder||m.u),c.append(a),c=c.getBlob("application/javascript")}return URL.createObjectURL(c)}var Pa=[7,4,6,8];function M(a,c,b){if(a=ub.getItem(N+a))try{var d=JSON.parse(a);if(d){var e=void 0!==c?c:d[4];return e&&d[3]+e<D()||!b&&null===d[5]?!1:d}}catch(f){}return!1}function vb(a,c){var b=M(a,!1,!0);b&&(b[3]=D(),c&&(b[9]=c),ub.setItem(N+a,JSON.stringify(b)))}
+function wb(a,c,b){if(!("undefined"!==typeof b&&10<parseInt(b))){"object"===typeof c&&(c=JSON.stringify(c));try{ub.setItem(N+a,c)}catch(h){if(0<=h.name.toUpperCase().indexOf("QUOTA")){var d,e,f,g=[];for(d in ub)0===d.indexOf(N)&&-1===d.indexOf("chunk:")&&(f=d.split(N)[1],(e=M(f))&&g.push([f,e]));g.length&&(g.sort(function(a,b){return a[1][3]-b[1][3]}),xb(g[0][0]),E(function(){"undefined"===typeof b&&(b=0);wb(a,c,++b)},500))}}}}function xb(a){M(a)&&ub.removeItem(N+a)}
+function Ra(a,c){-1===a.indexOf(la)||yb(function(){if(c[11]){var b=c[11];for(key in c)c.hasOwnProperty(key)&&void 0!==b[key]&&(c[key]=b[key])}var d=M(a,c[4],!0);if(d){b=D();if(c[6]&&b<d[3]+c[6])return;null===d[5]?d[7]?c[7]&&d[7]<=c[7]&&(d=!1):d=!1:c[7]&&d[7]&&d[7]>c[7]&&(d=!1);d&&c[8]&&(c[8]={},c[8][9]=d[9],c[8][10]=d[10])}zb++;b=parseInt(zb);Ab[b]={};Ab[b][0]=a;Ab[b][2]=function(b){b[0]instanceof Array?1===b[0][0]?d&&vb(a,b[1]):2===b[0][0]&&E(function(){var c={};c[3]=D();c[7]=b[0][1];c[5]=null;c[9]=
+b[1];c[10]=b[2];wb(a,c)},1):E(function(){var d={};d[3]=D();d[7]=b[0].length;d[4]=c[4]||Bb;d[5]=b[0];d[9]=b[1];d[10]=b[2];wb(a,d)},1)};var e={};e[0]=a;e[14]=d?1:0;e[1]=b;e[7]=c[7];e[8]=d?c[8]:0;e[9]=d?d[9]:0;e[10]=d?d[10]:0;R.postMessage(e)})}
+function yb(a){B(function(){E(function(){if(!R){var c=function(){self.m=5E3;self.i=function(a){function b(b,d){f||(f=!0,b&&(b=[q.status,q.statusText]),c(),k&&!x&&"string"===typeof d&&(content_size=d.length,content_size>k&&(d=[2,content_size])),self.l(a,b,[d,n,r]))}function c(){4!==q.readyState&&q.abort();g&&(self.clearTimeout(g),g=!1)}var f=!1,g=!1,h=a[8],k=a[7],p=!1,n,r,x,q=new XMLHttpRequest;q.open(h?"HEAD":"GET",a[0],!0);1===a[14]&&(a[9]&&q.setRequestHeader("If-None-Match",a[9]),a[10]&&q.setRequestHeader("If-Modified-Since",
+a[10]));q.onreadystatechange=function(){if(!f)if(2===q.readyState){if(!p){p=!0;n=q.getResponseHeader("ETag");r=q.getResponseHeader("Last-Modified");if(304===q.status)return b(!1,[1]);if(k&&(x=q.getResponseHeader("Content-Length"))&&(x=parseInt(x),!isNaN(x)&&x>k))return b(!1,[2,x]);if(h){var d=!0;h[9]&&n&&h[9]===n&&(d=!1);d&&h[10]&&r&&h[10]===r&&(d=!1);d?(a[8]=!1,c(),self.i(a)):b(!1,[1])}}}else 4===q.readyState&&(304===q.status?b(!1,[1]):200!==q.status?b(!0):b(!1,q.responseText))};q.onerror=function(){f||
+b(!0)};g=self.setTimeout(function(){if(!f){try{q.abort()}catch(t){}b("timeout")}},self.m);q.send(null)};self.l=function(a,c,e){c?self.postMessage([2,a[1],c]):self.postMessage([1,a[1],e])};self.onmessage=function(a){a=a.data;if(a instanceof Array)for(var b=a.length,c=0;c<b;c++)"object"===typeof a[c]&&"undefined"!==typeof a[c][0]&&"undefined"!==typeof a[c][1]&&self.i(a[c]);else if("object"===typeof a&&"undefined"!==typeof a[0]&&"undefined"!==typeof a[1])self.i(a);else throw Error("Web Worker Script Loader: Invalid resource object");
+}}.toString().replace(/^function\s*\(\s*\)\s*\{/,"").replace(/\}$/,""),c=tb(c);R=new Worker(c);R.addEventListener("message",Cb);R.addEventListener("error",function(){})}a()},1)})}function Cb(a){if(R){a=a.data;var c=a[1];if("undefined"!==typeof Ab[c]&&1===a[0])Ab[c][2](a[2])}}
+if("localStorage"in m&&m.localStorage){var ub=m.localStorage,N="o10n-",Bb=86400,R,Ab=[],zb=0;m.addEventListener("beforeunload",function(){R&&(R.terminate(),R=!1)});E(function(){var a,c,b=D();for(a in ub)(c=a.split(N)[1])&&(a=M(c))&&a[3]+a[4]<=b&&xb(c)},3,function(a){setTimeout(a,2E3)})};
+function K(a,c,b){switch(a[0]){case 21:B(c);break;case 22:b=1;a[1]&&a[1][15]&&(b=a[1][15]);RAF(c,b);break;case 23:var d,e;a[1]&&a[1][16]&&(d=a[1][16]);a[1]&&a[1][17]&&(e=function(b){setTimeout(b,a[1][17])});E(c,d,e);break;case 24:var f,g;a[1]&&a[1][18]&&(f=a[1][18]);a[1]&&a[1][19]&&(g=a[1][19]);Tb(f,g,c);break;case 20:d="all",a[1]&&a[1][20]&&(d=a[1][20]),Ha(d,c,b)}};
+function jc(a){if(!a)return!1;a instanceof Array||(a=[a]);return a}var kc=[33,34,35,36,37,38,39,40,41];function lc(a){return 31==a?"oblique":32==a?"italic":"normal"}function mc(a,c,b){if(a=a?aa(a):ba){if(c){"string"===typeof c&&(c=[c]);for(var d=0,e=c.length;d<e;d++)a.classList.add(c[d])}if(b)for("string"===typeof b&&(b=[b]),d=0,e=b.length;d<e;d++)a.classList.remove(b[d])}}
+function nc(a,c,b){var d=a[4],e=jc(a[5]);if(!b)var f=jc(a[6]),g=a[42];var h,k,p,n,r,x,q;J(0,function(){for(var t=0,u=a[3].length;t<u;t++){h=a[3][t];p=h[4]||d;n=h[5]||e;b||(25===p?r=!1:(r=h[6]||f,g&&!r&&(r=[22])));for(var w=0,I=h[27].length;w<I;w++)k=h[27][w],function(a,d,e,f,u,g){function h(a){c(d,k,f,u,g,x,void 0,a)}var k={};e&&(e[20]&&(k.weight=100*(kc.indexOf(e[20])+1)),e[21]&&(k.style=lc(e[21])),e[22]&&(k.stretch=e[22]),b||(e[23]&&(k.variant=e[23]),e[24]&&(k.unicodeRange=e[24]),e[25]&&(k.featureSettings=
+e[25])));q=a[8];x=a[9];q&&(q[7]&&q[7]in m&&m[q[7]].call(m,d),q[10]&&mc(q[10][11],q[10][12],q[10][13]));25===f?K(u,h):27===f?J(0,h):h()}(h,k,k[28],p,n,r)}})};
+(function(){function a(a){r.push(a);1==r.length&&n()}function c(){for(;r.length;)r[0](),r.shift()}function b(a){this.a=x;this.b=void 0;this.f=[];var b=this;try{a(function(a){f(b,a)},function(a){g(b,a)})}catch(u){g(b,u)}}function d(a){return new b(function(b,c){c(a)})}function e(a){return new b(function(b){b(a)})}function f(a,b){if(a.a==x){if(b==a)throw new TypeError;var c=!1;try{var d=b&&b.then;if(null!=b&&"object"==typeof b&&"function"==typeof d){d.call(b,function(b){c||f(a,b);c=!0},function(b){c||
+g(a,b);c=!0});return}}catch(I){c||g(a,I);return}a.a=0;a.b=b;h(a)}}function g(a,b){if(a.a==x){if(b==a)throw new TypeError;a.a=1;a.b=b;h(a)}}function h(b){a(function(){if(b.a!=x)for(;b.f.length;){var a=b.f.shift(),c=a[0],d=a[1],e=a[2],a=a[3];try{0==b.a?"function"==typeof c?e(c.call(void 0,b.b)):e(b.b):1==b.a&&("function"==typeof d?e(d.call(void 0,b.b)):a(b.b))}catch(Za){a(Za)}}})}function k(a){return new b(function(b,c){function d(c){return function(d){g[c]=d;f+=1;f==a.length&&b(g)}}var f=0,g=[];0==
+a.length&&b(g);for(var h=0;h<a.length;h+=1)e(a[h]).c(d(h),c)})}function p(a){return new b(function(b,c){for(var d=0;d<a.length;d+=1)e(a[d]).c(b,c)})}var n,r=[];n=function(){setTimeout(c)};var x=2;b.prototype.h=function(a){return this.c(void 0,a)};b.prototype.c=function(a,c){var d=this;return new b(function(b,e){d.f.push([a,c,b,e]);h(d)})};window.Promise||(window.Promise=b,window.Promise.resolve=e,window.Promise.reject=d,window.Promise.race=p,window.Promise.all=k,window.Promise.prototype.then=b.prototype.c,
+window.Promise.prototype["catch"]=b.prototype.h)})();
+(function(){function a(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function c(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function I(){document.removeEventListener("DOMContentLoaded",I);a()}):document.attachEvent("onreadystatechange",function Za(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",Za),a()})}function b(a){this.a=document.createElement("div");
+this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.j=document.createElement("span");this.f=document.createElement("span");this.h=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.j.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.j);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}function d(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+
+b+";"}function e(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.h!==b?(a.h=b,!0):!1}function f(b,c){function d(){var a=f;e(a)&&a.a.parentNode&&c(a.h)}var f=b;a(b.b,d);a(b.c,d);e(b)}function g(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}function h(){if(null===x)if(k()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);
+x=!!a&&603>parseInt(a[1],10)}else x=!1;return x}function k(){null===t&&(t=!!document.fonts);return t}function p(){if(null===q){var a=document.createElement("div");try{a.style.font="condensed 100px sans-serif"}catch(w){}q=""!==a.style.font}return q}function n(a,b){return[a.style,a.weight,p()?a.stretch:"","100px",b].join(" ")}var r=null,x=null,q=null,t=null;g.prototype.load=function(a,e){var g=this,p=a||"BESbswy",q=0,t=e||3E3,x=(new Date).getTime();return new Promise(function(a,e){if(k()&&!h()){var u=
+new Promise(function(a,b){function c(){(new Date).getTime()-x>=t?b():document.fonts.load(n(g,'"'+g.family+'"'),p).then(function(b){1<=b.length?a():setTimeout(c,25)},function(){b()})}c()}),w=new Promise(function(a,b){q=setTimeout(b,t)});Promise.race([w,u]).then(function(){clearTimeout(q);a(g)},function(){e(g)})}else c(function(){function c(){var b;if(b=-1!=O&&-1!=P||-1!=O&&-1!=Q||-1!=P&&-1!=Q)(b=O!=P&&O!=Q&&P!=Q)||(null===r&&(b=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),
+r=!!b&&(536>parseInt(b[1],10)||536===parseInt(b[1],10)&&11>=parseInt(b[2],10))),b=r&&(O==I&&P==I&&Q==I||O==Ba&&P==Ba&&Q==Ba||O==Ca&&P==Ca&&Q==Ca)),b=!b;b&&(F.parentNode&&F.parentNode.removeChild(F),clearTimeout(q),a(g))}function h(){if((new Date).getTime()-x>=t)F.parentNode&&F.parentNode.removeChild(F),e(g);else{var a=document.hidden;if(!0===a||void 0===a)O=k.a.offsetWidth,P=u.a.offsetWidth,Q=w.a.offsetWidth,c();q=setTimeout(h,50)}}var k=new b(p),u=new b(p),w=new b(p),O=-1,P=-1,Q=-1,I=-1,Ba=-1,Ca=
+-1,F=document.createElement("div");F.dir="ltr";d(k,n(g,"sans-serif"));d(u,n(g,"serif"));d(w,n(g,"monospace"));F.appendChild(k.a);F.appendChild(u.a);F.appendChild(w.a);document.body.appendChild(F);I=k.a.offsetWidth;Ba=u.a.offsetWidth;Ca=w.a.offsetWidth;h();f(k,function(a){O=a;c()});d(k,n(g,'"'+g.family+'",sans-serif'));f(u,function(a){P=a;c()});d(u,n(g,'"'+g.family+'",serif'));f(w,function(a){Q=a;c()});d(w,n(g,'"'+g.family+'",monospace'))})})};"object"===typeof module?module.v=g:(window.FontFaceObserver=
+g,window.FontFaceObserver.prototype.load=g.prototype.load)})();var qc=y[5]?y[5][1]:0;qc&&"FontFaceObserver"in m&&nc(qc,function(a,c,b,d,e,f){(a="string"===typeof a?a:a[26])&&(new FontFaceObserver(a,c)).load().then(function(){f&&(f[7]&&f[7]in m&&m[f[7]].call(m,fontface_family),f[10]&&mc(f[10][11],f[10][12],f[10][13]))})},1);
+var Xa=/^\/(.*)\/([gimuy]+)?$/;function Ya(a){if(a=a.match(Xa)){try{var c=new RegExp(a[1],a[2])}catch(b){}return c||!1}}var $a;function ab(a){$a||($a=l.createElement("script"),G($a));return va($a,a)}function bb(a,c,b,d){return b?Ma(a,"js",d):xa(a,c?"js/":"js/src/",".js",d,c)}function cb(a){for(var c={},b,d=0,e=db.length;d<e;d++)b=db[d],c[Pa[d]]=a&&"undefined"!==typeof a[b]?a[b]:y[3][b];return c}var eb=[],fb=[];
+function gb(a){eb.push(a);if(fb.length)for(var c=fb.length,b,d,e,f=0;f<c;f++){b=fb[f][3];b instanceof Array||(b=[b]);d=b.length;for(var g=0;g<d;g++){if(b[g]instanceof Array){if((regexp=Ya(b[g][0]))&&regexp.test(a)){e=!0;break}}else b[g]&&-1!==a.indexOf(b[g])&&(e=!0);if(e){hb.apply(this,fb[f]);fb.splice(f,1);return}}}}
+function hb(a,c,b,d){function e(){c(!1,function(){gb(a)})}if(d){d instanceof Array||(d=[d]);for(var f,g,h=eb.length,k=d.length,p=0;p<h&&!f;p++)for(var n=0;n<k;n++)if(d[n]instanceof Array){if((g=Ya(d[n]))&&g.test(eb[p])){f=!0;break}}else if(-1!==eb[p].indexOf(d[n])){f=!0;break}if(!f){fb.push([a,c,b,d]);return}}b?K(b,e):e()}
+function ib(a,c,b,d){(b?function(){b=cb(b);var e=M(a);if(e){var f=e[5];(function(){var e=jb[a],h=ab({"data-src":wa(a)});"text"in h?h.text=f:h.appendChild(l.createTextNode(f));hb(a,function(c,d){e&&e.parentNode?e.parentNode.replaceChild(h,e):v.parentNode.insertBefore(h,v);d&&d();E(function(){Ra(a,b)},100)},c,d)})()}else hb(a,function(c,d){kb(a,function(){d&&d();b&&Ra(a,b)})},c,d)}:function(){hb(a,function(b,c){kb(a,function(){c&&c()})},c,d)})()}var db=[8,9,10,11];
+if(y[3]&&y[3][0]){var jb={},lb=y[3][1],mb=25===lb?y[3][2]:0,nb=y[3][3]?y[3][3]:0;!nb||nb instanceof Array||(nb=[nb]);var ob=y[3][7]?!0:!1,pb=y[3][15]||!1;J(0,function(){for(var a=aa('link[as="script"]',ca,!0),c=a.length,b=0;b<c;b++)jb[a[b].href]=a[b];var d=y[3][5],a=y[3][0].length,e;1===d&&(e=!0,d=!1);for(b=0;b<a;b++)(function(a,c,h,k,p,n,r){function f(){ib(t,p,n,w)}var g,t,u,w;if(a instanceof Array){if(1===a[0]||2===a[0])g=2===a[0]?!0:!1,c=1===a[0]?!1:!0,a.shift();t=a[0];if(u=a[1]||!1)u instanceof
+Array?(h=u[0],k=u[1]):h=u;"undefined"!==typeof a[2]&&(p=a[2]);"undefined"!==typeof a[3]&&(n=a[3],isNaN(n)||(n=1===n?!0:!1));"undefined"!==typeof a[4]&&(w=a[4])}else c=!0;d&&(e=-1!==d.indexOf(b)?!0:!1);t=c?bb(t,e,g,r):t;25===h?K(k,f):27===h?J(1,f):f()})(y[3][0][b],!0,lb,mb,nb,ob,pb)})}A.exec=function(a,c){K(a,c)};var qb=0;function rb(a){var c=v.nextSibling||v||ca.getElementsByTagName("script")[0];c.parentNode.insertBefore(a,c)}var sb;
+function kb(a,c){function b(){g=Error(a||"EMPTY");d()}function d(){f||(f=!0,h(),c&&c(g))}sb||(sb=l.createElement("script"),G(sb,{type:"text/javascript",charset:"utf-8","data-o10n":""}));var e=va(sb),f=!1,g,h;if(!e.readyState||"async"in e)h=function(){e.onload=e.onerror=null},e.onerror=b,e.onload=d,e.async=!0,e.src=a,rb(e);else{qb++;var k={loaded:!0,complete:!0},p=!1;h=function(){e.onreadystatechange=e.onerror=null};e.onreadystatechange=function(){var a=e.readyState;if(!g){!p&&k[a]&&(p=!0,rb(e));if("loaded"===
+a&&(e.children,"loading"===e.readyState))return b();"complete"===e.readyState&&d()}};e.onerror=b;e.src=a}};
+function Kb(a,c){"ready"===a?Lb.push(c):Lb.push(a)}
+if(!m.jQuery){var Mb,Lb=[],Nb=!1,Ob={ready:Kb,bind:Kb};m.$=m.jQuery=function(a){if(Mb)return m.jQuery.apply(this,arguments);if(a===l||void 0===a)return Ob;Kb(a)};m.$.noConflict=m.jQuery.noConflict=function(){Nb=!0};m.$.isStub=m.jQuery.isStub=!0;Object.prototype.watch||Object.defineProperty(Object.prototype,"watch",{enumerable:!1,configurable:!0,writable:!1,value:function(a,c){function b(b){e=f;return f=c.call(this,a,e,b)}function d(){return f}var e=this[a],f=e;delete this[a]&&Object.defineProperty(this,
+a,{get:d,set:b,enumerable:!0,configurable:!0})}});Object.prototype.unwatch||Object.defineProperty(Object.prototype,"unwatch",{enumerable:!1,configurable:!0,writable:!1,value:function(a){var c=this[a];delete this[a];this[a]=c}});m.watch("jQuery",function(a,c,b){if("function"!==typeof b||"undefined"===typeof b.fn||"undefined"!==typeof b.isStub)return b;Nb&&b.noConflict();b.each(Lb,function(a,c){b(c)});m.unwatch("jQuery");m.jQuery=b;Mb=!0;return b})};
+}();</script> <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="profile" href="http://gmpg.org/xfn/11"><link
+rel="pingback" href="https://properfood.com/xmlrpc.php"><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /><style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style><title>Menu - Proper Food</title><meta name="description" content="Our made-from-scratch menu evolves with the seasons. Nothing phony or factory made - just good proper food. See what we&#039;ve cooked up for breakfast and lunch." /><link rel="canonical" href="https://properfood.com/menu/" /><meta
+property="og:locale" content="en_US" /><meta property="og:type" content="article" /><meta property="og:title" content="Menu - Proper Food" /><meta property="og:description" content="Our made-from-scratch menu evolves with the seasons. Nothing phony or factory made - just good proper food. See what we&#039;ve cooked up for breakfast and lunch." /><meta property="og:url" content="https://properfood.com/menu/" /><meta property="og:site_name" content="Proper Food" /><meta
+property="article:modified_time" content="2025-09-28T13:38:39+00:00" /><meta name="twitter:card" content="summary_large_image" /> <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://properfood.com/menu/","url":"https://properfood.com/menu/","name":"Menu - Proper Food","isPartOf":{"@id":"https://properfood.com/#website"},"datePublished":"2015-05-08T18:23:11+00:00","dateModified":"2025-09-28T13:38:39+00:00","description":"Our made-from-scratch menu evolves with the seasons. Nothing phony or factory made - just good proper food. See what we've cooked up for breakfast and lunch.","breadcrumb":{"@id":"https://properfood.com/menu/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://properfood.com/menu/"]}]},{"@type":"BreadcrumbList","@id":"https://properfood.com/menu/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://properfood.com/"},{"@type":"ListItem","position":2,"name":"Menu"}]},{"@type":"WebSite","@id":"https://properfood.com/#website","url":"https://properfood.com/","name":"Proper Food","description":"Simple, Honest Fare | San Francisco","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://properfood.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script> <link rel="alternate" type="application/rss+xml" title="Proper Food &raquo; Feed" href="https://properfood.com/feed/" /><link rel="alternate" type="application/rss+xml" title="Proper Food &raquo; Comments Feed" href="https://properfood.com/comments/feed/" /><link rel="alternate" type="application/rss+xml" title="Proper Food &raquo; Menu Comments Feed" href="https://properfood.com/menu/feed/" /><link
+rel='stylesheet' id='wp-block-library-css' href='https://properfood.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.3' type='text/css' media='all' /><style id='classic-theme-styles-inline-css' type='text/css'>/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style><style id='safe-svg-svg-icon-style-inline-css' type='text/css'>.safe-svg-cover{text-align:center}.safe-svg-cover .safe-svg-inside{display:inline-block;max-width:100%}.safe-svg-cover svg{height:100%;max-height:100%;max-width:100%;width:100%}</style><style id='global-styles-inline-css' type='text/css'>:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style><link rel='stylesheet' id='properfood-style-css' href='https://properfood.com/wp-content/themes/properfood_ws/style.css?v=1765064719&#038;ver=6.8.3' type='text/css' media='all' /><link
+rel='stylesheet' id='mdp-readabler-css' href='https://properfood.com/wp-content/plugins/readabler/css/readabler.min.css?ver=2.0.3' type='text/css' media='all' /><style id='mdp-readabler-inline-css' type='text/css'>:root{
+			--readabler-overlay: rgba(2, 83, 238, 1);--readabler-bg: rgba(255, 255, 255, 1);--readabler-bg-dark: rgba(22, 25, 27, 1);--readabler-text: rgba(51, 51, 51, 1);--readabler-text-dark: rgba(222, 239, 253, 1);--readabler-color: rgba(33, 111, 243, 1);--readabler-color-dark: rgba(33, 111, 243, 1);--readabler-color-transparent: rgba(33,111,243,.2);--readabler-color-transparent-dark: rgba(33,111,243,.2);--readabler-color-transparent-15: rgba(33,111,243,.15);--readabler-color-transparent-15-dark: rgba(33,111,243,.15);--readabler-color-transparent-25: rgba(33,111,243,.25);--readabler-color-transparent-25-dark: rgba(33,111,243,.25);--readabler-color-transparent-50: rgba(33,111,243,.5);--readabler-color-transparent-50-dark: rgba(33,111,243,.5);--readabler-border-radius: 20px;--readabler-animate: 600ms;--readabler-reading-mask-color: rgba(0, 0, 0, 0.7);--readabler-text-magnifier-bg-color: rbga(255, 255, 255, 0.9);--readabler-text-magnifier-color: #595959;--readabler-text-magnifier-font-size: 36px;--readabler-highlight-titles-style: solid;--readabler-highlight-titles-color: #639af9;--readabler-highlight-titles-width: 2px;--readabler-highlight-titles-offset: 2px;--readabler-highlight-links-style: solid;--readabler-highlight-links-color: #639af9;--readabler-highlight-links-width: 2px;--readabler-highlight-links-offset: 2px;--readabler-reading-guide-width: 500px;--readabler-reading-guide-height: 12px;--readabler-reading-guide-bg-color: #0274e6;--readabler-reading-guide-border-color: #000000;--readabler-reading-guide-border-width: 2px;--readabler-reading-guide-border-radius: 10px;--readabler-reading-guide-arrow: 10;--readabler-highlight-hover-style: solid;--readabler-highlight-hover-color: #639af9;--readabler-highlight-hover-width: 2px;--readabler-highlight-hover-offset: 2px;--readabler-highlight-focus-style: solid;--readabler-highlight-focus-color: #639af9;--readabler-highlight-focus-width: 2px;--readabler-highlight-focus-offset: 2px;
+		}
+		.mdp-readabler-tts {
+		
+			--readabler-tts-bg: transparent;
+			--readabler-tts-color: transparent;
+			
+		}
+        .mdp-readabler-trigger-button-box{
+        
+            --readabler-btn-margin: 10px;
+            --readabler-btn-padding: 20px;
+            --readabler-btn-radius: 50px;
+            --readabler-btn-color: rgba(255, 255, 255, 1);
+            --readabler-btn-color-hover: rgba(33, 111, 243, 1);
+            --readabler-btn-bg: rgba(33, 111, 243, 1);
+            --readabler-btn-bg-hover: rgba(255, 255, 255, 1);
+            --readabler-btn-size: 24px;
+            --readabler-btn-delay: 0s;
+        
+        }
+		#mdp-readabler-voice-navigation{
+			--readabler-bg: rgba(255, 255, 255, 1);
+            --readabler-bg-dark: rgba(22, 25, 27, 1);
+            --readabler-text: rgba(51, 51, 51, 1);
+            --readabler-text-dark: rgba(222, 239, 253, 1);
+            --readabler-color: rgba(33, 111, 243, 1);
+            --readabler-color-dark: rgba(33, 111, 243, 1);
+            --readabler-color-transparent: rgba(33,111,243,.2);
+            --readabler-color-transparent-dark: rgba(33,111,243,.2);
+            --readabler-border-radius: 20px;
+            --readabler-animate: 600ms;
+		}
+		
+	        #mdp-readabler-keyboard-box {
+	        
+	        	--readabler-keyboard-light-bg: #ececec;
+	        	--readabler-keyboard-light-key-bg: #ffffff;
+	        	--readabler-keyboard-light-key: #111111;	        	
+	        	--readabler-keyboard-dark-bg: #000000CC;
+	        	--readabler-keyboard-dark-key-bg: rgba( 0, 0, 0, .5 );
+	        	--readabler-keyboard-dark-key: #ffffff;
+	        
+	        }</style><link rel="https://api.w.org/" href="https://properfood.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://properfood.com/wp-json/wp/v2/pages/25" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://properfood.com/xmlrpc.php?rsd" /><meta name="generator" content="WordPress 6.8.3" /><link rel='shortlink' href='https://properfood.com/?p=25' /><link
+rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://properfood.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fproperfood.com%2Fmenu%2F" /><link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://properfood.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fproperfood.com%2Fmenu%2F&#038;format=xml" /><meta name="cdp-version" content="1.5.0" /> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-P5QW8LQ');</script> <!--[if lt IE 9]> <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> <![endif]--><link rel="icon" href="https://properfood.com/wp-content/uploads/2018/07/apple-icon-150x150.png" sizes="32x32" /><link
+rel="icon" href="https://properfood.com/wp-content/uploads/2018/07/apple-icon.png" sizes="192x192" /><link rel="apple-touch-icon" href="https://properfood.com/wp-content/uploads/2018/07/apple-icon.png" /><meta name="msapplication-TileImage" content="https://properfood.com/wp-content/uploads/2018/07/apple-icon.png" /><style type="text/css" id="wp-custom-css">@media(min-width:993px){
+	.menu-navigation__list{
+		overflow-x:scroll;
+		gap:10px;
+	}
+	.menu-navigation__list li{
+			flex-shrink:0;
+		}
+ }
+
+
+@media not all and (min-resolution:.001dpcm) { 
+  @supports (-webkit-appearance:none) {
+    /* Safari-specific styles here */
+  }
+}
+
+#cityBox .menu__modal-body{
+	margin:0 auto;
+}
+#changeCityBtn{
+	background:none;
+	border:none;
+	margin-left:auto;
+	margin-right:auto;
+}
+#changeCityBtn:hover{
+	text-decoration:underline;
+	outline:none;
+}
+/* .black-color{
+	color:#000 !important
+}
+*/
+/* .heroBox:before{
+	content:"";
+	position:absolute;
+	inset:0;
+	width:100%;
+	height:100%;
+	background:#000;
+	opacity:0.3;
+	z-index:1
+} */
+
+/* Accessibility Page */
+.page-id-2573 .entry-header{
+    min-height: 500px;
+    display: flex;
+    background: url(https://properfood.com/wp-content/uploads/2021/07/Office-Hero-Desktop@2x.jpg);
+}
+.page-id-2573 .entry-title{
+    text-align: center !important;
+    max-width: 759px;
+    margin: auto;
+    font-family: 'Foro-Bold';
+    -webkit-font-smoothing: antialiased;
+    font-weight: 300;
+    font-size: 66px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.15;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    padding-top: 32px;
+    z-index: 1;
+}
+.page-id-2573 .entry-content{
+	margin:auto;
+	max-width:1080px;
+	padding:80px 20px;
+	font-size:20px !important
+}
+.page-id-2573 .entry-content p{
+	margin-bottom:2em
+}
+.page-id-2573 .entry-content h4{
+	font-size:30px;
+}
+.page-id-2573 .entry-content h4 ul{
+	padding-left:20px;
+}
+.page-id-2573 .entry-content h4 ul li{
+	font-weight:bold;
+}
+
+/* privacy Policy */
+.page-id-2609 .entry-header{
+    min-height: 500px;
+    display: flex;
+    background: url(https://properfood.com/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-22-at-20.06.19.jpeg);
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.page-id-2609 .entry-title{
+	opacity:0;
+    text-align: center !important;
+    max-width: 759px;
+    margin: auto;
+    font-family: 'Foro-Bold';
+    -webkit-font-smoothing: antialiased;
+    font-weight: 300;
+    font-size: 66px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.15;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    padding-top: 32px;
+    z-index: 1;
+}
+.page-id-2609 .entry-content{
+	margin:auto;
+	max-width:1080px;
+	padding:80px 20px;
+	font-size:20px !important
+}
+.page-id-2609 .entry-content p{
+	margin-bottom:2em
+}
+.page-id-2609 .entry-content h4{
+	font-size:30px;
+}
+.page-id-2609 .entry-content h4 ul{
+	padding-left:20px;
+}
+.page-id-2609 .entry-content h4 ul li{
+	font-weight:bold;
+}
+
+/* reward page */
+.header-section,
+.main-section,
+.app-buttons,
+.faq-section{
+	max-width:1080px;
+	margin:auto
+}
+.page-id-2624 .entry-header{
+	display:none !important;
+    min-height: 500px;
+    display: flex;
+    background: url(https://properfood.com/wp-content/uploads/2025/07/cf631260-a906-77de-711e-288557bf7939.jpg);
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+
+.reward-hero{
+    min-height: 500px;
+    background: url(https://properfood.com/wp-content/uploads/2025/07/cf631260-a906-77de-711e-288557bf7939.jpg);
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+}
+.reward-hero h1{
+	max-width:400px;
+	margin-top:150px;
+	margin-bottom:10px;
+	color:#E95526;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 125%;
+    letter-spacing: normal;
+    text-align: center!important;
+}
+.reward-hero p {
+		max-width:400px;
+    padding: 0px;
+		padding-bottom:20px;
+    color: #696969;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+	margin-bottom:0 !important
+}
+.reward-hero button{
+font-weight: bold;
+    letter-spacing: normal;
+    line-height: 100%;
+    text-align: center;
+    text-decoration: none;
+	border:none;
+    border-radius: 4px;
+    background-color: #E95526;
+    box-shadow: none;
+    padding: 18px 100px;
+    color: #FFFFFF;
+    font-size: 16px;  
+    display: block;
+    box-sizing: border-box !important;
+	font-family:inherit !important
+}
+
+.page-id-2624 .entry-title{
+    text-align: center !important;
+    max-width: 759px;
+    margin: auto;
+    font-family: 'Foro-Bold';
+    -webkit-font-smoothing: antialiased;
+    font-weight: 300;
+    font-size: 66px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.15;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    padding-top: 32px;
+    z-index: 1;
+}
+.page-id-2624 .entry-content{
+/* 	padding:80px 20px; */
+	font-size:20px !important
+}
+.page-id-2624 .entry-content p{
+	margin-bottom:2em
+}
+.page-id-2624 .entry-content h4{
+	font-size:30px;
+}
+.page-id-2624 .entry-content h4 ul{
+	padding-left:20px;
+}
+.page-id-2624 .entry-content h4 ul li{
+	font-weight:bold;
+}
+.header-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	margin-top:45px;
+  padding: 10px 20px; /* Reduced padding */
+}
+
+.header-section h1 {
+  font-family:inherit !important;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 60px;
+  color: #e95526;
+  text-align: center;
+  margin: 0;
+}
+
+/* Main Section Styles */
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.main-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.main-section .content-left,
+.main-section .content-right {
+  width: 50%;
+	text-align:center;
+}
+
+.main-section .content-left h2,
+.main-section .content-right h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.main-section p {
+  font-size: inherit;
+  color: #555;
+  line-height: 1.5;
+}
+
+.main-section .image-right,
+.main-section .image-left {
+  width: 45%;
+}
+
+.main-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Reverse the content for the second section */
+.main-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.main-section.reverse .content-left,
+.main-section.reverse .content-right {
+  width: 50%;
+}
+
+.main-section.reverse .image-left,
+.main-section.reverse .image-right {
+  width: 45%;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+    padding: 40px 10px;
+  }
+	.main-section .container{
+		  flex-direction: column;
+	}
+  .main-section .content-left,
+  .main-section .content-right,
+  .main-section .image-left,
+  .main-section .image-right {
+    width: 100% !IMPORTANT;
+  }
+
+  .header-section h1 {
+    font-size: 48px;
+    line-height: 50px;
+  }
+
+  .main-section .content-left h2,
+  .main-section .content-right h2 {
+    font-size: 2em;
+  }
+
+  .main-section p {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-section h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .main-section .content-left h2,
+  .main-section .content-right h2 {
+    font-size: 1.8em;
+  }
+
+  .main-section p {
+    font-size: 1em;
+  }
+}
+
+
+/* Styling for the app store buttons */
+.app-buttons .container{
+  display: flex;
+	flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+  padding: 20px 0;
+}
+
+.app-buttons a img {
+  width: 450px; 
+  height: auto;
+}
+
+@media screen and (min-width: 769px) {
+  .app-buttons {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app-buttons {
+    flex-direction: column; 
+    gap: 15px;
+  }
+
+  .app-buttons a img {
+    width: 100%; 
+    max-width: 300px;
+  }
+}
+
+
+/* FAQ Section Styles */
+.faq-section {
+  padding: 40px 20px;
+  background-color: #f7f7f7;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  margin-bottom: 30px;
+	text-align:center;
+	pointer-events:none !important;
+}
+
+.faq-item h3 {
+  font-size: 20px !important;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+  cursor: pointer; /* Makes the questions clickable */
+}
+
+.faq-answer {
+  font-size:18px !important; 
+  color: #555;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .faq-section h2 {
+    font-size: 2em;
+  }
+
+  .faq-item h3 {
+    font-size: 1.6em;
+  }
+
+  .faq-item p {
+    font-size: 1.1em;
+  }
+}</style></head><body class="wp-singular page-template-default page page-id-25 wp-theme-properfood_ws"><noscript>
+<iframe
+src="https://www.googletagmanager.com/ns.html?id=GTM-P5QW8LQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript><svg class="svg-declaration" xmlns="http://www.w3.org/2000/svg">
+<symbol id='right-arrow' viewBox="0 0 18 16">
+<path fill="currentColor" fill-rule="nonzero" d="M18 8a.92.92 0 0 0-.23-.55L11.223.65a.833.833 0 0 0-1.157-.032c-.319.28-.326.827-.032 1.132L15.29 7.2H.82A.81.81 0 0 0 0 8c0 .442.366.8.818.8H15.29l-5.254 5.45c-.294.304-.274.837.032 1.131.323.31.856.283 1.157-.031l6.545-6.8A.703.703 0 0 0 18 8z"/>
+</symbol>
+<symbol id='down-arrow'  viewBox="0 0 16 22">
+<g
+fill="currentColor" fill-rule="nonzero">
+<path d="M8 0a.901.901 0 0 0-.895.908v14.069L1.529 9.295a.887.887 0 0 0-.865-.235.902.902 0 0 0-.633.642.917.917 0 0 0 .231.877l7.107 7.207c.042.041.087.08.134.114h.036l.116.063h.054a.491.491 0 0 0 .116.032.737.737 0 0 0 .175 0 .518.518 0 0 0 .29-.032h.055l.116-.063h.036l.138-.114 7.103-7.207a.917.917 0 0 0 0-1.284.887.887 0 0 0-1.267 0l-5.576 5.66V.907C8.895.406 8.495 0 8 0zM.895 22h14.21c.494 0 .895-.448.895-1s-.4-1-.895-1H.895C.4 20 0 20.448 0 21s.4 1 .895 1z"/>
+</g>
+</symbol>
+</svg>
+<nav
+role="navigation" class="nav"><div class="nav__mobile-menu">
+<a href="/" class="nav__mobile-menu-logo">Proper Food</a>
+<a href="https://order.properfood.com/order/" class="nav__mobile-menu-order-btn btn btn--transparent" target="_blank" rel="noopener">Order Now</a></div><ul class="nav__menu"><li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-25 current_page_item menu-item-33"><a href="https://properfood.com/menu/" aria-current="page">Menu</a></li><li
+id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="https://properfood.com/philosophy/">Philosophy</a></li><li id="menu-item-2416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2416"><a href="https://properfood.com/location/">Locations</a></li><li id="menu-item-1247" class="home-page-link menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1247"><a href="https://properfood.com">Proper Food</a></li><li
+id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="https://properfood.com/catering/">Catering</a></li><li id="menu-item-1248" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1248"><a target="_blank" rel="noopener" href="https://mailchi.mp/properfood.com/proper-food-rewards-webpage">Rewards</a></li><li id="menu-item-1249" class="order-now menu-item menu-item-type-custom menu-item-object-custom menu-item-1249"><a
+target="_blank" rel="noopener" href="https://order.properfood.com/order/">Order Now</a></li></ul></nav><div id="main_container"><div id="main_container_inner"><div id="content"><div class="hero-image hero-image--menu sticky-nav-trigger">
+<figure class='gallery__slide gallery__slide--menu '>
+<picture class="gallery__slide-image gallery__slide-image--menu">
+<source
+srcset="https://properfood.com/wp-content/uploads/2015/05/menu_hero_mobile-e1759066509799.jpg 1x , https://properfood.com/wp-content/uploads/2015/05/menu_hero@2x-1-e1759066540552.jpg 2x"
+media="(max-width: 767px)" ><source srcset="https://properfood.com/wp-content/uploads/2015/05/menu_hero_UPDATED-e1750624604278.jpg 1x , https://properfood.com/wp-content/uploads/2015/05/menu_hero_UPDATED@2x-e1743174518262.jpg 2x"
+media="(max-width: 1199px)" ><source srcset="https://properfood.com/wp-content/uploads/2015/05/PF_Menu_L_Breakpointcorrect_width_Fall2019_1X-e1750624727750.jpg 1x , https://properfood.com/wp-content/uploads/2015/05/PF_Menu_L_Breakpointcorrect_width_Fall2019_2X-e1743174640691-scaled.jpg 2x">
+<img
+class="gallery__slide-image gallery__slide-image--menu" src="https://properfood.com/wp-content/uploads/2015/05/menu_hero_UPDATED@2x-e1743174518262.jpg" alt="">
+</picture><div class="gallery__slide-content gallery__slide-content--gallery"><div class="gallery__slide-content-inner gallery__slide-content-inner--menu"><h1 class="gallery__slide-caption gallery__slide-caption--menu">
+Fall for our new menu</h1><div class="gallery__slide-subtitle gallery__slide-subtitle--menu"><p>Taste the best of this season’s harvest</p></div>
+<a class="btn btn--primary gallery-btn--menu" href="https://order.properfood.com" target="_blank" rel="noopener">
+Order Now				</a><div
+class="gallery__menu-link-container">
+<span class="icon icon--down-arrow menu-link__icon--down-arrow">
+<svg class="two-blocks__block-link-icon icon--down-arrow" width="16" height="22" >
+<use xlink:href="#down-arrow" />
+</svg>
+</span>
+<a href='https://properfood.com/wp-content/uploads/2015/05/New-York_Menu.pdf' target="_blank" class="link link--primary gallery_download-menu-link gallery_download-menu-link--menu ny" rel="noopener">
+Download Menu
+</a>
+<a
+href='https://properfood.com/wp-content/uploads/2015/05/San-Francisco_Menu.pdf' target="_blank" class="link link--primary gallery_download-menu-link gallery_download-menu-link--menu sf" rel="noopener">
+Download Menu
+</a></div></div></div>
+</figure></div><div class="menu-navigation"><ul class="menu-navigation__list"></ul></div>
+<button id="changeCityBtn" class="menu__change-city">Change City</button><h2 class="page-title page-title--menu page-title--menu_localized"><span>San Francisco</span> Menu</h2><div class="menu__list-disclaimer">* Prepared with gluten-free ingredients. However, our kitchen is not gluten-free, so it is possible for these items to contain trace amounts of gluten.</div><section
+class="full-screen-image full-screen-image---catering">
+<picture aria-hidden="true" class="full-screen-image__background">
+<source srcset="https://properfood.com/wp-content/uploads/2018/07/catering-bg-img-1.jpg 1x
+, https://properfood.com/wp-content/uploads/2018/07/catering-bg-img@2x-1.jpg 2x		, https://properfood.com/wp-content/uploads/2018/07/catering-bg-img@3x-1.jpg 3x">
+<img aria-hidden="true"  class="full-screen-image__background" src="https://properfood.com/wp-content/uploads/2018/07/catering-bg-img-1.jpg" >
+</picture><div
+class="full-screen-image__inner-container"><h2 class="full-screen-image__heading">Catering for a group?</h2><div class="full-screen-image__text"><p>From small team meetings to company-wide town halls, we’ve got you covered.</p></div>
+<a class="btn btn-transparent btn--outlined-white full-screen-image__btn" href="https://properfood.com/catering">
+View Details		</a></div>
+</section><section id="menu-nutrition" class="ingredients"><div class="ingredients__inner"><h3 class="ingredients__title">What makes us good and proper</h3><div
+class="ingredients__description feature-paragraph"><p>Every grower, rancher and supplier we partner with shares our belief that food with integrity starts from the ground up. Ocean up, too. We always source sustainably, looking first to local purveyors.</p></div><ul class="ingredients__list"><li class="ingredients__ingredient">
+<svg class="ingredients__ingredient-icon" xmlns="http://www.w3.org/2000/svg" width="69" height="38" viewBox="0 0 69 38">
+<g fill="none" fill-rule="evenodd">
+<g fill="#FFF" fill-rule="nonzero">
+<path
+d="M49.458 4.115C49.224 3.947 43.562 0 29.537 0 13.381 0 .726 5.529.726 12.588v6c0 6.667 14.68 10.039 16.354 10.401 1.241.269 2.472.4 3.651.4 2.378 0 4.542-.536 6.139-1.566 1.3-.839 2.133-1.965 2.409-3.256.521-2.43 4.785-5.278 10.303-5.646l7.508-.502c2.43-.162 4.113-.79 5.002-1.867a2.795 2.795 0 0 0 .644-2.112V9.052c.132-1.184-.43-2.894-3.278-4.937zM29.537 2c13.289 0 18.705 3.706 18.755 3.74 1.745 1.252 2.39 2.293 2.445 2.927h-.003v.174c-.004.042-.003.088-.014.125-.162.568-1.245 1.291-3.765 1.459l-7.508.501c-6.018.401-11.344 3.574-12.125 7.224-.408 1.906-3.127 3.237-6.613 3.237-1.05 0-2.129-.119-3.207-.353-3.834-.831-14.778-4.169-14.778-8.446C2.726 6.849 15.004 2 29.537 2zm21.012 13.279c-.237.288-1.064.977-3.593 1.145l-7.508.502c-6.018.4-11.344 3.573-12.125 7.224-.206.959-.95 1.613-1.538 1.993-1.922 1.241-5.095 1.584-8.282.892-3.833-.831-14.777-4.169-14.777-8.446v-1.92c4.073 3.978 13.065 6.042 14.354 6.321 1.216.264 2.438.397 3.63.397 4.578 0 7.941-1.892 8.568-4.819.521-2.43 4.785-5.278 10.303-5.646l7.508-.501c1.64-.109 2.808-.423 3.646-.834v2.911c0 .042.003.083.008.124a.808.808 0 0 1-.194.657z"/>
+<path d="M19.167 19.5c2.523 0 4.5-1.354 4.5-3.083s-1.977-3.083-4.5-3.083c-2.523 0-4.5 1.354-4.5 3.083s1.977 3.083 4.5 3.083zm0-4.167c1.551 0 2.5.702 2.5 1.083s-.949 1.083-2.5 1.083c-1.551 0-2.5-.701-2.5-1.083s.949-1.083 2.5-1.083z"/>
+</g>
+<ellipse cx="45.5" cy="20.5" fill="#523040" rx="12.5" ry="17.5"/>
+<path
+fill="#FFF" fill-rule="nonzero" d="M68.02 10.625c-.612-1.94-1.412-3.497-2.444-4.76a9.961 9.961 0 0 0-1.162-1.203 6.814 6.814 0 0 0-6.646-1.303c-.526.178-1.047.404-1.548.672-1.452.777-2.806 1.911-4.139 3.47-.199.233-.394.474-.584.718-.261-.259-.528-.505-.804-.731-.437-.36-.902-.68-1.381-.956a6.833 6.833 0 0 0-6.78 0 10.11 10.11 0 0 0-1.382.956c-1.267 1.04-2.364 2.413-3.356 4.198-1.45 2.61-2.344 5.543-2.657 8.721-.473 4.797.277 8.313 2.293 10.749 1.932 2.334 5.266 3.842 8.494 3.844l.23-.002c2.993-.065 5.964-1.365 7.893-3.426.43.141.865.264 1.3.35l.226.041c.636.111 1.283.165 1.93.165 2.545 0 5.084-.836 6.943-2.344 2.47-2 3.915-5.303 4.419-10.097.333-3.176.05-6.225-.845-9.062zm-14.95 19.47c-1.57 1.896-4.3 3.159-6.953 3.216l-.193.002c-2.726-.001-5.533-1.265-7.15-3.218-1.718-2.075-2.345-5.192-1.917-9.528.29-2.95 1.116-5.669 2.456-8.079.886-1.595 1.851-2.809 2.95-3.71.365-.3.75-.567 1.146-.793a5.046 5.046 0 0 1 2.513-.668c.87 0 1.738.223 2.513.668.396.227.782.494 1.146.793 1.099.901 2.064 2.115 2.95 3.71 1.338 2.41 2.165 5.128 2.456 8.08.427 4.334-.2 7.451-1.918 9.527zm14.076-10.581c-.456 4.333-1.7 7.268-3.804 8.973-1.92 1.557-4.85 2.27-7.466 1.816l-.187-.035a9.272 9.272 0 0 1-.55-.132c1.464-2.365 1.98-5.564 1.569-9.73-.314-3.178-1.208-6.113-2.657-8.722a17.412 17.412 0 0 0-1.401-2.149c.245-.327.497-.649.759-.955 1.19-1.393 2.382-2.398 3.64-3.07.418-.223.85-.41 1.284-.558a5.055 5.055 0 0 1 4.928.966c.344.3.667.635.964.998.895 1.095 1.596 2.47 2.144 4.204.825 2.62 1.087 5.444.777 8.394z"/>
+</g>
+</svg><h5 class="ingredients__ingredient-title">Meat & Eggs</h5><div class="ingredients__ingredient-description"><p>Our chicken, meats and eggs are all natural — no antibiotics or hormones, ever.</p></div></li><li class="ingredients__ingredient">
+<svg class="ingredients__ingredient-icon" xmlns="http://www.w3.org/2000/svg" width="55" height="32" viewBox="0 0 55 32">
+<path
+fill="#FFF" fill-rule="nonzero" d="M23.564.026C12.798.27 2.981 6.186.053 15.093c-.143.364.01.763.381.996v.062c.062.027.126.047.191.062v.062h.126c.04.022.083.043.127.061l2.605 1.868L.94 20.632c-.022.02-.043.04-.063.062l-.126.062a1 1 0 0 0-.254.311v.062a.988.988 0 0 0-.063.123v.062a.987.987 0 0 0 .445 1.12c4.71 7.008 15.868 9.945 25.862 9.527 3.61-.15 7.098-.891 10.23-2.366 3.36-1.581 5.96-3.776 8.135-6.35.533.715 1.29 1.642 2.287 2.677.862.895 1.866 1.792 2.923 2.428 1.057.636 2.258 1.067 3.495.747.385-.1.683-.397.826-.685.143-.288.183-.567.191-.81.02-.483-.057-.939-.19-1.494-.268-1.11-.75-2.498-1.272-3.922-.521-1.424-1.098-2.933-1.525-4.172-.427-1.239-.699-2.323-.699-2.552 0 .028.047-.298.191-.685.145-.387.38-.872.636-1.432.51-1.121 1.203-2.468 1.779-3.86.576-1.393 1.062-2.81 1.207-4.11.073-.65.07-1.258-.126-1.868a2.82 2.82 0 0 0-1.27-1.556c-.606-.338-1.28-.258-1.78-.062-.5.195-.924.508-1.398.872-.947.728-1.922 1.771-2.86 2.802-1.192 1.31-2.097 2.486-2.732 3.3-3.359-3.994-8.335-6.896-14.107-8.157-1.665-.363-3.3-.604-4.956-.685a27.901 27.901 0 0 0-2.16 0l-.003.005zM23.31 1.83c2.24-.071 4.52.126 6.8.623 5.65 1.234 10.492 4.152 13.535 8.219v.061c.058.37.321.675.683.793a1.032 1.032 0 0 0 1.095-.294c.046-.038.088-.079.126-.124a.894.894 0 0 0 .318-.435v-.062c0-.02.051-.046.063-.062.381-.494 1.533-2.006 3.05-3.674.896-.983 1.9-1.96 2.67-2.552.384-.296.689-.482.889-.56.136.083.251.105.318.31.073.228.116.586.063 1.06-.106.945-.535 2.291-1.08 3.61-.546 1.32-1.19 2.644-1.716 3.798-.264.578-.524 1.085-.7 1.557-.174.472-.317.872-.317 1.37 0 .921.382 1.948.826 3.237.445 1.29 1.01 2.767 1.525 4.172.515 1.404.981 2.733 1.208 3.673.057.235.038.326.063.498-.402-.032-.822-.028-1.398-.373-.81-.487-1.69-1.299-2.479-2.117a25.61 25.61 0 0 1-2.669-3.3.995.995 0 0 0-.126-.187 1.02 1.02 0 0 0-.19-.188h-.064v-.061h-.063v-.062a1.032 1.032 0 0 0-1.334.187c-2.19 2.848-4.836 5.207-8.325 6.849-2.836 1.335-6.09 2.038-9.468 2.179a41.38 41.38 0 0 1-8.006-.436 12.736 12.736 0 0 0 5.464-4.483c3.866-5.659 2.241-13.266-3.622-16.997a1.051 1.051 0 0 0-.699-.187c-.426.049-.775.35-.874.753-.1.403.072.823.43 1.052 4.938 3.143 6.306 9.553 3.05 14.32-1.806 2.644-4.749 4.342-8.007 4.608-4.972-1.369-9.23-3.703-11.565-6.973l2.987-2.802a.986.986 0 0 0-.127-1.557l-3.24-2.241C5.259 7.286 13.826 2.137 23.31 1.833v-.002zm-9.404 6.164c-2.092 0-3.813 1.717-3.813 3.736s1.721 3.673 3.813 3.673c2.091 0 3.812-1.654 3.812-3.673 0-2.02-1.72-3.736-3.812-3.736zm0 1.993c.984 0 1.715.793 1.715 1.743 0 .95-.731 1.681-1.715 1.681-.985 0-1.78-.73-1.78-1.681 0-.95.795-1.743 1.78-1.743z"/>
+</svg><h5 class="ingredients__ingredient-title">Fish</h5><div class="ingredients__ingredient-description"><p>We partner with fishermen who adhere to rigorous sustainability practices. Our tuna is line-caught and sushi-grade.</p></div></li><li class="ingredients__ingredient">
+<svg class="ingredients__ingredient-icon" xmlns="http://www.w3.org/2000/svg" width="58" height="60" viewBox="0 0 58 60">
+<g fill="#FFF" fill-rule="nonzero">
+<path
+d="M58 58.359h-9.576v-.426l.184.016c.195.015.382.023.563.023 1.551 0 2.796-.546 3.699-1.621 2.07-2.466 1.48-6.855 1.454-7.041l-.13-.924-.872.252c-2.281.656-3.915 1.657-4.899 2.976v-3.902c.49.12.967.193 1.417.193 5.113 0 5.523-7.282 5.538-7.593l.045-.932-.902.073c-2.899.234-4.942 1.17-6.098 2.77v-3.437c1.18-.824 1.894-1.893 2.114-3.186.563-3.288-2.357-6.754-2.482-6.9l-.597-.7-.599.7c-1.992 2.336-2.826 4.555-2.476 6.595.357 2.083 1.852 3.296 2.448 3.703v2.816c-1.196-1.354-3.135-2.149-5.783-2.362l-.902-.073.045.932c.016.311.425 7.594 5.538 7.594h.001a5.82 5.82 0 0 0 1.101-.125v3.451c-1.003-1.13-2.529-2.004-4.583-2.594l-.872-.251-.13.923c-.026.187-.615 4.574 1.455 7.041.902 1.076 2.146 1.62 3.698 1.62h.001c.138 0 .284-.008.432-.015v.404H30.115v-.426l.184.016c.194.015.382.023.563.023 1.551 0 2.796-.546 3.699-1.621 2.07-2.466 1.48-6.855 1.454-7.041l-.13-.924-.872.252c-2.28.656-3.915 1.657-4.898 2.976v-3.902c.489.12.966.193 1.415.193 5.114 0 5.524-7.282 5.54-7.593l.044-.932-.902.073c-2.899.234-4.942 1.17-6.097 2.77v-3.437c1.18-.824 1.892-1.893 2.113-3.186.563-3.288-2.358-6.754-2.482-6.9l-.597-.7-.598.7c-1.993 2.336-2.827 4.555-2.478 6.595.358 2.083 1.853 3.295 2.45 3.703v2.816c-1.198-1.354-3.137-2.149-5.784-2.362l-.901-.073.045.932c.015.311.424 7.594 5.538 7.594.353 0 .724-.051 1.101-.125v3.452c-1.002-1.131-2.529-2.005-4.583-2.595l-.872-.251-.13.923c-.026.187-.615 4.574 1.455 7.041.902 1.076 2.146 1.62 3.697 1.62.14 0 .286-.008.433-.015v.404H11.805v-.426l.183.016c.195.015.382.023.564.023 1.55 0 2.795-.546 3.698-1.621 2.07-2.466 1.48-6.855 1.455-7.041l-.13-.924-.871.252c-2.282.656-3.916 1.657-4.898 2.976v-3.902c.489.12.966.193 1.416.193 5.114 0 5.523-7.282 5.538-7.593l.045-.932-.9.073c-2.9.234-4.943 1.17-6.098 2.77v-3.437c1.18-.824 1.892-1.893 2.114-3.186.564-3.288-2.358-6.754-2.482-6.9l-.597-.7-.598.7c-1.993 2.336-2.826 4.555-2.477 6.595.357 2.083 1.852 3.295 2.449 3.703v2.816c-1.198-1.354-3.137-2.149-5.784-2.362l-.902-.073.046.932c.015.311.424 7.594 5.538 7.594.352 0 .724-.051 1.1-.125v3.452c-1.001-1.131-2.528-2.005-4.583-2.595l-.872-.251-.13.923c-.026.187-.615 4.574 1.456 7.041.903 1.076 2.147 1.62 3.697 1.62.14 0 .286-.008.433-.015v.404H0V60h58v-1.641zm-8.78-4.948c.509-1.231 1.718-2.202 3.6-2.891.043 1.265-.064 3.46-1.157 4.759-.588.7-1.394 1.045-2.462 1.051-.204-.592-.466-1.745.019-2.92zm.384-10.088c.73-1.11 2.098-1.821 4.074-2.123-.262 1.706-1.127 5.063-3.837 5.063-.252 0-.52-.027-.797-.082-.092-.62-.135-1.803.56-2.858zm-3.08 2.86a4.114 4.114 0 0 1-.793.082c-2.702-.002-3.57-3.358-3.837-5.065 1.967.302 3.332 1.01 4.063 2.109.697 1.046.656 2.245.567 2.874zm-.16 10.147c-1.063-.008-1.868-.352-2.457-1.052-1.093-1.3-1.2-3.494-1.156-4.758 1.873.686 3.08 1.651 3.594 2.877.487 1.164.223 2.334.02 2.933zm-15.446-2.934c.513-1.225 1.719-2.19 3.595-2.877.043 1.265-.064 3.46-1.158 4.76-.588.7-1.392 1.043-2.457 1.05-.204-.6-.469-1.769.02-2.933zm.387-10.088c.731-1.1 2.096-1.807 4.064-2.108-.262 1.707-1.127 5.064-3.838 5.064-.25 0-.516-.027-.793-.082-.089-.63-.129-1.827.567-2.874zm-3.09 2.875a4.116 4.116 0 0 1-.793.082c-2.702-.002-3.57-3.358-3.837-5.065 1.968.302 3.331 1.01 4.063 2.109.696 1.046.656 2.245.567 2.874zm-.16 10.147c-1.064-.008-1.868-.352-2.456-1.052-1.093-1.3-1.2-3.494-1.157-4.758 1.873.686 3.08 1.651 3.594 2.877.486 1.164.223 2.334.02 2.933zM12.61 53.396c.512-1.225 1.72-2.19 3.594-2.877.044 1.265-.064 3.46-1.157 4.76-.588.7-1.392 1.043-2.457 1.05-.204-.6-.468-1.769.02-2.933zm.387-10.088c.731-1.1 2.096-1.807 4.064-2.108-.264 1.707-1.128 5.064-3.838 5.064-.251 0-.517-.027-.794-.082-.089-.63-.128-1.827.568-2.874zm-3.09 2.875a4.117 4.117 0 0 1-.793.082c-2.701-.002-3.57-3.358-3.836-5.065 1.967.302 3.33 1.01 4.062 2.109.696 1.046.656 2.245.568 2.874zm-.16 10.147c-1.064-.008-1.868-.352-2.456-1.052-1.093-1.3-1.2-3.494-1.158-4.758 1.874.686 3.082 1.651 3.595 2.877.487 1.164.223 2.334.02 2.933zM10.9 37.437h-.071c-.489-.392-1.285-1.2-1.495-2.427-.226-1.318.275-2.815 1.489-4.453.795 1.17 1.81 3.124 1.53 4.76-.147.85-.626 1.546-1.453 2.12zm18.309 0h-.072c-.488-.392-1.284-1.2-1.495-2.427-.227-1.318.274-2.815 1.488-4.453.795 1.17 1.81 3.124 1.53 4.76-.146.85-.624 1.546-1.451 2.12zm18.307 0h-.063c-.493-.398-1.3-1.217-1.506-2.444-.218-1.316.282-2.805 1.493-4.436.794 1.17 1.808 3.123 1.53 4.757-.146.852-.627 1.549-1.454 2.123zM29 16c2.757 0 5-2.243 5-5 0-2.756-2.243-5-5-5s-5 2.243-5 5c0 2.758 2.243 5 5 5zm0-8.466a3.47 3.47 0 0 1 3.466 3.467A3.47 3.47 0 0 1 29 14.466 3.47 3.47 0 0 1 25.534 11 3.471 3.471 0 0 1 29 7.534zM28 0h2v4h-2zM28 17h2v4h-2zM36 10h4v2h-4zM19 10h4v2h-4zM35.293 14.879l2.828 2.828-1.414 1.414-2.828-2.828zM23.707 7.121L20.88 4.293l1.414-1.414 2.828 2.828zM20.879 17.707l2.828-2.828 1.414 1.414-2.828 2.828zM35.293 7.121L33.88 5.707l2.828-2.828 1.414 1.414z"/>
+</g>
+</svg><h5 class="ingredients__ingredient-title">Produce</h5><div class="ingredients__ingredient-description"><p>Our produce is always fresh. We follow the guidance of the Environmental Working Group and source only organic for fruit and vegetables on their “Dirty Dozen list.”</p></div></li><li class="ingredients__ingredient">
+<svg class="ingredients__ingredient-icon" xmlns="http://www.w3.org/2000/svg" width="49" height="52" viewBox="0 0 49 52">
+<g fill="#FFF" fill-rule="nonzero">
+<path
+d="M4.88 6.233C3.678 17.425 0 20.318 0 29.72v18.872C0 50.485 1.581 52 3.506 52h15.26a3.392 3.392 0 0 0 3.402-3.41v-1.515c2.2.69 4.09.31 5.878-1.205 1.1-.895 2.577-.895 3.574 0 1.581 1.309 3.506 1.79 5.396 1.309 7.87-2.1 12.854-13.603 11.858-22.074-.79-6.784-4.984-10.78-11.48-10.986-2.68-.103-5.19 1.102-6.874 2.996a36.294 36.294 0 0 0-.893-3.409c2.2.31 4.193-.103 5.877-1.205 2.303-1.412 3.884-3.685 4.4-6.612.102-.517-.207-.999-.688-1.102-2.681-.999-5.5-.792-7.768.585-1.58.999-2.887 2.41-3.677 4.202a13.833 13.833 0 0 0-2.51-2.997c-.412-.413-1.1-.31-1.409.104-.309.413-.309 1.102.104 1.412 2.577 2.41 3.883 5.613 4.399 8.196a9.36 9.36 0 0 0-6.084-2.204c-1.202 0-2.302.206-3.299.516-.79-2.996-1.41-5.785-1.581-8.402a3.305 3.305 0 0 0 1.512-2.79A3.392 3.392 0 0 0 15.501 0H6.805a3.392 3.392 0 0 0-3.402 3.41c0 1.239.584 2.238 1.477 2.823zm15.26 42.392c0 .689-.687 1.412-1.409 1.412H3.506c-.79 0-1.41-.585-1.41-1.412v-3.1h18.045v3.1zm0-5.2H2.098V30.821H20.14v12.604zM32.41 7.232a7.65 7.65 0 0 1 5.397-.792c-.516 1.894-1.685 3.409-3.197 4.304a7.65 7.65 0 0 1-5.396.792c.516-1.894 1.616-3.374 3.197-4.304zM22.34 16.15c2.784-.103 5.396 1.584 6.6 4.305.205.413.515.585.893.585.412 0 .79-.207.893-.585 1.203-2.686 3.781-4.408 6.6-4.305 7.389.207 9.176 5.889 9.588 9.195.894 7.68-3.402 18.08-10.38 19.973-1.511.413-2.783-.31-3.505-.895a4.778 4.778 0 0 0-6.186 0c-1.581 1.308-2.887 1.205-4.572.585V29.72c0-6.198-.996-7.404-2.68-13.19.859-.171 1.753-.378 2.75-.378zm-2.303 12.673H2.097C2.2 21.317 5.67 17.322 6.874 6.75h8.386c1.203 10.606 4.709 14.394 4.777 22.074zM6.805 2.066h8.661a1.33 1.33 0 0 1 1.306 1.309c0 .689-.584 1.308-1.306 1.308h-8.66a1.33 1.33 0 0 1-1.307-1.308c0-.723.481-1.309 1.306-1.309z"/>
+<path d="M10 41c1.677 0 3-1.425 3-3.012 0-1.328-1.677-3.854-2.258-4.6A.862.862 0 0 0 10 33c-.258 0-.548.194-.742.389C8.71 34.134 7 36.692 7 37.988A2.98 2.98 0 0 0 10 41zm0-5.377c.645 1.037 1.129 1.976 1.129 2.365 0 .648-.484 1.133-1.129 1.133a1.105 1.105 0 0 1-1.129-1.133c0-.292.484-1.328 1.129-2.365z"/>
+</g>
+</svg><h5 class="ingredients__ingredient-title">Beverages</h5><div
+class="ingredients__ingredient-description"><p>We use only direct trade or fair trade coffee and teas. All of our beverages are free of high fructose corn syrup.</p></div></li><li class="ingredients__ingredient">
+<svg class="ingredients__ingredient-icon" xmlns="http://www.w3.org/2000/svg" width="53" height="46" viewBox="0 0 53 46">
+<g fill="#FFF" fill-rule="nonzero">
+<path
+d="M36.918 0c-.02 0-.04.005-.06.006a1.234 1.234 0 0 0-.498.128c-.018.009-.037.014-.054.023L.663 19.684c-.016.008-.029.021-.044.03a1.288 1.288 0 0 0-.369.338c-.025.033-.046.069-.067.105a1.036 1.036 0 0 0-.14.336c-.01.04-.017.08-.023.12a1.163 1.163 0 0 0-.014.134c0 .018-.006.036-.006.055v6.537c0 .013.004.026.005.04.006.155.037.303.093.44l.008.019c.067.151.16.287.276.401l.005.007c.005.005.012.006.017.011.115.108.249.196.399.256.012.005.025.008.038.012.136.05.281.081.434.081h.012l.028-.004c.342-.01.65-.154.874-.382l.002-.002a2.536 2.536 0 0 1 1.835-.78c1.417 0 2.57 1.167 2.57 2.6s-1.153 2.6-2.57 2.6a2.537 2.537 0 0 1-1.814-.758c-.047-.048-.108-.068-.16-.108a1.15 1.15 0 0 0-.139-.091 1.245 1.245 0 0 0-.564-.17c-.017 0-.032-.005-.049-.005l-.023-.002c-.705 0-1.275.571-1.275 1.275v11.946c0 .704.57 1.275 1.275 1.275h23.601c.103 0 .202-.016.298-.038l.003-.001.014-.005c.55-.141.96-.637.96-1.231 0-.12-.022-.232-.053-.342a5.444 5.444 0 0 1 5.282-6.723 5.444 5.444 0 0 1 5.328 6.533c-.005.022-.004.045-.007.068-.056.144-.09.3-.09.464 0 .704.571 1.275 1.275 1.275h13.837c.704 0 1.275-.571 1.275-1.275V20.802C53.002 9.332 45.787 0 36.918 0zm13.484 19.527H6.258L37.208 2.57c7.01.201 12.713 7.617 13.194 16.956zm.049 23.92H39.355c.005-.117.018-.234.018-.352 0-4.405-3.584-7.988-7.99-7.988-4.404 0-7.987 3.583-7.987 7.988 0 .118.016.234.021.352H2.552v-8.478c.472.142.967.217 1.474.217 2.823 0 5.12-2.31 5.12-5.15 0-2.84-2.297-5.15-5.12-5.15a5.11 5.11 0 0 0-1.474.218v-3.027H50.45v21.37z"/>
+<path
+d="M16 41c3.31 0 6-2.692 6-6s-2.692-6-6-6-6 2.692-6 6 2.692 6 6 6zm0-9.44A3.442 3.442 0 0 1 19.438 35 3.442 3.442 0 0 1 16 38.437 3.443 3.443 0 0 1 12.562 35 3.443 3.443 0 0 1 16 31.56zM41.5 38c2.481 0 4.5-2.02 4.5-4.5S43.98 29 41.5 29 37 31.02 37 33.5s2.019 4.5 4.5 4.5zm0-6.42c1.059 0 1.92.86 1.92 1.92 0 1.058-.861 1.919-1.92 1.919a1.922 1.922 0 0 1-1.92-1.92c0-1.059.86-1.92 1.92-1.92zM27.5 33c2.482 0 4.5-2.018 4.5-4.5S29.982 24 27.5 24c-2.48 0-4.5 2.018-4.5 4.5s2.02 4.5 4.5 4.5zm0-6.522c1.115 0 2.022.907 2.022 2.021a2.024 2.024 0 0 1-2.022 2.023 2.024 2.024 0 0 1-2.022-2.022c0-1.114.908-2.022 2.022-2.022z"/>
+</g>
+</svg><h5 class="ingredients__ingredient-title">Milk & Cheeses</h5><div class="ingredients__ingredient-description"><p>All of our dairy products are hormone and antibiotic free.</p></div></li><li class="ingredients__ingredient">
+<svg class="ingredients__ingredient-icon" xmlns="http://www.w3.org/2000/svg" width="41" height="56" viewBox="0 0 41 56">
+<g fill="#FFF" fill-rule="nonzero">
+<path
+d="M2.917 21.326C1.036 23.6 0 26.505 0 29.503V53.2C0 54.744 1.211 56 2.7 56h12.6c1.489 0 2.7-1.256 2.7-2.8V29.503c0-2.998-1.036-5.902-2.917-8.177a10.942 10.942 0 0 1-2.483-6.962V5.6h.9c.497 0 .9-.418.9-.933V.933c0-.515-.403-.933-.9-.933h-9c-.497 0-.9.418-.9.933v3.734c0 .515.403.933.9.933h.9v8.764c0 2.553-.882 5.024-2.483 6.962zM5.4 1.866h7.2v1.867H5.4V1.867zM10.8 5.6v8.764c0 2.998 1.036 5.901 2.917 8.177a10.942 10.942 0 0 1 2.483 6.962V53.2c0 .514-.404.933-.9.933H2.7c-.496 0-.9-.419-.9-.933V29.503c0-2.552.882-5.024 2.483-6.962C6.164 20.265 7.2 17.36 7.2 14.364V5.6h3.6z"/>
+<path d="M4 30.91v18.18c0 .503.41.91.917.91h9.166a.913.913 0 0 0 .917-.91V30.91c0-.503-.41-.91-.917-.91H4.917a.913.913 0 0 0-.917.91zm1.833.908h7.334v16.364H5.833V31.818zM26 41c0 5.607 2.416 10 5.5 10S37 46.607 37 41s-2.416-10-5.5-10S26 35.393 26 41zm5.5-8.182c1.734 0 3.667 3.36 3.667 8.182 0 4.822-1.933 8.182-3.667 8.182-1.734 0-3.667-3.36-3.667-8.182 0-4.822 1.933-8.182 3.667-8.182z"/>
+<path
+d="M23.02 30.605a.943.943 0 0 0-.02.195v22.4c0 1.544 1.211 2.8 2.7 2.8h12.6c1.489 0 2.7-1.256 2.7-2.8V30.8a.943.943 0 0 0-.02-.195L36.145 7.209a27.102 27.102 0 0 1-.274-1.609h.629c.497 0 .9-.418.9-.933V.933c0-.515-.403-.933-.9-.933h-9c-.497 0-.9.418-.9.933v3.734c0 .515.403.933.9.933h.63c-.078.54-.166 1.079-.275 1.61L23.02 30.604zM28.4 1.867h7.2v1.866h-7.2V1.867zM34.047 5.6c.089.672.202 1.342.338 2L39.2 30.9V53.2c0 .514-.404.933-.9.933H25.7c-.496 0-.9-.419-.9-.933V30.899L29.615 7.6c.135-.658.248-1.328.338-2h4.094z"/>
+</g>
+</svg><h5 class="ingredients__ingredient-title">Soups, Sauces and Spreads</h5><div class="ingredients__ingredient-description"><p>Our soups, dressings, sauces, aioli, jams, peanut butter, and hummus are all house-made from scratch.</p></div></li></ul><div class="link--download-nutrition-container">
+<a target="_blank" href="https://properfood.com/wp-content/uploads/2015/05/Nutrition_Allergen_NYC.pdf" class="link link--download-nutrition ny" rel="noopener">
+<svg
+class="icon--down-arrow icon--down-arrow-nutrition" height="22" width="16" >
+<use xlink:href="#down-arrow" />
+</svg>
+Download Nutrition Info			</a>
+<a target="_blank" href="https://properfood.com/wp-content/uploads/2015/05/Nutrition_Allergen_CA.pdf" class="link link--download-nutrition sf btn" rel="noopener">
+<svg class="icon--down-arrow icon--down-arrow-nutrition" height="22" width="16" >
+<use xlink:href="#down-arrow" />
+</svg>
+Download Nutrition Info			</a></div></div>
+</section><div id="cityBox" class="menu__modal"><div
+class="menu__modal-body"><h3 class="menu__modal-title">Hey there, where are you?</h3><div class="menu__modal-items">
+<button class="city-option menu__modal-item" data-city="sf">
+<svg class="location__logo--sf location__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="73" height="93" viewBox="0 0 73 93">
+<g fill="#A9A99F" fill-rule="nonzero">
+<path
+d="M37.412 90.487H14.328a1.062 1.062 0 0 0 0 2.124h23.084a1.062 1.062 0 0 0 0-2.124zM1.8 60.78h69.86a1.062 1.062 0 0 0 0-2.124H1.8a1.062 1.062 0 0 0 0 2.124zM30.895 41.162h-10.49a1.062 1.062 0 0 0 0 2.124h10.49a1.062 1.062 0 0 0 0-2.124zM30.895 44.938h-10.49a1.062 1.062 0 0 0 0 2.124h10.49a1.062 1.062 0 0 0 0-2.124zM34.133 87.331a1.062 1.062 0 0 0 0-2.124H17.607a1.062 1.062 0 0 0 0 2.124h16.526zM30.895 25.502h-10.49a1.062 1.062 0 0 0 0 2.124h10.49a1.062 1.062 0 0 0 0-2.124zM30.895 11.556h-10.49a1.062 1.062 0 0 0 0 2.124h10.49a1.062 1.062 0 0 0 0-2.124zM30.895 29.626h-10.49a1.062 1.062 0 0 0 0 2.124h10.49a1.062 1.062 0 0 0 0-2.124zM30.895 15.68h-10.49a1.062 1.062 0 0 0 0 2.125h10.49a1.062 1.062 0 0 0 0-2.124zM71.66 65.825H1.8a1.062 1.062 0 0 0 0 2.124h14.745v14.116a1.06 1.06 0 1 0 2.021.45c.06-.04.126-.066.178-.118l14.12-14.121c.093-.092.156-.2.207-.31v12.79l-4.456-4.457a1.062 1.062 0 1 0-1.502 1.502l6.269 6.269c.098.099.217.177.348.231l.016.005c.12.048.25.076.387.076s.267-.028.388-.076l.016-.005c.261-.107.47-.316.578-.578l.005-.016c.047-.12.075-.25.075-.387V67.949H47.7v9.808a1.057 1.057 0 1 0 1.98.524c.033-.026.074-.038.104-.069l9.545-9.544v7.407l-2.6-2.599a1.062 1.062 0 1 0-1.501 1.502l4.411 4.411c.099.1.217.178.348.232l.016.005c.12.047.25.075.388.075.137 0 .267-.028.387-.075l.016-.005c.262-.108.47-.317.578-.578l.005-.016c.048-.12.076-.25.076-.388V67.95h10.207a1.062 1.062 0 0 0 0-2.124zm-21.837 3.57l1.707 1.708a1.059 1.059 0 0 0 1.502 0 1.062 1.062 0 0 0 0-1.502l-1.652-1.652h5.663l-7.22 7.22v-5.774zM18.669 79.468V69.103l3.19 3.19a1.059 1.059 0 0 0 1.502 0 1.062 1.062 0 0 0 0-1.502L20.52 67.95h9.67l-11.52 11.519zM57.69 45.362h-6.284a1.062 1.062 0 0 0 0 2.124h6.284a1.062 1.062 0 0 0 0-2.124z"/>
+<path d="M60.39 82.612a1.062 1.062 0 0 0 0-2.125H48.76a1.062 1.062 0 0 0 0 2.125h11.63zM62.2 84.971H47.015a1.062 1.062 0 0 0 0 2.125H62.2a1.062 1.062 0 0 0 0-2.125zM57.69 34.342h-6.284a1.062 1.062 0 0 0 0 2.124h6.284a1.062 1.062 0 0 0 0-2.124zM57.69 24.528h-6.284a1.062 1.062 0 0 0 0 2.124h6.284a1.062 1.062 0 0 0 0-2.124z"/>
+<path
+d="M1.799 57.16c.09 0 .182-.01.273-.036 8.222-2.184 12.376-14.435 14.473-26.662v25.934a1.062 1.062 0 0 0 2.124 0V5.066c.005-.733.002-1.214 0-1.38V2.528h14.402v53.869a1.062 1.062 0 0 0 2.124 0v-25.97c2.162 19.373 4.36 22.236 6.42 22.338.047.003.094.004.141.004 1.604 0 3.481-1.485 5.943-13.716v17.344a1.062 1.062 0 0 0 2.124 0V18.805h9.505v37.59a1.062 1.062 0 0 0 2.124 0V41.322c1.797 8.877 4.219 13.545 7.383 14.242a1.062 1.062 0 0 0 .457-2.074c-4.496-.99-7.193-18.064-7.84-28.615v-7.131c0-.587-.476-1.063-1.062-1.063H48.76c-.586 0-1.061.476-1.061 1.063v8.74c-3.192 21.26-5.442 23.835-5.986 24.14-2.09-1.203-5.153-19.343-6.518-46.952V1.465c0-.586-.475-1.062-1.062-1.062H17.607c-.587 0-1.062.476-1.062 1.062v3.036c-.014 2.863-.18 13.099-1.785 23.614-2.438 15.983-7.014 25.304-13.233 26.957a1.061 1.061 0 0 0 .272 2.088z"/>
+</g>
+</svg>
+San Francisco
+</button>
+<button class="city-option menu__modal-item" data-city="ny">
+<svg class="menu__modal-item--ny" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+<g fill="#A9A99F" fill-rule="nonzero">
+<path d="M37.046 14.166l.703 2.454-2.454.704-.703-2.454zM38.298 13.617h2.553v2.553h-2.553zM43.02 14.131l2.423.803-.803 2.424-2.424-.803z"/>
+<path
+d="M80 58.03h-9.135v-7.311H67.91v10.028h-8.552V45.956h-1.4v9.593h-8.216c.225 2.328.474 4.889.556 5.62.145 1.32-.593 2.28-1.359 2.855.154.823.377 2.124.49 3.24H80v2.334H49.35c-.148.597-.385 1.055-.624 1.365l.436 2.58h10.741v2.333H49.555l.302 1.79h16.265V80H12.634v-2.333H29.05l1.402-1.367.093-.76H19.319v-2.334h11.508l.308-2.55c-.11-.208-.217-.534-.296-1.057H0v-2.333h30.713c.008-1.6.139-3.908.483-7.28a56.868 56.868 0 0 0-.15-1.956h-5.091v-4.356h-3.448v7.4H12.4V43.64H9.29v14.39H0v-2.334h6.959v-14.39h7.774v17.435h5.442v-7.4h8.112v4.356h2.479a11.223 11.223 0 0 0-.223-1.111c-.359-1.317.094-3.911.515-5.783a1.745 1.745 0 0 1-.818-.366c-1.277-1.014-.991-3.96.848-8.76l-1.768-6.782c-3.042-2.133-1.227-8.185-.667-9.815l-.311-1.442-1.054-8.044c-.509-1.005-.615-2.238-.61-3.167h-1.054V5.892l.626-.126a3.72 3.72 0 0 1-.283-1.727c.117-1.405 1.036-2.643 2.731-3.677L29.291 0l.6.35c.224.129 2.186 1.32 2.595 3.415a3.995 3.995 0 0 1-.125 1.965l.794.147v4.55h-.49c.155.873.296 2.03.252 3.2l.373 2.37c.211.692 1.203 4.108.91 6.187l.132.45c.306.412.907 1.342 1.097 2.504l1.188-1.627c-.555-.96-1.11-2.195-1.675-3.738l-.276-.75.6-.528c.067-.06 1.71-1.481 4.379-1.481 1.187 0 2.4.279 3.602.83l.802.366-.135.873c-.171 1.102-.542 2.96-1.248 4.489l1.306 4.734 1.03 2.44c2.655 1.244 3.057 4.236 3.105 5.497l1.04.994 1.7-2.301 5.528 3.738-1.27 2.985.28.786-1.786 3.646-1.077.517c-.285 3.781-2.305 5.014-2.548 5.15l-.565.32.109 1.138h6.109v-9.594h6.064v14.791h3.888V48.385h7.618v7.311H80v2.334zm-32.45-.935c-.247-2.534-.503-5.223-.531-5.52l-.19-1.571-3.813 11.206 4.533-4.115zM34.69 71.79l-.628-.682 6.647-4.382-1.632-1.178 1.308-3.846c-2.62 1.997-5.11 2.42-6.727 2.42-.164 0-.316-.006-.462-.013-.125 1.947-.181 3.714-.117 4.71l.648-.162-.478 3.951a9.04 9.04 0 0 0 1.212-.65c.098-.064.173-.12.23-.168zM45.78 36.675c.002-.028.139-3.168-2.046-3.928l-.49-.17-.29-.693-9.65 8.543c-.842 2.205-1.445 4.485-1.525 5.657.408-1.171 1.437-3.517 3.62-5.444 2.598-2.293 4.11-4.306 4.124-4.325l1.87 1.393c-.065.09-1.658 2.217-4.45 4.682-2.083 1.838-2.893 4.2-3.077 4.818l-.054.195c-.588 2.12-1.291 5.56-1.017 6.567.51 1.867.728 5.813.736 5.98l.005.091-.01.092a99.33 99.33 0 0 0-.154 1.653c.027 0 .05.002.077.003l6.86-22.226 2.229.688-6.53 21.157c1.807-.571 4.061-1.944 6.207-5.085l3.965-11.657-.502-4.134 2.316-.282 1.118 9.217c.397-.43 1.082-1.47 1.111-3.624l.01-.722 1.629-.782.997-2.037-.256-.717.875-2.054-2.082-1.409-1.944 2.632-3.704-3.54.032-.54zm-6.135-17.327c-.95 0-1.693.255-2.18.494 1.329 3.354 2.171 3.843 2.318 3.905.5-.244 1.241-2.12 1.66-4.106a5.905 5.905 0 0 0-1.798-.293zM27.957 8.093h2.866V7.86c-.985-.1-2.131-.068-2.866.005v.228zm1.323-5.301c-.503.396-.943.894-.988 1.442-.04.486.232.947.456 1.24.22-.009.448-.016.69-.016.173 0 .338.016.509.022.244-.442.328-.858.251-1.258-.108-.572-.532-1.08-.918-1.43zm1.37 18.493l.426 1.955-.118.32c-.871 2.361-1.524 6.027-.482 7.233.444-.237 1.087-.66 1.588-1.34l1.88 1.383c-.706.956-1.575 1.569-2.242 1.94l1.26 4.837 9.04-8.003-.255-.61-.883-3.2c-.326.178-.68.287-1.073.287-.582 0-1.136-.22-1.676-.67l-2.567 3.513-2.488-2.24.081-.61c.14-1.046-.742-2.134-.75-2.144l-.161-.19-.43-1.458.068-.297c.26-1.145-.369-3.91-.828-5.383l-.04-.165-.423-2.686.006-.12c.058-1.197-.133-2.422-.292-3.21h-1.28c-.003.78.095 1.673.41 2.205l.12.206 1.108 8.447zm16.54 41.081c-.002 0 .851-.392.791-.94-.03-.273-.083-.786-.148-1.44l-5.525 5.015 2.508 1.81-7.655 5.046a2.126 2.126 0 0 1-.012.13c-.09.722-.565 1.368-1.412 1.923-.958.626-2.082 1.08-2.807 1.338l-.26 2.149-.275.269h15.098l-1.295-7.667.662-.413-.002.001c-.011 0 .312-.306.312-1.155 0-1.224-.485-3.846-.673-4.754l-.193-.941.885-.37z"/>
+</g>
+</svg>
+New York
+</button></div></div></div> <script type="text/template" id="menu-item-template"><li class="menu__list-item">
+		<% if (small_image_url) { %>
+			<img src='/wp-content/themes/properfood_ws/images/menu-placeholder.jpg' data-src="<%= small_image_url %>" alt="<%= name %>" class="menu__item-image lazy" width=900 height=600 />
+		<% } %>
+		<div class="menu__item-title"><%= name %></div>
+		<% if (option_groups.length && option_groups[0].option_items) {
+			options = option_groups[0].option_items; %>
+			<div class="menu__item-subtitle">
+				<% _.forEach(options, function (option, index) { %>
+					<span> <%= option.shorthand %></span><% index < options.length - 1 ? print(' or ') : '' %>
+				<% }); %>
+			</div>
+		<% } %>
+		<div class="menu__item-description mr-eaves-body">
+			<%= description %>
+		</div>
+		<% if (tags) {
+			var tags_array = tags.split(', ');
+			if (tags_array) { %>
+				<ul class="menu__item-nutrition">
+					<% _.forEach(tags_array, function (tag) { %>
+						<li class="menu__item-nutrition-label"><%= tag.replace('-', ' ') %></li>
+					<% }); %>
+				</ul>
+			<% }
+		} %>
+	</li></script> <script type="text/template" id="menu-category-template"><div class="menu" id="category-<%= slug %>">
+		<h3 class="menu__category"><%= name %></h3>
+		<ul class="menu__list"></ul>
+	</div></script> <script type="text/template" id="menu-navigation-template"><li data-target="category-<%= slug %>"><%= name %></li></script> <div class="clear"></div><div class="clear"></div></div><footer role="contentinfo" class="footer"><div class="footer__inner"><div class="footer__logo">
+<a href="/" class="footer__logo-link">
+<img class="footer__logo-image" src='/wp-content/themes/properfood_ws/images/logo.svg' alt="Proper Food" />
+</a><p
+class="footer__copyright">© 2021 Proper Food. All rights reserved.</p></div><ul class="footer__menu"><li id="menu-item-36" class="mobile-visible menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="https://properfood.com/catering/">Catering</a></li><li id="menu-item-1252" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1252"><a target="_blank" rel="noopener" href="http://properfood.recruitee.com/">Careers</a></li><li
+id="menu-item-1254" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1254"><a target="_blank" rel="noopener" href="https://mailchi.mp/properfood.com/proper-food-rewards-webpage" title="mobile-visible">Rewards</a></li><li id="menu-item-1255" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1255"><a href="mailto:info@properfood.com">Contact Us</a></li><li id="menu-item-1991" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1991"><a href="https://mailchi.mp/properfood.com/privacy-policy">Privacy Policy</a></li><li
+id="menu-item-2603" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2603"><a href="https://properfood.com/accessibility-statement/">Accessibility Statement</a></li></ul><div class="footer__newsletter-form"><div class="footer__newsletter-form_title">Stay up to date</div>
+<section id="yikes-mailchimp-container-1" class="yikes-mailchimp-container yikes-mailchimp-container-1 "><form id="newsletter-1" class="yikes-easy-mc-form yikes-easy-mc-form-1 yikes-mailchimp-form-inline  footer__newsletter-form_fields" method="POST" data-attr-form-id="1">
+<label
+for="yikes-easy-mc-form-1-EMAIL"  class="label-inline EMAIL-label yikes-mailchimp-field-required ">
+<input id="yikes-easy-mc-form-1-EMAIL"  name="EMAIL"  placeholder="Enter email address"  class="yikes-easy-mc-email field-no-label"  required="required" type="email"  value="">
+</label>
+<input type="hidden" name="yikes-mailchimp-honeypot" id="yikes-mailchimp-honeypot-1" value="">
+<input type="hidden" name="yikes-mailchimp-associated-list-id" id="yikes-mailchimp-associated-list-id-1" value="7af57428e0">
+<input
+type="hidden" name="yikes-mailchimp-submitted-form" id="yikes-mailchimp-submitted-form-1" value="1">
+<label class="empty-form-inline-label submit-button-inline-label"><span class="empty-label labels-hidden">&nbsp;</span><button type="submit" class="yikes-easy-mc-submit-button yikes-easy-mc-submit-button-1 btn btn-primary "> <span class="yikes-mailchimp-submit-button-span-text">SIGN UP</span></button></label>
+<input type="hidden" id="yikes_easy_mc_new_subscriber_1" name="yikes_easy_mc_new_subscriber" value="beceab35b1"></form>
+</section></div><div class="footer__socials-wrapper"><div
+class="footer__socials"><ul class="footer__socials-list"><li class="footer__social-item footer__social-item--facebook">
+<a rel="noopener" href="https://www.facebook.com/eatproper/" target="_blank">Facebook</a></li><li class="footer__social-item footer__social-item--twitter">
+<a rel="noopener" href="http://twitter.com/@eatproper" target="_blank">Twitter</a></li><li class="footer__social-item footer__social-item--instagram">
+<a
+rel="noopener" href="https://www.instagram.com/eatproper/" target="_blank">Instagram</a></li></ul></div></div></div><div class="footer__socials-mobile-wrapper"><div class="footer__socials"><ul class="footer__socials-list"><li class="footer__social-item footer__social-item--facebook">
+<a rel="noopener" href="https://www.facebook.com/eatproper/" target="_blank">Facebook</a></li><li class="footer__social-item footer__social-item--twitter">
+<a rel="noopener" href="http://twitter.com/@eatproper" target="_blank">Twitter</a></li><li
+class="footer__social-item footer__social-item--instagram">
+<a rel="noopener" href="https://www.instagram.com/eatproper/" target="_blank">Instagram</a></li></ul></div></div>
+</footer></div></div> <script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/properfood_ws\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}</script> <div id="mdp-readabler-popup-box" class="mdp-readabler-modal-animation-fade mdp-readabler-modal-fixed  mdp-readabler-modal-shadow " aria-hidden="true" data-nosnippet style="display: none"><div id="mdp-readabler-popup" role="dialog" aria-modal="true" data-start="center" aria-labelledby="mdp-readabler-popup-box"><div
+id="mdp-readabler-popup-header">
+<span class=mdp-readabler-h3>Accessibility</span>
+<button id="mdp-readabler-popup-close" aria-label="Close Accessibility Panel"></button></div><div id="mdp-readabler-popup-main"><div class="mdp-readabler-subheader">            <span class="mdp-readabler-h4">Accessibility modes</span></div><div id="mdp-readabler-accessibility-profiles-box"><div id="mdp-readabler-accessibility-profile-epilepsy" class="mdp-readabler-accessibility-profile-item" ><div class="mdp-readabler-row"><div
+class="mdp-readabler-switch-box">
+<label class="mdp-switch" tabindex="0">
+Epilepsy Safe Mode                        <input type="checkbox" name="mdp-readabler-accessibility-profile-epilepsy" value="on" tabindex="-1">
+<span class="mdp-slider"></span>
+</label></div><div class="mdp-readabler-title-box"><div class="mdp-readabler-profile-title">Epilepsy Safe Mode</div><div class="mdp-readabler-profile-short">Dampens color and removes blinks</div></div></div><div
+class="mdp-readabler-profile-description">This mode enables people with epilepsy to use the website safely by eliminating the risk of seizures that result from flashing or blinking animations and risky color combinations.</div></div><div id="mdp-readabler-accessibility-profile-visually-impaired" class="mdp-readabler-accessibility-profile-item" ><div class="mdp-readabler-row"><div class="mdp-readabler-switch-box">
+<label class="mdp-switch" tabindex="0">
+Visually Impaired Mode                        <input
+type="checkbox" name="mdp-readabler-accessibility-profile-visually-impaired" value="on" tabindex="-1">
+<span class="mdp-slider"></span>
+</label></div><div class="mdp-readabler-title-box"><div class="mdp-readabler-profile-title">Visually Impaired Mode</div><div class="mdp-readabler-profile-short">Improves website&#039;s visuals</div></div></div><div class="mdp-readabler-profile-description">This mode adjusts the website for the convenience of users with visual impairments such as Degrading Eyesight, Tunnel Vision, Cataract, Glaucoma, and others.</div></div><div
+id="mdp-readabler-accessibility-profile-cognitive-disability" class="mdp-readabler-accessibility-profile-item" ><div class="mdp-readabler-row"><div class="mdp-readabler-switch-box">
+<label class="mdp-switch" tabindex="0">
+Cognitive Disability Mode                        <input type="checkbox" name="mdp-readabler-accessibility-profile-cognitive-disability" value="on" tabindex="-1">
+<span class="mdp-slider"></span>
+</label></div><div class="mdp-readabler-title-box"><div class="mdp-readabler-profile-title">Cognitive Disability Mode</div><div
+class="mdp-readabler-profile-short">Helps to focus on specific content</div></div></div><div class="mdp-readabler-profile-description">This mode provides different assistive options to help users with cognitive impairments such as Dyslexia, Autism, CVA, and others, to focus on the essential elements of the website more easily.</div></div><div id="mdp-readabler-accessibility-profile-adhd-friendly" class="mdp-readabler-accessibility-profile-item" ><div class="mdp-readabler-row"><div class="mdp-readabler-switch-box">
+<label
+class="mdp-switch" tabindex="0">
+ADHD Friendly Mode                        <input type="checkbox" name="mdp-readabler-accessibility-profile-adhd-friendly" value="on" tabindex="-1">
+<span class="mdp-slider"></span>
+</label></div><div class="mdp-readabler-title-box"><div class="mdp-readabler-profile-title">ADHD Friendly Mode</div><div class="mdp-readabler-profile-short">Reduces distractions and improve focus</div></div></div><div
+class="mdp-readabler-profile-description">This mode helps users with ADHD and Neurodevelopmental disorders to read, browse, and focus on the main website elements more easily while significantly reducing distractions.</div></div><div id="mdp-readabler-accessibility-profile-blind-users" class="mdp-readabler-accessibility-profile-item" ><div class="mdp-readabler-row"><div class="mdp-readabler-switch-box">
+<label class="mdp-switch" tabindex="0">
+Blindness Mode                        <input
+type="checkbox" name="mdp-readabler-accessibility-profile-blind-users" value="on" tabindex="-1">
+<span class="mdp-slider"></span>
+</label></div><div class="mdp-readabler-title-box"><div class="mdp-readabler-profile-title">Blindness Mode</div><div class="mdp-readabler-profile-short">Allows using the site with your screen-reader</div></div></div><div
+class="mdp-readabler-profile-description">This mode configures the website to be compatible with screen-readers such as JAWS, NVDA, VoiceOver, and TalkBack. A screen-reader is software for blind users that is installed on a computer and smartphone, and websites must be compatible with it.</div></div></div><div class="mdp-readabler-subheader">            <span class="mdp-readabler-h4">Online Dictionary</span></div><div id="mdp-readabler-online-dictionary-box"><form
+id="mdp-readabler-online-dictionary-form" enctype="multipart/form-data" action="#" method="POST">
+<input type="text"
+tabindex="0"
+id="mdp-readabler-online-dictionary-search"
+autocomplete="off"
+placeholder="Search the online dictionary..."
+aria-label="Search the online dictionary...">
+<label for="mdp-readabler-online-dictionary-search">Start typing to search in Wikipedia</label></form>
+<button tabindex="0" aria-label="Clear search results" id="mdp-readabler-online-dictionary-search-close"></button><div id="mdp-readabler-online-dictionary-search-results-box"><ul
+id="mdp-readabler-online-dictionary-search-results"></ul></div></div><div class="mdp-readabler-subheader">                <span class="mdp-readabler-h4">Readable Experience</span></div><div id="mdp-readabler-readable-experience-box"><div id="mdp-readabler-action-content-scaling" class="mdp-readabler-action-box mdp-readabler-spinner-box"><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-title">Content Scaling</span></div><div class="mdp-readabler-input-spinner-box" data-step="5"><div class="mdp-readabler-control">
+<button
+class="mdp-readabler-plus"
+tabindex="0"
+aria-label="Increase Content Size" ></button><div class="mdp-readabler-value" data-value="0" data-default="Default">Default</div>
+<button class="mdp-readabler-minus"
+tabindex="0"
+aria-label="Decrease Content Size" ></button></div></div></div><div id="mdp-readabler-action-text-magnifier"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span
+class="mdp-readabler-title">Text Magnifier</span></div></div><div id="mdp-readabler-action-readable-font"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Readable Font</span></div></div><div id="mdp-readabler-action-dyslexia-font"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div
+class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Dyslexia Friendly</span></div></div><div id="mdp-readabler-action-highlight-titles"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Highlight Titles</span></div></div><div
+id="mdp-readabler-action-highlight-links"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Highlight Links</span></div></div><div id="mdp-readabler-action-font-sizing" class="mdp-readabler-action-box mdp-readabler-spinner-box"><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-title">Font Sizing</span></div><div class="mdp-readabler-input-spinner-box" data-step="5"><div class="mdp-readabler-control">
+<button
+class="mdp-readabler-plus"
+tabindex="0"
+aria-label="Increase Font Size" ></button><div class="mdp-readabler-value" data-value="0" data-default="Default">Default</div>
+<button class="mdp-readabler-minus"
+tabindex="0"
+aria-label="Decrease Font Size" ></button></div></div></div><div id="mdp-readabler-action-line-height" class="mdp-readabler-action-box mdp-readabler-spinner-box"><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-title">Line Height</span></div><div class="mdp-readabler-input-spinner-box" data-step="5"><div
+class="mdp-readabler-control">
+<button class="mdp-readabler-plus"
+tabindex="0"
+aria-label="Increase Line Height" ></button><div class="mdp-readabler-value" data-value="0" data-default="Default">Default</div>
+<button class="mdp-readabler-minus"
+tabindex="0"
+aria-label="Decrease Line Height" ></button></div></div></div><div id="mdp-readabler-action-letter-spacing" class="mdp-readabler-action-box mdp-readabler-spinner-box"><div class="mdp-readabler-action-box-content">
+<span
+class="mdp-readabler-title">Letter Spacing</span></div><div class="mdp-readabler-input-spinner-box" data-step="5"><div class="mdp-readabler-control">
+<button class="mdp-readabler-plus"
+tabindex="0"
+aria-label="Increase Letter Space" ></button><div class="mdp-readabler-value" data-value="0" data-default="Default">Default</div>
+<button class="mdp-readabler-minus"
+tabindex="0"
+aria-label="Decrease Letter Space" ></button></div></div></div><div
+id="mdp-readabler-action-align-left"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Left Aligned</span></div></div><div id="mdp-readabler-action-align-center"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Center Aligned</span></div></div><div
+id="mdp-readabler-action-align-right"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Right Aligned</span></div></div></div><div class="mdp-readabler-subheader">                <span class="mdp-readabler-h4">Visually Pleasing Experience</span></div><div id="mdp-readabler-visually-pleasing-experience-box"><div id="mdp-readabler-action-dark-contrast"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div
+class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Dark Contrast</span></div></div><div id="mdp-readabler-action-light-contrast"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Light Contrast</span></div></div><div
+id="mdp-readabler-action-monochrome"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Monochrome</span></div></div><div id="mdp-readabler-action-high-contrast"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">High Contrast</span></div></div><div
+id="mdp-readabler-action-high-saturation"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">High Saturation</span></div></div><div id="mdp-readabler-action-low-saturation"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Low Saturation</span></div></div><div
+id="mdp-readabler-action-text-colors" class="mdp-readabler-action-box mdp-readabler-palette-box"><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-title">Adjust Text Colors</span><div class="mdp-readabler-color-box">
+<span data-color="maroon"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Maroon"
+style="background-color: maroon !important;">
+</span>
+<span data-color="red"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Red"
+style="background-color: red !important;">
+</span>
+<span
+data-color="orange"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Orange"
+style="background-color: orange !important;">
+</span>
+<span data-color="yellow"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Yellow"
+style="background-color: yellow !important;">
+</span>
+<span data-color="olive"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Olive"
+style="background-color: olive !important;">
+</span>
+<span
+data-color="green"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Green"
+style="background-color: green !important;">
+</span>
+<span data-color="purple"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Purple"
+style="background-color: purple !important;">
+</span>
+<span data-color="fuchsia"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Fuchsia"
+style="background-color: fuchsia !important;">
+</span>
+<span
+data-color="lime"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Lime"
+style="background-color: lime !important;">
+</span>
+<span data-color="teal"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Teal"
+style="background-color: teal !important;">
+</span>
+<span data-color="aqua"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Aqua"
+style="background-color: aqua !important;">
+</span>
+<span
+data-color="blue"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Blue"
+style="background-color: blue !important;">
+</span>
+<span data-color="navy"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Navy"
+style="background-color: navy !important;">
+</span>
+<span data-color="black"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Black"
+style="background-color: black !important;">
+</span>
+<span
+data-color="white"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to White"
+style="background-color: white !important;">
+</span></div></div></div><div id="mdp-readabler-action-title-colors" class="mdp-readabler-action-box mdp-readabler-palette-box"><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-title">Adjust Title Colors</span><div class="mdp-readabler-color-box">
+<span data-color="maroon"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Maroon"
+style="background-color: maroon !important;">
+</span>
+<span
+data-color="red"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Red"
+style="background-color: red !important;">
+</span>
+<span data-color="orange"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Orange"
+style="background-color: orange !important;">
+</span>
+<span data-color="yellow"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Yellow"
+style="background-color: yellow !important;">
+</span>
+<span
+data-color="olive"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Olive"
+style="background-color: olive !important;">
+</span>
+<span data-color="green"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Green"
+style="background-color: green !important;">
+</span>
+<span data-color="purple"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Purple"
+style="background-color: purple !important;">
+</span>
+<span
+data-color="fuchsia"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Fuchsia"
+style="background-color: fuchsia !important;">
+</span>
+<span data-color="lime"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Lime"
+style="background-color: lime !important;">
+</span>
+<span data-color="teal"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Teal"
+style="background-color: teal !important;">
+</span>
+<span
+data-color="aqua"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Aqua"
+style="background-color: aqua !important;">
+</span>
+<span data-color="blue"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Blue"
+style="background-color: blue !important;">
+</span>
+<span data-color="navy"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Navy"
+style="background-color: navy !important;">
+</span>
+<span
+data-color="black"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Black"
+style="background-color: black !important;">
+</span>
+<span data-color="white"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to White"
+style="background-color: white !important;">
+</span></div></div></div><div id="mdp-readabler-action-background-colors" class="mdp-readabler-action-box mdp-readabler-palette-box"><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-title">Adjust Background Colors</span><div class="mdp-readabler-color-box">
+<span
+data-color="maroon"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Maroon"
+style="background-color: maroon !important;">
+</span>
+<span data-color="red"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Red"
+style="background-color: red !important;">
+</span>
+<span data-color="orange"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Orange"
+style="background-color: orange !important;">
+</span>
+<span
+data-color="yellow"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Yellow"
+style="background-color: yellow !important;">
+</span>
+<span data-color="olive"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Olive"
+style="background-color: olive !important;">
+</span>
+<span data-color="green"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Green"
+style="background-color: green !important;">
+</span>
+<span
+data-color="purple"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Purple"
+style="background-color: purple !important;">
+</span>
+<span data-color="fuchsia"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Fuchsia"
+style="background-color: fuchsia !important;">
+</span>
+<span data-color="lime"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Lime"
+style="background-color: lime !important;">
+</span>
+<span
+data-color="teal"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Teal"
+style="background-color: teal !important;">
+</span>
+<span data-color="aqua"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Aqua"
+style="background-color: aqua !important;">
+</span>
+<span data-color="blue"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Blue"
+style="background-color: blue !important;">
+</span>
+<span
+data-color="navy"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Navy"
+style="background-color: navy !important;">
+</span>
+<span data-color="black"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to Black"
+style="background-color: black !important;">
+</span>
+<span data-color="white"
+class="mdp-readabler-color "
+role="button"
+tabindex="0"
+aria-label="Change Color to White"
+style="background-color: white !important;">
+</span></div></div></div></div><div class="mdp-readabler-subheader">                <span class="mdp-readabler-h4">Easy Orientation</span></div><div
+id="mdp-readabler-easy-orientation-box"><div id="mdp-readabler-action-mute-sounds"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Mute Sounds</span></div></div><div id="mdp-readabler-action-hide-images"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span
+class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Hide Images</span></div></div><div id="mdp-readabler-action-hide-emoji"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Hide Emoji</span></div></div><div
+id="mdp-readabler-action-reading-guide"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Reading Guide</span></div></div><div id="mdp-readabler-action-stop-animations"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Stop Animations</span></div></div><div
+id="mdp-readabler-action-reading-mask"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Reading Mask</span></div></div><div id="mdp-readabler-action-highlight-hover"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Highlight Hover</span></div></div><div
+id="mdp-readabler-action-highlight-focus"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Highlight Focus</span></div></div><div id="mdp-readabler-action-big-black-cursor"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Big Dark Cursor</span></div></div><div
+id="mdp-readabler-action-big-white-cursor"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Big Light Cursor</span></div></div><div id="mdp-readabler-action-cognitive-reading"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Cognitive Reading</span></div></div><div
+id="mdp-readabler-action-virtual-keyboard"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Virtual Keyboard</span></div></div><div id="mdp-readabler-action-keyboard-navigation"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Navigation Keys</span></div></div><div
+id="mdp-readabler-action-voice-navigation"
+class="mdp-readabler-action-box mdp-readabler-toggle-box"
+tabindex="0"            role="button"
+><div class="mdp-readabler-action-box-content">
+<span class="mdp-readabler-icon"></span>
+<span class="mdp-readabler-title">Voice Navigation</span></div></div><div id="mdp-readabler-action-useful-links" class="mdp-readabler-action-box mdp-readabler-useful-links-box"><div class="mdp-readabler-action-box-content">
+<label for="mdp-readabler-useful-links" class="mdp-readabler-title">Link navigator</label><div class="mdp-readabler-select-box">
+<select
+id="mdp-readabler-useful-links" aria-label="Useful Links" autocomplete="on"><option selected="" disabled="" value="mdp-default">
+Select an option</option>
+</select></div></div></div></div></div><div id="mdp-readabler-popup-footer">
+<button id="mdp-readabler-reset-btn" aria-label="Reset Settings">
+<span>Reset Settings</span>
+</button>
+<button id="mdp-readabler-hide-btn" aria-label="Hide Forever" >
+<span>Hide Forever</span>
+</button><p class="mdp-readabler-statement">
+<span>Proper Food</span> <button
+id="mdp-readabler-statement-btn" aria-label="Accessibility Statement" title="Accessibility Statement">Accessibility Statement</button></p></div><div id="mdp-readabler-accessibility-statement-box">
+<button id="mdp-readabler-close-statement-btn" aria-label="Close Accessibility Statement"></button><div
+class="mdp-readabler-statement-content"><section><h2>Accessibility Statement</h2><ul><li>properfood.com</li><li>December 6, 2025</li></ul>
+</section><h3>Compliance status</h3><p>We firmly believe that the internet should be available and accessible to anyone, and are committed to providing a website that is accessible to the widest possible audience,
+regardless of circumstance and ability.</p><p>To fulfill this, we aim to adhere as strictly as possible to the World Wide Web Consortium’s (W3C) Web Content Accessibility Guidelines 2.1 (WCAG 2.1) at the AA level.
+These guidelines explain how to make web content accessible to people with a wide array of disabilities. Complying with those guidelines helps us ensure that the website is accessible
+to all people: blind people, people with motor impairments, visual impairment, cognitive disabilities, and more.</p><p>This website utilizes various technologies that are meant to make it as accessible as possible at all times. We utilize an accessibility interface that allows persons with specific
+disabilities to adjust the website’s UI (user interface) and design it to their personal needs.</p><p>Additionally, the website utilizes an AI-based application that runs in the background and optimizes its accessibility level constantly. This application remediates the website’s HTML,
+adapts Its functionality and behavior for screen-readers used by the blind users, and for keyboard functions used by individuals with motor impairments.</p><p>If you’ve found a malfunction or have ideas for improvement, we’ll be happy to hear from you. You can reach out to the website’s operators by using the following email</p><h3>Screen-reader and keyboard navigation</h3><p>Our website implements the ARIA attributes (Accessible Rich Internet Applications) technique, alongside various different behavioral changes, to ensure blind users visiting with
+screen-readers are able to read, comprehend, and enjoy the website’s functions. As soon as a user with a screen-reader enters your site, they immediately receive
+a prompt to enter the Screen-Reader Profile so they can browse and operate your site effectively. Here’s how our website covers some of the most important screen-reader requirements,
+alongside console screenshots of code examples:</p><ol><li><p><strong>Screen-reader optimization: </strong>we run a background process that learns the website’s components from top to bottom, to ensure ongoing compliance even when updating the website.
+In this process, we provide screen-readers with meaningful data using the ARIA set of attributes. For example, we provide accurate form labels;
+descriptions for actionable icons (social media icons, search icons, cart icons, etc.); validation guidance for form inputs; element roles such as buttons, menus, modal dialogues (popups),
+and others. Additionally, the background process scans all the website’s images and provides an accurate and meaningful image-object-recognition-based description as an ALT (alternate text) tag
+for images that are not described. It will also extract texts that are embedded within the image, using an OCR (optical character recognition) technology.
+To turn on screen-reader adjustments at any time, users need only to press the Alt+1 keyboard combination. Screen-reader users also get automatic announcements to turn the Screen-reader mode on
+as soon as they enter the website.</p><p>These adjustments are compatible with all popular screen readers, including JAWS and NVDA.</p></li><li><p><strong>Keyboard navigation optimization: </strong>The background process also adjusts the website’s HTML, and adds various behaviors using JavaScript code to make the website operable by the keyboard. This includes the ability to navigate the website using the Tab and Shift+Tab keys, operate dropdowns with the arrow keys, close them with Esc, trigger buttons and links using the Enter key, navigate between radio and checkbox elements using the arrow keys, and fill them in with the Spacebar or Enter key.Additionally, keyboard users will find quick-navigation and content-skip menus, available at any time by clicking Alt+1, or as the first elements of the site while navigating with the keyboard. The background process also handles triggered popups by moving the keyboard focus towards them as soon as they appear, and not allow the focus drift outside it.</p><p>Users can also use shortcuts such as “M” (menus), “H” (headings), “F” (forms), “B” (buttons), and “G” (graphics) to jump to specific elements.</p></li></ol><h3>Disability profiles supported in our website</h3><ul><li><strong>Epilepsy Safe Mode:</strong> this profile enables people with epilepsy to use the website safely by eliminating the risk of seizures that result from flashing or blinking animations and risky color combinations.</li><li><strong>Visually Impaired Mode:</strong> this mode adjusts the website for the convenience of users with visual impairments such as Degrading Eyesight, Tunnel Vision, Cataract, Glaucoma, and others.</li><li><strong>Cognitive Disability Mode:</strong> this mode provides different assistive options to help users with cognitive impairments such as Dyslexia, Autism, CVA, and others, to focus on the essential elements of the website more easily.</li><li><strong>ADHD Friendly Mode:</strong> this mode helps users with ADHD and Neurodevelopmental disorders to read, browse, and focus on the main website elements more easily while significantly reducing distractions.</li><li><strong>Blindness Mode:</strong> this mode configures the website to be compatible with screen-readers such as JAWS, NVDA, VoiceOver, and TalkBack. A screen-reader is software for blind users that is installed on a  computer and smartphone, and websites must be compatible with it.</li><li><strong>Keyboard Navigation Profile (Motor-Impaired):</strong> this profile enables motor-impaired persons to operate the website using the keyboard Tab, Shift+Tab, and the Enter keys. Users can also use shortcuts such as “M” (menus), “H” (headings), “F” (forms), “B” (buttons), and “G” (graphics) to jump to specific elements.</li></ul><h3>Additional UI, design, and readability adjustments</h3><ol><li><strong>Font adjustments –</strong> users, can increase and decrease its size, change its family (type), adjust the spacing, alignment, line height, and more.</li><li><strong>Color adjustments –</strong> users can select various color contrast profiles such as light, dark, inverted, and monochrome. Additionally, users can swap color schemes of titles, texts, and backgrounds, with over seven different coloring options.</li><li><strong>Animations –</strong> person with epilepsy can stop all running animations with the click of a button. Animations controlled by the interface include videos, GIFs, and CSS flashing transitions.</li><li><strong>Content highlighting –</strong> users can choose to emphasize important elements such as links and titles. They can also choose to highlight focused or hovered elements only.</li><li><strong>Audio muting –</strong> users with hearing devices may experience headaches or other issues due to automatic audio playing. This option lets users mute the entire website instantly.</li><li><strong>Cognitive disorders –</strong> we utilize a search engine that is linked to Wikipedia and Wiktionary, allowing people with cognitive disorders to decipher meanings of phrases, initials, slang, and others.</li><li><strong>Additional functions –</strong> we provide users the option to change cursor color and size, use a printing mode, enable a virtual keyboard, and many other functions.</li></ol><h3>Browser and assistive technology compatibility</h3><p>We aim to support the widest array of browsers and assistive technologies as possible, so our users can choose the best fitting tools for them, with as few limitations as possible. Therefore, we have worked very hard to be able to support all major systems that comprise over 95% of the user market share including Google Chrome, Mozilla Firefox, Apple Safari, Opera and Microsoft Edge, JAWS and NVDA (screen readers).</p><h3>Notes, comments, and feedback</h3><p>Despite our very best efforts to allow anybody to adjust the website to their needs. There may still be pages or sections that are not fully accessible, are in the process of becoming accessible, or are lacking an adequate technological solution to make them accessible. Still, we are continually improving our accessibility, adding, updating and improving its options and features, and developing and adopting new technologies. All this is meant to reach the optimal level of accessibility, following technological advancements. For any assistance, please reach out to</p></div></div></div></div><div
+id="mdp-readabler-keyboard-box"><div class="simple-keyboard"></div></div><div class="mdp-readabler-trigger-button-box bottom-right mdp-entrance-fade mdp-hover-none" data-nosnippet>
+<button  id="mdp-readabler-trigger-button"
+class="mdp-icon-position-before"
+aria-label="Open Accessibility Panel"
+title="Accessibility"
+data-readabler-trigger="">
+<span class="mdp-readabler-trigger-button-icon"><svg role="img" aria-label="Open Accessibility Panel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 293.05 349.63"><path
+d="M95.37,51.29a51.23,51.23,0,1,1,51.29,51.16h-.07A51.19,51.19,0,0,1,95.37,51.29ZM293,134.59A25.61,25.61,0,0,0,265.49,111h-.13l-89.64,8c-3.06.28-6.13.42-9.19.42H126.65q-4.59,0-9.16-.41L27.7,111a25.58,25.58,0,0,0-4.23,51l.22,0,72.45,6.56a8.55,8.55,0,0,1,7.77,8.48v19.62a33.82,33.82,0,0,1-2.36,12.45L60.48,313.66a25.61,25.61,0,1,0,46.85,20.71h0l39.14-95.61L186,334.63A25.61,25.61,0,0,0,232.86,314L191.63,209.14a34.14,34.14,0,0,1-2.35-12.44V177.09a8.55,8.55,0,0,1,7.77-8.49l72.33-6.55A25.61,25.61,0,0,0,293,134.59Z" /></svg></span>
+</button></div><link
+rel='stylesheet' id='yikes-inc-easy-mailchimp-public-styles-css' href='https://properfood.com/wp-content/plugins/yikes-inc-easy-mailchimp-extender/public/css/yikes-inc-easy-mailchimp-extender-public.min.css?ver=6.8.3' type='text/css' media='all' /><style id='yikes-inc-easy-mailchimp-public-styles-inline-css' type='text/css'>.yikes-easy-mc-form label.label-inline {
+				float: left;
+				width: 79%;
+				padding-right: 10px;
+				
+			 }
+
+			 @media (max-width: 768px) {
+			 	.yikes-easy-mc-form label.label-inline {
+					width: 99%;
+					padding-right: 10px;
+				}
+				.yikes-easy-mc-form .submit-button-inline-label {
+					width: 100%;
+					float: none;
+				}
+				.yikes-easy-mc-form .submit-button-inline-label .empty-label {
+					display: none;
+				}
+			 }</style> <script type="text/javascript" id="mdp-readabler-js-extra">/*  */
+var mdpReadablerOptions = {"ajaxurl":"https:\/\/properfood.com\/wp-admin\/admin-ajax.php","nonce":"58d6b2c660","pluginURL":"https:\/\/properfood.com\/wp-content\/plugins\/readabler\/","postID":"25","postType":"page","translation":{"voiceGuide":"","voiceRecognitionStart":"Say a command...","voiceRecognitionEnd":"Voice recognition has stopped","voiceRecognitionWait":"Wait...","voiceRecognitionLegend":"Voice recognition","voiceRecognitionCommands":"Voice commands","voiceRecognitionHistory":"History","voiceRecognitionClose":"Close and stop voice navigation","voiceRecognitionErrorNoVoice":"Voice recognition has stopped, no voice detected. Click the button to restart recognition.","voiceRecognitionErrorNoNetwork":"Network error. Check is you online and try again.","voiceRecognitionErrorNoMic":"No microphone. Check is your microphone connected and try again.","voiceRecognitionErrorNoPermission":"Permission denied. Check is your microphone connected and try again.","voiceRecognitionErrorNotAllowed":"Microphone access denied. Check is your microphone connected and try again.","voiceRecognitionErrorUnknown":"Voice recognition error. Try again.","voiceRecognitionNumbers":["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty","twenty one","twenty two","twenty three","twenty four","twenty five","twenty six","twenty seven","twenty eight","twenty nine","thirty","thirty one","thirty two","thirty three","thirty four","thirty five","thirty six","thirty seven","thirty eight","thirty nine","forty","forty one","forty two","forty three","forty four","forty five","forty six","forty seven","forty eight","forty nine","fifty","fifty one","fifty two","fifty three","fifty four","fifty five","fifty six","fifty seven","fifty eight","fifty nine","sixty","sixty one","sixty two","sixty three","sixty four","sixty five","sixty six","sixty seven","sixty eight","sixty nine","seventy","seventy one","seventy two","seventy three","seventy four","seventy five","seventy six","seventy seven","seventy eight","seventy nine","eighty","eighty one","eighty two","eighty three","eighty four","eighty five","eighty six","eighty seven","eighty eight","eighty nine","ninety","ninety one","ninety two","ninety three","ninety four","ninety five","ninety six","ninety seven","ninety eight","ninety nine","one hundred","one hundred one","one hundred two","one hundred three","one hundred four","one hundred five","one hundred six","one hundred seven","one hundred eight","one hundred nine","one hundred ten","one hundred eleven","one hundred twelve","one hundred thirteen","one hundred fourteen","one hundred fifteen","one hundred sixteen","one hundred seventeen","one hundred eighteen","one hundred nineteen","one hundred twenty","one hundred twenty one","one hundred twenty two","one hundred twenty three","one hundred twenty four","one hundred twenty five","one hundred twenty six","one hundred twenty seven","one hundred twenty eight","one hundred twenty nine","one hundred thirty","one hundred thirty one","one hundred thirty two","one hundred thirty three","one hundred thirty four","one hundred thirty five","one hundred thirty six","one hundred thirty seven","one hundred thirty eight","one hundred thirty nine","one hundred forty","one hundred forty one","one hundred forty two","one hundred forty three","one hundred forty four","one hundred forty five","one hundred forty six","one hundred forty seven","one hundred forty eight","one hundred forty nine","one hundred fifty","one hundred fifty one","one hundred fifty two","one hundred fifty three","one hundred fifty four","one hundred fifty five","one hundred fifty six","one hundred fifty seven","one hundred fifty eight","one hundred fifty nine","one hundred sixty","one hundred sixty one","one hundred sixty two","one hundred sixty three","one hundred sixty four","one hundred sixty five","one hundred sixty six","one hundred sixty seven","one hundred sixty eight","one hundred sixty nine","one hundred seventy","one hundred seventy one","one hundred seventy two","one hundred seventy three","one hundred seventy four","one hundred seventy five","one hundred seventy six","one hundred seventy seven","one hundred seventy eight","one hundred seventy nine","one hundred eighty","one hundred eighty one","one hundred eighty two","one hundred eighty three","one hundred eighty four","one hundred eighty five","one hundred eighty six","one hundred eighty seven","one hundred eighty eight","one hundred eighty nine","one hundred ninety","one hundred ninety one","one hundred ninety two","one hundred ninety three","one hundred ninety four","one hundred ninety five","one hundred ninety six","one hundred ninety seven","one hundred ninety eight","one hundred ninety nine","two hundred"]},"popupPosition":"center","popupOverlay":"","buttons":{"resetButton":true,"hideButton":true},"headers":{"accessibilityProfiles":true,"onlineDictionary":true,"readableExperience":true,"visuallyPleasing":true,"visualAssistance":true,"easyOrientation":true},"onlineDictionary":"1","language":"auto","profileEpilepsy":"1","profileVisuallyImpaired":"1","profileCognitiveDisability":"1","profileAdhdFriendly":"1","profileBlindUsers":"1","contentScaling":"1","readableFont":"1","dyslexiaFont":"1","highlightTitles":"1","highlightLinks":"1","textMagnifier":"1","fontSizing":"1","lineHeight":"1","letterSpacing":"1","alignCenter":"1","alignLeft":"1","alignRight":"1","darkContrast":"1","lightContrast":"1","monochrome":"1","highSaturation":"1","highContrast":"1","lowSaturation":"1","textColors":"1","titleColors":"1","backgroundColors":"1","muteSounds":"1","hideImages":"1","hideEmoji":"1","virtualKeyboard":"1","readingGuide":"1","cognitiveReading":"1","cognitiveReadingFocus":"","cognitiveReadingFixation":"normal","usefulLinks":"1","stopAnimations":"1","readingMask":"1","highlightHover":"1","highlightFocus":"1","bigBlackCursor":"1","bigWhiteCursor":"1","textToSpeech":"","voiceNavigation":{"help":["help","help_me","show_commands"],"hide_help":["hide_help","hide_commands","hide_commands_list"],"scroll_down":["scroll_down","down","page_down"],"scroll_up":["scroll_up","up","page_up"],"go_to_top":["go_to_top","top","page_top"],"go_to_bottom":["go_to_bottom","bottom","page_bottom"],"tab":["tab","next","next_tab"],"tab_back":["tab_back","previous","previous_tab"],"show_numbers":["show_numbers","display_numbers","enable_numbers"],"number":["click","press","open"],"hide_numbers":["hide_numbers","disable_numbers","remove_numbers"],"clear_input":["clear_input","clear","remove"],"enter":["enter","submit","ok"],"reload":["reload","refresh","update"],"stop":["stop","cancel","stop_listening"],"exit":["exit","quit","close"]},"keyboardNavigation":"1","startConfig":"","startContentScaling":"0","startFontSizing":"0","startLineHeight":"0","startLetterSpacing":"0","ignoreSavedConfig":"on","showOpenButton":"1","buttonPosition":"bottom-right","buttonCaption":"","buttonIcon":"_readabler\/readabler.svg","buttonIconPosition":"before","buttonSize":"24","buttonMargin":"10","buttonPadding":"20","buttonBorderRadius":"50","buttonColor":"rgba(255, 255, 255, 1)","buttonColorHover":"rgba(33, 111, 243, 1)","buttonBgcolor":"rgba(33, 111, 243, 1)","buttonBgcolorHover":"rgba(255, 255, 255, 1)","buttonEntranceTimeout":"0","buttonEntranceAnimation":"fade","buttonHoverAnimation":"none","popupOverlayColor":"rgba(2, 83, 238, 1)","popupBackgroundColor":"rgba(255, 255, 255, 1)","popupKeyColor":"rgba(33, 111, 243, 1)","popupBorderRadius":"20","popupAnimation":"fade","popupScroll":"","closeAnywhere":"","popupDraggable":"1","highlightP":"","hotKeyOpenInterface":"Alt+9","saveConfig":"on","analytics":"off","analyticsSendInterval":"2","analyticsGDPR":"off","statementType":"inline","LEARN_MORE_IN_WIKIPEDIA":"Learn more in Wikipedia","DEFAULT":"Default","HOME":"Home","HIDE_ACCESSIBILITY_INTERFACE":"Hide Accessibility Interface?\n\nPlease note: If you choose to hide the accessibility interface, you won't be able to see it anymore, unless you clear clear cookies for this site. Are you sure that you wish to hide the interface?","readingMaskHeight":"100","virtualKeyboardLayout":["english"],"virtualKeyboardLayouts":{"en":"{\"default\":[\"` 1 2 3 4 5 6 7 8 9 0 - = {bksp}\",\"{tab} q w e r t y u i o p [ ] \\\\\",\"{lock} a s d f g h j k l ; ' {enter}\",\"{shift} z x c v b n m , . \\\/ {shift}\",\".com @ {space}\"],\"shift\":[\"~ ! @ # $ % ^ & * ( ) _ + {bksp}\",\"{tab} Q W E R T Y U I O P { } |\",\"{lock} A S D F G H J K L : \\\" {enter}\",\"{shift} Z X C V B N M < > ? {shift}\",\".com @ {space}\"],\"lang\":{\"en\":\"English\"}}"},"hotKeyMenu":"M","hotKeyHeadings":"H","hotKeyForms":"F","hotKeyButtons":"B","hotKeyGraphics":"G","highlightFocusColor":"#639af9","voiceNavigationAliases":{"help":"Help","help_me":"Help me","show_commands":"Show commands","what_can_i_say":"What can I say","what_can_i_do":"What can I do","what_can_you_do":"What can you do","available_commands":"Available commands","commands_list":"Commands list","hide_help":"Hide help","hide_commands":"Hide commands","hide_commands_list":"Hide commands list","hide_available_commands":"Hide available commands","collapse_commands":"Collapse commands","scroll_down":"Scroll down","down":"Down","page_down":"Page Down","go_down":"Go down","scroll_up":"Scroll up","up":"Up","page_up":"Page Up","go_up":"Go up","go_to_top":"Go to top","top":"Top","page_top":"Page Top","go_to_start":"Go to start","scroll_to_top":"Scroll to top","go_to_bottom":"Go to bottom","bottom":"Bottom","page_bottom":"Page Bottom","go_to_end":"Go to end","scroll_to_bottom":"Scroll to bottom","tab":"Tab","next":"Next","next_tab":"Next Tab","go_to_next":"Go to next","go_to_next_tab":"Go to next tab","tab_back":"Tab back","previous":"Previous","previous_tab":"Previous Tab","go_to_previous":"Go to previous","go_to_previous_tab":"Go to previous tab","show_numbers":"Show numbers","display_numbers":"Display numbers","enable_numbers":"Enable numbers","navigation_numbers":"Navigation numbers","mark_links":"Mark links","number_links":"Number links","click":"Click","press":"Press","open":"Open","go_to":"Go to","go":"Go","select":"Select","hide_numbers":"Hide numbers","disable_numbers":"Disable numbers","remove_numbers":"Remove numbers","hide_mark_links":"Mark links","hide_number_links":"Number links","clear_input":"Clear input","clear":"Clear","remove":"Remove","delete":"Delete","clear_text":"Clear text","clear_search":"Clear search","enter":"Enter","submit":"Submit","ok":"Ok","confirm":"Confirm","accept":"Accept","return":"Return","yes":"Yes","reload":"Reload","refresh":"Refresh","update":"Update","refresh_page":"Refresh page","reload_page":"Reload page","reload_website":"Reload website","refresh_website":"Refresh website","stop":"Stop","cancel":"Cancel","stop_listening":"Stop listening","cancel_listening":"Cancel listening","stop_recording":"Stop recording","stop_voice_navigation":"Stop voice navigation","abort":"Abort","exit":"Exit","quit":"Quit","close":"Close","close_window":"Close window","close_navigation":"Close navigation","close_panel":"Close panel","number":"Number ... "},"voiceNavigationDescription":{"help":"Display a list of available voice commands","hide_help":"Hide a list of available voice commands","scroll_down":"Scroll page down 200 px","scroll_up":"Scroll page down 200 px","go_to_top":"Scroll page to top","go_to_bottom":"Scroll page to bottom","tab":"Move to next interactive element","tab_back":"Move to previous interactive element","show_numbers":"Show numbers for interactive elements","number":"Click on element number...","hide_numbers":"Hide numbers for interactive elements","clear_input":"Clear selected text field","enter":"Click on the selected element","reload":"Reload page","stop":"Stop speech recognition","exit":"Disable voice navigation mode"},"voiceNavigationRerun":"off","scrollDownValue":"200","scrollUpValue":"-200","scrollLeftValue":"-200","scrollRightValue":"200","voiceNavigationVoiceGraph":"on","voiceNavigationInterimResults":"on","voiceNavigationFeedback":"on","voiceNavigationFeedbackOk":["OK","Yes","Done"],"voiceNavigationFeedbackStart":["Start listening","Begin listening","Listening"],"voiceNavigationFeedbackEnd":["End listening","Stop listening","Finish listening"]};
+/*  */</script> <noscript>For full functionality of this site it is necessary to enable JavaScript. </noscript><script type="text/javascript" id="yikes-easy-mc-ajax-js-extra">/*  */
+var yikes_mailchimp_ajax = {"ajax_url":"https:\/\/properfood.com\/wp-admin\/admin-ajax.php","page_data":"25","interest_group_checkbox_error":"This field is required.","preloader_url":"https:\/\/properfood.com\/wp-content\/plugins\/yikes-inc-easy-mailchimp-extender\/includes\/images\/ripple.svg","loading_dots":"https:\/\/properfood.com\/wp-content\/plugins\/yikes-inc-easy-mailchimp-extender\/includes\/images\/bars.svg","ajax_security_nonce":"1b8b90d748"};
+/*  */</script> <script type="text/javascript" id="form-submission-helpers-js-extra">/*  */
+var form_submission_helpers = {"ajax_url":"https:\/\/properfood.com\/wp-admin\/admin-ajax.php","preloader_url":"https:\/\/properfood.com\/wp-admin\/images\/wpspin_light.gif","countries_with_zip":{"US":"US","GB":"GB","CA":"CA","IE":"IE","CN":"CN","IN":"IN","AU":"AU","BR":"BR","MX":"MX","IT":"IT","NZ":"NZ","JP":"JP","FR":"FR","GR":"GR","DE":"DE","NL":"NL","PT":"PT","ES":"ES"},"page_data":"25"};
+/*  */</script> <script type="text/javascript">_linkedin_partner_id = "4279873";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);</script><script type="text/javascript">(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);</script> <noscript>
+<img
+height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=4279873&fmt=gif" />
+</noscript></body></html>

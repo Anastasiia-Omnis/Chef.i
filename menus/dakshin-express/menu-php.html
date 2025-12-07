@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title></title>
+<meta name="description" content="">
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<link rel="stylesheet" href="Assets/styles/normalize.css">
+<link rel="stylesheet" href="Assets/styles/main.css">
+<link rel="stylesheet" href="Assets/styles/site.css?v=3.3">
+<link href='//fonts.googleapis.com/css?family=BenchNine:700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto:900,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
+
+<script src="Assets/scripts/vendor/essemm.js"></script>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+<body class="food-bg">
+
+<!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  <div id="header-container">
+    <h1 class="title">Dakshin, True Taste, Since 2000</h1>
+    <div id="header">
+        <div id="logo"><a href="/"><img src="Assets/images/dakshin_logo.png" width="392" height="108"  alt=""/></a></div>
+        <div id="header-links">
+            <div style="position: absolute; left: -82px;">
+                <div class="header-text" style="padding-top: 2px;"> <strong>Contact us:</strong><br />
+                    Phone 1: (732) 494-6363<br />
+                    Phone 2: (732) 494-6303<br />
+                    Fax: (732) 494-4231 <br />
+                    Email: <a href="mailto:contactus@dakshinusa.com" style="color: white;">contactus@dakshinusa.com</a><br />
+                    </div>
+            </div>
+            <div id="shop-link" style="display: none;">
+                <a href="shop.php">
+                    <div class="header-btn"> <img src="Assets/images/shop_online.png" />
+                        <h3>Shop Online now!</h3>
+                        <div><small>Sweets, Snacks, and Pickles</small></div>
+                    </div>
+                </a>
+            </div>
+            <div id="catering-link" style="display: none;">
+                <a href="catering_order.php">
+                    <div class="header-btn"> <img src="Assets/images/catering_quote.png" />
+                        <h3>Catering Quote</h3>
+                        <div><small>Get started with your next catering event.</small></div>
+                    </div>
+                </a>
+            </div>
+            <div id="shop-link">
+                <a href="#">
+                    <div class="header-btn"> <img src="Assets/images/shop_online.png" />
+                        <h3>Shop Online now!</h3>
+                        <div><small>Coming soon!</small></div>
+                    </div>
+                </a>
+            </div>
+            <div id="catering-link">
+                <a href="catering_order.php">
+                    <div class="header-btn"> <img src="Assets/images/catering_quote.png" />
+                        <h3>Catering Quote</h3>
+                        <div><small>Get started with your next catering event.</small></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="width: 900px; margin: 0 auto;/* z-index: 10000; */">
+            <div class="main-nav">
+            <ul>
+  
+  
+      <li  class="selected" ><a href="menu.php">Menu</a>  <div class="down-arrow">&nbsp;</div></li>
+  
+      <li ><a href="catering.php">Catering</a></li>
+  
+      <li ><a href="shop.php">Shop</a></li>
+  
+      <li ><a href="events.php">Events</a></li>
+  
+      <li ><a href="location.php">Location</a></li>
+  
+      <li ><a href="contact.php">Contact</a></li>
+  
+</ul>
+        </div></div>
+        <section class="content">
+<table border="0" cellpadding="0" width="100%" id="food-menu-tbl">
+        <tbody><tr>
+        <td width="200" valign="top" style="  padding: 10px; padding-right: 0; padding-top: 46px; " >
+
+        <div class="food-menu">
+            <div id="item-search">
+                <div id="search-icon">
+                    <img src="Assets/images/search.png" alt="" width="20" height="20">
+                </div>
+                <input type="text" name="item_search" id="item_search" placeholder="Search an Item">
+                <div class="search-close" style=""><i class="fa fa-times" aria-hidden="true" style="display: none;"></i></div>
+                <button><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </div>
+
+            <ul id="all-dakshin-express-holder" class="menu-holders"></ul>
+            <ul id="veg-dakshin-express-holder" class="menu-holders"></ul>
+            <ul id="all-dakshin-stelton-holder" class="menu-holders"></ul>
+            <ul id="veg-dakshin-stelton-holder" class="menu-holders"></ul>
+            <ul id="all-dakshin-desi-galaxy-1396-holder" class="menu-holders"></ul>
+            <ul id="veg-dakshin-desi-galaxy-1396-holder" class="menu-holders"></ul>
+        </div></td>
+        <td class="left-line" width="5" style=" padding: 10px; " ></td>
+        <td valign="top" style=" padding: 10px; padding-top: 43px; " >
+            <div id="menu" class="menu"></div>
+        </td>
+        <td class="left-line" width="5" style=" padding: 10px; " ></td>
+        <td valign="top" width="230" style="position: relative; padding: 10px; padding-top: 34px;" >
+            <div id="arrow-1" class="right-arrow">&nbsp;</div>
+            <div id="dakshin-express" class="restaurant selected dashed-bdr">
+                <img src="Assets/images/dakshinexpress.png" />
+                <div class="menu-options" style="display: none;">
+                    <div id="all" class="selected">Veg and Non-Veg</div>
+                    <div id="veg-only">Vegetarian only</div>
+                </div>
+                <div>
+                    1689 Oak Tree Road, <br />
+                    Edison, NJ 08820<br />
+                    Phone 1: (732) 494-6363<br />
+                    Phone 2: (732) 494-6303<br />
+                    Fax: (732) 494-4231 <br /><br />
+                    <em>Open all days from 11:00 am - 10:00 pm</em>
+                </div>
+            </div>
+            <div>
+                <br />
+                <div id="arrow-2" class="right-arrow" style="display: none;">&nbsp;</div>
+                <div  id="dakshin-desi-galaxy-1396" class="restaurant">
+                    <img src="Assets/images/dakshin_snack_center.png" />
+                    <div class="menu-options" style="display: none;">
+                        <div id="all" class="selected">All Veg menu</div>
+                    </div>
+                    <div> 1396 Oak Tree Road, <br>
+                        Iselin, NJ 08830<br /><br />
+                        <em>Open all days from 11:00 am - 10:00 pm</em>
+                    </div>
+                </div>
+        </div>
+
+        </td>
+        </tr>
+        </tbody></table>
+
+
+        </section>
+<div id="nav-bg"></div>
+<footer> Copyright &copy; 2025:: Dakshin Group of Restaurants :: contactus@dakshinusa.com | <a href="terms.php">Terms and Conditions</a> | <a href="privacy.php">Privacy Policy</a> | <a href="returns.php">Return Policy</a> | <a href="faq.php">FAQ</a></footer>
+<div id="layout-templates">
+    <script id="menu-item-tmpl" type="text/x-jquery-tmpl"><div id="${d.menu_type}-${d.cat}" class="category-items">
+	<div class="main-section">${$data.d.category} {{if d.term}}Search: ${d.term}{{/if}}</div>
+	<div class="section-desc">{{html $('<div/>').html(nlbr($data.d.category_description)).text()}}</div>
+	<div id="hide-sidebar">
+		<div class="menu-items">
+
+			{{each(i,v) $data.d.menu}}
+			<div class="item" id="${v.identifier}MenuItem" >
+				${$("#menu").data(v.identifier + "MenuItem", v), ""}
+				{{if v.menuitem_type !== "package"}}
+					{{if v.picture}}
+				    <div class="i-image left"><img src="http://files.oimsapp.com/cust_uploads/dakshin/oims/Assets/images/extUploads/menuitem_pictures/${v.picture}" width="110" /></div>
+				    {{else}}
+				    <div class="i-image left"><img src="http://files.oimsapp.com/cust_uploads/dakshin/oims/Assets/images/extUploads/menuitem_pictures/thumbs/item_alt.jpg?al" width="110" /></div>
+				    {{/if}}
+				    ${$data.ispackage = false, ""}
+			    {{/if}}
+			    <div {{if $data.ispackage == false}}class="right"{{/if}}>
+			        <div class="item-name">${v.menuitem_name}
+			        	{{each(a, b) (v.indicators || "").split("|||")}}
+			        		<span class="${b}"></span>
+			        	{{/each}}
+			        	<span class="{{if v.food_type == 'Non-Vegetarian'}}non-veg{{else}}veg{{/if}}"></span>
+			        </div>
+			        <div class="item-desc">
+			        	<div class="desc">{{html $('<div/>').html(nlbr(v.menuitem_description)).text()}}</div>
+
+			        		{{if v.price_category_arr}}
+
+
+    		                    {{each(i, u) v.price_category_arr}}
+
+    							{{if u.menuname == $data.d.menuname}}
+
+    		                        {{if u.p1}}
+    		                        <span class="price" >$${u.p1} {{if u.p1_name}}<small><em>(${u.p1_name})</em></small>{{/if}}
+    		                        <input type="hidden" id="${v.identifier}MenuItemP1" name="${v.identifier}MenuItemP1" value = "$${u.p1}" /></span>
+    		                        {{/if}}
+
+    		                        {{if u.p2}}
+    		                        <span class="price" >$${u.p2} {{if u.p2_name}}<small><em>(${u.p2_name})</em></small>{{/if}}
+    		                        <input type="hidden" id="${v.identifier}MenuItemP2" name="${v.identifier}MenuItemP2" value = "$${u.p2}" /></span>
+    		                        {{/if}}
+
+    		                        {{if u.p3}}
+    		                        <span class="price" >$${u.p3} {{if u.p3_name}}<small><em>(${u.p3_name})</em></small>{{/if}}
+    		                        <input type="hidden" id="${v.identifier}MenuItemP3" name="${v.identifier}MenuItemP3" value = "$${u.p3}" /></span>
+    		                        {{/if}}
+
+    		                        {{if u.p4}}
+    		                        <span class="price" >$${u.p4} {{if u.p4_name}}<small><em>(${u.p4_name})</em></small>{{/if}}
+    		                        <input type="hidden" id="${v.identifier}MenuItemP4" name="${v.identifier}MenuItemP4" value = "$${u.p4}" /></span>
+    		                        {{/if}}
+
+    		                    {{/if}}
+
+    		                    {{/each}}
+    	                    {{/if}}
+			       	</div>
+			    </div>
+			</div>
+			{{/each}}
+
+		</div>
+	</div>
+</div></script>
+    <script id="order-item-tmpl" type="text/x-jquery-tmpl"><tr class="order-item" id="${d.lineId}">
+    <td width="20" align="center" valign="top" class="trash"><img src="Assets/images/trash.png" class="remove-line" /></td>
+    <td width="20" align="center" valign="top" class="line-no"></td>
+    <td class="menu-list-item" valign="top"><div><span class="menu-item-name">${d.menuitem_name}</span> <small style="font-weight: normal;">${d.price_name || ""}</small></div></td>
+    <td width="20" align="center" valign="top" ><input type="number" class="qty" value="1" /></td>
+    {{if ($data.menuname != "catering")}}
+    <td width="50" align="right" valign="top" ><input type="text" class="unit-price" readonly value="${d.price}" /></td>
+    <td width="50" align="right" valign="top"><input type="text" class="ext-amt" readonly value="0.00" /></td>
+    {{/if}}
+</tr></script>
+    <script id="menu-category-tmpl" type="text/x-jquery-tmpl">{{each(i,v) $data.d}}
+<li>${v.menucategory_name}</li>
+{{/each}}</script>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="Assets/scripts/vendor/jquery-latest.min.js"><\/script>')</script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script></head>
+<script src="Assets/scripts/vendor/jquery.tmpl.min.js"></script>
+<script src="Assets/scripts/plugins.js"></script>
+<script src="Assets/scripts/main.js?v=1"></script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+</body>
+</html>

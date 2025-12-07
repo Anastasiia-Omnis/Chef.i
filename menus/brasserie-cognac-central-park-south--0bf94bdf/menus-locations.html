@@ -1,0 +1,2037 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.brasseriecognac.com/',
+        AccountUUID: 'ba8d74f8fdf048a8a761c68589fa1130',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '06e5eaef',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Sat Nov 15 00:14:49 UTC 2025',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'menus-locations',
+        InitialPageUuid: '0185183ce85d4313abda1988f22c5d73',
+        InitialPageId: '1163785464',
+        InitialEncodedPageAlias: 'bWVudXMtbG9jYXRpb25z',
+        InitialHeaderUuid: '6a286cf5dc0c43dfb20f7e594ccf07c5',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: -1,
+            NavbarLiveHomePage: 'https://www.brasseriecognac.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 23;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.brasseriecognac.com/menus-locations">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon"
+      href="https://irp.cdn-website.com/06e5eaef/dms3rep/multi/cognacfavico.png"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/06e5eaef/site_favicon_16_1730503509098.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    :root {
+  --color_1: rgba(207, 49, 51, 1);
+  --color_2: rgba(249, 236, 218, 1);
+  --color_3: rgba(205, 48, 50, 1);
+  --color_4: rgba(0, 0, 0, 1);
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Cambay:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:ital,wght@0,400..700;1,400..700&family=Oswald:ital,wght@0,200..700;1,200..700&amp;subset=latin-ext&amp;display=swap"  />
+
+<style>
+@font-face {
+  font-family: "Vogue";
+  src: url("https://irp.cdn-website.com/06e5eaef/fonts/Vogue-4ef3_400.woff");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Academy Engraved LET Fonts";
+  src: url("https://irp.cdn-website.com/06e5eaef/fonts/Academy+Engraved+LET+Fonts-3f47_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "CambayDevanagari-Bold.AH";
+  src: url("https://irp.cdn-website.com/06e5eaef/fonts/CambayDevanagari-Bold.AH-94a6_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "CambayDevanagari-BoldOblique.AH";
+  src: url("https://irp.cdn-website.com/06e5eaef/fonts/CambayDevanagari-BoldOblique.AH-bd35_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "CambayDevanagari-Regular.AH";
+  src: url("https://irp.cdn-website.com/06e5eaef/fonts/CambayDevanagari-Regular.AH-d076_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "CambayDevanagari-Oblique.AH";
+  src: url("https://irp.cdn-website.com/06e5eaef/fonts/CambayDevanagari-Oblique.AH-aff2_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="stylesheet" type="text/css" href="https://static.cdn-website.com/mnlt/production/5960/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/WIDGET_CSS/1aee991aa773dfe8a0fdaf4e91191912.css" id="widgetCSS" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="menus-locations"] #dm [data-show-on-page-only="menus-locations"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/06e5eaef/files/06e5eaef_1.min.css?v=990" id="siteGlobalCss" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody div.u_1439254298
+{
+	background-color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_OurIngredients
+{
+	background-color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1096284197
+{
+	background-color:rgba(255,255,255,0) !important;
+}
+*#dm *.dmBody div.u_1321596125
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1573618392
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1675834573
+{
+	background-color:rgba(255,255,255,0) !important;
+}
+*#dm *.dmBody *.u_1979957709
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody *.u_1617749006
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1617749006 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody a.u_1979957709
+{
+	border-radius:0px 0px 0px 0px !important;
+}
+*#dm *.dmBody a.u_1979957709:hover
+{
+	border-color:rgba(216,79,37,1) !important;
+}
+*#dm *.dmBody a.u_1979957709.hover
+{
+	border-color:rgba(216,79,37,1) !important;
+}
+*#dm *.dmBody div.u_1011874784
+{
+	background-color:rgba(249,238,210,1) !important;
+	border-radius:0px 0px 0px 0px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(216,79,37,1) !important;
+}
+*#dm *.dmBody div.u_1775969528
+{
+	border-radius:0px 0px 0px 0px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/06e5eaef/dms3rep/multi/opt/31204085-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1667162796
+{
+	background-color:rgba(216,79,37,1) !important;
+	border-radius:0px 0px 0px 0px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1251929721
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1251929721
+{
+	border-radius:0px 0px 0px 0px !important;
+}
+*#dm *.dmBody a.u_1251929721:hover
+{
+	border-color:rgba(216,79,37,1) !important;
+}
+*#dm *.dmBody a.u_1251929721.hover
+{
+	border-color:rgba(216,79,37,1) !important;
+}
+*#dm *.dmBody div.u_1271906298
+{
+	border-radius:0px 0px 0px 0px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/06e5eaef/dms3rep/multi/opt/DSC05537-HDR-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1502339462
+{
+	background-color:var(--color_2) !important;
+	border-radius:0px 0px 0px 0px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(216,79,37,1) !important;
+}
+*#dm *.dmBody div.u_1263402822
+{
+	background-color:rgba(0,0,0,0) !important;
+	background-repeat:no-repeat !important;
+	background-image:none !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody a.u_1617749006
+{
+	border-radius:0px 0px 0px 0px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody *.u_1125797293
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1125797293
+{
+	border-radius:0px 0px 0px 0px !important;
+}
+*#dm *.dmBody a.u_1125797293:hover
+{
+	border-color:rgba(216,79,37,1) !important;
+}
+*#dm *.dmBody a.u_1125797293.hover
+{
+	border-color:rgba(216,79,37,1) !important;
+}
+*#dm *.dmBody *.u_1176725516
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1176725516 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody a.u_1176725516
+{
+	border-radius:0px 0px 0px 0px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody *.u_1103836136
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1103836136
+{
+	border-radius:0px 0px 0px 0px !important;
+}
+*#dm *.dmBody a.u_1103836136:hover
+{
+	border-color:rgba(216,79,37,1) !important;
+}
+*#dm *.dmBody a.u_1103836136.hover
+{
+	border-color:rgba(216,79,37,1) !important;
+}
+*#dm *.dmBody div.u_1378541009
+{
+	border-radius:0px 0px 0px 0px !important;
+	background-repeat:no-repeat !important;
+	background-image:url('https://lirp.cdn-website.com/06e5eaef/dms3rep/multi/opt/Front-2880w.jpg') !important;
+	background-size:cover !important;
+}
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.dmBody div.u_1605229701
+{
+	margin-left:0 !important;
+	padding-top:16px !important;
+	padding-left:16px !important;
+	padding-bottom:16px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:16px !important;
+}
+*#dm *.dmBody div.u_1096284197
+{
+	margin-left:0 !important;
+	padding-top:100px !important;
+	padding-left:30px !important;
+	padding-bottom:20px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:30px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1775969528
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1378541009
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1573256193
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 34px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:89.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1078320850
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 30px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:97.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1271906298
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1502339462
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+}
+*#dm *.dmBody div.u_1667162796
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody div.u_1959892169
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 16px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:115.312px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1011874784
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody div.u_1823087302
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody a.u_1979957709
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 41px) !important;
+	position:relative !important;
+	height:62px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:244.983px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	min-height:auto !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	margin-top:10px !important;
+	margin-bottom:10px !important;
+	text-align:center !important;
+}
+*#dm *.dmBody div.u_1675834573
+{
+	padding-top:42.5px !important;
+	padding-left:40px !important;
+	padding-bottom:96.5px !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1528596697
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	min-height:auto !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	margin-top:20px !important;
+	margin-bottom:8px !important;
+}
+*#dm *.dmBody div.u_1797544512
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	min-height:auto !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	margin-top:20px !important;
+	margin-bottom:8px !important;
+}
+*#dm *.dmBody a.u_1125797293
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 41px) !important;
+	position:relative !important;
+	height:62px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:244.983px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	min-height:auto !important;
+	text-align:center !important;
+}
+*#dm *.dmBody a.u_1176725516
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 45px) !important;
+	position:relative !important;
+	height:62px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:244.233px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	min-height:auto !important;
+	text-align:center !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	margin-top:20px !important;
+	margin-bottom:10px !important;
+}
+*#dm *.dmBody a.u_1617749006
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 45px) !important;
+	position:relative !important;
+	height:62px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:244.233px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	min-height:auto !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	margin-top:10px !important;
+	margin-bottom:10px !important;
+	text-align:center !important;
+}
+*#dm *.dmBody a.u_1103836136
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 45px) !important;
+	position:relative !important;
+	height:62px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:244.983px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	min-height:auto !important;
+	text-align:center !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	margin-top:20px !important;
+	margin-bottom:10px !important;
+}
+*#dm *.dmBody a.u_1251929721
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 45px) !important;
+	position:relative !important;
+	height:62px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:244.983px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	min-height:auto !important;
+	text-align:center !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	margin-top:10px !important;
+	margin-bottom:10px !important;
+}
+*#dm *.dmBody div.u_1116063934
+{
+	margin-left:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-top:121px !important;
+	margin-bottom:20px !important;
+	margin-right:auto !important;
+	padding-right:0px !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	min-height:auto !important;
+	max-width:100% !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1339046111
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 212px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:743.3px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	display:block !important;
+	min-height:auto !important;
+}
+
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-18, .size-18, .size-18 > font { font-size: 18px !important; }.font-size-14, .size-14, .size-14 > font { font-size: 14px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Jost Fallback";
+  src: local('Arial');
+  ascent-override: 111.656%;
+  descent-override: 39.1318%;
+  size-adjust: 95.8301%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Arial Fallback";
+  src: local('Arial');
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Roboto Mono Fallback";
+  src: local('Arial');
+  ascent-override: 77.0755%;
+  descent-override: 19.9333%;
+  size-adjust: 135.9513%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lato Fallback";
+  src: local('Arial');
+  ascent-override: 101.3181%;
+  descent-override: 21.865%;
+  size-adjust: 97.4159%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Cambay Fallback";
+  src: local('Arial');
+  ascent-override: 100.8929%;
+  descent-override: 63.4364%;
+  size-adjust: 99.115%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Dancing Script Fallback";
+  src: local('Arial');
+  ascent-override: 114.0713%;
+  descent-override: 34.7173%;
+  size-adjust: 80.6513%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Oswald Fallback";
+  src: local('Arial');
+  ascent-override: 145.0682%;
+  descent-override: 35.1423%;
+  size-adjust: 82.2372%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.brasseriecognac.com/menus-locations">
+
+  <meta property="og:image" content="https://lirp.cdn-website.com/06e5eaef/dms3rep/multi/opt/DSC05660-1920w.jpg"/>
+  <title>
+    Menus &amp; Locations | Brasserie Cognac
+  </title>
+  <meta name="description" content="Explore our menus and locations at Brasserie Cognac. Enjoy refined French cuisine across our NYC locations.
+"/>
+
+  <!-- Matomo -->  <script>
+
+
+
+
+
+
+
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://serafinagroup.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/serafinagroup.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  </script>
+  <!-- End Matomo Code -->  <!-- Google tag (gtag.js) -->  <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16912647001">
+
+
+
+
+
+
+
+
+  
+
+  
+
+  </script>
+  <script>
+
+
+
+
+
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16912647001');
+
+
+  
+
+  
+
+  </script>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Menus &amp; Locations | Brasserie Cognac"/>
+  <meta name="twitter:description" content="Explore our menus and locations at Brasserie Cognac. Enjoy refined French cuisine across our NYC locations.
+"/>
+  <meta property="og:description" content="Explore our menus and locations at Brasserie Cognac. Enjoy refined French cuisine across our NYC locations.
+"/>
+  <meta property="og:title" content="Menus &amp; Locations | Brasserie Cognac"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="menus-locations"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper hamburgerLayout-var5 null hamburgerLayout">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true" desktop-global-classes="header-over-content" tablet-global-classes="header-over-content"> <div dmtemplateid="Hamburger" class="runtime-module-container dm-bfs dm-layout-sec hasAnimations hasStickyHeader inMiniHeaderMode rows-1200 hide-back-to-top hamburger-reverse header-over-content dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var"> <div id="site_content"> <div class="p_hfcontainer"> <div id="hamburger-drawer" class="u_hamburger-drawer hamburger-drawer layout-drawer" layout="e9d510f4eb904e939c2be8efaf777e6e===header" data-origin="side-reverse"> <div class="u_1856200345 dmRespRow" style="text-align: center;" id="1856200345"> <div class="dmRespColsWrapper" id="1489477323"> <div class="u_1631378063 dmRespCol small-12 medium-12 large-12 empty-column" id="1631378063"></div> 
+</div> 
+</div> 
+ <div class="u_1108970139 dmRespRow middleDrawerRow" style="text-align: center;" id="1108970139"> <div class="dmRespColsWrapper" id="1618651759"> <div class="dmRespCol small-12 u_1797298039 medium-12 large-12" id="1797298039"> <nav class="u_1360283060 effect-bottom main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_2" layout-sub="" data-show-vertical-sub-items="HIDE" id="1360283060" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/UpperEastSide" class="unifiednav__item    " target="" data-target-page-alias="fabulous-pizza-79th"> <span class="nav-item-text " data-link-text="Upper East Side" data-auto="page-text-style">Upper East Side<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/MidtownEast" class="unifiednav__item    " target="" data-target-page-alias="midtown-east"> <span class="nav-item-text " data-link-text="Midtown East" data-auto="page-text-style">Midtown East<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/CentralParksouth" class="unifiednav__item    " target="" data-target-page-alias="carnegie-hall"> <span class="nav-item-text " data-link-text="Central Park South" data-auto="page-text-style">Central Park South<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/thanksgiving-menu" class="unifiednav__item    " target="" data-target-page-alias="thanksgiving-menu"> <span class="nav-item-text " data-link-text="Thanksgiving Menu" data-auto="page-text-style">Thanksgiving Menu<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+ <div class="u_1333822564 graphicWidget graphicWidgetV2 graphicWidgetV3" data-element-type="graphic" data-widget-type="graphic" id="1333822564"> <svg width="100%" height="100%" version="1.1" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id="1159390461" class="svg u_1159390461" data-icon-custom="true"> <g> <path d="m62.809 43.211c-0.32812-0.39844-1.8203-0.48828-2.3008-0.69141-1.4297-0.60938-1.6484-0.60156-1.1484 0.92969 0.32812 1.0117 0.35156 1.6797-0.17188 2.6484-0.30859 0.57812-2.8789 2.25-2.7109 2.5 0.99219 1.3828 7.3633-4.1289 6.332-5.3867zm-5.7578 6.6992v0.26953c0.10938 0.55859 4.7812 0.10937 7.0586 1.6797 1.3906 0.96094 1.5195 3.3086 3.0781 1.5 0.80078-0.94141 1.5312-1.7305 2.7188-2.2109 1.7383-0.69141 3.6914-0.80078 5.5586-0.80078 1.1797 0 5.2891-0.089844 5.8516 0.62109 0.32812 0.41016-0.078125 1.4102 0.80859 1.4688 0.92188 0.070312 0.57812-1.1211 0.96094-1.5508 0.76172-0.87109 12.18-0.58984 14.129-0.35156 0.51953 0.070313 1.1289 0.10156 1.4492-0.011718 0.23828-0.078126 0.44922-0.33984 0.46094-0.48047-0.011719-0.14062-0.21875-0.39844-0.46094-0.48047-0.32031-0.10938-0.92969-0.078125-1.4492-0.011719-1.9492 0.25-13.379 0.51953-14.129-0.35156-0.37891-0.42969-0.039063-1.6211-0.96094-1.5508-0.87891 0.058593-0.48047 1.0586-0.80859 1.4688-0.55859 0.71094-4.6719 0.62109-5.8516 0.62109-1.8789 0-3.8281-0.10938-5.5586-0.80078-1.1914-0.46875-1.9219-1.2695-2.7188-2.2109-1.5508-1.8203-1.6797 0.53906-3.0781 1.5-2.2695 1.5742-6.9375 1.1328-7.0586 1.6836zm9.2891-1.2109c0.73828 0 1.3516 0.60156 1.3516 1.3516 0 0.73828-0.60156 1.3516-1.3516 1.3516-0.73828 0-1.3516-0.60156-1.3516-1.3516 0.011719-0.75 0.61328-1.3516 1.3516-1.3516zm-12.801 3.1523c1 0 1.8086-0.80859 1.8086-1.8086s-0.80859-1.8086-1.8086-1.8086-1.8086 0.80859-1.8086 1.8086c0 1.0078 0.80859 1.8086 1.8086 1.8086zm5.6602 2.1602c0.51172 0.96875 0.5 1.6406 0.17188 2.6484-0.51172 1.5312-0.28125 1.5391 1.1484 0.92969 0.48047-0.21094 1.9688-0.28906 2.3008-0.69141 1.0312-1.2695-5.3516-6.7812-6.3203-5.3906-0.17969 0.25391 2.3906 1.9219 2.6992 2.5039z"></path> 
+ <path d="m37.141 56.891c0.32812 0.39844 1.8203 0.48828 2.3008 0.69141 1.4297 0.60938 1.6484 0.60156 1.1484-0.92969-0.32812-1.0117-0.35156-1.6797 0.17188-2.6484 0.30859-0.57812 2.8789-2.25 2.7109-2.5-0.98438-1.3945-7.3633 4.1172-6.332 5.3867zm5.7578-6.7109v-0.26953c-0.10938-0.55859-4.7812-0.10938-7.0586-1.6797-1.3906-0.96094-1.5195-3.3086-3.0781-1.5-0.80078 0.94141-1.5312 1.7305-2.7188 2.2109-1.7383 0.69141-3.6914 0.80078-5.5586 0.80078-1.1797 0-5.2891 0.089843-5.8516-0.62109-0.32812-0.41016 0.078126-1.4102-0.80859-1.4688-0.92188-0.070313-0.57812 1.1211-0.96094 1.5508-0.76172 0.87109-12.18 0.58984-14.129 0.35156-0.51953-0.070313-1.1289-0.10156-1.4492 0.011718-0.23828 0.078125-0.44922 0.33984-0.46094 0.48047 0.011719 0.14062 0.21875 0.39844 0.46094 0.48047 0.32031 0.10938 0.92969 0.078125 1.4492 0.011718 1.9492-0.25 13.379-0.51953 14.129 0.35156 0.37891 0.42969 0.039063 1.6211 0.96094 1.5508 0.87891-0.058594 0.48047-1.0586 0.80859-1.4688 0.55859-0.71094 4.6719-0.62109 5.8516-0.62109 1.8789 0 3.8281 0.10938 5.5586 0.80078 1.1914 0.46875 1.9219 1.2695 2.7188 2.2109 1.5508 1.8203 1.6797-0.53906 3.0781-1.5 2.2812-1.5625 6.9492-1.125 7.0586-1.6836zm-9.2891 1.2109c-0.73828 0-1.3516-0.60156-1.3516-1.3516 0-0.73828 0.60156-1.3516 1.3516-1.3516 0.73828 0 1.3516 0.60156 1.3516 1.3516s-0.60156 1.3516-1.3516 1.3516zm12.801-3.1523c-1 0-1.8086 0.80859-1.8086 1.8086s0.80859 1.8086 1.8086 1.8086 1.8086-0.80859 1.8086-1.8086c0-0.99609-0.80859-1.8086-1.8086-1.8086zm-5.6484-2.1484c-0.51172-0.96875-0.5-1.6406-0.17188-2.6484 0.51172-1.5312 0.28125-1.5391-1.1484-0.92969-0.48047 0.21094-1.9688 0.28906-2.3008 0.69141-1.0312 1.2695 5.3516 6.7812 6.3203 5.3906 0.17969-0.25391-2.4023-1.9219-2.6992-2.5039z"></path> 
+</g> 
+</svg> 
+</div> 
+ <nav class="u_1781521173 effect-bottom2 main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_2" layout-sub="" data-show-vertical-sub-items="HIDE" id="1781521173" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menus-locations" class="unifiednav__item  dmNavItemSelected    " target="" data-target-page-alias="menus-locations" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="Menus & Locations" data-auto="page-text-style">Menus &amp; Locations<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/PrivateEvents" class="unifiednav__item    " target="" data-target-page-alias="private-events"> <span class="nav-item-text " data-link-text="Private Events" data-auto="page-text-style">Private Events<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/OurStory" class="unifiednav__item    " target="" data-target-page-alias="about"> <span class="nav-item-text " data-link-text="Our Story" data-auto="page-text-style">Our Story<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/RestaurantLocator" class="unifiednav__item    " target="" data-target-page-alias="restaurant-locator"> <span class="nav-item-text " data-link-text="Restaurant Locator" data-auto="page-text-style">Restaurant Locator<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1994285693" style="text-align: center;" id="1994285693"> <div class="dmRespColsWrapper" id="1867451927"> <div class="u_1139833102 dmRespCol small-12 medium-12 large-12" id="1139833102"> <a data-display-type="block" class="u_1634092422 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient button_2" file="false" href="/opentable-reservations" data-element-type="dButtonLinkId" id="1634092422" link_type="popup" popup_target="opentable-reservations"> <span class="iconBg" aria-hidden="true" id="1994674039"> <span class="icon hasFontIcon icon-star" id="1345927127"></span> 
+</span> 
+ <span class="text" id="1022441896">Reservations</span> 
+</a> 
+ <a data-display-type="block" class="u_1296067268 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient button_2" file="false" href="/order-online" data-element-type="dButtonLinkId" id="1296067268" link_type="popup" popup_target="order-online"> <span class="iconBg" aria-hidden="true" id="1982411032"> <span class="icon hasFontIcon icon-star" id="1612915975"></span> 
+</span> 
+ <span class="text" id="1982798793">Order Online</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="layout-drawer-overlay" id="layout-drawer-overlay"></div> 
+</div> 
+ <div class="site_content"> <div id="hamburger-header-container" class="hamburger-header-container p_hfcontainer"> <div id="hamburger-header" class="u_hamburger-header hamburger-header p_hfcontainer" layout="44dc38f951e9489490b055748e10ba9f===header" data-scrollable-target="body" data-scroll-responder-id="hamburger-header" secondary-image="https://lirp.cdn-website.com/06e5eaef/dms3rep/multi/opt/Artboard-27-f1e0681a-1920w.png" has-secondary-image="true"> <div class="u_1815074690 dmRespRow" id="1815074690"> <div class="dmRespColsWrapper" id="1743903737"> <div class="dmRespCol small-12 medium-12 large-12" id="1856896138"> <div class="u_1317470864 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1317470864"> <a href="/" id="1231674794" file="false"><img src="https://lirp.cdn-website.com/06e5eaef/dms3rep/multi/opt/Artboard-27-f1e0681a-464e4ab7-1920w.png" id="1349126088" class="" data-dm-image-path="https://irp.cdn-website.com/06e5eaef/dms3rep/multi/Artboard-27-f1e0681a-464e4ab7.png" width="1920" height="466" alt="Serafina logo in yellow, featuring the brand's name written in a flowing, cursive script. The design is bold and vibrant, with the yellow color standing out against a light background, giving the logo a lively and energetic feel. This logo is simple yet distinctive, reflecting the brand's identity." onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1586150744 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1586150744"> <div class="dmRespColsWrapper" id="1731733897"> <div class="u_1692331290 dmRespCol small-12 medium-12 large-12" id="1692331290"> <a data-display-type="block" class="u_1341128826 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/opentable-reservations" data-element-type="dButtonLinkId" id="1341128826" link_type="popup" popup_target="opentable-reservations"> <span class="iconBg" aria-hidden="true" id="1122525368"> <span class="icon hasFontIcon icon-star" id="1804578977"></span> 
+</span> 
+ <span class="text" id="1991493301">Rerservations</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <button class="layout-drawer-hamburger hamburger-on-header" id="layout-drawer-hamburger" aria-label="menu" aria-controls="hamburger-drawer" aria-expanded="false"> <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+</button> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_menus-locations dm-home-page" themewaschanged="true" desktop-global-classes="header-over-content" tablet-global-classes="header-over-content"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="u_1096284197 dmRespRow" id="1096284197" data-page-element-type="section" data-page-element-id="1823702692"> <div class="dmRespColsWrapper" id="1769474370"> <div class="dmRespCol large-12 medium-12 small-12 u_1605229701" id="1605229701"> <div class="u_1116063934 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1116063934" data-ai-tag="Short title" style="transition: none; text-align: left; display: block;"> <h2 class="text-align-center"><span style="display: unset;">Menus &amp; Locations</span></h2> 
+</div> 
+ <div class="u_1339046111 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1339046111" style="transition: none; text-align: left; display: block;" data-ai-tag="Short section description"><p class="text-align-center"><span style="display: unset;">Find your favorite Brasserie Cognac and its menu here</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1675834573 dmRespRow" id="1675834573" data-page-element-type="section" data-page-element-id="1823702692"> <div class="dmRespColsWrapper" id="1041785825"> <div class="u_1011874784 dmRespCol small-12 medium-4 large-4" id="1011874784"> <div class="u_1775969528 dmRespRow" id="1775969528"> <div class="dmRespColsWrapper" id="1475309360"> <div class="dmRespCol small-12 medium-12 large-12 u_1321596125" id="1321596125"> <div data-element-type="spacer" class="u_1573256193 dmSpacer" id="1573256193"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1823087302 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1823087302" data-ai-tag="Short title" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h3 class="m-text-align-center text-align-center"><span style="display: initial;">Cognac Upper East</span></h3> 
+<p class="text-align-center m-size-19 size-24"><span style="color:var(--color_4);font-weight:normal;display:initial;font-family:'CambayDevanagari-Bold.AH';" class="font-size-24 m-font-size-19">963 Lexington Ave (at E. 70th St.)</span></p><p class="m-size-19 text-align-center size-24"><a href="tel:(212) 249-5100" target="_blank" type="call" style="color:var(--color_4);font-weight:normal;display:initial;text-decoration:none;font-family:'CambayDevanagari-Bold.AH';" class="font-size-24 m-font-size-19">(212) 249-5100</a></p></div> 
+ <a data-display-type="block" class="u_1125797293 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/UpperEastSide#Menus" data-element-type="dButtonLinkId" id="1125797293"> <span class="iconBg" aria-hidden="true" id="1816120419"> <span class="icon hasFontIcon icon-star" id="1455145839"></span> 
+</span> 
+ <span class="text" id="1721718136" data-ai-tag="Short button text">See Menus</span> 
+</a> 
+ <a data-display-type="block" class="u_1979957709 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/UpperEastSide" data-element-type="dButtonLinkId" id="1979957709"> <span class="iconBg" aria-hidden="true" id="1708621982"> <span class="icon hasFontIcon icon-star" id="1476151836"></span> 
+</span> 
+ <span class="text" id="1787640891" data-ai-tag="Short button text">See Venue</span> 
+</a> 
+</div> 
+ <div class="u_1667162796 dmRespCol small-12 medium-4 large-4" id="1667162796"> <div class="u_1378541009 dmRespRow" id="1378541009"> <div class="dmRespColsWrapper" id="1829720986"> <div class="dmRespCol small-12 medium-12 large-12 u_1263402822" id="1263402822"> <div data-element-type="spacer" class="u_1078320850 dmSpacer" id="1078320850"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1528596697 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1528596697" data-ai-tag="Short title" style="transition: none; text-align: left; display: block;"> <h3 class="text-align-center m-text-align-center"><span style="color: rgb(255, 255, 255); display: initial;">Cognac <br/>Central Park South</span></h3> 
+<p class="text-align-center m-size-19 size-24"><span style="color:rgb(255, 255, 255);font-weight:normal;display:initial;font-family:'CambayDevanagari-Bold.AH';" class="m-font-size-19 font-size-24">922 7th Ave (at 58th St)<br/>Phone: (212) 470-5087</span></p></div> 
+ <a data-display-type="block" class="u_1176725516 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/CentralParksouth#Menus" data-element-type="dButtonLinkId" id="1176725516"> <span class="iconBg" aria-hidden="true" id="1497164557"> <span class="icon hasFontIcon icon-star" id="1714527643"></span> 
+</span> 
+ <span class="text" id="1285986317" data-ai-tag="Short button text">See Menus</span> 
+</a> 
+ <a data-display-type="block" class="u_1617749006 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/CentralParksouth" data-element-type="dButtonLinkId" id="1617749006"> <span class="iconBg" aria-hidden="true" id="1851700345"> <span class="icon hasFontIcon icon-star" id="1817806400"></span> 
+</span> 
+ <span class="text" id="1588719143" data-ai-tag="Short button text">See Venue</span> 
+</a> 
+</div> 
+ <div class="u_1502339462 dmRespCol small-12 medium-4 large-4" id="1502339462"> <div class="u_1271906298 dmRespRow" id="1271906298"> <div class="dmRespColsWrapper" id="1012331493"> <div class="dmRespCol small-12 medium-12 large-12 u_1573618392" id="1573618392"> <div data-element-type="spacer" class="u_1959892169 dmSpacer" id="1959892169"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1797544512 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1797544512" data-ai-tag="Short title" style="transition: none; text-align: left; display: block;"> <h3 class="m-text-align-center text-align-center"><span style="display: initial;">Cognac <br/>Midtown East</span></h3> 
+<p class="text-align-center m-size-19 size-24"><span style="color:var(--color_4);font-weight:normal;display:initial;font-family:'CambayDevanagari-Bold.AH';" class="font-size-24 m-font-size-19">517 Lexington Ave (at E. 48th St.)</span></p><p class="m-size-19 text-align-center size-24"><a href="tel:(212) 392-5976" target="_blank" type="call" style="color:var(--color_4);font-weight:normal;display:initial;text-decoration:none;font-family:'CambayDevanagari-Bold.AH';" class="m-font-size-19 font-size-24">(212) 392-5976</a></p></div> 
+ <a data-display-type="block" class="u_1103836136 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/MidtownEast#Menus" data-element-type="dButtonLinkId" id="1103836136"> <span class="iconBg" aria-hidden="true" id="1658849049"> <span class="icon hasFontIcon icon-star" id="1750231271"></span> 
+</span> 
+ <span class="text" id="1434219622" data-ai-tag="Short button text">See Menus</span> 
+</a> 
+ <a data-display-type="block" class="u_1251929721 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/UpperEastEvents" data-element-type="dButtonLinkId" id="1251929721"> <span class="iconBg" aria-hidden="true" id="1956542362"> <span class="icon hasFontIcon icon-star" id="1217812303"></span> 
+</span> 
+ <span class="text" id="1829886212" data-ai-tag="Short button text">See Venue</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1329813326 dmRespRow" id="1329813326"> <div class="dmRespColsWrapper" id="1321316085"> <div class="dmRespCol large-12 medium-12 small-12" id="1945676230"> <a data-display-type="block" class="u_1711776533 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/email-signup" data-element-type="dButtonLinkId" id="1711776533"> <span class="iconBg" aria-hidden="true" id="1420543502"> <span class="icon hasFontIcon icon-star" id="1386932433"></span> 
+</span> 
+ <span class="text" id="1366509415">Sign Up For Our Email List Here</span> 
+</a> 
+ <nav class="u_1259281070 effect-bottom2 main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" data-divider="SLASH" id="1259281070" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="HORIZONTAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/OurStory" class="unifiednav__item    " target="" data-target-page-alias="about"> <span class="nav-item-text " data-link-text="Our Story" data-auto="page-text-style">Our Story<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/RestaurantLocator" class="unifiednav__item    " target="" data-target-page-alias="restaurant-locator"> <span class="nav-item-text " data-link-text="Restaurant Locator" data-auto="page-text-style">Restaurant Locator<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menus-locations" class="unifiednav__item  dmNavItemSelected    " target="" data-target-page-alias="menus-locations" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="Menus & Locations" data-auto="page-text-style">Menus &amp; Locations<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/accessibility" class="unifiednav__item    " target="" data-target-page-alias="accessibility"> <span class="nav-item-text " data-link-text="Accessibility" data-auto="page-text-style">Accessibility<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/careers" class="unifiednav__item    " target="" data-target-page-alias="careers"> <span class="nav-item-text " data-link-text="Careers" data-auto="page-text-style">Careers<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1632155419 dmRespRow mobile-columns-reversed fullBleedChanged fullBleedMode" style="text-align: center;" id="1632155419"> <div class="dmRespColsWrapper" id="1253858808"> <div class="u_1388535344 dmRespCol small-12 medium-12 large-12" id="1388535344"> <div class="u_1863932586 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1863932586" style="transition: opacity 1s ease-in-out;"><p class="text-align-center size-18 m-size-14"><a href="https://serafinarestaurantgroup.com/" target="_blank" runtime_url="https://serafinarestaurantgroup.com/" type="url" style="font-weight: normal; display: unset; text-decoration: none; color: var(--color_2);" class="font-size-18 m-font-size-14">&copy; 2024, Serafina Restaurant Group. All Rights Reserved.</a></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1051269328 dmRespRow" id="1051269328"> <div class="dmRespColsWrapper" id="1915380241"> <div class="dmRespCol large-12 medium-12 small-12" id="1165867252"> <div class="u_1604649465 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1604649465" style="transition: none; text-align: left; display: block;"><p class="text-align-center size-14 m-size-11"><a href="https://lumer.io/?utm_source=BrasserieCognac&utm_medium=Footer%20Link&utm_campaign=FooterL" target="_blank" runtime_url="https://lumer.io/?utm_source=BrasserieCognac&utm_medium=Footer%20Link&utm_campaign=FooterL" type="url" style="color: rgb(216, 79, 37); text-decoration: none; display: unset;" class="font-size-14 m-font-size-11">Designed in Light, Built on Lumerio</a></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5960";
+    var build = "2025-11-25T11_49_02";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-11-25T11_49_02";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script type="text/javascript">
+    window.popups =
+    [{"title":"Order Online","url":"/order-online","options":{"backgroundColor":"#FFFFFF","borderRadius":"5","width":"496","overlayColor":"rgba(255, 205, 0, 0.26)","height":"665"},"name":"order-online"},{"title":"OpenTable Reservations","url":"/opentable-reservations","options":{"backgroundColor":"#FFFFFF","borderRadius":"5","width":"667.6666259765625","overlayColor":"rgba(249, 238, 210, 0.4)","height":"728.6666259765625"},"name":"opentable-reservations"}]</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5960';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5960';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =true;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5960/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5960/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '06e5eaef'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 06e5eaef -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Begin Body End Markup -->
+<!-- Lumer.io Multi-Location Reservations Widget Script --> 
+<script src="https://irp.cdn-website.com/06e5eaef/files/uploaded/ReservationsMultiLocation.js"></script>
+
+<!-- Lumer.io Multi-Location Reservations Widget Style-->  
+<link rel="stylesheet" href="https://irp.cdn-website.com/06e5eaef/files/uploaded/OTMultiLocation-fa111202.css"/>
+
+<!-- Lumer.io Menu Changer -->
+<script src="https://irp.cdn-website.com/06e5eaef/files/uploaded/MenuTabV2.js"></script>
+
+<!-- Required Fields Reminder -->
+<script src="https://irp.cdn-website.com/06e5eaef/files/uploaded/ReqFieldReminder.js"></script>
+
+<!-- Header Blur -->
+  
+<style>
+    #hamburger-header.hamburger-header.p_hfcontainer.scroll-responder_set  {
+        backdrop-filter: blur(15px) !important; /* apply the blur effect */
+    }
+    
+     #mobile-hamburger-header.hamburger-header.p_hfcontainer.scroll-responder_set {
+        backdrop-filter: blur(15px) !important; /* apply the blur effect */
+        -webkit-backdrop-filter: blur(15px); /* Safari-specific blur effect */
+     }
+</style>
+
+<!-- header logo index-up -->
+<style>
+    #dm .p_hfcontainer div.u_1317470864 {
+  z-index:997 !important;
+}
+</style>
+
+<!-- AccessiBe -->
+<script> (function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : true, hideTrigger : false, disableBgProcess : false, language : 'en', position : 'left', leadColor : '#d84f25', triggerColor : '#d84f25', triggerRadius : '50%', triggerPositionX : 'right', triggerPositionY : 'bottom', triggerIcon : 'people', triggerSize : 'small', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'right', triggerPositionY : 'bottom', triggerOffsetX : 10, triggerOffsetY : 10, triggerRadius : '50%' } }); }; h.appendChild(s); })(); </script>
+
+<!-- AC -->
+<script>
+    (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
+    vgo('setAccount', '253644899');
+    vgo('setTrackByDefault', true);
+
+    vgo('process');
+</script>
+
+
+
+<!--  End Body End Markup -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>

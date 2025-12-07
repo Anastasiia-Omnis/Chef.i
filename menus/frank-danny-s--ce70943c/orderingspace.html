@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Ordering Space</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/os/fevicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/os/fevicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/os/fevicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/os/fevicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/os/fevicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+		:root {--ms-blue: #000;--ms-dark-blue:#222  ;
+--ms-green:  #5f0e0b;--ms-dark-green:#390402;}
+
+strong{font-weight: 700;}
+
+.box {background: #fff;margin-bottom: 1.5rem;border-radius: 5px;border: 1px solid #ddd;padding: 1rem;}
+
+.hideshowtxt{display:none;}
+
+.btn-client {color: #000;border-bottom: 1px dashed #000;border-radius: 0;transition: .5s all;text-transform: capitalize !important;}
+
+.btn-client:hover {border-bottom: 1px solid #000; transition: .5s all;}
+
+.btn-cta {background: #00305c;padding: .5em 1em;color: #fff;border: 2px solid #00305c;font-weight: bold;border-radius: 4px;transition: .5s all;}
+
+.form-control {height: 3.5rem;}
+
+.form-control:focus {box-shadow: none;border-color: #000;}
+
+.btn-cta:hover {border: 2px solid #00305c;background: #fff;color: #00305c;}
+
+.zoom {transition: .5s all;border: 1px solid #bbb;}
+.zoom:hover {transform: scale(1.2);}
+p {  font-family: Montserrat;  font-size: 18px;}
+.price-box {background: #022a51;display: inline-block;color: #fff;padding: 1rem 2rem;border-radius: 1rem;}
+.upper {text-transform: uppercase;}
+
+.dishes {text-decoration: none;}
+.ico-box .icons {width: 110px;}
+.dishes > h2 {transition: .5s all;
+background: #ddd;text-align: center;padding: 1rem;text-decoration: none;color: #000;font-size: 1.5rem;}
+
+.ico-box {background: #0006;border-radius: 10px;padding: 1rem;}
+
+
+.dishes > h2:hover {background: #b8b8b8;}
+
+
+h3 {font-size: 1.4rem;font-weight: bold;}
+
+
+.navbar.bg-light {background: #fff !important;border-bottom: 1px solid #027dff;}
+
+.navbar .logo {height: 60px;}
+.primary {color: var(--ms-green);}
+
+ol > li {padding-bottom: 1.2rem;}
+h1, h2, h4 {font-family: 'Montserrat', sans-serif;}
+
+.main-text {font-size: 3rem;}
+
+.colored {color: #bcd630;}
+
+.text-title {color: #012060;font-size: 2.5rem;font-weight: bold;}
+h1 {font-size: 3.5rem; }
+.round-box {background: #fff;padding: 2rem;border-radius: 40px 0;transition: .5s all;box-shadow: 0 0 5px #cbceff;border: 2px solid #017cfe;}
+
+
+.round-box:hover {transform: scale(1.05);border: 2px solid #01305d;;}
+
+.work-box:hover {background: #011c370f;border: 5px solid #011c370f;transition: .5s all;}
+.work-box {margin: auto;padding: 3rem;text-align: center;box-shadow: 0 0 2px #bbb;border: 5px solid transparent;transition: .5s all;}
+
+.work-icon {width: 100px;height: 100px;display: block;margin: auto;}
+
+.tools .work-icon {width: 80%; height: auto !important;}
+
+h4 {font-size: 1.2rem;}
+
+h4 span {font-size: 1.2rem;}
+
+
+hr {border-top: 1px solid #fff;opacity: 1;}
+
+
+.dark-bg {background-image: url('img/dark-bg.jpg');background-size: cover;background-position: center;}
+
+.btn {font-family: 'Montserrat', sans-serif;text-transform: uppercase;letter-spacing: 1px;}
+.btn.btn-special {background: #06713a;color: #fff;border-radius: 0;}
+
+
+.btn.btn-primary {background: #8e2f25;border-color: #8e2f25;border-radius: 0;font-size: 15px;font-family: Montserrat;width: 250px;letter-spacing: 1px;}
+
+.instaphoto {column-count: 3;column-gap: 2px;}
+
+.big-text {font-size: 5rem;font-weight: bold;}
+
+.accordion-button:not(.collapsed) {color: #022a51 !important;background-color: #022a512e !important;}
+
+.accordion-button:focus {z-index: 3;border-color: none;outline: 0;box-shadow: none;}
+
+.short {border-top: 1px solid #ababab;width: 80%;text-align: center;margin: auto;  margin-top: auto;  margin-bottom: auto;margin-bottom: 1.5rem;margin-top: 1.5rem;}
+
+
+
+.instaphoto > img {width: 100%;}
+
+
+.btn.btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:visited .btn.btn-primary:focus {background-color: #8e2f25 ;background-image: none;outline: 0 ;border-color: #8e2f25;}
+
+.btn-secondary {background: var(--ms-blue) ;border-color: var(--ms-blue);}
+
+.btn.btn.btn-secondary:hover, .btn .btn-secondary:active, .btn .btn-secondary:focus {background: var(--ms-dark-blue) ;outline: 0 ;background: var(--ms-dark-blue);}
+
+.navbar-nav .nav-link {border-bottom: 2px solid transparent;display: block;padding: 0 12px;padding-right: 12px;padding-left: 12px;color: #8e2f25;font-size: 14px;text-transform: uppercase;font-family: Montserrat;letter-spacing: .2em;}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {color: #06713a;}
+
+.navbar-brand {padding: 0;margin: 0;}
+
+.navbar-brand > img {height: 110px;}
+
+.spacer {height: 60px;}
+
+.hero {  background-image: url(img/background.jpg?v=2);  background-position: center;  background-size: cover;  position: relative;  z-index: 1;  color: #fff;}
+
+
+
+.abstract {  background-image: url('img/abstract.jpg');  position: relative;  background-size: cover;  z-index: 1;}
+.abstract::before {  content: ' ';  width: 100%;  height: 100%;  top: 0;  left: 0;  position: absolute;  background-color: #ffffffcf;  z-index: -1;}
+
+.img-zoom {overflow: hidden;}
+
+.img-zoom > img {transition: .5s all;}
+
+
+.img-zoom:hover > img {transform: scale(1.1);transition: .5s all;}
+
+figure {border: 1px solid #ddd;padding: 1rem;height: 100%;box-shadow: 0 0 5px #ddd;}
+footer {border-top: 1px solid #012060;padding-top: 1rem;padding-bottom: 1rem;text-align: center;}
+
+.btn-outline {border-radius: 0;font-size: 15px;font-family: Montserrat;width: 250px;letter-spacing: 1px;color: #fff;border: 1px solid #fff;}
+
+.btn-outline:hover {border: 1px solid #fff;}
+
+
+.color-main {color: #8e2f25;}
+
+
+.footer-link {color: #fff;text-decoration: none;display: block;}
+.footer-link:hover {opacity: .7;color: #fff;}
+
+.gallery-photos {column-count: 4;}
+
+@media screen and (min-width: 769px) {.tools li {  float: left;  margin-right: 2rem;}}
+
+@media screen and (max-width: 768px) {.gallery-photos {  column-count: 2;}.logo {  width: 70%;  height: auto !important;  margin: auto;  margin-bottom: 1rem;}
+.navbar {  text-align: center;}
+.navbar p {  text-align: center;}
+h1 {  font-size: 2.5rem; }h4 {  font-size: 1rem;}h4 span {  font-size: 1rem;}}
+</style>
+    <script src="https://cdn.userway.org/widget.js" data-account="P2aKVyDaiH"></script>
+</head>
+<body>
+
+<nav class="navbar bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img class="logo" src="/assets/os/logo.jpg" alt="Ordering Space"  >
+    </a>
+    <p style="color:#0859b0;background:#fff;">Support or Get Started: (Call or Text) 718-593-4052</p>
+  </div>
+</nav>
+
+
+<section class="main">
+  <div class="container">
+    <div class="row py-3">
+      <div class="col-md-12 text-center">
+        <h1 class="display-4"><strong>Welcome to Ordering Space</strong></h1>
+        <h2 class="display-6">A Fully Managed MARKETING STACK<br>
+        <u>for your local Restaurant, Pizzeria & Bagel Shop!</u></h2>
+      </div>
+      <div class="py-2 col-md-6 mx-auto">
+          <img src="/assets/os/img/icons/restaurant-chart.jpg?v=4" alt="Restaurant Chart" class="w-100 img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+      <div class="row text-center">
+
+        <div class="col-md-12">
+            <p><strong>We activate a full set of marketing tools for your restaurant to <strong>Gain New Customers + Stay Connected to Regulars!</strong></strong></p>
+        </div>
+        <div class="col-md-2">
+          &nbsp;  
+        </div>
+        <div class="col-md-4 px-4 py-2">
+            <div class="round-box h-100"> 
+                  <img src="/assets/os/img/icons/customer.png" alt="Capture Customer Data" class="work-icon">
+                <h4>Capture Customer Data
+                <br>
+                (Email, Phone, Birthday & Address)
+                </h4>
+                
+            </div>
+        </div>
+
+        <div class="col-md-4 px-4 py-2">
+            <div class="round-box h-100"> 
+                <img src="/assets/os/img/icons/sms.png" alt="Continuous Marketing" class="work-icon">
+                <h4>Enable Automated Continuous Marketing for Repeat Business.</h4>
+            </div>
+        </div>
+        <div class="col-md-2">&nbsp;</div>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+
+  </div>
+</section>
+
+<section class="secondary" style="background-color: #f1f1f1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 py-5 text-center mx-auto">
+            <h2><strong>All Inclusive + Fully Branded</strong></h2>
+            <p><strong>We believe for a local restaurant to stand out, advertising has to be hit from all angles!</strong></p>
+            <p><strong style="color:#ef1a20">And Focused ONLY on your brand!</strong></p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 mx-auto">
+            <p>&nbsp;</p>
+              <h2><strong>We'll create a fully optimized AI-driven website with multiple "SUBSCRIBE" points, detailed write-ups for each menu item, and regularly updated content - for Search Optimization</strong></h2>
+          </div>
+          <div class="col-md-8 mx-auto">
+              <img class="w-100 img-fluid" src="/assets/os/img/sample-website.png" alt="Panini Grill Website">
+          </div>
+          <p>&nbsp;</p>
+      </div>
+  </div>
+</section>
+
+<section class="tools secondary" style="background-color: #f1f1f1">
+    <div class="container px-4 ">
+      <div class="row">
+        <div class="col-md-12 pt-5 mx-auto">
+            <h2><strong>Simutaneously we activate multiple Marketing Channels for your restaurant</strong></h2>
+            <ul>
+              <li><strong>Digital Content Creation</strong></li>
+              <li><strong>Virtual SMS, Email & FAX</strong></li>
+              <li><strong>Physical PRINT & MAILING</strong></li>
+            </ul>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+
+    <div class="row  text-center">
+      <div class="col-md-4 py-2">
+          <div class="round-box h-100"> 
+                <img src="/assets/os/img/icons/search.JPG" alt="Search Engine Marketing" class="pb-4 work-icon">
+              <h4>Search</h4>
+              <p>A Menu Write up for every dish</p>
+              
+          </div>
+      </div>
+
+      <div class="col-md-4 py-2">
+          <div class="round-box h-100"> 
+              <img src="/assets/os/img/icons/social.JPG" alt="Social Media Marketing" class="pb-4 work-icon">
+              <h4>Social</h4>
+              <p>On-Going Posting to all major platforms</p>
+          </div>
+      </div>
+
+      <div class="col-md-4 py-2">
+          <div class="round-box h-100"> 
+              <img src="/assets/os/img/icons/email.jpg" alt="Email Marketing" class="pb-4 work-icon">
+              <h4>Email</h4>
+              <p>Monthly Special & Aging Customer Blast</p>
+          </div>
+      </div>
+
+      <div class="col-md-4 py-2">
+          <div class="round-box h-100"> 
+              <img src="/assets/os/img/icons/fax.JPG" alt="Fax Marketing" class="work-icon">
+              <h4>Fax to Office</h4>
+              <p>We'll begin creating a list of nearby office & activate on-going daily fax</p>
+              
+          </div>
+      </div>
+
+      <div class="col-md-4 py-2">
+          <div class="round-box h-100"> 
+              <img src="/assets/os/img/icons/sms.JPG" alt="SMS Marketing" class="work-icon">
+              <h4>SMS</h4>
+              <p>Promote a Current Promo to all subscribers</p>
+          </div>
+      </div>
+
+      <div class="col-md-4 py-2">
+          <div class="round-box h-100"> 
+              <img src="/assets/os/img/icons/postcard.JPG" alt="Postcard Mailing" class="work-icon">
+              <h4>Postcard Mailing</h4>
+              <p>Physical Mailing - Included!</p>
+          </div>
+      </div>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mx-auto py-5">
+                <h2 class="text-center"><strong >A little about us</strong></h2>
+                <p>We are a fully private company with no external investors or venture capitalist. This means our sole focus is to ensure the satisfaction of local restaurants and end consumers which uses the service.</p>
+
+                <p>OrderingSpace was born during days Door to Door menu distribution were being replaced by Digital Tools!</p>
+
+                <p>We were at the forefront of this transition and originally created a first of it's kind Digital Dining Guide which you may recognize as <strong>WhereYouEat.com</strong></p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section style="background-color: #f1f1f1; border-top: 1px solid #bbb; border-bottom: 1px solid #bbb">
+  <div class="container py-5">
+    <div class="row py-5">
+      <div class="col-md-4 py-5 text-center">
+        <img src="/assets/os/img/price.png?v=4" alt="" class="img-fluid w-100">
+      </div>
+
+      <div class="col-md-8">
+        <h2 class="text-title">The Benefits of our Marketing-as-a-Service</h2>
+        &nbsp;  
+
+        <h3>Increased Business</h3>
+        <p>First, having an attractive site that is easily locatable will naturally increase sales. From there, each time you take an order or someone subscribes to the messaging system, the system can then start sending out messages on a programmatic basis to keep your customers updated on attractive specials and reasons to stop in for a visit!</p>
+        
+        &nbsp;  
+        <h3>Market Visibility</h3>
+        <p>We are experts at positioning the customized site we build and host for you within popular search engines. Our techniques produce instant visibility when people are searching for you online or looking for a restaurant in the vicinity.</p>
+        
+        &nbsp;  
+        <h3>Low End User Service Fees / No Hidden Fees</h3>
+        <p>No large service fees to consumers ordering through the site. Many companies charge 15% and up turning off costumers from ordering more frequently. End user consumer fees average 2-3%, allowing to offset various costs in processing an online order for services such as Address Map Verification, API order notification, Transaction Email confirmation & any and all other potential fees.</p>
+
+        &nbsp;  
+        <h3>If You Already Have A Site</h3>
+        <p>No problem! We have many clients which already have a website. We can integrate our continuous marketing system on your site easily and capture customer data from it. Then we run the continuous marketing functions</p>
+
+        <p>Or we can create you a supplementary website to help maintain this marketing as an additional channel to your restaurant</p>
+        
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section style="background-color: #f1f1f1">
+  <div class="container py-5">
+    <div class="row py-5">
+        <div class="col-md-12 text-center">
+          <h2 class="text-title">Building restaurant marketing systems for 10+ years!</h2>
+        </div>
+
+        <div class="col-md-3  text-center my-5">
+            <img src="/assets/os/img/logos/chicken-holiday.jpg" alt="" class="img-fluid w-50">
+
+            <p><a href="https://eatchickenholiday.com/" class="btn btn-client">Chicken Holiday</a></p>
+        </div>
+
+        <div class="col-md-3  text-center my-5">
+            <img src="/assets/os/img/logos/casa-ninos.jpg" alt="" class="img-fluid w-50">
+
+            <p><a target="_blank" href="https://casaninosi.com/" class="btn btn-client">Casa Ninos</a></p>
+        </div>
+
+        <div class="col-md-3  text-center my-5">
+            <img src="/assets/os/img/logos/rafis-food-hub.jpg" alt="" class="img-fluid w-50">
+
+            <p><a target="_blank" href="https://www.rafisfoodhub.com/" class="btn btn-client">Rafi's Food Hub</a></p>
+        </div>
+        
+        <div class="col-md-3  text-center my-5">
+            <img src="/assets/os/img/logos/giovannis.jpg" alt="" class="img-fluid w-50">
+
+            <p><a target="_blank" href="https://giovannissalumeria.com/" class="btn btn-client">Giovanni's Salumeria </a></p>
+        </div>
+        
+        <div class="col-md-3  text-center my-5">
+            <img src="/assets/os/img/logos/francescos.jpg" alt="" class="img-fluid w-50">
+
+            <p><a target="_blank" href="https://francescossi.com/" class="btn btn-client">Francesco's</a></p>
+        </div>
+        
+        <div class="col-md-3  text-center my-5">
+            <img src="/assets/os/img/logos/belli-baci.jpg" alt="" class="img-fluid w-50">
+
+            <p><a target="_blank" href="https://bellibacifocacceria.com/" class="btn btn-client">Belli Baci Focacceria</a></p>
+        </div>
+        
+        <div class="col-md-3  text-center my-5">
+            <img src="/assets/os/img/logos/leo.jpg" alt="" class="img-fluid w-50">
+
+            <p><a target="_blank" href="https://eatleospizza.com/" class="btn btn-client">Leo's Pizza</a></p>
+        </div>
+        
+        <div class="col-md-3  text-center my-5">
+            <img src="/assets/os/img/logos/gyros.jpg" alt="" class="img-fluid w-50">
+
+            <p><a target="_blank" href="https://louiesgyros.com/" class="btn btn-client">Louies Gyros</a></p>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section style="background-color: #f1f1f1" class="py-5">
+    <div class="container text-center py-5">
+      <div class="row">
+          <div class="col-md-12">
+                <h2 class="text-title">Postcard We Printed</h2>
+                <p>Give your customers easy access to your restaurant </p>
+          </div>
+
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/casa-ninos.jpg" alt="Howard Beach Bagel Cafe">
+          </div>
+
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/francescosedison.jpg" alt="Howard Beach Bagel Cafe">
+          </div>
+
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/riossi-pizza.jpg" alt="Howard Beach Bagel Cafe">
+          </div>
+
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/supremeitalianmarket.jpg" alt="Howard Beach Bagel Cafe">
+          </div>
+
+          <div class="col-md-12">
+                <h2 class="text-title">Magnets We Printed</h2>
+                <p>Give your customers easy access to your restaurant </p>
+          </div>
+
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/casa-nino.jpg" alt="Casa Nino">
+          </div>
+
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/riossi.jpg" alt="Riossi">
+          </div>
+
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/sakairamensi.jpg" alt="Sakai Ramen">
+          </div>
+
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/supreme-italian-market.jpg" alt="Supreme Italian Market">
+          </div>
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/494chicken.jpg" alt="Supreme Italian Market">
+          </div>
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/bellibacifocacceria.jpg" alt="Supreme Italian Market">
+          </div>
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/readapple.jpg" alt="Supreme Italian Market">
+          </div>
+          <div class="col-md-3 p-5">
+              <img class="img-fluid zoom" src="/assets/os/img/postcard/villagemariamanor.jpg" alt="Supreme Italian Market">
+          </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 py-5 ">
+        <h2 class="text-title py-5 text-center">Commonly Asked Questions</h2>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Is there any upfront charge? 
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">No upfront cost. The fee for our service is $50/mo for the first three months, then $150/month thereon. You can disengage with us at any time though practically none of our clients do once they see their site and experience the marketing value we bring them.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                How long does it take to get started? 
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                We can have the site up in 7 days. If you have pictures of your dishes to send, we will work with those. Alternatively, we can use gorgeous, representative generic food shots. Just send us your menu, and we'll take it from there.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  How do we gather customer information? 
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                  The website we create has proper subscription forms to help build up your subscriber list.  We also provide you with Print Materials that help direct your customers to your website & ordering pages, where subscriptions are made. <br>
+                  We have seen mailing lists grow to 1000s in months!
+
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                 What type of access does my restaurant have 
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                  Your restaurant is in full control over it's subscribers - you can Export or Import your offline subscribers directly into your system administration.  <br>
+                  We help you maintain and manage your system, but you have full control over design, hours, menus, promotional messages, custom customer promotions, bring back customer promotion, Text Message and Email pre set promotions.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  How long have you been offering this service
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                  We have been continuously developing and evolving  the marketing services we offer for local restaurants for over 10 years.  <br>
+                  We have helped restaurants stay adapted to current trends & changes, and continue to do so with all new evolution of restaurant cycles and changes in market trends. <br>
+                  We are constantly searching for the best ways help improve the services we provide, and as we continue to add new offerings, all are included with your package. 
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  Can your system work with my existing site?
+              </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+              Yes. We provide the technology that allows you to integrate your existing site’s contact forms into our customer data capture system. This allows our system to capture all contact information gathered through online orders. From there, we can run the continuous marketing function – sending out communications  through emails and texts.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background-color: #012060";>
+  <div class="container">
+    <div class="row py-5">
+        <div class="col-md-10 mx-auto text-center">
+          <h2 class="" style="color: #fff" >We would be happy to jump on a 20-minute Zoom call and explain how our Marketing-as-a-Service program works</h2>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section >
+  <div class="container">
+    <div class="row py-5">
+      
+      <div class="col-md-6">
+        <h2 class="py-5 text-center text-title">
+            Information Sheet
+        </h2>
+        <img src="/assets/os/img/download.png" alt="" class="img-fluid w-100">
+
+        <p class="text-center"><a target="_blank" href="/assets/front-page/maintenance/OrderingSpaceInfosheet.pdf" class="btn btn-cta"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper" viewBox="0 0 16 16">
+  <path d="M4 0a2 2 0 0 0-2 2v1.133l-.941.502A2 2 0 0 0 0 5.4V14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5.4a2 2 0 0 0-1.059-1.765L14 3.133V2a2 2 0 0 0-2-2H4Zm10 4.267.47.25A1 1 0 0 1 15 5.4v.817l-1 .6v-2.55Zm-1 3.15-3.75 2.25L8 8.917l-1.25.75L3 7.417V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v5.417Zm-11-.6-1-.6V5.4a1 1 0 0 1 .53-.882L2 4.267v2.55Zm13 .566v5.734l-4.778-2.867L15 7.383Zm-.035 6.88A1 1 0 0 1 14 15H2a1 1 0 0 1-.965-.738L8 10.083l6.965 4.18ZM1 13.116V7.383l4.778 2.867L1 13.117Z"/>
+</svg> View</a> &nbsp;  &nbsp; 
+
+<a target="_blank" download href="/assets/front-page/maintenance/OrderingSpaceInfosheet.pdf" class="btn btn-cta"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+</svg> Download</a></p>
+      </div>
+      <div class="col-md-6 text-center">
+          <h2 class="py-5 text-title" id="get-in-touch"> Get in Touch</h2>
+			
+		          <form action="/maintenance#get-in-touch" method="post">
+            <div class="mb-3">
+              <input class="form-control" type="text" required name="fullname" value="" id="name" placeholder = "Full Name*">
+            </div>
+
+            <div class="mb-3">
+              <input class="form-control" type="text" name="restaurant_name" id="name" placeholder = "Restaurant Name" value="">
+            </div>
+
+            <div class="mb-3">
+              <input class="form-control" type="email" required name="email" id="name" placeholder = "Email*" value="">
+            </div>
+
+            <div class="mb-3">
+              <input class="form-control" type="tel" required name="phone" id="name" placeholder = "Phone*" value="">
+            </div>
+
+            <div class="mb-3 row"> 
+                <div class="col">
+                  <input class="form-control" type="text" name="city" id="city" placeholder = "City" value="">
+                </div>
+
+                <div class="col">
+                  <input class="form-control" type="text" name="state" id="state" placeholder = "State" value="">
+                </div>
+
+            </div>
+
+            <div class="mb-3">
+              <input class="form-control" type="text" name="message" id="comment" placeholder = "Message" value="">
+            </div>
+			<div class="mb-3">
+              <strong>Captcha:</strong> 22 + 4 = 			  <input class="form-control1" type="number" name="captchaNum" required placeholder="Captcha No.">
+			  <input type="hidden" name="captcha" value="" placeholder="Captcha No.">
+			  <input type="hidden" name="auth" value="ccd179e05d355e3962ed214b99393a43">
+            </div>
+
+            <div class="mb-3">
+              <input class="btn-cta form-control" type="submit" name="comment" id="comment" value="Submit">
+            </div>
+
+
+          </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section style="border-top: 1px solid #bbb">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 mx-auto pt-5 pb-2">
+				<a style="color: inherit;"><h2 class="text-center mb-3">Accessible Compliance</h2></a>
+				<p>If you have difficulty using our website, call us at <a href="tel:718-593-4052">718-593-4052</a>. We're happy to assist you with any information or services and placing orders over the phone. <a id="showTxt" style="text-decoration: underline" href="#">Click to Learn more about accessibility compliance.</a></p>
+				
+				<div id="toggleText" class="d-none">
+				<p class="hideshowtxt1"><strong>Accessibility Compliance Statement</strong></p>
+            <p class="hideshowtxt1">orderingspace.com is committed to providing a website that is accessible to the widest possible audience, regardless of circumstance and ability. We aim to adhere as closely as possible to the Web Content Accessibility Guidelines (WCAG 2.0, Level AA), published by the World Wide Web Consortium (W3C). These guidelines explain how to make Web content more accessible for people with disabilities. Conformance with these guidelines will help make the web more user friendly to everyone. Whilst orderingspace.com to adhere to the guidelines and standards for accessibility, it is not always possible to do so in all areas of the website and we are currently working to achieve this. Be aware that due to the dynamic nature of the website, minor issues may occasionally occur as it is updated regularly. We are continually seeking out solutions that will bring all areas of the site up to the same level of overall web accessibility.</p>
+            <p class="hideshowtxt1">If you have any comments and or suggestions relating to improving the accessibility of our site, please don't hesitate to contact our accessibility coordinator by phone at 718-593-4052. Your feedback will help us make improvements.</p>
+			</div>
+			
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <p> Ordering Space © 2025 </p>
+        </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+	
+	document.getElementById("showTxt").addEventListener("click", function(e) {
+		e.preventDefault();
+        var text = document.getElementById("toggleText");
+        text.classList.toggle("d-none"); // Show/hide text by toggling Bootstrap's `d-none` class
+
+        // Change button text
+        //this.textContent = text.classList.contains("d-none") ? "Show Text" : "Hide Text";
+    });
+	
+	/*
+	$(document).ready(function(){
+		$('.showTxt').click(function(e){
+			e.preventDefault();
+			$('.hideshowtxt').toggle();
+		});
+	});*/
+    </script>
+  </body>
+</html>

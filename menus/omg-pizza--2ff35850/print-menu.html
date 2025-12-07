@@ -1,0 +1,3576 @@
+<!DOCTYPE html>
+<html style="overflow-x: hidden;">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!--	<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!--title>MenuStar Ordering system</title-->
+	<title>OMG Pizza | Brooklyn, NY 11221 | Menu | Order Online</title>
+
+<meta name="description" content="OMG Pizza with menu, specials, order online for pickup, takeout, carryout, or catering, the best breakfast, appetizer, salad, burger, hoagie, pizza, wraps, falafel, gyro, chicken, dessert. Servicing Brooklyn, Bushwick, Bedford-Stuyvesant, Sumner Houses."/>
+
+<meta name="keywords" content="OMG Pizza, Brooklyn, 11221, menu, order, pickup, takeout, catering, breakfast, appetizer, salad, burger, hoagie, pizza, wraps, falafel, gyro, chicken, dessert, coupons, discount, special"/>
+	    	<link rel="stylesheet" type="text/css" href="theme1_css/bootstrap.css?v=20171118.2">
+
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+	<link rel="stylesheet" type="text/css" href="theme1_css/main.css?v=20171118.2">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<style type="text/css">
+	#return-button {
+	/*position: absolute;*/
+	/*top:-4px;*/
+	/*left:5px;*/
+	/*z-index: 999;*/
+
+	margin-left: 10px;
+	margin-bottom:10px;
+	}
+        .header-button {
+        padding: 5px 10px;
+		  font-size: 12px;
+		  background: #f0ad4e;
+		  color: #fff;
+		  border: 1px solid #ddd;
+		  border-radius: 4px;
+		  text-decoration: none;
+		  text-shadow: none;
+		  width: 74px;
+		  margin-top: 10px;
+        }
+        @media (max-width: 320px) {
+            .header-button {
+                width: 61px;
+                font-size: 10px;
+                padding: 5px 8px;
+            }
+            #return-button {
+	            width: 48px;
+               }
+        }
+		#bookmark-this {
+		  /*padding: 5px 10px;
+		  font-size: 12px;
+		  background: #f0ad4e;
+		  color: #fff;
+		  border: 1px solid #eea236;
+		  border-radius: 4px;
+		  text-decoration: none;
+		  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+		  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+		  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+		  -webkit-user-select:none;
+		  -moz-user-select:none;
+		  -ms-user-select:none;
+		  user-select:none;*/
+		}
+		.my_bookmark {
+		  /*padding: 5px 10px;
+		  font-size: 12px;
+		  background: #f0ad4e;
+		  color: #fff;
+		  border: 1px solid #eea236;
+		  border-radius: 4px;
+		  text-decoration: none;
+		  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+		  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+		  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+		  -webkit-user-select:none;
+		  -moz-user-select:none;
+		  -ms-user-select:none;
+		  user-select:none;*/
+		}
+		/*#bookmark-this:hover {
+		  background: #ec971f;
+		  border: 1px solid #d58512;
+		  text-decoration: none;
+		}
+
+		#bookmark-this:active {
+		  border: 1px solid #d58512;
+		  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+		  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+		  background: #ec971f;
+		}	*/
+      @media print {
+
+        body .no-print {
+          display:none;
+        }
+      }
+          </style>
+	<style media="screen" type="text/css">
+		.footer{background: #44AD55}
+				.message{background: #44AD55}
+				.item-content{background: #44AD55}
+		.btn-primary {background-color: #44AD55;}
+		.modal .modal-header{background: #44AD55;}
+		.btn-primary:hover,
+		.btn-primary:focus,
+		.btn-primary:active,
+		.btn-primary.active{
+		  background: #44AD55;
+		}
+
+
+		
+
+	</style>
+	<style type="text/css">
+     .menu-item:hover {background:#dddddd;}
+    </style>
+
+	<!--link rel="stylesheet" type="text/css" href="css/jScrollPane.css">
+	<script type="text/javascript" src="js/jquery.jscrollpane.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.jcarousel.js"></script-->
+
+	<link rel="stylesheet" type="text/css" href="PwgSlider/pgwslider.css">
+
+
+	<style type="text/css">
+		/* Tooltip container */
+		.tooltip {
+			position: relative;
+			display: inline-block;
+			border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+		}
+
+		/* Tooltip text */
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 120px;
+			background-color: black;
+			color: #fff;
+			text-align: center;
+			padding: 5px 0;
+			border-radius: 6px;
+
+			/* Position the tooltip text - see examples below! */
+			position: absolute;
+			z-index: 1;
+		}
+
+		/* Show the tooltip text when you mouse over the tooltip container */
+		.tooltip:hover .tooltiptext {
+			visibility: visible;
+		}
+		</style>
+
+	<script type="text/javascript">
+		function showTooltip(e, tooltip)
+		{
+			e = window.event ? window.event : e;
+			tooltip = document.getElementById(tooltip);
+			if(tooltip.style.display != "block")
+				tooltip.style.display = "block";
+			tooltip.style.left = event.clientX + "px";
+			tooltip.style.top = event.clientY + "px";
+		}
+
+		function hideTooltip(e, tooltip)
+		{
+			e = window.event ? window.event : e;
+			tooltip = document.getElementById(tooltip);
+			if(e.toElement == tooltip)
+			{
+				showTooltip(e, tooltip);
+				return;
+			}
+			tooltip.style.display = "none";
+		}
+	</script>
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+	<script type="text/javascript" src="js/bootbox.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="PwgSlider/pgwslider.js?rand=20171112.2"></script>
+	<link rel="stylesheet" href="theme1_css/jquery-ui-1.10.3.custom.css" />
+	<link rel="stylesheet" href="theme1_css/jquery-ui-timepicker-addon.css" />
+	<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
+
+    <link rel="stylesheet" href="bookmarks/addtohomescreen.css">
+    <script src="bookmarks/addtohomescreen.js"></script>
+
+	
+	<script type="text/javascript">
+	$(document).on("click", ".go_back", function () {
+		$(location).attr("href","");
+	});
+	$(document).on("click", "#bookmark-this", function () {
+			var bookmarkURL = window.location.href;
+			var bookmarkTitle = document.title;
+
+			if ('addToHomescreen' in window && addToHomescreen.isCompatible) {
+			  // Mobile browsers
+			  addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
+			} else if (window.sidebar && window.sidebar.addPanel) {
+			  // Firefox <=22
+			  window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
+			} else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
+			  // Firefox 23+ and Opera <=14
+			  $(this).attr({
+				href: bookmarkURL,
+				title: bookmarkTitle,
+				rel: 'sidebar'
+			  }).off(e);
+			  return true;
+			} else if (window.external && ('AddFavorite' in window.external)) {
+			  // IE Favorites
+			  window.external.AddFavorite(bookmarkURL, bookmarkTitle);
+			} else {
+			  // Other browsers (mainly WebKit & Blink - Safari, Chrome, Opera 15+)
+			  alert('Press ' + (/Mac/i.test(navigator.userAgent) ? 'Cmd' : 'Ctrl') + '+D to bookmark this page.');
+			}
+
+			return false;
+		  });
+
+	window.onload = loadScript;
+	function initialize() {
+	  var mapOptions = {
+		zoom: 16,
+		center: new google.maps.LatLng(40.6981639, -73.9256144)
+	  };
+
+	  var map = new google.maps.Map(document.getElementById('googleMap'),
+		  mapOptions);
+
+	  var myLatlng = new google.maps.LatLng(40.6981639, -73.9256144);
+
+	  var marker = new google.maps.Marker({
+		  position: myLatlng,
+		  map: map,
+		  title: ''
+	  });
+	}
+
+	function detectmob() {
+	 if( navigator.userAgent.match(/Android/i)
+	 || navigator.userAgent.match(/webOS/i)
+	 || navigator.userAgent.match(/iPhone/i)
+	 || navigator.userAgent.match(/iPad/i)
+	 || navigator.userAgent.match(/iPod/i)
+	 || navigator.userAgent.match(/BlackBerry/i)
+	 || navigator.userAgent.match(/Windows Phone/i)
+	 ){
+		return true;
+	  }
+	 else {
+		return false;
+	  }
+	}
+
+	function mobilecheck() {
+	  var check = false;
+	  (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+	  return check;
+	}
+
+	function loadScript() {
+
+		var ret = mobilecheck();
+		if (!ret){
+			ret = detectmob();
+		}
+		console.log("check mobile browser: " + ret);
+		if (ret == true){
+			//browse to coresponding html5
+			
+			//$(location).attr("href","http://themenustar1.com/html5_basic/#/restaurant_info/575/detail");
+		}
+	//	if($("#googleMap").length>0){
+	//	  var script = document.createElement('script');
+	//	  script.type = 'text/javascript';
+	//	  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDlPBoJ94R5NyJ0pID75UIht9q4oEKvuS8&callback=initialize';
+	//	  document.body.appendChild(script);
+	//	}
+	}
+	
+	$(document).on("click", ".back_menu", function () {
+			$(location).attr("href","https://themenustar1.com/webspace/menus.php?code=omgpizzabrooklyn.com");
+		});
+
+	$(document).on("click", ".guest-url", function () {
+		var url = $(this).data("url");
+		$(location).attr("href",url);
+	});
+
+
+	$(document).on("keypress", "#reset_email", function (e) {
+		console.log(e);
+		if(e.keyCode==13){
+		// Enter pressed... do anything here...
+			e.preventDefault();
+			reset_password();
+		}
+
+	});
+
+	$(document).on("click", ".forgot_password", function () {
+		$(".forgot_error").html("");
+		$("#reset_email").val("");
+		var email = $("#reset_email").val();
+		if (email.trim() == ''){
+
+		}
+		$("#sigin-modal").modal('hide');
+		$("#forgot-password-modal").modal('show');
+	});
+
+	function reset_password(){
+
+		var email = $("#reset_email").val();
+		if (email.trim() == ""){
+			$(".forgot_error").html("Email must not be blank");
+			return false;
+		}
+		if (!validateEmail(email.trim())){
+			$(".forgot_error").html("Please enter an valid email address");
+			return false;
+		}
+		//$("#forgot-password-modal").modal("hide");
+		var data = 'function=reset_password&email=' + email+ '&code=omgpizzabrooklyn.com';
+		var url = 'functions/user.php';
+		data = 'email=' + email;
+						url = 'https://themenustar1.com/index.php?/mobile_live/auth/forgot_password';
+		
+		//console.log(data);
+		$.ajax({
+		  url: url,
+		  type: 'POST',
+		  data: data,
+		  success: function(data) {
+			//popup
+			$("#forgot-password-modal").modal("hide");
+			$("#forgot-password-completed-modal").modal("show");
+
+		  },
+		  error: function(e) {
+			//called when there is an error
+			//alert(e.message);
+			console.log(e.message);
+		  }
+		});
+	}
+
+	 $( "#reset-email" ).on( "keydown", function(event) {
+	  console.log(event.which);
+      if(event.which == 13){
+         reset_password();
+		 event.preventDefault();
+		 return false;
+	  }else{
+
+	  }
+    });
+
+	/*$(document).on("click", ".btn-reset-password", function () {
+		//$("#frm_login").submit();
+		//alert("123");
+		 reset_password();
+
+	});	*/
+
+	/*function validateEmail(email) {
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
+	} */
+
+	function validateEmail(email) {
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
+		/*var n1 = email.indexOf("@");
+		var n2 = email.indexOf(".");
+		if (n1 > 0 &&(n2 >0 ) ){
+			return true;
+		}else{
+			return false;
+		}*/
+	}
+
+</script>
+<script>
+
+     (function ($) {
+         $.support.placeholder = ('placeholder' in document.createElement('input'));
+     })(jQuery);
+
+
+     //fix for IE7 and IE8
+     $(function () {
+         if (!$.support.placeholder) {
+             $("[placeholder]").focus(function () {
+                 if ($(this).val() == $(this).attr("placeholder")) $(this).val("");
+             }).blur(function () {
+                 if ($(this).val() == "") $(this).val($(this).attr("placeholder"));
+             }).blur();
+
+             $("[placeholder]").parents("form").submit(function () {
+                 $(this).find('[placeholder]').each(function() {
+                     if ($(this).val() == $(this).attr("placeholder")) {
+                         $(this).val("");
+                     }
+                 });
+             });
+         }
+     });
+	</script>
+
+</head>
+					<body style="background-image:url(https://themenustar1.com/upload/2017-06-15/light59435e62bb9b7.jpg)">
+
+		
+		
+	<div style="display:none"></div>
+	<div style="display:none">VvhSOKyUengsPDsl</div>
+				<div class="container" style='background-color:white'>
+            <div class="order-sumary my_order" id="cart-area">
+
+                
+            </div>
+						<div class="header" style="">
+				<div class="row hidden-xs">
+					<div class="col-sm-9">
+					 
+						<a href="https://themenustar1.com/webspace/menus.php?code=omgpizzabrooklyn.com" >
+						    						    <img src="https://themenustar1.com/upload/2017-06-10/rewards-10593bdb1d534d1.jpg" alt="..." style="height:120px" id="header-restaurant-image">
+
+						</a>
+												<!--div class="media">
+						  <a class="media-left" href="index.php?code=omgpizzabrooklyn.com">
+						    <img src="https://themenustar1.com/upload/default/img_default_list.png" alt="..." style="width:155px;height:120px">
+						  </a>
+						  <div class="media-body">
+						    <h1 class="media-heading">OMG Pizza (Brooklyn)</h1>
+						  </div>
+						</div-->
+
+											</div>
+
+											    <div class="col-xs-12 col-sm-3 text-center">
+                            							</div>
+
+
+				</div>
+
+
+			</div>
+
+							<div class="nav no-print hidden-xs" style="font-size:10px;">
+		
+				<div class="seven-cols">
+				    <div class="col-xs-12 text-center" onclick="return window.location='http://omgpizzabrooklyn.com/location.php'" id="header-adderss">
+                        1307 Myrtle Ave Brooklyn, , NY 11221                       </div>
+											<div class="col-xs-2 header_col">
+							<div class="nav-img pull-left">
+								<a href="http://omgpizzabrooklyn.com/index.php" style='line-height:0px'><img class='header_image' src="images/icon-1.png"></a>
+							</div>
+							<a href="http://omgpizzabrooklyn.com/index.php">Home</a>
+						</div>
+										<div class="col-xs-2 header_col">
+
+											<div class="nav-img pull-left">
+							<a href="https://themenustar1.com/webspace/menus.php?code=omgpizzabrooklyn.com" style='line-height:0px'><img class='header_image' src="images/icon-2.png"></a>
+						</div>
+						<a href="https://themenustar1.com/webspace/menus.php?code=omgpizzabrooklyn.com">Menu</a>
+					
+					</div>
+															<div class="col-xs-2 header_col">
+
+												<div class="nav-img pull-left">
+							<a href="http://omgpizzabrooklyn.com/special.php" style='line-height:0px'><img class='header_image' src="images/icon-4.png"></a>
+						</div>
+							<a href="http://omgpizzabrooklyn.com/special.php">Special</a>
+						
+					</div>
+															<div class="col-xs-2 header_col">
+
+													<div class="nav-img pull-left">
+								<a href="http://omgpizzabrooklyn.com/location.php" style='line-height:0px'><img class='header_image' src="images/icon-5.png"></a>
+							</div>
+							<a href="http://omgpizzabrooklyn.com/location.php">Location</a>
+						
+					</div>
+
+
+													<div class="col-xs-2 header_col">
+								<div class="nav-img pull-left">
+									<a href="https://themenustar1.com/webspace/orders.php?code=omgpizzabrooklyn.com" style='line-height:0px'><img class='header_image' src="images/icon-6.png"></a>
+								</div>
+								<a href="https://themenustar1.com/webspace/orders.php?code=omgpizzabrooklyn.com">Orders</a>
+							</div>
+						
+
+
+
+												<div class="col-xs-2 header_col">
+							<span class="dropdown">
+							<div class="nav-img pull-left  ">
+								<a href="#" style='line-height:0px' data-toggle="dropdown" aria-haspopup="true" id="dLabel2" ><img class='header_image' src="images/icon-more.png"></a>
+								<ul class="dropdown-menu pull-right" style="" role="menu" aria-labelledby="dLabel2">
+																			<li><a style="text-align:left" href="http://omgpizzabrooklyn.com/print.php">Print Menu</a></li>
+																			    <!--<li><a style="text-align:left" data-toggle="modal" data-target="#loginModalNew"></a></li>
+										    <li><a style="text-align:left" data-toggle="modal" data-target="#loginModalNew"></a></li>-->
+
+										    
+								  </ul>
+							</div>
+
+								  <a id="dLabel" href="#" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="  padding: 0;border: none;background: #eeeeee;  padding-top: 17px;">
+								  MORE
+
+
+								  </a>
+								  <ul class="dropdown-menu pull-right" style="right:inherit" role="menu" aria-labelledby="dLabel">
+																			<li><a style="text-align:left" href="http://omgpizzabrooklyn.com/print.php">Print Menu</a></li>
+																			    <!--<li><a style="text-align:left" data-toggle="modal" data-target="#loginModalNew"></a></li>
+										    <li><a style="text-align:left" data-toggle="modal" data-target="#loginModalNew"></a></li>-->
+
+										    
+
+
+								  </ul>
+
+							</span>
+						</div>
+						
+
+											<div class="col-xs-2 header_col">
+
+							<a href="#">&nbsp;</a>
+						</div>
+											<div class="col-xs-2 header_col">
+
+							<a href="#">&nbsp;</a>
+						</div>
+									</div>
+			</div>
+			<div class="visible-xs">
+                <nav class="navbar navbar-default" style="background: #44AD55" id="navbar-main">
+                  <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header p-b-5">
+                                            <br>
+                                            
+
+                      <!--button type="button" class="navbar-toggle collapsed pull-left m-l-10 m-r-10" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button -->
+                      <span class="text-center col-xs-12" style="font-size:20px;font-weight: 600;color: white;" >OMG Pizza (Brooklyn)</span>
+					  <div class="col-xs-12 text-center m-b-10" style="color:white">
+					  1307 Myrtle Ave Brooklyn<br/>, NY 11221					  </div>
+
+					  						<div class="col-xs-2">
+						<button type="button" class="navbar-toggle collapsed pull-left m-r-10" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+                        </button >
+						</div>
+													<!--<div class="col-xs-3">
+								<button class="my_bookmark go_back navbar-toggle"  href="#" title="Bookmark">Home</button>
+							</div>-->
+							<div class="col-xs-3">
+								<button class="header-button" onclick="return window.location='https://themenustar1.com/webspace/menus.php?code=omgpizzabrooklyn.com'" title="Menu page">Menu</button>
+							</div>
+
+														<div class="col-xs-3">
+								<button class=" header-button" id="bookmark-this" href="#" title="Bookmark">Bookmark</button>
+							</div>
+						
+
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav">
+                                                <li><a href="http://omgpizzabrooklyn.com/index.php">Home</a></li>
+                                                    <li><a href="https://themenustar1.com/webspace/menus.php?code=omgpizzabrooklyn.com">Menu</a></li>
+                                                                                                    <li><a href="http://omgpizzabrooklyn.com/special.php">Special</a></li>
+                        						                        <li><a href="https://themenustar1.com/webspace/rewards.php?code=omgpizzabrooklyn.com" class="">Rewards</a></li>
+                        						<li><a href="http://omgpizzabrooklyn.com/location.php">Location</a></li>
+						                        <li><a href="https://themenustar1.com/webspace/orders.php?code=omgpizzabrooklyn.com">Orders</a></li>
+                                                                                 <li><hr></li>
+                                                            <li><a href="http://omgpizzabrooklyn.com/print.php">Print Menu</a></li>
+                        
+                      </ul>
+                    </div><!-- /.navbar-collapse -->
+                  </div><!-- /.container-fluid -->
+                </nav>
+            </div>
+<!-- Modal Deliver Address Verified-->
+<div class="modal model-second fade" id="loginModalNew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="">
+    <div class="modal-content" style="text-align:center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<div class="return-page" style="display:none">print.php</div>
+        <h4 class="modal-title" id="myModalLabel">LOGIN TO PLACE YOUR ORDER</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row input-second mtop-10">
+        	<div class="col-xs-12 item-card">
+				<!--div style="background:blue;color:white;font-size:16pt;padding:10px;font-weight:bold;cursor:pointer" class=" btn-login-facebook2 fb_sign_in" data-dismiss="modal" aria-hidden="true" data-return-page="menus.php">LOGIN WITH FACEBOOK</div-->
+				<div style="color:white;font-size:16pt;font-weight:bold;cursor:pointer" class=" btn-login-facebook2 fb_sign_in" data-dismiss="modal" aria-hidden="true" data-return-page="print.php" data-extra=""><img src="images/btn_login_facebook.png"/></div>
+
+			<!--<div style="color:white;font-size:16pt;font-weight:bold;cursor:pointer" class=" btn-login-google fb_sign_in" data-dismiss="modal" aria-hidden="true" data-return-page="print.php" data-extra=""><img style='width: 250px;' src="images/sign-in-with-google.png"/></div>-->
+	
+				<div class="mtop-30" style="border-top:1px dashed grey;"></div>
+				<div class="col-xs-2 col-xs-offset-5" style="margin-top:-12px;background:white;color:grey;font-size:12pt;">OR</div>
+			</div>
+		</div>
+		<div class="row input-second mtop-30">
+			<div class="col-xs-10 col-xs-offset-1 item-card">
+				<div class="row" style="border:rgb(231, 219, 219) 1px solid">
+					<div class="row mtop-10">
+						<div class="col-xs-8 col-xs-offset-2" style="margin-top:-35px">
+							<div style="background:white;color:grey;font-size:16pt;padding:10px;font-weight:bold">LOGIN WITH MENUSTAR</div>
+						</div>
+					</div>
+					<div class="row mtop-0">
+						<div class="col-xs-12 col-sm-6 item-card border-between">
+							<div class="row">
+								<div class="col-xs-10 col-xs-offset-1 item-card btn-primary" style="padding:10px">
+									MenuStar Login								</div>
+							</div>
+							<div class="row mtop-20">
+								<div class="col-xs-10 col-xs-offset-1 item-card">
+									<input type="text" class="form-control" name="email-gb" id="email-gb" placeholder="Email">
+								</div>
+							</div>
+							<div class="row mtop-20">
+								<div class="col-xs-10 col-xs-offset-1 item-card">
+									<input type="password" class="form-control" name="password-gb" id="password-gb" placeholder="Password">
+								</div>
+							</div>
+							<div class="row mtop-20">
+								<div class="col-xs-12 item-card" style="text-align:center">
+									<u><i><a href="#" class="form-control forgot_password" style="box-shadow: inherit;font-size: 12px">Forgot your password?</a></i></u>
+								</div>
+							</div>
+							<div class="row mtop-20">
+								<div class="col-xs-10 col-xs-offset-1 item-card" style="text-align:center">
+									<button type="button" class="btn btn-default btn-safari btn-signin btn-login" style="width:100%">Login</button>
+								</div>
+							</div>
+							<div class="row mtop-0 ">
+								<div class="col-xs-12 error_msg">
+									&nbsp;
+								</div>
+
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 item-card">
+							<div class="row">
+								<div class="col-xs-10 col-xs-offset-1 item-card btn-primary" style="padding:10px">
+									Need an Account?  Sign up								</div>
+							</div>
+							<div class="row mtop-20">
+								<div class="col-xs-6 col-xs-offset-0 col-sm-5 col-sm-offset-1 item-card">
+									<input type="text" class="form-control" name="firstname-reg-gb" id="firstname-reg-gb" placeholder="First Name">
+								</div>
+								<div class="col-xs-6 col-sm-5 item-card">
+									<input type="text" class="form-control" name="lastname-reg-gb" id="lastname-reg-gb" placeholder="Last Name">
+								</div>
+							</div>
+							<div class="row mtop-20">
+								<div class="col-xs-10 col-xs-offset-1 item-card">
+									<input type="text" class="form-control" name="email-reg-gb" id="email-reg-gb" placeholder="Email">
+								</div>
+							</div>
+							<div class="row mtop-20">
+								<div class="col-xs-10 col-xs-offset-1 item-card">
+									<input type="password" class="form-control" name="password-reg-gb" id="password-reg-gb" placeholder="Password">
+								</div>
+							</div>
+							<div class="row mtop-20">
+								<div class="col-xs-10 col-xs-offset-1 item-card" style="text-align:center">
+									<button type="button" class="btn btn-default btn-safari btn-register" style="width:100%">Create Account</button>
+								</div>
+							</div>
+							<div class="row mtop-20 password_message">
+								&nbsp;
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+				<div>No thanks, continue with guest checkout <a href="#" data-url="menus.php?code=omgpizzabrooklyn.com" class="guest-url" data-dismiss="modal" aria-hidden="true" >guest checkout</a></div>
+
+				<div>By using this site you agree with <a href="tos.php?code=omgpizzabrooklyn.com" target="_blank">terms of service </a> and <a href="privacy.php?code=omgpizzabrooklyn.com" target="_blank">privacy</a></div>
+			</div>
+
+        </div>
+
+
+      </div>
+
+
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal Deliver Address Verified-->
+<div class="modal model-second fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="text-align:center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">ACCOUNT LOGIN</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row input-second">
+			<div class="col-xs-2 item-card">
+			</div>
+        	<div class="col-xs-8 item-card">
+				Sign in to track your orders, earn rewards, use discount code, and more...
+				<br/>
+				<br/>
+				<div style="background:blue;color:white;font-size:16pt;padding:10px;font-weight:bold;cursor:pointer" class=" btn-login-facebook2 fb_sign_in" data-dismiss="modal" aria-hidden="true" data-return-page="print.php">Sign in with Facebook</div>
+				<br/>
+				<div style="background:brown;color:white;font-size:16pt;padding:10px;font-weight:bold;cursor:pointer" class="gb_sign_in" data-dismiss="modal" aria-hidden="true" data-return-page="print.php">Sign in with MenuStar</div>
+				<br/>
+				No thanks, <a href="#" data-dismiss="modal" aria-hidden="true" >proceed with guest checkout</a>
+			</div>
+			<div class="col-xs-2 item-card">
+			</div>
+
+        </div>
+
+
+      </div>
+
+
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal Contact-->
+<!--<div class="modal fade" id="forgot-password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="width:500px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Password Reset</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row ">
+        	<div class="col-xs-12">
+			<form id="frm_reset_password" action="functions/user.php" method="POST">
+
+        		<div class="box-signin">
+					<div class="form-group">
+						<label for="inputName">Email</label>
+						<input type="text" class="form-control" id="reset_email" name="reset_email" >
+					</div>
+					<p class="forgot_error" style="color:red"></p>
+					<p>A temporary password will be emailed to you</p>
+
+					<p class="a-center" style="text-align:center">
+						<button type="button" class="btn  btn-primary btn-reset-password" >Reset password</button>
+					</p>
+				</div>
+			</form>
+			</div>
+
+
+        </div>
+      </div>
+    </div><!-- /.modal-content
+  </div>
+</div><!-- /.modal -->
+
+<!-- Modal Contact-->
+<div class="modal fade" id="forgot-password-completed-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="width:500px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Password Reset</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row ">
+        	<div class="col-xs-12 ">
+
+
+        		<div class="box-signin">
+					<p>Your temporary password has been sent to your email account</p>
+
+					<p class="a-center" style="text-align:center">
+						<button type="button" class="btn  btn-primary" data-dismiss="modal" >Okay</button>
+					</p>
+				</div>
+
+			</div>
+
+
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal Deliver Address Verified-->
+<div class="modal model-second fade" id="out-of-order" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="text-align:center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+      </div>
+      <div class="modal-body">
+        <div class="row input-second">
+			<div class="col-xs-1 item-card">
+			</div>
+			<div class="col-xs-3 item-card">
+				<image src="https://themenustar1.com/upload/" style='width:100%'>
+			</div>
+        	<div class="col-xs-8 item-card">
+							</div>
+		</div>
+				<div class="row input-second">
+			<div class="col-xs-3 item-card">
+			</div>
+			<div class="col-xs-8 item-card">
+
+			</div>
+
+        </div>
+
+
+      </div>
+
+
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script >
+function reloadWithLanguage(select_id, is_mobile) {
+	    var language = $("#"+select_id+"_language"+(is_mobile ? "_mobile" : "")).val();
+	    var current_parameter = replaceQueryParam(window.location.search, 'language', language);
+	    var file_name = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+
+	    var current_url = window.location.origin + window.location.pathname + current_parameter;
+	    // console.log(window.location);
+
+	    if('themenustar1.com' === window.location.hostname) {
+	        // redirect to webspacetest1
+	        window.location = "http://omgpizzabrooklyn.com/set_language.php?code=omgpizzabrooklyn.com&language=" + language + '&return_url=' + encodeURIComponent(current_url);
+	    } else {
+	        // return to myMenuStar
+				        window.location = "https://themenustar1.com/webspace/set_language.php?code=omgpizzabrooklyn.com&language=" + language + '&return_url=' + encodeURIComponent(current_url);
+	    }
+	}
+
+	function replaceQueryParam(uri, key, value) {
+        var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+        var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+        if (uri.match(re)) {
+            return uri.replace(re, '$1' + key + "=" + value + '$2');
+        }
+        else {
+            return uri + separator + key + "=" + value;
+        }
+    }
+</script>
+
+
+<!-- Modal Contact-->
+<div class="modal fade" id="forgot-password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Password Reset</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row ">
+        	<div class="col-xs-12">
+			<form id="frm_reset_password" action="functions/user.php" method="POST">
+                <input type="hidden" name="code" value="omgpizzabrooklyn.com">
+        		<div class="box-signin">
+					<div class="form-group">
+						<label for="inputName">Email</label>
+						<input type="text" class="form-control" id="reset_email" name="reset_email" >
+					</div>
+					<p class="forgot_error" style="color:red"></p>
+					<p>A temporary password will be emailed to you</p>
+
+					<p class="a-center">
+						<button type="button" class="btn  btn-primary btn-reset-password" >Reset password</button>
+					</p>
+				</div>
+			</form>
+			</div>
+
+
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal Contact-->
+<div class="modal fade" id="forgot-password-completed-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="width:500px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Password Reset</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row ">
+        	<div class="col-xs-12 ">
+
+
+        		<div class="box-signin">
+					<p>Your temporary password has been sent to your email account</p>
+
+					<p class="a-center">
+						<button type="button" class="btn  btn-primary" data-dismiss="modal" >Okay</button>
+					</p>
+				</div>
+
+			</div>
+
+
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- modal language -->
+<div class="modal fade" id="language-popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" style="width:400px">
+			<div class="modal-content" >
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">CHOOSE LANGUAGE</h4>
+				</div>
+				<div class="modal-body gallery_data" style="height:	193px">
+					<select class="form-control" id="language-select">
+						<option value="english" selected>English</option>
+						<option value="spanish" >Español</option>
+					</select>
+
+					<div class="col-xs-12 mr-bottom mr-top a-center mtop-30" style="text-align:center">
+						<button class="btn btn-primary" onclick="return changeLanguage();">Okay</button>
+					</div>
+				</div>
+
+				<!--iframe id="frm_gallery" src="" style="width:100%;height:100%"></iframe-->
+
+
+
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+<script type="text/javascript">
+	// language script
+	function createCookie(name,value,days) {
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime()+(days*24*60*60*1000));
+			var expires = "; expires="+date.toGMTString();
+		}
+		else var expires = "";
+		document.cookie = name+"="+value+expires+"; path=/";
+	}
+
+	function readCookie(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0;i < ca.length;i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		}
+		return null;
+	}
+
+	function eraseCookie(name) {
+		createCookie(name,"",-1);
+	}
+
+	function changeLanguageFlag(language) {
+		data = "function=changeLanguage&language=" + encodeURIComponent(language) + "&gb_code=omgpizzabrooklyn.com"+ '&code=omgpizzabrooklyn.com';
+		console.log(data);
+		$.ajax({
+			url: "functions/restaurant.php",
+			type: "post",
+			data: data,
+			success: function (data) {
+				console.log(data);
+				location.reload(true);
+			},
+			error: function (jqXHR) {
+				console.log(jqXHR.responseText);
+			}
+		});
+	}
+
+	function changeLanguage() {
+		language = $("#language-select").val();
+		data = "function=changeLanguage&language=" + language+ '&code=omgpizzabrooklyn.com';
+		console.log(data);
+		var root = "https://themenustar1.com/webspace/";
+		$.ajax({
+			url: "functions/restaurant.php",
+			crossDomain: true,
+			crossOrigin: true,
+			data: "function=changeLanguage&language=" + language+ '&code=omgpizzabrooklyn.com',
+			type: "post",
+			success: function(data) {
+				console.log(data);
+				location.reload(true);
+			},
+			error: function(jqXHR) {
+				console.log(jqXHR.responseText);
+			}
+		});
+	}
+
+	$(window).load(function () {
+		// // show language popup
+		var visited = readCookie("visited");
+		console.log(visited);
+
+		if (visited == null || "1" == "0") {
+			//$("#language-popup").modal("show");
+//                    console.log(readCookie("visited"));
+		}
+
+		// set cookie
+		createCookie('visited', 'yes', { expires: 1, path: '/' });
+	});
+
+	function doLogin(){
+		//$("#frm_login").submit();
+		var email = $("#email-gb").val();
+		if (email.trim() == ""){
+			$(".error_msg").html("Email must not be blank");
+			return;
+		}
+		var password = $("#password-gb").val();
+		if (password.trim() == ""){
+			$(".error_msg").html("Password could not be blank");
+			return;
+		}
+
+		var merge = $("#merge_login").val();
+
+		var root = "https://themenustar1.com/webspace/";
+
+		$.ajax({
+		  url: root + 'functions/user.php',
+		  type: 'POST',
+		  data: 'function=login&email-gb=' + email + '&password-gb=' + password + '&merge=' + merge + '&code=omgpizzabrooklyn.com',
+		  success: function(data) {
+			  console.log(data);
+			if (data == "1"){
+				window.location.replace(root + $(".return-page").html() + "?code=omgpizzabrooklyn.com");
+			}else{
+
+				$(".error_msg").html(data);
+
+			}
+
+		  },
+		  error: function(e) {
+			//called when there is an error
+			//alert(e.message);
+			console.log(e.message);
+		  }
+		});
+
+	}
+	$(document).on("click", ".btn-login", function () {
+		doLogin();
+		
+		
+	});		
+	
+	$(document).on("click", ".sign-ing", function () {
+		$(".error_msg").html("");
+		
+		
+	});		
+
+	$(document).on("click", ".sign-up", function () {
+		$(".password_message").html("");
+		
+		
+	});		
+	
+	$(document).on("keypress", "#email-gb", function (e) {
+		console.log(e);
+		if(e.keyCode==13){
+		// Enter pressed... do anything here...
+			doLogin();
+		}	
+		
+	});			
+
+	$(document).on("keypress", "#password-gb", function (e) {
+		console.log(e);
+		if(e.keyCode==13){
+		// Enter pressed... do anything here...
+			doLogin();
+		}	
+		
+	});	
+	
+	$(document).on("keypress", "#reset_email", function (e) {
+		console.log(e);
+		if(e.keyCode==13){
+		// Enter pressed... do anything here...
+			e.preventDefault();
+			reset_password();
+		}	
+		
+	});	
+
+	$(document).on("click", ".forgot_password", function () {
+		$(".forgot_error").html("");
+		$("#reset_email").val("");
+		var email = $("#reset_email").val();
+		if (email.trim() == ''){
+			
+		}
+		$("#sigin-modal").modal('hide');
+		$("#forgot-password-modal").modal('show');
+	});
+
+	function reset_password(){
+		
+		var email = $("#reset_email").val();
+		if (email.trim() == ""){
+			$(".forgot_error").html("Email must not be blank");
+			return false;
+		}
+		if (!validateEmail(email.trim())){
+			$(".forgot_error").html("Please enter an valid email address");
+			return false;
+		}
+		//$("#forgot-password-modal").modal("hide");
+		var data = 'function=reset_password&email=' + email;
+		var url = 'functions/user.php';
+		data = 'email=' + email+ '&code=omgpizzabrooklyn.com';
+
+		// get url
+		$.ajax({
+		  url: 'functions/user.php',
+		  type: 'POST',
+		  data: 'function=get_reset_password_url&code=omgpizzabrooklyn.com&email='+email,
+		  success: function(result) {
+		      console.log(result);
+            if('not_centralized' === result) {
+                // continue use old code
+                                                url = 'https://themenustar1.com/index.php?/mobile_live/auth/forgot_password';
+                        
+                        //console.log(data);
+                        $.ajax({
+                          url: url,
+                          type: 'POST',
+                          data: data,
+                          success: function(data) {
+                            //popup
+                            $("#forgot-password-modal").modal("hide");
+                            $("#forgot-password-completed-modal").modal("show");
+
+                          },
+                          error: function(e) {
+                            //called when there is an error
+                            //alert(e.message);
+                            console.log(e.message);
+                          }
+                        });
+            } else {
+                 //popup
+                $("#forgot-password-modal").modal("hide");
+                $("#forgot-password-completed-modal").modal("show");
+            }
+		  },
+		  error: function(e) {
+			//called when there is an error
+			//alert(e.message);
+			console.log(e.message);
+		  }
+		});
+
+
+	}
+	
+	 $( "#reset-email" ).on( "keydown", function(event) {
+	  console.log(event.which);
+      if(event.which == 13){ 
+         reset_password();
+		 event.preventDefault();
+		 return false;	  
+	  }else{
+		
+	  }
+    });
+	
+	$(document).on("click", ".btn-reset-password", function () {
+		//$("#frm_login").submit();
+		//alert("123");
+		 reset_password();
+			
+	});	
+	
+	function doRegister(){
+		console.log("Register...");
+		/*var pass1 = $(".reg_pass1").val();
+		var pass2 = $(".reg_pass2").val();*/
+		var pass1 = $("#password-reg-gb").val();
+		var pass2 = pass1;
+		if (pass1 == ''){
+			$(".password_message").html("Password must not be blank") ;
+			return;
+		}
+		if (pass2 == ''){
+			$(".password_message").html("Please re-enter your password in the Confirm Password field") ;
+			return;			
+		}
+		
+		if (pass1 != pass2){
+			$(".password_message").html("Password mismatch") ;
+			return;
+		}	
+		//$("#frm_login").submit();
+		var email = $("#email-reg-gb").val();
+		if (email.trim() == ""){
+			$(".password_message").html("Please enter your email address");
+			return;
+		}
+		
+		if (!validateEmail(email.trim())){
+			$(".password_message").html("Please enter a valid email address");
+			return;
+		}
+		
+		
+		var password = pass1;
+		var password2 = pass1;
+		var firstname = $("#firstname-reg-gb").val();
+		var lastname = $("#lastname-reg-gb").val();
+		$.ajax({
+		  url: 'functions/user.php',
+		  type: 'POST',
+		  data: 'function=register&email=' + email + '&password=' + password + '&password2=' + password
+			+ '&firstname=' + firstname + '&lastname=' + lastname + '&code=omgpizzabrooklyn.com',
+		  success: function(data) {
+		  	console.log(data);
+			if (data == "1"){
+				window.location.replace($(".return-page").html() + "?code=omgpizzabrooklyn.com");
+			}else{
+				
+				$(".password_message").html(data);
+				
+			}
+			
+		  },
+		  error: function(e) {
+			//called when there is an error
+			//alert(e.message);
+			console.log(e.message);
+		  }
+		});	
+		
+	}
+	
+	$(document).on("click", ".btn-register", function () {
+		
+		doRegister();
+		//$("#frm_register").submit();
+		//$('#register-modal').modal('hide');
+	});			
+	
+	$(document).on("click", ".btn-create-account", function () {
+		$(".sign-up").click();
+		
+	});		
+	
+	$(document).on("click", ".signup_button", function () {
+		$(".reg_pass1").val("");
+		$(".reg_pass2").val("");
+		$("#email").val("");
+		//doRegister();
+		//$("#frm_register").submit();
+		//$('#register-modal').modal('hide');
+	});		
+	
+	//var return_page = "index.php";
+	
+	$(document).on("click", ".signin_button", function () {
+		$("#email-gb").val("");
+		$("#password-gb").val("");
+		var merge = $(this).data("merge");
+		$(".merge").val(merge);
+		
+		//doRegister();
+		//$("#frm_register").submit();
+		//$('#register-modal').modal('hide');
+	});		
+
+	$( document ).ready(function() {
+		var ret_url = "";
+		var extra = "";
+
+		// facebook
+		var $url = 'function=login_fb&get_url_only=yes&gb_code=omgpizzabrooklyn.com&return=' + ret_url + '&extra=' + extra+ '&code=omgpizzabrooklyn.com';
+		console.log($url);
+		$.ajax({
+		  url: 'functions/user.php',
+		  type: 'POST',
+		  data: $url,
+		  success: function(data) {
+			if (data == "1"){
+				//window.location.replace("home.php");
+			}else{
+				login_url = data;
+				console.log(data);
+				/* var $iframe = $('.frm_fb');
+				 $iframe.attr('src',data);   */
+				 //login();
+			}
+			
+		  },
+		  error: function(e) {
+			//called when there is an error
+			//alert(e.message);
+			console.log(e.message);
+		  }
+		});
+
+		// google
+		var $url = 'function=login_google&gb_code=omgpizzabrooklyn.com&return=' + ret_url + '&extra=' + extra+ '&code=omgpizzabrooklyn.com';
+		console.log($url);
+		$.ajax({
+		  url: 'functions/google.php',
+		  type: 'POST',
+		  data: $url,
+		  success: function(data) {
+			if (data == "1"){
+				// window.location.replace("home.php");
+			}else{
+				login_url2 = data;
+				console.log(data);
+				// alert(login_url2);
+				/* var $iframe = $('.frm_fb');
+				 $iframe.attr('src',data);   */
+
+				 // login2();
+			}
+
+		  },
+		  error: function(e) {
+			//called when there is an error
+			//alert(e.message);
+			console.log(e.message);
+		  }
+		});
+	});
+	
+	$(document).on("click", ".btn-login-google", function () {
+		console.log("click google", login_url2);
+
+		if (login_url2 != ''){
+		    // alert(login_url2);
+		    var newwindow=window.open(login_url2,'_blank');
+			return;
+		}			
+		
+		
+		var ret_url = $(this).data("return-page");
+		var extra = $(this).data("extra");
+		
+		var $url = 'function=login_google&gb_code=omgpizzabrooklyn.com&return=' + ret_url + '&extra=' + extra+ '&code=omgpizzabrooklyn.com';
+		console.log($url);
+		$.ajax({
+		  url: 'functions/google.php',
+		  type: 'POST',
+		  data: $url,
+		  success: function(data) {
+			if (data == "1"){
+				window.location.replace("home.php");
+			}else{
+				login_url2 = data;
+				console.log(data);
+				// alert(login_url2);
+				/* var $iframe = $('.frm_fb');
+				 $iframe.attr('src',data);   */
+
+				 login2();
+			}
+			
+		  },
+		  error: function(e) {
+			//called when there is an error
+			//alert(e.message);
+			console.log(e.message);
+		  }
+		});	
+			
+	});	
+	
+	
+	
+	$(document).on("click", ".btn-login-facebook2", function () {
+		//$("#frm_login").submit();
+		//alert("123");
+		//var login_url = "http://themenustar1.com";
+		if (login_url != ''){
+			var newwindow=window.open(login_url,'_blank');
+			return;
+		}			
+		
+		
+		var ret_url = $(this).data("return-page");
+		var extra = $(this).data("extra");
+		
+		var $url = 'function=login_fb&gb_code=omgpizzabrooklyn.com&return=' + ret_url + '&extra=' + extra+ '&code=omgpizzabrooklyn.com';
+		console.log($url);
+		$.ajax({
+		  url: 'functions/user.php',
+		  type: 'POST',
+		  data: $url,
+		  success: function(data) {
+			if (data == "1"){
+				window.location.replace("home.php");
+			}else{
+				login_url = data;
+				console.log(data);
+				/* var $iframe = $('.frm_fb');
+				 $iframe.attr('src',data);   */
+				 login();
+			}
+			
+		  },
+		  error: function(e) {
+			//called when there is an error
+			//alert(e.message);
+			console.log(e.message);
+		  }
+		});	
+			
+	});		
+		var login_url = "";
+		var login_url2 = "";
+		var newwindow;
+        var intId;
+        function login(){
+            var  screenX    = typeof window.screenX != 'undefined' ? window.screenX : window.screenLeft,
+                 screenY    = typeof window.screenY != 'undefined' ? window.screenY : window.screenTop,
+                 outerWidth = typeof window.outerWidth != 'undefined' ? window.outerWidth : document.body.clientWidth,
+                 outerHeight = typeof window.outerHeight != 'undefined' ? window.outerHeight : (document.body.clientHeight - 22),
+                 width    = 500,
+                 height   = 270,
+                 left     = parseInt(screenX + ((outerWidth - width) / 2), 10),
+                 top      = parseInt(screenY + ((outerHeight - height) / 2.5), 10),
+                 features = (
+                    'width=' + width +
+                    ',height=' + height +
+                    ',left=' + left +
+                    ',top=' + top
+                  );
+ 
+            //newwindow=window.open(login_url,'Login_by_facebook',features);
+			newwindow=window.open(login_url,'_blank');
+
+           if (window.focus) {newwindow.focus()}
+          return false;
+        }	
+		 function login2(){
+
+            var  screenX    = typeof window.screenX != 'undefined' ? window.screenX : window.screenLeft,
+                 screenY    = typeof window.screenY != 'undefined' ? window.screenY : window.screenTop,
+                 outerWidth = typeof window.outerWidth != 'undefined' ? window.outerWidth : document.body.clientWidth,
+                 outerHeight = typeof window.outerHeight != 'undefined' ? window.outerHeight : (document.body.clientHeight - 22),
+                 width    = 500,
+                 height   = 270,
+                 left     = parseInt(screenX + ((outerWidth - width) / 2), 10),
+                 top      = parseInt(screenY + ((outerHeight - height) / 2.5), 10),
+                 features = (
+                    'width=' + width +
+                    ',height=' + height +
+                    ',left=' + left +
+                    ',top=' + top
+                  );
+
+            //newwindow=window.open(login_url,'Login_by_facebook',features);
+			newwindow=window.open(login_url2,'_blank');
+
+           if (window.focus) {newwindow.focus()}
+          return false;
+        }	
+</script>
+
+<script type="text/javascript" >
+	$(document).on("click", ".gb_sign_in", function () {
+		var merge = $(this).data("merge");
+		console.log(merge);
+		$(".merge").val(merge);
+		
+		var ret = $(this).data("return-page");
+		var return_page = "";
+		if (ret != ''){
+			return_page = ret;
+		}else{
+			return_page = "index.php";
+		}
+		//console.log(ret);
+		
+		$(".return-page").val(return_page);
+		$(".btn-login-facebook2").data("return_page",return_page);
+		
+		$("#sigin-modal").modal('show');
+	});
+
+
+
+	
+</script>
+
+
+<script type="text/javascript">
+
+$(document).on("click", ".check_bonus", function () {
+			
+			//var name = $(this).data('mname');
+			
+			$(".discount_div").hide();
+			$(".order_total").html("$ " + $(".total_no_discount").html());
+			$(".bonus_choose").html("reward");
+			console.log($(".bonus_choose").html());
+		});	
+		
+$(document).on("click", ".check_coupon", function () {
+			
+			//var name = $(this).data('mname');
+			var coupon_id =  $(".coupon_id").html();
+			if (coupon_id != ''){
+				$(".discount_div").show();
+				$(".order_total").html("$ " + $(".total_all").html());
+				$(".bonus_choose").html("coupon");
+			}
+			
+			console.log($(".bonus_choose").html());
+
+			
+		});	
+		
+	var data_open = '{"status":"btn-open","status_text":"Open","openning_time":"Delivery is not available<br>Delivery hours:<br>Monday: 12:00 pm - 11:30 pm<br>Tuesday: 12:00 pm - 11:30 pm<br>Wednesday: 12:00 pm - 11:30 pm<br>Thursday: 12:00 pm - 11:30 pm<br>Friday: 12:00 pm - 11:30 pm<br>Saturday: 12:00 pm - 11:30 pm<br>Sunday: 12:00 pm - 11:30 pm<br>","my_time":"2025-12-06 16:10:52","title":"","hour":"0","type":true}';
+	
+$(document).on("click", ".btn_remove_coupon", function () {
+			
+			//var name = $(this).data('mname');
+			
+			var code = $("#coupon_code").val();
+			console.log("code: " + code);
+			$.ajax({
+				  url: 'functions/restaurant.php',
+				  type: 'POST',
+				  data: 'function=remove_coupon' + '&code=omgpizzabrooklyn.com',
+				  success: function(data) {					
+					$(".my_order").html(data);
+				  },
+				  error: function(e) {
+					//called when there is an error
+					//alert(e.message);
+					console.log(e.message);
+				  }
+				});
+		});		
+		
+$(document).on("click", ".btn_increase", function () {
+			var val = parseInt($(".btn_value").html(), 10);
+			//alert(val);
+			val += 1;
+			$(".btn_value").html(val);
+		});
+
+		$(document).on("click", ".btn_decrease", function () {
+			var val = parseInt($(".btn_value").html(), 10);
+			if (val > 1){
+				val -= 1;
+				$(".btn_value").html(val);
+			}
+		});
+	$(document).on("click", ".remove_order", function () {
+			 //var id = $(this).data('id');
+			 var id = $(this).attr('id');
+			 //alert(id);
+			 //$(".item_details").html('');
+			 $.ajax({
+				  url: 'functions/restaurant.php',
+				  type: 'POST',
+				  data: 'function=remove_order&id=' + id + '&code=omgpizzabrooklyn.com',
+				  success: function(data) {
+					//called when successful
+					//alert(data);
+					//$('#' + id + '_content').html(data);
+					//$('#' + id + '_content').css('display', 'block');
+					//$(".item_details").html(data);
+					//console.log(data);
+					$(".my_order").html(data);
+				  },
+				  error: function(e) {
+					//called when there is an error
+					//alert(e.message);
+					console.log(e.message);
+				  }
+				});
+				
+			return false;
+
+		});	
+		
+	$(document).on("click", ".forceCheckout", function () {
+			doCheckOut(true);
+				
+				
+			 
+
+
+		});		
+
+	function doCheckOut(bIsForce){
+	//var id = $(this).data('id');
+		/*if (checkValidInfo() == false){
+			return false;
+		}*/
+			//question about login
+			
+			//
+			
+			 var payment_type = $(".payment_type").html();
+			 var sub_total = $(".sub_total").html();
+			 
+			 
+			 if (payment_type == 'delivery'){
+				//check sub_total
+				var sub_value = parseFloat(sub_total);
+				var delivery_min_value = parseFloat($(".delivery_min").html());
+				
+				if (sub_value < delivery_min_value){
+					var val = delivery_min_value - sub_value;
+					$(".checkout-error-message").html("Minimum amount ($" + delivery_min_value.toFixed(2)  
+						+") for delivery has not been met.  Almost there, only need $" + val.toFixed(2)  + " more in your cart.");
+					$("#popup-checkout-error").modal("show");
+					return;
+					
+				}
+				//check verified
+				var verified = $(".verified_address_id").html();
+				//console.log(verified);
+				if (parseInt(verified) > 0){
+					
+					
+				}else{
+												
+						validate_delivery_address();
+							//alert_login('Please login to order with delivery');
+							//return false;
+										//load_popup_address();
+					//$("#popup-address-modal").modal("show");
+					return;
+				}
+				
+			 }
+			 
+			
+			 
+			
+			 //console.log(sub_total);
+			 if (parseFloat(sub_total) > 0){
+			 }else{
+				$(".checkout-error-message").html("Your cart is empty. Please add items to your cart to check out.");
+				$("#popup-checkout-error").modal("show");
+				return;				 
+			 }
+			 
+			 				if (bIsForce == false){
+					//$("#loginModalInCheckout").modal("show");
+					$(".return-page").html("checkout.php");
+					$(".guest-url").data("url","checkout.php?code=omgpizzabrooklyn.com");
+					
+					$("#loginModalNew").modal("show");					
+					return;
+				}
+						 
+			 var coupon_code = $(".coupon_code").html();
+			 
+			 //var url = "your_order_page.php?payment_type=" + payment_type;    
+			 var url = "your_order_page.php?payment_type=" + payment_type + "&bonus_type=" + bonus_type
+				+ "&address=" + parseInt(verified);    
+			 /*if (bonus_type == "code"){
+				var url = "your_order_page.php?payment_type=" + payment_type + "&bonus_type=" + bonus_type;    
+			 }else{
+			 
+			 }*/
+			 
+			$("#payment_type").val(payment_type);
+			$("#bonus_type").val(bonus_type);
+			$("#address").val(parseInt(verified));
+			$("#order_type").val(payment_type);
+
+			 
+			  var bonus_type = $(".bonus_choose").html();
+			 if (bonus_type == "reward"){
+				 //remove coupon
+				 var code = $("#coupon_code").val();
+				console.log("code: " + code);
+				$.ajax({
+					  url: 'functions/restaurant.php',
+					  type: 'POST',
+					  data: 'function=remove_coupon' + '&code=omgpizzabrooklyn.com',
+					  success: function(data) {					
+						//$(".my_order").html(data);
+					  },
+					  error: function(e) {
+						//called when there is an error
+						//alert(e.message);
+						console.log(e.message);
+					  }
+					}).done(function(){
+						$('form#frm_checkout').submit();
+					});
+			 }else{
+				 $('form#frm_checkout').submit();
+			 }
+			 
+			 
+			
+			
+			 
+			  /*$.ajax({
+				  url: 'functions/user.php',
+				  type: 'POST',
+				  data: 'function=check_user_name',
+				  success: function(data) {
+					//called when successful
+					//alert(data);
+					//$('#' + id + '_content').html(data);
+					//$('#' + id + '_content').css('display', 'block');
+					//$(".item_details").html(data);
+					console.log(data);
+					obj = JSON.parse(data);
+					$("#new_firstname").val(obj['firstname']);
+					$("#new_lastname").val(obj['lastname']);
+					
+					if (obj['firstname'] == ''){
+						$("#name-modal").modal("show");
+						return false;
+					}else if (obj['lastname'] == ''){
+						$("#name-modal").modal("show");
+						return false;
+					}else{
+						
+						$("#payment_type").val(payment_type);
+						$("#bonus_type").val(bonus_type);
+						$("#address").val(parseInt(verified));
+						$('form#frm_checkout').submit();
+						//$(location).attr('href',url);
+					} 
+					
+					
+				  },
+				  error: function(e) {
+					//called when there is an error
+					//alert(e.message);
+					console.log(e.message);
+				  }
+				});	*/	
+	}
+		
+	$(document).on("click", ".process_checkout", function () {
+			doCheckOut(false);
+				
+				
+			 
+
+
+		});			
+
+$(document).on("click", ".btn_submit", function () {
+		//validate first
+		var bIsOpen = true;
+		var message = "";
+		var remove_id = $(this).data("remove-order-id");
+		var menu_id = $("#menu_id").val();
+		var data = 'function=check_open_time&menu_id=' + menu_id + '&restaurant_id=575' + '&code=omgpizzabrooklyn.com';
+		console.log(data);
+		$.ajax({
+			  url: 'functions/restaurant.php',
+			  type: 'POST',
+			  data: data,
+			  success: function(data) {
+				  obj = JSON.parse(data);
+				  if (obj.status == "btn-close"){
+					  message = obj.openning_time;
+					  bIsOpen = false;
+				  }else{
+					  
+				  }
+			  },
+			  error: function(e) {
+				//called when there is an error
+				//alert(e.message);
+				console.log(e.message);
+			  }
+			}).done(function(){
+				if (!bIsOpen){
+					$(".close_html").html(message);
+					$("#close_popup").modal("show");					
+					return;
+				}
+				var strVal = "restaurant_id=" + 575;
+				strVal +="&item_id=" + $("#item_id").val();
+				strVal +="&count=" + $("#item_count").html();
+				strVal +="&memo=" + $("#item_memo").val();
+				 strVal += "&option=";
+			
+					$(".cls_input_option").each(function() {
+							if ($(this).is(':checked')){
+								var val = $(this).val();
+								var id = $(this).attr("id");
+								
+								
+								strVal += "," + val;
+							
+							}
+						});	
+						strVal += "&choice=";
+					$(".cls_input_choice").each(function() {
+							if ($(this).is(':checked')){
+								var val = $(this).val();
+								var id = $(this).attr("id");
+								var name = $(this).attr("name");
+								name = "#choice_" + name;
+								console.log(name);
+								$(name).val("1");						
+								strVal += "," + val;
+							
+							}					
+						});	
+				
+				$(".choice_names").each(function() {
+					var val = $(this).val();
+					var id = $(this).attr("id");
+					var name = $(this).attr("name");
+					console.log(id);
+					if ($(this).val() == '0'){
+						//show popup
+						$("#choice-missing-modal").modal("show");
+						strVal = "";
+						return false;
+					}
+					console.log(id + ": " +  val);
+				});
+				console.log(strVal);
+				//all check okay, submit
+				
+				if (strVal != ""){
+					$(this).prop('disabled', true);
+					$.ajax({
+					  url: 'functions/restaurant.php',
+					  type: 'POST',
+					  data: 'function=add_cart_basic&' + strVal + '&code=omgpizzabrooklyn.com',
+					  success: function(data) {
+						//called when successful
+						//alert(data);
+						//$('#' + id + '_content').html(data);
+						//$('#' + id + '_content').css('display', 'block');
+						if (remove_id > 0){
+							console.log(remove_id);							
+							$("#" + remove_id).click();
+						}else{
+							$(".my_order").html(data);
+						}
+						//console.log(data);
+						$("#choice-optional-modal").modal("hide");
+					  },
+					  error: function(e) {
+						//called when there is an error
+						//alert(e.message);
+						console.log(e.message);
+					  }
+					});	
+					
+				}
+				
+				
+			});	
+		
+		
+		
+			
+		//alert();
+		});	
+
+		
+$(document).on("click", ".category_item", function () {
+			 var id = $(this).data('id');		
+			 
+			  $(".item_listing").html("");
+			//var name = $(this).data('mname');
+			var data = 'function=get_items&id=' + id + "&restaurant_id=" + 575 + '&code=omgpizzabrooklyn.com';
+			console.log(data);
+			$.ajax({
+				  url: 'functions/restaurant.php',
+				  type: 'POST',
+				  data: data,
+				  success: function(data) {					
+					$(".item_listing").html(data);
+				  },
+				  error: function(e) {
+					//called when there is an error
+					//alert(e.message);
+					console.log(e.message);
+				  }
+				});
+
+		});	
+			 		
+$(document).on("click", ".item_click", function () {
+			 var id = $(this).data('id');		
+			  //$(".item_listing").html("");
+			//var name = $(this).data('mname');
+			var data = 'function=show_item_details&id=' + id + "&restaurant_id=" + 575 + '&code=omgpizzabrooklyn.com';
+			console.log(data);
+			$.ajax({
+				  url: 'functions/restaurant.php',
+				  type: 'POST',
+				  data: data,
+				  success: function(data) {					
+					$(".item_details").html(data);
+					$("#choice-optional-modal").modal("show");
+				  },
+				  error: function(e) {
+					//called when there is an error
+					//alert(e.message);
+					console.log(e.message);
+				  }
+				});
+		});		
+		
+$(document).on("click", ".edit_item", function () {
+			 var id = $(this).data('id');		
+			 var count = $(this).data('order-count');		
+			 var remove_id = $(this).data('order-id');		
+			 //console.log($(this).data('option'));
+			 var options = $(this).data('option');		
+			 var choices = $(this).data('choice');		
+			 var memo = $(this).data('instruction');		
+			 
+			  //$(".item_listing").html("");
+			//var name = $(this).data('mname');
+			var data = 'function=show_item_details&id=' + id + "&restaurant_id=" + 575 + '&code=omgpizzabrooklyn.com';
+			console.log(data);
+			$.ajax({
+				  url: 'functions/restaurant.php',
+				  type: 'POST',
+				  data: data,
+				  success: function(data) {					
+					$(".item_details").html(data);
+					$("#choice-optional-modal").modal("show");
+					$("#item_count").html(count);
+					$(".btn_submit").attr("data-remove-order-id",remove_id);
+					$(".btn_submit").html("Update");
+					$("#item_memo").html(memo);
+					
+					for (i=0;i<options.length;i++) {
+						var option = options[i];
+						var _id = option.id;
+						//add
+						$("#option_" + _id).prop('checked', true);
+					}
+					for (i=0;i<choices.length;i++) {
+						var choice = choices[i];
+						var _id = choice.id;
+						//add
+						$("#choice_" + _id).prop('checked', true);
+					}
+					
+				  },
+				  error: function(e) {
+					//called when there is an error
+					//alert(e.message);
+					console.log(e.message);
+				  }
+				});
+		});				
+		
+		function validate_delivery_address(){
+			$("#address-modal").modal("show");
+		}
+
+$(document).on("click", ".btn_save_address", function () {
+	$(".address_error").html("");
+	var url = "functions/user.php"; // the script where you handle the form input.
+	console.log($("#save_address").serialize());
+	$.ajax({
+		   type: "POST",
+		   url: url,
+		   data: $("#save_address").serialize(), // serializes the form's elements.
+		   success: function(data)
+		   {
+			   console.log(data);
+			   if (data > 0){
+					$("#address-modal").modal("hide");
+					//check range
+					validate_address(data);
+					//load_popup_address();
+					//check this address
+					
+				}else if (data == 0){
+					
+					$(".address_error").html("This address is already saved.");
+				}else if (data == -1){
+					
+					$(".address_error").html("We were not able to locate this address. Please check your address and try again.");
+				}
+				
+			   
+			   //alert(data); // show response from the php script.
+			   			   
+		   }
+		 });
+});			
+
+function refresh_cart(){
+	$.ajax({
+		  url: 'functions/restaurant.php',
+		  type: 'POST',
+		  data: 'function=refresh_cart' + '&code=omgpizzabrooklyn.com',
+		  success: function(data) {					
+			$(".my_order").html(data);
+		  },
+		  error: function(e) {
+			console.log(e.message);
+		  }
+		});
+	
+}		
+
+
+  function validate_address(id){
+	/*
+	var text = $("#quickcheck_1 option:selected").text();
+	var id = $("#quickcheck_1").val();
+	console.log(text);
+	if (id < 0){
+		return false;
+	}else if (id == 0){
+		$('#popup-address-modal').modal('hide');
+		$('#address-modal').modal('show');
+		$('.address_error').html("");
+		return false;
+	}*/
+	
+	
+	var strVal = "address_id=" + id + "&restaurant_id=575";
+	console.log(strVal);
+	$.ajax({
+			  url: 'functions/restaurant.php',
+			  type: 'POST',
+			  data: 'function=validate_address&' + strVal + '&code=omgpizzabrooklyn.com',
+			  success: function(data) {
+				//called when successful
+				//alert(data);
+				//$('#' + id + '_content').html(data);
+				//$('#' + id + '_content').css('display', 'block');
+				//$(".my_order").html(data);
+				$(".quick_check_addr").html(data);
+				$("#verified-modal").modal("show");
+				//console.log(data);
+				/*var verified_address_id = parseInt($(".verified_address_id").html());
+				if (verified_address_id > 0){
+					//update
+					refresh_cart();
+				}*/
+				refresh_cart();
+			  },
+			  error: function(e) {
+				//called when there is an error
+				//alert(e.message);
+				console.log(e.message);
+			  }
+			});		
+	  }
+
+function load_popup_address(){
+	console.log("Load delivery address...");
+	 $.ajax({
+		  url: 'functions/user.php',
+		  type: 'POST',
+		  data: 'function=get_popup_address_list' + '&code=omgpizzabrooklyn.com',
+		  success: function(data) {
+			//console.log(data);
+			$(".popup_address_list").html(data);
+			$("#popup-address-modal").modal("show");
+		  },
+		  error: function(e) {
+			//called when there is an error
+			//alert(e.message);
+			console.log(e.message);
+		  }
+		});
+}		
+		
+		function alert_login(msg){
+			
+			$(".alert-message").html(msg);
+			$("#alert-modal").modal("show");
+		}
+		
+
+$(document).on("click", ".btn_payment_choose", function () {
+			 var id = $(this).data('id');			 
+			 
+			 if (id == 'delivery'){
+				 //check if delivery data is okay
+				 $.ajax({
+					  url: 'functions/restaurant.php',
+					  type: 'POST',
+					  data: 'function=check_delivery_data' + '&code=omgpizzabrooklyn.com',
+					  success: function(data) {					
+						//$(".my_order").html(data);
+						//refresh_cart();
+						//load address
+						obj = JSON.parse(data);
+						if (obj.status == '1'){
+																
+									validate_delivery_address();
+									//alert_login('Please login to order with delivery');
+									//return false;
+									
+						}else{
+							var message = obj.message;
+							$(".close_html").html(message);
+							$("#close_popup").modal("show");	
+							return;
+
+						}
+					  },
+					  error: function(e) {
+						//called when there is an error
+						//alert(e.message);
+						console.log(e.message);
+					  }
+					});
+				
+				
+			 }
+			 
+			 		
+			 $(".payment_type").html(id);
+			 $(".btn_payment_choose").css("font-weight","inherit");
+			 $(".btn_payment_choose").css("color","black");
+			 $(".btn_payment_choose").css("background-color","white");
+			 
+			 $(this).css("font-weight","bold");
+			 $(this).css("color","white");
+			 $(this).css("background-color","#44AD55");
+			 
+				$.ajax({
+					  url: 'functions/restaurant.php',
+					  type: 'POST',
+					  data: 'function=choose_payment&payment_type=' + id + '&code=omgpizzabrooklyn.com',
+					  success: function(data) {					
+						//$(".my_order").html(data);
+						refresh_cart();
+					  },
+					  error: function(e) {
+						//called when there is an error
+						//alert(e.message);
+						console.log(e.message);
+					  }
+					});
+			
+		});			
+	</script>
+	<script type="text/javascript">
+	$(document).on('hidden.bs.modal', '#popup-address-modal', function() { // do something 
+		refresh_cart();
+	});
+	$(document).on('hidden.bs.modal', '#address-modal', function() { // do something 
+		console.log("hidden");
+		refresh_cart();
+	});
+	$(document).on('hidden.bs.modal', '#verified-modal', function() { // do something 
+		refresh_cart();
+	});
+	
+	</script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#quickcheck_1").change(function(){
+    if ($(this).val()=='0') {
+		$('#popup-address-modal').modal('hide');
+		$('.address_error').html("");
+		$('#address-modal').modal('show');
+		
+		
+		
+      //window.location.href="deliver_message.php";
+    }
+  });
+  $("#btn-delivery-verify").click(function(){
+	var text = $("#quickcheck_1 option:selected").text();
+	var id = $("#quickcheck_1").val();
+	/*$("#notice-address").html(text);
+	*/
+	//console.log(text);
+	if (id < 0){
+		return false;
+	}else if (id == 0){
+		$('#popup-address-modal').modal('hide');
+		$('#address-modal').modal('show');
+		$('.address_error').html("");
+		return false;
+	}
+	
+	strVal = "address_id=" + id + "&restaurant_id=575";
+	console.log(strVal);
+	$.ajax({
+			  url: 'functions/restaurant.php',
+			  type: 'POST',
+			  data: 'function=validate_address&' + strVal + '&code=omgpizzabrooklyn.com',
+			  success: function(data) {
+				//called when successful
+				//alert(data);
+				//$('#' + id + '_content').html(data);
+				//$('#' + id + '_content').css('display', 'block');
+				//$(".my_order").html(data);
+				$(".quick_check_addr").html(data);
+				$("#verified-modal").modal("show");
+				//console.log(data);
+				/*var verified_address_id = parseInt($(".verified_address_id").html());
+				if (verified_address_id > 0){
+					//update
+					refresh_cart();
+				}*/
+				refresh_cart();
+			  },
+			  error: function(e) {
+				//called when there is an error
+				//alert(e.message);
+				console.log(e.message);
+			  }
+			});		
+	  });
+
+  
+});
+
+/*$(document).on("click", ".btn_set_pickup", function () {
+			$(".btn_payment_choose").css("font-weight","inherit");
+			 $(".btn_pickup").css("font-weight","bolder");
+			 $(".payment_type").html("pickup");
+			 
+		});	*/
+$(document).on("click", ".btn_delivery_alert", function () {
+	$("#no_delivery_alert").modal("show");
+	return;
+});	
+		
+		
+$(document).on("click", ".btn_apply_coupon", function () {
+			
+			//var name = $(this).data('mname');
+							$("#apply_coupon_alert").modal("show");
+				return;
+							
+		});			
+
+$(document).on("click", ".menu_list", function () {
+			var id = $(this).attr("id");	
+			$("#menu_id").val(id);
+			var url = 'function=get_categories_by_menu&menu_type=' + id + '&restaurant_id=575' + '&code=omgpizzabrooklyn.com';
+			console.log(url);
+			$.ajax({
+				  url: 'functions/restaurant.php',
+				  type: 'POST',
+				  data: url,
+				  success: function(data) {					
+					$(".list-menu").html(data);
+					var item_id = $(".category_item:first").data("id");
+					$("#" + item_id + "").click();
+				  },
+				  error: function(e) {
+					//called when there is an error
+					//alert(e.message);
+					console.log(e.message);
+				  }
+				});
+			
+		});			
+		
+		
+
+$(document).on("click", ".btn_go_search", function () {
+			var data = $(".notice-address").html();			
+			 window.location.href="search.php?address=" + data;
+		});			
+</script>	
+	    <form name="frm_checkout" id="frm_checkout" action="checkout.php?code=omgpizzabrooklyn.com" method="POST">
+			<input id="payment_type" name="payment_type" type="hidden" value="">
+			<input id="order_type" name="order_type" type="hidden" value="pickup">
+			<input id="bonus_type" name="bonus_type" type="hidden" value="">
+			<input id="address" name="address" type="hidden" value="">
+		</form>
+
+    <div class="message">
+        <div id="message-title" class="hidden">Print Menu</div>
+        <div id="menu-basic-text">
+            <span class='text-uppercase'>Skip the line, order online</span>            <br/><span>Delivery Fee: <span class='yellow-text-d'>$2.00</span> | Delivery Minimum: <span class='yellow-text-d'>$12.00</span></span>        </div>
+
+    </div>
+
+    <div class="message printable hidden">
+				Skip the line, order online		<br/>Delivery Fee: $2.00 | Delivery Minimum: $12.00			</div>			
+			<div class="content menu printable">
+				
+						
+						<div class="row">
+										<div class="col-xs-10 offset-0-right"><h3 class="header-menu"><span onmouseleave="this.style.background='inherit'" onmouseover="this.style.background='#BBBBBB'" style='cursor:pointer' class='menu_list2' id='3804'>Full Menu</span></h3>						
+						
+						<div class="row menu_list_3804">
+							<div class="col-xs-11">							
+								
+																	<!--li class="category_item" data-id="44013" ><a onclick="return false;" href="#"  id="44013"  >BEVERAGES</a></li-->
+									<div class="category_item1 header-menu" data-id="44013" >BEVERAGES</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386679" id="386679">
+									<div class="media">
+									  <span class="pull-right" >$3.77</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Snapple</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386680" id="386680">
+									<div class="media">
+									  <span class="pull-right" >$3.77</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Vitamin Water</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386681" id="386681">
+									<div class="media">
+									  <span class="pull-right" >$3.77</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Gatorade</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386682" id="386682">
+									<div class="media">
+									  <span class="pull-right" >$5.80</span>
+									  <div class="media-body">
+										<h4 class="media-heading">2 Liter Soda</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386683" id="386683">
+									<div class="media">
+									  <span class="pull-right" >$2.32</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Can Soda</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386684" id="386684">
+									<div class="media">
+									  <span class="pull-right" >$3.48</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Bottle of Soda</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386685" id="386685">
+									<div class="media">
+									  <span class="pull-right" >$2.32</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Water</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44014" ><a onclick="return false;" href="#"  id="44014"  >BREAKFAST</a></li-->
+									<div class="category_item1 header-menu" data-id="44014" >BREAKFAST</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386686" id="386686">
+									<div class="media">
+									  <span class="pull-right" >$2.44</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Roll with Butter</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386687" id="386687">
+									<div class="media">
+									  <span class="pull-right" >$5.21</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Turkey Sausage, 2 Eggs & Cheese on Bun</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386688" id="386688">
+									<div class="media">
+									  <span class="pull-right" >$10.44</span>
+									  <div class="media-body">
+										<h4 class="media-heading">4 Eggs & Cheese Omelet</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386689" id="386689">
+									<div class="media">
+									  <span class="pull-right" >$4.64</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Jamaican Beef Patty</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386690" id="386690">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">8" Steak, 2 Eggs & Cheese</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44015" ><a onclick="return false;" href="#"  id="44015"  >APPETIZERS</a></li-->
+									<div class="category_item1 header-menu" data-id="44015" >APPETIZERS</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386691" id="386691">
+									<div class="media">
+									  <span class="pull-right" >$9.27</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Chicken Fingers (appetizer)</h4>
+										<span class="text-sm ">Five pieces. Get fries and a can of soda for $7.49</span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44016" ><a onclick="return false;" href="#"  id="44016"  >SALADS</a></li-->
+									<div class="category_item1 header-menu" data-id="44016" >SALADS</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386692" id="386692">
+									<div class="media">
+									  <span class="pull-right" >$13.92</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Gyro Salad</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386693" id="386693">
+									<div class="media">
+									  <span class="pull-right" >$13.92</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Falafel Salad</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386694" id="386694">
+									<div class="media">
+									  <span class="pull-right" >$13.92</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Greek Salad</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386695" id="386695">
+									<div class="media">
+									  <span class="pull-right" >$12.76</span>
+									  <div class="media-body">
+										<h4 class="media-heading">OMG Veggie Salad</h4>
+										<span class="text-sm ">Cilantro, onion, cucumbers and tomatoes in a container.</span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386696" id="386696">
+									<div class="media">
+									  <span class="pull-right" >$11.60</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Your Way Salad</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44017" ><a onclick="return false;" href="#"  id="44017"  >BURGERS</a></li-->
+									<div class="category_item1 header-menu" data-id="44017" >BURGERS</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386697" id="386697">
+									<div class="media">
+									  <span class="pull-right" >$9.27</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Burger</h4>
+										<span class="text-sm ">1/2 lbs. 100% Angus Beef with lettuce, tomato, onion, pickles, jalapeno, mayo and ketchup. Add $2.99 for fries and drink, bacon extra $2.00</span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386698" id="386698">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Veggie Burger</h4>
+										<span class="text-sm ">add $2.99 for fries and drink, bacon extra $2.00</span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386699" id="386699">
+									<div class="media">
+									  <span class="pull-right" >$9.28</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Turkey Burger</h4>
+										<span class="text-sm ">add $2.99 for fries and drink, bacon extra $2.00</span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386700" id="386700">
+									<div class="media">
+									  <span class="pull-right" >$9.28</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Crispy Chicken Burger</h4>
+										<span class="text-sm ">add $2.99 for fries and drink, bacon extra $2.00</span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386701" id="386701">
+									<div class="media">
+									  <span class="pull-right" >$13.92</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Fish Sandwich, Fries and Soda</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386702" id="386702">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Cheeburger</h4>
+										<span class="text-sm ">add $2.99 for fries and drink, bacon extra $2.00</span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44018" ><a onclick="return false;" href="#"  id="44018"  >HOAGIES</a></li-->
+									<div class="category_item1 header-menu" data-id="44018" >HOAGIES</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386703" id="386703">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Grilled BBQ Chicken Hero Sandwich</h4>
+										<span class="text-sm ">Chicken, green peppers, onions and BBQ sauce.</span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386704" id="386704">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Meatball Parmigiano Hero</h4>
+										<span class="text-sm ">Meatballs, mozzarella cheese and marinara sauce.</span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386705" id="386705">
+									<div class="media">
+									  <span class="pull-right" >$11.01</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Chicken Parmigiana Hero</h4>
+										<span class="text-sm ">Chicken, mozzarella cheese and marinara sauce.</span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386706" id="386706">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Original Philly Steak Hero</h4>
+										<span class="text-sm ">Beef, mushrooms, onions, American cheese and green peppers.</span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386707" id="386707">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Chicken Cutlet Hero</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386708" id="386708">
+									<div class="media">
+									  <span class="pull-right" >$10.44</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Turkey Cold Cut Hero</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386709" id="386709">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Tuna Hero</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386710" id="386710">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Grilled Veggie Hero</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386711" id="386711">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Philly Steak Hoagie</h4>
+										<span class="text-sm ">Beef. Provolone cheese, mayo, grilled peppers, onions, lettuce and tomato.</span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386712" id="386712">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Chicken Philly Steak Hoagie</h4>
+										<span class="text-sm ">Provolone cheese, mayo, grilled peppers, onions, lettuce and tomato.</span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386713" id="386713">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">8" Fish Hoagie Your Way</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386714" id="386714">
+									<div class="media">
+									  <span class="pull-right" >$13.92</span>
+									  <div class="media-body">
+										<h4 class="media-heading">2 Pieces Fish with Fries & Soda</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386715" id="386715">
+									<div class="media">
+									  <span class="pull-right" >$9.73</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Turkey Hoagie</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386716" id="386716">
+									<div class="media">
+									  <span class="pull-right" >$9.73</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Turkey Ham Hoagie</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386717" id="386717">
+									<div class="media">
+									  <span class="pull-right" >$9.73</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Beef Bologna Hoagie</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386718" id="386718">
+									<div class="media">
+									  <span class="pull-right" >$9.73</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Meatball Parmigiana Hoagie</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386719" id="386719">
+									<div class="media">
+									  <span class="pull-right" >$11.59</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Chicken Parmigiana Hoagie</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386720" id="386720">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">8" BLT Hoagie</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386721" id="386721">
+									<div class="media">
+									  <span class="pull-right" >$7.29</span>
+									  <div class="media-body">
+										<h4 class="media-heading">8" Veggie Hoagie</h4>
+										<span class="text-sm ">Mushrooms, olives, onions, tomato, pickles, and green peppers.</span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386722" id="386722">
+									<div class="media">
+									  <span class="pull-right" >$10.43</span>
+									  <div class="media-body">
+										<h4 class="media-heading">8" Tuna Hoagie</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44019" ><a onclick="return false;" href="#"  id="44019"  >WRAPS</a></li-->
+									<div class="category_item1 header-menu" data-id="44019" >WRAPS</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386723" id="386723">
+									<div class="media">
+									  <span class="pull-right" >$9.28</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Greek Wrap</h4>
+										<span class="text-sm ">Grilled chicken, OMG salad and feta cheese.</span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386724" id="386724">
+									<div class="media">
+									  <span class="pull-right" >$9.28</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Chicken Caesar Wrap</h4>
+										<span class="text-sm ">Grilled chicken with lettuce, tomato and Caesar dressing.</span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386725" id="386725">
+									<div class="media">
+									  <span class="pull-right" >$10.44</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Grilled Chicken California Wrap</h4>
+										<span class="text-sm ">Grilled chicken with OMG salad, avocado, bacon and honey mustard dressing.</span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386726" id="386726">
+									<div class="media">
+									  <span class="pull-right" >$9.28</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Philly Steak Wrap</h4>
+										<span class="text-sm ">Grilled steak, mushrooms, green peppers, lettuce, cheddar cheese and mayo.</span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386727" id="386727">
+									<div class="media">
+									  <span class="pull-right" >$9.28</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Veggie Wrap</h4>
+										<span class="text-sm ">Lettuce, tomatoes, onions, pickles, jalapenos and hummus.</span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386728" id="386728">
+									<div class="media">
+									  <span class="pull-right" >$9.28</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Tuna Wrap</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386729" id="386729">
+									<div class="media">
+									  <span class="pull-right" >$9.28</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Turkey Wrap</h4>
+										<span class="text-sm ">Cheese, lettuce, tomatoes and onions.</span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44020" ><a onclick="return false;" href="#"  id="44020"  >PIZZA</a></li-->
+									<div class="category_item1 header-menu" data-id="44020" >PIZZA</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386730" id="386730">
+									<div class="media">
+									  <span class="pull-right" >$15.08</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Cheese Pizza - Small</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386731" id="386731">
+									<div class="media">
+									  <span class="pull-right" >$18.56</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Cheese Pizza - Medium</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386732" id="386732">
+									<div class="media">
+									  <span class="pull-right" >$19.72</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Cheese Pizza - Large</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386733" id="386733">
+									<div class="media">
+									  <span class="pull-right" >$13.92</span>
+									  <div class="media-body">
+										<h4 class="media-heading">12" Personal Pizza Pie</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386734" id="386734">
+									<div class="media">
+									  <span class="pull-right" >$4.05</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Cheese Pizza Slice</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386735" id="386735">
+									<div class="media">
+									  <span class="pull-right" >$5.21</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Pepperoni Pizza Slice</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386736" id="386736">
+									<div class="media">
+									  <span class="pull-right" >$5.21</span>
+									  <div class="media-body">
+										<h4 class="media-heading">White Pizza Slice</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386737" id="386737">
+									<div class="media">
+									  <span class="pull-right" >$4.64</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Chicken Pizza Slice</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386738" id="386738">
+									<div class="media">
+									  <span class="pull-right" >$4.64</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Hawaiian Pizza Slice</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386739" id="386739">
+									<div class="media">
+									  <span class="pull-right" >$18.56</span>
+									  <div class="media-body">
+										<h4 class="media-heading">14" Cheese Pizza</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386740" id="386740">
+									<div class="media">
+									  <span class="pull-right" >$19.72</span>
+									  <div class="media-body">
+										<h4 class="media-heading">16" Pizza Pie</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386741" id="386741">
+									<div class="media">
+									  <span class="pull-right" >$22.04</span>
+									  <div class="media-body">
+										<h4 class="media-heading">18" Cheese Pizza</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386742" id="386742">
+									<div class="media">
+									  <span class="pull-right" >$18.56</span>
+									  <div class="media-body">
+										<h4 class="media-heading">OMG White Pie - Small</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386743" id="386743">
+									<div class="media">
+									  <span class="pull-right" >$22.04</span>
+									  <div class="media-body">
+										<h4 class="media-heading">OMG White Pie - Medium</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386744" id="386744">
+									<div class="media">
+									  <span class="pull-right" >$25.52</span>
+									  <div class="media-body">
+										<h4 class="media-heading">OMG White Pizza - Large</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44021" ><a onclick="return false;" href="#"  id="44021"  >SPECIALTY PIZZAS</a></li-->
+									<div class="category_item1 header-menu" data-id="44021" >SPECIALTY PIZZAS</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386745" id="386745">
+									<div class="media">
+									  <span class="pull-right" >$25.52</span>
+									  <div class="media-body">
+										<h4 class="media-heading">16" White Pizza</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386746" id="386746">
+									<div class="media">
+									  <span class="pull-right" >$25.52</span>
+									  <div class="media-body">
+										<h4 class="media-heading">16" OMG Pizza</h4>
+										<span class="text-sm ">Pick any toppings.</span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386747" id="386747">
+									<div class="media">
+									  <span class="pull-right" >$22.04</span>
+									  <div class="media-body">
+										<h4 class="media-heading">14" Chicken Pizza</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386748" id="386748">
+									<div class="media">
+									  <span class="pull-right" >$24.36</span>
+									  <div class="media-body">
+										<h4 class="media-heading">14" Hawaiian Pizza</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386749" id="386749">
+									<div class="media">
+									  <span class="pull-right" >$20.88</span>
+									  <div class="media-body">
+										<h4 class="media-heading">14" Pepperoni Pizza</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386750" id="386750">
+									<div class="media">
+									  <span class="pull-right" >$29.00</span>
+									  <div class="media-body">
+										<h4 class="media-heading">14" Meat Lover Pizza</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386751" id="386751">
+									<div class="media">
+									  <span class="pull-right" >$22.04</span>
+									  <div class="media-body">
+										<h4 class="media-heading">14" White Pizza</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386752" id="386752">
+									<div class="media">
+									  <span class="pull-right" >$30.16</span>
+									  <div class="media-body">
+										<h4 class="media-heading">18" Veggie Pie</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44022" ><a onclick="return false;" href="#"  id="44022"  >FALAFEL AND GYRO</a></li-->
+									<div class="category_item1 header-menu" data-id="44022" >FALAFEL AND GYRO</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386753" id="386753">
+									<div class="media">
+									  <span class="pull-right" >$8.71</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Falafel in a Pita</h4>
+										<span class="text-sm ">Lettuce, tomato, onions, pickles and tzatziki sauce on a pita.</span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386754" id="386754">
+									<div class="media">
+									  <span class="pull-right" >$8.71</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Gyro</h4>
+										<span class="text-sm ">Lettuce, tomato, onions, pickles and tzatziki sauce on a pita.</span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44023" ><a onclick="return false;" href="#"  id="44023"  >CHICKEN</a></li-->
+									<div class="category_item1 header-menu" data-id="44023" >CHICKEN</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386755" id="386755">
+									<div class="media">
+									  <span class="pull-right" >$15.07</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Chicken Wing Dings with Fries and Soda</h4>
+										<span class="text-sm ">6 pieces.</span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386756" id="386756">
+									<div class="media">
+									  <span class="pull-right" >$15.07</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Chicken Tenders with Fries and Can of Soda</h4>
+										<span class="text-sm ">4 pieces. Halal.</span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44024" ><a onclick="return false;" href="#"  id="44024"  >SIDE ORDERS</a></li-->
+									<div class="category_item1 header-menu" data-id="44024" >SIDE ORDERS</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386757" id="386757">
+									<div class="media">
+									  <span class="pull-right" >$6.95</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Onion Rings (side)</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386758" id="386758">
+									<div class="media">
+									  <span class="pull-right" >$4.64</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Fries (side)</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386759" id="386759">
+									<div class="media">
+									  <span class="pull-right" >$2.44</span>
+									  <div class="media-body">
+										<h4 class="media-heading">4 oz. Cup of Cheese (side)</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386760" id="386760">
+									<div class="media">
+									  <span class="pull-right" >$8.71</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Mozzarella Cheese Sticks (side)</h4>
+										<span class="text-sm ">6 pieces.</span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386761" id="386761">
+									<div class="media">
+									  <span class="pull-right" >$7.05</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Grape Leaves (side)</h4>
+										<span class="text-sm ">6 pieces.</span>
+									  </div>
+									</div>
+								</div>
+								</div>									<!--li class="category_item" data-id="44025" ><a onclick="return false;" href="#"  id="44025"  >DESSERTS</a></li-->
+									<div class="category_item1 header-menu" data-id="44025" >DESSERTS</div>									
+								<div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386762" id="386762">
+									<div class="media">
+									  <span class="pull-right" >$4.64</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Carrot Cake</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+																<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386763" id="386763">
+									<div class="media">
+									  <span class="pull-right" >$5.21</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Baklava</h4>
+										<span class="text-sm ">By the slice.</span>
+									  </div>
+									</div>
+								</div>
+								</div><div class="row">								<div class="menu-item item_click2 col-xs-6" style="cursor:pointer" data-id="386764" id="386764">
+									<div class="media">
+									  <span class="pull-right" >$2.89</span>
+									  <div class="media-body">
+										<h4 class="media-heading">Cookies</h4>
+										<span class="text-sm "></span>
+									  </div>
+									</div>
+								</div>
+								</div>									
+								
+							</div>
+							</div>
+						
+							</div>
+							<div class="col-xs-2 offset-0-right">
+								<a href="#" class="print_menu" onClick="divPrint()">Print Menu</a>
+							</div>
+							</div>	
+													
+								
+					
+							
+			</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	console.log("click here");
+    $("#44013").click();
+	
+});                     
+
+
+</script>			
+<script type="text/javascript">
+      function divPrint() {
+        // Some logic determines which div should be printed...
+        // This example uses div3.
+        //$("#div3").addClass("printable");
+        window.print();
+      }
+    </script>
+<div class="modal modal-four modal-three fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+       		<div class="box-order alert-message" >
+			</div>
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->			
+			
+<div class="modal modal-four modal-three fade" id="choice-optional-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+       		<div class="box-order order-confirm item_details" style="min-height:800px">
+			
+		</div>
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+			
+<!-- Modal Deliver Address Verified-->
+<div class="modal model-second fade" id="popup-checkout-error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Checkout</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row input-second">
+        	<div class="col-md-12 item-card">
+        		<p class="notice-check checkout-error-message"></p>
+				<br/>
+				
+			</div>
+        </div>
+		
+       
+      </div>
+      <div class="modal-footer a-center">
+        <button type="button" class="btn btn-with-check  btn-primary " data-dismiss="modal">Continue</button>
+      </div>
+	  
+	 
+	  
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal Delivery Address-->
+<div class="modal fade" id="address-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <form id="save_address" name="save_address" action="functions/user.php" method="POST">
+    <input type="hidden" id="function" name="function" value="edit_address" >
+	<input type="hidden" id="id" name="id" value="0" >
+	<input type="hidden" id="get_exist" name="get_exist" value="1" >
+      <input type="hidden" name="code" value="omgpizzabrooklyn.com">
+    <div class="modal-content">
+      <div class="modal-header" style="text-align:center">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Delivery Address Check</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row ">
+        	<!--div class="col-md-12 item-card">
+				<div class="form-group">
+					<label for="inputName">Add a name to this address (optional)</label>
+					<input type="text" class="form-control" id="name" name="name" placeholder="e.g. Work" value="No name"  readonly>
+				</div>
+			</div-->
+
+			<div class="col-md-12 item-card">
+				<div class="form-group">
+					<label for="inputName">Address</label>
+					<input type="text" class="form-control" id="address" name="address" value="" >
+				</div>
+			</div>
+
+			<div class="col-md-12 item-card">
+				<div class="col-md-6">
+					<div class="form-group mr-10">
+						<label for="inputName">Apt, Suite, Floor</label>
+						<input type="text" class="form-control" id="apt" name="apt" value="" >
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="form-group ml-10">
+						<label for="inputName">Zip</label>
+						<input type="text" class="form-control" id="zipcode" name="zipcode" value="">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-12 item-card">
+				<div class="form-group">
+					<label for="inputName">Cross Street (optional)</label>
+					<input type="text" class="form-control" id="street" name="street" value="" >
+				</div>
+			</div>
+			<div class="" style="color:blue"><i>Please enter your delivery address. We'll confirm that our delivery service is available to your location.</i></div>
+			
+			<div class="address_error" style="color:red"></div>
+        </div>
+		
+      </div>
+	  
+	  
+	  
+      <div class="modal-footer a-center">
+        <button type="button" class="btn  btn-primary btn_save_address">Continue</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+  </form>
+</div><!-- /.modal -->
+
+<!-- Modal Deliver Address Verified-->
+<div class="modal model-second fade" id="verified-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content quick_check_addr">
+      <!--div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Quick Check</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row input-second">
+        	<div class="col-md-12 item-card">
+        		<p class="notice-check">Check to see if  delivers to your location</p>
+				<br/>
+				<p class="notice-address"></p>
+			</div>
+        </div>
+		
+        <p class="notice-verified a-center">Deliver Address Verified</p>
+      </div>
+      <div class="modal-footer a-center">
+        <button type="button" id="btn-delivery-ok" data-toggle="modal" data-target="#total-modal"   class="btn btn-with-check  btn-primary " data-dismiss="modal">Continue</button>
+      </div-->
+	  
+	 
+	  
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- Modal Phone Number-->
+<div class="modal fade" id="apply_coupon_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" 
+	>
+  <div class="modal-dialog" style="width:450px">
+    <div class="modal-content">
+      <div class="modal-header">        
+	  
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      
+        <center><h4 class="modal-title" id="myModalLabel">Coupon</h4></center>
+      </div>
+      <div class="modal-body">
+		<div class="row">
+			<div class="col-md-12 item-card">
+				<div class="form-group">
+			Please login to use this coupon
+				</div>
+			</div>
+		</div>
+       
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal Phone Number-->
+<div class="modal fade" id="no_delivery_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" 
+	>
+  <div class="modal-dialog" style="width:450px">
+    <div class="modal-content">
+      <div class="modal-header">        
+	  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <center><h4 class="modal-title" id="myModalLabel">Message</h4></center>
+      </div>
+      <div class="modal-body">
+		<div class="row">
+			<div class="col-md-12 item-card">
+				<div class="form-group">
+					Delivery option is not available
+				</div>
+			</div>
+		</div>
+       
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal Deliver Address Verified-->
+<div class="modal model-second fade" id="close_popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content ">
+		<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Restaurant Hours</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row input-second">
+        	<div class="col-md-12 item-card" >
+        		<p class="notice-check close_html" ></p>
+			</div>
+        </div>
+		
+        
+      </div>
+      <div class="modal-footer a-center">
+      </div>
+      	  
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal model-second fade" id="popup-address-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><center>Delivery Address Check</center></h4>
+      </div>
+      <div class="modal-body " >
+		<div class="row input-second">
+        	<div class="col-md-12 item-card">
+        		<!--p class="notice-check">Check to see if  delivers to your location</p-->
+			</div>
+			<select id="quickcheck_1" class="form-control popup_address_list">
+			</select>
+			<div class="col-md-12 item-card">
+			<p>Please enter your delivery address. We'll confirm that our delivery service is available to your location.</p>
+			</div>
+        </div>
+      </div>
+      <div class="modal-footer a-center">
+        <button type="button" id="btn-delivery-verify" class="btn mr-right btn-with-check  btn-primary " data-dismiss="modal">Continue</button>
+        <!--button type="button" id="btn-delivery-ok" class="btn mr-left btn-with-check btn-primary " data-dismiss="modal">No thanks <span>I will check later</span></button-->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal Deliver Address Verified-->
+<div class="modal model-second fade" id="loginModalInCheckout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="text-align:center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">ACCOUNT LOGIN</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row input-second">
+			<div class="col-md-2 item-card">
+			</div>
+        	<div class="col-md-8 item-card">
+				Sign in to track your orders, earn rewards, use discount code, and more...
+				<br/>
+				<br/>
+				<div style="background:blue;color:white;font-size:16pt;padding:10px;font-weight:bold;cursor:pointer" class=" btn-login-facebook2 fb_sign_in" data-dismiss="modal" aria-hidden="true" data-merge="yes"  data-return-page="checkout.php">Sign in with Facebook</div>
+				<br/>
+
+				<div style="background:brown;color:white;font-size:16pt;padding:10px;font-weight:bold;cursor:pointer" class="gb_sign_in" data-dismiss="modal" aria-hidden="true" data-merge="yes" data-return-page="checkout.php">Sign in with MenuStar</div>
+				<br/>
+				No thanks, <a href="#" data-dismiss="modal" aria-hidden="true" class="forceCheckout" >proceed with guest checkout</a>
+			</div>
+			<div class="col-md-2 item-card">
+			</div>
+			
+        </div>
+		
+       
+      </div>
+     
+	 
+	  
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->	
+
+<!-- Modal Delivery Address-->
+<div class="modal fade" id="choice-missing-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Choices missing</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row ">
+        	<div class="col-md-12 item-card">
+				<div class="form-group">
+					<label for="inputName">Please select choices that are required</label>
+					
+				</div>
+			</div>
+
+			
+
+			
+        </div>
+      </div>
+      <div class="modal-footer a-center">
+        <button type="button" class="btn  btn-primary"  data-dismiss="modal" aria-hidden="true">Okay</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+			
+        
+                <div class="footer text-center text-uppercase ">
+                    Copyright. OMG Pizza (Brooklyn).
+                    <a href='https://getmenustar.com' target='_blank' style='color: white;'>Powered by MenuStar</a>
+                </div>
+
+                                        <!--div style="float: left;"><IMG SRC="https://themenustar1.com/upload/2017-06-15/light59435e62bb9b7.jpg"> </div-->
+
+
+                        
+            <div class="overlay"><div>
+                    
+		</div>
+		
+                </body>
+<script>	
+	/*$(document).on('show.bs.modal', function(e) {
+		console.log(e);
+		e.preventDefault();
+		$modal = e.target;		
+		$modal.toggle();
+		//scrollTo = $('body').scrollTop();
+		//$('body').css("position", "fixed");
+		
+	    //alert('do something');
+		return false;
+	});
+	$(document).on('hide.bs.modal', function(e) {
+		console.log(e);
+		e.preventDefault();
+		$modal = e.target;
+		//$modal.toggle();
+		$('body').css("position", "static");
+		$('body').animate({scrollTop: scrollTo}, 0);
+	    //alert('do something');
+	});	*/
+	
+	$( document ).ready(function() {
+		/*if (!$(e.target).is('a') && !$(e.target).is('input'))  {
+			console.log("???");
+			$('.collapse').collapse('hide');        
+		}*/
+		/*$('.open-modal').click(function (e) {
+			e.preventDefault();
+			$('#modal').toggle();
+			scrollTo = $('body').scrollTop();
+			$('body').css("position", "fixed");
+			console.log("?????");
+		});
+
+		$('.close-modal').click(function (e) {
+			e.preventDefault();
+			$('#modal').toggle();
+			$('body').css("position", "static");
+			$('body').animate({scrollTop: scrollTo}, 0);
+		});*/
+	});	
+	
+</script>	
+</html>

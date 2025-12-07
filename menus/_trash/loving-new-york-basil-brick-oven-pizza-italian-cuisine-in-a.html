@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+
+	<meta name="apple-itunes-app" content="app-id=916254748, app-argument=website-smartbanner">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://loving-newyork.com/xmlrpc.php">
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+	
+    <script>
+        function sessionStorageIsAvailable() {
+            try {
+                window.sessionStorage.setItem( 'sessionStorageTest', 'sessionStorageTest' );
+                window.sessionStorage.removeItem( 'sessionStorageTest' );
+                return true;
+            } catch ( e ) {
+                return false;
+            }
+        }
+
+        function isFirefox() {
+            // check the Browser, if it is a Firefox
+            // userAgend must contain Firefox
+            isUserAgendFF = navigator.userAgent.indexOf( "Firefox" ) != -1;
+            // the web API "InstallTrigger" is available (this is a FF specific thing)
+            isInstallTriggerAvailable = typeof InstallTrigger !== 'undefined';
+
+            // both informations are FF only, but at least the userAgend can be manipulated, so: To be save, we check for both
+            return isUserAgendFF || isInstallTriggerAvailable;
+        }
+
+        if ( window.location.hash && window.location.hash.indexOf( "#logged-in" ) >= 0 ) {
+            history.replaceState( {
+                loginWindowState: null
+            }, null, window.location.href.replace( window.location.hash, '' ) );
+
+            if ( sessionStorageIsAvailable() ) {
+                if ( window.sessionStorage.getItem( 'newly_registered' ) && !window.sessionStorage.getItem(
+                    'lnyc_queued_action' ) ) {
+					                    var
+                        welcomePageUri = false ;
+
+                    if ( welcomePageUri ) {
+                        window.location.replace( welcomePageUri + '#logged-in' );
+                    }
+                    else {
+                        if ( isFirefox() ) {
+                            // on location.reload(true) with FireFox -> FF don't consider changes in "window.location.href" in this method
+                            window.location = window.location;
+                        }
+                        else {
+                            // the good stuff for reload the Page
+                            window.location.reload( true );
+                        }
+                    }
+                }
+                else if ( window.sessionStorage.getItem( 'lnyc_queued_action' ) == 'create_list' ) {
+                    // forget saved action
+                    window.sessionStorage.removeItem( 'lnyc_queued_action' );
+
+                    // redirect to user's myny page
+                    window.location
+                        .replace( "#" );
+                }
+                else {
+                    // killing my FF softly
+                    if ( isFirefox() ) {
+                        // on location.reload(true) with FireFox -> FF don't consider changes in "window.location.href" in this method
+                        window.location = window.location;
+                    }
+                    else {
+                        // the good stuff for reload the Page
+                        window.location.reload( true );
+                    }
+                }
+            }
+            else {
+                location.reload( true );
+            }
+        }
+    </script>
+
+    <script>
+        ( function ( d ) {
+            var config = {
+                    kitId: 'jyc6atc',
+                    scriptTimeout: 3000,
+                    active: function () {
+                        window.dispatchEvent( new Event( 'resize' ) );
+                    }
+                },
+                h = d.documentElement,
+                t = setTimeout( function () {
+                    h.className = h.className.replace( /\bwf-loading\b/g, "" ) + " wf-inactive";
+                }, config.scriptTimeout ),
+                tk = d.createElement( "script" ),
+                f = false,
+                s = d.getElementsByTagName( "script" )[ 0 ],
+                a;
+            h.className += " wf-loading";
+            tk.src = '//use.typekit.net/' + config.kitId + '.js';
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function () {
+                a = this.readyState;
+                if ( f || a && a != "complete" && a != "loaded" ) return;
+                f = true;
+                clearTimeout( t );
+                try {
+                    Typekit.load( config )
+                } catch ( e ) {
+                }
+            };
+            s.parentNode.insertBefore( tk, s )
+        } )( document );
+    </script>
+	
+    
+    <script>
+        dataLayer = [ { "pageCategory1": "","pageCategory2": "","pageCategory3": "","author": "","userid": "","currentuserid": 0,"pageDestination1": "","pageDestination2": "","pageDestination3": "" } ];
+    </script>
+
+	        <script data-cmp-custom-vendor="1225" data-cmp-script>
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+             'event': 'cmp_analytics'
+             });
+        </script>
+
+        <script>
+
+            ( function ( w, d, s, l, i ) {
+                w[ l ] = w[ l ] || [];
+                w[ l ].push( {
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                } );
+                var f = d.getElementsByTagName( s )[ 0 ],
+                    j = d.createElement( s ),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore( j, f );
+            } )( window, document, 'script', 'dataLayer',
+                'GTM-MX6MMRTJ' );
+        </script>
+		
+	
+	<script src="https://loving-newyork.com/wp-content/themes/lnyc/js/libs/mandatory/deviceinit.js" type="text/javascript" async></script><meta name='robots' content='noindex, follow' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v26.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Page not found - Loving New York</title>
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="Page not found - Loving New York" />
+	<meta property="og:site_name" content="Loving New York" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://loving-newyork.com/#website","url":"https://loving-newyork.com/","name":"Loving New York","description":"Eine weitere WordPress-Seite","publisher":{"@id":"https://loving-newyork.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://loving-newyork.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://loving-newyork.com/#organization","name":"Loving New York","url":"https://loving-newyork.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://loving-newyork.com/#/schema/logo/image/","url":"https://loving-newyork.com/wp-content/uploads/2019/08/Logo-Loving-New-York-1403x483.png","contentUrl":"https://loving-newyork.com/wp-content/uploads/2019/08/Logo-Loving-New-York-1403x483.png","width":1403,"height":483,"caption":"Loving New York"},"image":{"@id":"https://loving-newyork.com/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//scripts.mediavine.com' />
+<link rel="alternate" type="application/rss+xml" title="Loving New York &raquo; Feed" href="https://loving-newyork.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Loving New York &raquo; Comments Feed" href="https://loving-newyork.com/comments/feed/" />
+<link rel='stylesheet' id='lnyc-style-css' href='https://loving-newyork.com/wp-content/themes/lnyc/style.css?ver=1764575943' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://loving-newyork.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://loving-newyork.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+			<style>
+				#navblock_top #lnycLogo { background-image:url(https://loving-newyork.com/wp-content/uploads/2019/08/Loving-New-York-Logo-1.svg); }			</style>
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>      <meta name="onesignal" content="wordpress-plugin"/>
+            <script>
+
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+
+      OneSignalDeferred.push(function(OneSignal) {
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['serviceWorkerParam'] = { scope: '/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/push/onesignal/' };
+oneSignal_options['serviceWorkerPath'] = 'OneSignalSDKWorker.js';
+
+        OneSignal.Notifications.setDefaultUrl("https://loving-newyork.com");
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '004629d9-a6a1-4670-862c-709069a25ec9';
+oneSignal_options['allowLocalhostAsSecureOrigin'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "";
+oneSignal_options['welcomeNotification']['message'] = "";
+oneSignal_options['path'] = "https://loving-newyork.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.064b44a8-1dd7-4e10-9d87-452ef5b9c9dd";
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['promptOptions']['actionMessage'] = "Click here to get regular news about your favorite city!";
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-right';
+oneSignal_options['notifyButton']['theme'] = 'default';
+oneSignal_options['notifyButton']['size'] = 'medium';
+oneSignal_options['notifyButton']['displayPredicate'] = function() {
+              return !OneSignal.User.PushSubscription.optedIn;
+            };
+oneSignal_options['notifyButton']['showCredit'] = false;
+oneSignal_options['notifyButton']['text'] = {};
+              OneSignal.init(window._oneSignalInitOptions);
+              OneSignal.Slidedown.promptPush()      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.Notifications.requestPermission(); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+<link rel="icon" href="https://loving-newyork.com/wp-content/uploads/2019/08/cropped-Loving-Travel-Favicon-150x150.jpg" sizes="32x32" />
+<link rel="icon" href="https://loving-newyork.com/wp-content/uploads/2019/08/cropped-Loving-Travel-Favicon-300x300.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://loving-newyork.com/wp-content/uploads/2019/08/cropped-Loving-Travel-Favicon-300x300.jpg" />
+<meta name="msapplication-TileImage" content="https://loving-newyork.com/wp-content/uploads/2019/08/cropped-Loving-Travel-Favicon-300x300.jpg" />
+
+	
+	
+		<script data-cmp-custom-vendor='1230' data-cmp-script>
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+         'event': 'cmp_facebook'
+         });
+         </script>
+
+        <script>
+		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+		document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+		fbq('init', '562696580519791');
+		fbq('track', 'PageView');
+		</script>
+	</head>
+
+<body class="error404 wp-theme-lnyc group-blog" >
+
+<noscript><img
+            alt=""
+            height="1"
+            width="1"
+            style="display:none"
+            src="https://www.facebook.com/tr?id=562696580519791&ev=PageView&noscript=1"
+    /></noscript>
+
+    <noscript>
+        <iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-MX6MMRTJ"
+                height="0"
+                width="0"
+                style="display:none;visibility:hidden"
+        ></iframe>
+    </noscript>
+
+
+
+
+            <div class="navigation-overlay is_app_web_view_header"></div>
+            <nav class="top-bar-navigation is_app_web_view_header">
+                
+			<figure class='logo'>
+				<a  href='https://loving-newyork.com'>
+					<span>
+						<img alt='Loving New York Logo' src='https://loving-newyork.com/wp-content/uploads/2019/08/Loving-New-York-Logo-1.svg' />
+					</span>
+                </a>
+            </figure>
+		<ul class='main-navigation'><li          
+                            style='--category-color:#e62164; --category-color--raw-rgb: 230, 33, 100'
+                            class='main-navigation__primary-item item item--no-children' 
+                            data-src='https://loving-newyork.com/wp-content/uploads/2020/03/Dumbo-Brooklyn-200330131742001-1920x960.jpg'
+                            data-srcset='https://loving-newyork.com/wp-content/uploads/2020/03/Dumbo-Brooklyn-200330131742001-1920x960.jpg 1920w, https://loving-newyork.com/wp-content/uploads/2020/03/Dumbo-Brooklyn-200330131742001-1280x640.jpg 1280w, https://loving-newyork.com/wp-content/uploads/2020/03/Dumbo-Brooklyn-200330131742001-1600x800.jpg 1600w, https://loving-newyork.com/wp-content/uploads/2020/03/Dumbo-Brooklyn-200330131742001-800x400.jpg 800w, https://loving-newyork.com/wp-content/uploads/2020/03/Dumbo-Brooklyn-200330131742001-400x200.jpg 400w, https://loving-newyork.com/wp-content/uploads/2020/03/Dumbo-Brooklyn-200330131742001-10x5.jpg 10w'
+							data-position='center'
+							data-preload-image='https://loving-newyork.com/wp-content/uploads/2020/03/Dumbo-Brooklyn-200330131742001-10x5.jpg'
+                            data-level-first='0'
+                            data-index='0'
+                            data-category-id='8770'
+                            data-post-title='Your New York Trip'
+                        >                   
+                            <input type='radio' id='toggle-nav-item--0' class='main-navigation__toggle' name='toggle-group-0'>
+                            <label for='toggle-nav-item--0'><span class='title'>Your Trip</span>
+                            <span class='subtitle'>Best Tips</span></label><div class='main-navigation__flyout'>
+                    <div class='flyout__background' data-parent-index='0'>
+                        <div class='flyout__teasers' data-parent-index='0'>
+                            <div class='flyout__teasers-headline h1'> OUR BEST ARTICLES JUST FOR YOU</div>
+                            <div class='flyout__ajax-content'>
+                                <div class='nav-teaser'
+						data-srcset='https://loving-newyork.com/wp-content/uploads/2015/05/Travel-preparation-New-York.jpg 1600w, https://loving-newyork.com/wp-content/uploads/2015/05/Travel-preparation-New-York-300x109.jpg 300w, https://loving-newyork.com/wp-content/uploads/2015/05/Travel-preparation-New-York-768x280.jpg 768w, https://loving-newyork.com/wp-content/uploads/2015/05/Travel-preparation-New-York-1024x373.jpg 1024w, https://loving-newyork.com/wp-content/uploads/2015/05/Travel-preparation-New-York-800x292.jpg 800w, https://loving-newyork.com/wp-content/uploads/2015/05/Travel-preparation-New-York-400x146.jpg 400w, https://loving-newyork.com/wp-content/uploads/2015/05/Travel-preparation-New-York-10x4.jpg 10w'
+						data-index='0'
+						data-src='https://loving-newyork.com/wp-content/uploads/2015/05/Travel-preparation-New-York.jpg'
+						data-preload='https://loving-newyork.com/wp-content/uploads/2015/05/Travel-preparation-New-York-10x4.jpg'
+						data-position='center'
+						data-post-title='The Ultimate Travel Prep Checklist for New York City'>
+						<a  class='nav-teaser__link' href='https://loving-newyork.com/ultimate-travel-prep-checklist/'>
+							<span class='nav-teaser__category'>
+								Tips &amp; Tricks
+							</span>
+							<div class='nav-teaser__headline h5'>
+								The Ultimate Travel Prep Checklist for New York City
+							</div>
+						</a>
+					</div><div class='nav-teaser'
+						data-srcset='https://loving-newyork.com/wp-content/uploads/2017/04/7-days-in-new-york.jpg 1600w, https://loving-newyork.com/wp-content/uploads/2017/04/7-days-in-new-york-300x113.jpg 300w, https://loving-newyork.com/wp-content/uploads/2017/04/7-days-in-new-york-768x288.jpg 768w, https://loving-newyork.com/wp-content/uploads/2017/04/7-days-in-new-york-1024x384.jpg 1024w, https://loving-newyork.com/wp-content/uploads/2017/04/7-days-in-new-york-800x300.jpg 800w, https://loving-newyork.com/wp-content/uploads/2017/04/7-days-in-new-york-400x150.jpg 400w, https://loving-newyork.com/wp-content/uploads/2017/04/7-days-in-new-york-10x4.jpg 10w'
+						data-index='1'
+						data-src='https://loving-newyork.com/wp-content/uploads/2017/04/7-days-in-new-york.jpg'
+						data-preload='https://loving-newyork.com/wp-content/uploads/2017/04/7-days-in-new-york-10x4.jpg'
+						data-position='center'
+						data-post-title='7 Day New York Itinerary'>
+						<a  class='nav-teaser__link' href='https://loving-newyork.com/7-day-new-york-itinerary/'>
+							<span class='nav-teaser__category'>
+								Tips &amp; Tricks
+							</span>
+							<div class='nav-teaser__headline h5'>
+								7 Day New York Itinerary
+							</div>
+						</a>
+					</div><div class='nav-teaser'
+						data-srcset='https://loving-newyork.com/wp-content/uploads/2018/11/2-days-in-new-york-itinerary-1.jpg 1200w, https://loving-newyork.com/wp-content/uploads/2018/11/2-days-in-new-york-itinerary-1-300x158.jpg 300w, https://loving-newyork.com/wp-content/uploads/2018/11/2-days-in-new-york-itinerary-1-768x403.jpg 768w, https://loving-newyork.com/wp-content/uploads/2018/11/2-days-in-new-york-itinerary-1-1024x538.jpg 1024w, https://loving-newyork.com/wp-content/uploads/2018/11/2-days-in-new-york-itinerary-1-800x420.jpg 800w, https://loving-newyork.com/wp-content/uploads/2018/11/2-days-in-new-york-itinerary-1-400x210.jpg 400w, https://loving-newyork.com/wp-content/uploads/2018/11/2-days-in-new-york-itinerary-1-10x5.jpg 10w'
+						data-index='2'
+						data-src='https://loving-newyork.com/wp-content/uploads/2018/11/2-days-in-new-york-itinerary-1.jpg'
+						data-preload='https://loving-newyork.com/wp-content/uploads/2018/11/2-days-in-new-york-itinerary-1-10x5.jpg'
+						data-position='center'
+						data-post-title='2 Days in New York: The Ultimate Guide for 2025'>
+						<a  class='nav-teaser__link' href='https://loving-newyork.com/2-days-in-new-york/'>
+							<span class='nav-teaser__category'>
+								Tips &amp; Tricks
+							</span>
+							<div class='nav-teaser__headline h5'>
+								2 Days in New York: The Ultimate Guide for 2025
+							</div>
+						</a>
+					</div>
+                             </div>
+                        </div>
+                    </div>
+                    <ul class='main-navigation__secondary-navigation'><li class="main-navigation__secondary-item item" data-level="1"><a  class="link highlighted highlighted--text highlighted--background highlighted--uppercase" href="https://loving-newyork.com/your-new-york-trip/" title='Best Tips'>Your Trip</a></li><li class='main-navigation__secondary-item item main-navigation__secondary-item--has-children' data-level='1' data-index='0-0'><input type='radio' id='toggle-nav-item--0-0' class='main-navigation__toggle' name='toggle-group-0-0'>
+					<label for="toggle-nav-item--0-0" class="highlighted highlighted--text highlighted--background">
+						Tips &amp; Tricks
+					</label>
+				<ul class='main-navigation__tertiary-navigation'><li class='main-navigation__tertiary-item item item--main' data-level='2'><a  class='link' href='https://loving-newyork.com/?cat=862'  title='New York Tips'>Main article: Tips &amp; Tricks</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/best-time-to-visit-new-york-city/' title='Best Time to Visit NYC'>Best Time to Visit</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/well-prepared-for-new-york/' title='Ultimate Travel Prep NYC'>Ultimate Travel Prep</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/metrocard-in-new-york-city/' title='MetroCard New York'>MetroCard Guide</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/2-days-in-new-york/'>2 Days in New York</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/3-days-new-york/'>3 Days in New York</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/7-day-new-york-itinerary/'>7 Day New York Itinerary</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/1-week-nyc-itinerary-for-free/'>1 Week NYC Itinerary For Free</a></li></ul></li><li class='main-navigation__secondary-item item ' data-index='0-1'>
+					<a  class="link" href="https://loving-newyork.com/new-york-travel-guide/">
+						NYC Travel Guide
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='0-2'>
+					<a  class="link" href="https://loving-newyork.com/new-york-on-a-budget-money-saving-tips/">
+						Money-Saving Tips for 2025
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='0-3'>
+					<a  class="link" href="https://shop.loving-newyork.com/?utm_source=LNY-COM&utm_medium=sub-menu&utm_campaign=shop">
+						Best New York Guide by Neighborhoods (SHOP)
+					</a>
+				</li><li class='main-navigation__secondary-item item main-navigation__secondary-item--has-children' data-level='1' data-index='0-4'><input type='radio' id='toggle-nav-item--0-4' class='main-navigation__toggle' name='toggle-group-0-0'>
+					<label for="toggle-nav-item--0-4" class="highlighted highlighted--background">
+						Where in New York should you stay?
+					</label>
+				<ul class='main-navigation__tertiary-navigation'><li class='main-navigation__tertiary-item item item--main' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-hotel-finder/' >Main article: Where in New York should you stay?</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-hotel-finder/'>Where in New York should you stay?</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/best-hotels-in-new-york/'>The Best Hotels in New York</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/16-best-hotels-in-new-york-with-a-view/' title='Hotels with a View NYC'>The Best Hotels with a View</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='http://www.booking.com/city/us/new-york.html?aid=1613729&label=US_LNY_menu' title='Hotel New York Booking'>Book a Hotel</a></li></ul></li><li class='main-navigation__secondary-item item main-navigation__secondary-item--has-children' data-level='1' data-index='0-5'><input type='radio' id='toggle-nav-item--0-5' class='main-navigation__toggle' name='toggle-group-0-0'>
+					<label for="toggle-nav-item--0-5" class="">
+						Airport Transfers
+					</label>
+				<ul class='main-navigation__tertiary-navigation'><li class='main-navigation__tertiary-item item item--main' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-airport-transfers/'  title='Airport Transfers NYC'>Main article: Airport Transfers</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/transfer-hero/' title='Which Airport Transfer is the Best?'>⭐ Transfer Hero: Find Your Transfer</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/transfer-jfk-manhattan/' title='Transfer JFK to Manhattan'>JFK to Manhattan</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/transfer-newark-airport-manhattan/' title='Transfer Newark to Manhattan'>Newark to Manhattan</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/transfer-la-guardia-manhattan/' title='Transfer LaGuardia to Manhattan'>LaGuardia to Manhattan</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/transfer-from-airport-newark-to-brooklyn/' title='Transfer Newark to Brooklyn'>Newark to Brooklyn</a></li></ul></li><li class='main-navigation__secondary-item item ' data-index='0-6'>
+					<a  class="link" href="https://loving-newyork.com/how-to-use-myny/" title='Travel planner NYC'>
+						⭐ myNY: Plan Your Own Trip
+					</a>
+				</li></ul></div></li><li          
+                            style='--category-color:#81b71a; --category-color--raw-rgb: 129, 183, 26'
+                            class='main-navigation__primary-item item item--no-children' 
+                            data-src='https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013.jpg'
+                            data-srcset='https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013.jpg 1920w, https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013-300x150.jpg 300w, https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013-1024x512.jpg 1024w, https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013-768x384.jpg 768w, https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013-1536x768.jpg 1536w, https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013-1280x640.jpg 1280w, https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013-1600x800.jpg 1600w, https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013-800x400.jpg 800w, https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013-400x200.jpg 400w, https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013-10x5.jpg 10w'
+							data-position='center'
+							data-preload-image='https://loving-newyork.com/wp-content/uploads/2023/11/231020075538013-10x5.jpg'
+                            data-level-first='0'
+                            data-index='1'
+                            data-category-id='167985'
+                            data-post-title='Things To Do'
+                        >                   
+                            <input type='radio' id='toggle-nav-item--1' class='main-navigation__toggle' name='toggle-group-0'>
+                            <label for='toggle-nav-item--1'><span class='title'>Things To Do</span>
+                            <span class='subtitle'>Best Activities</span></label><div class='main-navigation__flyout'>
+                    <div class='flyout__background' data-parent-index='1'>
+                        <div class='flyout__teasers' data-parent-index='1'>
+                            <div class='flyout__teasers-headline h1'> OUR BEST ARTICLES JUST FOR YOU</div>
+                            <div class='flyout__ajax-content'>
+                                
+                             </div>
+                        </div>
+                    </div>
+                    <ul class='main-navigation__secondary-navigation'><li class="main-navigation__secondary-item item" data-level="1"><a  class="link highlighted highlighted--text highlighted--background highlighted--uppercase" href="https://loving-newyork.com/things-to-do/" title='Best Activities'>Things To Do</a></li><li class='main-navigation__secondary-item item ' data-index='1-0'>
+					<a  class="link" href="https://loving-newyork.com/things-to-do/100-best-things-to-do-in-nyc/">
+						The 100 Best Things To Do In NYC
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='1-1'>
+					<a  class="highlighted highlighted--background link" href="https://loving-newyork.com/events-in-new-york/">
+						The Best Events in New York
+					</a>
+				</li><li class='main-navigation__secondary-item item main-navigation__secondary-item--has-children' data-level='1' data-index='1-2'><input type='radio' id='toggle-nav-item--1-2' class='main-navigation__toggle' name='toggle-group-1-1'>
+					<label for="toggle-nav-item--1-2" class="highlighted highlighted--background">
+						Events by Month
+					</label>
+				<ul class='main-navigation__tertiary-navigation'><li class='main-navigation__tertiary-item item item--main' data-level='2'><a  class='link' href='https://loving-newyork.com/?cat=6'  title='Events in NYC'>Main article: Events by Month</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/things-to-do-january/'>January</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/things-to-do-february/'>February</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/things-to-do-march/'>March</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/things-to-do-april/'>April</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-in-may/'>May</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-in-june/'>June</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-in-july/'>July</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-in-august/'>August</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-in-september/'>September</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-in-october/'>October</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-in-november/'>November</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-in-december/'>December</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/summer-new-york/'>GUIDE: Summer in New York</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/fall-new-york/'>GUIDE: Fall in New York</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/winter-new-york/'>GUIDE: Winter in New York</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/spring-nyc/'>GUIDE: Spring in New York</a></li></ul></li><li class='main-navigation__secondary-item item main-navigation__secondary-item--has-children' data-level='1' data-index='1-3'><input type='radio' id='toggle-nav-item--1-3' class='main-navigation__toggle' name='toggle-group-1-1'>
+					<label for="toggle-nav-item--1-3" class="">
+						Neighborhoods
+					</label>
+				<ul class='main-navigation__tertiary-navigation'><li class='main-navigation__tertiary-item item item--main' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-neighborhood-guides/'  title='New York Neighborhood Guides'>Main article: Neighborhoods</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-neighborhood-guides/'>New York Neighborhood Guides</a></li><li class='main-navigation__tertiary-item item' data-level='2'><a  class='link' href='https://loving-newyork.com/new-york-neighborhood-guides/'>Which NYC Neighborhood Do You Belong In?</a></li></ul></li><li class='main-navigation__secondary-item item ' data-index='1-4'>
+					<a  class="link" href="https://loving-newyork.com/how-to-find-the-best-new-york-boat-tours/">
+						The Best Cruises in NYC
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='1-5'>
+					<a  class="link" href="https://loving-newyork.com/the-best-helicopter-ride-new-york-city/">
+						The Best Helicopter Tours in NYC
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='1-6'>
+					<a  class="link" href="https://loving-newyork.com/hop-on-hop-off-bus-new-york/" title='Hop On Hop Off New York'>
+						Hop On Hop Off Bus Tours
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='1-7'>
+					<a  class="link" href="https://loving-newyork.com/tickets-for-sporting-events-in-new-york/" title='Sports Tickets NYC'>
+						Sports Tickets
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='1-8'>
+					<a  class="link" href="https://loving-newyork.com/tickets-for-concerts-in-new-york/">
+						Concert Tickets
+					</a>
+				</li></ul></div></li><li          
+                            style='--category-color:#ffae0d; --category-color--raw-rgb: 255, 174, 13'
+                            class='main-navigation__primary-item item item--no-children' 
+                            data-src='https://loving-newyork.com/wp-content/uploads/2021/07/Brooklyn-Washington-Bridge-200330131742004-1500x960.jpg'
+                            data-srcset=''
+							data-position='center'
+							data-preload-image='https://loving-newyork.com/wp-content/uploads/2021/07/Brooklyn-Washington-Bridge-200330131742004-10x8.jpg'
+                            data-level-first='0'
+                            data-index='2'
+                            data-category-id='8771'
+                            data-post-title='Attractions in New York'
+                        >                   
+                            <input type='radio' id='toggle-nav-item--2' class='main-navigation__toggle' name='toggle-group-0'>
+                            <label for='toggle-nav-item--2'><span class='title'>Things To See</span>
+                            <span class='subtitle'>Best Attractions</span></label><div class='main-navigation__flyout'>
+                    <div class='flyout__background' data-parent-index='2'>
+                        <div class='flyout__teasers' data-parent-index='2'>
+                            <div class='flyout__teasers-headline h1'> OUR BEST ARTICLES JUST FOR YOU</div>
+                            <div class='flyout__ajax-content'>
+                                <div class='nav-teaser'
+						data-srcset=''
+						data-index='0'
+						data-src='https://loving-newyork.com/wp-content/uploads/2016/08/10-free-things-to-do-nyc-170208223314007-1600x960.jpg'
+						data-preload='https://loving-newyork.com/wp-content/uploads/2016/08/10-free-things-to-do-nyc-170208223314007-10x8.jpg'
+						data-position='center'
+						data-post-title='17 Top FREE Things to Do in New York City'>
+						<a  class='nav-teaser__link' href='https://loving-newyork.com/10-free-things-to-do-nyc/'>
+							<span class='nav-teaser__category'>
+								Attractions
+							</span>
+							<div class='nav-teaser__headline h5'>
+								17 Top FREE Things to Do in New York City
+							</div>
+						</a>
+					</div><div class='nav-teaser'
+						data-srcset='https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091.jpeg 1920w, https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091-300x150.jpeg 300w, https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091-1024x512.jpeg 1024w, https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091-768x384.jpeg 768w, https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091-1536x768.jpeg 1536w, https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091-1280x640.jpeg 1280w, https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091-1600x800.jpeg 1600w, https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091-800x400.jpeg 800w, https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091-400x200.jpeg 400w, https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091-10x5.jpeg 10w'
+						data-index='1'
+						data-src='https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091-1920x960.jpeg'
+						data-preload='https://loving-newyork.com/wp-content/uploads/2021/01/Summit-One-Vanderbilt-Observation-Deck-NYC-Loving-New-York-220721192248091-10x5.jpeg'
+						data-position='center'
+						data-post-title='The 43 Absolute Best New York Attractions In 2025'>
+						<a  class='nav-teaser__link' href='https://loving-newyork.com/top-10-attractions-in-new-york/'>
+							<span class='nav-teaser__category'>
+								Attractions
+							</span>
+							<div class='nav-teaser__headline h5'>
+								The 43 Absolute Best New York Attractions In 2025
+							</div>
+						</a>
+					</div><div class='nav-teaser'
+						data-srcset=''
+						data-index='2'
+						data-src=''
+						data-preload='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
+						data-position='center'
+						data-post-title='The 32 Absolute Best Brooklyn Attractions'>
+						<a  class='nav-teaser__link' href='https://loving-newyork.com/best-brooklyn-attractions/'>
+							<span class='nav-teaser__category'>
+								Attractions
+							</span>
+							<div class='nav-teaser__headline h5'>
+								The 32 Absolute Best Brooklyn Attractions
+							</div>
+						</a>
+					</div>
+                             </div>
+                        </div>
+                    </div>
+                    <ul class='main-navigation__secondary-navigation'><li class="main-navigation__secondary-item item" data-level="1"><a  class="link highlighted highlighted--text highlighted--background highlighted--uppercase" href="https://loving-newyork.com/attractions-in-new-york/" title='Best Attractions'>View all</a></li><li class='main-navigation__secondary-item item ' data-index='2-0'>
+					<a  class="highlighted highlighted--text highlighted--background link" href="https://loving-newyork.com/top-10-attractions-in-new-york/" title='Best attractions New York'>
+						The Absolute Best Attractions in NYC
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='2-1'>
+					<a  class="highlighted highlighted--text highlighted--background link" href="https://loving-newyork.com/top-5-museums-in-new-york/">
+						The Absolute Best Museums in New York
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='2-2'>
+					<a  class="highlighted highlighted--text highlighted--background link" href="https://loving-newyork.com/10-free-things-to-do-nyc/" title='Best 10 Free Attractions'>
+						TOP 10 Free Attractions
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='2-3'>
+					<a  class="link" href="https://loving-newyork.com/911-memorial-museum-in-new-york/" title='9/11 Memorial Museum'>
+						9/11 Memorial Museum
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='2-4'>
+					<a  class="link" href="https://loving-newyork.com/hudson-yards-observation-deck/">
+						The Edge Hudson Yards
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='2-5'>
+					<a  class="link" href="https://loving-newyork.com/one-vanderbilt-summit/">
+						Summit One Vanderbilt
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='2-6'>
+					<a  class="link" href="https://loving-newyork.com/top-of-the-rock-observation-deck/" title='Top of the Rock'>
+						Top of the Rock
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='2-7'>
+					<a  class="link" href="https://loving-newyork.com/empire-state-building-new-york/">
+						Empire State Building
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='2-8'>
+					<a  class="link" href="https://loving-newyork.com/one-world-observatory-new-york/" title='One World Observatory'>
+						One World Observatory
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='2-9'>
+					<a  class="link" href="https://loving-newyork.com/visiting-the-statue-of-liberty/" title='Statue of Liberty'>
+						Statue of Liberty
+					</a>
+				</li></ul></div></li><li          
+                            style='--category-color:#3f8e36; --category-color--raw-rgb: 63, 142, 54'
+                            class='main-navigation__primary-item item ' 
+                            data-src='https://loving-newyork.com/wp-content/uploads/2018/12/musicals-broadway-shows-new-york-1600x960.jpg'
+                            data-srcset='https://loving-newyork.com/wp-content/uploads/2018/12/musicals-broadway-shows-new-york-1600x960.jpg 1600w, https://loving-newyork.com/wp-content/uploads/2018/12/musicals-broadway-shows-new-york-10x7.jpg 10w'
+							data-position='center'
+							data-preload-image='https://loving-newyork.com/wp-content/uploads/2018/12/musicals-broadway-shows-new-york-10x7.jpg'
+                            data-level-first='0'
+                            data-index='3'
+                            data-category-id='106043'
+                            data-post-title='The Complete Guide to Broadway Shows in New York'
+                        >                   
+                            <a  class='main-navigation__primary-link' href='https://loving-newyork.com/musicals-and-broadway-shows-in-new-york/' title='+ Broadway'><span class='title'>Theater</span>
+                            <span class='subtitle'>+ Broadway</span></a></li><li          
+                            style='--category-color:#823d8f; --category-color--raw-rgb: 130, 61, 143'
+                            class='main-navigation__primary-item item item--no-children' 
+                            data-src='https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024.jpg'
+                            data-srcset='https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024.jpg 1920w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-300x150.jpg 300w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-1024x512.jpg 1024w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-768x384.jpg 768w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-1536x768.jpg 1536w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-1280x640.jpg 1280w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-1600x800.jpg 1600w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-800x400.jpg 800w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-400x200.jpg 400w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-10x5.jpg 10w'
+							data-position='center'
+							data-preload-image='https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-10x5.jpg'
+                            data-level-first='0'
+                            data-index='4'
+                            data-category-id='149442'
+                            data-post-title='What is the BEST New York Pass for you in 2025?'
+                        >                   
+                            <input type='radio' id='toggle-nav-item--4' class='main-navigation__toggle' name='toggle-group-0'>
+                            <label for='toggle-nav-item--4'><span class='title'>Attraction Passes</span>
+                            <span class='subtitle'>+ Discount Codes</span></label><div class='main-navigation__flyout'>
+                    <div class='flyout__background' data-parent-index='4'>
+                        <div class='flyout__teasers' data-parent-index='4'>
+                            <div class='flyout__teasers-headline h1'> OUR BEST ARTICLES JUST FOR YOU</div>
+                            <div class='flyout__ajax-content'>
+                                <div class='nav-teaser'
+						data-srcset='https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024.jpg 1920w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-300x150.jpg 300w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-1024x512.jpg 1024w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-768x384.jpg 768w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-1536x768.jpg 1536w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-1280x640.jpg 1280w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-1600x800.jpg 1600w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-800x400.jpg 800w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-400x200.jpg 400w, https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-10x5.jpg 10w'
+						data-index='0'
+						data-src='https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024.jpg'
+						data-preload='https://loving-newyork.com/wp-content/uploads/2023/11/New-York-Pass-Comparison-2024-10x5.jpg'
+						data-position='center'
+						data-post-title='What is the BEST New York Pass for you in 2025?'>
+						<a  class='nav-teaser__link' href='https://loving-newyork.com/comparison-new-york-pass-explorer-pass-and-citypass/'>
+							<span class='nav-teaser__category'>
+								Tickets &amp; Passes
+							</span>
+							<div class='nav-teaser__headline h5'>
+								What is the BEST New York Pass for you in 2025?
+							</div>
+						</a>
+					</div><div class='nav-teaser'
+						data-srcset='https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023.jpeg 1920w, https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023-300x150.jpeg 300w, https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023-1024x512.jpeg 1024w, https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023-768x384.jpeg 768w, https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023-1536x768.jpeg 1536w, https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023-1280x640.jpeg 1280w, https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023-1600x800.jpeg 1600w, https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023-800x400.jpeg 800w, https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023-400x200.jpeg 400w, https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023-10x5.jpeg 10w'
+						data-index='1'
+						data-src='https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023-1920x960.jpeg'
+						data-preload='https://loving-newyork.com/wp-content/uploads/2023/02/New-York-Sightseeing-Pass-Erfahrungen-2023-10x5.jpeg'
+						data-position='center'
+						data-post-title='NYC Attraction Pass Savings Calculator'>
+						<a  class='nav-teaser__link' href='https://loving-newyork.com/new-york-pass-adviser/'>
+							<span class='nav-teaser__category'>
+								Tickets &amp; Passes
+							</span>
+							<div class='nav-teaser__headline h5'>
+								NYC Attraction Pass Savings Calculator
+							</div>
+						</a>
+					</div>
+                             </div>
+                        </div>
+                    </div>
+                    <ul class='main-navigation__secondary-navigation'><li class="main-navigation__secondary-item item" data-level="1"><a  class="link highlighted highlighted--text highlighted--background highlighted--uppercase" href="https://loving-newyork.com/comparison-new-york-pass-explorer-pass-and-citypass/" title='+ Discount Codes'>Attraction Passes</a></li><li class='main-navigation__secondary-item item ' data-index='4-0'>
+					<a  class="highlighted highlighted--background link" href="https://loving-newyork.com/comparison-new-york-pass-explorer-pass-and-citypass/">
+						New York Pass Comparison
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='4-1'>
+					<a  class="highlighted highlighted--background link" href="https://loving-newyork.com/new-york-pass-adviser/">
+						New York Pass Savings Calculator
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='4-2'>
+					<a  class="link" href="https://loving-newyork.com/new-york-explorer-pass/" title='New York Explorer Pass'>
+						New York Explorer Pass
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='4-3'>
+					<a  class="link" href="https://loving-newyork.com/new-york-essentials-pass/">
+						New York Essentials Pass
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='4-4'>
+					<a  class="link" href="https://loving-newyork.com/new-york-pass/" title='New York Pass'>
+						New York Pass
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='4-5'>
+					<a  class="link" href="https://loving-newyork.com/new-york-citypass/" title='New York CityPASS'>
+						New York CityPASS
+					</a>
+				</li></ul></div></li><li          
+                            style='--category-color:#3eddac; --category-color--raw-rgb: 62, 221, 172'
+                            class='main-navigation__primary-item item item--no-children' 
+                            data-src='https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013.jpg'
+                            data-srcset='https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013.jpg 1600w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-300x150.jpg 300w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-1024x512.jpg 1024w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-768x384.jpg 768w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-1536x768.jpg 1536w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-1280x640.jpg 1280w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-800x400.jpg 800w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-400x200.jpg 400w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-10x5.jpg 10w'
+							data-position='center'
+							data-preload-image='https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-10x5.jpg'
+                            data-level-first='0'
+                            data-index='5'
+                            data-category-id='8774'
+                            data-post-title='Insider Tips for New York City'
+                        >                   
+                            <input type='radio' id='toggle-nav-item--5' class='main-navigation__toggle' name='toggle-group-0'>
+                            <label for='toggle-nav-item--5'><span class='title'>Food & Drinks</span>
+                            <span class='subtitle'>our favorites</span></label><div class='main-navigation__flyout'>
+                    <div class='flyout__background' data-parent-index='5'>
+                        <div class='flyout__teasers' data-parent-index='5'>
+                            <div class='flyout__teasers-headline h1'> OUR BEST ARTICLES JUST FOR YOU</div>
+                            <div class='flyout__ajax-content'>
+                                <div class='nav-teaser'
+						data-srcset='https://loving-newyork.com/wp-content/uploads/2021/08/citizenM-Hotel-Bowery-Rooftop-cloudsM-Bowery210204170830019.jpeg 1280w, https://loving-newyork.com/wp-content/uploads/2021/08/citizenM-Hotel-Bowery-Rooftop-cloudsM-Bowery210204170830019-300x150.jpeg 300w, https://loving-newyork.com/wp-content/uploads/2021/08/citizenM-Hotel-Bowery-Rooftop-cloudsM-Bowery210204170830019-1024x512.jpeg 1024w, https://loving-newyork.com/wp-content/uploads/2021/08/citizenM-Hotel-Bowery-Rooftop-cloudsM-Bowery210204170830019-768x384.jpeg 768w, https://loving-newyork.com/wp-content/uploads/2021/08/citizenM-Hotel-Bowery-Rooftop-cloudsM-Bowery210204170830019-800x400.jpeg 800w, https://loving-newyork.com/wp-content/uploads/2021/08/citizenM-Hotel-Bowery-Rooftop-cloudsM-Bowery210204170830019-400x200.jpeg 400w, https://loving-newyork.com/wp-content/uploads/2021/08/citizenM-Hotel-Bowery-Rooftop-cloudsM-Bowery210204170830019-10x5.jpeg 10w'
+						data-index='0'
+						data-src='https://loving-newyork.com/wp-content/uploads/2021/08/citizenM-Hotel-Bowery-Rooftop-cloudsM-Bowery210204170830019.jpeg'
+						data-preload='https://loving-newyork.com/wp-content/uploads/2021/08/citizenM-Hotel-Bowery-Rooftop-cloudsM-Bowery210204170830019-10x5.jpeg'
+						data-position='center'
+						data-post-title='The 47 Best Rooftop Bars in New York'>
+						<a  class='nav-teaser__link' href='https://loving-newyork.com/best-rooftop-bars-in-new-york/'>
+							<span class='nav-teaser__category'>
+								Rooftop Bars
+							</span>
+							<div class='nav-teaser__headline h5'>
+								The 47 Best Rooftop Bars in New York
+							</div>
+						</a>
+					</div><div class='nav-teaser'
+						data-srcset='https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway.jpeg 1920w, https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway-300x150.jpeg 300w, https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway-1024x512.jpeg 1024w, https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway-768x384.jpeg 768w, https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway-1536x768.jpeg 1536w, https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway-1280x640.jpeg 1280w, https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway-1600x800.jpeg 1600w, https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway-800x400.jpeg 800w, https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway-400x200.jpeg 400w, https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway-10x5.jpeg 10w'
+						data-index='1'
+						data-src='https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway-1920x960.jpeg'
+						data-preload='https://loving-newyork.com/wp-content/uploads/2021/08/Soho-NYC-Broadway-10x5.jpeg'
+						data-position='center'
+						data-post-title='The 15 Best Things to Do in SoHo NYC &#8211; The Complete Guide 2025'>
+						<a  class='nav-teaser__link' href='https://loving-newyork.com/things-to-do-soho/'>
+							<span class='nav-teaser__category'>
+								Insider Guides
+							</span>
+							<div class='nav-teaser__headline h5'>
+								The 15 Best Things to Do in SoHo NYC &#8211; The Complete Guide 2025
+							</div>
+						</a>
+					</div><div class='nav-teaser'
+						data-srcset='https://loving-newyork.com/wp-content/uploads/2021/06/Bloomingdale_181004111227007.jpg 1600w, https://loving-newyork.com/wp-content/uploads/2021/06/Bloomingdale_181004111227007-300x169.jpg 300w, https://loving-newyork.com/wp-content/uploads/2021/06/Bloomingdale_181004111227007-1024x576.jpg 1024w, https://loving-newyork.com/wp-content/uploads/2021/06/Bloomingdale_181004111227007-768x432.jpg 768w, https://loving-newyork.com/wp-content/uploads/2021/06/Bloomingdale_181004111227007-1536x864.jpg 1536w, https://loving-newyork.com/wp-content/uploads/2021/06/Bloomingdale_181004111227007-800x450.jpg 800w, https://loving-newyork.com/wp-content/uploads/2021/06/Bloomingdale_181004111227007-400x225.jpg 400w, https://loving-newyork.com/wp-content/uploads/2021/06/Bloomingdale_181004111227007-10x6.jpg 10w'
+						data-index='2'
+						data-src='https://loving-newyork.com/wp-content/uploads/2021/06/Bloomingdale_181004111227007.jpg'
+						data-preload='https://loving-newyork.com/wp-content/uploads/2021/06/Bloomingdale_181004111227007-10x6.jpg'
+						data-position='center'
+						data-post-title='Shopping in New York: The Ultimate Guide 2025'>
+						<a  class='nav-teaser__link' href='https://loving-newyork.com/shopping-in-new-york/'>
+							<span class='nav-teaser__category'>
+								Shopping
+							</span>
+							<div class='nav-teaser__headline h5'>
+								Shopping in New York: The Ultimate Guide 2025
+							</div>
+						</a>
+					</div>
+                             </div>
+                        </div>
+                    </div>
+                    <ul class='main-navigation__secondary-navigation'><li class="main-navigation__secondary-item item" data-level="1"><a  class="link highlighted highlighted--text highlighted--background highlighted--uppercase" href="https://loving-newyork.com/insider-tips-for-new-york-city/" title='our favorites'>Food & Drinks</a></li><li class='main-navigation__secondary-item item ' data-index='5-0'>
+					<a  class="link" href="https://loving-newyork.com/best-restaurants-new-york/">
+						Best Restaurants in New York Right Now
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='5-1'>
+					<a  class="link" href="https://loving-newyork.com/best-burger-in-new-york/">
+						Best Burger
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='5-2'>
+					<a  class="link" href="https://loving-newyork.com/best-pizza-in-nyc/">
+						Best Pizza
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='5-3'>
+					<a  class="link" href="https://loving-newyork.com/?cat=318" title='New York Rooftop Bars'>
+						Best Bars & Rooftops
+					</a>
+				</li></ul></div></li><li          
+                            style='--category-color:#3eddac; --category-color--raw-rgb: 62, 221, 172'
+                            class='main-navigation__primary-item item item--no-children' 
+                            data-src='https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013.jpg'
+                            data-srcset='https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013.jpg 1600w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-300x150.jpg 300w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-1024x512.jpg 1024w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-768x384.jpg 768w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-1536x768.jpg 1536w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-1280x640.jpg 1280w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-800x400.jpg 800w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-400x200.jpg 400w, https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-10x5.jpg 10w'
+							data-position='center'
+							data-preload-image='https://loving-newyork.com/wp-content/uploads/2020/06/Things-to-do-soho-61031100517013-10x5.jpg'
+                            data-level-first='0'
+                            data-index='6'
+                            data-category-id='8809'
+                            data-post-title='Insider Tips for New York City'
+                        >                   
+                            <input type='radio' id='toggle-nav-item--6' class='main-navigation__toggle' name='toggle-group-0'>
+                            <label for='toggle-nav-item--6'><span class='title'>Shopping</span>
+                            <span class='subtitle'>Shopping New York</span></label><div class='main-navigation__flyout'>
+                    <div class='flyout__background' data-parent-index='6'>
+                        <div class='flyout__teasers' data-parent-index='6'>
+                            <div class='flyout__teasers-headline h1'> OUR BEST ARTICLES JUST FOR YOU</div>
+                            <div class='flyout__ajax-content'>
+                                
+                             </div>
+                        </div>
+                    </div>
+                    <ul class='main-navigation__secondary-navigation'><li class="main-navigation__secondary-item item" data-level="1"><a  class="link highlighted highlighted--text highlighted--background highlighted--uppercase" href="https://loving-newyork.com/?cat=15" title='Shopping New York'>Shopping</a></li><li class='main-navigation__secondary-item item ' data-index='6-0'>
+					<a  class="link" href="https://loving-newyork.com/shopping-malls-in-new-york-city/">
+						The Best Shopping Malls in NYC
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='6-1'>
+					<a  class="link" href="https://loving-newyork.com/outlets-in-nyc/">
+						The Best Outlets in NYC
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='6-2'>
+					<a  class="link" href="https://loving-newyork.com/best-boutique-shopping-nyc/">
+						The Best Boutique Shopping in NYC
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='6-3'>
+					<a  class="link" href="https://loving-newyork.com/the-best-thrift-stores-in-nyc/">
+						The Best Thrift Stores in NYC
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='6-4'>
+					<a  class="link" href="https://loving-newyork.com/places-to-shop-in-nyc-on-a-budget/">
+						Shopping on a Budget
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='6-5'>
+					<a  class="link" href="https://loving-newyork.com/shopping-in-soho/">
+						Shopping in SoHo
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='6-6'>
+					<a  class="link" href="https://loving-newyork.com/american-dream-mall-stores/">
+						American Dream Mall
+					</a>
+				</li><li class='main-navigation__secondary-item item ' data-index='6-7'>
+					<a  class="link" href="https://loving-newyork.com/woodbury-common-outlets-in-new-york/">
+						Woodbury Common Outlets
+					</a>
+				</li></ul></div></li></ul>
+   
+                <div class="meta">
+                    <div class="meta__button meta__button--search">
+                        <label
+                            class="checkbox checkbox--search"
+                            for="checkbox-search"
+						>	
+							<img class="icon icon--search" src="https://loving-newyork.com/wp-content/themes/lnyc/img/icons/black/search.svg" alt="open search" width="34" height="34" />
+                            <span class="label">SEARCH</span>
+						</label>
+				
+					</div>
+					
+					<div class="meta__button meta__button--myny">
+					<span class="myny__likes_wrap"></span>
+					<input type="checkbox" id="checkbox-myny" name="checkbox-myny" class="checkbox checkbox--myny">
+					<label class="checkbox checkbox--myny" for="checkbox-myny">
+						<img class="icon icon--myny" src="https://loving-newyork.com/wp-content/themes/lnyc/img/icons/black/heart.svg" alt="open sub menu" width="34" height="34" />
+						<span class="label">myNY</span>
+					</label>
+
+					<div class="checkbox-target">
+						<div class='myny'><ul class='myny__nav'></ul></div>
+					</div>
+				
+				</div>  
+				
+
+					<button class="meta__button hamburger__button">
+						<span class="hamburger">
+							<span class="hamburger__bar"></span>
+							<span class="hamburger__bar"></span>
+							<span class="hamburger__bar"></span>
+						</span>
+						<div class="label">Menü</div>
+				</button>
+				</div>
+            </nav>
+            	      
+			<input type="checkbox" id="checkbox-search" name="checkbox-search" />
+			<div class="searchbar">
+				
+				<form action="https://loving-newyork.com" class="searchbar__form" method="get">
+					<div class="formgroup">
+						<input type="search" data-swplive="true" name="s" value="" placeholder="What are you looking for?" class="formgroup__input">
+						<label class="formgroup__label"></label>
+					</div>           
+						<button type="submit" class="searchbar__submit button button--solid button--red">
+							<span class="desktop">
+							SEARCH
+							</span>
+							<span class="mobile">
+							<img class="icon icon--search" src="https://loving-newyork.com/wp-content/themes/lnyc/img/icons/white/search.svg" alt="open search" width="22" height="22" />
+							</span>
+						</button> 
+				</form>
+				<div class="searchbar__headline h2"> </div>
+			</div>
+	  	
+        <div id="main-wrapper">
+
+    <div
+            class='container'
+            id='MAIN_CONTENT'
+    >
+
+			<main class="page-content page-content--is-subpage" style="--category-color:rgb(255,9,105)">
+					<div id="page-header"> <!-- lnyc-content-single --></div>
+				<div class="content ">
+		<article class='main-column ' style='border-color:rgb(255,9,105);' ><header class='main-column__header' ></header><div class='main-column__body ' style='--category-color:rgb(255,9,105)'><h1 style="text-align: center;">Sorry, something went wrong!?</h1>
+<p style="text-align: center;">Don’t worry though! To find what you are looking for about New York City, simply use our search option (the blue colored magnifying glass in the upper right corner). Alternatively, you can search through our newest articles and sections below:</p>
+<h1 style="text-align: center;">Newest Articles</h1>
+<p style="text-align: center;">These are our newest articles about New York.</p>
+<div class="teaser_wrapper teaser"><div class="teasers"></div><div style="clear:both;"> </div><div class="button_wrap_teaser button_wrap_teaser--hidden"><button class="next_teaser_button button button--dark button--solid" data-categories="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19" data-amount="8" data-ids="" data-offset="0">Load more articles</button></div></div>
+<p> </p>
+<h2 style="text-align: center;">Our most popular articles</h2>
+<p style="text-align: center;">These are our most popular articles.</p>
+<div class="lnyc_vorschaubox--card shortcode_vorschau"><article class="lnyc-teaser-round" style="--category-color:#3eddac;">
+				<a class="" href="https://loving-newyork.com/best-rooftop-bars-in-new-york/">
+						<div class="lnyc-teaser-round__head" style="background-color:#3eddac">
+							<div class="lnyc-teaser-round__views">149000</div>
+							<img alt="Best Rooftop Bars NYC" title="best-rooftop-bars-nyc-210204170830019-1920×960" class="teaser_image | blurred lazyload" src="https://loving-newyork.com/wp-content/uploads/2019/08/best-rooftop-bars-nyc-210204170830019-1920x960-1-10x5.jpg" data-srcset="https://loving-newyork.com/wp-content/uploads/2019/08/best-rooftop-bars-nyc-210204170830019-1920x960-1-640x640.jpg 640w, https://loving-newyork.com/wp-content/uploads/2019/08/best-rooftop-bars-nyc-210204170830019-1920x960-1-150x150.jpg 150w, https://loving-newyork.com/wp-content/uploads/2019/08/best-rooftop-bars-nyc-210204170830019-1920x960-1-420x420.jpg 420w" data-src="https://loving-newyork.com/wp-content/uploads/2019/08/best-rooftop-bars-nyc-210204170830019-1920x960-1-640x640.jpg">
+									</div>
+									<div class="lnyc-teaser-round__content">
+								<div class="lnyc-teaser-round__category h6">Rooftop Bars</div>
+							<h3 class="lnyc-teaser-round__headline h5">The 47 Best Rooftop Bars in New York</h3>
+						<p class="lnyc-teaser-round__copy p">New York’s rooftop bars are one of our personal highlights. Think about it - what... </p>
+					</div>
+				</a>
+			</article><article class="lnyc-teaser-round" style="--category-color:#ffae0d;">
+				<a class="" href="https://loving-newyork.com/top-10-attractions-in-new-york/">
+						<div class="lnyc-teaser-round__head" style="background-color:#ffae0d">
+							<div class="lnyc-teaser-round__views">162208</div>
+							<img alt="best observation decks in New York" title="SUMMIT One Vanderbilt Best Observation Deck NYC 210910093444008" class="teaser_image | blurred lazyload" src="https://loving-newyork.com/wp-content/uploads/2021/08/SUMMIT-One-Vanderbilt-Best-Observation-Deck-NYC-210910093444008-10x3.jpg" data-srcset="https://loving-newyork.com/wp-content/uploads/2021/08/SUMMIT-One-Vanderbilt-Best-Observation-Deck-NYC-210910093444008-640x640.jpg 640w, https://loving-newyork.com/wp-content/uploads/2021/08/SUMMIT-One-Vanderbilt-Best-Observation-Deck-NYC-210910093444008-150x150.jpg 150w, https://loving-newyork.com/wp-content/uploads/2021/08/SUMMIT-One-Vanderbilt-Best-Observation-Deck-NYC-210910093444008-420x420.jpg 420w" data-src="https://loving-newyork.com/wp-content/uploads/2021/08/SUMMIT-One-Vanderbilt-Best-Observation-Deck-NYC-210910093444008-640x640.jpg">
+									</div>
+									<div class="lnyc-teaser-round__content">
+								<div class="lnyc-teaser-round__category h6">Attractions</div>
+							<h3 class="lnyc-teaser-round__headline h5">The 43 Absolute Best New York Attractions In 2025</h3>
+						<p class="lnyc-teaser-round__copy p">With famous New York landmarks like the Empire State Building, Rockefeller Center or the Brooklyn... </p>
+					</div>
+				</a>
+			</article></div>
+<h2 style="text-align: center;">Suggested articles</h2>
+<div class="lnyc_vorschaubox norm shortcode_vorschau owl-carousel"><article style="background-color:#81b71a" class="tile tile">
+				<a class="" href="https://loving-newyork.com/the-best-helicopter-ride-new-york-city/">
+					<img alt="Helicopter Flight NYC Alternative" title="Helictoper-Flight-NYC-alternativ-640×640" class="teaser_image | blurred lazyload" src="https://loving-newyork.com/wp-content/uploads/2021/08/Helictoper-Flight-NYC-alternativ-640x640-1-10x10.jpg" data-srcset="https://loving-newyork.com/wp-content/uploads/2021/08/Helictoper-Flight-NYC-alternativ-640x640-1.jpg 640w, https://loving-newyork.com/wp-content/uploads/2021/08/Helictoper-Flight-NYC-alternativ-640x640-1-300x300.jpg 300w, https://loving-newyork.com/wp-content/uploads/2021/08/Helictoper-Flight-NYC-alternativ-640x640-1-150x150.jpg 150w, https://loving-newyork.com/wp-content/uploads/2021/08/Helictoper-Flight-NYC-alternativ-640x640-1-420x420.jpg 420w, https://loving-newyork.com/wp-content/uploads/2021/08/Helictoper-Flight-NYC-alternativ-640x640-1-400x400.jpg 400w, https://loving-newyork.com/wp-content/uploads/2021/08/Helictoper-Flight-NYC-alternativ-640x640-1-10x10.jpg 10w" data-src="https://loving-newyork.com/wp-content/uploads/2021/08/Helictoper-Flight-NYC-alternativ-640x640-1-640x640.jpg">
+					<div class="tile__inner">
+						<div class="tile__content" style="--background-color:#81b71a">
+							<div class="tile__headline "><span class="category h6">Helicopter Tours</span><h3 class="h5">The 11 Best Helicopter Tours in NYC for 2025</h3></div>
+							<div class="tile__copy p">A helicopter tour is one of the most exciting things you can do during your... </div>
+							<div class="tile__button  button button--solid button--white smalltile">Read more </div>
+							<div class="tile__overlay"></div>
+						</div>
+					</div>
+				</a>
+			</article><article style="background-color:#3f8e36" class="tile tile">
+				<a class="" href="https://loving-newyork.com/musicals-and-broadway-shows-in-new-york/">
+					<img alt="Broadway Shows NYC Guide" title="musicals-broadway-shows-new-york-guide-alternative" class="teaser_image | blurred lazyload" src="https://loving-newyork.com/wp-content/uploads/2021/07/musicals-broadway-shows-new-york-guide-alternative-10x10.jpg" data-srcset="https://loving-newyork.com/wp-content/uploads/2021/07/musicals-broadway-shows-new-york-guide-alternative.jpg 640w, https://loving-newyork.com/wp-content/uploads/2021/07/musicals-broadway-shows-new-york-guide-alternative-300x300.jpg 300w, https://loving-newyork.com/wp-content/uploads/2021/07/musicals-broadway-shows-new-york-guide-alternative-150x150.jpg 150w, https://loving-newyork.com/wp-content/uploads/2021/07/musicals-broadway-shows-new-york-guide-alternative-420x420.jpg 420w, https://loving-newyork.com/wp-content/uploads/2021/07/musicals-broadway-shows-new-york-guide-alternative-400x400.jpg 400w, https://loving-newyork.com/wp-content/uploads/2021/07/musicals-broadway-shows-new-york-guide-alternative-10x10.jpg 10w" data-src="https://loving-newyork.com/wp-content/uploads/2021/07/musicals-broadway-shows-new-york-guide-alternative-640x640.jpg">
+					<div class="tile__inner">
+						<div class="tile__content" style="--background-color:#3f8e36">
+							<div class="tile__headline "><span class="category h6">Broadway Show</span><h3 class="h5">The Complete Guide to Broadway Shows in New York</h3></div>
+							<div class="tile__copy p">No other city has as much entertainment to offer as New York City, especially when... </div>
+							<div class="tile__button  button button--solid button--white smalltile">Read more </div>
+							<div class="tile__overlay"></div>
+						</div>
+					</div>
+				</a>
+			</article><article style="background-color:#3eddac" class="tile tile">
+				<a class="" href="https://loving-newyork.com/best-burger-in-new-york/">
+					<img alt="Homemade Burger" title="Homemade Burger" class="teaser_image | blurred lazyload" src="https://loving-newyork.com/wp-content/uploads/2015/06/best-burger-in-new-york-10x5.jpg" data-srcset="https://loving-newyork.com/wp-content/uploads/2015/06/best-burger-in-new-york-640x640.jpg 640w, https://loving-newyork.com/wp-content/uploads/2015/06/best-burger-in-new-york-150x150.jpg 150w, https://loving-newyork.com/wp-content/uploads/2015/06/best-burger-in-new-york-420x420.jpg 420w" data-src="https://loving-newyork.com/wp-content/uploads/2015/06/best-burger-in-new-york-640x640.jpg">
+					<div class="tile__inner">
+						<div class="tile__content" style="--background-color:#3eddac">
+							<div class="tile__headline "><span class="category h6">Burger Restaurants</span><h3 class="h5">The Best Burger in New York City</h3></div>
+							<div class="tile__copy p">New York City has countless delicious burgers, the trouble is picking between them when you... </div>
+							<div class="tile__button  button button--solid button--white smalltile">Read more </div>
+							<div class="tile__overlay"></div>
+						</div>
+					</div>
+				</a>
+			</article><article style="background-color:#e62164" class="tile tile">
+				<a class="" href="https://loving-newyork.com/cheap-hotels-in-new-york/">
+					<img alt="51-fullpod-1" title="51-fullpod-1" class="teaser_image | blurred lazyload" src="https://loving-newyork.com/wp-content/uploads/2015/06/51-fullpod-1-10x4.jpg" data-srcset="" data-src="https://loving-newyork.com/wp-content/uploads/2015/06/51-fullpod-1-640x402.jpg">
+					<div class="tile__inner">
+						<div class="tile__content" style="--background-color:#e62164">
+							<div class="tile__headline "><span class="category h6">Hotels &amp; Accommodations</span><h3 class="h5">The 24 Best Cheap Hotels in NYC in 2025</h3></div>
+							<div class="tile__copy p">There's nothing like the hustle and bustle of New York City; it truly is one... </div>
+							<div class="tile__button  button button--solid button--white smalltile">Read more </div>
+							<div class="tile__overlay"></div>
+						</div>
+					</div>
+				</a>
+			</article><article style="background-color:#81b71a" class="tile tile">
+				<a class="" href="https://loving-newyork.com/cruises-sailing-and-water-tours-around-new-york/">
+					<img alt="Cruises New York" title="Cruises New York" class="teaser_image | blurred lazyload" src="https://loving-newyork.com/wp-content/uploads/2015/06/Cruises-New-York-10x4.jpg" data-srcset="" data-src="https://loving-newyork.com/wp-content/uploads/2015/06/Cruises-New-York-640x610.jpg">
+					<div class="tile__inner">
+						<div class="tile__content" style="--background-color:#81b71a">
+							<div class="tile__headline "><span class="category h6">Cruises</span><h3 class="h5">The best sightseeing cruises, sailing and water tours in New York</h3></div>
+							<div class="tile__copy p">A cruise is a truly special experience that will give you the feeling of a... </div>
+							<div class="tile__button  button button--solid button--white smalltile">Read more </div>
+							<div class="tile__overlay"></div>
+						</div>
+					</div>
+				</a>
+			</article><article style="background-color:#823d8f" class="tile tile">
+				<a class="" href="https://loving-newyork.com/tickets-for-sporting-events-in-new-york/">
+					<img alt="header-sport-events-2" title="header-sport-events-2" class="teaser_image | blurred lazyload" src="https://loving-newyork.com/wp-content/uploads/2018/08/header-sport-events-2-10x5.jpg" data-srcset="https://loving-newyork.com/wp-content/uploads/2018/08/header-sport-events-2-640x640.jpg 640w, https://loving-newyork.com/wp-content/uploads/2018/08/header-sport-events-2-150x150.jpg 150w, https://loving-newyork.com/wp-content/uploads/2018/08/header-sport-events-2-420x420.jpg 420w" data-src="https://loving-newyork.com/wp-content/uploads/2018/08/header-sport-events-2-640x640.jpg">
+					<div class="tile__inner">
+						<div class="tile__content" style="--background-color:#823d8f">
+							<div class="tile__headline "><span class="category h6">Sports Tickets</span><h3 class="h5">Tickets for Sporting Events in New York</h3></div>
+							<div class="tile__copy p">When in New York you will have a tough decision on which sports game to... </div>
+							<div class="tile__button  button button--solid button--white smalltile">Read more </div>
+							<div class="tile__overlay"></div>
+						</div>
+					</div>
+				</a>
+			</article></div>
+<h2 style="text-align: center;">Best of the Best</h2>
+<div class="feature" style="background-color:#ffae0d"><a href="https://loving-newyork.com/top-10-attractions-in-new-york/"><img alt="The 43 Absolute Best New York Attractions In 2025" title="The 43 Absolute Best New York Attractions In 2025" src="https://loving-newyork.com/wp-content/uploads/2021/08/SUMMIT-One-Vanderbilt-Best-Observation-Deck-NYC-210910093444008-10x3.jpg" data-srcset data-src="https://loving-newyork.com/wp-content/uploads/2021/08/SUMMIT-One-Vanderbilt-Best-Observation-Deck-NYC-210910093444008-1920x640.jpg" class="feature__background lazyload"><div class="feature__content"><div class="feat_cont"><h3 class="feature__headline">TOP 10 Attractions</h3><p class="feature__subline">Don't miss these attractions!</p><div class="featbut" style="color:#ffae0d !important;">
+							<div class="lnyc_button_4" style="background-color:#fff !important;  color:#ffae0d !important;">FIND OUT MORE
+							</div>
+						</div></div></div></a></div>
+
+<div class="feature" style="background-color:#3eddac"><a href="https://loving-newyork.com/best-rooftop-bars-in-new-york/"><img alt="The 47 Best Rooftop Bars in New York" title="The 47 Best Rooftop Bars in New York" src="https://loving-newyork.com/wp-content/uploads/2019/08/best-rooftop-bars-nyc-210204170830019-1920x960-1-10x5.jpg" data-srcset data-src="https://loving-newyork.com/wp-content/uploads/2019/08/best-rooftop-bars-nyc-210204170830019-1920x960-1-1920x640.jpg" class="feature__background lazyload"><div class="feature__content"><div class="feat_cont"><h3 class="feature__headline">The 47 Best Rooftop Bars in New York</h3><p class="feature__subline">New York’s rooftop bars are one of our personal highlights. Think about it - what could be better than enjoying stunning views of the city while slurping delicious cocktails? For that reason, we created the...</p><div class="featbut" style="color:#3eddac !important;">
+							<div class="lnyc_button_4" style="background-color:#fff !important;  color:#3eddac !important;">FIND OUT MORE
+							</div>
+						</div></div></div></a></div>
+<p style="text-align: center;"><a title="Unsere New York Bestenlisten" href="https://loving-newyork.com/new-york-best-of-the-best/">Here you can find all of our best of the best from all categories.</a>.</p>
+<h2 style="text-align: center;">Discover New York City</h2>
+<p style="text-align: center;"> All spots on one map – we offer insider information to all spots that are shown below.</p>
+<p>[mappin]</p>
+</div>	<div id="lt-author-box" class="lt-author-meta">
+			 
+				<div class="lt-author-meta__image">				
+					<a href="https://loving-newyork.com/author/steffen/" title="Steffen"><img  src="https://loving-newyork.com/wp-content/uploads/2022/11/Steffen-2022.png" title="Profilbild von Steffen Kneist" alt="Profilbild Steffen Kneist"/></a>				
+				</div>
+				<div class="lt-author-meta__content">
+				<div class="h6">About the author</div><h1 class="name h1"><a href="https://loving-newyork.com/author/steffen/" title="Steffen">Steffen</a></h1>		
+				<p class="description">I'm a true New York fan! Not only have I visited the city over 25 times but also have I spent several months here at a time. On my blog I show you the best and most beautiful spots of the city, so that you have a really good time! You can also find lots of insider tips in our <a href="https://shop.loving-newyork.com/products/travel-guide-new-york?utm_source=Webseite&amp;utm_medium=link&amp;utm_campaign=author-steffen-profil" title="Loving New York Reiseführer">New York travel guide</a>. Also check out my <a href="https://loving-newyork.com/new-york-hotel-finder/" title="Where in New York should you stay">hotel finder for New York</a>!</p>		
+				</div>
+			</div></article></div></main><div id="lnyc-newsletter-box" class="newsletter-box">
+			<div class="avatar-wrapper">
+                <img 
+                    alt=""
+                    title="Steffen-2022"
+                    class="avatar blurred lazyload"
+                    src="https://loving-newyork.com/wp-content/uploads/2022/11/Steffen-2022-10x10.png" 
+                    data-src="https://loving-newyork.com/wp-content/uploads/2022/11/Steffen-2022.png" 
+                    data-srcset="https://loving-newyork.com/wp-content/uploads/2022/11/Steffen-2022.png 300w, https://loving-newyork.com/wp-content/uploads/2022/11/Steffen-2022-150x150.png 150w, https://loving-newyork.com/wp-content/uploads/2022/11/Steffen-2022-10x10.png 10w" 
+                />
+            </div>
+        <div class="lnyc-newsletter-content"><span class="lnyc-newsletter-site-title">Loving New York</span><div class="lnyc-newsletter-top-lettering"></div><form action="//lovingnewyork.us4.list-manage.com/subscribe/post?u=09e2622e8b2bc0b8abc522b16&amp;id=b553cef5e2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate><div id="mc_embed_signup_scroll"><p>Get your weekly dose of New York with my Loving New York newsletter! It is packed with the latest articles, videos, reviews and everything that is currently happening in the Big Apple that is interesting and worth knowing.</p><p>I myself have been to my favourite city over 25 times and with my emails, I would like to help you have a sensational time there.</p><p>And as a BONUS, you will receive the subway map and the official NYC map. Completely FREE!</p><div class="wrapper-outer"><div class="mc-field-group"><input type="text" value="" name="NAME" class="required" id="mce-NAME" placeholder="First name *"></div><div class="mc-field-group"><input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Your email *"></div></div><p><strong>Start of your trip:</strong> We will remind you with current events when you are in NYC!</p><div class="mc-field-group lnyc-newsletter-select"><span class="lnyc-newsletter-plus-icon">+</span><select name="REISESTART" class="" id="mce-REISESTART"><option selected="true" value="" disabled="disabled">Choose month</option><option value="12/01/2025">December 2025</option><option value="01/01/2026">January 2026</option><option value="02/01/2026">February 2026</option><option value="03/01/2026">March 2026</option><option value="04/01/2026">April 2026</option><option value="05/01/2026">May 2026</option><option value="06/01/2026">June 2026</option><option value="07/01/2026">July 2026</option><option value="08/01/2026">August 2026</option><option value="09/01/2026">September 2026</option><option value="10/01/2026">October 2026</option><option value="11/01/2026">November 2026</option><option value="12/31/2025">At some point in 2025</option><option value="12/31/2026">At some point in 2026</option></select></div><div class="mc-field-group"><div class="data-privacy-checkbox"><div class="data-privacy-checkbox__input-wrapper"><input type="checkbox" value="1" name="PRIVACY" class="required" id="data-privacy-69336016b4e17" required ><label class="data-privacy-checkbox__checkbox-label" for="data-privacy-69336016b4e17"><span></span></label></div><label class="data-privacy-checkbox__input-label" for="data-privacy-69336016b4e17">I have read and accept the <a target="_blank" href="https://loving-newyork.com/privacy-policy/">privacy policy</a>.</label></div></div><div id="mce-responses" class="clear"><div class="response" id="mce-error-response" style="display:none"></div><div class="response" id="mce-success-response" style="display:none"></div></div><div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_09e2622e8b2bc0b8abc522b16_1a4a026b4d" tabindex="-1" value=""></div><input type="hidden" name="AUTOMATION" value="frontpage" /><input id="lnyc_newsletter_ref" type="hidden" name="REF" readonly value="" /><div class="clear"><input type="submit" value="Register now" name="subscribe" id="mc-embedded-subscribe" class="button button--solid button--brand lnyc-newsletter-button"></div></div></form><script>window.fnames = new Array(); window.ftypes = new Array();fnames[1]='NAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='REISESTART';ftypes[3]='date';</script></div></div></div>
+
+<div id='n_layer' class='is_app_web_view_footer'></div>
+<div id='lnyc_footer' class='is_app_web_view_footer'>
+	<div class='fwrap'>
+		<div class='ftop'>
+
+		</div>
+
+		<div class='fbox'>
+			<aside id="text-2" class="widget widget_text"><h3 class="widget-title">Things To Do</h3>			<div class="textwidget"><ul>
+<li><a title="Things to do in NYC" href="https://loving-newyork.com/things-to-do/">Things to do in NYC</a></li>
+<li><a title="Things to do in NYC today" href="https://loving-newyork.com/things-to-do/things-to-do-in-new-york-today/">Things to do in NYC today</a></li>
+<li><a title="Things to do in NYC this weekend" href="https://loving-newyork.com/things-to-do/things-to-do-in-nyc-this-weekend/">Things to do in NYC this weekend</a></li>
+<li><a title="Things to do in NYC this week" href="https://loving-newyork.com/things-to-do/things-to-do-in-nyc-this-week/">Things to do in NYC this week</a></li>
+</ul>
+</div>
+		</aside><aside id="text-7" class="widget widget_text"><h3 class="widget-title">Contact Us</h3>			<div class="textwidget"><p>For any media related topics / partnership requests please contact:<br />
+<a title="" href="mailto:steffen@loving-newyork.com" target="_blank" rel="noopener">steffen@loving-newyork.com</a></p>
+<p>For any other questions please contact: <a href="mailto:Hello@loving-newyork.com">hello@loving-newyork.com</a></p>
+</div>
+		</aside>		</div>
+
+		<div class='fbox'>
+			<aside id="text-3" class="widget widget_text"><h3 class="widget-title">Popular attractions</h3>			<div class="textwidget"><ul>
+<li><a title="TOP 10 attractions NYC" href="/top-10-attractions-in-new-york/">Best attractions in NYC</a></li>
+<li><a title="Empire State Building" href="/empire-state-building-new-york/">Empire State Building</a></li>
+<li><a title="Top of the Rock" href="/top-of-the-rock-observation-deck/">Top of the Rock</a></li>
+<li><a title="Ground Zero" href="https://loving-newyork.com/hudson-yards-observation-deck/">Edge Observation Deck</a></li>
+<li><a title="9/11 Memorial Museum" href="/911-memorial-museum-in-new-york/">9/11 Memorial Museum</a></li>
+<li><a title="One World Trade Center" href="/one-world-trade-center-new-york/">One World Trade Center</a></li>
+<li><a title="One World Observatory" href="/one-world-observatory-new-york/">One World Observatory</a></li>
+<li><a title="Summit One Vanderbilt" href="https://loving-newyork.com/one-vanderbilt-summit/">Summit One Vanderbilt</a></li>
+</ul>
+</div>
+		</aside>		</div>
+
+		<div class='fbox'>
+			<aside id="text-5" class="widget widget_text"><h3 class="widget-title">Popular tours</h3>			<div class="textwidget"><ul>
+<li><a title="Things to do in New York" href="/top-10-things-to-do-in-new-york-city/">TOP 10 Things to do</a></li>
+<li><a title="best rooftop bars NYC" href="/best-rooftop-bars-in-new-york/">Best rooftop bars in NYC</a></li>
+<li><a title="Helicopter ride New York" href="/helicopter-ride-new-york/">Helicopter rides New York</a></li>
+<li><a title="Dinner Cruises NYC" href="/dinner-cruises-in-new-york/">Dinner Cruises</a></li>
+<li><a title="Cruises New York" href="/cruises-sailing-and-water-tours-around-new-york/">All Cruises &amp; Water tours</a></li>
+<li><a title="Hop on Hop off New York" href="/hop-on-hop-off-bus-new-york/">Hop-on Hop-off New York</a></li>
+</ul>
+</div>
+		</aside>		</div>
+
+		<div class='fbox'>
+			<aside id="text-4" class="widget widget_text"><h3 class="widget-title">Tickets &#038; passes</h3>			<div class="textwidget"><ul>
+<li><a title="New York Pass Comparison" href="/comparison-new-york-pass-explorer-pass-and-citypass/">New York Pass Comparison</a></li>
+<li><a title="Savings calculator" href="/new-york-pass-adviser/">Savings calculator</a></li>
+<li><a title="New York Pass" href="/new-york-pass/">New York Pass</a></li>
+<li><a title="New York Sightseeing Pass" href="https://loving-newyork.com/new-york-sightseeing-pass/">Sightseeing Pass NYC</a></li>
+<li><a title="CityPASS NYC" href="/new-york-citypass/">CityPASS</a></li>
+<li><a title="Explorer Pass New York" href="/new-york-explorer-pass/">Explorer Pass</a></li>
+</ul>
+</div>
+		</aside>		</div>
+
+
+
+		<div style='clear:both;'></div>
+
+		<div class='fboxbreit'>
+			<aside id="text-6" class="widget widget_text">			<div class="textwidget"><p style="text-align: center;"><a href="https://shop.loving-newyork.com/products/travel-guide-new-york" target="_blank" rel="noopener"><img loading="lazy" decoding="async" class="alignnone wp-image-110710" title="Loving New York Travel Guide" src="https://loving-newyork.com/wp-content/uploads/2021/09/new-teaser-guide-Loving-New-York-Travel-Guide.png" alt="Loving New York Travel Guide" width="190" height="283" /></a>      <a href="https://shop.loving-newyork.com/products/top-50-things-to-do-in-nyc" target="_blank" rel="noopener"><img loading="lazy" decoding="async" class="alignnone wp-image-110711" title="Magazine TOP 50 Things to Do in NYC by Loving New York" src="https://loving-newyork.com/wp-content/uploads/2021/09/new-teaser-guide-TOP50-NYC.png" alt="Magazine TOP 50 Things to Do in NYC by Loving New York" width="190" height="278" /></a>      <a href="https://shop.loving-newyork.com/collections/emagazines/products/new-york-for-first-time-visitors" target="_blank" rel="noopener"><img loading="lazy" decoding="async" class="alignnone wp-image-110709" title="Magazine New York for First-Time Visitors by Loving New York" src="https://loving-newyork.com/wp-content/uploads/2021/09/new-teaser-guide-first-time-visitors.png" alt="Magazine New York for First-Time Visitors by Loving New York" width="190" height="261" /></a></p>
+<p style="text-align: center;"><a title="New York-Blog" href="/new-york-blog" target="_self">About us</a> | <a href="/press/">Press</a> | <a title="" href="/imprint-contact/" target="_self">Imprint &amp; Contact</a> | <a title="Privacy Policy" href="https://loving-newyork.com/privacy-policy/">Privacy Policy</a> | <a title="" href="/terms-conditions/" target="_self">Terms &amp; Conditions</a> | <a title="" href="/cancellation-terms/">Cancellation Terms</a></p>
+<p>&nbsp;</p>
+</div>
+		</aside>		</div>
+
+	</div>
+</div>
+
+
+</div>
+
+<!-- <noscript>
+	<div id="javascript-error">
+		<div class="errormessage">
+			<h3>JavaScript is deactivated			</h3>
+			<p>
+				JavaScript is required in order to use this site.<br>
+				Please enable JavaScript in your browser.			</p>
+		</div>
+	</div>
+</noscript> -->
+
+
+
+
+		<div class="ie-message is_app_web_view_ie_message">
+			 
+		</div>
+
+
+
+<script src="https://loving-newyork.com/wp-content/themes/lnyc/js-minified/jquery-1.12.4.min.js?ver=6.8.3" defer="defer"></script>
+<script type="text/javascript" id="_js-js-extra">
+/* <![CDATA[ */
+var meRatingL10n = {"ajaxUrl":"https:\/\/loving-newyork.com\/wp-admin\/admin-ajax.php","postId":""};
+/* ]]> */
+</script>
+<script src="https://loving-newyork.com/wp-content/plugins/me-rating/public/js/me-rating.js?ver=1.0.8" defer="defer"></script>
+<script type="text/javascript" async="async" fetchpriority="high" data-noptimize="1" data-cfasync="false" src="https://scripts.mediavine.com/tags/loving-new-york.js?ver=6.8.3" id="mv-script-wrapper-js"></script>
+<script src="https://loving-newyork.com/wp-content/themes/lnyc/js-minified/libs/mandatory/minified.js?ver=1764575934" defer="defer"></script>
+<script type="text/javascript" id="lnyc-minified-js-extra">
+/* <![CDATA[ */
+var lnycL10n = {"l10nHomeUrl":"https:\/\/loving-newyork.com","l10nLocale":"en-US","themeUrl":"https:\/\/loving-newyork.com\/wp-content\/themes\/lnyc","l10nAnd":"and","l10nAdults":"adults","l10nAdult":"adult","l10nChildren":"children","l10nChild":"child","l10nTotalSum":"Total","l10BadCombination":"Your selection is not part of the pass you have chosen ","l10PassSum":"Total cost of your pass","l10ExcludedInfo":"The following ticktets are not included in your pass and have to be booked additionally ","l10nSaving":"You save","l10nNoSaving":"no savings ","l10nTooManyPerDay":"Visiting more than 3 attractions per day might be stressful. We don\u2019t recommend this.","l10nNoPersonsSelected":"Please choose number of people","l10nBuyNow":"Buy pass now","l10nPassDetails":"Details about the pass","l10nPriceOverview":"Pricing","l10nSpotsIncluded":"attractions included","l10nAdditionalTickets":"Additional tickets ","l10nNotIncludedInPass":"not included","l10nRegularPrice":"Regular price for your choice","l10nMessagePassSavingsZero":"The pass costs just as much as the individual tickets, but you don't have to worry about anything else. For me, it's 100% convenience!","l10nPassadisorBuy":"kaufen","l10nErrorNoMail":"Please enter a valid E-Mail address  ","l10nErrorInvalidMail":"Please provide a valid email address ","l10nNoSelection":"At least one attraction has to be chosen ","l10nErrorMultipleMails":"Please separate multiple email addresses with a comma.","l10nPasswordTooShort":"Das Passwort muss mindestens 8 Zeichen lang sein.","l10nPasswordContainsBackslash":"Das Passwort darf kein \"\\\" enthalten.","l10nPasswordsDoNotMatch":"The passwords don't match.","l10nInvalidCharactersInUsername":"Der Benutzername enth\u00e4lt unerlaubte Zeichen","l10nMynyRemoveAttraction":"Are you sure you want to delete these attractions?","l10nMynyMoveAttraction":"Move to","l10nMynyDay":"Day","l10nMynyMonday":"Monday","l10nMynyTuesday":"Tuesday","l10nMynyWednesday":"Wednesday","l10nMynyThursday":"Thursday","l10nMynyFriday":"Friday","l10nMynySaturday":"Saturday","l10nMynySunday":"Sunday","l10nMynyMondayShort":"Mo","l10nMynyTuesdayShort":"Tu","l10nMynyWednesdayShort":"We","l10nMynyThursdayShort":"Th","l10nMynyFridayShort":"Fr","l10nMynySaturdayShort":"Sa","l10nMynySundayShort":"Su","l10nMynyJanuary":"January","l10nMynyFebruary":"February","l10nMynyMarch":"March","l10nMynyApril":"April","l10nMynyMay":"May","l10nMynyJune":"June","l10nMynyJuly":"July","l10nMynyAugust":"August","l10nMynySeptember":"September","l10nMynyOctober":"October","l10nMynyNovember":"November","l10nMynyDecember":"December","l10nMynyJanuaryShort":"Jan","l10nMynyFebruaryShort":"Feb","l10nMynyMarchShort":"Mar","l10nMynyAprilShort":"Apr","l10nMynyMayShort":"May","l10nMynyJuneShort":"Jun","l10nMynyJulyShort":"Jul","l10nMynyAugustShort":"Aug","l10nMynySeptemberShort":"Sep","l10nMynyOctoberShort":"Oct","l10nMynyNovemberShort":"Nov","l10nMynyDecemberShort":"Dec","l10nMynyDatepickerTimePeriod":"Choose a time frame","l10nMynyDatepickerApply":"set","l10nMynyDatepickerClear":"Reset","l10nMynyDatepickerCancel":"discard","l10nMynyDatepickerDateformat":"dd.mm.yy","l10nMynyCopyList":"Warning! You are about to overwrite your existing travel plans. Do you want to proceed?","l10nMynyEventNotAvailable":"This event won't take place on this day.","l10nClose":"CLOSE","l10nSet":"set","currentPostID":"","l10nFormValidationDefault":"Please make sure to fill in this field","l10nFormValidationEmail":"Please enter a valid email address.","l10nFormValidationDigits":"Please enter only numbers.","defaultMapArea":{"north":"40.833237868573384","south":"40.62984348599","east":"-73.87639959765636","west":"-74.13585241748103"},"ajaxUrl":"https:\/\/loving-newyork.com\/wp-admin\/admin-ajax.php","templateUrl":"https:\/\/loving-newyork.com\/wp-content\/themes\/lnyc","l10nAlreadyAddedEverythingToMyny":"The spots you have chosen have already been added to myNY","l10nOneSpotWasAdded":"1 spot was added to myNY","l10nManySpotsWereAdded":"Your spots have been added to myNY","l10nSelectionOverwritten":"Spots und Personenanzahl erfolgreich aus myNY \u00fcbernommen","l10nSelectionOverwrittenError":"That didn\u2019t work! Please try again in a few minutes.","l10nErrorPleaseReloadThePage":"Oops, something went wrong! Please reload the page.","l10nAllSpotsIncludedInPass":"All of your chosen spots are included in this pass","l10nPassBest":"Cheapest sightseeing pass (combination of pass and individual tickets):","l10nPassConvenientEqualsBest":"The best pass for you","l10nPassConvenientAllSpots":"The most convenient pass (all attractions included)","l10nPassConvenientMostSpots":"The most convenient pass (most of your attractions included)","l10nReadArticle":"Read article ","l10nBuyTickets":"See tickets","l10nBuyTickets2":"Buy tickets","l10nGoToHomePage":"see Website","l10nMynyWelcomePage":"","l10nFurtherMynyInfo":"This is MyNY","travelguideSearchPage":"","travelguideStartSiteSearch":"Search for \u201c%searchword%\u201d in our articles","currencySymbol":"$","currencyIsoCode":"USD","currencyDisplayAfter":"","cookieBarExpriresInDays":"30","timeFormat":"HH:mm:ss","l10nSpotsInList":"Spots in this list","l10nSpotInList":"Spot in this list","l10nNoFurtherArticles":"No more articles found","l10nNoFurtherReviews":"Keine weiteren Bewertungen gefunden","l10nNoFurtherProviders":"Keine weiteren Anbieter gefunden","l10nAddToMyNy":"Add to myNY","l10nAddedToMyNy":"added","l10nTableOfContents":"Contents","l10bAjaxFallbackBarHeadline":"Unexpected Problem","l10bAjaxFallbackBarText":"Something went wrong","l10bAjaxFallbackBarButton":"Close","l10nMynyRemovePlan":"M\u00f6chtest du deinen Reiseplan wirklich zur\u00fccksetzen?\n\nEinmal zur\u00fcckgesetzt, k\u00f6nnen wir deine Daten leider auch nicht mehr wiederherstellen.\n\nDu bist dir sicher? Dann klicke hier, um alle Daten von deinem Reiseplan zu l\u00f6schen"};
+/* ]]> */
+</script>
+<script src="https://loving-newyork.com/wp-content/themes/lnyc/js-minified/mandatory/minified.js?ver=1764575935" defer="defer"></script>
+<script type="text/javascript" id="swp-live-search-client-js-extra">
+/* <![CDATA[ */
+var searchwp_live_search_params = [];
+searchwp_live_search_params = {"ajaxurl":"https:\/\/loving-newyork.com\/wp-admin\/admin-ajax.php","origin_id":0,"config":{"default":{"engine":"default","input":{"delay":250,"min_chars":3},"results":{"position":"bottom","width":"css","offset":{"x":0,"y":5}},"spinner":{"lines":12,"length":8,"width":3,"radius":8,"scale":1,"corners":1,"color":"#e62163","fadeColor":"transparent","speed":1,"rotate":0,"animation":"searchwp-spinner-line-fade-quick","direction":1,"zIndex":2000000000,"className":"spinner","top":"50%","left":"50%","shadow":"0 0 1px transparent","position":"absolute"}}},"msg_no_config_found":"No valid SearchWP Live Search configuration found!","aria_instructions":"When autocomplete results are available use up and down arrows to review and enter to go to the desired page. Touch device users, explore by touch or with swipe gestures."};;
+/* ]]> */
+</script>
+<script src="https://loving-newyork.com/wp-content/plugins/searchwp-live-ajax-search/assets/javascript/dist/script.min.js?ver=1.8.6" defer="defer"></script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js?ver=1.0.0" defer="defer"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAgh36xob8aLWmFxitWMMgoLVv21BYSwLs" defer="defer"></script>
+<script src="https://loving-newyork.com/wp-content/themes/lnyc/js-minified/libs/conditional/map/minified.js?ver=1764575934" defer="defer"></script>
+<script src="https://loving-newyork.com/wp-content/themes/lnyc/js-minified/conditional/map.js?ver=1764575934" defer="defer"></script>
+<script src="https://loving-newyork.com/wp-content/themes/lnyc/js-minified/conditional/mailchimp.js?ver=1764575934" defer="defer"></script>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/lnyc\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div id="user-area"><div class="headbar"><i class="myny-heart"></i><div id="close-user-area"><i class="close-btn"></i></div></div><div id="user-modal-content"></div></div><div id="mask-user-area"></div>        <style>
+            .searchwp-live-search-results {
+                opacity: 0;
+                transition: opacity .25s ease-in-out;
+                -moz-transition: opacity .25s ease-in-out;
+                -webkit-transition: opacity .25s ease-in-out;
+                height: 0;
+                overflow: hidden;
+                z-index: 9999995; /* Exceed SearchWP Modal Search Form overlay. */
+                position: absolute;
+                display: none;
+            }
+
+            .searchwp-live-search-results-showing {
+                display: block;
+                opacity: 1;
+                height: auto;
+                overflow: auto;
+            }
+
+            .searchwp-live-search-no-results {
+                padding: 3em 2em 0;
+                text-align: center;
+            }
+
+            .searchwp-live-search-no-min-chars:after {
+                content: "Continue typing";
+                display: block;
+                text-align: center;
+                padding: 2em 2em 0;
+            }
+        </style>
+                <script>
+            var _SEARCHWP_LIVE_AJAX_SEARCH_BLOCKS = true;
+            var _SEARCHWP_LIVE_AJAX_SEARCH_ENGINE = 'default';
+            var _SEARCHWP_LIVE_AJAX_SEARCH_CONFIG = 'default';
+        </script>
+        <link rel="stylesheet" href="https://loving-newyork.com/wp-content/plugins/me-rating/public/css/me-rating.css?ver=1.0.8" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://loving-newyork.com/wp-content/plugins/searchwp-live-ajax-search/assets/styles/style.min.css?ver=1.8.6" media="print" onload="this.media='all'"><style id='searchwp-live-search-inline-css' type='text/css'>
+.searchwp-live-search-result .searchwp-live-search-result--title a {
+  font-size: 16px;
+}
+.searchwp-live-search-result .searchwp-live-search-result--price {
+  font-size: 14px;
+}
+.searchwp-live-search-result .searchwp-live-search-result--add-to-cart .button {
+  font-size: 14px;
+}
+
+.searchwp-live-search-result .searchwp-live-search-result--title a {
+  font-size: 16px;
+}
+.searchwp-live-search-result .searchwp-live-search-result--price {
+  font-size: 14px;
+}
+.searchwp-live-search-result .searchwp-live-search-result--add-to-cart .button {
+  font-size: 14px;
+}
+
+</style>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"2946f8ba93874dec8de530439c5c9c1a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Page Caching using Disk: Enhanced (Page is 404) 
+
+Served from: loving-newyork.com @ 2025-12-05 23:43:34 by W3 Total Cache
+-->
