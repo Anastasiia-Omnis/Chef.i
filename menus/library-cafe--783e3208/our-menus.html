@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+
+        })(window, document, 'script', 'dataLayer', 'GTM-KLGQPDC3');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <title>
+	Lessing's - A Tradition of Excellence
+</title><meta name="description" content="Weddings, Restaurants, Food Service Management and Hotel." /><meta name="keywords" content="Weddings, Restaurants, Food Service Management, Hotel, corporate Events, Long Island, New York, Suffolk, Private Parties" /><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" /><link href="/corporate/webimages/_common/icons/i_lessings_logo_favicon.png" rel="icon" type="image/png" /><link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800|Material+Icons|Mrs+Saint+Delafield" rel="stylesheet" /><link type="text/css" rel="stylesheet" media="all" href="/corporate/webstyles/webstyles.css?v=251014b" /><link type="text/css" rel="stylesheet" media="all" href="/corporate/webstyles/webstyles_responsive.css?v=250130a" /><link type="text/css" rel="stylesheet" media="all" href="/corporate/webstyles/webstyles_accessibility.css?v=190422" /><link type="text/css" rel="stylesheet" media="all" href="/corporate/webscripts/jquery/animate/animate.css" /><link type="text/css" rel="stylesheet" media="print" href="/corporate/webstyles/webstyles_print.css?v=151211" />
+
+    <script src="/corporate/webscripts/jquery/core/jquery-1.8.2.js"></script>
+    <script src="/corporate/webscripts/jquery/core/jquery-ui-1.9.1.custom.js"></script>
+    <link type="text/css" rel="stylesheet" media="all" href="/corporate/webscripts/jquery/core/jquery-ui.css" />
+
+    <script src="/corporate/webscripts/js/webmain.js?v=200205c"></script>
+    <script src="/corporate/webscripts/jquery/responsive_design/jquery_main.js?v=200204"></script>
+
+    <script src="/corporate/webscripts/jquery/animate/waypoints/jquery.waypoints.min.js"></script>   
+
+<!-- Start code for MasterSlider -->
+<link type="text/css" rel="stylesheet" href="/corporate/webscripts/jquery/masterslider/style/masterslider.css" /><link type="text/css" rel="stylesheet" href="/corporate/webscripts/jquery/masterslider/skins/default/style.css" /><link type="text/css" rel="stylesheet" href="/corporate/webscripts/jquery/masterslider/style/ms-partialview.css" />
+
+<script src="/corporate/webscripts/jquery/masterslider/js/masterslider.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        if ($(".ms-slide").length >= 1) {
+            var covid_banner_height = $("#wrapper_container_banner_covid").height();
+            var wrapper_header_height = $("#wrapper_header").height();
+            var header_height = covid_banner_height + wrapper_header_height;
+
+            let window_height = $(window).height();
+
+            var width_is = $(window).width();
+            var height_is = window_height;
+
+            if (height_is < 500) { height_is = 500; }               /*LE.201102 - Compensates for landscape view on phones*/
+            else { height_is = height_is - header_height; }
+
+            if ($("#home_hero_photos").length > 0) {
+                var slider = new MasterSlider();
+                slider.setup('home_hero_photos', {
+                    autoHeight: false,
+                    width: width_is,
+                    height: height_is,
+                    layout: "fillwidth",
+                    autoplay: "true",
+                    loop: "false",
+                    speed: 30,
+                    view: "fade",
+                    space: 0,
+                    grabCursor: false,
+                    overPause: false
+                });
+                MSScrollParallax.setup(slider, 50, 40, true);
+                if ($(".ms-slide").length >= 2) { slider.control("arrows", { autohide: false }); }
+            }
+
+            else if ($("#hero_photos").length > 0) {
+                if ($(window).width() > 500) { auto_height = true; height_is = 500; }               /*LE.201102 - Compensates for landscape view on phones*/
+                else { auto_height = false; height_is = 1000; }
+
+                var slider = new MasterSlider();
+                slider.setup('hero_photos', {
+                    autoHeight: false,
+                    width: 1600,
+                    height: height_is,
+                    layout: "fillwidth",
+                    autoplay: "true",
+                    loop: "false",
+                    speed: 30,
+                    view: "fade",
+                    space: 0,
+                    grabCursor: false,
+                    overPause: false
+                });
+                MSScrollParallax.setup(slider, 50, 40, true);
+                //if ($(".ms-slide").length >= 2) { slider.control("arrows", { autohide: false }); }
+            }
+
+            else if ($("#restaurant_hero_photos").length > 0) {
+                var slider = new MasterSlider();
+                slider.setup('restaurant_hero_photos', {
+                    autoHeight: false,
+                    width: 1600,
+                    height: height_is,
+                    layout: "fillwidth",
+                    autoplay: "true",
+                    loop: "false",
+                    speed: 30,
+                    view: "fade",
+                    space: 0,
+                    grabCursor: false,
+                    overPause: false
+                });
+                MSScrollParallax.setup(slider, 50, 40, true);
+                //if ($(".ms-slide").length >= 2) { slider.control("arrows", { autohide: false }); }
+            }
+
+            else if ($("#weddings_hero_photos").length > 0) {
+                if ($(window).width() > 500) { auto_height = true; height_is = 500; }               /*LE.250102 - Compensates for landscape view on phones*/
+                else { auto_height = true; }
+
+                var slider = new MasterSlider();
+                slider.setup('weddings_hero_photos', {
+                    autoHeight: false,
+                    width: 1600,
+                    height: height_is,
+                    layout: "fillwidth",
+                    autoplay: "true",
+                    loop: "false",
+                    speed: 30,
+                    view: "fade",
+                    space: 0,
+                    grabCursor: false,
+                    overPause: false
+                });
+                MSScrollParallax.setup(slider, 50, 40, true);
+            }
+
+            else if ($("#menu_view_photos").length > 0) {
+                var slider = new MasterSlider();
+                slider.setup('menu_view_photos', {
+                    autoHeight: true,
+                    width: 1000,
+                    height: 310,
+                    layout: "fillwidth",
+                    autoplay: "true",
+                    loop: "false",
+                    speed: 30,
+                    view: "fade",
+                    space: 0,
+                    grabCursor: false,
+                    overPause: false
+                });
+            }
+
+            //for loyalty page
+            if ($("#loyalty_program_inner_hero_photos").length > 0) {
+                let auto_height = true;
+
+                if (width_is < 500) { height_is = (window_height / 2) + (header_height * 2); }
+                else if (width_is < 700) { height_is = window_height / 1.8; }
+                else if (width_is < 1000) { height_is = window_height / 1.6; }
+                else { height_is = 500; auto_height = false; }
+
+                var slider = new MasterSlider();
+                slider.setup('loyalty_program_inner_hero_photos', {
+                    autoHeight: auto_height,
+                    width: 1600,
+                    height: height_is,
+                    layout: "fillwidth",
+                    autoplay: "true",
+                    loop: "false",
+                    speed: 30,
+                    view: "fade",
+                    space: 0,
+                    grabCursor: false,
+                    overPause: false
+                });
+                MSScrollParallax.setup(slider, 50, 40, true);
+                //if ($(".ms-slide").length >= 2) { slider.control("arrows", { autohide: false }); }
+            }
+        }
+
+        if ($(".ms-slide").length >= 2) {
+	        $("#hero_controls").show();
+            $("#slide_previous").bind("keypress click", (function (evt) {
+                this.focus();
+                slider.api.previous();
+
+                $("#wcag_live_region").text("Slide " + (slider.api.index() + 1) + " of " + slider.api.count());
+
+                return false;
+            }));
+
+            $("#slide_play_pause").bind("keypress click", (function (evt) {
+                this.focus();
+
+                if ($("#slide_play_pause").attr("title") == "Play") {
+                    slider.api.resume();
+
+                    $("#slide_play_pause").attr("title", "Pause");
+                    $("#slide_play_pause").attr("aria-label", "Pause Slide Show");
+                    $("#slide_play_pause span").html("pause_circle_filled");
+
+                    $("#wcag_live_region").text("Slide show resumed");
+
+                    return false;
+                }
+
+                if ($("#slide_play_pause").attr("title") == "Pause") {
+                    slider.api.pause();
+
+                    $("#slide_play_pause").attr("title", "Play");
+                    $("#slide_play_pause").attr("aria-label", "Resume Slide Show");
+                    $("#slide_play_pause span").html("play_circle_filled");
+
+                    $("#wcag_live_region").text("Slide show paused");
+
+                    return false;
+                }
+            }));
+
+            $("#slide_next").bind("keypress click", (function (evt) {
+                this.focus();
+                slider.api.next();
+
+                $("#wcag_live_region").text("Slide " + (slider.api.index() + 1) + " of " + slider.api.count());
+
+                return false;
+            }));
+        }
+    });
+</script>
+<!-- End code for MasterSlider --><!-- Start code for Fancybox -->
+<link type="text/css" rel="stylesheet" href="/corporate/webscripts/jquery/fancybox/jquery.fancybox.css?v=2.1.3" media="screen" />
+<script src="/corporate/webscripts/jquery/fancybox/jquery.fancybox.pack.js?v=2.1.3"></script>
+
+<script>
+    $(document).ready(function () {
+        $(".fancy_box").fancybox({
+            'helpers': { overlay: { locked: false } }
+        });
+
+        $(".fancybox_iframe").fancybox({
+            'width': 300,
+            'height': 200,
+            'autoScale': true,
+            'transitionIn': 'none',
+            'transitionOut': 'none',
+            'helpers': { overlay: { locked: false } },
+            'type': 'iframe'
+        });
+
+        $(".fancybox_contact").fancybox({
+            'width': 500,
+            'autoScale': true,
+            'transitionIn': 'none',
+            'transitionOut': 'none',
+            'helpers': { overlay: { locked: false } },
+            'type': 'iframe'
+        });
+
+        $(".fancybox_form").fancybox({
+            'width': 700,
+            'autoScale': true,
+            'transitionIn': 'none',
+            'transitionOut': 'none',
+            'helpers': { overlay: { locked: false } },
+            'type': 'iframe'
+        });
+
+        $(".fancybox_iframe_mailing_list").fancybox({
+            'width': 600,
+            'height': 425,
+            'autoScale': true,
+            'transitionIn': 'none',
+            'transitionOut': 'none',
+            'helpers': { overlay: { locked: false } },
+            'type': 'iframe'
+        });
+
+        $(".fancybox_iframe_additional_information").fancybox({
+            'width': 600,
+            'height': 500,
+            'autoScale': true,
+            'transitionIn': 'none',
+            'transitionOut': 'none',
+            'helpers': { overlay: { locked: false } },
+            'type': 'iframe'
+        });
+
+        $(".fancybox_video_vimeo").fancybox({
+            'width': $(window).width() * .9,
+            'height': ($(window).width() * .9) * .5625,
+            'autoScale': false,
+            'transitionIn': 'none',
+            'transitionOut': 'none',
+            'helpers': { overlay: { locked: false } },
+            'type': 'iframe'
+        });
+    });
+</script>
+<!-- End code for Fancybox --><!-- Start code for LightBox -->
+<link rel="stylesheet" type="text/css" href="/corporate/webscripts/jquery/lightbox/themes/default/jquery.lightbox.css?v=180915b" />
+<script src="/corporate/webscripts/jquery/lightbox/jquery.lightbox.min.js"></script>
+<!-- End code for LightBox -->
+
+<style type="text/css">.lightbox {display:none;}</style></head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLGQPDC3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <form method="post" action="/corporate/page_not_found.aspx" id="for_main">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['for_main'];
+if (!theForm) {
+    theForm = document.for_main;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/corporate/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZN9uXEkc2ccRntxOW1AWF6gWPqaksGuNmxf8XRIknimVsbWfmq17GFylMcyQRTkZhA2&amp;t=638901284248157332" type="text/javascript"></script>
+
+
+<script src="/corporate/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvtZrBH-QStGFKevY35Hk47GMXdxcp6fQRbfLmWcqNA0jffBFFZXp4ak7qxJHM8zDpMaNv19V9Fxu7b1lktQ7BmjMSOh25Dpdm00Ht1eao1R3xzmc8NcEJklEIKDGKZt9avoeWNuFiwCUsbC2ScypNa41&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/corporate/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OGw5b6KjVgH_XFUPaxUfpbSi9_KBgboIUG-u68ut3VK3wxisSwJYyINoZKnYdeKaJwo-CxQfZZ8A4jOemo2hgrZV5FMCJFOdQphxnamgKNugr1MqnQDNI3DUf1z_RqYzBOcl-UA_YA_fj8jIxKPEzgw1&amp;t=5c0e0825" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E400EF85" />
+</div>
+        <a name="close"></a>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$scrman_main', 'for_main', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        
+
+        <a href="#container_body_content" class="wrapper_on_focus_only">Skip to Main Content</a><a href="/corporate/accessibility" class="wrapper_on_focus_only">Go to Accessbility Settings</a>
+
+        <div id="site_main">
+            <div id="wrapper_container_banner_covid" class="accessibility">
+                <div id="gift_card_banner" class="is_flex">
+                    <a href="/corporate/loyalty-program"><img src="/corporate/webimages/_core/s_loyalty_program_icon.png?v=250915" alt="" />Join Our Loyalty Program</a>
+                    <a href="/corporate/gift-card"><img src="/corporate/webimages/_core/s_gift_card_icon.png?v=250612" alt="" />Buy Gift Cards</a>
+                </div>
+            </div>
+            <div id="wrapper_header" class="accessibility">
+	            <div id="container_header" role="banner">
+                    <div id="container_logo">
+                        <div id="container_logo_content">
+                            <a id="top_logo" href="/corporate/home" ><img src="/corporate/webimages/common/logo/i_logo_lessings_black.png?v=190626" class="logo" alt="Lessing's Hospitality Group" /></a>
+                        </div>
+                    </div>
+                    <div id="container_responsive_design_menu">
+                        <div id="container_responsive_design_menu_content">
+                            <a id="responsive_menu_links" href="#" onclick="ckeck_popmenu('container_menu');return false;" onkeypress="ckeck_popmenu('container_menu');return false;" role="button" aria-haspopup="true" aria-expanded="false"><span class="material-icons">menu</span></a>
+                        </div>
+                    </div>
+                    <div id="container_menu" class="accessibility">
+                        <div id="container_menu_content">
+                            <div id="menu_non_responsive">
+                                <div id="menu_main_list" role="navigation"><ul><li class=""><a href="/corporate/holiday-parties" style="color:#af0b0a" aria-label="Learn more about our Holiday Parties services">HOLIDAYS</a></li><li class=" has_submenu"><a href="/corporate/about" aria-haspopup="true" aria-expanded="false" aria-label="Learn more about Lessing's">ABOUT</a><ul class="is_sub_menu sub_menu_about"><li><a href="/corporate/about#mission_statement">Our Mission</a></li><li><a href="/corporate/about#company">Our Company</a></li><li><a href="/corporate/about#people">Our People</a></li><li><a href="/corporate/about#our_story">Our Story</a></li><li><a href="/corporate/about#in_the_news">In the News</a></li><li><a href="/corporate/about#awards">Awards</a></li><li><a href="/corporate/about#join_our_team">Join Our Team</a></li><li><a href="/corporate/about#contact_us">Contact Us</a></li></ul></li><li class=" has_submenu"><a href="/corporate/weddings" aria-haspopup="true" aria-expanded="false" aria-label="Learn about Lessing's wedding venues and locations">WEDDINGS</a><ul class="is_sub_menu sub_menu_weddings"><li class="special_grouping_name">Holidays</li><li><a href="/corporate/events/holiday-celebrations">Holiday Celebrations</a></li><li class="special_grouping_name">Events</li><li><a href="/corporate/events/seasonal-events-series">Seasonal Events</a></li><li><a href="/corporate/events/wedding-showcases/69/venues">Wedding Showcases</a></li><li><a href="/corporate/events/exclusives-and-packages">Exclusives & Packages</a></li><li class="special_grouping_name">Locations</li><li><a href="/corporate/weddings#new-venues">New Venues</a></li><li><a href="/corporate/weddings#long-island">Long Island</a></li><li><a href="/corporate/weddings#nyc-westchester">NYC - Westchester</a></li><li><a href="/corporate/weddings#florida">Florida</a></li></ul></li><li class=" has_submenu"><a href="/corporate/restaurants" aria-haspopup="true" aria-expanded="false" aria-label="Learn about Lessing's restaurant locations">RESTAURANTS</a><ul class="is_sub_menu sub_menu_restaurants"><li class="special_grouping_name">Holidays</li><li><a href="/corporate/events/holiday-celebrations">Holiday Celebrations</a></li><li class="special_grouping_name">Events</li><li><a href="/corporate/events/seasonal-events-series">Seasonal Events</a></li><li class="special_grouping_name">Locations</li><li><a href="/corporate/restaurants#long-island">Long Island</a></li><li><a href="/corporate/restaurants#new-york-city">New York City</a></li><li><a href="/corporate/restaurants#florida">Florida</a></li><li><a href="/corporate/restaurants#country-clubs">Country Clubs</a></li><li><a href="/corporate/restaurants#popup-kitchens">Popup Kitchens</a></li><li class="special_grouping_name">Country Clubs</li><li><a href="/corporate/weddings/venue/mansion-at-timber-point#grill_room">Grill Room at Timber Point</a></li><li><a href="/corporate/weddings/venue/heritage-club-at-bethpage#public_house">The Bethpage Public House</a></li><li><a href="/corporate/weddings/venue/the-mansion-at-west-sayville#the_grill_room_ws">The Grill Room at West Sayville</a></li><li><a href="/corporate/weddings/venue/port-jefferson-country-club#the_turn">The Turn at Port Jefferson</a></li><li><a href="/corporate/weddings/venue/360-east-at-montauk-downs#the_terrace">The Terrace at 360 East</a></li><li><a href="/corporate/weddings/venue/whitby-castle#the_terrace_wc">The Terrace at Whitby Castle</a></li></ul></li><li class=" has_submenu"><a href="/corporate/off-premise-catering" aria-haspopup="true" aria-expanded="false" aria-label="Learn about Lessing's off-premise catering">OFF‑PREMISE</a><ul class="is_sub_menu sub_menu_off_premise_catering"><li><div style="display:grid; grid-template-columns: 7fr 3fr; gap: 40px;"><div><p class="location_title">New York</p><div style="display:grid; grid-template-columns: 1fr 1fr;"><div><p class="location_subtitle">East End</p><ul><li><a href="/corporate/off-premise-catering-details#brecknock-hall" target="_blank">Brecknock Hall</a></li><li><a href="/corporate/off-premise-catering-details#montauk-manor" target="_blank">Montauk Manor</a></li><li><a href="/corporate/off-premise-catering-details#parrish-art-museum" target="_blank">Parrish Art Museum</a></li><li><a href="/corporate/off-premise-catering-details#peconic-river-herb-farm" target="_blank">Peconic River Herb Farm</a></li><li><a href="/corporate/off-premise-catering-details#pindar-vineyards" target="_blank">Pindar Vineyards</a></li><li><a href="/corporate/off-premise-catering-details#salt-air-farm" target="_blank">Salt Air Farm</a></li></ul><p class="location_subtitle">Long Island</p><ul><li><a href="/corporate/off-premise-catering-details#parks-and-picnics" target="_blank">Parks and Picnics</a></li><li><a href="/corporate/off-premise-catering-details#the-bates-house" target="_blank">The Bates House</a></li><li><a href="/corporate/off-premise-catering-details#vanderbilt-museum-and-planetarium" target="_blank">Vanderbilt</a></li></ul><p class="location_subtitle">Upstate New York</p><ul><li><a href="/corporate/off-premise-catering-details#kindred-creeks-farm" target="_blank">Kindred Creeks Farm</a></li></ul></div><div><p class="location_subtitle">New York City</p><ul><li><a href="/corporate/off-premise-catering-details#630-second" target="_blank">630 Second</a></li><li><a href="/corporate/off-premise-catering-details#central-park" target="_blank">Central Park</a></li><li><a href="/corporate/off-premise-catering-details#f-ottomanelli-by-the-water" target="_blank">F. Ottomanelli By The Water</a></li><li><a href="/corporate/off-premise-catering-details#golf-and-body" target="_blank">Golf & Body</a></li><li><a href="/corporate/off-premise-catering-details#hammerstein-ballroom" target="_blank">Hammerstein Ballroom</a></li><li><a href="/corporate/off-premise-catering-details#metropolitan-pavilion" target="_blank">Metropolitan Pavilion</a></li><li><a href="/corporate/off-premise-catering-details#midtown-loft" target="_blank">Midtown Loft</a></li><li><a href="/corporate/off-premise-catering-details#penn-plaza-pavilion" target="_blank">Penn Plaza Pavilion</a></li><li><a href="/corporate/off-premise-catering-details#ramscale-studio" target="_blank">Ramscale Studio</a></li><li><a href="/corporate/off-premise-catering-details#studio-450" target="_blank">Studio 450</a></li><li><a href="/corporate/off-premise-catering-details#studio-525" target="_blank">Studio 525</a></li><li><a href="/corporate/off-premise-catering-details#the-altman-building" target="_blank">The Altman Building</a></li><li><a href="/corporate/off-premise-catering-details#the-pillars" target="_blank">The Pillars</a></li><li><a href="/corporate/off-premise-catering-details#ukrainian-institute" target="_blank">Ukrainian Institute</a></li></ul></div></div></div><div><p class="location_title">Florida</p><ul><li><a href="https://www.5starhospitalitycatering.com/" target="_blank">5 Star Hospitality</a></li><li><a href="/corporate/weddings/venue/lessings-events" target="_blank">Lessing's Events</a></li></ul><p class="location_title">Connecticut</p><ul><li><a href="/corporate/off-premise-catering-details#the-knowlton" target="_blank">The Knowlton</a></li></ul></div></div></li></ul></li><li class="" has_submenu"><a href="/corporate/corporate-and-social-events" aria-label="Learn about Lessing's hosting of private affairs">PRIVATE EVENTS</a><ul class="is_sub_menu sub_menu_private_events"><li class="special_grouping_name">Event Spaces</li><li><a href="/corporate/corporate-and-social-events#events-long-island">Long Island</a></li><li><a href="/corporate/corporate-and-social-events#events-nyc-westchester">NYC-Westchester</a></li><li><a href="/corporate/corporate-and-social-events#events-florida">Florida</a></li><li class="special_grouping_name">Restaurants</li><li><a href="/corporate/corporate-and-social-events#restaurants-long-island">Long Island</a></li><li><a href="/corporate/corporate-and-social-events#restaurants-nyc">New York City</a></li><li><a href="/corporate/corporate-and-social-events#restaurants-florida">Florida</a></li></ul></li><li class=""><a href="https://www.lessingsfsm.com" aria-label="Food Service Management (Opens in New Window)" target="_blank">FOOD SERVICE</a></li><li class=""><a href="/corporate/management-services" aria-label="Learn about Lessing's Management Services">MANAGEMENT SERVICES</a></li><li class=""><a href="/corporate/emergency-dining" aria-label="Emergency Dining">EMERGENCY DINING</a></li><li class=""><a href="/corporate/hotel" aria-label="Learn about Lessing's Hotel" target="_blank">HOTEL</a></li></ul></div>
+                            </div>
+                            <div id="menu_responsive"><ul><li class=""><a href="/corporate/home">HOME</a></li><li class=""><a href="/corporate/events/holiday-celebrations">HOLIDAY CELEBRATIONS</a></li><li class=""><a href="/corporate/about" class="rd_menu_about" aria-label="Learn more about Lessing's">ABOUT</a></li><li class=""><a href="/corporate/weddings" class="rd_menu_weddings" aria-label="Learn about Lessing's wedding venues and locations">WEDDINGS</a></li><li class=""><a href="/corporate/restaurants" class="rd_menu_restaurants" aria-label="Learn about Lessing's restaurant locations">RESTAURANTS</a></li><li class=""><a href="/corporate/off-premise-catering" class="rd_menu_off_premises" aria-label="Learn about Lessing's off-premise catering">OFF PREMISE CATERING</a></li><li class=""><a href="/corporate/corporate-and-social-events" class="rd_menu_private_affairs" aria-label="Learn about Lessing's hosting of private affairs">PRIVATE EVENTS</a></li><li class=""><a href="/corporate/food-service" class="rd_menu_food_service" aria-label="Learn about Lessing's Food Service Management">FOOD SERVICE</a></li><li class=""><a href="/corporate/management-services" class="rd_menu_management_services" aria-label="Learn about Lessing's Management Services">MANAGEMENT SERVICES</a></li><li class=""><a href="/corporate/emergency-dining" aria-label="Emergency Dining">EMERGENCY DINING</a></li><li class=""><a href="/corporate/hotel" class="rd_menu_hotel" aria-label="Learn about Lessing's Hotel">HOTEL</a></li><li class=""><a href="/corporate/gift-card" class="rd_menu_gift_cards" aria-label="Learn more about our Gift Card program">GIFT CARDS</a></li><li class=""><a href="/corporate/loyalty-program" class="rd_menu_rewards">LESSING'S LOYALTY</a></li><li class=""><a href="/corporate/site-map" class="rd_menu_site_map">SITE MAP</a></li><li class=""><a href="/corporate/contact" class="rd_menu_contact">CONTACT</a></li></ul></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+<div id="wrapper_side_bar">
+    <ul>
+        <li class="accessibility"><a href="/corporate/accessibility"><img src="https://www.lessings.com/corporate/webimages/common/icons/i_accessibility_white.png" alt="Manage the website's accessibility settings"></a></li>
+    </ul>
+</div>
+
+            
+            
+            <div id="wrapper_body" class="accessibility">
+                <div id="container_body">
+                    
+    <div id="container_body_content" role="main">
+        <h1>PAGE NOT FOUND</h1>
+        <p>Unfortunately the page you are looking for could not be found. Possible reasons include:</p>
+        <ul>
+            <li>&rsaquo; Page was moved.</li>
+            <li>&rsaquo; Page was renamed.</li>
+            <li>&rsaquo; Page was deleted.</li>
+        </ul>
+        <p>Below are some of the most common pages visitors look for:</p>
+        <div id="page_not_found_grid">
+            <div class="page_not_found_box">
+                <h2>Wedding Venues</h2>
+                <ul><li><a href="/corporate/weddings/venue/360-east-at-montauk-downs" >360&deg; East at Montauk Downs</a></li><li><a href="https://www.5starhospitalitycatering.com" target="_blank">5 Star Hospitality</a></li><li><a href="/corporate/weddings/venue/630-second-avenue" >630 Second Avenue</a></li><li><a href="/corporate/weddings/venue/bourne-mansion" >Bourne Mansion</a></li><li><a href="/corporate/weddings/venue/chateau-at-coindre-hall" >Chateau at Coindre Hall</a></li><li><a href="/corporate/weddings/venue/crane-club-at-tesoro" >Crane Club at Tesoro</a></li><li><a href="/corporate/weddings/venue/essex-club" >Essex Club</a></li><li><a href="https://www.mirabelleatthreevillageinn.com/weddings-and-private-events/" target="_blank">Estate at Three Village Inn</a></li><li><a href="/corporate/weddings/venue/f-ottomanelli-by-the-water" >F. Ottomanelli By The Water</a></li><li><a href="/corporate/weddings/venue/harmony-vineyards" >Harmony Vineyards</a></li><li><a href="/corporate/weddings/venue/heritage-club-at-bethpage" >Heritage Club at Bethpage</a></li><li><a href="https://www.thehoneyfitz.com" target="_blank">Honey Fitz</a></li><li><a href="/corporate/weddings/venue/jewish-theological-seminary" >Jewish Theological Seminary</a></li><li><a href="/corporate/weddings/venue/kravis-events" >Kravis Events</a></li><li><a href="https://ladyjeanranch.com/event-venue/" target="_blank">Lady Jean Ranch</a></li><li><a href="/corporate/weddings/venue/lessings-events" >Lessing's Events</a></li><li><a href="/corporate/weddings/venue/mansion-at-timber-point" >Mansion at Timber Point</a></li><li><a href="https://northpalmbeachcc.com/weddings/" target="_blank">North Palm Beach Country Club</a></li><li><a href="/corporate/weddings/venue/pavilion-at-sunken-meadow" >Pavilion at Sunken Meadow</a></li><li><a href="/corporate/weddings/venue/pelican-club" >Pelican Club</a></li><li><a href="/corporate/weddings/venue/port-jefferson-country-club" >Port Jefferson Country Club</a></li><li><a href="/corporate/weddings/venue/stonebridge-country-club" >Stonebridge Country Club</a></li><li><a href="/corporate/weddings/venue/temple-chaverim" >Temple Chaverim</a></li><li><a href="/corporate/weddings/venue/the-barn-at-old-bethpage" >The Barn at Old Bethpage</a></li><li><a href="/corporate/weddings/venue/the-mansion-at-oyster-bay" >The Mansion at Oyster Bay</a></li><li><a href="/corporate/weddings/venue/the-mansion-at-west-sayville" >The Mansion at West Sayville</a></li><li><a href="/corporate/weddings/venue/the-vineyards-at-aquebogue" >The Vineyards at Aquebogue</a></li><li><a href="https://www.bayberryislip.com/private-events" target="_blank">Weddings at Bayberry</a></li><li><a href="https://www.viewoakdale.com/weddings-private-events" target="_blank">Weddings at View</a></li><li><a href="/corporate/weddings/venue/whitby-castle" >Whitby Castle</a></li></ul>
+            </div>
+            <div class="page_not_found_box">
+                <h2>Restaurants</h2>
+                <ul><li><a href="https://www.bayberryislip.com/" target="_blank">Bayberry</a></li><li><a href="https://www.ellensstardustdiner.com/" target="_blank">Ellen's Stardust Diner</a></li><li><a href="https://finnegansny.com" target="_blank">Finnegan's</a></li><li><a href="https://goldysgems.com/" target="_blank">Goldy's Gems</a></li><li><a href="https://www.theiridium.com/" target="_blank">Iridium</a></li><li><a href="https://thelibrarycafe.com" target="_blank">Library Café</a></li><li><a href="https://www.luckyshuckjupiter.com/" target="_blank">Lucky Shuck</a></li><li><a href="https://www.mirabelleatthreevillageinn.com" target="_blank">Mirabelle Tavern</a></li><li><a href="https://www.postofficecafe.com" target="_blank">Post Office Café</a></li><li><a href="https://www.sandbarcoldspringharbor.com" target="_blank">Sandbar</a></li><li><a href="https://www.thebeaconjupiter.com/" target="_blank">The Beacon</a></li><li><a href="https://northpalmbeachcc.com/dining" target="_blank">The Clubhouse at North Palm Beach</a></li><li><a href="https://www.tackleboxjupiter.com" target="_blank">The Tacklebox</a></li><li><a href="https://www.topsidejupiter.com/" target="_blank">Topside at the Beacon</a></li><li><a href="https://www.viewoakdale.com/" target="_blank">View</a></li><li><a href="https://www.bayberryislip.com/private-events" target="_blank">Weddings at Bayberry</a></li></ul>
+            </div>
+            <div class="page_not_found_box">
+                <h2>Other Services</h2>
+                <ul>
+                    <li><a href="off_premise_catering.aspx">Off Premise Catering</a></li>
+                    <li><a href="private_events.aspx">Private Affairs</a></li>
+                    <li><a href="food_service.aspx">Food Service / Food Management</a></li>
+                    <li><a href="hotel.aspx">Hotel</a></li>
+                    <li><a href="blaze_pizza.aspx">Blaze Pizza</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>  
+    </div>
+
+                </div>    
+            </div>
+
+            <div class="wrapper_row" id="footer" role="contentinfo">
+                <div class="container_row">
+                    <div class="box_1">
+                        <ul><li><a href="/corporate/site-map" class="" aria-label="View our Site Map">SITE MAP</a></li><li><a href="/corporate/contact" class="" aria-label="View a listing of our contact numbers">CONTACT</a></li><li><a href="/corporate/privacy-statement" class="" aria-label="View our privacy statement">PRIVACY STATEMENT</a></li><li><a href="/corporate/terms-of-use" class="" aria-label="View our website terms of use">TERMS OF USE</a></li><li><a href="/corporate/terms-of-service" class="" aria-label="View our terms for online purchases">TERMS FOR ONLINE PURCHASES</a></li><li><a href="/corporate/accessibility" class="" aria-label="Accessibility">ACCESSIBILITY</a></li></ul>
+                    </div>
+                    <div class="box_2">
+                        <ul>
+                            <li><a href="https://www.facebook.com/Lessingshospitality/" target="_blank"><img src="https://www.lessings.com/corporate/webimages/_core/s_social_icon_facebook.png" alt="Facebook" /></a></li>
+                            <!--<li><a href="https://twitter.com/lessingsinc" target="_blank"><img src="https://www.lessings.com/corporate/webimages/_core/s_social_icon_twitter.png" alt="Twitter" /></a></li>-->
+                            <li><a href="https://www.instagram.com/lessingshospitality/" target="_blank"><img src="https://www.lessings.com/corporate/webimages/_core/s_social_icon_instagram.png" alt="Instagram" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper_row" id="sub_footer">
+                <div class="container_row">
+                    <p>&copy; 2025 Lessing's Hospitality Group. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+        <div id="back_to_top">
+            <div id="back_to_top_content"><a href="#" onclick="scrollToTop()" onkeypress="scrollToTop()" aria-label="Scroll back to the top of the page"><i class="material-icons">keyboard_arrow_up</i></a></div>
+        </div>
+
+        
+    </form>
+    
+
+
+
+    <!-- arrow navigation -->
+    <script>
+        //hero photo
+        $("#slide_previous").keydown(function (e) { if (e.keyCode == 39) { $("#slide_play_pause").focus(); } })
+
+        $("#slide_play_pause").keydown(function (e) {
+            if (e.keyCode == 37) { $("#slide_previous").focus(); }
+            if (e.keyCode == 39) { $("#slide_next").focus(); }
+        })
+
+        $("#slide_next").keydown(function (e) { if (e.keyCode == 37) { $("#slide_play_pause").focus(); } })
+    </script>
+
+    <!-- scroll to top -->
+    <script>
+        $(window).scroll(function () {
+            backToTop();
+        });
+
+        //fade in #back-top
+        $(function () {
+            $("#back_to_top").click(function () {
+                $("body, html").animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        });
+
+        function backToTop() {
+            if ($(window).scrollTop() > 100) {
+                $("#back_to_top").show();
+            }
+            else {
+                $("#back_to_top").hide();
+            }
+        }
+
+        backToTop();
+
+        function scrollToTop() {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("#top_logo").focus();
+        }
+    </script>
+
+    <!-- fixed box -->
+    <script>
+        $(window).scroll(function () {
+            fixed_sub_menu();
+        });
+
+        $(window).resize(function () {
+            fixed_sub_menu();
+
+            if ($(window).width() > 1024) { $("#container_menu").show(); }
+        });
+
+        function fixed_sub_menu() {
+            if ($("#fixed_box")) {
+                if ($(window).width() > 1025 && $(window).scrollTop() > 600) {
+                    $("#fixed_box").css("position", "fixed");
+                    $("#fixed_box").css("top", "20px");
+                }
+                else {
+                    $("#fixed_box").css("position", "relative");
+                }
+            }
+        }
+    </script>
+
+    <!-- set submenus for WCAG -->
+    <script>
+        var menuItems = document.querySelectorAll("li.has_submenu");
+
+        Array.prototype.forEach.call(menuItems, function (el, i) {
+            el.querySelector("a").addEventListener("click", function (event) {
+                if (this.parentNode.className == "has_submenu") {
+                    this.parentNode.className = "has_submenu open";
+                    this.setAttribute("aria-expanded", "true");
+                } else {
+                    this.parentNode.className = "has_submenu";
+                    this.setAttribute("aria-expanded", "false");
+                }
+                //event.preventDefault();
+                return false;
+            });
+        });
+    </script>
+
+    <script>
+        /*
+        adroll_adv_id = "RXVPLL2FEBB7PIY3L4QAOB";
+        adroll_pix_id = "BWIW7TKVRBH3VPP24NO7VQ";
+        (function () {
+            var _onload = function () {
+                if (document.readyState && !/loaded|complete/.test(document.readyState)) { setTimeout(_onload, 10); return }
+                if (!window.__adroll_loaded) { __adroll_loaded = true; setTimeout(_onload, 50); return }
+                var scr = document.createElement("script");
+                var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+                scr.setAttribute('async', 'true');
+                scr.type = "text/javascript";
+                scr.src = host + "/j/roundtrip.js";
+                ((document.getElementsByTagName('head') || [null])[0] ||
+                    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+            };
+            if (window.addEventListener) { window.addEventListener('load', _onload, false); }
+            else { window.attachEvent('onload', _onload) }
+        }());
+        */
+    </script>
+
+    
+    
+</body>
+</html>

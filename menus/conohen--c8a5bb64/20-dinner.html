@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>$20 Dinner - Hell Gate</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="theme-color" content="#A8281E">
+
+
+
+    <link rel="preload" href="https://hellgatenyc.com/assets/dist/app.min.js?v=0d79958101" as="script">
+    <link rel="preload" href="https://hellgatenyc.com/assets/dist/app.min.css?v=0d79958101" as="style">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" 
+      as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+    <style>
+      @font-face {
+        font-family: 'Futura Passata';
+        src: url(https://hellgatenyc.com/assets/fonts/FuturaPassata-Display.woff?v=0d79958101);
+        font-weight: 700;
+      }
+      body {
+        --font-body: 'Outfit', sans-serif;
+        --font-headings: 'Futura Passata', 'Times'
+      }
+    </style>
+
+
+
+    <script async defer src="https://hellgatenyc.com/assets/js/pnp.js?v=0d79958101"></script>
+      <script async defer src="https://hellgatenyc.com/assets/js/pnp-dinner.js?v=0d79958101"></script>
+    <script async defer src="https://hellgatenyc.com/assets/dist/app.min.js?v=0d79958101"></script>
+
+        <script id="search-js" src="https://api.mapbox.com/search-js/v1.0.0/web.js"></script>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://hellgatenyc.com/assets/dist/app.min.css?v=0d79958101">
+
+    <style>
+  :root {
+    --global-max-width: 1600px; /* site max width */
+    --global-content-width: 700px; /* post-content-width */
+    --global-wide-width: 960px; /* site max width */
+    --global-radius: 5px; /* default radius */
+    --global-gallery-gap: 1em; /* Image gallery distance between images */
+    --global-hyphens: none; /* none/auto */
+    --global-header-height: 92px;
+    --global-theme-notifications: visible; /* visible/hidden */
+    --global-progress-bar: visible; /* visible/hidden */
+    --global-content-preview-fading: 0%; /* 50%-100% for fading effect */
+    --global-scroll-behavior: smooth;
+  }
+</style>
+
+<script>
+  let preferredTheme = localStorage.getItem('PREFERRED_COLOR_SCHEME') || `light`;
+  document.documentElement.setAttribute('data-color-scheme', preferredTheme);
+  
+  // Global values needed
+  const themeGlobal = {
+    currentPage: parseInt('1'),
+    nextPage: parseInt('2'),
+    nextPageLink: '',
+    maxPages: parseInt('16'), 
+    lastPage: `1` === `16` ? true : false,
+    postsPerPage: parseInt('12'),
+    scrollPos: 0,
+    imageLightbox: false
+  }
+
+  // Calculate contrast & HSL value;
+  function getBrandColorInfo(hexcolor) {
+    // get contrast
+    if (hexcolor.slice(0, 1) === '#') { hexcolor = hexcolor.slice(1); }
+    if (hexcolor.length === 3) { hexcolor = hexcolor.split('').map(function (hex) { return hex + hex;}).join(''); }
+    let r = parseInt(hexcolor.substr(0,2),16), g = parseInt(hexcolor.substr(2,2),16), b = parseInt(hexcolor.substr(4,2),16);
+    let yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+    const colorContrast = (yiq >= 128) ? '#000' : '#fff';
+
+    //get HSL
+    r /= 255, g /= 255, b /= 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, l = (max + min)  /  2;  
+    if ( max == min ) { h = s = 0; } else {
+      let d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch(max){
+        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+        case g: h = (b - r) / d + 2; break;
+        case b: h = (r - g) / d + 4; break;
+      }
+      h /= 6;
+    }
+    const colorHSL = [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+
+    // return
+    return { colorContrast, colorHSL }
+  };
+
+  const brandColor = getBrandColorInfo("#A8281E");
+  let style = document.createElement('style');
+  style.innerHTML = `:root { 
+    --color-brand-contrast: ${brandColor.colorContrast}; 
+    --color-brand-h: ${brandColor.colorHSL[0]};
+    --color-brand-s: ${brandColor.colorHSL[1]}%;
+    --color-brand-l: ${brandColor.colorHSL[2]}%;
+    --color-brand-hsl: ${brandColor.colorHSL[0]} ${brandColor.colorHSL[1]}% ${brandColor.colorHSL[2]}%;
+  }`
+  document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    
+    
+     
+
+    <meta name="description" content="Affordable eats, premium reviews.">
+    <link rel="icon" href="https://hellgatenyc.com/content/images/size/w256h256/2024/07/favicon.png" type="image/png">
+    <link rel="canonical" href="https://hellgatenyc.com/tag/20-dinner/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="next" href="https://hellgatenyc.com/tag/20-dinner/page/2/">
+    
+    <meta property="og:site_name" content="Hell Gate">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="$20 Dinner - Hell Gate">
+    <meta property="og:description" content="Affordable eats, premium reviews.">
+    <meta property="og:url" content="https://hellgatenyc.com/tag/20-dinner/">
+    <meta property="og:image" content="https://hellgatenyc.com/content/images/2024/07/3-2.png">
+    <meta property="article:publisher" content="https://www.facebook.com/HellGateNY/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="$20 Dinner - Hell Gate">
+    <meta name="twitter:description" content="Affordable eats, premium reviews.">
+    <meta name="twitter:url" content="https://hellgatenyc.com/tag/20-dinner/">
+    <meta name="twitter:image" content="https://hellgatenyc.com/content/images/2024/07/3-2.png">
+    <meta name="twitter:site" content="@HellGateNY">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Series",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hell Gate",
+        "url": "https://hellgatenyc.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://hellgatenyc.com/content/images/2024/06/hell-gate.svg"
+        }
+    },
+    "url": "https://hellgatenyc.com/tag/20-dinner/",
+    "name": "$20 Dinner",
+    "mainEntityOfPage": "https://hellgatenyc.com/tag/20-dinner/",
+    "description": "Affordable eats, premium reviews."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.130">
+    <link rel="alternate" type="application/rss+xml" title="Hell Gate" href="https://hellgatenyc.com/all-posts/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.51/umd/portal.min.js" data-i18n="true" data-ghost="https://hellgatenyc.com/" data-key="cb857558c460fc58971dd07992" data-api="https://hell-gate-1.ghost.io/ghost/api/content/" data-locale="en" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style><script async src="https://js.stripe.com/v3/"></script>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/sodo-search.min.js" data-key="cb857558c460fc58971dd07992" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/main.css" data-sodo-search="https://hell-gate-1.ghost.io/" data-locale="en" crossorigin="anonymous"></script>
+    
+    <link href="https://hellgatenyc.com/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=0d79958101"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=0d79958101">
+    <script defer src="/public/comment-counts.min.js?v=0d79958101" data-ghost-comments-counts-api="https://hellgatenyc.com/members/api/comments/counts/"></script>
+    <script defer src="/public/member-attribution.min.js?v=0d79958101"></script><style>:root {--ghost-accent-color: #A8281E;}</style>
+    <script defer data-domain="hellgatenyc.com" src="https://plausible.io/js/script.hash.tagged-events.outbound-links.js"></script>
+
+
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-53QN924R');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DVBM1SJ7MS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DVBM1SJ7MS');
+</script>
+
+
+    <script defer src="/public/ghost-stats.min.js?v=0d79958101" data-stringify-payload="false" data-datasource="analytics_events" data-storage="localStorage" data-host="https://hellgatenyc.com/.ghost/analytics/api/v1/page_hit"  tb_site_uuid="295dd95c-dc6c-40d7-9ed4-60debccaffe7" tb_post_uuid="undefined" tb_post_type="null" tb_member_uuid="undefined" tb_member_status="undefined"></script>
+  </head>
+  <body class="tag-template tag-20-dinner " >
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJCN6L4Q"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+        <div class="leaderboard-ad flex items-center content-center">
+          <a class="none flex-lg" href="https://tableofsuccess.hellgatenyc.com/"><img src="https://hellgatenyc.com/content/images/2025/11/WebBanner-4.png"></a>
+          <a class="flex none-lg" href="https://tableofsuccess.hellgatenyc.com/"><img src="https://hellgatenyc.com/content/images/2025/11/Frame-271.png"></a>
+        </div>
+    
+    
+
+      <header id="menu" class="header js-header pt-lg pb-lg" data-logo="center" >
+  <div id="site-header" class="container wrapper flex gap-100 header__container">
+    <div class="header__brand text-nowrap">
+
+<a href="https://hellgatenyc.com" id="header-logo">          <img class="header__logo" src="https://hellgatenyc.com/assets/svg/logo-white.svg?v=0d79958101">
+</a><a href="https://hellgatenyc.com" id="header-logo-alt">        <img class="header__logo" src="https://hellgatenyc.com/assets/svg/logo-white.svg?v=0d79958101">
+</a>    </div>
+    <div class="header__actions flex w-100 border-bottom border-right justify-start align-start pr">
+      <div class="header__center-left w-100 flex flex-col align-start">
+        <div class="header__buttons flex flex-col flex-lg-row gap-050 items-baseline passata color-hg__red mb">
+            <div class="flex items-baseline flex-col flex-lg-row gap-050 gap-lg-000">
+              <a href="/signin/" class="align-self-start line-height-1"
+                 data-portal="signin" >Log in
+              </a><span class="none flex-lg">/</span>
+              <a href="/membership/" class="align-self-start line-height-1">
+                Subscribe
+              </a>
+            </div>
+          <a href="/all-posts/rss" class="align-self-start line-height-1">
+            RSS
+          </a>
+
+
+
+          <button class="header__search-toggle" data-ghost-search title=" Search" aria-label=" Search">
+            <span>Search</span>
+          </button>
+        </div>
+
+        <p class="none flex-lg">Hell Gate is owned & run by journalists covering NYC.</p>
+      </div>
+      <div class="header__center-right fyi-section w-100 pl border-left mb">
+        <h3 class="mb-sm">FYI:</h3>
+        <div class="underline">
+                <p>Take a <a href="https://www.newyorker.com/magazine/2025/12/08/mamdani-family-values?ref=hellgatenyc.com" rel="noreferrer">brief tour</a> of Zohran Mamdani's teenaged bedroom.</p><p><a href="https://tickets.venuepilot.com/e/hellgate-10-8-25-fcbcaf?ref=hellgatenyc.com"></a></p>
+        </div>
+      </div>
+
+    </div>
+
+    <button id="menu-button" class="passata btn p-0 header__menu-toggle js-menu-toggle" title=" Menu" aria-label=" Menu">
+      <span class="fw-600">M</span>
+      <span class="fw-600">E</span>
+      <span class="fw-600">N</span>
+      <span class="fw-600">U</span>
+    </button>
+  </div>
+</header>
+
+
+
+
+
+
+      <div class="menu js-menu background-hg__always-red color-hg__always-white">
+  <div class="container wrapper">
+    <div class="block none-lg">
+      <div class="flex fyi-mobile">
+        <h3 class="text-nowrap mr">FYI:</h3>
+        <div class="underline contents-mb-0">
+                <p>Take a <a href="https://www.newyorker.com/magazine/2025/12/08/mamdani-family-values?ref=hellgatenyc.com" rel="noreferrer">brief tour</a> of Zohran Mamdani's teenaged bedroom.</p><p><a href="https://tickets.venuepilot.com/e/hellgate-10-8-25-fcbcaf?ref=hellgatenyc.com"></a></p>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="block none-lg">
+          <div class="flex">
+            <h3><a href="/signin/" class="align-self-start mr-sm"
+               data-portal="signin" >Log in
+            </a></h3>
+            <h3>/</h3>
+            <h3><a href="/signup/" class="align-self-start mr-sm"  data-portal="signup" >
+              Subscribe
+            </a></h3>
+          </div>
+      <hr>
+    </div>
+    <nav class="nav-grid flex flex-col flex-lg-row gap-100 items-baseline content-between mt">
+      <ul class="nav">
+    <li class="nav-home" 
+      data-label="Home" data-length="4">
+      <a href="https://hellgatenyc.com/">
+        <span>Home</span>
+      </a>
+    </li>
+    <li class="nav-about" 
+      data-label="About" data-length="5">
+      <a href="https://hellgatenyc.com/about/">
+        <span>About</span>
+      </a>
+    </li>
+    <li class="nav-staff" 
+      data-label="Staff" data-length="5">
+      <a href="https://hellgatenyc.com/staff/">
+        <span>Staff</span>
+      </a>
+    </li>
+    <li class="nav-contact" 
+      data-label="Contact" data-length="7">
+      <a href="https://hellgatenyc.com/contact/">
+        <span>Contact</span>
+      </a>
+    </li>
+    <li class="nav-subscriber-faq" 
+      data-label="Subscriber FAQ" data-length="14">
+      <a href="https://hellgatenyc.com/subscriber-faq/">
+        <span>Subscriber FAQ</span>
+      </a>
+    </li>
+    <li class="nav-jobs" 
+      data-label="Jobs" data-length="4">
+      <a href="https://hellgatenyc.com/jobs/">
+        <span>Jobs</span>
+      </a>
+    </li>
+    <li class="nav-pitch" 
+      data-label="Pitch" data-length="5">
+      <a href="https://hellgatenyc.com/pitch-hell-gate/">
+        <span>Pitch</span>
+      </a>
+    </li>
+    <li class="nav-tips" 
+      data-label="Tips" data-length="4">
+      <a href="https://hellgatenyc.com/send-us-a-news-tip/">
+        <span>Tips</span>
+      </a>
+    </li>
+</ul>
+      <a class="flex fw-600 text-14 background-hg__highlight p-sm pl pr radius-match" href="/membership/">Subscribe</a>
+    </nav>
+    <hr>
+    <div class="flex gap-100">
+      <div class="flex flex-col gap-100 w-100">
+        <p class="mb-0">Explore</p>
+          <div class="flex flex-wrap gap-100 mb-lg">
+              <a class="passata line-height-1 post-tag flex w-fit-content radius-match text-2125 fw-700 p-match border color-hg__always-white background-hg__always-orange" href="/tag/20-dinner/" aria-label="$20 Dinner">$20 Dinner</a>              <a class="passata line-height-1 post-tag flex w-fit-content radius-match text-2125 fw-700 p-match border color-hg__always-white background-hg__always-orange" href="/tag/morning-spew/" aria-label="Morning Spew">Morning Spew</a>              <a class="passata line-height-1 post-tag flex w-fit-content radius-match text-2125 fw-700 p-match border color-hg__always-white background-hg__always-orange" href="/tag/eric-adams/" aria-label="Eric Adams">Eric Adams</a>            <a class="passata line-height-1 post-tag flex w-fit-content radius-match text-2125 fw-700 p-match pl-0 pr-0" href="/all-topics" aria-label="All Topics">All Topics</a>
+          </div>
+      </div>
+      <div class="recent-posts none flex-lg flex-col gap-100 w-100 border-left pl-lg">
+        <p class="mb-0">Latest</p>
+            <div class="post-card">
+              <div class="flex flex-col gap-050 w-100">
+    <div class="flex items-center  gap-050 flex-wrap">
+        <h6><a class="post-tag flex border radius-double text-0875 fw-600" href="/tag/first-100-days/" aria-label="First 100 Days">First 100 Days</a></h6>
+        <h6><a class="post-tag flex border radius-double text-0875 fw-600" href="/tag/zohran-mamdani/" aria-label="Zohran Mamdani">Zohran Mamdani</a></h6>
+</div>      <h3 class="outfit small"><a href="https://hellgatenyc.com/zohran-mamdani-first-100-days-child-care/">Mamdani’s First 100 Days, Child Care Edition: &#x27;Fixing What Adams Broke&#x27;</a></h3>
+          <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/bryce/">Bryce Covert</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="December 05, 2025">
+                December 05, 2025
+              </time> 
+            </div>
+      </div>
+    </div>            </div>
+            <div class="post-card">
+              <div class="flex flex-col gap-050 w-100">
+    <div class="flex items-center  gap-050 flex-wrap">
+        <h6><a class="post-tag flex border radius-double text-0875 fw-600" href="/tag/morning-spew/" aria-label="Morning Spew">Morning Spew</a></h6>
+</div>      <h3 class="outfit small"><a href="https://hellgatenyc.com/antonio-reynoso-nydia-velazquez/">It&#x27;ll Be Left Vs. Left for Nydia Velázquez&#x27;s Open Seat</a></h3>
+          <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/hell-gate/">Hell Gate</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="December 05, 2025">
+                December 05, 2025
+              </time> 
+            </div>
+      </div>
+    </div>            </div>
+      </div>
+    </div>
+    <input data-ghost-search type="text" placeholder="Search" class="menu-search passata w-100 mt-lg color-hg__always-black">
+  </div>
+</div>
+    <main class="main flex-1">
+      
+    <div class="tag-header background-hg__highlight color-hg__background pt-lg pb-lg">
+      <div class="container wrapper flex flex-col items-center">
+        <h1 class="large text-center uppercase pb">$20 Dinner</h1>
+        <div class="container wrapper radius mt" id="map"><button style="position:absolute;z-index:999;right:1rem;top:1rem;transform:rotate(-1.5deg);" class="background-hg__always-red"><a href="/20-dinner-map" class="flex items-center passata text-15">View map<img class="ml-sm" style="height:20px;" src="https://hellgatenyc.com/assets/svg/right-arrow-white.svg?v=0d79958101"></a></button></div>
+      </div>
+    </div>
+
+    <div class="container wrapper mt-lg">
+      <h6 class="color-hg__red mb-lg">
+        182 posts
+        
+      </h6>
+
+      <div class="grid post-feed gap-150" data-layout="2x2">
+          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/jubilee-marketplace-greenpoint-burgers-sushi-chirashi-review/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/12/jubilee-4.jpg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/12/jubilee-4.jpg 300w, /content/images/size/w600/format/webp/2025/12/jubilee-4.jpg 600w, /content/images/size/w1000/format/webp/2025/12/jubilee-4.jpg 1000w, /content/images/size/w2000/format/webp/2025/12/jubilee-4.jpg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/12/jubilee-4.jpg 300w, /content/images/size/w600/2025/12/jubilee-4.jpg 600w, /content/images/size/w1000/2025/12/jubilee-4.jpg 1000w, /content/images/size/w2000/2025/12/jubilee-4.jpg 2000w"
+    srcset="/content/images/size/w30/2025/12/jubilee-4.jpg 30w"
+    data-src="/content/images/size/w100/2025/12/jubilee-4.jpg"
+    src="/content/images/size/w30/2025/12/jubilee-4.jpg"
+    alt="Who&#x27;s Ready for a Greenpoint Sushi Jubilee?"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/jubilee-marketplace-greenpoint-burgers-sushi-chirashi-review/">Who&#x27;s Ready for a Greenpoint Sushi Jubilee?</a></h3>
+          <p class="excerpt mb-0">Jubilee Marketplace, home of New York City&#39;s best $2.75 cheeseburger, is now also serving great $18 bowls of chirashi.</p>
+      <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="December 03, 2025">
+                December 03, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/20-dinner-sandwich-board/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/11/sandwichboard-28.jpg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/11/sandwichboard-28.jpg 300w, /content/images/size/w600/format/webp/2025/11/sandwichboard-28.jpg 600w, /content/images/size/w1000/format/webp/2025/11/sandwichboard-28.jpg 1000w, /content/images/size/w2000/format/webp/2025/11/sandwichboard-28.jpg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/11/sandwichboard-28.jpg 300w, /content/images/size/w600/2025/11/sandwichboard-28.jpg 600w, /content/images/size/w1000/2025/11/sandwichboard-28.jpg 1000w, /content/images/size/w2000/2025/11/sandwichboard-28.jpg 2000w"
+    srcset="/content/images/size/w30/2025/11/sandwichboard-28.jpg 30w"
+    data-src="/content/images/size/w100/2025/11/sandwichboard-28.jpg"
+    src="/content/images/size/w30/2025/11/sandwichboard-28.jpg"
+    alt="Chinatown&#x27;s &#x27;Secret&#x27; Sandwich Window Gets a Nifty New Dining Room"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/20-dinner-sandwich-board/">Chinatown&#x27;s &#x27;Secret&#x27; Sandwich Window Gets a Nifty New Dining Room</a></h3>
+          <p class="excerpt mb-0">The Sandwich Board has a muffaletta, as well as chicken, duck, and breakfast sandwiches, and now you can even sit inside while you eat them.</p>
+      <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="November 26, 2025">
+                November 26, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/20-dinner-cairo-feteer-steinway/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/11/cairofeteer-43.jpg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/11/cairofeteer-43.jpg 300w, /content/images/size/w600/format/webp/2025/11/cairofeteer-43.jpg 600w, /content/images/size/w1000/format/webp/2025/11/cairofeteer-43.jpg 1000w, /content/images/size/w2000/format/webp/2025/11/cairofeteer-43.jpg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/11/cairofeteer-43.jpg 300w, /content/images/size/w600/2025/11/cairofeteer-43.jpg 600w, /content/images/size/w1000/2025/11/cairofeteer-43.jpg 1000w, /content/images/size/w2000/2025/11/cairofeteer-43.jpg 2000w"
+    srcset="/content/images/size/w30/2025/11/cairofeteer-43.jpg 30w"
+    data-src="/content/images/size/w100/2025/11/cairofeteer-43.jpg"
+    src="/content/images/size/w30/2025/11/cairofeteer-43.jpg"
+    alt="Steinway Street&#x27;s Cairo Feteer Does Cheesy, Flaky Feteer—and Fiery Beef Liver"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/20-dinner-cairo-feteer-steinway/">Steinway Street&#x27;s Cairo Feteer Does Cheesy, Flaky Feteer—and Fiery Beef Liver</a></h3>
+          <p class="excerpt mb-0">The tender dough bundled around sausage, cheese and vegetables is phenomenal, and the liver may be even better.</p>
+      <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="November 20, 2025">
+                November 20, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/let-the-pierogi-boys-warm-your-soul/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/11/pierogi-27.jpg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/11/pierogi-27.jpg 300w, /content/images/size/w600/format/webp/2025/11/pierogi-27.jpg 600w, /content/images/size/w1000/format/webp/2025/11/pierogi-27.jpg 1000w, /content/images/size/w2000/format/webp/2025/11/pierogi-27.jpg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/11/pierogi-27.jpg 300w, /content/images/size/w600/2025/11/pierogi-27.jpg 600w, /content/images/size/w1000/2025/11/pierogi-27.jpg 1000w, /content/images/size/w2000/2025/11/pierogi-27.jpg 2000w"
+    srcset="/content/images/size/w30/2025/11/pierogi-27.jpg 30w"
+    data-src="/content/images/size/w100/2025/11/pierogi-27.jpg"
+    src="/content/images/size/w30/2025/11/pierogi-27.jpg"
+    alt="Let the Pierogi Boys Warm Your Soul With Polish Comfort Food Classics"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/let-the-pierogi-boys-warm-your-soul/">Let the Pierogi Boys Warm Your Soul With Polish Comfort Food Classics</a></h3>
+          <p class="excerpt mb-0">Yup, Ridgewood has another ridiculously charming corner cafe just in time for the frigid weather.</p>
+      <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="November 12, 2025">
+                November 12, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/indian-sandwiches-fontys-deli-and-dukaan/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/11/fonty-15-2.jpg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/11/fonty-15-2.jpg 300w, /content/images/size/w600/format/webp/2025/11/fonty-15-2.jpg 600w, /content/images/size/w1000/format/webp/2025/11/fonty-15-2.jpg 1000w, /content/images/size/w2000/format/webp/2025/11/fonty-15-2.jpg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/11/fonty-15-2.jpg 300w, /content/images/size/w600/2025/11/fonty-15-2.jpg 600w, /content/images/size/w1000/2025/11/fonty-15-2.jpg 1000w, /content/images/size/w2000/2025/11/fonty-15-2.jpg 2000w"
+    srcset="/content/images/size/w30/2025/11/fonty-15-2.jpg 30w"
+    data-src="/content/images/size/w100/2025/11/fonty-15-2.jpg"
+    src="/content/images/size/w30/2025/11/fonty-15-2.jpg"
+    alt="&#x27;Indian-ish&#x27; Sandwiches Are the Stars at Fonty&#x27;s Deli and Dukaan"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/indian-sandwiches-fontys-deli-and-dukaan/">&#x27;Indian-ish&#x27; Sandwiches Are the Stars at Fonty&#x27;s Deli and Dukaan</a></h3>
+          <p class="excerpt mb-0">This super cute West Village spot is already a hit, and rightly so.</p>
+      <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="November 06, 2025">
+                November 06, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/nepali-bhanchha-ghar-amazing-momos/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/10/nepali-23-1.jpg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/10/nepali-23-1.jpg 300w, /content/images/size/w600/format/webp/2025/10/nepali-23-1.jpg 600w, /content/images/size/w1000/format/webp/2025/10/nepali-23-1.jpg 1000w, /content/images/size/w2000/format/webp/2025/10/nepali-23-1.jpg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/10/nepali-23-1.jpg 300w, /content/images/size/w600/2025/10/nepali-23-1.jpg 600w, /content/images/size/w1000/2025/10/nepali-23-1.jpg 1000w, /content/images/size/w2000/2025/10/nepali-23-1.jpg 2000w"
+    srcset="/content/images/size/w30/2025/10/nepali-23-1.jpg 30w"
+    data-src="/content/images/size/w100/2025/10/nepali-23-1.jpg"
+    src="/content/images/size/w30/2025/10/nepali-23-1.jpg"
+    alt="Ten Years In, Nepali Bhanchha Ghar Still Dishes Out Amazing Momos"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/nepali-bhanchha-ghar-amazing-momos/">Ten Years In, Nepali Bhanchha Ghar Still Dishes Out Amazing Momos</a></h3>
+          <p class="excerpt mb-0">This Jackson Heights classic is a food crawl mainstay for a reason.</p>
+      <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="October 29, 2025">
+                October 29, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/shifka-on-bowery-pita-party/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/10/shifka-59-1.jpg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/10/shifka-59-1.jpg 300w, /content/images/size/w600/format/webp/2025/10/shifka-59-1.jpg 600w, /content/images/size/w1000/format/webp/2025/10/shifka-59-1.jpg 1000w, /content/images/size/w2000/format/webp/2025/10/shifka-59-1.jpg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/10/shifka-59-1.jpg 300w, /content/images/size/w600/2025/10/shifka-59-1.jpg 600w, /content/images/size/w1000/2025/10/shifka-59-1.jpg 1000w, /content/images/size/w2000/2025/10/shifka-59-1.jpg 2000w"
+    srcset="/content/images/size/w30/2025/10/shifka-59-1.jpg 30w"
+    data-src="/content/images/size/w100/2025/10/shifka-59-1.jpg"
+    src="/content/images/size/w30/2025/10/shifka-59-1.jpg"
+    alt="Shifka Throws a Kick-Ass Pita Party on Bowery"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/shifka-on-bowery-pita-party/">Shifka Throws a Kick-Ass Pita Party on Bowery</a></h3>
+          <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="October 22, 2025">
+                October 22, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/luthers-bar-food-ridgewood-tv-eye/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/10/luther-29-1.jpg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/10/luther-29-1.jpg 300w, /content/images/size/w600/format/webp/2025/10/luther-29-1.jpg 600w, /content/images/size/w1000/format/webp/2025/10/luther-29-1.jpg 1000w, /content/images/size/w2000/format/webp/2025/10/luther-29-1.jpg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/10/luther-29-1.jpg 300w, /content/images/size/w600/2025/10/luther-29-1.jpg 600w, /content/images/size/w1000/2025/10/luther-29-1.jpg 1000w, /content/images/size/w2000/2025/10/luther-29-1.jpg 2000w"
+    srcset="/content/images/size/w30/2025/10/luther-29-1.jpg 30w"
+    data-src="/content/images/size/w100/2025/10/luther-29-1.jpg"
+    src="/content/images/size/w30/2025/10/luther-29-1.jpg"
+    alt="Luther&#x27;s Is the New King of NYC Bar Food"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/luthers-bar-food-ridgewood-tv-eye/">Luther&#x27;s Is the New King of NYC Bar Food</a></h3>
+          <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="October 15, 2025">
+                October 15, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/188-cuchifritos-bronx-review/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/10/188cuchifritos-26-1.jpg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/10/188cuchifritos-26-1.jpg 300w, /content/images/size/w600/format/webp/2025/10/188cuchifritos-26-1.jpg 600w, /content/images/size/w1000/format/webp/2025/10/188cuchifritos-26-1.jpg 1000w, /content/images/size/w2000/format/webp/2025/10/188cuchifritos-26-1.jpg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/10/188cuchifritos-26-1.jpg 300w, /content/images/size/w600/2025/10/188cuchifritos-26-1.jpg 600w, /content/images/size/w1000/2025/10/188cuchifritos-26-1.jpg 1000w, /content/images/size/w2000/2025/10/188cuchifritos-26-1.jpg 2000w"
+    srcset="/content/images/size/w30/2025/10/188cuchifritos-26-1.jpg 30w"
+    data-src="/content/images/size/w100/2025/10/188cuchifritos-26-1.jpg"
+    src="/content/images/size/w30/2025/10/188cuchifritos-26-1.jpg"
+    alt="A Love Letter to 188 Cuchifritos"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/188-cuchifritos-bronx-review/">A Love Letter to 188 Cuchifritos</a></h3>
+          <p class="excerpt mb-0">The lively Bronx lunch counter has been serving Puerto Rican and Dominican classics since 1982.</p>
+      <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="October 09, 2025">
+                October 09, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/fort-greene-shoof-burger/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/10/schoofmain1.jpeg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/10/schoofmain1.jpeg 300w, /content/images/size/w600/format/webp/2025/10/schoofmain1.jpeg 600w, /content/images/size/w1000/format/webp/2025/10/schoofmain1.jpeg 1000w, /content/images/size/w2000/format/webp/2025/10/schoofmain1.jpeg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/10/schoofmain1.jpeg 300w, /content/images/size/w600/2025/10/schoofmain1.jpeg 600w, /content/images/size/w1000/2025/10/schoofmain1.jpeg 1000w, /content/images/size/w2000/2025/10/schoofmain1.jpeg 2000w"
+    srcset="/content/images/size/w30/2025/10/schoofmain1.jpeg 30w"
+    data-src="/content/images/size/w100/2025/10/schoofmain1.jpeg"
+    src="/content/images/size/w30/2025/10/schoofmain1.jpeg"
+    alt="Fort Greene&#x27;s Newest Burger Counter Has a Pro-Palestine Mission"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/fort-greene-shoof-burger/">Fort Greene&#x27;s Newest Burger Counter Has a Pro-Palestine Mission</a></h3>
+          <p class="excerpt mb-0">Every combo meal you order at Shoof Burger sends $1 to the Palestine Children&#39;s Relief Fund.</p>
+      <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="October 02, 2025">
+                October 02, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/slicehaus-pizzeria-hits-west-village/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/09/Slice1.jpeg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/09/Slice1.jpeg 300w, /content/images/size/w600/format/webp/2025/09/Slice1.jpeg 600w, /content/images/size/w1000/format/webp/2025/09/Slice1.jpeg 1000w, /content/images/size/w2000/format/webp/2025/09/Slice1.jpeg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/09/Slice1.jpeg 300w, /content/images/size/w600/2025/09/Slice1.jpeg 600w, /content/images/size/w1000/2025/09/Slice1.jpeg 1000w, /content/images/size/w2000/2025/09/Slice1.jpeg 2000w"
+    srcset="/content/images/size/w30/2025/09/Slice1.jpeg 30w"
+    data-src="/content/images/size/w100/2025/09/Slice1.jpeg"
+    src="/content/images/size/w30/2025/09/Slice1.jpeg"
+    alt="A Superlative NYC Slice Joint Arrives on Carmine Street"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/slicehaus-pizzeria-hits-west-village/">A Superlative NYC Slice Joint Arrives on Carmine Street</a></h3>
+          <p class="excerpt mb-0">Slicehaus Pizzeria enhances the embarrassment of pizzeria riches in TriBeChris (a neighborhood we just made up).</p>
+      <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="September 24, 2025">
+                September 24, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>          <article class="post-card flex flex-wrap flex-lg-nowrap gap-100 items-start">
+<a class="w-100" href="https://hellgatenyc.com/nishaan-east-village-chapli-kabob-chopped-cheese/">    <figure>
+      <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="/content/images/size/w30/2025/09/nishaan-22.jpg 30w"
+    data-srcset="/content/images/size/w300/format/webp/2025/09/nishaan-22.jpg 300w, /content/images/size/w600/format/webp/2025/09/nishaan-22.jpg 600w, /content/images/size/w1000/format/webp/2025/09/nishaan-22.jpg 1000w, /content/images/size/w2000/format/webp/2025/09/nishaan-22.jpg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="/content/images/size/w300/2025/09/nishaan-22.jpg 300w, /content/images/size/w600/2025/09/nishaan-22.jpg 600w, /content/images/size/w1000/2025/09/nishaan-22.jpg 1000w, /content/images/size/w2000/2025/09/nishaan-22.jpg 2000w"
+    srcset="/content/images/size/w30/2025/09/nishaan-22.jpg 30w"
+    data-src="/content/images/size/w100/2025/09/nishaan-22.jpg"
+    src="/content/images/size/w30/2025/09/nishaan-22.jpg"
+    alt="The East Village Gets a Legendary Pakistani Chopped Cheese"
+    
+  >
+</picture>    </figure>
+</a>  <div class="flex flex-col gap-050 col-xs-12 col-lg-6 pl-0 pr-0 w-100">
+      <h3 class="outfit small"><a href="https://hellgatenyc.com/nishaan-east-village-chapli-kabob-chopped-cheese/">The East Village Gets a Legendary Pakistani Chopped Cheese</a></h3>
+          <p class="excerpt mb-0">Chapli kabob chopped cheese and elotes chaat are among the big winners at Nishaan.</p>
+      <div class="flex flex-wrap metadata text-0875 fw-600 color-hg__red items-center">
+          <div class="flex items-center">
+            <span class="mr"><a href="/author/scott-lynch/">Scott Lynch</a></span>
+          </div>
+            <div class="metadata text-0875 fw-600 color-hg__red">
+              <time datetime="September 18, 2025">
+                September 18, 2025
+              </time> 
+            </div>
+      </div>
+    </div></article>      </div>
+
+      <div class="pagination" data-type="">
+  <nav class="pagination-items">
+    <a class="prev-posts disabled" href="javascript:">
+      <i class="icon icon-arrow-left icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="5" y1="12" x2="19" y2="12" />
+  <line x1="5" y1="12" x2="11" y2="18" />
+  <line x1="5" y1="12" x2="11" y2="6" />
+</svg>
+
+
+
+</i><span class="ml-xs">Prev</span>
+    </a>
+    <span class="page-number">Page 1 of 16</span>
+    <a class="next-posts" href="/tag/20-dinner/page/2/">
+      <span class="mr-xs">Next</span><i class="icon icon-arrow-right icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M5 12l14 0"></path>
+  <path d="M15 16l4 -4"></path>
+  <path d="M15 8l4 4"></path>
+</svg>
+
+
+
+</i>
+    </a>
+  </nav>
+
+  <button class="btn btn--wide btn--bordered btn-load-more js-load-more">
+    Load more
+  </button>
+</div>    </div>
+
+
+            <script type="module" src="https://hellgatenyc.com/assets/js/pnp-map-style.js?v=0d79958101"></script>
+            <script type="module" src="https://hellgatenyc.com/assets/js/pnp-map-tag.js?v=0d79958101"></script>
+    </main>
+    
+      
+      <footer class="footer color-hg__always-white access- background-hg__background">
+  <img id="footer-name" src="https://hellgatenyc.com/assets/svg/hell-gate-text.svg?v=0d79958101">
+  <div id="footer-inner">
+    <div class="flex flex-col between-xs container wrapper h-100">
+    </div>
+    </div>
+    <div class="footer-contents w-100 absolute-lg bottom-lg pt-lg pb-lg">
+      <div class="container wrapper grid items-start">
+        <div class="flex flex-lg-col items-start">
+          <img class="footer__logo mb-lg" src="https://hellgatenyc.com/assets/svg/hell-gate-white.svg?v=0d79958101">
+          <div class="flex flex-col">
+            <p class="mb-sm">We are a subscriber-funded, worker-owned news outlet about New York City, named for the city's sturdiest (and handsomest) bridge over its most treacherous currents.</p>
+            <p class="mb-sm"><a href="https://partnerandpartners.com/" target="_blank" class="underline color-hg__always-white">Designed and developed by Partner &amp; Partners</a></p>
+            <p><a href="https://www.pantero.net/" target="_blank" class="underline color-hg__always-white">Original logo by Olive Panter</a></p>
+          </div>
+        </div>
+          <ul class="nav secondary submenu">
+    <li class="nav-about-us" 
+      data-label="About Us" data-length="8">
+      <a href="https://hellgatenyc.com/about/">
+        <span>About Us</span>
+      </a>
+    </li>
+    <li class="nav-staff" 
+      data-label="Staff" data-length="5">
+      <a href="https://hellgatenyc.com/staff/">
+        <span>Staff</span>
+      </a>
+    </li>
+    <li class="nav-jobs" 
+      data-label="Jobs" data-length="4">
+      <a href="https://hellgatenyc.com/jobs/">
+        <span>Jobs</span>
+      </a>
+    </li>
+    <li class="nav-contact-us" 
+      data-label="Contact Us" data-length="10">
+      <a href="https://hellgatenyc.com/contact/">
+        <span>Contact Us</span>
+      </a>
+    </li>
+    <li class="nav-subscriber-faq" 
+      data-label="Subscriber FAQ" data-length="14">
+      <a href="https://hellgatenyc.com/subscriber-faq/">
+        <span>Subscriber FAQ</span>
+      </a>
+    </li>
+    <li class="nav-how-to-pitch-hell-gate" 
+      data-label="How to Pitch Hell Gate" data-length="22">
+      <a href="https://hellgatenyc.com/pitch-hell-gate/">
+        <span>How to Pitch Hell Gate</span>
+      </a>
+    </li>
+    <li class="nav-send-us-a-news-tip" 
+      data-label="Send Us a News Tip" data-length="18">
+      <a href="https://hellgatenyc.com/send-us-a-news-tip/">
+        <span>Send Us a News Tip</span>
+      </a>
+    </li>
+    <li class="nav-send-us-a-money-tip" 
+      data-label="Send Us a Money Tip" data-length="19">
+      <a href="https://hellgatenyc.com/tip-jar/">
+        <span>Send Us a Money Tip</span>
+      </a>
+    </li>
+    <li class="nav-code-of-ethics" 
+      data-label="Code of Ethics" data-length="14">
+      <a href="https://hellgatenyc.com/code-of-ethics/">
+        <span>Code of Ethics</span>
+      </a>
+    </li>
+    <li class="nav-advertise-with-hell-gate" 
+      data-label="Advertise With Hell Gate" data-length="24">
+      <a href="https://hellgatenyc.com/how-to-advertise-with-hell-gate/">
+        <span>Advertise With Hell Gate</span>
+      </a>
+    </li>
+    <li class="nav-advisory-board" 
+      data-label="Advisory Board" data-length="14">
+      <a href="https://hellgatenyc.com/advisory-board/">
+        <span>Advisory Board</span>
+      </a>
+    </li>
+    <li class="nav-founding-supporters" 
+      data-label="Founding Supporters" data-length="19">
+      <a href="https://hellgatenyc.com/founding-supporters/">
+        <span>Founding Supporters</span>
+      </a>
+    </li>
+    <li class="nav-sign-up-for-the-hell-gate-newsletter" 
+      data-label="Sign Up for the Hell Gate Newsletter" data-length="36">
+      <a href="https://hellgatenyc.com/newsletter/">
+        <span>Sign Up for the Hell Gate Newsletter</span>
+      </a>
+    </li>
+</ul>
+          <ul>
+            <li><a href="/terms-of-use/">Terms of Use</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/commenting-policy/">Commenting Policy</a></li>
+          </ul>
+        <div class="flex items-center">
+  <p class="fw-600 mb-0">Color Mode:&nbsp;</p>
+  <select class="color-scheme-select-custom js-color-scheme-select p-0 mb-0" aria-label="Change color scheme">
+    <option selected value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+</div>      </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (document.body.classList.contains('post-template')) {
+      var article = document.querySelector('article.post');
+      var footer = document.querySelector('footer');
+      if (article.classList.contains('access-false')) {
+        footer.classList.add('access-false');
+      };
+    };
+  })
+</script>
+    <dialog class="notification">
+  <i class="icon icon-success notification-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M9 12l2 2l4 -4" />
+</svg>
+
+
+
+</i>  <i class="icon icon-error notification-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-octagon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M8.7 3h6.6c.3 0 .5 .1 .7 .3l4.7 4.7c.2 .2 .3 .4 .3 .7v6.6c0 .3 -.1 .5 -.3 .7l-4.7 4.7c-.2 .2 -.4 .3 -.7 .3h-6.6c-.3 0 -.5 -.1 -.7 -.3l-4.7 -4.7c-.2 -.2 -.3 -.4 -.3 -.7v-6.6c0 -.3 .1 -.5 .3 -.7l4.7 -4.7c.2 -.2 .4 -.3 .7 -.3z" />
+  <line x1="12" y1="8" x2="12" y2="12" />
+  <line x1="12" y1="16" x2="12.01" y2="16" />
+</svg>
+
+
+
+</i>  <i class="icon icon-warning notification-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-triangle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 9v2m0 4v.01" />
+  <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+</svg>
+
+
+
+</i>  <p class="notification-msg signup-success">Great! You’ve successfully signed up.</p> 
+  <p class="notification-msg signin-success">Welcome back! You&#x27;ve successfully signed in.</p> 
+  <p class="notification-msg subscribe-success">You&#x27;ve successfully subscribed to Hell Gate.</p> 
+  <p class="notification-msg link-expired">Your link has expired.</p> 
+  <p class="notification-msg checkout-success">Success! Check your email for magic link to sign-in.</p> 
+  <p class="notification-msg billing-success">Success! Your billing info has been updated.</p> 
+  <p class="notification-msg billing-cancel">Your billing was not updated.</p> 
+  <button class="notification-close js-notification-close" aria-label="Close" onclick="closeNotification(event.currentTarget.parentNode);">
+    <i class="icon icon-x">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+</svg>
+</i>  </button>
+</dialog>
+
+      
+    
+
+    <script>
+  const navItems = document.querySelectorAll('.header-menu .nav:not(.submenu) li')
+  const allNavItems = document.querySelectorAll('.is-subitem')
+
+  // Remove '-' signs
+  allNavItems.forEach(item => {
+    const itemName = item.querySelector('a span')
+    itemName.innerText = itemName.innerText.slice(1)
+  });
+
+  // Add subitems in place
+  let subMenu, hasItems
+  navItems.forEach((item, index) => {
+    if (item.classList.contains('is-subitem') && !navItems[index - 1].classList.contains('is-subitem')) navItems[index - 1].classList.add('is-mainitem');
+    subMenu = item.classList.contains('is-subitem') ? subMenu : document.createElement('ul');
+    if (item.classList.contains('is-subitem')) {
+      subMenu.appendChild(item)
+      subMenu.classList.add('nav', 'submenu')
+    } else {
+      item.appendChild(subMenu)
+    }
+  });
+</script>
+
+  <script>
+    // Give the parameter a variable name
+    const qsParams = new URLSearchParams(window.location.search);
+    const isAction = qsParams.has('action');
+    const isStripe = qsParams.has('stripe');
+    const success = qsParams.get('success');
+    const action = qsParams.get('action');
+    const stripe = qsParams.get('stripe');
+
+    if (qsParams && isAction) {
+      if (success === "true") {
+        switch (action) {
+          case 'subscribe':
+            openNotification('subscribe-success');
+            break;
+          case 'signup': 
+            openNotification('signup-success');
+            break;
+          case 'signin':
+            openNotification('signin-success');
+            break;
+          default:
+            break;
+        }
+      } else {
+        openNotification('link-expired');
+      }
+    }
+
+    if (qsParams && isStripe) {
+      switch (stripe) {
+        case 'success':
+          openNotification('checkout-success');
+          break;
+        case 'billing-update-success':
+          openNotification('billing-success');
+          break;
+        case 'billing-update-cancel':
+          openNotification('billing-cancel');
+          break;
+        default:
+          break;
+      }
+    }
+
+    /**
+    * Handle Notifications
+    */
+    function openNotification(type) {
+      const notification = document.querySelector('dialog.notification');
+      if (notification) { 
+        notification.setAttribute('data-msg-type', type);
+        notification.show();
+        setTimeout(function(){ closeNotification(notification); }, 3000);
+      }
+    }
+    
+    /**
+    * Clean URI
+    */
+    function clearURI() {
+      window.history.replaceState({}, '', `${window.location.pathname}`);
+    }
+
+    function closeNotification(notification) {
+      notification.close();
+      clearURI();
+      setTimeout(function(){ notification.removeAttribute('data-msg-type') }, 500);
+    }
+  </script>
+
+
+    
+    
+    <script>
+  const OutpostPub = {
+    apiDomain: "https://hellgate1ghostio.outpost.pub",
+    apiKey: "79571fa0-3fbf-4bf6-a8da-26687d102455",
+    siteName: "Hell Gate",
+    memberId: "",
+    memberEmail: "",
+  }
+</script>
+<script defer src="https://assets.outpostpublishingcoop.com/assets/v2/js/outpost-pub.js"></script>
+    <script>
+!function(w,d,id,ns,s){var c=w[ns]=w[ns]||{};if(c.ready||(c.q=[],c.ready=function(){c.q.push(arguments)}),!d.getElementById(id)){var e=d.createElement(s);e.id=id,e.defer=true,e.src="https://assets.context.ly/kit/6.latest/loader.js";var h=d.getElementsByTagName(s)[0];h.parentNode.insertBefore(e,h)}}(window,document,"ctx-loader","Contextly","script");
+</script>
+<script>
+Contextly.ready('widgets');
+</script>
+
+  </body>
+</html>

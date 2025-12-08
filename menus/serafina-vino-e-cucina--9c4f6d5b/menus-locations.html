@@ -1,0 +1,4392 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.serafinarestaurant.com/',
+        AccountUUID: 'ba8d74f8fdf048a8a761c68589fa1130',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '48f618b4',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Fri Nov 28 20:19:43 UTC 2025',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'menus-locations',
+        InitialPageUuid: 'e63c279bc5bb47f998274a25376f8ce6',
+        InitialPageId: '1187368563',
+        InitialEncodedPageAlias: 'bWVudXMtbG9jYXRpb25z',
+        InitialHeaderUuid: '825f36771c1f4b648c10579db1898f65',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: -1,
+            NavbarLiveHomePage: 'https://www.serafinarestaurant.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 23;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.serafinarestaurant.com/menus-locations">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon"
+      href="https://irp.cdn-website.com/48f618b4/dms3rep/multi/serafinafavico.png"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/48f618b4/site_favicon_16_1724094283429.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    :root {
+  --color_1: rgba(255, 205, 0, 1);
+  --color_2: rgba(22, 38, 96, 1);
+  --color_3: rgba(255,255,255,1);
+  --color_4: rgba(0, 0, 0, 1);
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:ital,wght@0,200..700;1,200..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Dancing+Script:ital,wght@0,400..700;1,400..700&amp;subset=latin-ext&amp;display=swap"  />
+
+<style>
+@font-face {
+  font-family: "ITC Caslon 224 Std Bold Italic";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/ITC+Caslon+224+Std+Bold+Italic-46b0_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Apercu Mono";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/Apercu+Mono-6019_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Apercu Bold";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/Apercu+Bold-d870_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "ITC Caslon 224 Std Black";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/ITC+Caslon+224+Std+Black-6541_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "ITC Caslon 224 Std Medium";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/ITC+Caslon+224+Std+Medium-11e8_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Apercu Medium";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/Apercu+Medium-c1bf_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Apercu_Regular";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/Apercu_Regular-d42_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "ITC Caslon 224 Std Medium Italic";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/ITC+Caslon+224+Std+Medium+Italic-2135_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Apercu Light";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/Apercu+Light-b97c_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Apercu Medium Italic";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/Apercu+Medium+Italic-d779_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "ITC Caslon 224 Std Bold";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/ITC+Caslon+224+Std+Bold-32e2_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Apercu Bold Italic";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/Apercu+Bold+Italic-71a2_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "ITC Caslon 224 Std Book Italic";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/ITC+Caslon+224+Std+Book+Italic-f7be_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "ITC Caslon 224 Std Black Italic";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/ITC+Caslon+224+Std+Black+Italic-8623_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Apercu Light Italic";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/Apercu+Light+Italic-bb8a_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "ITC Caslon 224 Std Book";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/ITC+Caslon+224+Std+Book-27bd_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Apercu Italic";
+  src: url("https://irp.cdn-website.com/48f618b4/fonts/Apercu+Italic-66e5_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="stylesheet" type="text/css" href="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/WIDGET_CSS/1c5f561c98dc1407f71259245435311c.css" id="widgetCSS" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="menus-locations"] #dm [data-show-on-page-only="menus-locations"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/48f618b4/files/48f618b4_1.min.css?v=1257" id="siteGlobalCss" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody div.u_1439254298
+{
+	background-color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_OurIngredients
+{
+	background-color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1797931495
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1736092293
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1473554175
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1096284197
+{
+	background-color:rgba(255,255,255,0) !important;
+}
+*#dm *.dmBody div.u_1655049017
+{
+	background-color:rgba(255,255,255,0) !important;
+}
+*#dm *.dmBody div.u_1120193446
+{
+	background-color:var(--color_1) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1155284547
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1155284547
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1155284547 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1851147271
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1851147271
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody div.u_1180071774
+{
+	background-color:var(--color_2) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody div.u_1502091902
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1916536618
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1043265524
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1842652254
+{
+	background-color:rgba(255,255,255,0) !important;
+}
+*#dm *.dmBody div.u_1537787983
+{
+	background-color:var(--color_2) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1147699646
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1147699646
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody div.u_1841453207
+{
+	background-color:var(--color_1) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1000012957
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1000012957
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1000012957 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1923777489
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1923777489
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody div.u_1358997443
+{
+	background-color:var(--color_2) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody div.u_1785263376
+{
+	background-color:var(--color_1) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1081497936
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1081497936
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1081497936 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1524902627
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/FabulousPizza-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1948218065
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/Always-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody *.u_1401425503
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1401425503
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody *.u_1935316737
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1935316737
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1935316737 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1601338002
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1601338002
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody *.u_1701212451
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1701212451
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1701212451 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1912857372
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1912857372
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody *.u_1474155253
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1474155253
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1474155253 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1949066480
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1102984630
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1213694916
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1387130291
+{
+	background-color:rgba(255,255,255,0) !important;
+}
+*#dm *.dmBody div.u_1756847307
+{
+	background-color:var(--color_2) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1443841998
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1443841998
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody div.u_1871869355
+{
+	background-color:var(--color_1) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1775999390
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1775999390
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1775999390 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1062124663
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1062124663
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody div.u_1126841688
+{
+	background-color:var(--color_2) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1872061895
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1872061895
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody *.u_1291580657
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1291580657
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1291580657 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1294332389
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1294332389
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody div.u_1651269890
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/Osteria-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1363325933
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/upperwest77-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1339570288
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1287458450
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1086685270
+{
+	background-color:rgba(255,255,255,0) !important;
+}
+*#dm *.dmBody *.u_1195487052
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1195487052
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody div.u_1119004200
+{
+	background-color:var(--color_2) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody div.u_1192540009
+{
+	background-color:var(--color_1) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1041748387
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1041748387
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1041748387 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1176682809
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1176682809
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1176682809 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1380750669
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1380750669
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody div.u_1195183866
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1098948225
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1230606339
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1901091549
+{
+	background-color:rgba(255,255,255,0) !important;
+}
+*#dm *.dmBody div.u_1304656490
+{
+	background-color:var(--color_1) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1346467957
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1346467957
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1346467957 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1649294940
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1649294940
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody div.u_1065808039
+{
+	background-color:var(--color_2) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody div.u_1600443638
+{
+	background-color:var(--color_1) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1092836769
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1092836769
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1092836769 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1586954144
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1586954144
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1586954144 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1507370199
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1507370199
+{
+	border-radius:69px 69px 69px 69px !important;
+}
+*#dm *.dmBody *.u_1664433888
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1664433888
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1664433888 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1148585651
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/Scarsdale-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1591960256
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/west105-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1850301264
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/WhitePlains-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1243488872
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/madison38-9773ec95-2880w.png) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1782828938
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/Serafina-Bway55-7c19d53b-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1289201948
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/Meatpacking-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1922019280
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/image5-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1702925186
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/serafina1-high-res_standard-32b7272d-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1027134240
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/fidi-bar-2880w.png) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1513675464
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/79937751-2-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1783406651
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_1535015326
+{
+	background-color:var(--color_1) !important;
+	border-radius:20px 20px 20px 20px !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:rgba(255,255,255,0.5) !important;
+}
+*#dm *.dmBody *.u_1198638771
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1198638771
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1198638771 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody *.u_1929913305
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody a.u_1929913305
+{
+	border-radius:69px 69px 69px 69px !important;
+	background-color:var(--color_2) !important;
+}
+*#dm *.dmBody a.u_1929913305 span.text
+{
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1340609345
+{
+	border-radius:10px 10px 10px 10px !important;
+	background-repeat:no-repeat !important;
+	background-image:url('https://lirp.cdn-website.com/48f618b4/dms3rep/multi/opt/serafinanewyork__2025-05-23T214409.000Z-281-29-2880w.png') !important;
+	background-size:cover !important;
+}
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.dmBody div.u_1605229701
+{
+	margin-left:0 !important;
+	padding-top:16px !important;
+	padding-left:16px !important;
+	padding-bottom:16px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:16px !important;
+}
+*#dm *.dmBody div.u_1339046111
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:743.305px !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1096284197
+{
+	margin-left:0 !important;
+	padding-top:100px !important;
+	padding-left:30px !important;
+	padding-bottom:20px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:30px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1922019280
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1404366212
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 34px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:89.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1208575082
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 30px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:97.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1753921758
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 16px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:115.312px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1785263376
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody div.u_1656753742
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1617275549
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody a.u_1155284547
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1851147271
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1595853864
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:374.533px !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1524902627
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1948218065
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1096035324
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 34px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:89.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1127344452
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 30px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:97.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1243488872
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1358997443
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+}
+*#dm *.dmBody div.u_1841453207
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody div.u_1670523538
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 16px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:115.312px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1537787983
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody div.u_1947471699
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1127711338
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody a.u_1147699646
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1000012957
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1561129065
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:374.533px !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1081497936
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1120193446
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+}
+*#dm *.dmBody div.u_1180071774
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody a.u_1401425503
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1601338002
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1116063934
+{
+	margin-left:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-top:31px !important;
+	margin-bottom:20px !important;
+	margin-right:auto !important;
+	padding-right:0px !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	min-height:auto !important;
+	max-width:100% !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody a.u_1701212451
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1912857372
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1474155253
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1651269890
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1363325933
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1847512005
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 34px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:89.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1766747972
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 30px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:97.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1702925186
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1126841688
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+}
+*#dm *.dmBody div.u_1871869355
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody div.u_1287108816
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 16px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:115.312px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1756847307
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody div.u_1087208408
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1218540211
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody a.u_1443841998
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1775999390
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1062124663
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1749738690
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:374.533px !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1872061895
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1291580657
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1294332389
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1027134240
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1187028846
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 34px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:89.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1513675464
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1171288409
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 16px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:115.312px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1192540009
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody div.u_1238278980
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody a.u_1195487052
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1070791621
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:374.533px !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1041748387
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1119004200
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody a.u_1176682809
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1380750669
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1842652254
+{
+	padding-top:1px !important;
+	padding-left:0px !important;
+	padding-bottom:54.5px !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	min-height:auto !important;
+	margin-right:40px !important;
+	margin-left:40px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+}
+*#dm *.dmBody div.u_1655049017
+{
+	margin-left:40px !important;
+	padding-top:20px !important;
+	padding-left:0px !important;
+	padding-bottom:100px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:40px !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1387130291
+{
+	padding-top:1px !important;
+	padding-left:0px !important;
+	padding-bottom:54.5px !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	min-height:auto !important;
+	margin-left:40px !important;
+	margin-top:-1px !important;
+	margin-bottom:0px !important;
+	margin-right:40px !important;
+}
+*#dm *.dmBody div.u_1086685270
+{
+	padding-top:20px !important;
+	padding-left:0px !important;
+	padding-bottom:100px !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	margin-left:40px !important;
+	margin-top:-1px !important;
+	margin-bottom:0px !important;
+	margin-right:40px !important;
+}
+*#dm *.dmBody a.u_1935316737
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 39px) !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:250px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	min-height:auto !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	margin-top:14px !important;
+	margin-bottom:10px !important;
+	text-align:center !important;
+}
+*#dm *.dmBody a.u_1923777489
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 49px) !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:250px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	min-height:auto !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	margin-top:20px !important;
+	margin-bottom:10px !important;
+	text-align:center !important;
+}
+*#dm *.dmBody div.u_1148585651
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1850301264
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1459657852
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 34px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:89.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1032813450
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 30px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:97.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1591960256
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1629604803
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 16px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:115.312px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1600443638
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody div.u_1268640366
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1897169760
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody a.u_1346467957
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1649294940
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1648227113
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:374.533px !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1092836769
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1304656490
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+}
+*#dm *.dmBody div.u_1065808039
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+}
+*#dm *.dmBody a.u_1586954144
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1507370199
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody a.u_1664433888
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1901091549
+{
+	padding-top:20px !important;
+	padding-left:0px !important;
+	padding-bottom:100px !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1782828938
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1289201948
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 100% !important;
+}
+*#dm *.dmBody div.u_1803153072
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 30px) !important;
+	position:relative !important;
+	height:154px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:97.3359px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1929134594
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:0px !important;
+	margin-left:0px !important;
+	max-width:100% !important;
+	margin-top:20px !important;
+	margin-bottom:20px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody a.u_1198638771
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1535015326
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	padding-right:25px !important;
+}
+*#dm *.dmBody a.u_1929913305
+{
+	display:block !important;
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:248.983px !important;
+	position:relative !important;
+	height:49px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1340609345
+{
+	margin-left:0 !important;
+	padding-top:40px !important;
+	padding-left:40px !important;
+	padding-bottom:40px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-position:50% 0% !important;
+}
+
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-14, .size-14, .size-14 > font { font-size: 14px !important; }.font-size-60, .size-60, .size-60 > font { font-size: 60px !important; }.font-size-12, .size-12, .size-12 > font { font-size: 12px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Roboto Mono Fallback";
+  src: local('Arial');
+  ascent-override: 77.0755%;
+  descent-override: 19.9333%;
+  size-adjust: 135.9513%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Oswald Fallback";
+  src: local('Arial');
+  ascent-override: 145.0682%;
+  descent-override: 35.1423%;
+  size-adjust: 82.2372%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Helvetica Fallback";
+  src: local('Arial');
+  ascent-override: 77.002%;
+  descent-override: 22.998%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Arial Fallback";
+  src: local('Arial');
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lato Fallback";
+  src: local('Arial');
+  ascent-override: 101.3181%;
+  descent-override: 21.865%;
+  size-adjust: 97.4159%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Dancing Script Fallback";
+  src: local('Arial');
+  ascent-override: 114.0713%;
+  descent-override: 34.7173%;
+  size-adjust: 80.6513%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.serafinarestaurant.com/menus-locations">
+
+  <title>
+    Menus &amp; Locations | Serafina Restaurant
+  </title>
+  <meta name="description" content="Browse Serafina’s menus and find your favorite location's offerings all in one place. Discover the authentic Italian dishes we serve at each restaurant."/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Menus &amp; Locations | Serafina Restaurant"/>
+  <meta name="twitter:description" content="Browse Serafina’s menus and find your favorite location's offerings all in one place. Discover the authentic Italian dishes we serve at each restaurant."/>
+  <meta property="og:description" content="Browse Serafina’s menus and find your favorite location's offerings all in one place. Discover the authentic Italian dishes we serve at each restaurant."/>
+  <meta property="og:title" content="Menus &amp; Locations | Serafina Restaurant"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="menus-locations"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite mac safariFix dmLargeBody responsiveTablet "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper hamburgerLayout-var5 null hamburgerLayout">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true" desktop-global-classes="header-over-content" tablet-global-classes="header-over-content"> <div dmtemplateid="Hamburger" class="runtime-module-container dm-bfs dm-layout-sec hasAnimations hasStickyHeader inMiniHeaderMode rows-1200 header-over-content dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var"> <div id="site_content"> <div class="p_hfcontainer"> <div id="hamburger-drawer" class="u_hamburger-drawer hamburger-drawer layout-drawer" layout="2fef9973807a46bbbdad5938e9d68e93===header" data-origin="side" data-auto-height="true"> <div class="u_1966661115 dmRespRow middleDrawerRow" style="text-align: center;" id="1966661115"> <div class="dmRespColsWrapper" id="1621933221"> <div class="u_1896205963 dmRespCol small-12 medium-12 large-12 empty-column" id="1896205963"></div> 
+</div> 
+</div> 
+ <div class="u_1635167713 dmRespRow" style="text-align: center;" id="1635167713"> <div class="dmRespColsWrapper" id="1105132904"> <div class="u_1951553004 dmRespCol small-12 medium-12 large-12" id="1951553004"> <div class="dmNewParagraph u_1010601221" data-element-type="paragraph" data-version="5" id="1010601221" style="transition: none; text-align: left; display: block;"><p class="m-size-11 size-14"><span style="display: unset;" class="m-font-size-11 font-size-14">New York City</span><span class="m-font-size-11 font-size-14" style="display: initial;"> <span style="display: initial;" class="m-font-size-11 font-size-14">Locations</span></span></p></div> 
+ <nav class="u_1129992135 effect-none main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_4" layout-sub="" data-show-vertical-sub-items="HIDE" id="1129992135" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/fabulous-pizza-79th" class="unifiednav__item    " target="" data-target-page-alias="fabulous-pizza-79th"> <span class="nav-item-text " data-link-text="Fabulous Pizza 79th" data-auto="page-text-style">Fabulous Pizza 79th<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/financial-district" class="unifiednav__item    " target="" data-target-page-alias="financial-district"> <span class="nav-item-text " data-link-text="Financial District" data-auto="page-text-style">Financial District<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/always-61st" class="unifiednav__item    " target="" data-target-page-alias="always-61st"> <span class="nav-item-text " data-link-text="Always 61st" data-auto="page-text-style">Always 61st<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/madison-38th" class="unifiednav__item    " target="" data-target-page-alias="madison-38th"> <span class="nav-item-text " data-link-text="Madison 38th" data-auto="page-text-style">Madison 38th<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/broadway-55th" class="unifiednav__item    " target="" data-target-page-alias="broadway-55th"> <span class="nav-item-text " data-link-text="Broadway 55th" data-auto="page-text-style">Broadway 55th<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/meatpacking" class="unifiednav__item    " target="" data-target-page-alias="meatpacking"> <span class="nav-item-text " data-link-text="Meatpacking" data-auto="page-text-style">Meatpacking<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/tribeca" class="unifiednav__item    " target="" data-target-page-alias="tribeca"> <span class="nav-item-text " data-link-text="TriBeCa" data-auto="page-text-style">TriBeCa<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/osteria-58th" class="unifiednav__item    " target="" data-target-page-alias="osteria-58th"> <span class="nav-item-text " data-link-text="Osteria 58th" data-auto="page-text-style">Osteria 58th<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/upper-west-77th" class="unifiednav__item    " target="" data-target-page-alias="upper-west-77th"> <span class="nav-item-text " data-link-text="Upper West 77th" data-auto="page-text-style">Upper West 77th<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/times-square-nyc" class="unifiednav__item    " target="" data-target-page-alias="time-hotel-49th"> <span class="nav-item-text " data-link-text="Times Square" data-auto="page-text-style">Times Square<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/west-105th" class="unifiednav__item    " target="" data-target-page-alias="west-105th"> <span class="nav-item-text " data-link-text="West 105th" data-auto="page-text-style">West 105th<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/lic" class="unifiednav__item    " target="" data-target-page-alias="long-island-city"> <span class="nav-item-text " data-link-text="Long Island City" data-auto="page-text-style">Long Island City<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/serafina-777" class="unifiednav__item    " target="" data-target-page-alias="serafina-777"> <span class="nav-item-text " data-link-text="777 Third Ave" data-auto="page-text-style">777 Third Ave<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+ <div class="u_1872568021 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1872568021" style="transition: opacity 1s ease-in-out;"><p class="m-size-11 size-14"><span style="display: unset;" class="m-font-size-11 font-size-14">Greater New York</span></p></div> 
+ <nav class="u_1940177284 effect-none main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_4" layout-sub="" data-show-vertical-sub-items="HIDE" id="1940177284" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/scarsdale" class="unifiednav__item    " target="" data-target-page-alias="scarsdale"> <span class="nav-item-text " data-link-text="Scarsdale" data-auto="page-text-style">Scarsdale<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/white-plains" class="unifiednav__item    " target="" data-target-page-alias="white-plains"> <span class="nav-item-text " data-link-text="White Plains" data-auto="page-text-style">White Plains<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/east-hampton" class="unifiednav__item    " target="" data-target-page-alias="east-hampton"> <span class="nav-item-text " data-link-text="East Hampton" data-auto="page-text-style">East Hampton<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+ <a data-display-type="block" class="u_1231841439 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/private-events" data-element-type="dButtonLinkId" id="1231841439"> <span class="iconBg" aria-hidden="true" id="1725737164"> <span class="icon hasFontIcon icon-star" id="1879221172"></span> 
+</span> 
+ <span class="text" id="1412353314">Private Events</span> 
+</a> 
+ <nav class="u_1410723155 effect-none main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_4" layout-sub="" data-show-vertical-sub-items="HIDE" id="1410723155" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menus-locations" class="unifiednav__item  dmNavItemSelected    " target="" data-target-page-alias="menus-locations" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="Menus & Locations" data-auto="page-text-style">Menus &amp; Locations<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/private-events" class="unifiednav__item    " target="" data-target-page-alias="private-events"> <span class="nav-item-text " data-link-text="Private Events" data-auto="page-text-style">Private Events<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/email-signup" class="unifiednav__item    " target="" data-target-page-alias="email-signup"> <span class="nav-item-text " data-link-text="Join our E-mail List" data-auto="page-text-style">Join our E-mail List<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item    " target="" data-target-page-alias="about"> <span class="nav-item-text " data-link-text="Our Story" data-auto="page-text-style">Our Story<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/serafina-around-the-world" class="unifiednav__item    " target="" data-target-page-alias="serafina-around-the-world"> <span class="nav-item-text " data-link-text="Serafina Around The World" data-auto="page-text-style">Serafina Around The World<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/restaurant-locator" class="unifiednav__item    " target="" data-target-page-alias="restaurant-locator"> <span class="nav-item-text " data-link-text="Restaurant Locator" data-auto="page-text-style">Restaurant Locator<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about#OurIngredients" class="unifiednav__item    " target="" data-target-page-alias="about#OurIngredients"> <span class="nav-item-text " data-link-text="Our Ingredients" data-auto="page-text-style">Our Ingredients<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/careers" class="unifiednav__item    " target="_blank" data-target-page-alias="careers"> <span class="nav-item-text " data-link-text="Careers" data-auto="page-text-style">Careers<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1499346049 dmRespRow" style="text-align: center;" id="1499346049"> <div class="dmRespColsWrapper" id="1350126692"> <div class="u_1657329738 dmRespCol small-12 medium-12 large-12 empty-column" id="1657329738"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="layout-drawer-overlay" id="layout-drawer-overlay"></div> 
+</div> 
+ <div class="site_content"> <div id="hamburger-header-container" class="hamburger-header-container p_hfcontainer"> <div id="hamburger-header" class="hamburger-header p_hfcontainer" layout="44dc38f951e9489490b055748e10ba9f===header" data-scrollable-target="body" data-scroll-responder-id="hamburger-header" secondary-image="https://irp.cdn-website.com/48f618b4/dms3rep/multi/serafina-solo-blue.svg" has-secondary-image="true"> <div class="u_1586150744 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1586150744"> <div class="dmRespColsWrapper" id="1731733897"> <div class="u_1548074414 dmRespCol small-12 large-8 medium-8" id="1548074414"> <div class="u_1519330855 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1519330855"> <a href="/" id="1011217381" file="false"><img src="https://irp.cdn-website.com/48f618b4/dms3rep/multi/serafina-solo-yellow.svg" id="1451307976" class="" data-dm-image-path="https://irp.cdn-website.com/48f618b4/dms3rep/multi/serafina-solo-yellow.svg" width="0" height="0" alt="Serafina logo in yellow, featuring the brand's name written in a flowing, cursive script. The design is bold and vibrant, with the yellow color standing out against a light background, giving the logo a lively and energetic feel. This logo is simple yet distinctive, reflecting the brand's identity." onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1304737356 dmRespCol small-12 large-2 medium-2" id="1304737356"> <a data-display-type="block" class="u_1130810716 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="https://order.online/business/serafina-7867" data-element-type="dButtonLinkId" id="1130810716" data-buttonstyle="ROUND_SIDES" target="_blank"> <span class="iconBg" aria-hidden="true" id="1673398599"> <span class="icon hasFontIcon icon-star" id="1561581168"></span> 
+</span> 
+ <span class="text" id="1743940525">Order Online</span> 
+</a> 
+</div> 
+ <div class="u_1168273845 dmRespCol small-12 large-2 medium-2" id="1168273845"> <a data-display-type="block" class="u_1943692671 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/opentable-reservations" data-element-type="dButtonLinkId" id="1943692671" link_type="popup" popup_target="opentable-reservations" data-buttonstyle="ROUND_SIDES"> <span class="iconBg" aria-hidden="true" id="1468640645"> <span class="icon hasFontIcon icon-star" id="1802660250"></span> 
+</span> 
+ <span class="text" id="1652059655">Reservations</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <button class="layout-drawer-hamburger hamburger-on-header" id="layout-drawer-hamburger" aria-label="menu" aria-controls="hamburger-drawer" aria-expanded="false"> <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+</button> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_menus-locations dm-home-page" themewaschanged="true" desktop-global-classes="header-over-content" tablet-global-classes="header-over-content"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="u_1096284197 dmRespRow" id="1096284197" data-page-element-type="section" data-page-element-id="1823702692"> <div class="dmRespColsWrapper" id="1769474370"> <div class="dmRespCol large-12 medium-12 small-12 u_1605229701" id="1605229701"> <div class="u_1116063934 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1116063934" data-ai-tag="Short title"> <h1 class="size-60 m-size-48 text-align-center" style=""><span style="color:var(--color_2);font-weight:normal;display:unset;font-family:'Apercu Light';" class="font-size-60 m-font-size-48">Menus &amp; Locations</span></h1> 
+</div> 
+ <div class="u_1339046111 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1339046111" style="transition: none 0s ease 0s; text-align: left; display: block;" data-ai-tag="Short section description"><p class="text-align-center"><span style="display: unset;">Find your favorite Serafina and its menu here</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1842652254 dmRespRow" id="1842652254" data-page-element-type="section" data-page-element-id="1823702692"> <div class="dmRespColsWrapper" id="1735323779"> <div class="u_1537787983 dmRespCol small-12 medium-4 large-4" id="1537787983"> <div class="u_1524902627 dmRespRow" id="1524902627"> <div class="dmRespColsWrapper" id="1288431273"> <div class="dmRespCol small-12 medium-12 large-12 u_1502091902" id="1502091902"> <div data-element-type="spacer" class="u_1096035324 dmSpacer" id="1096035324"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1947471699 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1947471699" data-ai-tag="Short title" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h4 class="text-align-center" style=""><span style="display: unset; color: var(--color_3);">Fabulous Pizza 79th</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1401425503 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/fabulous-pizza-79th#Menus" data-element-type="dButtonLinkId" id="1401425503"> <span class="iconBg" aria-hidden="true" id="1410695293"> <span class="icon hasFontIcon icon-star" id="1657046064"></span> 
+</span> 
+ <span class="text" id="1787019504" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1147699646 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/fabulous-pizza-79th" data-element-type="dButtonLinkId" id="1147699646"> <span class="iconBg" aria-hidden="true" id="1365296332"> <span class="icon hasFontIcon icon-star" id="1698851133"></span> 
+</span> 
+ <span class="text" id="1864738231" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+ <div class="u_1841453207 dmRespCol small-12 medium-4 large-4" id="1841453207"> <div class="u_1948218065 dmRespRow" id="1948218065"> <div class="dmRespColsWrapper" id="1977462616"> <div class="dmRespCol small-12 medium-12 large-12 u_1916536618" id="1916536618"> <div data-element-type="spacer" class="u_1127344452 dmSpacer" id="1127344452"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1127711338 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1127711338" data-ai-tag="Short title" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h4 class="text-align-center"><span style="display: unset; color: var(--color_2);">Always 61st</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1935316737 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/always-61st#Menus" data-element-type="dButtonLinkId" id="1935316737"> <span class="iconBg" aria-hidden="true" id="1265320756"> <span class="icon hasFontIcon icon-star" id="1280224504"></span> 
+</span> 
+ <span class="text" id="1741178819" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1000012957 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/always-61st" data-element-type="dButtonLinkId" id="1000012957"> <span class="iconBg" aria-hidden="true" id="1985539142"> <span class="icon hasFontIcon icon-star" id="1630180099"></span> 
+</span> 
+ <span class="text" id="1417148052" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+ <div class="u_1358997443 dmRespCol small-12 medium-4 large-4" id="1358997443"> <div class="u_1243488872 dmRespRow" id="1243488872"> <div class="dmRespColsWrapper" id="1576694743"> <div class="dmRespCol small-12 medium-12 large-12 u_1043265524" id="1043265524"> <div data-element-type="spacer" class="u_1670523538 dmSpacer" id="1670523538"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1561129065 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1561129065" data-ai-tag="Short title" style="text-align: left;"> <h4 class="text-align-center"><span style="display: unset; color: var(--color_3);">Madison 38th</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1923777489 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/madison-38th#Menus" data-element-type="dButtonLinkId" id="1923777489"> <span class="iconBg" aria-hidden="true" id="1461146299"> <span class="icon hasFontIcon icon-star" id="1789535730"></span> 
+</span> 
+ <span class="text" id="1920591430" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1601338002 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/madison-38th" data-element-type="dButtonLinkId" id="1601338002"> <span class="iconBg" aria-hidden="true" id="1492224218"> <span class="icon hasFontIcon icon-star" id="1386357901"></span> 
+</span> 
+ <span class="text" id="1384631131" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1655049017 dmRespRow" id="1655049017" data-page-element-type="section" data-page-element-id="1823702692"> <div class="dmRespColsWrapper" id="1571602735"> <div class="u_1785263376 dmRespCol small-12 medium-4 large-4" id="1785263376"> <div class="u_1782828938 dmRespRow" id="1782828938"> <div class="dmRespColsWrapper" id="1875740687"> <div class="dmRespCol small-12 medium-12 large-12 u_1797931495" id="1797931495"> <div data-element-type="spacer" class="u_1404366212 dmSpacer" id="1404366212"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1656753742 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1656753742" data-ai-tag="Short title" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h4 class="text-align-center"><span style="color: var(--color_2); display: unset;">Broadway 55th</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1081497936 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/broadway-55th#Menus" data-element-type="dButtonLinkId" id="1081497936"> <span class="iconBg" aria-hidden="true" id="1470248342"> <span class="icon hasFontIcon icon-star" id="1611885458"></span> 
+</span> 
+ <span class="text" id="1807325321" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1701212451 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/broadway-55th" data-element-type="dButtonLinkId" id="1701212451"> <span class="iconBg" aria-hidden="true" id="1860398525"> <span class="icon hasFontIcon icon-star" id="1716574826"></span> 
+</span> 
+ <span class="text" id="1495960483" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+ <div class="u_1180071774 dmRespCol small-12 medium-4 large-4" id="1180071774"> <div class="u_1289201948 dmRespRow" id="1289201948"> <div class="dmRespColsWrapper" id="1944581484"> <div class="dmRespCol small-12 medium-12 large-12 u_1473554175" id="1473554175"> <div data-element-type="spacer" class="u_1753921758 dmSpacer" id="1753921758"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1595853864 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1595853864" data-ai-tag="Short title" style="text-align: left;"> <h4 class="text-align-center"><span style="display: unset; color: var(--color_3);">Meatpacking</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1851147271 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/meatpacking#Menus" data-element-type="dButtonLinkId" id="1851147271"> <span class="iconBg" aria-hidden="true" id="1026714712"> <span class="icon hasFontIcon icon-star" id="1720511440"></span> 
+</span> 
+ <span class="text" id="1279150938" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1912857372 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/meatpacking" data-element-type="dButtonLinkId" id="1912857372"> <span class="iconBg" aria-hidden="true" id="1205940310"> <span class="icon hasFontIcon icon-star" id="1085233128"></span> 
+</span> 
+ <span class="text" id="1644071397" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+ <div class="u_1120193446 dmRespCol small-12 medium-4 large-4" id="1120193446"> <div class="u_1922019280 dmRespRow" id="1922019280"> <div class="dmRespColsWrapper" id="1221604074"> <div class="dmRespCol small-12 medium-12 large-12 u_1736092293" id="1736092293"> <div data-element-type="spacer" class="u_1208575082 dmSpacer" id="1208575082"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1617275549 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1617275549" data-ai-tag="Short title" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h4 class="text-align-center"><span style="color: var(--color_2); display: unset;">TriBeCa</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1474155253 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/tribeca#Menus" data-element-type="dButtonLinkId" id="1474155253"> <span class="iconBg" aria-hidden="true" id="1826562701"> <span class="icon hasFontIcon icon-star" id="1160379111"></span> 
+</span> 
+ <span class="text" id="1986625273" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1155284547 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/tribeca" data-element-type="dButtonLinkId" id="1155284547"> <span class="iconBg" aria-hidden="true" id="1494495020"> <span class="icon hasFontIcon icon-star" id="1392574424"></span> 
+</span> 
+ <span class="text" id="1998751175" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1387130291 dmRespRow" id="1387130291" data-page-element-type="section" data-page-element-id="1823702692"> <div class="dmRespColsWrapper" id="1806032927"> <div class="u_1756847307 dmRespCol small-12 medium-4 large-4" id="1756847307"> <div class="u_1651269890 dmRespRow" id="1651269890"> <div class="dmRespColsWrapper" id="1088596393"> <div class="dmRespCol small-12 medium-12 large-12 u_1949066480" id="1949066480"> <div data-element-type="spacer" class="u_1847512005 dmSpacer" id="1847512005"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1087208408 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1087208408" data-ai-tag="Short title" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h4 class="text-align-center"><span style="display: unset; color: var(--color_3);">Osteria 58th</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1872061895 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/osteria-58th#Menus" data-element-type="dButtonLinkId" id="1872061895"> <span class="iconBg" aria-hidden="true" id="1420576453"> <span class="icon hasFontIcon icon-star" id="1343061435"></span> 
+</span> 
+ <span class="text" id="1255654368" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1443841998 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/osteria-58th" data-element-type="dButtonLinkId" id="1443841998"> <span class="iconBg" aria-hidden="true" id="1784092336"> <span class="icon hasFontIcon icon-star" id="1611535953"></span> 
+</span> 
+ <span class="text" id="1186726232" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+ <div class="u_1871869355 dmRespCol small-12 medium-4 large-4" id="1871869355"> <div class="u_1363325933 dmRespRow" id="1363325933"> <div class="dmRespColsWrapper" id="1241777771"> <div class="dmRespCol small-12 medium-12 large-12 u_1102984630" id="1102984630"> <div data-element-type="spacer" class="u_1766747972 dmSpacer" id="1766747972"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1218540211 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1218540211" data-ai-tag="Short title" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h4 class="text-align-center"><span style="display: unset; color: var(--color_2);">Upper West 77th</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1291580657 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/upper-west-77th#Menus" data-element-type="dButtonLinkId" id="1291580657"> <span class="iconBg" aria-hidden="true" id="1362988769"> <span class="icon hasFontIcon icon-star" id="1764950357"></span> 
+</span> 
+ <span class="text" id="1390652171" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1775999390 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/upper-west-77th" data-element-type="dButtonLinkId" id="1775999390"> <span class="iconBg" aria-hidden="true" id="1957229677"> <span class="icon hasFontIcon icon-star" id="1751145074"></span> 
+</span> 
+ <span class="text" id="1305729525" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+ <div class="u_1126841688 dmRespCol small-12 medium-4 large-4" id="1126841688"> <div class="u_1702925186 dmRespRow" id="1702925186"> <div class="dmRespColsWrapper" id="1121286356"> <div class="dmRespCol small-12 medium-12 large-12 u_1213694916" id="1213694916"> <div data-element-type="spacer" class="u_1287108816 dmSpacer" id="1287108816"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1749738690 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1749738690" data-ai-tag="Short title" style="text-align: left;"> <h4 class="text-align-center"><span style="display: unset; color: var(--color_3);">Times Square</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1062124663 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/times-square-nyc#Menus" data-element-type="dButtonLinkId" id="1062124663"> <span class="iconBg" aria-hidden="true" id="1328367095"> <span class="icon hasFontIcon icon-star" id="1025506056"></span> 
+</span> 
+ <span class="text" id="1689822162" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1294332389 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/times-square-nyc" data-element-type="dButtonLinkId" id="1294332389"> <span class="iconBg" aria-hidden="true" id="1030243036"> <span class="icon hasFontIcon icon-star" id="1651847306"></span> 
+</span> 
+ <span class="text" id="1086293476" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1901091549 dmRespRow" id="1901091549" data-page-element-type="section" data-page-element-id="1823702692"> <div class="dmRespColsWrapper" id="1903776666"> <div class="u_1600443638 dmRespCol small-12 medium-4 large-4" id="1600443638"> <div class="u_1148585651 dmRespRow" id="1148585651"> <div class="dmRespColsWrapper" id="1360683506"> <div class="dmRespCol small-12 medium-12 large-12 u_1195183866" id="1195183866"> <div data-element-type="spacer" class="u_1459657852 dmSpacer" id="1459657852"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1268640366 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1268640366" data-ai-tag="Short title" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h4 class="text-align-center"><span style="display: unset; color: var(--color_2);">Scarsdale</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1092836769 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/scarsdale#Menus" data-element-type="dButtonLinkId" id="1092836769"> <span class="iconBg" aria-hidden="true" id="1611575577"> <span class="icon hasFontIcon icon-star" id="1829204197"></span> 
+</span> 
+ <span class="text" id="1125627466" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1586954144 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/scarsdale" data-element-type="dButtonLinkId" id="1586954144"> <span class="iconBg" aria-hidden="true" id="1746912227"> <span class="icon hasFontIcon icon-star" id="1042322669"></span> 
+</span> 
+ <span class="text" id="1630494030" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+ <div class="u_1065808039 dmRespCol small-12 medium-4 large-4" id="1065808039"> <div class="u_1591960256 dmRespRow" id="1591960256"> <div class="dmRespColsWrapper" id="1222054070"> <div class="dmRespCol small-12 medium-12 large-12 u_1230606339" id="1230606339"> <div data-element-type="spacer" class="u_1629604803 dmSpacer" id="1629604803"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1648227113 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1648227113" data-ai-tag="Short title" style="text-align: left;"> <h4 class="text-align-center"><span style="display: unset; color: var(--color_3);">West 105th</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1649294940 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/west-105th" data-element-type="dButtonLinkId" id="1649294940"> <span class="iconBg" aria-hidden="true" id="1118184334"> <span class="icon hasFontIcon icon-star" id="1949112331"></span> 
+</span> 
+ <span class="text" id="1873842662" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1507370199 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/west-105th#Menus" data-element-type="dButtonLinkId" id="1507370199"> <span class="iconBg" aria-hidden="true" id="1017625259"> <span class="icon hasFontIcon icon-star" id="1432176170"></span> 
+</span> 
+ <span class="text" id="1492713718" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+ <div class="u_1304656490 dmRespCol small-12 medium-4 large-4" id="1304656490"> <div class="u_1850301264 dmRespRow" id="1850301264"> <div class="dmRespColsWrapper" id="1280607144"> <div class="dmRespCol small-12 medium-12 large-12 u_1098948225" id="1098948225"> <div data-element-type="spacer" class="u_1032813450 dmSpacer" id="1032813450"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1897169760 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1897169760" data-ai-tag="Short title" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h4 class="text-align-center"><span style="display: unset; color: var(--color_2);">White Plains</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1664433888 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/white-plains#Menus" data-element-type="dButtonLinkId" id="1664433888"> <span class="iconBg" aria-hidden="true" id="1811096084"> <span class="icon hasFontIcon icon-star" id="1686398358"></span> 
+</span> 
+ <span class="text" id="1087057622" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1346467957 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/white-plains" data-element-type="dButtonLinkId" id="1346467957"> <span class="iconBg" aria-hidden="true" id="1088921903"> <span class="icon hasFontIcon icon-star" id="1643861761"></span> 
+</span> 
+ <span class="text" id="1336125900" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1086685270 dmRespRow" id="1086685270" data-page-element-type="section" data-page-element-id="1823702692"> <div class="dmRespColsWrapper" id="1290421490"> <div class="u_1192540009 dmRespCol small-12 medium-4 large-4" id="1192540009"> <div class="u_1027134240 dmRespRow" id="1027134240"> <div class="dmRespColsWrapper" id="1660955275"> <div class="dmRespCol small-12 medium-12 large-12 u_1339570288" id="1339570288"> <div data-element-type="spacer" class="u_1187028846 dmSpacer" id="1187028846"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1238278980 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1238278980" data-ai-tag="Short title" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h4 class="text-align-center"><span style="color: var(--color_2); display: unset;">Financial District</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1041748387 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/financial-district#Menus" data-element-type="dButtonLinkId" id="1041748387"> <span class="iconBg" aria-hidden="true" id="1501545719"> <span class="icon hasFontIcon icon-star" id="1741700644"></span> 
+</span> 
+ <span class="text" id="1524559500" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1176682809 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/financial-district" data-element-type="dButtonLinkId" id="1176682809"> <span class="iconBg" aria-hidden="true" id="1720244259"> <span class="icon hasFontIcon icon-star" id="1993542265"></span> 
+</span> 
+ <span class="text" id="1366486493" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+ <div class="u_1119004200 dmRespCol small-12 medium-4 large-4" id="1119004200"> <div class="u_1513675464 dmRespRow" id="1513675464"> <div class="dmRespColsWrapper" id="1074593374"> <div class="dmRespCol small-12 medium-12 large-12 u_1287458450" id="1287458450"> <div data-element-type="spacer" class="u_1171288409 dmSpacer" id="1171288409"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1070791621 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1070791621" data-ai-tag="Short title" style="text-align: left;"> <h4 class="text-align-center"><span style="color: var(--color_3); display: unset;">Long Island City</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1195487052 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/lic" data-element-type="dButtonLinkId" id="1195487052"> <span class="iconBg" aria-hidden="true" id="1400910620"> <span class="icon hasFontIcon icon-star" id="1946355557"></span> 
+</span> 
+ <span class="text" id="1675540160" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1380750669 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/lic#Menus" data-element-type="dButtonLinkId" id="1380750669"> <span class="iconBg" aria-hidden="true" id="1713919949"> <span class="icon hasFontIcon icon-star" id="1813529183"></span> 
+</span> 
+ <span class="text" id="1252429376" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+ <div class="u_1535015326 dmRespCol small-12 medium-4 large-4" id="1535015326"> <div class="u_1340609345 dmRespRow" id="1340609345"> <div class="dmRespColsWrapper" id="1378439432"> <div class="dmRespCol small-12 medium-12 large-12 u_1783406651" id="1783406651"> <div data-element-type="spacer" class="u_1803153072 dmSpacer" id="1803153072"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1929134594 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1929134594" data-ai-tag="Short title" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h4 class="text-align-center"><span class="" style="color: var(--color_2); display: unset;"><span style="color: var(--color_2); display: unset;">777 Third Avenue</span> 
+</span></h4> 
+</div> 
+ <a data-display-type="block" class="u_1929913305 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/serafina-777#Menus" data-element-type="dButtonLinkId" id="1929913305"> <span class="iconBg" aria-hidden="true" id="1303522071"> <span class="icon hasFontIcon icon-star" id="1049804075"></span> 
+</span> 
+ <span class="text" id="1972932742" data-ai-tag="Short button text">See Menu</span> 
+</a> 
+ <a data-display-type="block" class="u_1198638771 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/serafina-777" data-element-type="dButtonLinkId" id="1198638771"> <span class="iconBg" aria-hidden="true" id="1487783965"> <span class="icon hasFontIcon icon-star" id="1647837829"></span> 
+</span> 
+ <span class="text" id="1469032654" data-ai-tag="Short button text">Go To Location</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1329813326 dmRespRow" id="1329813326"> <div class="dmRespColsWrapper" id="1321316085"> <div class="dmRespCol large-12 medium-12 small-12" id="1945676230"> <a data-display-type="block" class="u_1711776533 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/email-signup" data-element-type="dButtonLinkId" id="1711776533"> <span class="iconBg" aria-hidden="true" id="1420543502"> <span class="icon hasFontIcon icon-star" id="1386932433"></span> 
+</span> 
+ <span class="text" id="1366509415">Sign Up For Our Email List Here</span> 
+</a> 
+ <a data-display-type="block" class="u_1516870777 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/opentable-reservations" data-element-type="dButtonLinkId" id="1516870777" link_type="popup" popup_target="opentable-reservations"> <span class="iconBg" aria-hidden="true" id="1655924125"> <span class="icon hasFontIcon icon-star" id="1683451100"></span> 
+</span> 
+ <span class="text" id="1310057330">Reservations</span> 
+</a> 
+ <nav class="u_1259281070 effect-bottom2 main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1259281070" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="HORIZONTAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item    " target="" data-target-page-alias="about"> <span class="nav-item-text " data-link-text="Our Story" data-auto="page-text-style">Our Story<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/restaurant-locator" class="unifiednav__item    " target="" data-target-page-alias="restaurant-locator"> <span class="nav-item-text " data-link-text="Restaurant Locator" data-auto="page-text-style">Restaurant Locator<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menus-locations" class="unifiednav__item  dmNavItemSelected    " target="" data-target-page-alias="menus-locations" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="Menus & Locations" data-auto="page-text-style">Menus &amp; Locations<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/accessibility" class="unifiednav__item    " target="" data-target-page-alias="accessibility"> <span class="nav-item-text " data-link-text="Accessibility" data-auto="page-text-style">Accessibility<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/careers" class="unifiednav__item    " target="" data-target-page-alias="careers"> <span class="nav-item-text " data-link-text="Careers" data-auto="page-text-style">Careers<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/serafina-around-the-world" class="unifiednav__item    " target="" data-target-page-alias="serafina-around-the-world"> <span class="nav-item-text " data-link-text="Serafina Around The World" data-auto="page-text-style">Serafina Around The World<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1632155419 dmRespRow mobile-columns-reversed fullBleedChanged fullBleedMode" style="text-align: center;" id="1632155419"> <div class="dmRespColsWrapper" id="1253858808"> <div class="u_1388535344 dmRespCol small-12 medium-12 large-12" id="1388535344"> <div class="u_1863932586 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1863932586" style="transition: opacity 1s ease-in-out;"><p class="m-size-10 text-align-center size-12"><a href="https://serafinarestaurantgroup.com/" runtime_url="https://serafinarestaurantgroup.com/" type="url" style="display: unset; text-decoration: none; color: var(--color_2);" class="font-size-12 m-font-size-10" target="_blank" aria-label="Serafina Restaurant Group. All Rights Reserved. (opens in new tab)">&copy; 2024, Serafina Restaurant Group. All Rights Reserved.</a></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1051269328 dmRespRow" id="1051269328"> <div class="dmRespColsWrapper" id="1915380241"> <div class="dmRespCol large-12 medium-12 small-12" id="1165867252"> <div class="u_1604649465 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1604649465" style="transition: opacity 1s ease-in-out;"><p class="m-size-10 text-align-center size-12"><a href="https://lumer.io/?utm_source=SerafinaRestaurant&utm_medium=Footer%20Link&utm_campaign=FooterL" target="_blank" runtime_url="https://lumer.io/?utm_source=SerafinaRestaurant&utm_medium=Footer%20Link&utm_campaign=FooterL" type="url" style="display: unset; text-decoration: none; color: var(--color_2);" class="m-font-size-10 font-size-12" aria-label="designed in light, built on Lumerio (opens in new tab)">Designed in Light, Built on Lumerio</a></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1472353597"> <div class="dmRespColsWrapper" id="1410757496"> <div class="dmRespCol empty-column large-12 medium-12 small-12" id="1588353377"></div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5968";
+    var build = "2025-11-27T12_19_14";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-11-27T12_19_14";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script type="text/javascript">
+    window.popups =
+    [{"title":"OpenTable Reservations","url":"/opentable-reservations","options":{"backgroundColor":"#FFFFFF","borderRadius":"5","width":"616","overlayColor":"rgba(255, 205, 0, 0.26)","height":"782.6666564941406"},"name":"opentable-reservations"}]</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5968';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5968';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =true;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+</script>
+<script async src="https://www.googletagmanager.com/gtm.js?id=AW-17219188163" id="d-js-gtm" onload="window.dispatchEvent(new CustomEvent('gtmLoaded', { bubbles: true }))"></script>
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '48f618b4'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 48f618b4 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Begin Body End Markup -->
+<!-- Lumer.io Multi-Location Reservations Widget Script --> 
+<script src="https://irp.cdn-website.com/48f618b4/files/uploaded/OTMultilocation.js"></script>
+
+<!-- Lumer.io Menu Handler -->
+<script src="https://irp.cdn-website.com/48f618b4/files/uploaded/SerafinaMenuSwitcher-V2.js"></script>
+
+<!-- Required Fields Reminder -->
+<script src="https://irp.cdn-website.com/48f618b4/files/uploaded/Required-Field.js"></script>
+
+<!-- Header Blur -->
+  
+<style>
+    #hamburger-header.hamburger-header.p_hfcontainer.scroll-responder_set  {
+        backdrop-filter: blur(15px) !important; /* apply the blur effect */
+    }
+    
+     #mobile-hamburger-header.hamburger-header.p_hfcontainer.scroll-responder_set {
+        backdrop-filter: blur(15px) !important; /* apply the blur effect */
+        -webkit-backdrop-filter: blur(15px); /* Safari-specific blur effect */
+     }
+</style>
+
+<!-- CSS Sticky Reservations -->
+<style>
+    @media only screen and (max-width: 767px) {
+  /* Target your specific button */
+  a.u_1588028736,
+  #1588028736 {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    z-index: 999999 !important;
+    top: auto !important;
+    height: 60px !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
+  }
+  
+  /* This will make it sticky until about halfway down the page */
+  /* Adjust the margin-top value based on your page layout */
+  body {
+    padding-bottom: 60px; /* Prevent content from being hidden */
+  }
+}
+</style>
+
+
+<!-- Accessibe -->
+<script> (function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : true, hideTrigger : false, disableBgProcess : false, language : 'en', position : 'left', leadColor : '#162660', triggerColor : '#162660', triggerRadius : '50%', triggerPositionX : 'right', triggerPositionY : 'bottom', triggerIcon : 'people', triggerSize : 'small', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'right', triggerPositionY : 'bottom', triggerOffsetX : 10, triggerOffsetY : 10, triggerRadius : '50%' } }); }; h.appendChild(s); })(); </script>
+
+<!-- AC -->
+<script>
+    (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
+    vgo('setAccount', '253644899');
+    vgo('setTrackByDefault', true);
+
+    vgo('process');
+</script>
+
+
+
+<!-- Lumer.io Multi-Location Reservations Widget Style-->  
+<style>
+    select#rid, select#date, input#date, select#time, select#partysize{
+  border-radius: 20px;
+  font-family: sans-serif;
+  color:#000;
+}
+
+input#submitButton{
+  background-color: #162660;
+  color: white;
+  border-radius: 25px;
+  padding-top: 15px;
+  padding-bottom: 35px;
+}
+ 
+ 
+label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .datepicker {
+            position: relative;
+            border-radius:15px;
+        }
+        .calendar {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: white;
+            border: 1px solid #162660;
+            z-index: 1000;
+            border-radius:25px;
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+        .calendar table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .calendar th, .calendar td {
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .calendar th {
+            background: #162660;
+            color:white;
+            padding-left:5px;
+            padding-right:5px;
+        }
+        .calendar td:hover {
+            background: #ffcd00;
+            border-radius:5px;
+        }
+        .calendar .month-navigation {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .calendar .month-navigation button {
+            background: #162660;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius:5px;
+        }
+        .calendar .month-navigation button:hover {
+            background: #0056b3;
+        }
+</style>
+
+<!-- Matomo -->  
+
+<script>
+
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://serafinagroup.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/serafinagroup.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+  
+</script>
+  <!-- End Matomo Code -->
+  
+<!-- InKind - Global Script -->  
+<div class="c-embed revealable" id="inkind" style="display: none;">
+<!-- The script will be injected here if the popup should be shown -->
+</div>
+  
+<script>
+    // Participating locations
+    const participatingLocations = [
+        { name: "Always 61st", path: "/always-61st" },
+        { name: "Broadway 55th", path: "/broadway-55th" },
+        { name: "Fabulous Pizza 79th", path: "/fabulous-pizza-79th" },
+        { name: "Financial District", path: "/financial-district" },
+        { name: "LIC", path: "/lic" },
+        { name: "Madison 38th", path: "/madison-38th" },
+        { name: "Meatpacking", path: "/meatpacking" },
+        { name: "Osteria 58th", path: "/osteria-58th" },
+        { name: "Scarsdale", path: "/scarsdale" },
+        { name: "Tribeca", path: "/tribeca" },
+        { name: "Upper West 77th", path: "/upper-west-77th" },
+        // Add more locations here as needed
+        // { name: "Location Name", path: "/location-path" },
+    ];
+
+    function isParticipatingLocation() {
+        // Get the current page path
+        const currentPath = window.location.pathname.toLowerCase();
+        
+        // Check if current path matches any participating location
+        return participatingLocations.some(location => {
+            // This checks if the current path starts with the location path
+            // So /downtown and /downtown/menu would both match
+            return currentPath.startsWith(location.path.toLowerCase());
+        });
+    }
+
+    function shouldShowPopup() {
+        // First check if this is a participating location
+        if (!isParticipatingLocation()) {
+            return false; // Don't show popup on non-participating locations
+        }
+
+        const lastShown = localStorage.getItem('inkindLastShown');
+        if (!lastShown) {
+            return true; // No timestamp means the pop-up has never been shown, so show it.
+        }
+        const now = new Date().getTime();
+        const oneWeek = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+        
+        // Check if one week has passed
+        return (now - lastShown) > oneWeek;
+    }
+
+    // Check if the popup should be displayed
+    if (shouldShowPopup()) {
+        // Set the current timestamp in localStorage
+        localStorage.setItem('inkindLastShown', new Date().getTime());
+        
+        // Inject the external JS file if the popup should be shown
+        var script = document.createElement('script');
+        script.src = 'https://inkindscript.com/inkind.js';
+        script.async = true;
+        document.getElementById('inkind').appendChild(script);
+        
+        // Display the popup container
+        document.getElementById('inkind').style.display = 'block';
+    }
+</script>  
+
+<!-- Mobile Reservations -->
+<style>
+  .mobile-reservations-btn {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .mobile-reservations-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #f5c518;
+      color: #162660;
+      padding: 14px 40px;
+      border-radius: 50px;
+      font-family: 'Apercu_Regular', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 9999;
+      cursor: pointer;
+      border: 3px solid #162660;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .mobile-reservations-btn:hover,
+    .mobile-reservations-btn:active {
+      transform: translateX(-50%) scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+  }
+</style>
+
+<button class="mobile-reservations-btn" id="mobileReservationsBtn">
+  Reservations
+</button>
+
+<script>
+document.getElementById('mobileReservationsBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  var originalBtn = document.querySelector('a[popup_target="opentable-reservations"]');
+  
+  if (originalBtn) {
+    var rect = originalBtn.getBoundingClientRect();
+    var centerX = rect.left + rect.width / 2;
+    var centerY = rect.top + rect.height / 2;
+    
+    ['pointerdown', 'mousedown', 'pointerup', 'mouseup', 'click'].forEach(function(type) {
+      var evt = new PointerEvent(type, {
+        bubbles: true,
+        cancelable: true,
+        view: window,
+        clientX: centerX,
+        clientY: centerY,
+        pointerType: 'mouse',
+        isPrimary: true
+      });
+      originalBtn.dispatchEvent(evt);
+    });
+  }
+});
+</script><!--  End Body End Markup -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>

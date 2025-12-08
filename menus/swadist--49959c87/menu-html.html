@@ -1,0 +1,1168 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+<title>Swadist Restaurant Menu</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="icon" href="img/favicon.png" sizes="16x16">
+<link href="css/jquery.colorpanel.css" rel="stylesheet">
+<link href="css/skins-default.css" id="cpswitch" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="font/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/mega_menu.css" />
+<link rel="stylesheet" type="text/css" href="css/settings.css">
+<link rel="stylesheet" type="text/css" href="css/navigation.css">
+<link rel="stylesheet" type="text/css" href="css/slider.css" />
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<link href="font/font/flaticon.css" rel="stylesheet" type="text/css">
+<link href="css/animate.html" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/chef-image-hover.css" />
+<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #fff;
+}
+
+/* ===== Container ===== */
+.menu_container {
+    display: block; /* single column layout */
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* ===== Column ===== */
+.menu_column {
+    width:100%;
+   /** background: linear-gradient(90deg, #FF9800, #FF5722); **/
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.menu_column2 {
+    background: #fef2e2;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* ===== Headings ===== */
+.menu_h2 {
+  position: relative;
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin: 30px auto;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+.menu_h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, #FFA726, #FF5722);
+  border-radius: 2px;
+}
+
+/* ===== Menus / Categories ===== */
+#menu_menuList, #menu_topCategories, #menu_childCategories {
+    display: flex;
+    overflow-x: auto;
+    gap: 5px;
+    padding-bottom: 10px;
+  /*  border-bottom: 0.2px solid #CC5500;*/
+
+    padding-top: 7px;
+
+        /* Hide scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.menu_menu-item, .menu_top-category-item, .menu_child-category-item {
+    flex: 0 0 auto;
+    background: #f0f0f0;
+    border-radius: 100px;
+    padding: 4px 20px;
+    font-size:10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border: 1px solid #FF5722; /* orange border */
+
+}
+
+/* ===== Responsive Design ===== */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+
+
+  .menu_menu-item,
+  .menu_top-category-item,
+  .menu_child-category-item {
+    font-size: 13px;
+    padding: 5px 16px;
+  }
+}
+
+/* Mobile Devices (≤768px) */
+@media (max-width: 768px) {
+
+
+  .menu_menu-item,
+  .menu_top-category-item,
+  .menu_child-category-item {
+    font-size: 12px;
+    padding: 4px 14px;
+  }
+}
+
+/* Small Phones (≤480px) */
+@media (max-width: 480px) {
+
+  .menu_menu-item,
+  .menu_top-category-item,
+  .menu_child-category-item {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 80px;
+  }
+}
+
+.menu_menu-item.active {
+    background: #CC5500; /* Dark Orange */
+    color: #fff;
+    border: 0px solid #FF5722;
+}
+
+.menu_top-category-item.active {
+    background: #FF7F50; /* Orange */
+    color: #fff;
+}
+
+.menu_child-category-item.active {
+    background: #000000; /* Light Orange */
+    color: #fff;
+    
+}
+
+/* ===== Breadcrumb ===== */
+.menu_breadcrumb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+.menu_breadcrumb img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.menu_breadcrumb .menu_text {
+  position: absolute;
+  top: 50%;               
+  left: 50%;              
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: 'Pacifico', cursive; /* same as h2 */
+  font-size: 28px;                 /* same as h2 */
+  font-weight: 600;                /* same as h2 */
+  text-align: center;
+  width: 100%;
+  letter-spacing: 2px;             /* optional */
+}
+
+.menu_instruction {
+  position: relative;
+  top: 45px;         /* stick to bottom of container */
+  left: 42%;         /* relative horizontal positioning */
+     /* allow stretching if needed */
+  font-family: Arial, sans-serif;
+  font-size: 6px;    /* base font size */
+  color: #fff;
+  letter-spacing: 0;
+  margin: 0;
+  text-align: left;
+}
+/* Responsive adjustments for smaller devices */
+@media (max-width: 768px) {
+  .menu_instruction {
+    font-size: 0.5rem;
+    padding: 1px 4px;
+    left: 42%;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu_instruction {
+    font-size: 0.45rem;
+    padding: 1px 3px;
+    left: 32%;
+  }
+}
+
+
+
+.menu_breadcrumb a { color: #fff; text-decoration: underline; }
+.menu_breadcrumb span { font-weight: bold; }
+
+/* ===== Items Container ===== */
+#menu_categoryItems {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ===== Item Cards (PC + Mobile same layout) ===== */
+.menu_item-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    gap: 15px;
+    height: auto;
+    border-radius: 12px;
+    background: #fef2e2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu_item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image */
+.menu_item-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: url('https://swadistmeal.com/project/images/688f55e84294e.jpg') center/cover no-repeat;
+}
+
+/* Content */
+.menu_item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Name + Price */
+.menu_item-content h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu_price {
+    font-weight: 600;
+    color: #FF5722; /* orange border */
+    margin-left: 0px;
+    white-space: nowrap;
+}
+
+/* Description */
+.menu_item-content p {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.3; /* tighter line spacing */
+  margin-bottom: 4px; /* optional: reduce gap between paragraphs */
+}
+
+/* ===== Placeholder ===== */
+.menu_placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    background: url('https://swadistmeal.com/project/images/688f55e84294e.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+/* ===== Full Image Modal ===== */
+.menu_full-image-view {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+}
+.menu_full-image-view img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+}
+.menu_close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+        .footer-3-bg {
+            display: none;
+        }
+@media only screen and (max-width: 768px) {
+            .pp {
+                display: none;
+            }
+            .footer-3-bg {
+                display: inline;
+            }
+}
+</style>
+</head>
+
+<body>
+    
+    <!-- Back-to-top -->
+    <div id="back-to-top">
+        <a class="top arrow" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="menu">
+            <nav id="menu-1" class="mega-menu">
+                <section class="menu-list-items">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <ul class="menu-logo">
+                                    <li class="head-info">
+                                        <a href="index.html">
+                                            <img id="logo_img" src="img/logo-white.png" alt="logo">
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="menu-links">
+                                    <li><a class="menu-style menu-li-a" href="index.html">HOME</a></li>
+                                    <li><a class="menu-style menu-li-a" href="gallery.html">GALLERY</a></li>
+                                    <li><a class="menu-style menu-li-a active" href="menu.html">MENU</a></li>
+                                    <li><a class="menu-style menu-li-a" href="catering.html">CATERING</a></li>
+                                    <li><a class="menu-style menu-li-a" href="about.html">ABOUT US</a></li>
+                                    <li><a class="menu-style menu-li-a" href="contact.php">CONTACT</a></li>
+                                    <li><a class="menu-book-table-btn btn-bg" data-glf-cuid="3af0eb34-5950-497d-9070-818db253ffed" data-glf-ruid="521e17a0-1619-434e-9212-2315ba122238" style="padding:8px 20px; cursor:pointer; line-height:30px; margin-top:10px; color:#FFF; margin-bottom:8px;">ORDER NOW</a></li>
+                                    <li><a data-glf-cuid="3af0eb34-5950-497d-9070-818db253ffed" data-glf-ruid="521e17a0-1619-434e-9212-2315ba122238" data-glf-reservation="true" class="menu-book-table-btn btn-b" style="padding:8px 20px; cursor:pointer; line-height:30px; margin-top:10px; color:#FFF; margin-bottom:8px;">BOOK A TABLE</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </nav>
+        </div>
+    </header>
+    <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+
+    <div class="head-img text-center" style="background-image:url('img/Gallery/29.jpg');">
+        <div class="story-head-black">
+            <div class="container">
+                <h2>Delicious Menu</h2>
+                <p>Fresh. Fast. Tasty</p>
+                <span><a href="index.html">HOME</a>&nbsp; >&nbsp; <b class="content-subhead">MENU</b></span>
+            </div>
+        </div>
+    </div>    
+    
+    
+    
+    
+<div class="menu_container">
+    <!-- Top Section: Menus -->
+    
+        <h2 class="menu_h2">Discover the Flavors</h2>
+        <div id="menu_menuList"></div>
+
+        <div id="menu_topCategories"></div>
+        <div id="menu_childCategories"></div>
+    
+
+    <!-- Bottom Section: Categories + Items -->
+        <div class="menu_breadcrumb" id="menu_breadcrumb"></div>
+
+        <div id="menu_categoryItems"></div>
+
+</div>
+
+<!-- Full Image Modal -->
+<div class="menu_full-image-view" id="menu_fullImageView">
+    <span class="menu_close-btn" onclick="closeFullImage()">&times;</span>
+    <img src="" alt="Full Image">
+</div>
+
+<script>
+let allMenus = [];
+let currentPath = [];
+const placeholder = 'https://swadistmeal.com/img/slider/slider-1.jpg.jpg';
+
+async function loadData() {
+  try {
+    const res = await fetch('project/api/categories_api.php');
+    const data = await res.json();
+    if (!data.success) throw new Error(data.error || 'API Error');
+
+    allMenus = data.menus.map(menu => ({
+      ...menu,
+      categories: data.categories.filter(c => c.menu_id == menu.menu_id && (!c.parent_category_id || c.parent_category_id == 0))
+    }));
+
+    allMenus.forEach(menu =>
+      menu.categories.forEach(cat => {
+        cat.children = data.categories.filter(sub => sub.parent_category_id == cat.category_id);
+        cat.items = data.items.filter(it => it.category_id == cat.category_id);
+        cat.children.forEach(sub => sub.items = data.items.filter(it => it.category_id == sub.category_id));
+      })
+    );
+
+    renderMenus();
+  } catch (err) {
+    document.getElementById('menu_menuList').innerHTML = `<p>${err.message}</p>`;
+  }
+}
+
+function renderMenus() {
+  const cont = document.getElementById('menu_menuList');
+  cont.innerHTML = '';
+  allMenus.forEach(menu => {
+    const div = document.createElement('div');
+    div.className = 'menu_menu-item';
+    div.innerText = menu.name;
+    div.onclick = () => selectMenu(menu, div);
+    cont.appendChild(div);
+  });
+}
+
+function selectMenu(menu, el) {
+  document.querySelectorAll('.menu_menu-item').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+  currentPath = [menu];
+  updateBreadcrumb();
+  renderTopCategories(menu.categories);
+  clearChildCategories(); clearItems();
+}
+
+function renderTopCategories(cats) {
+  const cont = document.getElementById('menu_topCategories');
+  cont.innerHTML = '';
+  cats.forEach(cat => {
+    const div = document.createElement('div');
+    div.className = 'menu_top-category-item';
+    div.innerText = cat.name;
+    div.onclick = () => selectTopCategory(cat, div);
+    cont.appendChild(div);
+  });
+}
+
+function selectTopCategory(cat, el) {
+  document.querySelectorAll('.menu_top-category-item').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+  currentPath = [currentPath[0], cat];
+  updateBreadcrumb();
+  renderChildCategories(cat.children);
+  renderItems(cat.items);
+}
+
+function renderChildCategories(cats) {
+  const cont = document.getElementById('menu_childCategories');
+  cont.innerHTML = '';
+  cats.forEach(cat => {
+    const div = document.createElement('div');
+    div.className = 'menu_child-category-item';
+    div.innerText = cat.name;
+    div.onclick = () => selectChildCategory(cat, div);
+    cont.appendChild(div);
+  });
+}
+
+function selectChildCategory(cat, el) {
+  document.querySelectorAll('.menu_child-category-item').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+  currentPath = [currentPath[0], currentPath[1], cat];
+  updateBreadcrumb();
+  renderItems(cat.items);
+}
+
+function renderItems(items) {
+  const cont = document.getElementById('menu_categoryItems');
+  cont.innerHTML = '';
+  items.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'menu_item-card';
+    div.innerHTML = `
+      ${item.image_url ? `<img src="${item.image_url}" alt="${item.name}" onclick="showFullImage('${item.image_url}')">` :
+      `<div class="menu_placeholder" onclick="showFullImage('${placeholder}')"></div>`}
+      <div class="menu_item-content">
+        <h3>${item.name}</h3>
+        <p>${item.description || ''}</p>
+        <div class="menu_price">$${item.price}</div>
+      </div>`;
+    cont.appendChild(div);
+  });
+}
+
+/* ===== Updated Breadcrumb Function ===== */
+function updateBreadcrumb() {
+  const b = document.getElementById('menu_breadcrumb');
+  if (!currentPath.length) {
+    b.innerHTML = '';
+    return;
+  }
+
+  // Get the last selected element (sub-category if selected)
+  const last = currentPath[currentPath.length - 1];
+  const banner = last.banner_image_url || last.image_url || placeholder;
+
+  // Show only the last (active) category name
+  b.innerHTML = `
+    <img src="${banner}">
+    <div class="menu_text">
+      <span>${last.name}</span>
+    </div>`;
+    
+    // Select the breadcrumb text
+const breadcrumbText = document.querySelector('.menu_breadcrumb .menu_text span');
+
+if (breadcrumbText) {
+  const text = breadcrumbText.innerText.toLowerCase(); // make all lowercase
+  breadcrumbText.innerText = text.charAt(0).toUpperCase() + text.slice(1); // capitalize first letter
+}
+}
+
+function clearChildCategories() {
+  document.getElementById('menu_childCategories').innerHTML = '';
+}
+
+function clearItems() {
+  document.getElementById('menu_categoryItems').innerHTML = '';
+}
+
+function showFullImage(url) {
+  const modal = document.getElementById('menu_fullImageView');
+  modal.style.display = 'flex';
+  modal.querySelector('img').src = url;
+
+  // Close if clicked outside the image
+  modal.onclick = function (e) {
+    if (e.target === modal) {
+      closeFullImage();
+    }
+  }
+}
+
+function closeFullImage() {
+  const modal = document.getElementById('menu_fullImageView');
+  modal.style.display = 'none';
+  modal.onclick = null;
+}
+
+
+function updateBreadcrumb() {
+  const b = document.getElementById('menu_breadcrumb');
+  if (!currentPath.length) {
+    b.innerHTML = '';
+    return;
+  }
+
+  // Get the last selected element (sub-category if selected)
+  const last = currentPath[currentPath.length - 1];
+  const banner = last.banner_image_url || last.image_url || placeholder;
+
+  // Show only the last (active) category name + instruction text
+  b.innerHTML = `
+    <img src="${banner}">
+    <div class="menu_text">
+      <span>${last.name}</span>
+      <p class="menu_instruction">Tap or click on the dish image on the left to view it in full size.</p>
+    </div>
+  `;
+
+  // Capitalize first letter of category name
+  const breadcrumbText = document.querySelector('.menu_breadcrumb .menu_text span');
+  if (breadcrumbText) {
+    const text = breadcrumbText.innerText.toLowerCase(); // make all lowercase
+    breadcrumbText.innerText = text.charAt(0).toUpperCase() + text.slice(1); // capitalize first letter
+  }
+}
+
+
+document.addEventListener('DOMContentLoaded', loadData);
+</script>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const menuNav = document.getElementById('menu_menuList');
+        if(menuNav) {
+            const rect = menuNav.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const elementMiddle = rect.top + scrollTop - (window.innerHeight / 9) + (rect.height / 9);
+
+            window.scrollTo({
+                top: elementMiddle,
+                behavior: 'smooth'
+            });
+        }
+    }, 500); // adjust delay if needed for async menu rendering
+});
+</script>
+
+<!-- Full Image Modal (add in HTML somewhere) -->
+<div id="menu_fullImageView" style="
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    cursor:grab;
+">
+    <img src="" style="max-width:90%; max-height:90%; transition: transform 0.3s; cursor:grab;">
+</div>
+
+<script>
+function showFullImage(url) {
+    const modal = document.getElementById('menu_fullImageView');
+    const img = modal.querySelector('img');
+
+    modal.style.display = 'flex';
+    img.src = url;
+    img.style.transform = 'scale(1)'; // reset zoom
+    img.dataset.scale = 1;
+
+    let isDragging = false;
+    let startX, startY, originX = 0, originY = 0;
+
+    // Drag to move
+    img.onmousedown = (e) => {
+        isDragging = true;
+        startX = e.clientX - originX;
+        startY = e.clientY - originY;
+        img.style.cursor = 'grabbing';
+        e.preventDefault();
+    };
+    document.onmouseup = () => { isDragging = false; img.style.cursor = 'grab'; };
+    document.onmousemove = (e) => {
+        if (!isDragging) return;
+        originX = e.clientX - startX;
+        originY = e.clientY - startY;
+        img.style.transform = `translate(${originX}px, ${originY}px) scale(${img.dataset.scale})`;
+    };
+
+    // Zoom on mouse wheel
+    modal.onwheel = (e) => {
+        e.preventDefault();
+        let scale = parseFloat(img.dataset.scale);
+        scale += e.deltaY * -0.001; // adjust sensitivity
+        scale = Math.min(Math.max(0.5, scale), 5); // limit zoom
+        img.dataset.scale = scale;
+        img.style.transform = `translate(${originX}px, ${originY}px) scale(${scale})`;
+    };
+
+    // Close on clicking outside image
+    modal.onclick = function (e) {
+        if (e.target === modal) closeFullImage();
+    };
+}
+
+function closeFullImage() {
+    const modal = document.getElementById('menu_fullImageView');
+    modal.style.display = 'none';
+    modal.onclick = null;
+    modal.onwheel = null;
+    document.onmousemove = null;
+    document.onmouseup = null;
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Wait for the menu to render
+    setTimeout(() => {
+        const menuContainer = document.getElementById('menu_menuList');
+        if (!menuContainer) return;
+
+        // ----- Step 1: Auto-click "DRINKS & DESSERTS" -> "DRINKS" on page load -----
+        const drinksDessertsMenu = Array.from(menuContainer.querySelectorAll('.menu_menu-item'))
+            .find(el => el.innerText.trim().toUpperCase() === 'DRINKS & DESSERTS');
+        if (drinksDessertsMenu) {
+            drinksDessertsMenu.click(); // select DRINKS & DESSERTS
+            setTimeout(() => {
+                const topCats = document.querySelectorAll('.menu_top-category-item');
+                const drinksTopCat = Array.from(topCats)
+                    .find(el => el.innerText.trim().toUpperCase() === 'DRINKS');
+                if (drinksTopCat) {
+                    drinksTopCat.click();
+                }
+            }, 300); // delay for subcategories to render
+        }
+
+        // ----- Step 2: Whenever user clicks "DRINKS & DESSERTS", auto-click "DRINKS" -----
+        if (drinksDessertsMenu) {
+            drinksDessertsMenu.addEventListener('click', () => {
+                setTimeout(() => {
+                    const topCats = document.querySelectorAll('.menu_top-category-item');
+                    const drinksTopCat = Array.from(topCats)
+                        .find(el => el.innerText.trim().toUpperCase() === 'DRINKS');
+                    if (drinksTopCat) {
+                        drinksTopCat.click();
+                    }
+                }, 200);
+            });
+        }
+
+    }, 500); // initial delay for menu rendering
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Wait a bit to ensure menus are rendered
+    setTimeout(() => {
+        const menuContainer = document.getElementById('menu_menuList');
+        if (!menuContainer) return;
+
+        // Find the INDIAN menu item
+        const indianMenu = Array.from(menuContainer.querySelectorAll('.menu_menu-item'))
+            .find(el => el.innerText.trim().toUpperCase() === 'INDIAN');
+
+        // ----- Only when user clicks INDIAN -> auto-click STARTERS -----
+        if (indianMenu) {
+            indianMenu.addEventListener('click', () => {
+                setTimeout(() => {
+                    const topCats = document.querySelectorAll('.menu_top-category-item');
+                    const startersTopCat = Array.from(topCats)
+                        .find(el => el.innerText.trim().toUpperCase() === 'STARTERS');
+                    if (startersTopCat) {
+                        startersTopCat.click();
+                    }
+                }, 200); // small delay to ensure top categories are loaded
+            });
+        }
+
+    }, 500); // initial delay for menu rendering
+});
+</script>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    function autoClickChineseThai() {
+        const menuContainer = document.getElementById('menu_menuList');
+        if (!menuContainer) return;
+
+        // Wait until the menu item exists
+        const chineseMenu = Array.from(menuContainer.querySelectorAll('.menu_menu-item'))
+            .find(el => el.innerText.trim().toUpperCase() === 'CHINESE & THAI');
+
+        if (!chineseMenu) {
+            // Retry after 100ms if not rendered yet
+            setTimeout(autoClickChineseThai, 100);
+            return;
+        }
+
+        // When user clicks on CHINESE & THAI, auto-click STARTERS
+        chineseMenu.addEventListener('click', () => {
+            setTimeout(() => {
+                const topCats = document.querySelectorAll('.menu_top-category-item');
+                const startersTopCat = Array.from(topCats)
+                    .find(el => el.innerText.trim().toUpperCase() === 'STARTERS');
+                if (startersTopCat) startersTopCat.click();
+            }, 200); // small delay to allow top categories to render
+        });
+    }
+
+    autoClickChineseThai();
+});
+</script>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    function autoClickDrinksDesserts() {
+        const menuContainer = document.getElementById('menu_menuList');
+        if (!menuContainer) return;
+
+        // Wait until the menu item exists
+        const drinksMenu = Array.from(menuContainer.querySelectorAll('.menu_menu-item'))
+            .find(el => el.innerText.trim().toUpperCase() === 'DRINKS & DESSERTS');
+
+        if (!drinksMenu) {
+            // Retry after 100ms if not rendered yet
+            setTimeout(autoClickDrinksDesserts, 100);
+            return;
+        }
+
+        // When user clicks on DRINKS & DESSERTS, auto-click DRINKS
+        drinksMenu.addEventListener('click', () => {
+            setTimeout(() => {
+                const topCats = document.querySelectorAll('.menu_top-category-item');
+                const drinksTopCat = Array.from(topCats)
+                    .find(el => el.innerText.trim().toUpperCase() === 'DRINKS');
+                if (drinksTopCat) drinksTopCat.click();
+            }, 200); // small delay to allow top categories to render
+        });
+    }
+
+    autoClickDrinksDesserts();
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    function setupMainCourseAutoClick() {
+        const topCatContainer = document.getElementById('menu_topCategories');
+        if (!topCatContainer) return;
+
+        // Observe changes in top categories
+        const observer = new MutationObserver(() => {
+            const mainCourse = Array.from(topCatContainer.querySelectorAll('.menu_top-category-item'))
+                .find(el => el.innerText.trim().toUpperCase() === 'MAIN COURSE');
+
+            if (!mainCourse) return;
+
+            // Attach click listener only once
+            if (!mainCourse.dataset.listenerAttached) {
+                mainCourse.dataset.listenerAttached = 'true';
+
+                mainCourse.addEventListener('click', () => {
+                    // Wait a short time for child categories to render
+                    setTimeout(() => {
+                        const childCats = document.querySelectorAll('.menu_child-category-item');
+                        const seafood = Array.from(childCats)
+                            .find(el => el.innerText.trim().toUpperCase() === 'SEAFOOD');
+                        if (seafood) seafood.click();
+                    }, 150); // 150ms delay ensures children are rendered
+                });
+            }
+        });
+
+        observer.observe(topCatContainer, { childList: true, subtree: true });
+    }
+
+    // Run for INDIAN menu
+    setupMainCourseAutoClick();
+});
+</script>
+
+
+<div class="container-fluid menu-caption-bg">
+    <div class="menu-caption-bg-black padd-70">
+        <div class="container">
+            <div class="col-md-12 text-center">
+                <h2>Taste our delicious Food</h2>
+                <a href="#">ORDER NOW</a>
+                <p>or call +1 201-721-5152</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="container-fluid footer-bg padd-70 pp">
+    <div class="container">
+        <div class="col-xs-12 col-sm-6 col-md-3 footer" style="padding:0 20px;">
+            <div class="foot-logo">
+                <a href="index.html">
+                    <img id="logo_img" src="img/logo-white.png" width="200px" height="100px" alt="logo">
+                </a>
+            </div>
+            <p>Swadist!! Now That Your Tastes Have Grown Up!</p>
+            <h3 class="text-uppercase foot-logo-h3" style="color:#FFF;">Share The Taste</h3>
+            <ul>
+                <li><a href="https://facebook.com/swadistmeals" class="footer-soc-a" style="color:#FFF;"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://instagram.com/swadistmeals" class="footer-soc-a" style="color:#FFF;"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-3 hour-work" style="width:50%;padding:0 20px;">
+	<h2 class="footer-h2" style="color:#FFF;">Opening hours</h2>
+        <span class="footer-span btn-bg"></span>
+   
+             <div class="work-time">
+        	<p>Monday</p>  <span class="content-subhead">Closed</span>
+        </div>
+        <div class="work-time">
+        	<p>Tuesday</p>  <span>11:30AM - 3:00PM | 5:30PM - 11:00PM</span>
+        </div>
+        <div class="work-time" style="margin-bottom:27px;">
+        	<p>Wednesday</p>  <span>11:30AM - 3:00PM | 5:30PM - 11:00PM</span>
+        </div>
+    
+    <div class="work-time" style="margin-bottom:27px;">
+        	<p>Thrusday</p>  <span>11:30AM - 3:00PM | 5:30PM - 11:00PM</span>
+        </div>
+    
+         <div class="work-time">
+        	<p>Friday</p><span>11:30AM - 3:00PM | 5:30PM - 11:30PM</span>
+        </div>
+        
+
+       
+    <div class="work-time">
+        	<p>Saturday</p>  <span>12:00PM - 3:30PM | 5:30PM - 11:30PM</span>
+        </div>
+        
+        <div class="work-time">
+        	<p>Sunday</p>  <span>12:00PM - 3:30PM | 5:30PM - 11:00PM</span>
+        </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 location">
+            <h2 class="footer-h2" style="color:#fff;">CONTACT US</h2>
+            <span class="footer-span btn-bg"></span>
+            <div class="contact">
+                <i class="flaticon-placeholder"></i>
+                <p>715 Newark Avenue Jersey City, NJ 07306</p>
+            </div>
+            <div class="hr"></div>
+            <div class="contact">
+                <i class="flaticon-phone-call"></i>
+                <p style="font-weight:bold;">&nbsp;+1 201-721-5152</p>
+            </div>
+            <div class="hr"></div>
+            <div class="contact">
+                <i class="flaticon-envelope"></i>
+                <p>&nbsp;info@swadistmeal.com</p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="container-fluid footer-3-bg">
+    <div class="footer-3-bg-black">
+        <div class="container padd-50">
+            <div class="col-md-12 text-center footer">
+                <div class="foot-3-logo">
+                    <div class="foot-logo">
+                        <a href="index.html">
+                            <img id="logo_imgb" src="img/logo-white.png" style="width:200px; height:100px;" alt="logo">
+                        </a>
+                    </div>
+                </div>
+                <br/>
+                <p>Swadist !! Now That Your Tastes Have Grown Up!</p>
+            </div>
+            <div class="col-md-12 text-center footer-3-btm">
+                <h2 class="text-uppercase">OPENING HOURS</h2>
+                <span class="btn-bg"></span>
+                    <div class="col-sm-6 col-md-4 footer-3-mar-tp text-center"> 
+                        <h4>Monday</h4> 
+                        <br/> 
+                        <p>Closed</p>
+                    </div>
+                    <hr color="white" align="center">
+                    <div class="col-sm-6 col-md-4 footer-3-mar-tp text-center"> 
+                        <h4>Tuesday - Wednesday</h4><br/> 
+                        <p>11:30AM - 3:00PM | 5:30PM - 11:00PM</p>
+                    </div>
+                    <hr color="white" align="center">
+                    <div class="col-sm-12 col-md-4 footer-3-mar-tp text-center"> 
+                        <h4>Friday</h4><br/> <p>11:30AM - 3:00PM | 5:30PM - 11:30PM</p>
+                    </div>
+                    <hr color="white" align="center">
+                    <div class="col-sm-12 col-md-4 footer-3-mar-tp text-center"> 
+                        <h4>Saturday</h4><br/> <p>12:00PM - 3:30PM | 5:30PM - 11:30PM</p>
+                    </div>
+                    <hr color="white" align="center">
+                    <div class="col-sm-6 col-md-4 footer-3-mar-tp text-center"> 
+                        <h4>Sunday </h4><br/> 
+                        <p>12:00PM - 3:30PM | 5:30PM - 11:00PM</p>
+                    </div>
+                    <hr color="white" align="center">
+                    <div class="col-sm-6 col-md-4 footer-3-mar-tp text-center"> 
+                        <h4>Monday</h4><br/> 
+                        <p>Closed</p>
+                    </div>
+                <hr color="white" align="center">
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-12 text-center footer-3-btm">
+                <h2 class="text-uppercase">CONTACT INFORMATION</h2>
+                <div class="col-sm-6 col-md-4 footer-3-mar-tp text-center">
+                    <i class="flaticon-phone-call"></i>
+                    <h4>PHONE</h4>
+                    <span class="btn-bg"></span>
+                    <br/>
+                    <p>+1 201-721-5152</p>
+                </div>
+                <div class="col-sm-6 col-md-4 footer-3-mar-tp text-center">
+                    <i class="flaticon-placeholder"></i>
+                    <h4>ADDRESS</h4>
+                    <span class="btn-bg"></span>
+                    <br/>
+                    <p>715 Newark Avenue Jersey City, NJ 07306</p>
+                </div>
+                <div class="col-sm-12 col-md-4 footer-3-mar-tp text-center">
+                    <i class="flaticon-envelope"></i>
+                    <h4>EMAIL</h4>
+                    <span class="btn-bg"></span>
+                    <br/>
+                    <p>info@swadistmeal.com.</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-12 text-center footer">
+                <h3 class="text-uppercase foot-logo-h3">Share The Taste</h3>
+                <ul>
+                    <li><a class="footer-soc-a" href="https://www.facebook.com/swadistmeals"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a class="footer-soc-a" href="https://www.instagram.com/swadistmeals/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid footer-pay-bg">
+    <div class="container" style="padding-top:20px; padding-bottom:20px;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 footer-pay-p">
+                <p>©2025 <b class="content-subhead">Swadist</b>. All Rights Reserved.</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 text-center">
+                <div class="payment">
+                    <p class="payment-p">Payment acceptable on</p>
+                    <img src="img/pay-1.png" />
+                    <img src="img/pay-2.png" />
+                    <img src="img/pay-3.png" />
+                    <img src="img/pay-4.png" />
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/ajax.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/jquery.colorpanel.js"></script>
+<script>
+$('#colorPanel').ColorPanel({
+    styleSheet: '#cpswitch',
+    animateContainer: '#wrapper',
+    colors: {
+        '#c62828': 'css/skins-pink.css',
+        '#f9a825': 'css/skins-seagreen.css',
+    }
+});
+</script>
+<script src="js/wow.min.html"></script>
+<script>
+new WOW().init();
+</script>
+<script src="js/cookie.js"></script>
+<script src="js/jquery.accordion.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.accordion').accordion({defaultOpen: 'some_id'});
+});
+</script>
+<script type="text/javascript">
+$('.count').each(function() {
+    $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 4000,
+        easing: 'swing',
+        step: function(now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+</script>
+<script type="text/javascript" src="js/mega_menu.js"></script>
+<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="js/custom-slider.js"></script>
+
+<!-- Menu Navigation Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navItems = document.querySelectorAll('.menu-nav li');
+    const sections = document.querySelectorAll('.category-section');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            const category = this.getAttribute('data-category');
+            if (category) {
+                // Remove active class from all nav items and submenus
+                navItems.forEach(nav => {
+                    nav.classList.remove('active');
+                    const submenu = nav.querySelector('.submenu');
+                    if (submenu) submenu.style.display = 'none';
+                });
+                // Add active class to clicked item or its parent
+                this.classList.add('active');
+                if (this.parentElement.classList.contains('submenu')) {
+                    this.parentElement.parentElement.classList.add('active');
+                    this.parentElement.style.display = 'block';
+                } else {
+                    const submenu = this.querySelector('.submenu');
+                    if (submenu) submenu.style.display = 'block';
+                }
+                // Hide all sections
+                sections.forEach(section => section.classList.remove('active'));
+                // Show the selected category section
+                document.getElementById(category).classList.add('active');
+            }
+            e.stopPropagation();
+        });
+    });
+
+    // Set default active section
+    document.querySelector('.menu-nav li.active .submenu').style.display = 'block';
+});
+</script>
+
+
+
+</body>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl503468'},{'dcenter':'p3'},{'cp_id':'9833123'},{'cp_cache':''},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>

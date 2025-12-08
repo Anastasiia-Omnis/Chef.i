@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="https://giovannispizzarestaurant.com/page/img/favicon.png"/>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://giovannispizzarestaurant.com/page/css/global.css">
+    <link rel="stylesheet" href="https://giovannispizzarestaurant.com/page/css/includes.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://giovannispizzarestaurant.com/page/js/javascript.js"></script>
+    <meta property="og:image" content="https://giovannispizzarestaurant.com/page/img/miniatura.jpg" />
+    <meta name="description" content="Menu Giovanni's Pizza Restaurant — Mexican & Italian fusion. Pizza, main dishes, desserts, drinks. Order online & catering">
+    <meta name="keywords" content="Pizza Restaurant, New York, Italian Food, Mexican Food, Order Online">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title>Giovanni's Pizza Restaurant — Menu</title>
+</head>
+
+<body>
+    <script>
+        function makeid(length) {
+            let result = '';
+            let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let charactersLength = characters.length;
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() *
+                    charactersLength));
+            }
+            return result;
+        }
+    </script>
+    <header>
+    <div class="header_box">
+        <div class="desktop_box">
+            <div class="media_box">
+                <a href="index.php">
+                    <img class="logo" src="https://giovannispizzarestaurant.com/page/img/logo2.png" alt="Giovannis Pizza Restaurant">
+                </a>
+            </div>
+            <div class="bar_box">
+                <a href="/" id="index_desktop">Home</a>
+                <a href="/about" id="about_desktop">About</a>
+                <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/" id="order_desktop">Order Online</a>
+                <a href="/gallery" >Gallery</a>
+                <a href="#contact">Contact</a>
+                <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/" class="slide_btn">
+                    <span>Order Now!</span>
+                </a>
+                <!--<div class="contact_box">
+                    <a href="https://goo.gl/maps/xLaivnRev2JxUQ836" target="blank"><i class="fa-solid fa-location-dot"></i>New York</a>
+                    <a href="tel: (718) 205-9898"><i class="fa-solid fa-phone"></i>#</a>
+                </div>-->
+            </div>
+        </div>
+        <div class="mobile_box">
+            <div class="media_box">
+                <a href="index.php">
+                    <img class="logo" src="https://giovannispizzarestaurant.com/page/img/logo2.png" alt="Giovannis Pizza Restaurant">
+                </a>
+            </div>
+            <div class="media_box">
+                <div class="toggle_box" onclick="sidebar()">
+                    <svg viewBox="0 0 100 80">
+                        <g>
+                            <path d="M5 5L95 5.00001" stroke="#af0101" stroke-width="10" stroke-linecap="round" />
+                            <path d="M5 40H95" stroke="#af0101" stroke-width="10" stroke-linecap="round" />
+                            <path d="M5 75H95" stroke="#af0101" stroke-width="10" stroke-linecap="round" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+          
+            <div class="overlay_box" onclick="sidebar()"></div>
+            <div class="nav_box">
+                <a href="index.php">
+                    <img class="logo" src="https://giovannispizzarestaurant.com/page/img/logo2.png" alt="Giovannis Pizza Restaurant">
+                </a>
+                <div class="bar_box">
+                    <a href="/" id="index_mobile">Home</a>
+                    <a href="/about" id="about_mobile">About</a>
+                    <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/" id="order_mobile">Order Online</a>
+                    <a href="/gallery" >Gallery</a>
+                    <a href="#contact" onclick="sidebar()">Contact</a>
+                </div>
+                <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/" class="slide_btn">
+                    <span>Order Now!</span>
+                </a>
+               
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="section2">
+   
+       <center> <span>Our Menu</span></center>
+        <p>The food we serve makes a difference</p>
+        <p>Combining homemade cooking with the best ingredients to ensure the highest quality. Open daily 10:00 — 23:00.</p>
+   
+
+    <div class="sect-categorias">
+        <div class="item" onclick="p1(event)">Dishes</div>
+        <div class="item" onclick="p2(event)">Desserts</div>
+        <div class="item" onclick="p3(event)">Drinks</div>
+    </div>
+
+    <div class="sect-categorias2  show" id="categoria1">
+        <div class="item">
+            <div class="relative">
+            <img src="https://giovannispizzarestaurant.com/page/img/webp/3.Phillip-Steak.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/3.Phillip-Steak.png';" alt="Phillip Steak">
+            <p>Phillip Steak</p>
+            <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/">Order Now</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="relative">
+            <img src="https://giovannispizzarestaurant.com/page/img/webp/Chuletas-Fritas-con-tostones.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/Chuletas-Fritas-con-tostones.png';" alt="Chuletas Fritas">
+            <p>Chuletas Fritas</p>
+            <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/">Order Now</a> 
+            </div>
+        </div>
+        <div class="item">
+            <div class="relative">
+            <img src="https://giovannispizzarestaurant.com/page/img/webp/Fajitas Mixtas.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/Fajitas Mixtas.png';" alt="Fajitas Mixtas">
+            <p>Fajitas Mixtas</p>
+            <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/">Order Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="sect-categorias2 " id="categoria2">
+        <div class="item">
+            <div class="relative">
+            <img src="https://giovannispizzarestaurant.com/page/img/webp/flan.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/flan.png';" alt="Flan">
+            <p>Flan</p>
+            <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/">Order Now</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="relative">
+            <img src="https://giovannispizzarestaurant.com/page/img/webp/Amarettonuttruffle.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/Amarettonuttruffle.png';" alt="Amaretto Nut Truffle">
+            <p>Amaretto <br>Nut Truffle</p>
+            <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/">Order Now</a> 
+            </div>
+        </div>
+        <div class="item">
+            <div class="relative">
+            <img src="https://giovannispizzarestaurant.com/page/img/webp/desserts.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/desserts.png';" alt="Giovannis Pizza Restaurant">
+            <p>Desserts</p>
+            <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/">Order Now</a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="sect-categorias2 " id="categoria3">
+        <div class="item">
+            <div class="relative">
+            <img src="https://giovannispizzarestaurant.com/page/img/webp/drinks1.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/drinks1.png';" alt="Giovannis Pizza Restaurant">
+            <p>Juice</p>
+            <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/">Order Now</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="relative">
+            <img src="https://giovannispizzarestaurant.com/page/img/webp/drinks3.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/drinks3.png';" alt="Giovannis Pizza Restaurant">
+            <p>Sangria</p>
+            <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/">Order Now</a>
+            </div> 
+        </div>
+        <div class="item">
+            <div class="relative">
+            <img src="https://giovannispizzarestaurant.com/page/img/webp/drinks2.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/drinks2.png';" alt="Giovannis Pizza Restaurant">
+            <p>Juice</p>
+            <a href="https://fromtherestaurant.com/giovannis-pizza-restaurant/">Order Now</a>
+            </div>
+        </div>
+    </div>
+ 
+</section>
+
+<section class="section3">
+    <div class="container3">
+        <div class="box_img">
+            <div class="relative">
+            <img class="about-index-img" src="https://giovannispizzarestaurant.com/page/img/about-foto-giovannispizza.png"  alt="Beef, chicken and vegetables">
+            </div>
+        </div>
+        <div>
+            <span>About Us</span>
+            <p>For years, Giovanni's Pizzeria has combined delicious homemade cooking with the best 
+                ingredients to ensure the highest quality products in Mexican and Italian fusion cuisine.</p><br>
+            <a href="/about">Read More</a>  
+        </div>
+    </div>
+
+
+</section>
+
+<section class="section4">
+
+    <center> <span>What we offer</span></center><br>
+    <div class="container4">
+        <div>
+            <span class="title">10% </span><br>
+            <span>Discount</span>
+            <p>Order online and enjoy the best 
+                food wherever you are.</p>
+        </div>
+        <div>
+            <span class="title">Free </span><br>
+            <span>Delivery</span>
+            <p>Place your order from 
+                wherever you are.</p>
+        </div>
+        <div>
+            <span class="title">Catering </span><br>
+            <span>Service</span>
+            <p>The perfect food option for 
+                your events</p>
+        </div>
+        <div>
+            <span class="title">Gastronomical </span><br>
+            <span>variety</span>
+            <p>The best Mexican Italian 
+                fusion food.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="section5">
+    <div class="grid-fotos-index">
+        <div class="st-row">
+            <div class="foto-item"><img src="https://giovannispizzarestaurant.com/page/img/webp/foto1-giovannis-pizza.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/foto1-giovannis-pizza.jpg';" alt="cheese and tomato pizza"> </div>
+            <div class="foto-item"><img src="https://giovannispizzarestaurant.com/page/img/webp/foto2-giovannis-pizza.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/foto2-giovannis-pizza.jpg';" alt="hot dogs and fries"></div>       
+        </div>
+        <div class="nd-row">
+            <div class="foto-item"><img src="https://giovannispizzarestaurant.com/page/img/webp/foto3-giovannis-pizza.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/foto3-giovannis-pizza.jpg';" alt="rice, beans and chicken"> </div>
+            <div class="foto-item"><img src="https://giovannispizzarestaurant.com/page/img/webp/foto6-giovannis-pizza.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/foto6-giovannis-pizza.jpg';" alt="nachos and guacamole"></div>       
+        </div>
+        <div class="rd-row">
+            <div class="foto-item"><img src="https://giovannispizzarestaurant.com/page/img/webp/foto4-giovannis-pizza.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/foto4-giovannis-pizza.jpg';" alt="nachos, avocado, beef"></div>
+            <div>
+                <div class="foto-item"><img src="https://giovannispizzarestaurant.com/page/img/webp/foto7-giovannis-pizza.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/foto7-giovannis-pizza.jpg';" alt="vanilla pudding"></div>
+                <div class="foto-item"><img src="https://giovannispizzarestaurant.com/page/img/webp/foto8-giovannis-pizza.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/foto8-giovannis-pizza.jpg';" alt="red sangria"></div>
+            </div>
+        </div>
+        <div class="th-row">
+            <div class="foto-item"><img src="https://giovannispizzarestaurant.com/page/img/webp/foto5-giovannis-pizza.webp" onerror="this.onerror=null;this.src='https://giovannispizzarestaurant.com/page/img/foto5-giovannis-pizza.jpg';" alt="lasagna and cheese"></div>
+        </div>   
+      </div>
+</section>
+
+
+
+
+
+<footer id="contact">
+    <div class="footer_box">
+        <div class="contact_box">          
+            <div class="link_box">
+                <div class="media_box">
+                    <a href="index.php">
+                       <img class="logo" src="https://giovannispizzarestaurant.com/page/img/logo2.png" alt="Giovannis Pizza Restaurant">
+                    </a>
+                </div> 
+            </div>
+           <!-- <div class="networks_box">
+                <a href="https://www.facebook.com/GiovannisPizzaNy/" target="blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/giovannispizzany/" target="blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/GiovannisPizza9" target="blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.yelp.com/biz/giovannis-pizza-restaurant-woodside" target="blank" aria-label="Yelp"><i class="fa-brands fa-yelp"></i></a>
+                <a href="https://www.google.com/search?q=giovannis+pizza+45-59+47Th+Street+Woodside+NY+11377&rlz=1C1MSIM_enCO827CO828&oq=giovannis+pizza++45-59+47Th+Street+Woodside+NY+11377&aqs=chrome..69i57.1998j0j7&sourceid=chrome&ie=UTF-8" target="blank" aria-label="Google"><i class="fa-solid fa-store"></i></a>
+            </div>
+            <div class="networks_box">   
+                <a href="https://www.tiktok.com/@giovannispizzany" target="blank" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.tripadvisor.co/Restaurant_Review-g48914-d23427589-Reviews-Giovanni_s_Pizza_Restaurant-Woodside_Queens_New_York.html" target="blank" aria-label="Tripadvisor">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="30" height="30"
+                    viewBox="0 0 50 50">
+                    <path d="M 25 11 C 19.167969 11 13.84375 12.511719 9.789063 15 L 2 15 C 2 15 3.753906 17.152344 4.578125 19.578125 C 2.96875 21.621094 2 24.195313 2 27 C 2 33.628906 7.371094 39 14 39 C 17.496094 39 20.636719 37.492188 22.828125 35.105469 L 25 38 L 27.171875 35.105469 C 29.363281 37.492188 32.503906 39 36 39 C 42.628906 39 48 33.628906 48 27 C 48 24.195313 47.03125 21.621094 45.421875 19.578125 C 46.246094 17.152344 48 15 48 15 L 40.203125 15 C 36.148438 12.511719 30.828125 11 25 11 Z M 14 18 C 18.972656 18 23 22.027344 23 27 C 23 31.972656 18.972656 36 14 36 C 9.027344 36 5 31.972656 5 27 C 5 22.027344 9.027344 18 14 18 Z M 36 18 C 40.972656 18 45 22.027344 45 27 C 45 31.972656 40.972656 36 36 36 C 31.027344 36 27 31.972656 27 27 C 27 22.027344 31.027344 18 36 18 Z M 14 21 C 10.6875 21 8 23.6875 8 27 C 8 30.3125 10.6875 33 14 33 C 17.3125 33 20 30.3125 20 27 C 20 23.6875 17.3125 21 14 21 Z M 36 21 C 32.6875 21 30 23.6875 30 27 C 30 30.3125 32.6875 33 36 33 C 39.3125 33 42 30.3125 42 27 C 42 23.6875 39.3125 21 36 21 Z M 14 23 C 16.210938 23 18 24.789063 18 27 C 18 29.210938 16.210938 31 14 31 C 11.789063 31 10 29.210938 10 27 C 10 24.789063 11.789063 23 14 23 Z M 36 23 C 38.210938 23 40 24.789063 40 27 C 40 29.210938 38.210938 31 36 31 C 33.789063 31 32 29.210938 32 27 C 32 24.789063 33.789063 23 36 23 Z M 14 25 C 12.894531 25 12 25.894531 12 27 C 12 28.105469 12.894531 29 14 29 C 15.105469 29 16 28.105469 16 27 C 16 25.894531 15.105469 25 14 25 Z M 36 25 C 34.894531 25 34 25.894531 34 27 C 34 28.105469 34.894531 29 36 29 C 37.105469 29 38 28.105469 38 27 C 38 25.894531 37.105469 25 36 25 Z"></path>
+                    </svg>
+                </a>
+                    
+                    
+                <a href="https://www.pinterest.com.mx/guiovannispizzarestaurant/" target="blank" aria-label="pinterest"><i class="fa-brands fa-pinterest"></i></a>
+
+            </div>-->
+           
+        </div>
+        <div class="opening_box">
+            <h2>Contact Us</h2>
+            <br>
+            <div class="row_box">
+                <a href="tel: (718) 609-1630">(718) 609-1630 </a>
+            </div>
+            <div class="row_box">
+                <a href="tel: (718) 729-3572">(718) 729-3572 </a>
+            </div>
+            <div class="row_box">
+                <a href="tel: (718) 609-1631">(718) 609-1631 </a>
+            </div>  
+        </div>
+
+        <div class="opening_box">
+            <h2>Address</h2>
+            <div class="hours_box">
+                <div class="row_box">
+                    <a href="https://www.google.es/maps/place/Mexican+food+%7C+Italian+food+%7C+Giovanni's+Pizza+Restaurant/@40.7411629,-73.9201474,17z/data=!3m1!5s0x89c25edeabdc1c0f:0xf765b39c1b96b1c1!4m6!3m5!1s0x89c25ed95845cbf3:0xd33765adcc54ccdf!8m2!3d40.7411592!4d-73.9179262!16s%2Fg%2F1vs1st4m?hl=en" target="blank">45-59 47th Street<br> Woodside NY 11377</a>   
+                </div>     
+            </div> 
+        </div>
+
+        <div class="opening_box">
+            <h2>Opening Hours</h2>
+
+            <div class="hours_box">
+                <p>Monday to Sunday </p>
+                <p>10am - 11pm</p>
+            
+            </div>
+          
+            <div class="politics_box">
+                <a href="/privacy-policy">Privacy Policy</a><br>
+                <a href="/terms-and-conditions">Terms and Conditions</a>
+            </div>
+        </div>
+    </div>
+    <div class="redes">
+        <a href="https://www.facebook.com/GiovannisPizzaNy/" target="blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/giovannispizzany/" target="blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://twitter.com/GiovannisPizza9" target="blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.yelp.com/biz/giovannis-pizza-restaurant-woodside" target="blank" aria-label="Yelp"><i class="fa-brands fa-yelp"></i></a>
+        <a href="https://www.google.com/search?q=giovannis+pizza+45-59+47Th+Street+Woodside+NY+11377&rlz=1C1MSIM_enCO827CO828&oq=giovannis+pizza++45-59+47Th+Street+Woodside+NY+11377&aqs=chrome..69i57.1998j0j7&sourceid=chrome&ie=UTF-8" target="blank" aria-label="Google"><i class="fa-solid fa-store"></i></a>
+        <a href="https://www.tiktok.com/@giovannispizzany" target="blank" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.tripadvisor.co/Restaurant_Review-g48914-d23427589-Reviews-Giovanni_s_Pizza_Restaurant-Woodside_Queens_New_York.html" target="blank" aria-label="Tripadvisor">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="30" height="30"
+            viewBox="0 0 50 50">
+            <path d="M 25 11 C 19.167969 11 13.84375 12.511719 9.789063 15 L 2 15 C 2 15 3.753906 17.152344 4.578125 19.578125 C 2.96875 21.621094 2 24.195313 2 27 C 2 33.628906 7.371094 39 14 39 C 17.496094 39 20.636719 37.492188 22.828125 35.105469 L 25 38 L 27.171875 35.105469 C 29.363281 37.492188 32.503906 39 36 39 C 42.628906 39 48 33.628906 48 27 C 48 24.195313 47.03125 21.621094 45.421875 19.578125 C 46.246094 17.152344 48 15 48 15 L 40.203125 15 C 36.148438 12.511719 30.828125 11 25 11 Z M 14 18 C 18.972656 18 23 22.027344 23 27 C 23 31.972656 18.972656 36 14 36 C 9.027344 36 5 31.972656 5 27 C 5 22.027344 9.027344 18 14 18 Z M 36 18 C 40.972656 18 45 22.027344 45 27 C 45 31.972656 40.972656 36 36 36 C 31.027344 36 27 31.972656 27 27 C 27 22.027344 31.027344 18 36 18 Z M 14 21 C 10.6875 21 8 23.6875 8 27 C 8 30.3125 10.6875 33 14 33 C 17.3125 33 20 30.3125 20 27 C 20 23.6875 17.3125 21 14 21 Z M 36 21 C 32.6875 21 30 23.6875 30 27 C 30 30.3125 32.6875 33 36 33 C 39.3125 33 42 30.3125 42 27 C 42 23.6875 39.3125 21 36 21 Z M 14 23 C 16.210938 23 18 24.789063 18 27 C 18 29.210938 16.210938 31 14 31 C 11.789063 31 10 29.210938 10 27 C 10 24.789063 11.789063 23 14 23 Z M 36 23 C 38.210938 23 40 24.789063 40 27 C 40 29.210938 38.210938 31 36 31 C 33.789063 31 32 29.210938 32 27 C 32 24.789063 33.789063 23 36 23 Z M 14 25 C 12.894531 25 12 25.894531 12 27 C 12 28.105469 12.894531 29 14 29 C 15.105469 29 16 28.105469 16 27 C 16 25.894531 15.105469 25 14 25 Z M 36 25 C 34.894531 25 34 25.894531 34 27 C 34 28.105469 34.894531 29 36 29 C 37.105469 29 38 28.105469 38 27 C 38 25.894531 37.105469 25 36 25 Z"></path>
+            </svg>
+        </a>  
+        <a href="https://www.pinterest.com.mx/guiovannispizzarestaurant/" target="blank" aria-label="pinterest"><i class="fa-brands fa-pinterest"></i></a>
+    </div>
+    <div class="credits_box">
+        <a href="index.php">©2023 Giovanni’s Pizza Restaurant</a>
+        <span>|</span>
+        <a href="https://ajcreativestudios.com/" target="blank">AJ Creative Studios</a>
+    </div>
+
+
+    
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    function sidebar() {
+        document.querySelector(".mobile_box").classList.toggle("active_menu");
+    }
+</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+    /**
+     * @note  Dicionario que relaciona los nombre de rutas con la direccion en el servidor
+     */
+    const routes = {
+        'products_list' : 'https://giovannispizzarestaurant.com/api/public/v1/menu/-1/product/list',
+        'cart_add' : 'https://giovannispizzarestaurant.com/cart/product/-1/add',
+        'cart_get' : 'https://giovannispizzarestaurant.com/cart/get',
+        'cart_empty' : 'https://giovannispizzarestaurant.com/cart/empty',
+        'cart_edit' : 'https://giovannispizzarestaurant.com/cart/product/-1/update',
+        'cart_edit_info' : 'https://giovannispizzarestaurant.com/cart/product/-1/update/info',
+        'cart_item_delete' : 'https://giovannispizzarestaurant.com/cart/product/remove',
+        'cart_edit' : 'https://giovannispizzarestaurant.com/cart/update/info',
+        'cart_delivery_type_set' : 'https://giovannispizzarestaurant.com/cart/delivery/type/set',
+        'cart_payment_type_set' : 'https://giovannispizzarestaurant.com/cart/payment/type/set',
+        'placeorder_pickup' : 'https://giovannispizzarestaurant.com/checkout/placeorder/pickup',
+        'order_active' : 'https://giovannispizzarestaurant.com/api/public/v1/restaurant/hours/check',
+        'last_order' : 'https://giovannispizzarestaurant.com/lastorder',
+        'restaurant_config_get' : 'https://giovannispizzarestaurant.com/api/public/v1/restaurant/order/config/get',
+        'place_order' : 'https://giovannispizzarestaurant.com/checkout/placeorder',
+        'cart_coupon_add' : 'https://giovannispizzarestaurant.com/cart/coupon/add',
+        'media_get' : 'https://giovannispizzarestaurant.com/api/public/v1/media/img/-1/get'
+    };
+</script>
+<script>
+    /**
+     * @param  route
+     * @param  data
+     * @param  callback
+     * @note  Hace un GET Request al servidor segun el nombre de ruta
+     */
+    function getRequest(route, data, callback) {
+        $.get(routes[route], data, function(data) {
+            callback(data);
+        });
+    }
+
+    /**
+     * @param  route
+     * @param  data
+     * @param  param
+     * @param  callback
+     * @note  Hace un GET Request al servidor segun el nombre de ruta, y envia valores desde la url
+     */
+    function getRequestParams(route, data, params, callback) {
+        let uri = buildURIParams(route, params);
+        $.get(uri, data, (data) => {
+            callback(data);
+        });
+    }
+
+    /**
+     * @param  route
+     * @param  data
+     * @param  callback
+     * @note  Hace un POST Request al servidor segun el nombre de ruta
+     */
+    function postRequest(route, data, callback) {
+        $.post(routes[route], data, function(data) {
+            callback(data);
+        });
+    }
+
+    /**
+     * @param  route
+     * @param  data
+     * @param  params
+     * @param  callback
+     * @note  Hace un Post Request al servidor segun el nombre de ruta, enviando parametros desde el url
+     */
+    function postRequestParams(route, data, params, callback) {
+        let uri = buildURIParams(route, params);
+        $.post(uri, data, (res) => {
+            callback(res);
+        });
+    }
+
+    /**
+     * @param  route
+     * @param  params
+     * @returns  string
+     * @note  Rempleza los valores temporales del url por las variables correspondientes
+     */
+    function buildURIParams(route, params) {
+        let uri = routes[route];
+        for (let i = 0; i < params.length; i++) {
+            uri = uri.replace(((i + 1) * - 1 ).toString(), params[i]);
+        }
+        return uri;
+    }
+</script>
+    <script>
+        const restaurantInfo = {
+            name : 'Giovanni´s Pizza',
+            latitude : 40.7411757,
+            longitude : -73.9180201,
+            address : '45-59 47th Street Woodside NY, 11377'
+        };
+
+        function scrollTo(selector, speed = 2000) {
+            let offset = $(selector).offset().top - 100;
+            $('html, body').animate({
+                scrollTop: offset,
+            }, speed);
+        }
+    </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"43bd90faae544c9ca760f8c92cf96811","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+</html>

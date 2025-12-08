@@ -1,0 +1,2653 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.lafocacciaofmelville.com/',
+        AccountUUID: 'c1f9a940fb4d4c0392fd141cac88908c',
+        SystemID: 'US_HIBU_PRODUCTION',
+        SiteAlias: '2cf9efeaa6ce40dd9e33fc4d41550a8f',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Fri Oct 24 23:46:24 UTC 2025',
+        ExternalUid: '757350',
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'take-out-menu',
+        InitialPageUuid: '2d089fdebd894565bb371fcfcf0dc155',
+        InitialPageId: '100381271',
+        InitialEncodedPageAlias: 'dGFrZS1vdXQtbWVudQ==',
+        InitialHeaderUuid: '140aa461ed6445039fbd67861f9848b2',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 4,
+            NavbarLiveHomePage: 'https://www.lafocacciaofmelville.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '701',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.lafocacciaofmelville.com/take-out-menu">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="icon" type="image/x-icon" href="https://cdn.hibuwebsites.com/2cf9efeaa6ce40dd9e33fc4d41550a8f/site_favicon_16_1659367212325.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://le-cdn.hibuwebsites.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_HIBU_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link type="text/css" rel="stylesheet" href="https://cdn.hibuwebsites.com/fonts/css2?family=Roboto:wght@100;300;400;500;700;900&family=Lato:wght@100;300;400;700;900&family=Lora:wght@400..700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;subset=latin-ext&amp;display=swap"  />
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="stylesheet" type="text/css" href="https://static-res-cdn.websites.hibu.com/mnlt/production/5968/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link type="text/css" rel="stylesheet" href="https://cdn.hibuwebsites.com/WIDGET_CSS/078aa5b4661f56cf43b66b8cb4c847ac.css" id="widgetCSS" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="take-out-menu"] #dm [data-show-on-page-only="take-out-menu"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="https://cdn.hibuwebsites.com/2cf9efeaa6ce40dd9e33fc4d41550a8f/files/2cf9efeaa6ce40dd9e33fc4d41550a8f_1.min.css?v=18" id="siteGlobalCss" />
+
+
+<!-- additional css file per platform -->
+<link
+        type="text/css" rel="stylesheet"
+        href="/_dm/s/rt/css/hibu/hibu-runtime.css?version=2025-11-27T12_19_14"
+/>
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody div.u_Services{
+background-image:url(https://irp-cdn.multiscreensite.com/3aae3c44/dms3rep/multi/pattern_big_frame-200x200.jpg) !important;
+background-position:top center !important}
+*#dm *.dmBody *.u_Services:before{
+opacity:0.5 !important;
+background-color:rgb(255,255,255) !important}
+*#dm *.dmBody *.u_Services.before{
+opacity:0.5 !important;
+background-color:rgb(255,255,255) !important}
+*#dm *.dmBody div.u_Services:before{
+background-color:rgba(0,0,0,1) !important}
+*#dm *.dmBody div.u_Services.before{
+background-color:rgba(0,0,0,1) !important}
+*#dm *.dmBody div.u_1417418604{
+background-color:rgba(43,43,41,1) !important}
+*#dm *.dmBody div.u_1803355939{
+background-color:rgba(253,241,204,1) !important}
+*.u_1865158172{
+background-image:none !important;
+background-color:rgba(0,0,0,0) !important;
+background-position:0 0 !important;
+background-size:auto !important;
+background-repeat:repeat !important;
+padding-top:0 !important;
+padding-bottom:0 !important;
+padding-right:0 !important;
+padding-left:14.3906px !important;
+margin:0 !important;
+text-align:start !important}
+*#dm *.dmBody div.u_1865158172{
+background-color:rgba(149,103,49,1) !important}
+*#dm *.dmBody div.u_1335362212{
+background-color:rgba(106,2,1,1) !important;
+border-color:rgba(43,43,41,1) !important;
+border-width:4px !important;
+border-style:solid !important}
+*#dm *.dmBody *.u_1170736214{
+width:100% !important}
+*#dm *.dmBody *.u_1832961164{
+width:100% !important}
+*#dm *.dmBody nav.u_1190878319{
+color:white !important}
+*#dm *.dmBody div.u_1114954808 .menuCategory .menuCategroyTitle{
+border-bottom-style:dashed !important;
+border-bottom-color:rgb(106,2,1) !important;
+border-bottom-width:0 !important}
+*#dm *.dmBody div.u_1114954808 .menuItemBox{
+border-bottom-width:1px !important;
+border-bottom-style:dotted !important;
+border-bottom-color:rgba(17,17,17,0.3) !important}
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.dmBody div.u_Services{
+padding-top:138px !important;
+padding-bottom:138px !important;
+padding-left:0 !important;
+float:none !important;
+top:auto !important;
+max-width:none !important;
+left:0 !important;
+width:100% !important;
+position:relative !important;
+padding-right:0 !important;
+min-width:0 !important;
+text-align:center !important;
+height:auto !important}
+*#dm *.dmBody div.u_1417418604{
+padding-top:0 !important;
+padding-left:0 !important;
+padding-bottom:0 !important;
+padding-right:0 !important;
+width:auto !important;
+margin-left:0 !important;
+margin-top:0 !important;
+margin-bottom:0 !important;
+margin-right:0 !important}
+*#dm *.dmBody div.u_1170736214{
+width:calc(100% - 99px) !important;
+height:auto !important;
+display:block !important;
+float:none !important;
+top:0 !important;
+left:0 !important;
+position:relative !important;
+padding-top:0 !important;
+padding-left:0 !important;
+padding-bottom:20px !important;
+margin-right:100px !important;
+margin-left:99.9844px !important;
+max-width:100px !important;
+margin-top:23px !important;
+margin-bottom:0 !important;
+padding-right:0 !important;
+min-width:25px !important;
+text-align:start !important}
+*#dm *.dmBody div.u_1803355939{
+margin-left:0 !important;
+padding-top:20px !important;
+padding-left:15px !important;
+padding-bottom:20px !important;
+margin-top:0 !important;
+margin-bottom:0 !important;
+margin-right:0 !important;
+padding-right:15px !important}
+*#dm *.dmBody div.u_1865158172{
+padding-top:10px !important;
+padding-left:10px !important;
+padding-bottom:0 !important;
+padding-right:10px !important}
+*#dm *.dmBody div.u_1335362212{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:calc(100% - 0px) !important;
+position:relative !important;
+height:auto !important;
+padding-top:15px !important;
+padding-left:15px !important;
+padding-bottom:15px !important;
+margin-right:auto !important;
+margin-left:auto !important;
+max-width:100% !important;
+margin-top:21px !important;
+margin-bottom:8px !important;
+padding-right:15px !important;
+min-width:25px !important}
+*#dm *.dmBody div.u_1114954808 .menuItemDesc{
+font-size:15px !important}
+*#dm *.dmBody div.u_1114954808 .menuItemDesc .rteBlock{
+font-size:15px !important}
+*#dm *.dmBody div.u_1020106257{
+display:block !important;
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:calc(100% - 0px) !important;
+position:relative !important;
+height:auto !important;
+padding-top:0 !important;
+padding-left:0 !important;
+padding-bottom:0 !important;
+max-width:100% !important;
+padding-right:0 !important;
+min-width:25px !important;
+margin-left:0 !important;
+margin-top:24px !important;
+margin-bottom:0 !important;
+margin-right:0 !important}
+*#dm *.dmBody div.u_1494085320{
+float:none !important;
+top:0 !important;
+left:0 !important;
+width:calc(100% - 64px) !important;
+position:relative !important;
+height:auto !important;
+padding-top:2px !important;
+padding-left:0 !important;
+padding-bottom:2px !important;
+margin-right:auto !important;
+margin-left:auto !important;
+max-width:482px !important;
+margin-top:8px !important;
+margin-bottom:8px !important;
+padding-right:0 !important;
+min-width:25px !important}
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }.font-size-15, .size-15, .size-15 > font { font-size: 15px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lato Fallback";
+  src: local('Arial');
+  ascent-override: 101.3181%;
+  descent-override: 21.865%;
+  size-adjust: 97.4159%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lora Fallback";
+  src: local('Arial');
+  ascent-override: 95.2907%;
+  descent-override: 25.9539%;
+  size-adjust: 105.5717%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Helvetica Fallback";
+  src: local('Arial');
+  ascent-override: 77.002%;
+  descent-override: 22.998%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+
+  <link type="application/rss+xml" rel="alternate" href="https://www.lafocacciaofmelville.com/feed/rss2"/>
+  <link type="application/atom+xml" rel="alternate" href="https://www.lafocacciaofmelville.com/feed/atom"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.lafocacciaofmelville.com/take-out-menu"/>
+  <title>
+    
+    Take Out Menu | Heroes | Panini | Wraps | Appetizers | Desserts | Melville, NY
+  
+  </title>
+  <meta name="description" content="La Focaccia - Take-out and delivery available. Take out menu. Open 7 days a week. Specialize in catering for all occasions. 
+
+
+"/>
+  <style type="text/css">
+    
+    
+    
+    
+.dmInner {
+min-width: auto !important;
+max-width: 100vw !important;
+}
+
+  
+  
+  
+  </style>
+  <meta name="format-detection" content="telephone=no"/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Take Out Menu | Heroes | Panini | Wraps | Appetizers | Desserts | Melville, NY"/>
+  <meta name="twitter:description" content="La Focaccia - Take-out and delivery available. Take out menu. Open 7 days a week. Specialize in catering for all occasions. 
+
+
+"/>
+  <meta property="og:description" content="La Focaccia - Take-out and delivery available. Take out menu. Open 7 days a week. Specialize in catering for all occasions. 
+
+
+"/>
+  <meta property="og:title" content="Take Out Menu | Heroes | Panini | Wraps | Appetizers | Desserts | Melville, NY"/>
+
+
+
+
+<!-- SYS- VVNfSElCVV9QUk9EVUNUSU9O -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="take-out-menu"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite mac dmLargeBody responsiveTablet "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1980626276"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-sec hasAnimations dmPageBody d-page-1875359672 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1875359672" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="dmHeader p_hfcontainer u_hcontainer" freeheader="true" has-shadow="true"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="u_1436922825 dmRespRow dmDefaultListContentRow" style="text-align:center" id="1436922825"> <div class="dmRespColsWrapper" id="1550068740"> <div class="u_1905117857 dmRespCol small-12 large-3 medium-3" id="1905117857"> <div class="u_1939143293 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1939143293"> <a href="/" id="1357409411"><img src="https://le-cdn.hibuwebsites.com/2cf9efeaa6ce40dd9e33fc4d41550a8f/dms3rep/multi/opt/13723299_263x89-1920w.png" id="1759176127" class="" data-dm-image-path="https://cdn.hibuwebsites.com/2cf9efeaa6ce40dd9e33fc4d41550a8f/dms3rep/multi/13723299_263x89.png" width="263" height="89" alt="La Focaccia logo" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1444081793 dmRespCol small-12 large-5 medium-5" id="1444081793"> <div class="u_1538834995 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1538834995"> <a href="http://slicelife.com/restaurants/ny/melville/11747/la-focaccia/menu?utm_campaign=order_now_button&utm_medium=referral&utm_source=" id="1435379298" class="" target="_blank" file="false"><img src="https://le-cdn.hibuwebsites.com/2cf9efeaa6ce40dd9e33fc4d41550a8f/dms3rep/multi/opt/order-now-full-1920w.png" alt="" id="1013744615" class="" data-dm-image-path="https://cdn.hibuwebsites.com/2cf9efeaa6ce40dd9e33fc4d41550a8f/dms3rep/multi/order-now-full.png" width="264" height="58" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1457608691 small-12 dmRespCol large-4 medium-4" id="1457608691"> <div class="u_1253444126 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1253444126" style="transition: opacity 1s ease-in-out 0s;" new-inline-bind-applied="true" data-diy-text=""> <h5 class="m-size-19 text-align-right size-24"><span class="m-font-size-19 font-size-24" style="font-weight: bold; display: initial; color: rgb(255, 255, 255);"><span class="inline-data-binding" data-encoded-value="NjMxLTM4NS01MDAw" data-inline-binding="content_library.global.phone.main"><a class="inlineBindingLink" target="_blank" href="tel:631-385-5000">631-385-5000</a></span></span></h5> 
+</div> 
+ <div class="dmNewParagraph u_1777409999" data-element-type="paragraph" data-version="5" id="1777409999" style="transition: none 0s ease 0s; text-align: left; display: block;" new-inline-bind-applied="true" data-diy-text=""> <h6 class="m-size-13 text-align-right size-16"><span class="m-font-size-13 font-size-16" style="color: rgb(255, 255, 255); display: initial;"><span class="inline-data-binding" data-encoded-value="U2VydmluZyBNZWx2aWxsZSBhbmQgU3Vycm91bmRpbmcgQ29tbXVuaXRpZXM=" data-inline-binding="site_text.extra hdr text">Serving Melville and Surrounding Communities</span></span></h6> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1827972418" id="1827972418"> <div class="dmRespColsWrapper" id="1584211045"> <div class="dmRespCol large-12 medium-12 small-12 u_1239106891" id="1239106891"> <nav class="u_1190878319 effect-bottom2 main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" data-divider="PIPE" id="1190878319" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmUDNavigationItem_00  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         HOME
+        " data-auto="page-text-style">HOME<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/appetizers/5317952" class="unifiednav__item  dmUDNavigationItem_010101393381  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         APPETIZERS
+        " data-auto="page-text-style">APPETIZERS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/sides-specialty-items/4705880" class="unifiednav__item  dmUDNavigationItem_010101373034  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           SIDES & SPECIALTY ITEMS
+          " data-auto="page-text-style">SIDES &amp; SPECIALTY ITEMS<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/soup-salads/5317948" class="unifiednav__item  dmUDNavigationItem_010101112282  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           SOUP & SALADS
+          " data-auto="page-text-style">SOUP &amp; SALADS<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/pizza/4706102" class="unifiednav__item  dmUDNavigationItem_010101598935  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         PIZZA
+        " data-auto="page-text-style">PIZZA<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/pasta-baked-dishes/4706086" class="unifiednav__item  dmUDNavigationItem_010101391366  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         PASTA & BAKED DISHES
+        " data-auto="page-text-style">PASTA &amp; BAKED DISHES<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/chicken-veal-seafood/4706089" class="unifiednav__item  dmUDNavigationItem_010101916727  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         CHICKEN, VEAL & SEAFOOD
+        " data-auto="page-text-style">CHICKEN, VEAL &amp; SEAFOOD<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/heroes-wraps-paninis/4706059" class="unifiednav__item  dmUDNavigationItem_010101874116  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         HEROES, WRAPS & PANINIS
+        " data-auto="page-text-style">HEROES, WRAPS &amp; PANINIS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/desserts/5317950" class="unifiednav__item  dmUDNavigationItem_010101945965  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         DESSERTS
+        " data-auto="page-text-style">DESSERTS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/catering/4705674" class="unifiednav__item  dmUDNavigationItem_010101860311  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         CATERING
+        " data-auto="page-text-style">CATERING<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/lunch-menu/4705742" class="unifiednav__item  dmUDNavigationItem_010101827528  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         LUNCH MENU
+        " data-auto="page-text-style">LUNCH MENU<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/take-out-menu" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_010101473988  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="TAKE OUT" data-auto="page-text-style">TAKE OUT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact/4703862" class="unifiednav__item  dmUDNavigationItem_01010198084  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         CONTACT
+        " data-auto="page-text-style">CONTACT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr/></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"> <div class="innerPageTitle">TAKE OUT</div> 
+</div> 
+ <div class="titleLine display_None"><hr/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_take-out-menu"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="100" class="dmAboutusRespTmpl mainBorder" id="1875359672"> <div class="innerPageTmplBox dmRespRowsWrapper" id="1577517619"> <div class="dmRespRow u_1417418604" id="1417418604"> <div class="dmRespColsWrapper" id="1555274841"> <div class="u_1803355939 dmRespCol small-12 large-8 medium-8" id="1803355939"> <div class="u_1832961164 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1832961164"><img src="https://le-cdn.hibuwebsites.com/2cf9efeaa6ce40dd9e33fc4d41550a8f/dms3rep/multi/opt/13722790-1920w.jpg" alt="hero - buffalo pizza" id="1981541837" class="" data-dm-image-path="https://cdn.hibuwebsites.com/2cf9efeaa6ce40dd9e33fc4d41550a8f/dms3rep/multi/13722790.jpg" width="620" height="200" onerror="handleImageLoadError(this)"/></div> 
+ <div class="u_1020106257 dmNewParagraph" data-element-type="paragraph" id="1020106257" background-image":""}"="" data-version="5" style="text-align: center;"> <h3 class="text-align-center" aria-level="5" role="heading"><span style="font-weight: inherit; text-decoration: inherit; display: initial; font-style: normal;">Take Out Menu</span></h3> 
+</div> <div class="default u_1114954808 dmRestaurantMenu dmWs" id="1114954808" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" num_columns="1" show_pics="false" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-1" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" businessname="La Focaccia" menu_data="W3sidGl0bGUiOiJMYSBGb2NhY2NpYSBIZXJvcyIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjAsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj4oQWRkIE1lbHRlZCBNb3p6YXJlbGxhIENoZWVzZSB0byBhbnkgSGVybyBmb3IgMS4wMCBtb3JlKTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNoaWNrZW4gQ3V0bGV0IiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjEzLjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJNZWF0YmFsbCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMy4wMCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiU2F1c2FnZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMy4wMCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiRWdncGxhbnQiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiMTMuMDAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlNocmltcCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMy45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiVmVhbCBDdXRsZXQiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiMTQuMDAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlBlcHBlciAmIEVnZyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMy41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiU2F1c2FnZSAmIFBlcHBlciIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMy41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiUG90YXRvICYgRWdnIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjEyLjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJQaGlsbHkgQ2hlZXNlIFN0ZWFrIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj4oU3RlYWssIE9uaW9ucyBhbmQgTW96emFyZWxsYSBDaGVlc2UpwqA8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE0Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNvbGQgSXRhbGlhbiBTdWIiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlNhbGFtaSwgSGFtLFByb3ZvbG9uZSxMZXR0dWNlIGFuZFRvbWF0b3dpdGhPaWwgYW5kIFZpbmVnYXIgb3JNYXlvPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxMy45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDaGlja2VuIENsdWIiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkNoaWNrZW4gQ3V0bGV0LCBMZXR0dWNlLCBUb21hdG8sIE9pbCBhbmQgVmluZWdhciBvciBNYXlvPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxMy45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfSx7InRpdGxlIjoiTGEgRm9jYWNjaWEgUGFuaW5pIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6MCwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJMYSBGb2NhY2NpYSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+wqBHcmlsbGVkIENoaWNrZW4sIEhvbWVtYWRlIGZyZXNoIE1venphcmVsbGEsIFJvYXN0ZWQgUmVkIFBlcHBlcnMsIFRvbWF0byBCcnVzY2hldHRhIGFuZCBGcmVzaCBCYXNpbCB3aXRoIGEgQmFsc2FtaWMgRHJlc3Npbmcgb24gRm9jYWNjaWEgQnJlYWQ8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjExLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6Ikl0YWxpYW4iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkhvbWVtYWRlIEZyZXNoIE1venphcmVsbGEsIEltcG9ydGVkIFByb3NjaXV0dG8gRGkgUGFybWEsIFJvYXN0ZWQgUmVkIFBlcHBlcnMsIEZyZXNoIEJhc2lsLCBUb21hdG8gYW5kIEJhbHNhbWljIERyZXNzaW5nPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxMS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJTaWNpbGlhbiIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+QnJlYWRlZCBFZ2dwbGFudCwgUHJvdm9sb25lIENoZWVzZSxSb2FzdGVkIFJlZCBQZXBwZXJzIMKgU2xpY2VkIHRvbWF0byB3aXRoIGEgU3VuZHJpZWQgVG9tYXRvIFNwcmVhZDwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTEuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2FwcmkiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkFuZHkgQm95IEJyb2Njb2xpIFJhYmUgc2F1dMOpZWQgd2l0aCBHYXJsaWMgYW5kIE9pbCwgSG9tZW1hZGUgRnJlc2ggTW96emFyZWxsYSBhbmQgU2xpY2VkIFN3ZWV0IFNhdXNhZ2U8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjEzLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlZlZ2V0YWJsZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+R3JpbGxlZCBQb3J0b2JlbGxvIE11c2hyb29tcywgWnVjY2hpbmkgYW5kIEVnZ3BsYW50LCBIb21lbWFkZSBGcmVzaCBNb3p6YXJlbGxhLCBSb2FzdGVkIFJlZCBQZXBwZXJzIHdpdGggYSBQZXN0byBTcHJlYWQ8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjExLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlBhbGVybW8iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlNhbGFtaSwgUHJvdm9sb25lLCBQZXBwZXJvbmksIFByb3NjaXV0dG8gd2l0aCBhIFBlc3RvIFNwcmVhZDwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTIuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiUnVzdGljIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5TbGljZWQgTWFyaW5hdGVkIFRvbWF0b2VzLCBIb21lbWFkZSBGcmVzaCBNb3p6YXJlbGxhIGFuZCBGcmVzaCBCYXNpbCB3aXRoIGEgU3VuZHJpZWQgVG9tYXRvIFNwcmVhZDwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTEuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IkxhIEZvY2FjY2lhIFdyYXBzIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6MCwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiIiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPihXaGl0ZSBGbG91ciwgV2hvbGUgV2hlYXQgYW5kIFRvbWF0byBCYXNpbCBXcmFwcyBhdmFpbGFibGUpPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiTGEgRm9jYWNjaWEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPsKgR3JpbGxlZCBDaGlja2VuLCBIb21lbWFkZSBmcmVzaCBNb3p6YXJlbGxhLCBSb2FzdGVkIFJlZCBQZXBwZXJzIGFuZCBMZXR0dWNlIHdpdGggYSBTdW4gRHJpZWQgVG9tYXRvIERyZXNzaW5nPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxMS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJHcmlsbGVkIENoaWNrZW4gQ2Flc2FyIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjExLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJHcmlsbGVkIENoaWNrZW4gR3JlZWsiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiMTEuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkJ1ZmZhbG8iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkJ1ZmZhbG8gQ2hpY2tlbiwgUm9tYWluZSBMZXR0dWNlLCBTaHJlZGRlZCBDYXJyb3RzIGFuZCBCbHVlIENoZWVzZSBEcmVzc2luZzwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTEuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IkRlc3NlcnRzIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6MCwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJIb21lbWFkZSBJdGFsaWFuIFJpY290dGEgQ2hlZXNlY2FrZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI1LjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJIb21lbWFkZSBDYW5ub2xpIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjQuMjUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlRpcmFtaXN1IiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjQuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNob2NvbGF0ZSBDaGlwL0Z1ZGdlIENha2UiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiNC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiUmFpbmJvdyBDb29raWUgQ2FrZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI0Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9XSwiY2F0ZWdvcnkiOmZhbHNlfSx7InRpdGxlIjoiRnJpZGF5IFNwZWNpYWwgRGVzc2VydHMiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjowLCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNpbm5hbW9uIEtub3RzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjIvMy4wMCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiRnJpZWQgT3Jlb3MiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiMi8zLjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJTdHVmZmVkIFplcHBvbGUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPndpdGggQ2Fubm9saSBDcmVhbTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMi8zLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlNtb3JlcyBQaWUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiMjUuMDAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IkFudGlwYXN0aSAoQXBwZXRpemVycykiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjoxLCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkJha2VkIENsYW1zIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj4oMTIpPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxNi45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJNb3p6YXJlbGxhIFN0aWNrcyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+KDYpPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxMC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJCdWZmYWxvIFdpbmdzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj4oMTIpPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxNS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJNdXNzZWxzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj4oQ2hvaWNlIG9mIE1hcmluYXJhIG9yIFdoaXRlIFdpbmUgU2F1Y2UpPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxNS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJGcmllZCBDYWxhbWFyaSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxNi45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiRnJpZWQgWnVjY2hpbmkgU3RpY2tzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjEwLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJHYXJsaWMgQnJlYWQiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPndpdGggTW96emFyZWxsYSBDaGVlc2XCoDwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDYuMjUgLyAkOC41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJSaWNlIEJhbGwiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiNy4yNSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2hpY2tlbiBGaW5nZXJzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj7CoCg2KTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTEuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IlNpZGUgT3JkZXJzIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6MiwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJHYXJsaWMgS25vdHMiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPsK9IERvemVuICQ0Ljk1wqA8L3A+PHAgY2xhc3M9XCJydGVCbG9ja1wiPjEgRG96ZW4gJDkuOTU8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJNZWF0YmFsbHMgb3IgU2F1c2FnZSB3aXRoIFRvbWF0byBTYXVjZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+KDIpPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiI4LjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlNhdXTDqWQgQnJvY2NvbGkgd2l0aCBHYXJsaWMgJiBPaWwiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiOS41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiU2F1dMOpZCBCcm9jY29saSB3aXRoIEdhcmxpYyAmIE9pbCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI5LjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJGcmVuY2ggRnJpZXMiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiNS41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiRnJpZWQgb3IgR3JpbGxlZCBDaGlja2VuIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj4oMik8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjkuNTAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQnJvY2NvbGkgUmFiZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+KEdhcmxpYyAmYW1wOyBPaWwpPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxMC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfSx7InRpdGxlIjoiWnVwcGUgKEhvbWVtYWRlIFNvdXBzKSIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjMsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiKEFsbCBTb3VwcyBQaW50IDguNTAgLyBRdWFydCAxMy45NSkiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPk1pbmVzdHJvbmUg4oCiIFRvcnRlbGxpbmkgaW4gQnJvZG8g4oCiIENoaWNrZW4gJmFtcDsgUmljZSBQYXN0YSBGYWdpb2xpIOKAoiBMZW50aWw8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfSx7InRpdGxlIjoiSW5zYWxhdGEgKFNhbGFkcykiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjo0LCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlRyYWN5IFNhbGFkIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5Eb3VibGUgQ2hvcHBlZCBTYWxhZCB3LyBDdWN1bWJlciwgVG9tYXRvICZhbXA7IEdyaWxsZWQgQ2hpY2tlbjwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiKFNtKSAkMTMuOTUgLyAoTGcpICQxNy45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDb2xkIEFudGlwYXN0byIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIoU20pICQxNC41MCAvIChMZykgJDE3Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJMYSBGb2NhY2NpYSBIb3VzZSBTYWxhZCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIoU20pICQ4Ljk1IC8gKExnKSAkMTEuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNhZXNhciBTYWxhZCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIoU20pICQ5LjUwIC8gKExnKSAkMTIuNTAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkdyZWVrIFNhbGFkIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IihTbSkgJDkuNTAgLyAoTGcpICQxMi41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2FwcmVzZSBTYWxhZCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIoU20pICQxMS45NSAvIChMZykgJDE0Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJCYWJ5IFNocmltcCBBZGRlZCB0byBTYWxhIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IihTbSkgJDYuOTUgLyAoTGcpICQ3Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDb2xkIFNlYWZvb2QgU2FsYWQiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkNoaWxsZWQgQ2FsYW1hcmksIENsYW1zLCBTaHJpbXAgYW5kIE11c3NlbHMgc2VydmVkIGluIGFMZW1vbiBHYXJsaWMgYW5kIE9pbCBWaW5haWdyZXR0ZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiKExnKSAkMzIuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiRnJlc2ggTW96emFyZWxsYSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIoU20pICQzLjI1IC8oTGcpICQ0LjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJTaHJlZGRlZCBNb3p6YXJlbGxhIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IihTbSkgJDIuMjUgLyAoTGcpICQzLjI1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJHcmlsbGVkIENoaWNrZW4iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiKFNtKSAkNC45NSAvIChMZykgJDUuNTAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkJ1ZmZhbG8gQ2hpY2tlbiIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIoU20pICQ1Ljk1IC8gKExnKSAkNS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2hvcHBlZCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIoU20pICQxLjAwIC8gKExnKSAkMi4wMCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IlNwZWNpYWx0eSBJdGVtcyIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjUsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiKEFsbCBJdGVtcyBzZXJ2ZWQgd2l0aCBhIHNpZGUgb2YgSG9tZW1hZGUgVG9tYXRvIFNhdWNlKSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkJ1ZmZhbG8gQ2hpY2tlbiBSb2xsIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjExLjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDaGlja2VuIFJvbGwiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlRvbWF0byBTYXVjZSBhbmQgTW96emFyZWxsYSBDaGVlc2U8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjExLjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkVnZ3BsYW50IFJvbGwiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlJpY290dGEgQ2hlZXNlLCBUb21hdG8gU2F1Y2UgYW5kIE1venphcmVsbGEgQ2hlZXNlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxMS41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJNaXhlZCBWZWdldGFibGUgUGlud2hlZWwiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiNS41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiUGVwcGVyb25pIFBpbndoZWVsIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjUuNTAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlNhdXNhZ2UgYW5kIFBlcHBlciBSb2xsIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjExLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDYWx6b25lIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj4oQWRkIFRvcHBpbmcgJDEuMDApPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiI5LjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNhcHBlbGxpbmkgQmFsbCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+QWxmcmVkbyBTYXVjZS4gUHJvc2NpdXR0byBhbmQgRnJlc2ggU3BpbmFjaDwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMi45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJQZXBwZXJvbmkgR2FybGljIEtub3RzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjEuMjUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNoZWVzeSBLbm90cyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxLjI1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MSwidGl0bGUiOiJNZWF0YmFsbCBTbGlkZXIiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiNS41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjIsInRpdGxlIjoiRWdncGxhbnQgU2xpZGVyIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjUuNTAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJQaWF0dGkgRm9ybm8gKEZyZXNoIEJha2VkIERpc2hlcykiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjo2LCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkFsbCBFbnRyZWVzIHNlcnZlZCB3aXRoIHNpZGUgU2FsYWQsIEdhcmxpYyBTdGlja3MgJiBCcmVhZCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkJha2VkIFppdGkiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlppdGksIFJpY290dGEgYW5kIE1venphcmVsbGE8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE3Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkJha2VkIFppdGkiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlNpY2lsaWFubyBCcmVhZGVkIEVnZ3BsYW50LCBaaXRpLCBSaWNvdHRhIGFuZCBNb3p6YXJlbGxhPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxOC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJCYWtlZCBSYXZpb2xpIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjE3Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJCYWtlZCBTdHVmZmVkIFNoZWxscyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxNy45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQmFrZWQgTGFzYWduYSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxOC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiRWdncGxhbnQgUGFybWlnaWFuYSB3aXRoIGNob2ljZSBvZiBQYXN0YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48YnI+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE5Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJFZ2dwbGFudCBSb2xsYXRpbmkiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkJyZWFkZWQgRWdncGxhbnQgcm9sbGVkIHdpdGggUmljb3R0YSBhbmQgTW96emFyZWxsYSBDaGVlc2U8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjIxLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJMYSBGb2NhY2NpYSdzIFNwZWNpYWx0eSBQYXN0YXMiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjo3LCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IllvdXIgY2hvaWNlIG9mIFNwYWdoZXR0aSwgUGVubmUsIFJpZ2F0b25pLCBMaW5ndWluaSwgQW5nZWwgSGFpciwgWml0aSBvciBXaG9sZSBXaGVhdCBQZW5uZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+Q2hlZXNlIFRvcnRlbGxpbmkgMi4wMCBleHRyYTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IldoaXRlIENsYW0iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkZyZXNoIENob3BwZWQgQ2xhbXMgc2VydmVkIGluIGEgR2FybGljIFdoaXRlIFdpbmUgQ2xhbSBTYXVjZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTkuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiUmVkIENsYW0iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkZyZXNoIENob3BwZWQgQ2xhbXMgc2VydmVkIGluIGEgUGx1bSBUb21hdG8gU2F1Y2U8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE5Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkhvbWVtYWRlIFRvbWF0byIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxNC41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiSG9tZW1hZGUgTWFyaW5hcmEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkNodW5reSBUb21hdG9lcywgQmFzaWwsIEdhcmxpYyBhbmQgT2lsPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxNi41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJBbGZyZWRvIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5XaGl0ZSBQYXJtZXNhbiBDcmVhbSBTYXVjZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTguOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2FyYm9uYXJhIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5JbXBvcnRlZCBJdGFsaWFuIFBhbmNldHRhIHNhdXTDqWVkIHdpdGggZGljZWQgT25pb25zIHdpdGggYSBUb3VjaCBvZiBDcmVhbTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTkuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQWxsYSBWb2RrYSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+UGluayBDcmVhbSBTYXVjZSB3aXRoIGEgSGludCBvZiBWb2RrYSBmb3IgRmxhdm9yaW5nPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxOC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJQdXRhbmVzY2EiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlBsdW0gVG9tYXRvIFNhdWNlIHNhdXTDqWVkIHdpdGggQ2FwZXJzLCBBcnRpY2hva2VzLCBHcmVlbiBhbmQgQmxhY2sgT2xpdmVzPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxOS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJNYXRyaWNpYW5hIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5JbXBvcnRlZCBJdGFsaWFuIFBhbmNldHRhIHNhdXTDqWVkIHdpdGggZGljZWQgT25pb25zIGluIGEgUGx1bSBUb21hdG8gQ3JlYW0gU2F1Y2U8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE5Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkdhcmxpYyBhbmQgT2lsOiIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+U2F1dMOpZWQgR2FybGljIGFuZCBFeHRyYSBWaXJnaW4gT2xpdmUgT2lsPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxNS41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJCcm9jY29saSBHYXJsaWMgYW5kIE9pbDoiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkJyb2Njb2xpIEZsb3JldHMgc2F1dMOpZWQgd2l0aCBHYXJsaWMgYW5kIEV4dHJhIFZpcmdpbiBPbGl2ZSBPaWw8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE4Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkJyb2Njb2xpLCBHYXJsaWMgYW5kIE9pbCB3aXRoIEdyaWxsZWQgQ2hpY2tlbiIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIyMC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQnJvY2NvbGksIFN1bmRyaWVkIFRvbWF0b2VzLCBHYXJsaWMgYW5kIE9pbCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+QnJvY2NvbGkgRmxvcmV0cywgU3VuZHJpZWQgVG9tYXRvZXMgc2F1dMOpZWQgd2l0aCBHYXJsaWMgYW5kIEV4dHJhIFZpcmdpbiBPbGl2ZSBPaWw8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE5Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkJyb2Njb2xpIFJhYmUsIFNhdXNhZ2UsIEdhcmxpYyBhbmQgT2lsIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5BbmR5IEJveSBCcm9jY29saSBSYWJlLCBTbGljZWQgSXRhbGlhbiBTd2VldCBTYXVzYWdlIHNhdXTDqWVkIHdpdGggR2FybGljIGFuZCBFeHRyYSBWaXJnaW4gT2xpdmUgT2lsPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIyMS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJIb21lbWFkZSBNZWF0IFNhdWNlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjE4Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJCb2xvZ25lc2UiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkhvbWVtYWRlIE1lYXQgU2F1Y2Ugd2l0aCBhIFRvdWNoIG9mIENyZWFtPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxOC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJTYXV0w6llZCBGcmVzaCBNdXNocm9vbXMgaW4gYSBDaGVlc3kgQWxmcmVkbyBTYXVjZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxOS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJIb21lbWFkZSBTYXVjZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+V2l0aCBNZWF0YmFsbHMgb3IgU2F1c2FnZTwvcD48YnI+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkFkZCBDaGlja2VuICQ0Ljc1PC9wPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5BZGQgQmFieSBTaHJpbXAgJDUuOTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTcuNTAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IkVOVFLDiUVTIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6OCwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJBbGwgRW50cmVlcyBzZXJ2ZWQgd2l0aCBIb21lbWFkZSBHYXJsaWMgU3RpY2tzICYgQ2hvaWNlIG9mIFBhc3RhIG9yIFNhbGFkKSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJQb2xsbyAoUG91bHRyeSkiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjo5LCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNoaWNrZW4gUGFybWlnaWFuYSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+Q2hpY2tlbiBDdXRsZXQgQmFrZWQgaW4gVG9tYXRvIFNhdWNlIGFuZCBNZWx0ZWQgTW96emFyZWxsYTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMjIuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2hpY2tlbiBNYXJzYWxhIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5CcmVhc3Qgb2YgQ2hpY2tlbiB3aXRoIEZyZXNoIE11c2hyb29tcyBTYXV0ZWVkIGluIGEgTWFyc2FsYSBXaW5lIFNhdWNlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIyMy45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDaGlja2VuIEZyYW5jZXNlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5CcmVhc3Qgb2YgQ2hpY2tlbiBkaXBwZWQgaW4gZWdnIGJhdHRlciBzZXJ2ZWQgaW4gYSBXaGl0ZSBXaW5lIExlbW9uIEJ1dHRlciBTYXVjZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMjMuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2hpY2tlbiBTY2FycGFyaWVsbG8iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkJyZWFzdCBvZiBDaGlja2VuIHNlcnZlZCB3aXRoIFNhdXNhZ2UgYW5kIFBlcHBlcnMgaW4gYSBMZW1vbiBXaW5lIFNhdWNlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIyNC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDaGlja2VuIFNvcnJlbnRpbm8iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlNhdXTDqWVkIENoaWNrZW4gd2l0aCBFZ2dwbGFudCwgUHJvc2NpdXR0byBhbmQgTW96emFyZWxsYSBDaGVlc2Ugc2VydmVkIGluIGEgTWFyc2FsYSBXaW5lIERlbWkgR2xhemU8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjI0Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNoaWNrZW4gUGljY2F0YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+Q2hpY2tlbiBCcmVhc3Qgc2VydmVkIHdpdGggQ2FwZXJzLCBBcnRpY2hva2UgSGVhcnRzIGluIGEgTGVtb24gV2luZSBCdXR0ZXIgU2F1Y2U8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjIzLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNoaWNrZW4gQnJ1c2NoZXR0YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+Q2hpY2tlbiBDdXRsZXQsIGRpY2VkIHRvbWF0bywgcmVkIHBlcHBlciwgYmFzaWwgb25pb24sIGZyZXNoIG1venphcmVsbGEgaW4gYW4gb2xpdmUgb2lsIGFuZCBiYWxzYW1pYyBkcmVzc2luZzwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMjQuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiR3JpbGxlZCBDaGlja2VuLCBCcm9jY29saSBSYWJlLCBHYXJsaWMgJiBPaWwiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiMjMuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkdyaWxsZWQgQ2hpY2tlbiwgQnJvY2NvbGksIEdhcmxpYyAmIE9pbCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIyMy4yNSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiU2F1c2FnZSAmIFBlcHBlciIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+QWRkIENoZWVzZSAkMi4wMDwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMjIuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IlZpdGVsbG8gKFZlYWwpIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6MTAsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiVmVhbCBQYXJtaWdpYW5hIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjI1Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJWZWFsIE1hcnNhbGEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlBhbiBTZWFyZWQgVmVhbCB3aXRoIEZyZXNoIE11c2hyb29tcyBpbiBhIE1hcnNhbGEgV2luZSBTYXVjZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMjUuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiVmVhbCBSb2xsYXRpbmkiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlZlYWwgU2NhbG9wcGluaSBSb2xsZWQgd2l0aCBQcm9zY2l1dHRvIGFuZCBNb3p6YXJlbGxhIGluIE11c2hyb29tIE1hcnNhbGEgRGVtaSBHbGF6ZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMjYuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IkZydXR0aSBEaSBNYXJlIChTZWFmb29kKSIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjExLCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6Ikp1bWJvIFNocmltcCBQYXJtaWdpYW5hICAoOSkiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPsKgKDkpPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIyNS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiSnVtYm8gU2hyaW1wIFNjYW1waSAoNikiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlNhdXTDqWVkIGluIGEgR2FybGljIExlbW9uIFdpbmUgU2NhbXBpIFNhdWNlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIyNS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJKdW1ibyBTaHJpbXAgRnJhIERpYXZvbG8gKDYpIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5TYXV0w6llZCBpbiBhIEhvdCBTcGljeSBNYXJpbmFyYSBTYXVjZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMjQuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiSnVtYm8gU2hyaW1wIEZyYW5jZXNlICg2KSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+RGlwcGVkIGluIGVnZyBiYXR0ZXIgc2VydmVkIGluIGEgV2hpdGUgV2luZSBMZW1vbiBCdXR0ZXIgU2F1Y2U8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjI1Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6Ikp1bWJvIFNocmltcCBNaWxhbmVzZSAoNikiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkZyaWVkIFNocmltcDwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMjUuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2FsYW1hcmkgTWFyaW5hcmEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlNhdXTDqWVkIENhbGFtYXJpIHNlcnZlZCBpbiBhIEhvbWVtYWRlIE1hcmluYXJhIFNhdWNlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIyNC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDYWxhbWFyaSBGcmEgRGlhdm9sbyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+U2F1dMOpZWQgQ2FsYW1hcmkgaW4gYSBIb3QgU3BpY3kgSG9tZW1hZGUgTWFyaW5hcmEgU2F1Y2U8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjI0Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkxhIEZvY2FjY2lhIFp1cHBlIERlIFBlc2NlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5KdW1ibyBTaHJpbXAgKDYpLCBDYWxhbWFyaSwgTXVzc2VscyBDbGFtcyBzZXJ2ZWQgaW4gYSBadXBwZSBEZSBQZXNjZSBIb21lbWFkZSBNYXJpbmFyYSBTYXVjZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiNDAuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IlBpenphIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6MTIsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiTm93IGF2YWlsYWJsZSB3aXRoIHdob2xlIHdoZWF0IGRvdWdoIC0gYWRkaXRpb25hbCAkMi41MCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlJlZ3VsYXIgQ2hlZXNlIFBpenphIDE4XCIiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiU2xpY2UgJDUuNzUgLyBXaG9sZSAkMjguOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlNpY2lsaWFuIENoZWVzZSBQaXp6YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiJTbGljZSAkMy41NSAvIFdob2xlICQyMy43NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiR3JhbmRtYSBQaXp6YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiJTbGljZSAkMy45NSAvIFdob2xlICQyNC43NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiMTJcIiBHbHV0ZW4gRnJlZSBQaXp6YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxNC41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiMTJcIiBDYXVsaWZsb3dlciBQaXp6YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMy41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiV2hvbGUgV2hlYXQgR3JhbmRtYSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiJTbGljZSAkMy45NSAvIFdob2xlICQyNi43NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IkxhIEZvY2FjY2lhIEdvdXJtZXQgUGl6emEiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjoxMywiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJXaGl0ZSBQaXp6YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiJTbGljZSAkNS43NSAvIFdob2xlICQyOC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2hpY2tlbiBQYXJtaWdpYW5hIFBpenphIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IlNsaWNlICQ1Ljc1IC8gV2hvbGUgJDMxLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJCdWZmYWxvIENoaWNrZW4gUGl6emEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiU2xpY2UgJDUuNzUgLyBXaG9sZSAkMzEuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkJCUSBDaGlja2VuIFBpenphIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IlNsaWNlICQ1Ljc1IC8gV2hvbGUgJDMxLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJUZXhhbiBQaXp6YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiJTbGljZSAkNS43NSAvIFdob2xlICQzMS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiRWdncGxhbnQgUGl6emEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiU2xpY2UgJDUuNzUgLyBXaG9sZSAkMzEuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6Ik1hcmdhcml0YSBQaXp6YSAoUGVyc29uYWwpIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IlNsaWNlICQxMy41MCAvIFdob2xlICQyOC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ3Jpc3Bpbm8iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiU2xpY2UgJDUuNzUgLyBXaG9sZSAkMzEuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlRvbWF0byBQZXN0byBQaXp6YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIzMC41MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiTGEgRm9jYWNjaWEgSG91c2UgU3BlY2lhbCBQaXp6YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIzNS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiVmVnZ2llIFBpenphIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjMyLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJCYWtlZCBaaXRpIFBpenphIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IlNsaWNlICQ1Ljc1IC8gV2hvbGUgJDMwLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJTdHVmZmVkIE1lYXQgUGl6emEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiMzcuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlN0dWZmZWQgVmVnZXRhYmxlIFBpenphIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjM3Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJTcGluYWNoIGFuZCBBcnRpY2hva2UgUGl6emEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiU2xpY2UgJDUuNzUgLyBXaG9sZSAkMzIuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlBoaWxseSBQaXp6YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+KENyZWFtIENoZWVzZSwgQmFjb24sSmFsYXBlbm8pPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiJTbGljZSAkNS43NSAvIFdob2xlICQyOS45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDaGlja2VuIEJydXNjaGV0dGEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiU2xpY2UgJDYuMjUgLyBXaG9sZSAkMzkuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlBvdGF0byBTa2luIFBpenphIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IlNsaWNlICQ1Ljc1IC8gV2hvbGUgJDI5Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJWb2RrYSBQaXp6YSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+KFByb3NjaXV0dG8gJmFtcDsgT25pb25zKTwvcD48YnI+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IlNsaWNlICQ0Ljc1IC8gV2hvbGUgJDI4Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNoaWNrZW4gQ2Flc2FyIFNhbGFkIFNsaWNlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IlNsaWNlICQxMS45NSAvIFdob2xlICQzNC45NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOmZhbHNlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiSG91c2UgU2FsYWQgU2xpY2UiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiU2xpY2UgJDEwLjk1IC8gV2hvbGUgJDMxLjk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJEZWVwIERpc2giLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiU2xpY2UgJDQuNzUgLyBXaG9sZSAkMjUuOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjpmYWxzZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlN3ZWV0IENoaWxpIFBpenphIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IlNsaWNlICQ1Ljc1IC8gV2hvbGUgJDI5Ljk1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6ZmFsc2V9XSwiY2F0ZWdvcnkiOmZhbHNlfSx7InRpdGxlIjoiVG9wcGluZ3MiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjoxNCwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJBbGwgUGllICQ1LjI1IGV4dHJhLCDCvSBQaWUgJDMuOTUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlNwZWNpYWx0eSBUb3BwaW5nICQ5Ljk1ICsgVGF4PC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5QZXBwZXJvbmk8L3A+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlNhdXNhZ2U8L3A+PHAgY2xhc3M9XCJydGVCbG9ja1wiPk1lYXRiYWxsPC9wPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5HcmVlbiBQZXBwZXI8L3A+PHAgY2xhc3M9XCJydGVCbG9ja1wiPk11c2hyb29tPC9wPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5BbmNob3Z5PC9wPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5PbmlvbjwvcD48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+RWdncGxhbnQ8L3A+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlNsaWNlZCBUb21hdG88L3A+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkJhY29uPC9wPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5HYXJsaWM8L3A+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkV4dHJhIENoZWVzZTwvcD48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+QnJvY2NvbGk8L3A+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkJsYWNrIE9saXZlczwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9XQ=="> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">La Focaccia Heros</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName"></div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(Add Melted Mozzarella Cheese to any Hero for 1.00 more)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Cutlet</div> 
+</div> 
+ <div class="menuItemPrice">$13.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Meatball</div> 
+</div> 
+ <div class="menuItemPrice">$13.00</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Sausage</div> 
+</div> 
+ <div class="menuItemPrice">$13.00</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Eggplant</div> 
+</div> 
+ <div class="menuItemPrice">$13.00</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Shrimp</div> 
+</div> 
+ <div class="menuItemPrice">$13.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Veal Cutlet</div> 
+</div> 
+ <div class="menuItemPrice">$14.00</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Pepper &amp; Egg</div> 
+</div> 
+ <div class="menuItemPrice">$13.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Sausage &amp; Pepper</div> 
+</div> 
+ <div class="menuItemPrice">$13.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Potato &amp; Egg</div> 
+</div> 
+ <div class="menuItemPrice">$12.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Philly Cheese Steak</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(Steak, Onions and Mozzarella Cheese)&nbsp;</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$14.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Cold Italian Sub</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Salami, Ham,Provolone,Lettuce andTomatowithOil and Vinegar orMayo</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$13.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Chicken Club</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Chicken Cutlet, Lettuce, Tomato, Oil and Vinegar or Mayo</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$13.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">La Focaccia Panini</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">La Focaccia</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">&nbsp;Grilled Chicken, Homemade fresh Mozzarella, Roasted Red Peppers, Tomato Bruschetta and Fresh Basil with a Balsamic Dressing on Focaccia Bread</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Italian</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Homemade Fresh Mozzarella, Imported Prosciutto Di Parma, Roasted Red Peppers, Fresh Basil, Tomato and Balsamic Dressing</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Sicilian</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Breaded Eggplant, Provolone Cheese,Roasted Red Peppers &nbsp;Sliced tomato with a Sundried Tomato Spread</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Capri</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Andy Boy Broccoli Rabe saut&eacute;ed with Garlic and Oil, Homemade Fresh Mozzarella and Sliced Sweet Sausage</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$13.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Vegetable</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Grilled Portobello Mushrooms, Zucchini and Eggplant, Homemade Fresh Mozzarella, Roasted Red Peppers with a Pesto Spread</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Palermo</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Salami, Provolone, Pepperoni, Prosciutto with a Pesto Spread</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$12.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Rustic</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Sliced Marinated Tomatoes, Homemade Fresh Mozzarella and Fresh Basil with a Sundried Tomato Spread</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">La Focaccia Wraps</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName"></div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(White Flour, Whole Wheat and Tomato Basil Wraps available)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">La Focaccia</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">&nbsp;Grilled Chicken, Homemade fresh Mozzarella, Roasted Red Peppers and Lettuce with a Sun Dried Tomato Dressing</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Grilled Chicken Caesar</div> 
+</div> 
+ <div class="menuItemPrice">$11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Grilled Chicken Greek</div> 
+</div> 
+ <div class="menuItemPrice">$11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Buffalo</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Buffalo Chicken, Romaine Lettuce, Shredded Carrots and Blue Cheese Dressing</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Desserts</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Homemade Italian Ricotta Cheesecake</div> 
+</div> 
+ <div class="menuItemPrice">$5.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Homemade Cannoli</div> 
+</div> 
+ <div class="menuItemPrice">$4.25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Tiramisu</div> 
+</div> 
+ <div class="menuItemPrice">$4.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chocolate Chip/Fudge Cake</div> 
+</div> 
+ <div class="menuItemPrice">$4.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Rainbow Cookie Cake</div> 
+</div> 
+ <div class="menuItemPrice">$4.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Friday Special Desserts</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Cinnamon Knots</div> 
+</div> 
+ <div class="menuItemPrice">2/3.00</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Fried Oreos</div> 
+</div> 
+ <div class="menuItemPrice">2/3.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Stuffed Zeppole</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">with Cannoli Cream</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">2/3.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Smores Pie</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$25.00</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Antipasti (Appetizers)</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Baked Clams</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(12)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$16.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Mozzarella Sticks</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(6)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$10.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Buffalo Wings</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(12)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$15.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Mussels</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(Choice of Marinara or White Wine Sauce)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$15.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Fried Calamari</div> 
+</div> 
+ <div class="menuItemPrice">$16.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Fried Zucchini Sticks</div> 
+</div> 
+ <div class="menuItemPrice">$10.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Garlic Bread</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">with Mozzarella Cheese&nbsp;</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$6.25 / $8.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Rice Ball</div> 
+</div> 
+ <div class="menuItemPrice">$7.25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Chicken Fingers</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">&nbsp;(6)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Side Orders</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Garlic Knots</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">&frac12; Dozen $4.95&nbsp;</p> 
+ <p class="rteBlock">1 Dozen $9.95</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Meatballs or Sausage with Tomato Sauce</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(2)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$8.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Saut&eacute;d Broccoli with Garlic &amp; Oil</div> 
+</div> 
+ <div class="menuItemPrice">$9.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Saut&eacute;d Broccoli with Garlic &amp; Oil</div> 
+</div> 
+ <div class="menuItemPrice">$9.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">French Fries</div> 
+</div> 
+ <div class="menuItemPrice">$5.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Fried or Grilled Chicken</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(2)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$9.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Broccoli Rabe</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(Garlic &amp; Oil)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$10.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Zuppe (Homemade Soups)</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">(All Soups Pint 8.50 / Quart 13.95)</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Minestrone &bull; Tortellini in Brodo &bull; Chicken &amp; Rice Pasta Fagioli &bull; Lentil</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Insalata (Salads)</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Tracy Salad</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Double Chopped Salad w/ Cucumber, Tomato &amp; Grilled Chicken</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $13.95 / (Lg) $17.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Cold Antipasto</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $14.50 / (Lg) $17.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">La Focaccia House Salad</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $8.95 / (Lg) $11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Caesar Salad</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $9.50 / (Lg) $12.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Greek Salad</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $9.50 / (Lg) $12.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Caprese Salad</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $11.95 / (Lg) $14.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Baby Shrimp Added to Sala</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $6.95 / (Lg) $7.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Cold Seafood Salad</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Chilled Calamari, Clams, Shrimp and Mussels served in aLemon Garlic and Oil Vinaigrette</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">(Lg) $32.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Fresh Mozzarella</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $3.25 /(Lg) $4.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Shredded Mozzarella</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $2.25 / (Lg) $3.25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Grilled Chicken</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $4.95 / (Lg) $5.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Buffalo Chicken</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $5.95 / (Lg) $5.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Chopped</div> 
+</div> 
+ <div class="menuItemPrice">(Sm) $1.00 / (Lg) $2.00</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Specialty Items</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">(All Items served with a side of Homemade Tomato Sauce)</div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Buffalo Chicken Roll</div> 
+</div> 
+ <div class="menuItemPrice">$11.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Roll</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Tomato Sauce and Mozzarella Cheese</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$11.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Eggplant Roll</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Ricotta Cheese, Tomato Sauce and Mozzarella Cheese</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$11.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Mixed Vegetable Pinwheel</div> 
+</div> 
+ <div class="menuItemPrice">$5.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Pepperoni Pinwheel</div> 
+</div> 
+ <div class="menuItemPrice">$5.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Sausage and Pepper Roll</div> 
+</div> 
+ <div class="menuItemPrice">$11.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Calzone</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(Add Topping $1.00)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$9.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Cappellini Ball</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Alfredo Sauce. Prosciutto and Fresh Spinach</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$2.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Pepperoni Garlic Knots</div> 
+</div> 
+ <div class="menuItemPrice">$1.25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Cheesy Knots</div> 
+</div> 
+ <div class="menuItemPrice">$1.25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Meatball Slider</div> 
+</div> 
+ <div class="menuItemPrice">$5.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Eggplant Slider</div> 
+</div> 
+ <div class="menuItemPrice">$5.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Piatti Forno (Fresh Baked Dishes)</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">All Entrees served with side Salad, Garlic Sticks &amp; Bread</div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Baked Ziti</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Ziti, Ricotta and Mozzarella</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$17.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Baked Ziti</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Siciliano Breaded Eggplant, Ziti, Ricotta and Mozzarella</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Baked Ravioli</div> 
+</div> 
+ <div class="menuItemPrice">$17.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Baked Stuffed Shells</div> 
+</div> 
+ <div class="menuItemPrice">$17.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Baked Lasagna</div> 
+</div> 
+ <div class="menuItemPrice">$18.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Eggplant Parmigiana with choice of Pasta</div> 
+</div> 
+ <div class="menuItemPrice">$19.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Eggplant Rollatini</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Breaded Eggplant rolled with Ricotta and Mozzarella Cheese</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$21.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">La Focaccia's Specialty Pastas</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Your choice of Spaghetti, Penne, Rigatoni, Linguini, Angel Hair, Ziti or Whole Wheat Penne</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Cheese Tortellini 2.00 extra</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">White Clam</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Fresh Chopped Clams served in a Garlic White Wine Clam Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Red Clam</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Fresh Chopped Clams served in a Plum Tomato Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Homemade Tomato</div> 
+</div> 
+ <div class="menuItemPrice">$14.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Homemade Marinara</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Chunky Tomatoes, Basil, Garlic and Oil</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$16.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Alfredo</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">White Parmesan Cream Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Carbonara</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Imported Italian Pancetta saut&eacute;ed with diced Onions with a Touch of Cream</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Alla Vodka</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Pink Cream Sauce with a Hint of Vodka for Flavoring</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Putanesca</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Plum Tomato Sauce saut&eacute;ed with Capers, Artichokes, Green and Black Olives</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Matriciana</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Imported Italian Pancetta saut&eacute;ed with diced Onions in a Plum Tomato Cream Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Garlic and Oil:</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Saut&eacute;ed Garlic and Extra Virgin Olive Oil</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$15.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Broccoli Garlic and Oil:</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Broccoli Florets saut&eacute;ed with Garlic and Extra Virgin Olive Oil</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Broccoli, Garlic and Oil with Grilled Chicken</div> 
+</div> 
+ <div class="menuItemPrice">$20.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Broccoli, Sundried Tomatoes, Garlic and Oil</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Broccoli Florets, Sundried Tomatoes saut&eacute;ed with Garlic and Extra Virgin Olive Oil</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Broccoli Rabe, Sausage, Garlic and Oil</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Andy Boy Broccoli Rabe, Sliced Italian Sweet Sausage saut&eacute;ed with Garlic and Extra Virgin Olive Oil</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$21.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Homemade Meat Sauce</div> 
+</div> 
+ <div class="menuItemPrice">$18.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Bolognese</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Homemade Meat Sauce with a Touch of Cream</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Saut&eacute;ed Fresh Mushrooms in a Cheesy Alfredo Sauce</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$19.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Homemade Sauce</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">With Meatballs or Sausage</p> 
+<br/> <p class="rteBlock">Add Chicken $4.75</p> 
+ <p class="rteBlock">Add Baby Shrimp $5.9</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$17.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">ENTR&Eacute;ES</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">All Entrees served with Homemade Garlic Sticks &amp; Choice of Pasta or Salad)</div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Pollo (Poultry)</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Chicken Parmigiana</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Chicken Cutlet Baked in Tomato Sauce and Melted Mozzarella</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$22.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Marsala</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Breast of Chicken with Fresh Mushrooms Sauteed in a Marsala Wine Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$23.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Francese</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Breast of Chicken dipped in egg batter served in a White Wine Lemon Butter Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$23.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Scarpariello</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Breast of Chicken served with Sausage and Peppers in a Lemon Wine Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$24.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Sorrentino</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Saut&eacute;ed Chicken with Eggplant, Prosciutto and Mozzarella Cheese served in a Marsala Wine Demi Glaze</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$24.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Piccata</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Chicken Breast served with Capers, Artichoke Hearts in a Lemon Wine Butter Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$23.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Bruschetta</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Chicken Cutlet, diced tomato, red pepper, basil onion, fresh mozzarella in an olive oil and balsamic dressing</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$24.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Grilled Chicken, Broccoli Rabe, Garlic &amp; Oil</div> 
+</div> 
+ <div class="menuItemPrice">$23.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Grilled Chicken, Broccoli, Garlic &amp; Oil</div> 
+</div> 
+ <div class="menuItemPrice">$23.25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Sausage &amp; Pepper</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Add Cheese $2.00</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$22.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Vitello (Veal)</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Veal Parmigiana</div> 
+</div> 
+ <div class="menuItemPrice">$25.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Veal Marsala</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Pan Seared Veal with Fresh Mushrooms in a Marsala Wine Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$25.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Veal Rollatini</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Veal Scaloppini Rolled with Prosciutto and Mozzarella in Mushroom Marsala Demi Glaze</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$26.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Frutti Di Mare (Seafood)</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Jumbo Shrimp Parmigiana  (9)</div> 
+</div> 
+ <div class="menuItemPrice">$25.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Jumbo Shrimp Scampi (6)</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Saut&eacute;ed in a Garlic Lemon Wine Scampi Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$25.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Jumbo Shrimp Fra Diavolo (6)</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Saut&eacute;ed in a Hot Spicy Marinara Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$24.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Jumbo Shrimp Francese (6)</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Dipped in egg batter served in a White Wine Lemon Butter Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$25.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Jumbo Shrimp Milanese (6)</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Fried Shrimp</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$25.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Calamari Marinara</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Saut&eacute;ed Calamari served in a Homemade Marinara Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$24.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Calamari Fra Diavolo</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Saut&eacute;ed Calamari in a Hot Spicy Homemade Marinara Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$24.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">La Focaccia Zuppe De Pesce</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Jumbo Shrimp (6), Calamari, Mussels Clams served in a Zuppe De Pesce Homemade Marinara Sauce</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$40.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Pizza</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Now available with whole wheat dough - additional $2.50</div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Regular Cheese Pizza 18&quot;</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $28.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Sicilian Cheese Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $3.55 / Whole $23.75</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Grandma Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $3.95 / Whole $24.75</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">12&quot; Gluten Free Pizza</div> 
+</div> 
+ <div class="menuItemPrice">$14.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">12&quot; Cauliflower Pizza</div> 
+</div> 
+ <div class="menuItemPrice">$13.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Whole Wheat Grandma</div> 
+</div> 
+ <div class="menuItemPrice">Slice $3.95 / Whole $26.75</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">La Focaccia Gourmet Pizza</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">White Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $28.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Parmigiana Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $31.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Buffalo Chicken Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $31.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">BBQ Chicken Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $31.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Texan Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $31.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Eggplant Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $31.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Margarita Pizza (Personal)</div> 
+</div> 
+ <div class="menuItemPrice">Slice $13.50 / Whole $28.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Crispino</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $31.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Tomato Pesto Pizza</div> 
+</div> 
+ <div class="menuItemPrice">$30.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">La Focaccia House Special Pizza</div> 
+</div> 
+ <div class="menuItemPrice">$35.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Veggie Pizza</div> 
+</div> 
+ <div class="menuItemPrice">$32.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Baked Ziti Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $30.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Stuffed Meat Pizza</div> 
+</div> 
+ <div class="menuItemPrice">$37.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Stuffed Vegetable Pizza</div> 
+</div> 
+ <div class="menuItemPrice">$37.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Spinach and Artichoke Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $32.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Philly Pizza</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(Cream Cheese, Bacon,Jalapeno)</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $29.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Bruschetta</div> 
+</div> 
+ <div class="menuItemPrice">Slice $6.25 / Whole $39.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Potato Skin Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $29.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Vodka Pizza</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">(Prosciutto &amp; Onions)</p> 
+<br/></div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">Slice $4.75 / Whole $28.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Caesar Salad Slice</div> 
+</div> 
+ <div class="menuItemPrice">Slice $11.95 / Whole $34.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">House Salad Slice</div> 
+</div> 
+ <div class="menuItemPrice">Slice $10.95 / Whole $31.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Deep Dish</div> 
+</div> 
+ <div class="menuItemPrice">Slice $4.75 / Whole $25.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Sweet Chili Pizza</div> 
+</div> 
+ <div class="menuItemPrice">Slice $5.75 / Whole $29.95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Toppings</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory1Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">All Pie $5.25 extra, &frac12; Pie $3.95</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Specialty Topping $9.95 + Tax</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName"></div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Pepperoni</p> 
+ <p class="rteBlock">Sausage</p> 
+ <p class="rteBlock">Meatball</p> 
+ <p class="rteBlock">Green Pepper</p> 
+ <p class="rteBlock">Mushroom</p> 
+ <p class="rteBlock">Anchovy</p> 
+ <p class="rteBlock">Onion</p> 
+ <p class="rteBlock">Eggplant</p> 
+ <p class="rteBlock">Sliced Tomato</p> 
+ <p class="rteBlock">Bacon</p> 
+ <p class="rteBlock">Garlic</p> 
+ <p class="rteBlock">Extra Cheese</p> 
+ <p class="rteBlock">Broccoli</p> 
+ <p class="rteBlock">Black Olives</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1494085320 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1494085320" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center size-15 m-size-12"><span style="display: initial;" class="font-size-15 m-font-size-12">Prices are subject to change without notice</span></p><p class="m-size-12 text-align-center size-15"><span class="m-font-size-12 font-size-15" style="display: unset;"><span class="m-font-size-12 font-size-15" style="display: unset;">Before placing your order please inform us if you have any food allergy.</span> 
+</span></p><p class="m-size-12 text-align-center size-15"><span class="m-font-size-12 font-size-15" style="display: unset;">*Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase you risk of food borne illness.</span></p></div> 
+</div> 
+ <div class="u_1865158172 small-12 dmRespCol dmAboutTopSecondSection large-4 medium-4" id="1865158172"><!-- <dm:List dm:model="list" dm:layout="layoutD" class="roomsList"/> --> <div class="u_1335362212 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1335362212" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h3 class="text-align-center" style="line-height: 25px;"><span style="font-style: italic; display: initial; color: rgb(255, 255, 255);">Lunch Menu<br/></span><span style="display: initial; color: rgb(255, 255, 255);"><br/></span><span style="display: initial; color: rgb(255, 255, 255);" class="font-size-24 m-font-size-19">Served Everyday between</span></h3> 
+ <h3 class="text-align-center m-size-19 size-24"><span class="font-size-24 m-font-size-19" style="display: initial; color: rgb(255, 255, 255);">11am - 4pm</span></h3> 
+ <h3 class="text-align-center m-size-19 size-24"><a href="/contact/4703862" runtime_url="/contact" type="page" class="font-size-24 m-font-size-19" style="font-weight: bold; display: initial; color: rgb(255, 255, 255); text-decoration: underline;">Stop in today!</a></h3> 
+ <h3 class="text-align-center" style="line-height: 25px;"><span style="display: initial;"><br/></span></h3> 
+ <h3 class="text-align-center"><span style="display: initial; color: rgb(255, 255, 255);">Current pricing reflects a cash discount of 3.5% on all menu items. We accept other forms of payment, but the cash discount will not apply.</span></h3> 
+ <h3 class="text-align-center" style="line-height: 1.2;"><span style="display: initial;"><br/></span></h3> 
+</div> 
+ <div class="u_1170736214 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1170736214"><img src="https://le-cdn.hibuwebsites.com/2cf9efeaa6ce40dd9e33fc4d41550a8f/dms3rep/multi/opt/13708307_100x29-1920w.png" alt="Border" id="1930909285" class="" data-dm-image-path="https://cdn.hibuwebsites.com/2cf9efeaa6ce40dd9e33fc4d41550a8f/dms3rep/multi/13708307_100x29.png" width="100" height="29" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="dmRespRow u_1009935928" id="1009935928"> <div class="dmRespColsWrapper" id="1859658702"> <div class="dmRespCol large-12 medium-12 small-12" id="1284904550"> <div data-element-type="spacer" class="dmSpacer u_1548631750" id="1548631750"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" class="poweredBy poweredByHibu" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"> <div class="poweredLine1"> <a href="http://budurl.com/hibuprivacy" target="_blank">Privacy Policy</a> 
+| <a href="http://budurl.com/hibucookie" target="_blank">Do Not Share My Information</a> 
+| <a href="http://budurl.com/hibuconditionsofuse" target="_blank">Conditions of Use</a> 
+| <a href="http://budurl.com/hibunotice" target="_blank">Notice and Take Down Policy</a> 
+| <a href="http://b.link/accessibility" target="_blank">Website Accessibility Policy</a> 
+</div> 
+ <div class="poweredLine2">&copy; <span id="hibuYear">2025</span> 
+The content on this website is owned by us and our licensors. Do not copy any content (including images) without our consent.</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5968";
+    var build = "2025-11-27T12_19_14";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-11-27T12_19_14";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static-res-cdn.websites.hibu.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<script data-swh-uuid="190446b407d64850bdc3f4676c6dd554">
+
+    if (window.location.search.match(/[?,&]preview=true/) && window.top !== window) {      window.__AudioEyePreviewMode=true;    }  
+
+</script>
+<script type="text/javascript" data-swh-uuid="190446b407d64850bdc3f4676c6dd554">
+
+!function(){    var b=function(){      window.__AudioEyeSiteHash = "5b6eb683377827cef27fea24d7b1b542";            var a=document.createElement("script");      a.src="https://wsmcdn.audioeye.com/aem.js";      a.type="text/javascript";            document.getElementsByTagName("body")[0].appendChild(a)};      "complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();    
+
+</script>
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.hibuwebsites.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5968';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static-res-cdn.websites.hibu.com';
+    rtCommonProps["common.resources.folder"] = 'https://static-res-cdn.websites.hibu.com/mnlt/production/5968';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://le-cdn.hibuwebsites.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =false;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =false;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =true;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static-res-cdn.websites.hibu.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static-res-cdn.websites.hibu.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '2cf9efeaa6ce40dd9e33fc4d41550a8f'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 2cf9efeaa6ce40dd9e33fc4d41550a8f -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Begin Body End Markup -->
+<!--THE CONTENT OF THIS FILE WILL BE APPENDED TO EVERY PAGE JUST BEFORE THE CLOSE TAG OF THE </BODY> ELEMENT-->
+<div id="placeholder_retargeting_pixel" style="display: none;" data-inject="placeholder_retargeting_pixel">
+ 
+
+  {{placeholder_retargeting_pixel}}
+</div>
+<div id="placeholder_dpni" style="display: none;" data-inject="placeholder_dpni">
+ 
+
+  {{placeholder_dpni}}
+</div>
+<div id="placeholder_analytics" style="display: none;" data-inject="placeholder_analytics">
+ <script>
+//<![CDATA[
+
+//yellAnalyticsConfig need to set before s_code.js
+var yellAnalyticsConfig = {
+"global" : {
+  "trackDownloadLinks": true,
+  "downloadFileTypes": "exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx",
+  "currency": "USD",
+  "trackExternalLinks": true,
+  "internalDomains": "javascript:",
+  "charset": "UTF-8"
+}}
+var hibuWebsiteConfig={
+  "prodSKU":"WBS-PRM1YRM-01-US",
+  "assetID":"757350",
+  "customerID":"7015712664"
+}
+
+//]]>
+ </script>
+ <script type="text/javascript" src="https://dh-static-files.s3.amazonaws.com/prod/sitemaker/AppMeasurement.js">
+ </script>
+ <script type="text/javascript" src="https://dh-static-files.s3.amazonaws.com/prod/sitemaker/hibu-analytics.min.js">
+ </script>
+ <script type="text/javascript" src="https://dh-static-files.s3.amazonaws.com/prod/sitemaker/omn_setting.js">
+ </script>
+</div>
+<div id="placeholder_footer_reserve1" style="display: none;" data-inject="placeholder_footer_reserve1">
+ 
+
+  {{placeholder_footer_reserve1}}
+</div>
+<div id="placeholder_footer_reserve2" style="display: none;" data-inject="placeholder_footer_reserve2">
+ 
+
+  {{placeholder_footer_reserve2}}
+</div>
+<div id="placeholder_footer_reserve3" style="display: none;" data-inject="placeholder_footer_reserve3">
+ 
+
+  {{placeholder_footer_reserve3}}
+</div>
+<div id="placeholder_footer_reserve4" style="display: none;" data-inject="placeholder_footer_reserve4">
+ 
+
+  {{placeholder_footer_reserve4}}
+</div>
+<div id="placeholder_footer_reserve5" style="display: none;" data-inject="placeholder_footer_reserve5">
+ 
+
+  {{placeholder_footer_reserve5}}
+</div>
+<div id="placeholder_footer_reserve6" style="display: none;" data-inject="placeholder_footer_reserve6">
+ 
+
+  {{placeholder_footer_reserve6}}
+</div>
+<div id="placeholder_footer_reserve7" style="display: none;" data-inject="placeholder_footer_reserve7">
+ 
+
+  {{placeholder_footer_reserve7}}
+</div>
+<!--  End Body End Markup -->
+<!--  Site Wide Html Markup -->
+<div id="swh-80f53ce4498b43d9b6db46025b8ec1f5"><script> if (window.location.search.match(/[?,&]preview=true/) && window.top !== window) { window.__AudioEyePreviewMode=true;}</script>
+            <script type="text/javascript">!function(){
+              var b=function(){
+                window.__AudioEyeSiteHash = "5b6eb683377827cef27fea24d7b1b542";
+                window.__AudioEyeInstallSource = "hibu";
+                var a=document.createElement("script");
+                a.src="https://wsmcdn.audioeye.com/aem.js";
+                a.type="text/javascript";
+                a.setAttribute("async","");
+                document.getElementsByTagName("body")[0].appendChild(a)};
+                "complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();
+              </script></div><!--  Site Wide Html Markup -->
+<!--  Begin Product Custom HTML Markup -->
+<div id="fb-root"></div> 
+<script>(function(d, s, id) { 
+var js, fjs = d.getElementsByTagName(s)[0]; 
+if (d.getElementById(id)) return; 
+js = d.createElement(s); js.id = id; 
+js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1822295708016537"; 
+fjs.parentNode.insertBefore(js, fjs); 
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+//make sure video's on iOS load first screen of the video.
+dmAPI.runOnReady('russTest',function() {
+    var _hibu_vid = document.getElementsByTagName('video');
+    for (var i = 0; i < _hibu_vid.length; i++) {
+        _hibu_vid[i].load();
+    }
+})
+</script>
+<script>
+//simple addition by Russ to add consent banner link into footer
+const _spSpanForFooter = document.createElement('span');
+_spSpanForFooter.id = "spConsentWrapper";
+const poweredByFirstAnchor = document.querySelector('.poweredBy a:first-child');
+poweredByFirstAnchor.insertAdjacentElement('afterend',_spSpanForFooter);
+window.localStorage.setItem("__springtime__repop__target", "#spConsentWrapper");
+</script>
+<style>#spConsentWrapper:before { content: " | " }</style>
+<script>if(window.location.search.indexOf('preview')>0){window.localStorage.setItem('ae_user_consent_decision_has_been_made',true);document.getElementById('spConsentWrapper').remove();}</script><script>let comments = document.querySelectorAll('.dmFacebookComments');if (comments) {for (i=0;i<comments.length;i++) {
+    comments[i].style.display = "none";
+}}</script><!--  End Product Custom HTML Markup -->
+</body>
+</html>

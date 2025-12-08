@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Basic Page Needs -->
+<meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<title>PokeTime</title>
+
+<meta name="author" content="themesflat.com">
+
+<!-- Mobile Specific Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- Bootstrap  -->
+<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" >
+
+<!-- Theme Style -->
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+<!-- Responsive -->
+<link rel="stylesheet" type="text/css" href="stylesheets/responsive.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/jquery.datetimepicker.css">
+
+<!-- Colors -->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/colors/color1.css" id="colors">
+
+<!-- Animation Style -->
+<link rel="stylesheet" type="text/css" href="stylesheets/animate.css">
+
+<!-- Favicon and touch icons  -->
+<link href="icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon" sizes="48x48">
+<link href="icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">
+<link href="icon/favicon.png" rel="shortcut icon">
+
+<!--[if lt IE 9]>
+    <script src="javascript/html5shiv.js"></script>
+    <script src="javascript/respond.min.js"></script>
+<![endif]-->
+
+<!-- ======= 点点分隔线 + 小圆点前缀（可选） ======= -->
+<style>
+    /* 让 House Poke 的网格等高对齐 */
+.row.equalize > [class*="col-"] { display: flex; }        /* 让每个栅格列成为 flex 容器 */
+.row.equalize .product { width: 100%; }                   /* 卡片占满列宽 */
+.row.equalize .product .box-wrap {
+  display: flex;
+  flex-direction: column;                                 /* 纵向布局：图片在上、文字在下 */
+  width: 100%;
+}
+.row.equalize .product .box-image img {
+  width: 100%;
+  height: 160px;                                          /* 统一图片高度，可按需要调 150~200px */
+  object-fit: contain;                                    /* 保持比例不裁切 */
+}
+.row.equalize .product .box-content {
+  margin-top: auto;                                       /* 把内容推到底部，卡片等高 */
+}
+
+/* 行距、列距更均匀一些 */
+.row.equalize [class*="col-"] { padding-bottom: 24px; }
+</style>
+ 
+</head>
+
+<body class="">
+    <section class="loading-overlay">
+        <div class="Loading-Page">
+            <h2 class="loader">Loading</h2>
+        </div>
+    </section>
+
+    <div class="box">
+        <header id="header" class="header clearfix">
+          <div class="header-wrap clearfix">
+              <div class="container">
+                  <div class="logo-mobi"><a href="#"> <img src="images/logo.png" alt="image"></a></div>
+                  <div class="btn-menu"><span></span></div>
+                  <nav id="mainnav" class="mainnav">
+                      <ul class="menu">
+                          <li><a href="index.html">Home</a></li>
+                          <li> <a href="menu.html" style="color: #e49e50">Our Menu</a></li>
+                          <li><a href="about.html">About Us</a></li>
+                          <li class="logo"><a href="index.html"> <img src="images/logo.png" alt="image"></a></li>
+                          <li><a href="gallery.html">Gallery</a></li>
+                          <li><a href="contact.html">Contact</a></li>
+                          <li><a href="https://poketimenj.com/onlineorder.html" target="_blank"><img src="orderbutton.png" width="150"></a></li>
+                      </ul><!--/.menu -->
+                  </nav><!--/.mainnav -->
+              </div><!--/.container -->
+          </div><!--/.header-wrap -->
+        </header><!--/.header -->
+
+        <!-- Page Title -->
+        <div class="page-title flat_strech parallax1" style="background-image:url('images/aboutbg.png'); background-position:top; background-size:normal;">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="page-title-heading">
+                          <h1 class="title">Our Menu</h1>
+                          <div class="breadcrumbs">
+                              <ul>
+                                  <li><a href="#">Home </a></li>
+                                  <li><a href="#">Poke Bowls &amp; Beverages</a></li>
+                              </ul>
+                              <br />
+                              <a href="https://poketimenj.com/onlineorder.html" target="_blank"><img src="orderbutton.png" width="250"></a>
+                          </div>
+                      </div><!-- /.page-title-captions -->
+                  </div><!-- /.col-md-12 -->
+              </div><!-- /.row -->
+          </div><!-- /.container -->
+        </div>
+    </div><!--box -->
+
+    <!-- Flat Tab-->
+    <section class="flat-row flat-tab-menu menu-2">
+      <div class="container">
+        <div class="row"></div><!--/.row-->
+
+        <div class="row">
+          <div class="col-md-12 flat-tabs ">
+            <div class="bg-tabs">
+              <div class="title-section style1 martp-0px">
+                <div class="top-section"><p>Find About</p></div>
+                <h1 class="title marbt-33px ">Our Menu</h1>
+              </div>
+
+              <!-- ======= Tabs：保留原顺序，并新增两个 Tab ======= -->
+              <ul class="menu-tab">
+                <li class="active"><a href="#">➤ Poke Your Way</a></li>
+                <li><a href="#">➤ Poke Bowls</a></li>
+                <li><a href="#">➤ Classic Fruit Tea &amp; Smoothies</a></li>
+        
+                <li><a href="#">➤ Special Rolls &amp; Maki Rolls </a></li>       <!-- 新增 -->
+                <li><a href="#">➤ Sushi Party Trays</a></li>                   <!-- 新增 -->
+              </ul>
+            </div><!--/.bg-tabs-->
+
+            <div class="content-tab">
+
+              <!-- ========== Tab 1: Poke Your Way (Build Your Bowl) ========== -->
+              <div class="content-inner" style="display: block;">
+                <h1 class="title marbt-33px " style="text-align:center;">
+                  <img src="images/poke_time_base.png" width="100"> <br> 1. Base
+                </h1>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">White Rice</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Brown Rice</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Zucchini Noodles</a></h6></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Salad</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Half &amp; Half</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Kale Noodles</a></h6></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="flat-divider d35px"></div>
+
+                <h1 class="title marbt-33px " style="text-align:center;">
+                  <img src="images/poke_time_tuna.png" width="100"> <br> 2. Protein
+                  <br><font style="font-size:14px">$14.50 for 2 protein bowl / $16.50 for 3 protein bowl</font>
+                </h1>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Tuna*</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Spicy Tuna* <img src="images/spicy.png" width="15"></a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Tuna Tartar*</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Salmon*</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Spicy Salmon* <img src="images/spicy.png" width="15"></a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Ponzu Salmon*</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Organic Tofu (cooked)</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Pepper Tuna*</a></h6></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Shrimp (cooked)</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Spicy Beef (cooked) <img src="images/spicy.png" width="15"></a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Teriyaki Chicken (cooked)</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">General Tso’s Chicken (cooked) <img src="images/spicy.png" width="15"></a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Grilled Salmon (cooked)</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Shrimp Tempura (cooked)</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Shrimp Shumai (cooked)</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Sesame Chicken (cooked)</a></h6></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="flat-divider d35px"></div>
+
+                <h1 class="title marbt-33px " style="text-align:center;">
+                  <img src="images/seaweed_salad.png" width="100"> <br> 3. Topping
+                </h1>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Cucumber</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Corn</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Edamame</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Cilantro</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Jalapeno</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Sweet Onion</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Seaweed Salad</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Wasabi</a></h6></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Scallion</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Pickled Ginger</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Carrot</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Tomato</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Avocado + $1.50</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Masago* + $1.50</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Crab Salad + $1.50</a></h6></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="flat-divider d35px"></div>
+
+                <h1 class="title marbt-33px " style="text-align:center;">
+                  <img src="images/poke_time_sauce.png" width="100"> <br> 4. Sauce: Up to 2
+                </h1>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Hawaiian Shoyu</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Poke Dressing</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Spicy Sauce</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Wasabi Mayo</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Ginger Dressing</a></h6></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Ponzu Sauce</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Balsamic Vinegar</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Sriracha Aioli <img src="images/gluter.png" width="15"></a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Tamari <img src="images/gluter.png" width="15"></a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Mango Sauce</a></h6></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="flat-divider d35px"></div>
+
+                <h1 class="title marbt-33px " style="text-align:center;">
+                  <img src="images/poke_time_crunch.png" width="100"> <br> 5. Crunch
+                </h1>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Sesame Seed</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Sesame Seed &amp; Bonito Mixed</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Shredded Dry Seaweed</a></h6></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Crispy Onion</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Crispy Red Onion</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Crispy Garlic</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Tempura Flakes</a></h6></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Crispy Noodles</a></h6></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="flat-divider d35px"></div>
+
+                <div class="topping" style="text-align:Center; font: 13px/19px 'Poppins', sans-serif; font-style: normal; font-weight: bold; font-size: 13px; text-transform:uppercase; color:#666666">
+                  <h3 style="text-align:center; color:#98cc6c;padding:15px; font-size: 13px;">
+                    Food Allergies? If you have a food allergy, please speak to owner, manager, chef or your server. <br>
+                    *Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.
+                  </h3>
+                </div>
+              </div><!-- /.content-inner (Tab 1) -->
+
+              <!-- ========== Tab 2: Poke Bowls (House Poke) ========== -->
+              <div class="content-inner" style="display: none;">
+                <h1 class="title marbt-33px " style="text-align:center;">House Poke
+                  with White Rice
+                </h1>
+                <div class="row equalize">
+
+                  <!-- 使用原有 product 结构展示图+文 -->
+                  <div class="col-sm-4 col-xs-6" style="height:400px">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <a href="#"><img src="images/tuna-tartar.png" alt="images" width="200"></a>
+                        </div>
+                        <div class="box-content">
+                          <h6>Tuna Tartar* </h6>
+                          <ul>
+                            <li>14.50</li>
+                            <li>Tuna tartar, sweet onion, edamame, cucumber, tomato, avocado, sesame seed, poke dressing</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-6"style="height:400px"> 
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <a href="#"><img src="images/spicy-tuna.png" alt="images" width="200"></a>
+                        </div>
+                        <div class="box-content">
+                          <h6>Spicy Tuna* <img src="images/spicy.png" width="15"></h6>
+                          <ul>
+                            <li>14.50</li>
+                            <li>Spicy tuna, scallion, cucumber, avocado, corn, Hawaiian shoyu, tempura flake</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-6" style="height:400px">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <a href="#"><img src="images/ponzu-salmon.png" alt="images" width="200"></a>
+                        </div>
+                        <div class="box-content">
+                          <h6>Ponzu Salmon*</h6>
+                          <ul>
+                            <li>14.50</li>
+                            <li>Ponzu salmon, Jalapeno, cucumber, carrot, seaweed salad, cilantro, ginger dressing, tempura flake</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-6" style="height:400px">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <a href="#"><img src="images/spicy-salmon.png" alt="images" width="200"></a>
+                        </div>
+                        <div class="box-content">
+                          <h6>Spicy Salmon* <img src="images/spicy.png" width="15"></h6>
+                          <ul>
+                            <li>14.50</li>
+                            <li>Spicy salmon, sweet onion, cucumber, cilantro, scallion, corn, Hawaiian shoyu, tempura flake</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-6" style="height:400px">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <a href="#"><img src="images/poke-signature.png" alt="images" width="200"></a>
+                        </div>
+                        <div class="box-content">
+                          <h6>Poke Signature* <img src="images/spicy.png" width="15"></h6>
+                          <ul>
+                            <li>16.00</li>
+                            <li>Tuna, salmon, cucumber, seaweed salad, edamame, avocado, sweet onion, poke dressing, Hawaiian shoyu, crispy onion</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-6" style="height:400px">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <a href="#"><img src="images/shrimp-crab.png" alt="images" width="200"></a>
+                        </div>
+                        <div class="box-content">
+                          <h6>Shrimp &amp; Crab Salad</h6>
+                          <ul>
+                            <li>14.50</li>
+                            <li>Shrimp, crab salad, cucumber, carrot, edamame, corn, Hawaiian shoyu, crispy onion</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-6" style="height:400px">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <a href="#"><img src="images/shrimp-tempura.png" alt="images" width="200"></a>
+                        </div>
+                        <div class="box-content">
+                          <h6>Shrimp Tempura and Chicken</h6>
+                          <ul>
+                            <li>14.50</li>
+                            <li>Shrimp tempura, teriyaki chicken, sweet onion, mixed greens, corn, cucumber, ginger dressing</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-6" style="height:400px">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <a href="#"><img src="images/beefandshrimp.png" alt="images" width="200"></a>
+                        </div>
+                        <div class="box-content">
+                          <h6>Beef &amp; Shrimp <img src="images/spicy.png" width="15"></h6>
+                          <ul>
+                            <li>14.50</li>
+                            <li>Spicy beef, shrimp, sweet onion, corn, cucumber, garden lettuce, ginger dressing, Hawaiian shoyu</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-6" style="height:400px">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <a href="#"><img src="images/beefchicken.png" alt="images" width="200"></a>
+                        </div>
+                        <div class="box-content">
+                          <h6>Beef &amp; Chicken</h6>
+                          <ul>
+                            <li>14.50</li>
+                            <li>Spicy beef, teriyaki chicken, sweet onion, mixed greens, corn, cucumber, ginger dressing</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-6" style="height:400px">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <a href="#"><img src="images/veggie-bowl.png" alt="images" width="200"></a>
+                        </div>
+                        <div class="box-content">
+                          <h6>Veggie Bowl</h6>
+                          <ul>
+                            <li>13.50</li>
+                            <li>Tofu, sweet onion, corn, cucumber, mixed greens, edamame, ginger dressing, crispy onion</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-6" style="height:400px">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <a href="#"><img src="images/generalchicken.png" alt="images" width="200"></a>
+                        </div>
+                        <div class="box-content">
+                          <h6>General Tso’s Chicken &amp; Salmon <img src="images/spicy.png" width="15"></h6></h6>
+                          <ul>
+                            <li>14.50</li>
+                            <li>Grilled salmon, general tso’s chicken, sweet onion, corn, cucumber, garden lettuce, ginger dressing, Hawaiian shoyu</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-xs-6">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <!-- 可补图 -->
+                        </div>
+                        <div class="box-content">
+                          <h6>General Tso’s Chicken &amp; Shrimp (Cooked) <img src="images/spicy.png" width="15"></h6>
+                          <ul>
+                            <li>14.50</li>
+                            <li>General tso’s chicken, shrimp, sweet onion, corn, cucumber, garden lettuce, ginger dressing, Hawaiian shoyu</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 可选：Sesame Chicken & Shrimp Tempura（若需要图片可后补） -->
+                  <div class="col-sm-4 col-xs-6">
+                    <div class="product">
+                      <div class="box-wrap">
+                        <div class="box-image">
+                          <!-- 可补图 -->
+                        </div>
+                        <div class="box-content">
+                          <h6>Sesame Chicken &amp; Shrimp Tempura</h6>
+                          <ul>
+                            <li>14.50</li>
+                            <li><!-- 无额外描述 --></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!-- /.row -->
+
+                <div class="clearfix"></div>
+                <div class="flat-divider d35px"></div>
+
+                <div class="topping" style="text-align:Center; font: 13px/19px 'Poppins', sans-serif; font-style: normal; font-weight: normal; font-size: 13px; text-transform:uppercase;font-weight:bold; color:#666666">
+                  <h3 style="text-align:center; color:#98cc6c;padding:15px; font-size: 13px;">
+                    Food Allergies? If you have a food allergy, please speak to owner, manager, chef or your server. <br>*Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.
+                  </h3>
+                </div>
+              </div><!-- /.content-inner (Tab 2) -->
+
+              <!-- ========== Tab 3: Classic Fruit Tea & Smoothies ========== -->
+         <div class="content-inner active" style="">
+  <!-- FRUIT GREEN TEA -->
+  <h1 class="title marbt-33px" style="text-align:center;">
+    <img src="images/classicfruittea.png" alt=""> <br>Fruit Green Tea (M / L)
+  </h1>
+
+  <div class="col-md-6">
+    <ul class="menu-fd">
+      <li>
+        <div class="media-wrap"><a href="#" class="pull-left"></a>
+          <div class="media-body">
+            <h6><a href="#">Fruit Green Tea (M/L)</a></h6>
+            <span>$4.00 / $5.00</span>
+          </div>
+          <ul class="menu-in"><li>Strawberry, Mango, Passionfruit, Peach, Lychee, 1/2 + 1/2</li></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <ul class="menu-fd">
+      <li>
+        <div class="media-wrap"><a href="#" class="pull-left"></a>
+          <div class="media-body">
+            <h6><a href="#">— Flavors —</a></h6>
+            <span>All $4.00 / $5.00</span>
+          </div>
+          <ul class="menu-in"><li>Strawberry • Mango • Passionfruit • Peach • Lychee • 1/2 + 1/2</li></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="clearfix"></div>
+  <div class="flat-divider d35px"></div>
+
+  <!-- TEA -->
+  <h1 class="title marbt-33px" style="text-align:center;">Tea (M / L)</h1>
+  <div class="col-md-6">
+    <ul class="menu-fd">
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Super Mixed Fruit Tea</a></h6><span>— / $6.25</span></div></div><ul class="menu-in"><li>Strawberry, pineapple, apple, orange, lemon &amp; lime</li></ul></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Taro Tea w. Bubble</a></h6><span>$6.00 / $6.75</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Thai Tea w. Bubble</a></h6><span>$6.00 / $6.75</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Matcha Tea w. Bubble</a></h6><span>$6.00 / $6.75</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Brown Sugar Latte w. Bubble</a></h6><span>$6.00 / $6.75</span></div></div></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul class="menu-fd">
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Brown Sugar Black Tea Latte w. Bubble</a></h6><span>$6.00 / $6.75</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Jasmine Green Tea</a></h6><span>$4.50 / $5.00</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Assam Black Tea</a></h6><span>$4.50 / $5.00</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Green Tea Latte w. Bubble</a></h6><span>$6.00 / $6.75</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Black Tea Latte w. Bubble</a></h6><span>$6.00 / $6.75</span></div></div></li>
+    </ul>
+  </div>
+
+  <div class="clearfix"></div>
+  <div class="flat-divider d35px"></div>
+
+  <!-- CHOOSE YOUR OWN FRUIT YOGURT DRINK -->
+  <h1 class="title marbt-33px" style="text-align:center;">Choose Your Own Fruit Yogurt Drink</h1>
+  <div class="col-md-12">
+    <ul class="menu-fd">
+      <li>
+        <div class="media-wrap"><a href="#" class="pull-left"></a>
+          <div class="media-body">
+            <h6><a href="#">Fruit Yogurt (Pick 1–2 Fruit Base)</a></h6>
+            <span>$7.50</span>
+          </div>
+          <ul class="menu-in">
+            <li>Organic Greek yogurt, milk, fruit</li>
+            <li>Strawberry • Mango • Banana • Peach • Pineapple • Lychee • Passion Fruit • Mixed Berries</li><br /> <br />
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div> 
+
+  <div class="clearfix"></div>
+  <div class="flat-divider d20px"></div>
+
+  <!-- SUPER PARFAIT -->
+  <h1 class="title marbt-33px" style="text-align:center;">Super Parfait</h1>
+  <div class="col-md-6">
+    <ul class="menu-fd">
+      <li>
+        <div class="media-wrap"><a href="#" class="pull-left"></a>
+          <div class="media-body">
+            <h6><a href="#">Mango Super Parfait</a></h6><span>$8.75</span>
+          </div>
+          <ul class="menu-in"><li>Mango, organic Greek yogurt, milk, wafers, oreos &amp; whipped cream</li></ul>
+        </div>
+      </li>
+      <li>
+        <div class="media-wrap"><a href="#" class="pull-left"></a>
+          <div class="media-body">
+            <h6><a href="#">Strawberry Super Parfait</a></h6><span>$8.75</span>
+          </div>
+          <ul class="menu-in"><li>Strawberry, organic Greek yogurt, milk, wafers, oreos &amp; whipped cream</li></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul class="menu-fd">
+      <li>
+        <div class="media-wrap"><a href="#" class="pull-left"></a>
+          <div class="media-body">
+            <h6><a href="#">Cocoa Super Parfait</a></h6><span>$8.75</span>
+          </div>
+          <ul class="menu-in"><li>Cocoa, organic Greek yogurt, milk, wafers, oreos &amp; whipped cream</li></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="clearfix"></div>
+  <div class="flat-divider d35px"></div>
+
+  <!-- FRESH FRUIT SMOOTHIE W. BUBBLE -->
+  <h1 class="title marbt-33px" style="text-align:center;">
+    <img src="images/smoothie.png" alt=""> <br>Fresh Fruit Smoothie w. Bubble (L)
+  </h1>
+  <p style="text-align:center; margin-top:-10px;">Contain: green tea, milk, fruit</p>
+
+  <div class="col-md-6">
+    <ul class="menu-fd">
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Jasmine Mixed Berry Smoothie w. Bubble</a></h6><span>$6.75</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Jasmine Passionfruit Smoothie w. Bubble</a></h6><span>$6.75</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Jasmine Strawberry Smoothie w. Bubble</a></h6><span>$6.75</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Jasmine Mango Smoothie w. Bubble</a></h6><span>$6.75</span></div></div></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul class="menu-fd">
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Jasmine Pineapple Smoothie w. Bubble</a></h6><span>$6.75</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Jasmine Peach Strawberry Smoothie w. Bubble</a></h6><span>$6.75</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Jasmine Peach Mango Smoothie w. Bubble</a></h6><span>$6.75</span></div></div></li>
+      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Jasmine Pineapple Strawberry Smoothie w. Bubble</a></h6><span>$6.75</span></div></div></li>
+    </ul>
+  </div>
+
+  <div class="clearfix"></div>
+  <div class="flat-divider d35px"></div>
+
+  <!-- FRESH FRUIT SMOOTHIE W. PROTEIN -->
+  <h1 class="title marbt-33px" style="text-align:center;">
+    <img src="images/fitness.png" alt=""> <br>Fresh Fruit Smoothie w. Protein (L)
+  </h1>
+
+  <div class="col-md-6">
+    <ul class="menu-fd">
+      <li>
+        <div class="media-wrap"><a href="#" class="pull-left"></a>
+          <div class="media-body">
+            <h6><a href="#">Mixed Berries Protein Smoothie</a></h6><span>$7.00</span>
+          </div>
+          <ul class="menu-in"><li>Mixed berry, pineapple juice, vanilla protein</li></ul>
+        </div>
+      </li>
+      <li>
+        <div class="media-wrap"><a href="#" class="pull-left"></a>
+          <div class="media-body">
+            <h6><a href="#">Banana Mango Protein Smoothie</a></h6><span>$7.00</span>
+          </div>
+          <ul class="menu-in"><li>Banana, mango, orange juice, vanilla protein</li></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul class="menu-fd">
+      <li>
+        <div class="media-wrap"><a href="#" class="pull-left"></a>
+          <div class="media-body">
+            <h6><a href="#">Strawberry Protein Smoothie</a></h6><span>$7.00</span>
+          </div>
+          <ul class="menu-in"><li>Strawberry, banana, orange juice, vanilla protein</li></ul>
+        </div>
+      </li>
+      <li>
+        <div class="media-wrap"><a href="#" class="pull-left"></a>
+          <div class="media-body">
+            <h6><a href="#">Avocado Energy Shake</a></h6><span>$7.00</span>
+          </div>
+          <ul class="menu-in"><li>Avocado, spinach, pineapple, almond milk, vanilla protein</li></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="clearfix"></div>
+  <div class="flat-divider d35px"></div>
+
+  <!-- EXTRA TOPPING -->
+  <div style="border:1px solid #333; padding:20px;">
+    <h1 class="title marbt-33px" style="text-align:center;">Extra Topping</h1>
+    <div class="col-md-6">
+      <ul class="menu-fd">
+        <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Tapioca Bubble</a></h6><span>+$1.00</span></div></div></li>
+        <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Mixed Fruit Jelly</a></h6><span>+$1.00</span></div></div></li>
+        <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Popping Boba</a></h6><span>+$1.00</span></div></div><ul class="menu-in"><li>Choice of Strawberry, Mango, Lychee, Passion Fruit</li></ul></li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul class="menu-fd">
+        <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Whipped Cream</a></h6><span>+$1.00</span></div></div></li>
+        <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Lychee Jelly</a></h6><span>+$1.00</span></div></div></li>
+      </ul>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="flat-divider d20px"></div>
+    <div style="text-align:center; background-color:#333; color:#fff; padding:5px;">
+      Ice Level: 0% / 50% / 100% &nbsp; • &nbsp; Sugar Level: 0% / 25% / 50% / 100%
+    </div>
+  </div>
+</div>
+
+ 
+              <!-- ========== Tab 5: Special Rolls & Maki Rolls (新增) ========== -->
+              <div class="content-inner" style="display: none;">
+                <h1 class="title marbt-33px " style="text-align:center;">Special Rolls &amp; Maki Rolls <br /> - Ramsey & Paramus location only - </h1>
+
+                <div class="col-md-12">
+                  <h2 class="title" style="text-align:center; font-size:22px; margin-bottom:10px;">Special Rolls</h2>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd" >
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Rainbow Roll</a></h6><span>10.00</span></div></div></li>
+                    <li class="menu-in"><li>Crab, Avocado, Cucumber, Tuna, Salmon</li></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Amy Roll</a></h6><span>9.00</span></div></div></li>
+                    <li class="menu-in"><li>Tuna, Salmon, Avocado, Masago</li></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Spicy Dragon</a></h6><span>12.00</span></div></div></li>
+                    <li class="menu-in"><li>Spicy Tuna, Tempura Flakes, Avocado</li></li>
+                      <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Shrimp Tempura Roll</a></h6><span>10.00</span></div></div></li>
+                    <li class="menu-in"><li>Shrimp Tempura, Avocado, Cucumber, Eel Sauce</li></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Volcano Roll</a></h6><span>15.00</span></div></div></li>
+                    <li class="menu-in"><li>Shrimp Tempura, Spicy Tuna, Avocado, Tuna, Yellowtail, Masago, Tempura Flake, Eel Sauce, Spicy Sauce</li></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Godzilla Roll</a></h6><span>14.00</span></div></div></li>
+                    <li class="menu-in"><li>Shrimp Tempura, Avocado, Cucumber, Spicy Tuna, Crispy Onion, Eel Sauce, Spicy Sauce</li></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Sushi Sandwich</a></h6><span>10.00</span></div></div></li>
+                    <li class="menu-in"><li>Crab Salad, Spicy Tuna, Avocado, Masago</li></li>
+                  
+                  </ul>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="flat-divider d35px"></div>
+                  <h2 class="title" style="text-align:center; font-size:22px; margin-bottom:10px;">Maki Rolls (10 pcs)</h2>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">California Roll</a></h6><span>7.00</span></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Spicy California</a></h6><span>7.00</span></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Crab Salad</a></h6><span>7.00</span></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Spicy Crab Salad</a></h6><span>7.00</span></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Spicy Tuna</a></h6><span>8.00</span></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Salmon</a></h6><span>8.00</span></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Spicy Salmon</a></h6><span>8.00</span></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Yellowtail Scallion</a></h6><span>8.00</span></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Eel</a></h6><span>8.00</span></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Philadelphia</a></h6><span>8.00</span></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Vege California</a></h6><span>7.00</span></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Cucumber</a></h6><span>6.00</span></div></div></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">Avocado Roll</a></h6><span>7.00</span></div></div></li>
+                  </ul>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="flat-divider d35px"></div>
+              </div><!-- /.content-inner (Tab 5) -->
+
+              <!-- ========== Tab 6: Sushi Party Trays (新增) ========== -->
+              <div class="content-inner" style="display: none;">
+                <h1 class="title marbt-33px " style="text-align:center;">Sushi Party Trays</h1>
+
+                <div class="col-md-12">
+                  <h2 class="title" style="text-align:center; font-size:22px; margin-bottom:10px;">Roll Combo</h2>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">No.1 (48PCS)</a></h6><span>37.00</span></div></div></li>
+                    <li class="menu-in"><li>1 California, 1 Salmon, 1 Tuna, 1 Yellowtail, 1 Crab Salad, 1 Spicy Tuna</li></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">No.2 (68PCS)</a></h6><span>53.00</span></div></div></li>
+                    <li class="menu-in"><li>1 California, 1 Salmon, 1 Tuna, 1 Crab, 1 Rainbow, 1 Crunch Spicy Tuna, 1 Veg. California, 1 Philadelphia</li></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">No.3 (86PCS)</a></h6><span>67.00</span></div></div></li>
+                    <li class="menu-in"><li>1 California, 1 Salmon, 1 Tuna, 1 Eel, 1 Spicy Tuna, 1 Amy, 1 Philadelphia, 1 Crazy Horse, 1 Yellowtail, 1 Shrimp Tempura</li></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">No.4 (104PCS)</a></h6><span>83.00</span></div></div></li>
+                    <li class="menu-in"><li>2 California, 1 Eel, 1 Philadelphia, 1 Spicy Tuna, 1 Cucumber, 1 Avocado, 1 Amy, 1 Crazy Horse, 1 Tuna, 1 Rainbow, 1 Ramsey</li></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">No.5 (114PCS)</a></h6><span>90.00</span></div></div></li>
+                    <li class="menu-in"><li>2 California, 1 Eel, 1 Orange Dragon, 1 Shrimp Tempura, 1 Spicy Tuna, 1 Veg. California, 1 Amy, 1 Salmon, 1 Cucumber, 1 Rainbow, 1 Tuna, 1 Spicy Dragon</li></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="flat-divider d35px"></div>
+                  <h2 class="title" style="text-align:center; font-size:22px; margin-bottom:10px;">Sushi &amp; Roll Combo</h2>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">No.6 (72PCS)</a></h6><span>75.00</span></div></div></li>
+                    <li class="menu-in"><li>1 California, 1 Crab Salad, 1 Salmon &amp; Avo., 1 Shrimp Tempura, 1 Tuna, 1 Spicy Tuna, 1 Amy, 12 pcs Nigiri</li></li>
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">No.7 (82PCS)</a></h6><span>85.00</span></div></div></li>
+                    <li class="menu-in"><li>1 California, 1 Spicy Dragon, 1 Philadelphia, 1 Amy, 1 Eel, 1 Salmon, 1 Spicy Tuna, 1 Rainbow, 12 pcs Nigiri</li></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <ul class="menu-fd">
+                    <li><div class="media-wrap"><a href="#" class="pull-left"></a><div class="media-body"><h6><a href="#">No.8 (102PCS)</a></h6><span>105.00</span></div></div></li>
+                    <li class="menu-in"><li>1 California, 1 Avo. &amp; Cucumber, 1 Tuna &amp; Avo., 1 Crab Salad, 1 Spicy Tuna, 1 Spicy Salmon, 1 Amy, 1 Salmon, 1 City, 1 Volcano, 12 pcs Sushi, 4 pcs Sashimi</li></li>
+                  </ul>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="flat-divider d35px"></div>
+              </div><!-- /.content-inner (Tab 6) -->
+
+            </div><!-- /.content-tab -->
+          </div><!--flat-tabs-->
+        </div><!--row-->
+      </div><!--container -->
+    </section>
+
+    <!-- Flat make resvervation -->
+    <section class="flat-row flat-make-res index-2 socialmedia-bg" style="background-image: url('images/parallax/1.jpg'); ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="reservation-page-left">
+              <div class="reservation-page-form">
+                <div class="title-section">
+                  <div class="top-section"><p>Welcome to PokeTime</p></div>
+                  <h1 class="title" style="color:#fff">Follow Us Now</h1>
+                </div>
+                <ul>
+                  <li>Follow us on social media to stay current with our specials and other PokeTime news!</li>
+                </ul>
+                <h1 class="phone">
+                  <div class="social-links">
+                    <a href="#"><i class="fa fa-facebook-square" style="font-size:40px;"></i></a>
+                    <a href="#"><i class="fa fa-yelp" style="font-size:40px;"></i></a>
+                    <a href="#"><i class="fa fa-instagram" style="font-size:40px;"></i></a>
+                  </div>
+                </h1>
+              </div>
+            </div>
+          </div><!--col-md-12-->
+        </div><!--row-->
+      </div><!--container -->
+    </section>
+
+    <footer class="footer">
+      <div class="footer-widgets">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="widget widget_text center">
+                <h3 class="widget-title" style="color:#808080; font-weight:normal; letter-spacing:1px;">
+                  <img src="images/logo2.png" width="200"> <br><br>
+                  Phone: 201.962.7242 / 201.962.7243
+                  <br>
+                  Address: 11A Interstate Shopping Center, Ramsey NJ 07446
+                  <br>Phone: 201.402.4700
+                  <br>
+                  Address: 55 West Allendale Ave. Allendale NJ 07401
+                  <br>Phone: 201.300.4780
+                  <br>
+                  Address: 305 Rt 17 Paramus NJ 07652
+                </h3>
+              </div>
+            </div><!-- /.col-md-12 -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </div><!-- /.footer-widgets -->
+
+      <div class="footer-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="copyright">
+                <div class="copyright-content">
+                  Copyright © 2019. Powered by PokeTime.
+                </div>
+              </div>
+              <!-- Go Top -->
+              <a class="go-top-v1"><i class="fa fa-arrow-up"></i>  &nbsp;Back to Top</a>
+            </div><!-- /.col-md-12 -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </div><!-- /.footer-content -->
+    </footer>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery.easing.js"></script>
+    <script type="text/javascript" src="javascript/imagesloaded.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery-waypoints.js"></script>
+    <script type="text/javascript" src="javascript/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery.cookie.js"></script>
+    <script type="text/javascript" src="javascript/parallax.js"></script>
+    <script type="text/javascript" src="javascript/smoothscroll.js"></script>
+    <script type="text/javascript" src="javascript/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="javascript/owl.carousel.js"></script>
+    <script type="text/javascript" src="javascript/jquery-validate.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvV0EE3yFozGhjmUv3BgoyviVdXzCwHlk"></script>
+    <script type="text/javascript" src="javascript/gmap3.min.js"></script>
+    <script type="text/javascript" src="javascript/main.js"></script>
+
+    <!-- Revolution Slider -->
+    <script type="text/javascript" src="javascript/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="javascript/slider.js"></script>
+  </body>
+</html>

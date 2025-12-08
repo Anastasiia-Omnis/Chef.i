@@ -1,0 +1,1496 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.thepieofportjeff.com/',
+        AccountUUID: '9822b117c6514e5e9d765a535d15d421',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: 'a38f898a',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Wed Nov 12 17:22:26 UTC 2025',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'home',
+        InitialPageUuid: 'e9eaba082acd49f181f7b1374885a98e',
+        InitialPageId: '1181010058',
+        InitialEncodedPageAlias: 'aG9tZQ==',
+        InitialHeaderUuid: 'b259c6bb73ff41a4ac6156affa6f6bfc',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: true,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: -1,
+            NavbarLiveHomePage: 'https://www.thepieofportjeff.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.thepieofportjeff.com/">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/a38f898a/site_favicon_16_1724701510035.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    :root {
+  --color_1: rgba(0, 0, 0, 1);
+  --color_2: rgba(255,255,255,1);
+}
+</style>
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+<style id="criticalCss">
+    @charset "UTF-8";.videobgframe,.videobgwrapper{position:absolute;height:100%}@font-face{font-family:Miniver;font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/miniver/v27/eLGcP-PxIg-5H0vC37oIyg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:FontAwesome;font-display:block;src:url(https://static.cdn-website.com/fonts/fontawesome-webfont.eot?v=6);src:url(https://static.cdn-website.com/fonts/fontawesome-webfont.eot?#iefix&v=6) format("embedded-opentype"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.woff?v=6) format("woff"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.ttf?v=6) format("truetype"),url(https://static.cdn-website.com/fonts/fontawesome-webfont.svg#fontawesomeregular?v=6) format("svg");font-weight:400;font-style:normal}@font-face{font-family:Syne;font-style:normal;font-weight:400 800;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/syne/v24/8vIH7w4qzmVxm2BL9A.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400 900;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:100 700;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/josefinsans/v34/Qw3aZQNVED7rKGKxtqIqX5EUDXx4.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Josefin Sans';font-style:italic;font-weight:100 700;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/josefinsans/v34/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.videobgwrapper{overflow:hidden;z-index:0;width:100%;top:0;left:0;border-radius:inherit}.videobgframe{width:101%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}:root{--color_1:rgba(0, 0, 0, 1);--color_2:rgba(255,255,255,1)}.dmInner{min-height:100vh!important;position:relative;min-width:768px!important}.dmPopup,.dmPopupMask{position:fixed;left:0}[dmtemplateid*=amburger] .dmLayoutWrapper{overflow:hidden}.clearfix:after{clear:both;visibility:hidden;line-height:0;height:0}.clearfix:after,.clearfix:before{content:" ";display:table}.clearfix{display:inline-block}#dm .dmWidget .icon{font-size:26px}body.dmRoot #dm .dmOuter .dmInner .dmWidget .icon.hasFontIcon{height:26px;margin-top:-13px;line-height:normal;text-align:center;background-image:none}#dm .dmBody div.u_1243667655,#dm .dmBody div.u_1918898979,.dmRoot .hasFontIcon{background-image:none!important}.dmPopupMask{margin:0;display:none;width:10px;z-index:1000000999;top:0}#dmRoot .dmPopup,.dmPopup,.dmPopupClose:before,[data-display-type=block]{display:block}.dmPopup{text-align:left;top:10px;width:93%;z-index:1000009999!important;box-sizing:border-box;background:#f5f5f5;overflow-y:auto;height:100%}.dmPopup .dmPopupTitle{text-align:left;font:700 19px Helvetica,Arial;margin:20px 20px 35px;color:#999}#dmPopup{opacity:0}.dmPopupClose,.dmPopupClose:before{position:absolute;visibility:visible}.dmPopupClose{border-radius:25px;width:27px;height:27px;z-index:1;background-color:rgba(255,255,255,.4);top:12px;right:12px}.dmPopupClose:before{font-size:20px;color:#000;top:3px;right:3px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar{width:5px;height:5px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-track{background:rgba(0,0,0,.1)}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-thumb{background:#c8c8c8;box-shadow:inset 0 1px 2px #454545;border-radius:45px}#dm .dmRespRow .dmRespColsWrapper{display:flex}#dm .dmBody .dmRespRow.relativePos,#dm .hasBackgroundOverlay:not(.dmPopupPage):not(.layout-drawer){position:relative!important}#dm .hasBackgroundOverlay:not(.hasExtraLayerOverlay):before{display:block!important;position:absolute!important;top:0!important;left:0!important;width:100%!important;height:100%!important;content:" "!important;border-radius:inherit}#dm .hasBackgroundOverlay>.bgExtraLayerOverlay{width:100%!important;height:100%!important;position:absolute;top:0;left:0}#dm .dmInner .dmWidget.align-center,.align-center{margin-left:auto;margin-right:auto}.text-align-center{text-align:center}body.fix-mobile-scrolling{overflow:initial}#dmRoot{text-decoration-skip-ink:none}@media (min-width:1025px){#dmRoot.responsiveTablet #dm #dmStyle_outerContainer #dmStyle_innerContainer .showOnMedium,#dmRoot.responsiveTablet #dm .dmInner .hide-for-large{display:none!important}#dmRoot.responsiveTablet #dm [data-responsive-name=ResponsiveDesktopTopTabletHamburger] .site_content{margin-top:0!important}:root{--btn-text-font-size:16px}}@media (min-width:768px) and (max-width:1024px){#dmRoot.responsiveTablet #dm #dmStyle_outerContainer #dmStyle_innerContainer #hamburger-header-container~#stickyHeaderSpacer,#dmRoot.responsiveTablet #dm #dmStyle_outerContainer #dmStyle_innerContainer .showOnLarge,#dmRoot.responsiveTablet #dm .dmInner .hide-for-medium{display:none!important}:root{--btn-text-font-size:16px}}@media (max-width:767px){#dmRoot.responsiveTablet #dm #dmStyle_outerContainer #dmStyle_innerContainer #hamburger-header-container~#stickyHeaderSpacer,#dmRoot.responsiveTablet #dm #dmStyle_outerContainer #dmStyle_innerContainer .showOnLarge,#dmRoot.responsiveTablet #dm .dmInner .hide-for-small{display:none!important}}.video-ssr .videobgframe{object-fit:cover}body{-webkit-overflow-scrolling:touch}:not(.runtime-module-container) .layout-drawer,:not(.runtime-module-container) .layout-drawer-hamburger,:not(.runtime-module-container) .layout-drawer-overlay{visibility:hidden}:not(.runtime-module-container) .layout-drawer{position:fixed;transform:translate(-100%,-100%)}:not(.runtime-module-container) .layout-drawer[data-origin=side-reverse]{transform:translate(100%,0)}:not(.runtime-module-container) .layout-drawer-overlay{opacity:0}.runtime-module-container{width:100%}.runtime-module-container[dmtemplateid*=amburger] #site_content,.runtime-module-container[dmtemplateid*=amburger] .dmInner{position:static}.runtime-module-container[dmtemplateid*=amburger] #site_content .site_content{position:relative}.runtime-module-container[dmtemplateid*=amburger] .dmLayoutWrapper{background-color:transparent}.runtime-module-container .hamburger-header-container{position:fixed;z-index:2;top:0;left:0;width:100%}.runtime-module-container .hamburger-header-container .hamburger-header{min-height:43px}.runtime-module-container .layout-drawer,.runtime-module-container .layout-drawer-hamburger,.runtime-module-container .layout-drawer-overlay{visibility:visible}.runtime-module-container[dmtemplateid*=amburger] .site_content{margin-top:59px}.runtime-module-container .layout-drawer,.runtime-module-container .layout-drawer-overlay{height:100%;position:fixed;top:0;left:0}.runtime-module-container .layout-drawer{background-color:#fff;width:75vw;transform:translate(-100%,0);overflow:auto;-webkit-overflow-scrolling:auto;z-index:13;display:flex;flex-direction:column}.runtime-module-container .layout-drawer .dmRespRow:not(.dmPlaceHolderRespRow) .dmRespColsWrapper .dmRespCol:not(.content-removed):only-child:empty{min-height:0}.runtime-module-container .layout-drawer[data-origin=side-reverse]{transform:translate(100%,0);left:auto;right:0}.runtime-module-container .layout-drawer-overlay{width:100vw;background-color:rgba(0,0,0,.4);opacity:0;z-index:6}body:not([data-flex-site]) .layout-drawer .dmRespRow:not(:first-of-type):not(:last-of-type){flex:1 1 auto}.layout-drawer-hamburger{background:0 0;-webkit-appearance:none;appearance:none;position:fixed;left:18px;margin-left:env(safe-area-inset-left);padding:17px 11px;z-index:14;width:52px;height:52px;color:#787878;display:flex;flex-direction:column;border:0;justify-content:space-between;align-items:stretch;top:18px;border-radius:0}.layout-drawer-hamburger:not(:focus){outline:unset}.layout-drawer-hamburger .hamburger__slice{display:block;height:0;width:100%;border:1px solid currentColor;transform-origin:center}@media (max-width:767px){.layout-drawer-hamburger{background:0 0;-webkit-appearance:none;appearance:none;position:fixed;left:10px;margin-left:env(safe-area-inset-left);padding:13px 9px;z-index:14;width:40px;height:40px;color:#787878;display:flex;flex-direction:column;border:0;justify-content:space-between;align-items:stretch;top:10px;border-radius:0}.layout-drawer-hamburger:not(:focus){outline:unset}.layout-drawer-hamburger .hamburger__slice{display:block;height:0;width:100%;border:1px solid currentColor;transform-origin:center}}.hamburger-reverse .layout-drawer-hamburger{left:auto;right:10px;margin-right:env(safe-area-inset-right)}#dm-outer-wrapper #hamburger-header-container #hamburger-header .dmRespCol{display:flex;flex-direction:column;justify-content:center}img,video{display:inline-block}nav{display:block}html{font-family:Source Sans Pro;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}h1{font-size:2em;margin:.67em 0}img{border:0;max-width:100%;-ms-interpolation-mode:bicubic}button{font-family:inherit;font-size:100%;margin:0;line-height:normal;text-transform:none;-webkit-appearance:button}button::-moz-focus-inner{border:0;padding:0}*,:after,:before{box-sizing:border-box}.dmRespRow{padding-top:15px;padding-bottom:15px}.dmRespRow:after,.dmRespRow:before{content:" ";display:table}.dmRespRow:after{clear:both}.dmRespRow,.dmRespRow .dmRespColsWrapper{max-width:960px;position:relative;margin:0 auto;width:100%}@media screen and (min-width:1200px){.rows-1200 .dmRespRow:not(.fullBleedMode) .dmRespColsWrapper{max-width:1200px}}.dmRespRow .dmRespCol{position:relative;width:100%;display:inline-block;vertical-align:top;float:left}.dmRespRow .dmRespCol>*{max-width:100%}.dmDesktopBody .dmRespRow .large-2{position:relative;width:16.66667%}.dmDesktopBody .dmRespRow .large-3{position:relative;width:25%}.dmDesktopBody .dmRespRow .large-7{position:relative;width:58.33333%}.dmDesktopBody .dmRespRow .large-12{position:relative;width:100%}[class*=" dm-common-icons-"]{speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:dm-common-icons!important}.dm-common-icons-close:before{content:"\e901"}#dm div.dmContent [class*=" icon-"],[class*=" icon-"]{font-family:FontAwesome!important;font-weight:400;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased}[class*=" icon-"]:before{text-decoration:none;display:inline-block;speak:none}a [class*=" icon-"]{display:inline}[class*=" icon-"]{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}.icon-star:before{content:"\f005"}.icon-angle-right:before{content:"\f105"}.icon-angle-down:before{content:"\f107"}#dm .dmRespRow .dmRespCol>.dmWidget{overflow:initial}@media (min-width:768px){.hamburger-reverse .layout-drawer-hamburger{right:18px}#dm .dmRespRow .dmRespCol>.dmWidget{width:280px;max-width:100%}#dm .dmRespRow .dmRespCol.large-3>.dmWidget{width:100%}}@media (max-width:767px){#dm .dmInner .dmWidget{width:100%}}#dm .dmInner .dmWidget:not(.displayNone){display:inline-block}#dm .dmInner .dmWidget:not(.flexButton):not(.displayNone)[data-display-type=block]{display:block}#dm .dmInner .dmWidget{text-decoration:none;margin:10px 0;clear:both;position:relative;text-align:center;line-height:22px;box-shadow:none;background-image:none;padding:0;height:auto;border-style:solid;white-space:nowrap}#dm .dmInner .dmWidget:after{content:"";display:inline-block;height:100%;vertical-align:middle;width:0;margin-right:-.25em}#dm .dmInner .dmWidget .iconBg{position:absolute;left:0;width:50px;top:50%;margin-top:-13px}#dm .dmWidget .text{display:inline-block;vertical-align:middle;font-size:1.125em;line-height:normal;white-space:normal;padding:10px 7px;max-width:98%}html:not(.ios-preview) #dm .hasStickyHeader .dmInner div.dmHeaderContainer{position:fixed!important;z-index:101;width:100%;min-width:768px}[data-video-bg]{min-height:100px}.imageWidget{position:relative}.imageWidget a{font-style:italic;text-align:center}.imageWidget img[width][height]{height:auto}.flexslider .slides img{width:100%;display:block;margin:auto}.flexslider .slides>li .slide-inner *{line-height:normal}.flexslider .slides>li .slide-inner .slide-title{margin:0}.flexslider.ed-version .slides img{display:none}.flexslider.ed-version:not([layout]) .slide-inner .slide-title{display:block!important;text-align:center!important}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner div,#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner h3,#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner:not(:has(>.caption-link)) div,#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner:not(:has(>.caption-link)) h3,.dmHeader,.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner,.dmPhotoGalleryHolder{text-align:center}.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner h3{margin:0;line-height:normal;font-size:21px}.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-text,.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-title{max-width:100%}#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner:not(:has(>.caption-link)){justify-content:center;align-items:center}#dm .dmPhotoGallery.newPhotoGallery.captionAlignment-center_center .photoGalleryThumbs .caption-container .caption-inner .caption-button{margin:10px auto}#dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder{width:100%;padding:0;display:none}#dm .dmPhotoGallery.newPhotoGallery .layout-container .photogallery-column .photoGalleryThumbs .image-container a img{display:none!important}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner{align-items:center;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;z-index:1;background-color:rgba(255,255,255,.9);color:#333;padding:15px;height:100%;box-sizing:border-box}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-button{margin:10px auto;max-width:100%}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-button .text{padding:10px 20px!important}#dm .dmPhotoGallery.newPhotoGallery.text-layout-over .photoGalleryThumbs .caption-container{height:100%;width:100%;position:absolute;top:0;left:0;padding:inherit}#dm .dmPhotoGallery.newPhotoGallery.text-layout-over .photoGalleryThumbs .caption-inner{display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;min-height:0!important;padding:10px;transform:scale(1.05);opacity:0;filter:alpha(opacity=0)}.dmNewParagraph[data-version]{line-height:initial}.dmNewParagraph[data-version] .text-align-center{text-align:center!important}.dmNewParagraph[data-version] [class*=size-]{width:auto!important;height:auto!important}.dmNewParagraph[data-version] h1,.dmNewParagraph[data-version] p{margin-top:0;margin-bottom:0}img[width][height]{height:auto}*{border:0 solid #333;scrollbar-arrow-color:#fff;scrollbar-track-color:#F2F2F2;scrollbar-face-color:silver;scrollbar-highlight-color:silver;scrollbar-3dlight-color:silver;scrollbar-shadow-color:silver;scrollbar-darkshadow-color:silver;scrollbar-width:12px}A IMG{border:none}h1,h3,ul{margin-left:0;margin-right:0}#dm video{max-width:100%!important;display:block;margin:10px auto}.dmInner *{-webkit-font-smoothing:antialiased}.clearfix,a,img,li,ul{vertical-align:top}#site_content{position:relative}.dmOuter{word-wrap:break-word}.dmInner{font-size:16px;background:#fff;color:#666}.dmDesktopBody .dmInner{min-width:960px}.dmInner a{color:#463939;outline:0;vertical-align:inherit}.dmInner ul:not(.defaultList){padding:0}.dmHeader{background:#68ccd1;color:#666;position:relative;width:100%;max-width:100%}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container .nav-item-text::before,.dmNewParagraph{text-align:left}DIV.dmBody{padding:0;clear:both}.dmContent{margin:0;padding:0}#site_content ul:not(.defaultList){-webkit-padding-start:0;-moz-padding-start:0;list-style-position:inside}.dmRespRowsWrapper{max-width:960px;margin:0 auto}.dmRespCol>[dmle_extension]:not(:first-child){margin-top:10px}.dmLargeBody .imageWidget:not(.displayNone){display:inline-block;max-width:100%}#dm .dmRespColsWrapper,.dmStandardDesktop{display:block}.imageWidget:not(.displayNone) img{width:100%}h3{font-weight:400;font-size:23px}.dmNewParagraph{margin:8px 0;padding:2px 0}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol,.dmLargeBody .fHeader .dmRespRow .dmRespCol{padding-left:.75%;padding-right:.75%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:first-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:first-child{padding-left:0;padding-right:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:last-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:last-child{padding-right:0;padding-left:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:only-child{padding-left:0;padding-right:0}#dmFirstContainer .dmRespRowsWrapper:after,#dmFirstContainer .dmRespRowsWrapper:before{content:"";display:table}.dmLinksMenu>ul{display:block;margin:0;font-size:inherit}.dmStandardDesktop{margin:0 auto}.dmPhotoGalleryHolder{font-size:medium!important;margin:0;list-style:none}#dm .dmPhotoGallery .dmPhotoGalleryHolder{width:100%;padding:0}body{width:100%;overflow:hidden;-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important;background-color:#eee}.main-navigation.unifiednav{-js-display:flex;display:flex;justify-content:flex-start;align-items:stretch;overflow:visible}.main-navigation.unifiednav ul{list-style:none;padding:0;margin:0;font-size:1rem}.main-navigation.unifiednav .unifiednav__container{-js-display:flex;display:flex;justify-content:flex-start;list-style:none}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap{-js-display:flex;display:flex;justify-content:flex-start;position:relative;font-weight:400}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::before{content:'';align-self:center;font-weight:700}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item{-js-display:flex;display:flex;justify-content:flex-start;align-items:center;flex-direction:row;color:inherit;text-decoration:none;position:relative;padding:12px 15px;margin:0;font-weight:inherit;letter-spacing:.03em}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:0 15px}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item .nav-item-text{white-space:nowrap}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{content:'';width:100%;height:0;border:0 solid transparent;border-top-color:currentColor;display:block;opacity:0}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{opacity:1}.main-navigation.unifiednav.effect-none{padding:12px 15px}.main-navigation.unifiednav .unifiednav__container .unifiednav__item:not(.unifiednav__item_has-sub-nav) .icon{display:none}.main-navigation.unifiednav .unifiednav__container[data-depth]{position:absolute;top:0;left:0;flex-direction:column;opacity:0;z-index:100;background-color:#faf9f9}.main-navigation.unifiednav .unifiednav__container[data-depth='0']{top:100%;transform:translateY(-10px)}.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container[data-depth='0']{left:15px}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap .unifiednav__container>.unifiednav__item-wrap{flex-direction:column}.main-navigation.unifiednav .unifiednav__container[data-depth]>.unifiednav__item-wrap .unifiednav__item{padding:15px 30px 15px 15px;margin:0}.main-navigation.unifiednav .unifiednav__container[data-depth]>.unifiednav__item-wrap:not(:last-child)::after{content:''!important;width:100%;height:0;color:#ececec;align-self:center;border:0 solid currentColor}.main-navigation.unifiednav[layout-sub=submenu_horizontal_1] .unifiednav__container[data-depth]{color:#999}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item.unifiednav__item_has-sub-nav .icon{display:initial;padding-left:10px;margin-left:0}.main-navigation.unifiednav:not(.unifiednav_vertical)>.unifiednav__container{justify-content:inherit}#dm .p_hfcontainer nav.main-navigation.unifiednav{min-width:9em!important;text-align:initial!important}#dm .main-navigation.unifiednav .unifiednav__container[data-depth]{background-color:transparent}#dm .main-navigation.unifiednav[layout-sub=submenu_horizontal_1] .unifiednav__container[data-depth]{background-color:#faf9f9}#dm .main-navigation.unifiednav .unifiednav__container[data-depth]>.unifiednav__item-wrap:not(:last-child)::after{color:#d1d1d1}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container{flex-direction:column;flex:1 1 100%}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item{padding:8px 0;margin:0}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item.unifiednav__item_has-sub-nav .icon{padding-left:15px}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item .nav-item-text{white-space:initial}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap{flex-direction:column}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap .unifiednav__container[data-depth]{opacity:1;position:static;transform:translate(0)}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap .unifiednav__container[data-depth]>.unifiednav__item-wrap .unifiednav__item{justify-content:inherit;padding:8px 1em;margin:0;font-size:.8em}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after{content:''!important;width:100%;height:0;color:#d1d1d1;align-self:flex-start;border:0 solid currentColor}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL][layout-main=vertical_nav_layout_2] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:5px 0}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL][layout-main=vertical_nav_layout_2] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__container[data-depth]>.unifiednav__item-wrap .unifiednav__item{padding:8px 12px}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL][data-show-vertical-sub-items=HIDE] .unifiednav__container[data-depth]{transform-origin:top;height:auto;overflow:hidden}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL][data-show-vertical-sub-items=HIDE]>.unifiednav__container:not([data-depth])>.unifiednav__item-wrap .unifiednav__container[data-depth]{opacity:0;max-height:0}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL][data-show-vertical-sub-items=HIDE]>.unifiednav__container:not([data-depth])>.unifiednav__item-wrap .unifiednav__item.dmNavItemSelected>.nav-item-text .icon::before{transform:rotate(180deg)}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container{flex-wrap:wrap;justify-content:inherit}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{content:''}#dm .main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item.unifiednav__item_has-sub-nav .icon{display:inline-block;padding-right:0}#dm .dmBody .dmRespRowsWrapper{max-width:none;background-color:transparent}.dmLargeBody .dmRespRow{width:100%;max-width:none;margin-left:0;margin-right:0;padding-left:40px;padding-right:40px}.dm-bfs.dm-layout-home div.dmInner{background-color:#fff}.dmStandardDesktop .dmHeader{background-color:#68ccd1;max-width:100%}.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespColsWrapper .dmRespCol:not(.content-removed).empty-column,.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespColsWrapper .dmRespCol:not(.content-removed):only-child:empty{min-height:100px}.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespCol:not(.content-removed).empty-column,.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespCol:not(.content-removed):empty{min-height:1px}.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespColsWrapper .dmRespCol:not(.content-removed):only-child.empty-column{min-height:100px}#dm div.dmRespCol>*{line-height:2}#dm div.dmContent h1,#dm div.dmContent h3,#dm div.dmInner{line-height:initial}#dm div.dmInner h1,#dm div.dmInner h3{font-family:Montserrat,"Montserrat Fallback"}#dm DIV.dmInner{background-repeat:no-repeat;background-image:url(https://irt-cdn.multiscreensite.com/ce0bb35f932b47bb809d0e37905542ba/dms3rep/multi/site_background_education-2087x1173.jpg);background-size:cover;background-position:50% 0}#dm div.dmOuter div.dmInner{background-position:center center;background-repeat:repeat;background-size:auto}#dm div.dmInner,#dm div.dmInner .dmRespCol{color:rgba(147,147,147,1);font-size:16px}.dmLargeBody .dmBody .dmRespRowsWrapper{background-color:transparent}#dm .dmRespCol div.dmNewParagraph,#dm div.dmInner,#dm div.dmInner .dmRespCol,.dmPhotoGallery .caption-text.caption-text{color:var(--color_1);font-family:"Josefin Sans","Josefin Sans Fallback";font-weight:300}#dm div.dmContent h1,#dm div.dmContent h3{color:#000;direction:ltr;font-style:normal}#dm div.dmContent h1{font-family:"Playfair Display","Playfair Display Fallback";font-weight:400;text-decoration:none}#dm div.dmContent .dmNewParagraph[data-version] h1{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h1 *,#dm div.dmContent h3{text-decoration:none}#dm div.dmContent h3{font-family:CaviarDreams_Bold;font-weight:400;font-size:24px}#dm DIV.dmOuter DIV.dmInner{background-image:none;background-color:rgba(249,246,245,1)}#dm div.dmContent h1{font-size:50px}#dm .dmContent .dmRespRow .dmRespCol{margin:0;padding:0}#dm .dmRespCol div.dmNewParagraph,#dm div.dmInner,#dm div.dmInner .dmRespCol,.dmPhotoGallery .caption-text.caption-text{font-size:19px}@media all{:root{--btn-border-l-color:rgb(201, 171, 129);--btn-border-r-color:rgb(201, 171, 129);--btn-border-b-width:1px;--btn-text-direction:ltr;--btn-border-radius:1px;--btn-border-t-width:1px;--btn-border-tl-radius:0px;--btn-border-br-radius:0px;--btn-border-bl-radius:0px;--btn-bg-color:rgba(0, 0, 0, 0);--btn-border-r-width:1px;--btn-border-tr-radius:0px;--btn-border-b-color:rgb(201, 171, 129);--btn-border-l-width:1px;--border-style:solid;--btn-border-t-color:rgb(201, 171, 129);--btn-text-align:center;--btn-text-color:rgba(0, 0, 0, 1);--btn-text-decoration:none;--btn-text-font-weight:normal;--btn-text-font-family:CaviarDreams_Bold;--btn-icon-color:rgb(247, 247, 247);--btn-icon-fill:rgb(247, 247, 247);--btn-icon-wrpr-display:none;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:rgba(15,29,33,1);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:rgb(65, 67, 69);--btn-hover-text-color:rgba(201,171,129,1);--btn-hover-text-font-weight:var(--btn-text-font-weight);--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style)}}@media (min-width:0px) and (max-width:767px){:root{--btn-text-font-size:16px}}#dm .dmWidget:not([data-buttonstyle]){overflow:initial;background-clip:border-box;border-radius:1px}#dm .dmWidget:not([data-buttonstyle]) .text{padding:16px 0}#dm .dmWidget:not([data-buttonstyle]) .iconBg{display:none}@media (min-width:768px){#dm .dmRespRow .dmRespCol>.dmWidget{width:222px}}#dm div.dmInner #site_content .dmWidget,#dm div.dmInner .dmHeader .dmWidget{background-color:var(--btn-bg-color);border-color:var(--btn-border-color);border-bottom-color:var(--btn-border-b-color);border-left-color:var(--btn-border-l-color);border-right-color:var(--btn-border-r-color);border-top-color:var(--btn-border-t-color);border-radius:var(--btn-border-radius);border-bottom-left-radius:var(--btn-border-bl-radius);border-bottom-right-radius:var(--btn-border-br-radius);border-top-left-radius:var(--btn-border-tl-radius);border-top-right-radius:var(--btn-border-tr-radius);border-width:var(--btn-border-width);border-bottom-width:var(--btn-border-b-width);border-left-width:var(--btn-border-l-width);border-right-width:var(--btn-border-r-width);border-top-width:var(--btn-border-t-width);direction:var(--btn-text-direction);text-align:var(--btn-text-align)}#dm div.dmInner #site_content .dmWidget span.text{color:var(--btn-text-color);font-family:var(--btn-text-font-family);font-size:var(--btn-text-font-size);font-weight:var(--btn-text-font-weight);text-decoration:var(--btn-text-decoration)}#dm .p_hfcontainer .main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before,#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before,#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{font-size:14px!important}#dm div.dmInner #site_content .dmWidget span.icon,#dm div.dmInner .dmHeader .dmWidget span.icon{color:var(--btn-icon-color);fill:var(--btn-icon-fill)}#dm div.dmInner #site_content .dmWidget:not([data-buttonstyle]) .iconBg,#dm div.dmInner .dmHeader .dmWidget:not([data-buttonstyle]) .iconBg{display:var(--btn-icon-wrpr-display)}#dm .p_hfcontainer div.u_1923160809 img{border-radius:0!important;-moz-border-radius:0!important;-webkit-border-radius:0!important}#dm .p_hfcontainer .u_1144820115.main-navigation.unifiednav[data-nav-structure=VERTICAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after{align-self:flex-start!important}#dm .p_hfcontainer .u_1144820115.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{text-align:left!important;padding-top:10px!important;padding-bottom:10px!important}#dm .p_hfcontainer .u_1144820115.main-navigation.unifiednav .unifiednav__container[data-depth] .unifiednav__item{padding-top:10px!important;padding-bottom:10px!important}#dm .p_hfcontainer div.u_1011018909 img{border-radius:0!important;-moz-border-radius:0!important;-webkit-border-radius:0!important}#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav .unifiednav__container[data-depth="0"]{top:calc(100% - 0px - 0px)!important}#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding-right:15px!important;padding-left:15px!important}#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child) .unifiednav__container[data-depth="0"]{left:15px!important}#dm .p_hfcontainer nav.u_1112353738{color:#000!important}#dm .p_hfcontainer a.u_1829727279 .iconBg{display:none!important}#dm .p_hfcontainer .u_1923160809{width:100%!important}#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav .unifiednav__container[data-depth]{background-color:var(--color_2)!important}#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav .unifiednav__container[data-depth] .unifiednav__item{margin:0!important;padding:10px 30px 10px 15px!important}#dm .dmInner div.u_hcontainer,#dm .p_hfcontainer div.u_1705692124{width:100%!important;min-width:0!important;margin:0 auto!important;position:relative!important;text-align:center!important}#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav:not([image]) .unifiednav__container[data-depth="0"]{top:calc(100% - 0px - 0px)!important}#dm .p_hfcontainer .u_1112353738.main-navigation.unifiednav[data-nav-structure=HORIZONTAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child) .unifiednav__container[data-depth="0"]{left:15px!important}#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected{text-decoration:underline!important}#dm .p_hfcontainer .u_1144820115.main-navigation.unifiednav:not([image]) .unifiednav__container[data-depth="0"]{top:calc(100% - 10px - 0px)!important}#dm .p_hfcontainer nav.u_1144820115.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected{font-weight:400!important;text-decoration:underline!important;color:var(--color_1)!important}#dm .p_hfcontainer nav.u_1144820115.main-navigation.unifiednav .unifiednav__container[data-depth] .unifiednav__item{font-weight:400!important;color:var(--color_1)!important;font-family:Syne-Regular!important}#dm .p_hfcontainer .u_1011018909{width:100%!important}#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav .unifiednav__container[data-depth] .unifiednav__item{color:var(--color_1)!important;font-family:Syne!important;font-size:15px!important}#dm .dmInner div.dmHeader,#dm .dmInner div.dmHeader.u_hcontainer,#dm .dmInner div.u_hcontainer{background-color:rgba(255,255,255,1)!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important}#dm .p_hfcontainer nav.u_1144820115{color:#000!important}#dm .dmInner div.u_hcontainer{float:none!important;top:0!important;left:0!important;height:auto!important;max-width:100%!important;padding:25px 0 20px!important}#dm .dmInner div.dmHeader.u_hcontainer{padding-bottom:20px!important;padding-top:25px!important}#dm .p_hfcontainer div.u_1705692124{background-color:rgba(255,255,255,1)!important;float:none!important;top:0!important;left:0!important;height:auto!important;max-width:none!important;padding:15px 40px!important}#dm .p_hfcontainer div.u_1183846399{padding:0!important;margin:0!important}#dm .p_hfcontainer div.u_1826294544{margin-top:0!important;padding:0!important}#dm .p_hfcontainer div.u_1021493186{padding-top:30px!important;margin-top:0!important;padding-right:40px!important;padding-left:40px!important}#dm .p_hfcontainer div.u_1676049285{margin-top:0!important;padding:100px 40px!important}#dm .p_hfcontainer div#hamburger-drawer.layout-drawer{background-color:var(--color_2)!important}#dm .p_hfcontainer div.u_1655486006{margin-left:0!important;margin-right:0!important;padding-left:0!important;padding-right:0!important}#dm .dmInner div.fHeader .dmHeader[freeheader=true]{padding-top:12px!important;padding-bottom:12px!important}.fHeader #hcontainer.dmHeader[freeheader=true]{padding-top:initial!important;padding-bottom:initial!important}#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}#dm .p_hfcontainer div.u_1677919435{padding:0!important}#dm .p_hfcontainer div.u_1246161842{padding-left:10px!important}#dm .p_hfcontainer nav.u_1112353738.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{color:var(--color_1)!important;font-family:CaviarDreams_Bold!important;font-weight:400!important;font-size:14px!important}[dmtemplateid=Hamburger] .layout-drawer-hamburger.hamburger-on-header{color:var(--color_1)!important;background-color:rgba(0,0,0,0)!important}#dm .p_hfcontainer div.u_1923160809{float:none!important;top:0!important;left:0!important;width:169px!important;position:relative!important;max-width:100%!important;min-width:25px!important;text-align:center!important;display:block!important;height:auto!important;padding:0!important;margin:12px 722px 0 0!important}#dm .p_hfcontainer nav.u_1112353738,#dm .p_hfcontainer nav.u_1144820115{float:none!important;left:0!important;position:relative!important;text-align:start!important}[dmtemplateid=Hamburger].runtime-module-container .layout-drawer-hamburger{top:11px!important}[dmtemplateid=Hamburger] .site_content{margin-top:74px!important}#dm .p_hfcontainer div.u_1861705244{width:auto!important;padding:0 40px!important;margin:0!important}#dm .p_hfcontainer #hamburger-drawer.layout-drawer:not([data-origin=top]){width:40vw!important}#dm .p_hfcontainer nav.u_1144820115.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{color:var(--color_1)!important;font-weight:400!important;font-family:CaviarDreams_Bold!important;font-size:18px!important}#dm .p_hfcontainer nav.u_1144820115{top:0!important;width:calc(100% - 0px)!important;height:auto!important;max-width:309px!important;justify-content:flex-start!important;align-items:stretch!important;min-width:25px!important;padding:0!important;margin:74px 0 0!important}#dm .p_hfcontainer nav.u_1144820115.main-navigation.unifiednav .unifiednav__container[data-depth] .unifiednav__item{font-size:18px!important}@media (min-width:1025px){.responsiveTablet [dmtemplateid=Hamburger].runtime-module-container .layout-drawer-hamburger{top:835.82px!important}.responsiveTablet [dmtemplateid=Hamburger] .site_content{margin-top:1671.64px!important}.responsiveTablet .stickyHeaderSpacer{height:95.56px!important}}#dm .p_hfcontainer div.u_1011018909,#dm .p_hfcontainer nav.u_1112353738{width:calc(100% - 0px)!important;height:auto!important;min-width:25px!important;max-width:100%!important}@media (min-width:768px) and (max-width:1024px){.responsiveTablet [dmtemplateid=Hamburger].runtime-module-container .layout-drawer-hamburger{top:20px!important}.responsiveTablet [dmtemplateid=Hamburger] .site_content{margin-top:80px!important}}#dm .p_hfcontainer div#hamburger-header{background-color:rgba(249,246,245,1)!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important;border-bottom-style:solid!important;border-bottom-color:var(--color_2)!important;border-bottom-width:0!important}#dm .p_hfcontainer nav.u_1112353738{top:0!important;justify-content:center!important;align-items:stretch!important;min-height:auto!important;padding:7px 15px 6.8px!important;margin:36px auto 0!important}#dm .p_hfcontainer a.u_1829727279,#dm .p_hfcontainer div.u_1011018909{top:0!important;left:0!important;position:relative!important;padding:0!important;float:none!important;display:block!important;min-height:auto!important}#dm .p_hfcontainer div.u_1011018909{text-align:center!important;margin:0 auto!important}#dm .p_hfcontainer a.u_1829727279{width:calc(100% - 30px)!important;height:54px!important;max-width:189px!important;min-width:25px!important;text-align:center!important;margin:23.8px 0 10px 30px!important}.responsiveTablet .stickyHeaderSpacer{height:124.61px!important}.stickyHeaderSpacer{height:113.47px!important}#dm .dmBody div.u_1243667655,#dm .dmBody div.u_1381842190{top:0!important;left:0!important;position:relative!important;height:auto!important}#dm .dmBody .u_1243667655:before,#dm .dmBody .u_1243667655>.bgExtraLayerOverlay{opacity:.5!important;background-color:linear-gradient(90deg,#000 0,rgba(0,0,0,0) 100%)!important}#dm .dmBody div.u_1089391931 .slides .slide-title{color:rgba(0,0,0,1)!important}#dm .dmBody .u_1182099980,#dm .dmBody .u_1720820535,#dm .dmBody .u_1818145284{display:none!important}#dm .dmBody div.u_1716706191{background-color:rgba(12,19,21,1)!important;background-image:url(https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/Untitled+design+%2858%29-1920w.png),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important}#dm .dmBody .u_1716706191:before{opacity:.5!important;background-color:#fff!important}#dm .dmBody div.u_1716706191:before{background-color:rgba(15,29,33,1)!important;opacity:.39!important}#dm .dmBody .u_1918898979:before,#dm .dmBody .u_1918898979>.bgExtraLayerOverlay{opacity:.5!important;background-color:linear-gradient(90deg,#000 0,rgba(0,0,0,0) 100%)!important}#dm .dmBody div.u_1243667655:before,#dm .dmBody div.u_1243667655>.bgExtraLayerOverlay,#dm .dmBody div.u_1918898979:before,#dm .dmBody div.u_1918898979>.bgExtraLayerOverlay{opacity:.25!important;background-color:rgba(12,19,21,1)!important}#dm .dmBody div.u_1918898979{background-repeat:no-repeat!important;background-size:cover!important}#dm .dmBody div.u_1243667655{background-repeat:no-repeat!important;background-size:cover!important;-webkit-box-shadow:none!important;box-shadow:none!important;-moz-box-shadow:none!important;float:none!important;width:auto!important;max-width:100%!important;min-width:0!important;text-align:center!important;margin:0!important;padding:273.5px 40px!important}#dm .d-page-1716942098 DIV.dmInner{background-repeat:no-repeat!important;background-size:cover!important;background-attachment:fixed!important;background-position:50% 50%!important}#dm .dmBody div.u_1381842190{float:none!important;width:calc(100% - 61px)!important;max-width:1077.98px!important;min-width:25px!important;display:block!important;min-height:auto!important;padding:2px 0!important;margin:0 auto 8px!important}#dm .dmBody div.u_1716706191,#dm .dmBody div.u_1918898979{width:auto!important;max-width:100%!important;min-width:0!important;float:none!important;top:0!important;left:0!important;position:relative!important;height:auto!important}#dm .dmBody div.u_1716706191{min-height:auto!important;text-align:start!important;background-repeat:repeat!important;background-size:auto!important;padding:234px 40px 150px!important;margin:0!important}#dm .dmBody div.u_1918898979{text-align:center!important;padding:273.5px 40px!important}#dm .dmBody div.u_1588776113{float:none!important;top:0!important;left:0!important;width:calc(100% - 61px)!important;position:relative!important;height:auto!important;max-width:1077.98px!important;min-width:25px!important;display:block!important;min-height:auto!important;padding:2px 0!important;margin:0 auto 8px!important}.font-size-75,.size-75{font-size:75px!important}.font-size-25,.size-25{font-size:25px!important}#\31 112353738,#\31 144820115,#\31 147874574,#\31 153153532,#\31 165040603,#\31 170137577,#\31 173148036,#\31 184719581,#\31 199399781,#\31 307751228,#\31 344559618,#\31 422198813,#\31 434815633,#\31 469942216,#\31 505556623,#\31 564830346,#\31 593188385,#\31 625443252,#\31 666110313,#\31 888750820,#\31 953018464,#userwayAccessibilityIcon{order:0;flex-direction:row}#\31 337204992,#\31 655486006,#\31 914255413,#hamburger-drawer{order:0}#\31 337204992,#\31 914255413{flex-direction:row} #dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder:not(.photo-gallery-done) {display: none;} @media (max-width:767px){ [data-hidden-on-mobile] {display:none!important}}
+    .dmDesktopBody [data-anim-desktop]:not([data-anim-desktop='none']) {
+      visibility: hidden;
+    }
+
+    
+</style>
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Miniver Fallback";
+  src: local('Arial');
+  ascent-override: 102.9275%;
+  descent-override: 47.8779%;
+  size-adjust: 96.6814%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Playfair Display Fallback";
+  src: local('Arial');
+  ascent-override: 106.3701%;
+  descent-override: 24.6755%;
+  size-adjust: 101.7204%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Josefin Sans Fallback";
+  src: local('Arial');
+  ascent-override: 72.9195%;
+  descent-override: 24.3065%;
+  size-adjust: 102.8531%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Syne Fallback";
+  src: local('Arial');
+  ascent-override: 93.4327%;
+  descent-override: 27.7773%;
+  size-adjust: 99.0018%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+
+  <link type="application/rss+xml" rel="alternate" href="https://www.thepieofportjeff.com/feed/rss2"/>
+  <link type="application/atom+xml" rel="alternate" href="https://www.thepieofportjeff.com/feed/atom"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.thepieofportjeff.com/"/>
+  <title>
+    
+    Pizza &amp; Italian Specialties | The Pie of Port Jeff | Port Jefferson, NY
+  
+  </title>
+  <meta name="description" content="Enjoy hand-crafted Neapolitan pizza &amp; more in a cozy setting. Visit us! Port Jefferson, NY."/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Pizza &amp; Italian Specialties | The Pie of Port Jeff | Port Jefferson, NY"/>
+  <meta name="twitter:description" content="Enjoy hand-crafted Neapolitan pizza &amp; more in a cozy setting. Visit us! Port Jefferson, NY."/>
+  <meta property="og:description" content="Enjoy hand-crafted Neapolitan pizza &amp; more in a cozy setting. Visit us! Port Jefferson, NY."/>
+  <meta property="og:title" content="Pizza &amp; Italian Specialties | The Pie of Port Jeff | Port Jefferson, NY"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="home"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="Hamburger" data-responsive-name="ResponsiveDesktopTopTabletHamburger" class="runtime-module-container dm-bfs dm-layout-home hasAnimations hasStickyHeader inMiniHeaderMode rows-1200 hamburger-reverse dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div id="site_content"> <div class="p_hfcontainer showOnMedium"> <div id="hamburger-drawer" class="hamburger-drawer layout-drawer" layout="e9d510f4eb904e939c2be8efaf777e6e===header" data-origin="side-reverse" data-auto-height="true"> <div class="u_1826294544 dmRespRow" style="text-align: center;" id="1826294544"> <div class="dmRespColsWrapper" id="1337204992"> <div class="u_1183846399 dmRespCol small-12 medium-12 large-12 empty-column" id="1183846399"></div> 
+</div> 
+</div> 
+ <div class="u_1021493186 dmRespRow middleDrawerRow" style="text-align: center;" id="1021493186"> <div class="dmRespColsWrapper" id="1170137577"> <div class="dmRespCol small-12 u_1808057136 medium-12 large-12" id="1808057136"> <nav class="u_1144820115 effect-none main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_2" layout-sub="" data-show-vertical-sub-items="HIDE" id="1144820115" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_00  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="HOME" data-auto="page-text-style">HOME<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="#" class="unifiednav__item  dmUDNavigationItem_010101841113  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="MENUS" data-auto="page-text-style">MENUS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/dinner" class="unifiednav__item  dmUDNavigationItem_010101557866  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="DINNER" data-auto="page-text-style">DINNER<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/kids-menu" class="unifiednav__item  dmUDNavigationItem_010101487638  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="KIDS MENU" data-auto="page-text-style">KIDS MENU<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/dessert-menu" class="unifiednav__item  dmUDNavigationItem_010101960339  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="DESSERT MENU" data-auto="page-text-style">DESSERT MENU<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/specials" class="unifiednav__item  dmUDNavigationItem_01010166933  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="SPECIALS" data-auto="page-text-style">SPECIALS<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/takeaway-catering" class="unifiednav__item  dmUDNavigationItem_010101764154  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="TAKEAWAY CATERING" data-auto="page-text-style">TAKEAWAY CATERING<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/online-ordering" class="unifiednav__item  dmUDNavigationItem_010101837316  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="ORDER ONLINE" data-auto="page-text-style">ORDER ONLINE<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101875316  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="OUR STORY" data-auto="page-text-style">OUR STORY<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101474741  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="CONTACT" data-auto="page-text-style">CONTACT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/gallery" class="unifiednav__item  dmUDNavigationItem_010101720207  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="GALLERY" data-auto="page-text-style">GALLERY<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1676049285" style="text-align: center;" id="1676049285"> <div class="dmRespColsWrapper" id="1888750820"> <div class="u_1916182198 dmRespCol small-12 medium-12 large-12 empty-column" id="1916182198"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="layout-drawer-overlay" id="layout-drawer-overlay"></div> 
+</div> 
+ <div class="site_content"> <div id="hamburger-header-container" class="showOnMedium hamburger-header-container p_hfcontainer"> <div id="hamburger-header" class="hamburger-header p_hfcontainer" layout="44dc38f951e9489490b055748e10ba9f===header"> <div class="u_1705692124 dmRespRow" style="text-align: center;" id="1705692124"> <div class="dmRespColsWrapper" id="1469942216"> <div class="dmRespCol small-12 u_1655486006 medium-12 large-12" id="1655486006"> <div class="u_1923160809 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1923160809" data-binding="W3siYmluZGluZ05hbWUiOiJpbWFnZSIsInZhbHVlIjoic2l0ZV9pbWFnZXMubG9nbyJ9XQ=="> <a href="/" id="1573522578" file="false"><img src="https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/pie+logo+2022-1920w.jpg" id="1761992403" class="" data-dm-image-path="https://irp.cdn-website.com/a38f898a/dms3rep/multi/pie+logo+2022.jpg" width="0.0" height="0.0" alt="logo" data-diy-image="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <button class="showOnMedium layout-drawer-hamburger hamburger-on-header" id="layout-drawer-hamburger" aria-label="menu" aria-controls="hamburger-drawer" aria-expanded="false"> <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+</button> 
+ <div class="dmHeaderContainer fHeader d-header-wrapper showOnLarge"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" headerlayout="b58ba5b5703b4cd7b5f5f7951565dc87===horizontal-layout-5" data-scrollable-target="body" data-scrollable-target-threshold="1" data-scroll-responder-id="1" preserve-sticky-header="true" logo-size-target="83%" layout="78f5c343822e4eb3aac27f4ad5d13812===header"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="dmRespRow dmDefaultListContentRow u_1861705244" style="text-align:center" id="1861705244"> <div class="dmRespColsWrapper" id="1914255413"> <div class="u_1677919435 small-12 dmRespCol large-2 medium-2" id="1677919435"> <div class="u_1011018909 imageWidget align-center" data-widget-type="image" id="1011018909" data-element-type="image" data-binding="W3siYmluZGluZ05hbWUiOiJpbWFnZSIsInZhbHVlIjoic2l0ZV9pbWFnZXMubG9nbyJ9XQ=="> <a href="/" id="1665096740"><img src="https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/pie+logo+2022-199w.jpg" id="1456770677" class="" data-dm-image-path="https://irp.cdn-website.com/a38f898a/dms3rep/multi/pie+logo+2022.jpg" width="166.0" height="89.46875" alt="Logo" data-diy-image="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1246161842 dmRespCol small-12 large-7 medium-7" id="1246161842"> <span id="1630001966"></span> 
+ <nav class="u_1112353738 effect-none main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1112353738" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_00  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="HOME" data-auto="page-text-style">HOME<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="#" class="unifiednav__item  dmUDNavigationItem_010101841113  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="MENUS" data-auto="page-text-style">MENUS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/dinner" class="unifiednav__item  dmUDNavigationItem_010101557866  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="DINNER" data-auto="page-text-style">DINNER<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/kids-menu" class="unifiednav__item  dmUDNavigationItem_010101487638  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="KIDS MENU" data-auto="page-text-style">KIDS MENU<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/dessert-menu" class="unifiednav__item  dmUDNavigationItem_010101960339  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="DESSERT MENU" data-auto="page-text-style">DESSERT MENU<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/specials" class="unifiednav__item  dmUDNavigationItem_01010166933  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="SPECIALS" data-auto="page-text-style">SPECIALS<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/takeaway-catering" class="unifiednav__item  dmUDNavigationItem_010101764154  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="TAKEAWAY CATERING" data-auto="page-text-style">TAKEAWAY CATERING<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/online-ordering" class="unifiednav__item  dmUDNavigationItem_010101837316  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="ORDER ONLINE" data-auto="page-text-style">ORDER ONLINE<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101875316  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="OUR STORY" data-auto="page-text-style">OUR STORY<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101474741  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="CONTACT" data-auto="page-text-style">CONTACT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/gallery" class="unifiednav__item  dmUDNavigationItem_010101720207  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="GALLERY" data-auto="page-text-style">GALLERY<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="u_1252265195 dmRespCol small-12 large-3 medium-3" id="1252265195"> <a data-display-type="block" class="u_1829727279 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="tel:631.331.4646" data-element-type="dButtonLinkId" id="1829727279"> <span class="iconBg" id="1581139956"> <span class="icon hasFontIcon icon-star" id="1076835582"></span> 
+</span> 
+ <span class="text" id="1246898961">631.331.4646</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true"></div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_home dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="u_1918898979 dmRespRow hasBackgroundOverlay hide-for-medium hide-for-large hasExtraLayerOverlay relativePos" style="text-align: center;" id="1918898979" data-video-bg="eyJzcmMiOiJodHRwczovL3ZpZC5jZG4td2Vic2l0ZS5jb20vYTM4Zjg5OGEvdmlkZW9zL1VKTDZxaURmVFBhUVlobnJGTDF4X1NlcXVlbmNlKzAxLXYubXA0IiwiaWQiOiJodHRwczovL3ZpZC5jZG4td2Vic2l0ZS5jb20vYTM4Zjg5OGEvdmlkZW9zL1VKTDZxaURmVFBhUVlobnJGTDF4X1NlcXVlbmNlKzAxLXYubXA0IiwicHJvdmlkZXIiOiJjZG4iLCJlbWJlZCI6Imh0dHBzOi8vdmlkLmNkbi13ZWJzaXRlLmNvbS9hMzhmODk4YS92aWRlb3MvVUpMNnFpRGZUUGFRWWhuckZMMXhfU2VxdWVuY2UrMDEtdi5tcDQiLCJyYXRpbyI6MC41NjI1LCJ0aHVtYm5haWwiOiJodHRwczovL2lycC5jZG4td2Vic2l0ZS5jb20vYTM4Zjg5OGEvZG1zM3JlcC9tdWx0aS9VSkw2cWlEZlRQYVFZaG5yRkwxeF9TZXF1ZW5jZSswMS52Mi4wMDAwMDAwLmpwZyIsInN1cHBvcnRCZ09uTW9iaWxlIjp0cnVlLCJzdXBwb3J0QmdMb29wIjp0cnVlLCJwb3N0ZXIiOiJodHRwczovL2lycC5jZG4td2Vic2l0ZS5jb20vYTM4Zjg5OGEvZG1zM3JlcC9tdWx0aS9VSkw2cWlEZlRQYVFZaG5yRkwxeF9TZXF1ZW5jZSswMS52Mi4wMDAwMDAwLmpwZyJ9" data-video-bg-mobile="true" data-video-init="true"> <div class="videobgwrapper video-ssr" data-ratio="0.5625"> <video autoplay="autoplay" playsinline="playsinline" muted="muted" loop="loop" class="videobgframe" poster="https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/UJL6qiDfTPaQYhnrFL1x_Sequence+01.v2.0000000-1920w.jpg" src="https://vid.cdn-website.com/a38f898a/videos/UJL6qiDfTPaQYhnrFL1x_Sequence+01-v.mp4" style="object-position: 50% 50%" id="videobgframe-1918898979"></video> 
+</div> 
+ <div class="bgExtraLayerOverlay"></div> 
+ <div class="dmRespColsWrapper" id="1344559618"> <div class="dmRespCol small-12 u_1526589768 medium-12 large-12" id="1526589768"> <div class="u_1588776113 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1588776113" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h1 class="text-align-center m-size-40 size-75"><span class="font-size-75 m-font-size-40" m-font-size-set="true" style="text-transform:uppercase;color:rgb(229, 200, 162);display:initial;font-family:'Metropolis 1920';">Authentic Coal Fired Pizza &amp; Italian Specialties</span><span single-space="true" class="font-size-75 m-font-size-40" style="display: initial; color: rgb(229, 200, 162);"> <span class="font-size-75 m-font-size-40" style="display: initial; color: rgb(229, 200, 162);"></span> 
+</span><span style="display: initial;"><br/></span></h1> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1850005197" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center size-25 m-size-18" style="line-height: 1.38;"><span class="font-size-25 m-font-size-18" style="" josefin="" sans";="" display:="" unset;="" font-weight:="" 300;="" font-style:="" normal;="" color:="" rgb(255,="" 255,="" 255);="" text-transform:="" uppercase;"=""><span class="font-size-25 m-font-size-18" m-font-size-set="true" style="text-transform:uppercase;color:rgb(255, 255, 255);font-weight:300;display:unset;font-family:'Josefin Sans', 'Josefin Sans Fallback';font-style:normal;">PORT JEFFERSON, NY</span> 
+</span><span style="display: initial;"><br/></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1243667655 dmRespRow hasBackgroundOverlay hide-for-small hasExtraLayerOverlay relativePos" style="text-align: center;" id="1243667655" data-video-bg="eyJzcmMiOiJodHRwczovL3ZpZC5jZG4td2Vic2l0ZS5jb20vYTM4Zjg5OGEvdmlkZW9zL1VKTDZxaURmVFBhUVlobnJGTDF4X1NlcXVlbmNlKzAxLXYubXA0IiwiaWQiOiJodHRwczovL3ZpZC5jZG4td2Vic2l0ZS5jb20vYTM4Zjg5OGEvdmlkZW9zL1VKTDZxaURmVFBhUVlobnJGTDF4X1NlcXVlbmNlKzAxLXYubXA0IiwicHJvdmlkZXIiOiJjZG4iLCJlbWJlZCI6Imh0dHBzOi8vdmlkLmNkbi13ZWJzaXRlLmNvbS9hMzhmODk4YS92aWRlb3MvVUpMNnFpRGZUUGFRWWhuckZMMXhfU2VxdWVuY2UrMDEtdi5tcDQiLCJyYXRpbyI6MC41NjI1LCJ0aHVtYm5haWwiOiJodHRwczovL2lycC5jZG4td2Vic2l0ZS5jb20vYTM4Zjg5OGEvZG1zM3JlcC9tdWx0aS9VSkw2cWlEZlRQYVFZaG5yRkwxeF9TZXF1ZW5jZSswMS52Mi4wMDAwMDAwLmpwZyIsInN1cHBvcnRCZ09uTW9iaWxlIjp0cnVlLCJzdXBwb3J0QmdMb29wIjp0cnVlLCJwb3N0ZXIiOiJodHRwczovL2lycC5jZG4td2Vic2l0ZS5jb20vYTM4Zjg5OGEvZG1zM3JlcC9tdWx0aS9VSkw2cWlEZlRQYVFZaG5yRkwxeF9TZXF1ZW5jZSswMS52Mi4wMDAwMDAwLmpwZyJ9" data-video-bg-mobile="true" data-video-init="true"> <div class="videobgwrapper video-ssr" data-ratio="0.5625"> <video autoplay="autoplay" playsinline="playsinline" muted="muted" loop="loop" class="videobgframe" poster="https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/UJL6qiDfTPaQYhnrFL1x_Sequence+01.v2.0000000-1920w.jpg" src="https://vid.cdn-website.com/a38f898a/videos/UJL6qiDfTPaQYhnrFL1x_Sequence+01-v.mp4" style="object-position: 50% 50%" id="videobgframe-1243667655"></video> 
+</div> 
+ <div class="bgExtraLayerOverlay"></div> 
+ <div class="dmRespColsWrapper" id="1173148036"> <div class="dmRespCol small-12 u_1620106714 medium-12 large-12" id="1620106714"> <div class="u_1381842190 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1381842190" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h1 class="text-align-center m-size-40 size-75"><span class="font-size-75 m-font-size-40" m-font-size-set="true" style="text-transform:uppercase;color:rgb(201, 171, 129);display:initial;font-family:'Metropolis 1920';">Authentic Coal FireD Pizza &amp; Italian Specialties</span><span single-space="true" class="font-size-75 m-font-size-40" style="display: initial;"> <span class="font-size-75 m-font-size-40" style="display: initial;"></span> 
+</span><span style="display: initial;"><br/></span></h1> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1595369708" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center size-25 m-size-14" style="line-height: 1.38;"><span class="font-size-25 m-font-size-14" m-font-size-set="true" style="text-transform:uppercase;color:rgb(255, 255, 255);font-weight:300;display:unset;font-family:'Josefin Sans', 'Josefin Sans Fallback';font-style:normal;">PORT JEFFERSON, NY | From our family to yours</span><span style="display: initial;"><br/></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1716706191 dmRespRow hasBackgroundOverlay" id="1716706191"> <div class="dmRespColsWrapper" id="1165040603"> <div class="dmRespCol large-12 medium-12 small-12" id="1836516415"> <div class="u_1631732553 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1631732553" style="transition: opacity 1s ease-in-out 0s;"> <h3 class="m-size-38 text-align-center size-48" style="letter-spacing: 0.13em;"><span class="m-font-size-38 font-size-48" style="color:rgb(201, 171, 129);display:unset;font-family:CaviarDreams_Bold;">- ABOUT US -</span></h3> 
+</div> 
+ <div class="u_1632454426 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1632454426" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="m-size-16 text-align-center" style="line-height: 1.38;"><span class="m-font-size-16" m-font-size-set="true" style="display: initial; color: var(--color_2);">We are one of the few locations on Long Island that serves true authentic coal fired Neapolitan pizza and the only place to get pizza this unique. When the summer months hit, Port Jefferson Village is jumping and the hottest spot in town is The Pie. In the Winter, The Pie is the perfect cozy spot to get together with your loved ones. Whether you are part of the community or just visiting, our family friendly atmosphere is the place to be. Our pizza is hand-crafted thin, crispy, and well done. Each pie is made with only the freshest ingredients served by our courteous staff. A great selection of appetizers, fresh salads, homemade pastas, and desserts there is something here for everybody. We are located in the heart of Main Street, just a short walk from the marina.</span><span style="display: initial;"><br/></span></p></div> 
+ <div class="u_1255240333 dmRespRow hide-for-small" id="1255240333"> <div class="dmRespColsWrapper" id="1593188385"> <div class="u_1563758798 dmRespCol small-12 large-4 medium-4" id="1563758798"> <div data-element-type="spacer" class="u_1698548023 dmSpacer" id="1698548023"></div> 
+</div> 
+ <div class="u_1018710873 dmRespCol empty-column small-12 large-4 medium-4" id="1018710873"></div> 
+ <div class="u_1862399552 dmRespCol empty-column small-12 large-4 medium-4" id="1862399552"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1502178945 dmRespRow fullBleedChanged fullBleedMode mobile-columns-reversed" style="text-align: center;" id="1502178945"> <div class="dmRespColsWrapper" id="1153153532"> <div class="u_1183837175 dmRespCol small-12 large-6 medium-6" id="1183837175"> <div class="u_1569090231 graphicWidget" data-widget-type="graphic" id="1569090231" data-element-type="graphic" data-anim-desktop="bounceIn"> <svg width="100%" height="100%" version="1.1" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id="1862179668" class="svg u_1862179668" data-hover-effect="zoomout" data-icon-custom="true"> <title id="1297352232">A pair of black quotation marks on a white background.</title> 
+ <g> <path d="m42.602 15.301h-29.902c-1.5 0-2.6992 1.1992-2.6992 2.6992v29.898c0 1.3984 1.1992 2.6992 2.6992 2.6992h10.398v4.8984c0 9.6992-4.3984 18.602-12 24.602-0.10156 0-0.10156 0.10156-0.19922 0.19922-0.5 0.5-0.89844 1.3008-0.89844 2 0 0.5 0.19922 1.1016 0.5 1.5 0.5 0.60156 1.3984 1 2.1016 1h0.19922 0.19922c18-2 32.102-18.199 32.102-36.801v-29.996c0.097657-1.5-1.1016-2.6992-2.5-2.6992z"></path> 
+ <path d="m87.301 15.301h-29.902c-1.5 0-2.6992 1.1992-2.6992 2.6992v29.898c0 1.3984 1.1992 2.6992 2.6992 2.6992h10.398v4.8984c0 9.6992-4.3984 18.602-12 24.602-0.10156 0-0.10156 0.10156-0.10156 0.19922h-0.10156c-0.89844 1-1.1016 2.3984-0.30078 3.5 0.5 0.60156 1.3984 1 2.1016 1h0.19922 0.19922c18-2 32.102-18.199 32.102-36.801l0.003907-29.996c0.10156-1.5-1.0977-2.6992-2.5977-2.6992z"></path> 
+</g> 
+</svg> 
+</div> 
+ <div class="u_1089391931 flex-container dmImageSlider dmNoMargin dmNoMark" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1089391931"> <div class="flexslider ed-version nav-layout-2" sliderscriptparams="{'stretch':true,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':7000,'animationDuration':600,'pausePlay':true,'prevText':'','nextText':''}" id="1538480722"> <ul class="slides" id="1856607098"> <li layout="center" position="center" animation="slideInLeft" show-content="true" color-overlay="true" text-background="true" id="1564830346" class="" show-caption="true"><img dm="true" src="https://lirp.cdn-website.com/md/dmtmpl/f49dcbfd-e944-4e31-81b5-154cbc213458/dms3rep/multi/opt/empty_02-708w.png" id="1694476660" alt="A white background with a few lines on it" onerror="handleImageLoadError(this)" height="297.0" width="590.0"/> <div class="color-overlay" id="1531797877"></div> 
+ <div class="slide-inner" id="1150755948"> <div class="text-wrapper" id="1029212759"> <h3 class="slide-title u_1720820535" id="1720820535"></h3> 
+ <div class="slide-text richText u_1711140727" id="1711140727" style=""><p class="rteBlock">&quot;The place is beautiful and very cozy, the staff is amazing, and the food is delicious! We will definitely be coming back again very very soon!&quot;</p></div></div> 
+ <div class="slide-button dmWidget clearfix slide-button-visible" id="1087653527"> <span class="iconBg" id="1708830084"> <span class="icon hasFontIcon icon-star" id="1565815483"></span> 
+</span> 
+ <span class="text" id="1691103374">REBECCA</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="slideInLeft" show-content="true" color-overlay="true" text-background="true" id="1147874574" class="" show-caption="true"><img dm="true" src="https://lirp.cdn-website.com/md/dmtmpl/f49dcbfd-e944-4e31-81b5-154cbc213458/dms3rep/multi/opt/empty_02-708w.png" id="1395341827" alt="A white background with a few lines on it" onerror="handleImageLoadError(this)" height="297.0" width="590.0"/> <div class="color-overlay" id="1285118338"></div> 
+ <div class="slide-inner" id="1430318129"> <div class="text-wrapper" id="1760937947"> <h3 class="slide-title u_1182099980" id="1182099980">Slide title</h3> 
+ <div class="slide-text richText u_1198531960" id="1198531960" style=""><p class="rteBlock">&quot;Real brick oven pizza! Great pies! Great service&quot;</p></div></div> 
+ <div class="slide-button dmWidget clearfix slide-button-visible" id="1329082833"> <span class="iconBg" id="1770044041"> <span class="icon hasFontIcon icon-star" id="1981906839"></span> 
+</span> 
+ <span class="text" id="1502415482">ANGELA</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1505556623" class="" show-caption="true"><img dm="true" src="https://lirp.cdn-website.com/md/dmtmpl/f49dcbfd-e944-4e31-81b5-154cbc213458/dms3rep/multi/opt/empty_02-708w.png" id="1724483074" alt="A white background with a few lines on it" onerror="handleImageLoadError(this)" height="297.0" width="590.0"/> <div class="color-overlay" id="1691761298"></div> 
+ <div class="slide-inner" id="1735412314"> <div class="text-wrapper" id="1048435184"> <h3 class="slide-title u_1818145284" id="1818145284">Slide title</h3> 
+ <div class="slide-text richText u_1825703856" id="1825703856" style=""><p class="rteBlock">&quot;Pizza is a gift from God, it's definitely has a &nbsp;rich flavor especially with the margaritas pie. Exceptional service and the atmosphere is beautiful for a couple. The salad was a surprise as well.&quot;</p></div></div> 
+ <div class="slide-button dmWidget clearfix slide-button-visible" id="1896858896"> <span class="iconBg" id="1736475863"> <span class="icon hasFontIcon icon-star" id="1542228699"></span> 
+</span> 
+ <span class="text" id="1214543256">JOEL</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1159975517 dmRespCol small-12 large-6 medium-6" id="1159975517"> <div data-element-type="spacer" class="u_1638331418 dmSpacer" id="1638331418"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1646316517 dmRespRow hasBackgroundOverlay" id="1646316517"> <div class="dmRespColsWrapper" id="1666110313"> <div class="u_1431456363 dmRespCol small-12 large-5 medium-5" id="1431456363"> <div data-element-type="spacer" class="u_1943436730 dmSpacer" id="1943436730"></div> 
+</div> 
+ <div class="u_1226533575 dmRespCol small-12 large-7 medium-7" id="1226533575"> <div class="u_1276751626 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1276751626" style="transition: opacity 1s ease-in-out 0s; text-align: left; display: block;"><p class="text-align-center m-size-20 size-25"><span class="font-size-25 m-font-size-20" style="color:rgb(201, 171, 129);display:unset;font-family:Miniver, 'Miniver Fallback';">Carefully crafted Italian classics</span></p></div> 
+ <div class="dmNewParagraph u_1976686676" data-element-type="paragraph" data-version="5" id="1976686676" style="transition: opacity 1s ease-in-out 0s; text-align: left; display: block;"> <h3 class="m-size-38 text-align-center size-48" style="letter-spacing: 0.13em;"><span class="m-font-size-38 font-size-48" style="color:rgb(201, 171, 129);display:unset;font-family:CaviarDreams_Bold;">- MENUS -</span></h3> 
+</div> 
+ <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient u_1227151756" file="false" href="/dinner" data-element-type="dButtonLinkId" id="1227151756"> <span class="iconBg" aria-hidden="true" id="1929790881"> <span class="icon hasFontIcon icon-star" id="1695035563"></span> 
+</span> 
+ <span class="text" id="1456955485">FOOD</span> 
+</a> 
+ <a data-display-type="block" class="u_1990978826 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/kids-menu" data-element-type="dButtonLinkId" id="1990978826"> <span class="iconBg" aria-hidden="true" id="1565890986"> <span class="icon hasFontIcon icon-star" id="1703329181"></span> 
+</span> 
+ <span class="text" id="1874555392">KIDS</span> 
+</a> 
+ <a data-display-type="block" class="u_1277924016 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/dessert-menu" data-element-type="dButtonLinkId" id="1277924016"> <span class="iconBg" aria-hidden="true" id="1807355188"> <span class="icon hasFontIcon icon-star" id="1580776527"></span> 
+</span> 
+ <span class="text" id="1289632837">DESSERT</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1033320118 dmRespRow" id="1033320118"> <div class="dmRespColsWrapper" id="1184719581"> <div class="dmRespCol large-12 medium-12 small-12" id="1333129400"> <div class="u_1090902240 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1090902240" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="text-align-center m-size-20 size-25"><span class="font-size-25 m-font-size-20" style="color:rgb(201, 171, 129);display:unset;font-family:Miniver, 'Miniver Fallback';">Special events</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1319326637" style="transition: opacity 1s ease-in-out 0s;"> <h3 class="text-align-center m-size-38 size-48" style="letter-spacing: 0.13em;"><span class="font-size-48 m-font-size-38" style="color:rgb(201, 171, 129);display:unset;font-family:CaviarDreams_Bold;">- TAKE AWAY CATERING -</span></h3> 
+</div> 
+ <div class="u_1926976258 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1926976258" style="transition: none 0s ease 0s; text-align: left; display: block;"><p style="line-height: 1.38;" class="m-text-align-center"><span style="display: initial; color: var(--color_2);">Our packages are perfect for private parties, graduations, and corporate events.</span><span style="display: initial;"><br/></span></p></div> 
+ <a data-display-type="block" class="u_1417644407 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/takeaway-catering" data-element-type="dButtonLinkId" id="1417644407"> <span class="iconBg" aria-hidden="true" id="1022753366"> <span class="icon hasFontIcon icon-star" id="1410238836"></span> 
+</span> 
+ <span class="text" id="1929415593">CATERING INFO</span> 
+</a> 
+ <div class="u_1846049660 dmRespRow" id="1846049660"> <div class="dmRespColsWrapper" id="1199399781"> <div class="u_1737364395 dmRespCol small-12 large-4 medium-4" id="1737364395"> <div data-element-type="spacer" class="u_1137120109 dmSpacer" id="1137120109"></div> 
+</div> 
+ <div class="u_1159853783 dmRespCol empty-column small-12 large-4 medium-4 hide-for-small" id="1159853783"></div> 
+ <div class="u_1438630700 dmRespCol empty-column small-12 large-4 medium-4 hide-for-small" id="1438630700"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1451545832 dmRespRow fullBleedChanged fullBleedMode" id="1451545832"> <div class="dmRespColsWrapper" id="1307751228"> <div class="dmRespCol large-12 medium-12 small-12 u_1608424324" id="1608424324"> <div class="u_1802201807 dmPhotoGallery newPhotoGallery dmPhotoGalleryResp photo-gallery-done text-layout-over captionAlignment-center_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="4" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1802201807" data-placeholder="false"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-4" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="A man is throwing a pizza dough in the air" data-dm-force-device="mobile" class="u_1036583910" data-image-url="https://irp.cdn-website.com/a38f898a/dms3rep/multi/IMG_6915_edit-62ea9932.jpg" style="background-image: url('https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/IMG_6915_edit-62ea9932-640w.jpg');"><img id="1186655000" data-src="https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/IMG_6915_edit-62ea9932-1920w.jpg" alt="A man is throwing a pizza dough in the air" aria-label="A man is throwing a pizza dough in the air" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1995793834" class="caption-container u_1995793834" style="display:none"> <span class="caption-inner"> <a id="1461035703" class="caption-button dmWidget  clearfix u_1461035703" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-4" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="A white plate topped with pasta , broccoli , carrots and chicken." data-dm-force-device="mobile" class="u_1485252608" data-image-url="https://irp.cdn-website.com/a38f898a/dms3rep/multi/2024_06_05__16_38_19__7121_edit-a61cd3e9.jpg" style="background-image: url('https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/2024_06_05__16_38_19__7121_edit-a61cd3e9-640w.jpg');"><img id="1755193841" data-src="https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/2024_06_05__16_38_19__7121_edit-a61cd3e9-1920w.jpg" alt="A white plate topped with pasta , broccoli , carrots and chicken." aria-label="A white plate topped with pasta , broccoli , carrots and chicken." onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1660091584" class="caption-container u_1660091584" style="display:none"> <span class="caption-inner"> <a id="1346774583" class="caption-button dmWidget  clearfix u_1346774583" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-4" data-index="2"> <div index="2" class="photoGalleryThumbs animated  " data-index="2"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="A group of women are sitting at a table eating pizza." data-dm-force-device="mobile" class="u_1781704796" data-image-url="https://irp.cdn-website.com/a38f898a/dms3rep/multi/IMG_7855_edit-92789325.jpg" style="background-image: url('https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/IMG_7855_edit-92789325-640w.jpg');"><img id="1071679458" data-src="https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/IMG_7855_edit-92789325-1920w.jpg" alt="A group of women are sitting at a table eating pizza." aria-label="A group of women are sitting at a table eating pizza." onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1327529743" class="caption-container u_1327529743" style="display:none"> <span class="caption-inner"> <a id="1497879155" class="caption-button dmWidget  clearfix u_1497879155" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-4" data-index="3"> <div index="3" class="photoGalleryThumbs animated  " data-index="3"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="A close up of a fire in a brick oven" data-dm-force-device="mobile" class="u_1918698939" data-image-url="https://irp.cdn-website.com/a38f898a/dms3rep/multi/019a3147-1559-40af-b3b2-d704ddb0e842.webp" style="background-image: url('https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/019a3147-1559-40af-b3b2-d704ddb0e842-640w.webp');"><img id="1446790596" data-src="https://lirp.cdn-website.com/a38f898a/dms3rep/multi/opt/019a3147-1559-40af-b3b2-d704ddb0e842-1920w.webp" alt="A close up of a fire in a brick oven" aria-label="A close up of a fire in a brick oven" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1237651312" class="caption-container u_1237651312" style="display:none"> <span class="caption-inner"> <a id="1203917269" class="caption-button dmWidget  clearfix u_1203917269" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1027150865 dmRespRow" id="1027150865"> <div class="dmRespColsWrapper" id="1422198813"> <div class="dmRespCol large-12 medium-12 small-12 u_1956135539" id="1956135539"> <div class="dmNewParagraph u_1400178890" data-element-type="paragraph" data-version="5" id="1400178890" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="m-size-20 text-align-center size-25"><span class="m-font-size-20 font-size-25" style="color:rgb(201, 171, 129);display:unset;font-family:Miniver, 'Miniver Fallback';">Food in the comfort of your home</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1849163464" style="transition: opacity 1s ease-in-out 0s;"> <h3 class="m-size-30 text-align-center size-48" style="letter-spacing: 0.13em;"><span class="m-font-size-30 font-size-48" m-font-size-set="true" style="color:rgb(201, 171, 129);display:unset;font-family:CaviarDreams_Bold;">-</span><span single-space="true" class="m-font-size-30 font-size-48" style="color:rgb(201, 171, 129);display:unset;font-family:CaviarDreams_Bold;"> <span class="m-font-size-30 font-size-48" style="color:rgb(201, 171, 129);display:unset;font-family:CaviarDreams_Bold;"></span> 
+</span><span class="m-font-size-30 font-size-48" style="text-transform:uppercase;color:rgb(201, 171, 129);display:unset;font-family:CaviarDreams_Bold;" m-font-size-set="true">order online</span><span single-space="true" class="m-font-size-30 font-size-48" style="color:rgb(201, 171, 129);display:unset;font-family:CaviarDreams_Bold;"> <span class="m-font-size-30 font-size-48" style="color:rgb(201, 171, 129);display:unset;font-family:CaviarDreams_Bold;"></span> 
+</span><span class="m-font-size-30 font-size-48" style="color:rgb(201, 171, 129);display:unset;font-family:CaviarDreams_Bold;" m-font-size-set="true">-</span></h3> 
+</div> 
+ <a data-display-type="block" class="u_1371391902 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="https://thepieofportjeff.orders2me.com/order-now" data-element-type="dButtonLinkId" id="1371391902" target="_blank"> <span class="iconBg" aria-hidden="true" id="1149652272"> <span class="icon hasFontIcon icon-star" id="1613244301"></span> 
+</span> 
+ <span class="text" id="1047164236">ONLINE ORDERING</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1183934613 dmRespRow dmFooterContent hasBackgroundOverlay" id="1183934613"> <div class="dmRespColsWrapper" id="1625443252"> <div class="dmRespCol small-12 medium-12 large-12 u_1494596766" id="1494596766"> <div class="dmRespRow u_1993407736 fullBleedChanged fullBleedMode" id="1993407736"> <div class="dmRespColsWrapper" id="1953018464"> <div class="u_1665735232 dmRespCol small-12 large-3 medium-3" id="1665735232"> <div class="u_1110606182 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1110606182" data-styletopreserve="{" background-image":""}"=""><p class="m-size-16"><span class="m-font-size-16" m-font-size-set="true" style="color: var(--color_2); display: initial; font-weight: bold;">Location</span></p></div> 
+ <div class="u_1062366948 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1062366948" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h3 class="m-size-16 size-19"><a href="https://www.google.com/maps/search/?api=1&query=216%20Main%20Street%2C%20Port%20Jefferson%2C%20NY%2011777&query_place_id=ChIJDX-aO2ZA6IkRKAjJSVTLez4" target="_blank" runtime_url="https://www.google.com/maps/search/?api=1&query=216%20Main%20Street%2C%20Port%20Jefferson%2C%20NY%2011777&query_place_id=ChIJDX-aO2ZA6IkRKAjJSVTLez4" type="url" class="m-font-size-16 font-size-19" m-font-size-set="true" style="color:rgb(255, 255, 255);font-weight:300;display:initial;font-family:'Josefin Sans', 'Josefin Sans Fallback';">216 Main St</a><span style="color:rgb(255, 255, 255);font-weight:300;display:initial;font-family:'Josefin Sans', 'Josefin Sans Fallback';" class="m-font-size-16 font-size-19" m-font-size-set="true">reet</span></h3> 
+ <h3 class="m-size-16 size-19"><a href="https://www.google.com/maps/search/?api=1&query=216%20Main%20Street%2C%20Port%20Jefferson%2C%20NY%2011777&query_place_id=ChIJDX-aO2ZA6IkRKAjJSVTLez4" target="_blank" runtime_url="https://www.google.com/maps/search/?api=1&query=216%20Main%20Street%2C%20Port%20Jefferson%2C%20NY%2011777&query_place_id=ChIJDX-aO2ZA6IkRKAjJSVTLez4" type="url" class="m-font-size-16 font-size-19" m-font-size-set="true" style="color:rgb(255, 255, 255);font-weight:300;display:initial;font-family:'Josefin Sans', 'Josefin Sans Fallback';">Port Jefferson, NY 11777</a><span style="color: var(--color_2); display: initial;"><br/></span></h3> 
+</div> 
+</div> 
+ <div class="u_1766220093 dmRespCol small-12 large-4 medium-4" id="1766220093"> <div class="u_1447124782 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1447124782" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="m-size-16"><span class="m-font-size-16" m-font-size-set="true" style="display: initial; color: var(--color_2); font-weight: bold;">Get in touch</span></p></div> 
+ <div class="u_1506987761 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1506987761" style="transition: opacity 1s ease-in-out 0s;"> <h3 class="size-19 m-size-16" style="line-height: 2;"><a href="mailto:feedback@foxandturtle.com" target="_blank" class="font-size-19 m-font-size-16" style="color:var(--color_2);font-weight:300;display:initial;font-family:'Josefin Sans', 'Josefin Sans Fallback';" m-font-size-set="true">631.331.4646</a></h3> 
+</div> 
+</div> 
+ <div class="u_1115623661 dmRespCol small-12 large-5 medium-5" id="1115623661"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1704656445" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.8;"><span style="color: rgb(255, 255, 255); display: initial;">Sunday: 11:30 am - 8:30 pm</span></p><p class="m-size-16" style="line-height: 1.8;"><span class="m-font-size-16" m-font-size-set="true" style="display: initial; color: var(--color_2);">Monday - Thursday: 12:00 pm - 8:30 pm</span></p><p class="m-size-16" style="line-height: 1.8;"><span class="m-font-size-16" m-font-size-set="true" style="display: initial; color: var(--color_2);">Friday: 12:00 pm - 9:30 pm</span></p><p class="m-size-16" style="line-height: 1.8;"><span class="m-font-size-16" m-font-size-set="true" style="display: initial; color: var(--color_2);">Saturday: 11:30 am - 9:30 pm</span><span single-space="true" class="m-font-size-16" style="display: initial; color: var(--color_2);"> <span class="m-font-size-16" style="display: initial; color: var(--color_2);"></span> 
+</span></p><p style="line-height: 1.8;"><span style="display: initial;"><br/></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1227266852 dmRespRow fullBleedChanged fullBleedMode mobile-columns-reversed" id="1227266852"> <div class="dmRespColsWrapper" id="1434815633"> <div class="u_1200159203 dmRespCol small-12 large-8 medium-8" id="1200159203"> <div class="u_1664425919 widget-1f5975 dmCustomWidget" data-lazy-load="" data-title="" id="1664425919" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="1f5975986930429f819d4cd2154b5c4a" data-widget-version="25" data-widget-config="eyJyZXZlcnNlRmxhZyI6ZmFsc2UsImNvcHlyaWdodFRleHQiOiI8cCBjbGFzcz1cInJ0ZUJsb2NrXCI+QWxsIFJpZ2h0cyBSZXNlcnZlZCB8IFRoZSBQaWUgfCBXZWJzaXRlIGJ5IDxhIHZhbHVlPVwiaHR0cDovL2RlbGljaW91c21hcmtldGluZ2V4cGVydHMuY29tXCIgbGFiZWw9XCJcIiB0eXBlPVwidXJsXCIgdGFyZ2V0PVwiX2JsYW5rXCIgaHJlZj1cImh0dHA6Ly9kZWxpY2lvdXNtYXJrZXRpbmdleHBlcnRzLmNvbVwiIGRhdGEtcnVudGltZS11cmw9XCJodHRwOi8vZGVsaWNpb3VzbWFya2V0aW5nZXhwZXJ0cy5jb21cIj5EZWxpY2lvdXMgTWFya2V0aW5nIEV4cGVydHM8L2E+PC9wPiJ9"> <div class="copyright"> <div>&copy; 2025&nbsp;</div> 
+ <div><p class="rteBlock">All Rights Reserved | The Pie | Website by <a value="http://deliciousmarketingexperts.com" label="" type="url" target="_blank" href="http://deliciousmarketingexperts.com" data-runtime-url="http://deliciousmarketingexperts.com">Delicious Marketing Experts</a></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1512581991 dmRespCol small-12 large-4 medium-4" id="1512581991"> <div class="u_1839660518 align-center text-align-center dmSocialHub gapSpacing" id="1839660518" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.facebook.com/Thepieofportjeff" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style9" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.instagram.com/thepie216/" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style9" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link rel="preload" href="https://irp.cdn-website.com/fonts/css2?family=Miniver:ital,wght@0,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Syne:ital,wght@0,400..800;1,400..800&amp;subset=latin-ext&amp;display=swap"  as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<style>
+@font-face {
+  font-family: "CaviarDreams";
+  src: url("https://irp.cdn-website.com/a38f898a/fonts/CaviarDreams-9c2f_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Syne-Regular";
+  src: url("https://irp.cdn-website.com/a38f898a/fonts/Syne-Regular-9994_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Metropolis 1920";
+  src: url("https://irp.cdn-website.com/a38f898a/fonts/Metropolis+1920-b6e_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "CaviarDreams_Italic";
+  src: url("https://irp.cdn-website.com/a38f898a/fonts/CaviarDreams_Italic-cce0_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "CaviarDreams_Bold";
+  src: url("https://irp.cdn-website.com/a38f898a/fonts/CaviarDreams_Bold-eed1_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "CaviarDreams_BoldItalic";
+  src: url("https://irp.cdn-website.com/a38f898a/fonts/CaviarDreams_BoldItalic-ad03_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="preload" as="style" fetchpriority="low" onload="loadCSS(this)" href="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link rel="preload" href="https://irp.cdn-website.com/WIDGET_CSS/98eb1283dc4e4610484b28b6d7e04bd5.css" id="widgetCSS" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="home"] #dm [data-show-on-page-only="home"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/a38f898a/files/a38f898a_withFlex_1.min.css?v=59" id="siteGlobalCss" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<!-- Page CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/a38f898a/files/a38f898a_home_withFlex_1.min.css?v=59" id="homeCssLink" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<style id="pagestyle" type="text/css">
+    
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-75, .size-75, .size-75 > font { font-size: 75px !important; }.font-size-25, .size-25, .size-25 > font { font-size: 25px !important; }.font-size-48, .size-48, .size-48 > font { font-size: 48px !important; }.font-size-19, .size-19, .size-19 > font { font-size: 19px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script>
+    window.customWidgetsFunctions["1f5975986930429f819d4cd2154b5c4a~25"] = function (element, data, api) {
+        null
+    };
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5968";
+    var build = "2025-11-27T12_19_14";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-11-27T12_19_14";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5968';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5968';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =false;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =false;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: 'a38f898a'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: a38f898a -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Begin Body End Markup -->
+<script type="text/javascript" src="//cdn.rlets.com/capture_configs/eb4/705/1b1/3ba456490a5ecc1b19c56a7.js" async="async"></script>
+
+<!--  End Body End Markup -->
+<!--  Site Wide Html Markup -->
+<div id="swh-0d73036dd15f4fac94ecd825faeba0fd"><div data-wrapper-source="appstore" > <script type="text/javascript" src="https://cdn.userway.org/widget.js?account=As1mW5j22R&platfAppInstalledSiteId=3627099"></script> </div></div><!--  Site Wide Html Markup -->
+</body>
+</html>

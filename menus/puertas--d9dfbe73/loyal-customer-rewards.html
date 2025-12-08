@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" ng-strict-di>
+<head>
+    <!-- OneTrust Cookies Consent Notice -->
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="018ee27d-bbc4-7442-8da6-e4d459ae3cef"></script>
+<script type="text/javascript">
+    function OptanonWrapper() {
+        // Handle initial consent setup and any direct OptanonWrapper calls
+        handleConsentUpdate();
+    }
+    
+    function handleConsentUpdate() {
+        const consentData = {
+            hasPerformanceConsent: window.OptanonActiveGroups?.includes('C0002') || false,
+            hasTargetingConsent: window.OptanonActiveGroups?.includes('C0004') || false,
+            hasFunctionalConsent: window.OptanonActiveGroups?.includes('C0003') || false,
+            activeGroups: window.OptanonActiveGroups || ''
+        };
+                
+        // Dispatch consent event for child SPAs
+        window.dispatchEvent(new CustomEvent('banquetOneTrustConsentUpdate', {
+            detail: consentData
+        }));
+        
+        // Update platform vendors
+        handlePlatformVendorConsent(consentData);
+    }
+    
+    function handlePlatformVendorConsent(consent) {        
+        // Google Analytics/GTM
+        if (window.gtag) {
+            gtag('consent', 'update', {
+                'analytics_storage': consent.hasPerformanceConsent ? 'granted' : 'denied',
+                'ad_storage': consent.hasTargetingConsent ? 'granted' : 'denied',
+                'ad_user_data': consent.hasTargetingConsent ? 'granted' : 'denied',
+                'ad_personalization': consent.hasTargetingConsent ? 'granted' : 'denied'
+            });
+        }
+        
+        // Amplitude opt-out
+        if (window.amplitude && !consent.hasPerformanceConsent) {
+            amplitude.setOptOut(true);
+        } else if (window.amplitude && consent.hasPerformanceConsent) {
+            amplitude.setOptOut(false);
+        }
+        
+        // DataDog RUM
+        if (typeof window.DD_RUM !== 'undefined' && window.DD_RUM.setTrackingConsent) {
+            const ddConsent = consent.hasPerformanceConsent ? 'granted' : 'not-granted';
+            window.DD_RUM.setTrackingConsent(ddConsent);
+        }
+        
+        // Heap
+        if (typeof window.heap !== 'undefined') {
+            // Set a simple consent flag that Heap methods can check
+            window.heap._consentGranted = consent.hasPerformanceConsent;
+        }
+        
+        // FullStory
+        if (typeof window.FS !== 'undefined') {
+            if (window.FS.consent) {
+                // Use FullStory's built-in consent API (preferred method)
+                window.FS.consent(consent.hasPerformanceConsent);
+            } else {
+                // Fallback to restart/shutdown methods if consent API not available
+                if (consent.hasPerformanceConsent) {
+                    if (window.FS.restart) window.FS.restart();
+                } else {
+                    if (window.FS.shutdown) window.FS.shutdown();
+                }
+            }
+        }
+
+        // Tealium
+        if (typeof window.utag !== 'undefined') {
+            if (window.utag.gdpr) {
+                window.utag.gdpr.setConsentValue(consent.hasPerformanceConsent ? 1 : 0);
+                window.utag.gdpr.setConsentCategories([
+                    consent.hasPerformanceConsent ? 'analytics' : '',
+                    consent.hasTargetingConsent ? 'advertising' : '',
+                    consent.hasFunctionalConsent ? 'functional' : ''
+                ].filter(Boolean));
+            }
+        }
+        
+    }
+</script>
+
+    <script type="text/plain" class="optanon-category-C0002">
+    (function(h,o,u,n,d) {
+        h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+        d=o.createElement(u);d.async=1;d.src=n
+        n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+    })(window,document,'script','https://www.datadoghq-browser-agent.com/datadog-rum-v3.js','DD_RUM')
+    DD_RUM.onReady(function() {
+    window.DD_RUM.init({
+    clientToken: 'pub060dac664356492dcb3856a3f719cc62',
+    applicationId: 'f560ab4c-a844-43fd-8577-c6feaefa967f',
+    site: 'datadoghq.com',
+    service:'toastweb',
+    env:'prod',
+    version: 'bob-release-441-3',
+    sampleRate: 1,
+    allowedTracingOrigins: ['https://www.toasttab.com'],
+    trackInteractions: true
+});
+    })
+</script>
+    <title>Toast Account</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" type="image/x-icon" href="https://cdn.toasttab.com/static/42fd6cabe2aa1dc8ad50e0d66f30ce9e3de4aa36/images/favicon.ico" />
+<link rel="apple-touch-icon" href="https://cdn.toasttab.com/static/f15a61f3b4ebca72b60a4dca4c813c424f2c2837/images/toast-iphone-icon.png">
+<link rel="icon" href="https://cdn.toasttab.com/static/f15a61f3b4ebca72b60a4dca4c813c424f2c2837/images/toast-iphone-icon.png">
+    
+    <link
+  href="https://cdn.toasttab.com/static/c0e87434edc5e023a033280f818516dc5c4d005c/projects/tailwindcss/preflight.min.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+
+    <meta name="importmap-type" content="systemjs-importmap" />
+
+<script type="systemjs-importmap" data-spa-control-import-map>
+    {
+  "imports" : {
+    "banquet-runtime-modules" : "//cdn.toasttab.com/spa/banquet-runtime-modules/main.f32bf8aae8a709824422.js",
+    "guest-feedback-public-spa" : "//cdn.toasttab.com/spa/guest-feedback-public-spa/main.7554f38a2435f0e6b1ae.js",
+    "sso-landing-spa" : "//cdn.toasttab.com/spa/sso-landing-spa/main.ddf798f4eb196ac9a225.js",
+    "spa-user-activation" : "//cdn.toasttab.com/spa/spa-user-activation/main.cc42913c82f15c7f73ea.js",
+    "oat-oatmeal-tools" : "//cdn.toasttab.com/spa/oat-oatmeal-tools/main.650e745806717cb65e8c.js",
+    "loyalty-account-page-spa" : "//cdn.toasttab.com/spa/loyalty-account-page-spa/main.c822f431cba51dc1b3b3.js",
+    "invoice-pay-web" : "//cdn.toasttab.com/spa/invoice-pay-web/main.deb15001be0d376e61e9.js",
+    "pre-login-onboarding-spa" : "//cdn.toasttab.com/spa/pre-login-onboarding-spa/main.1ea3c2b11d386ca8500f.js",
+    "user-reset-landing-spa" : "//cdn.toasttab.com/spa/user-reset-landing-spa/main.ed359fdaa589ffa2ac42.js",
+    "loyalty-sign-up-page" : "//cdn.toasttab.com/spa/loyalty-sign-up-page/main.924248e7aab524fca2d7.js",
+    "hosted-checkout-dev-spa" : "//cdn.toasttab.com/spa/hosted-checkout-dev-spa/main.643b7c28821c9f2a94d7.js",
+    "url-shortener-public-spa" : "//cdn.toasttab.com/spa/url-shortener-public-spa/main.c8378f45d630e8ddb46a.js",
+    "corn-catering-oo-web" : "//cdn.toasttab.com/spa/corn-catering-oo-web/main.2a01222e6f2840c1a1fe.js",
+    "curbside-arrival-spa" : "//cdn.toasttab.com/spa/curbside-arrival-spa/main.644517ad1942b6620f86.js",
+    "public-banquet-root" : "//cdn.toasttab.com/spa/public-banquet-root/main.1bf1dd08f0dd4dc15684.js",
+    "loyalty-web" : "//cdn.toasttab.com/spa/loyalty-web/main.1c9c5ebec90f0c3e0c2c.js",
+    "fundraising-public-spa" : "//cdn.toasttab.com/spa/fundraising-public-spa/main.7729b0c5b2792ab264ea.js",
+    "customer-financing-ui" : "//cdn.toasttab.com/spa/customer-financing-ui/main.72976359dd98887c9bec.js",
+    "react-dom" : "https://cdn.toasttab.com/static/4f692c06eef2bf35ec1e0e9900eb0d4defec930b/projects/scripts/react/18.2.0/system/react-dom.production.min.js",
+    "@apollo/client" : "https://cdn.toasttab.com/static/4c11776447cf86c689feb6e0e1db9be09a970216/projects/scripts/@apollo/client/3.7.17/system/@apollo/client.production.min.js",
+    "@apollo/client/link/persisted-queries" : "https://cdn.toasttab.com/static/4c11776447cf86c689feb6e0e1db9be09a970216/projects/scripts/@apollo/client/link/persisted-queries/3.7.17/system/@apollo/client/link/persisted-queries.production.min.js",
+    "i18next" : "https://cdn.toasttab.com/static/6b2e6d90a870275b3960fd0d45c22b74c552e510/projects/scripts/i18next/23.11.2/i18next.js",
+    "react" : "https://cdn.toasttab.com/static/4f692c06eef2bf35ec1e0e9900eb0d4defec930b/projects/scripts/react/18.2.0/system/react.production.min.js",
+    "single-spa" : "https://cdn.toasttab.com/static/710aba56a2b0f197f487e51c9b3034539fb3ab07/projects/scripts/single-spa/5.9.4/single-spa.min.js",
+    "@sentry/browser" : "https://cdn.toasttab.com/static/1a6ea296f8f88dac419132e6592cfa29fc34550f/projects/scripts/@sentry/browser/7.13.0/system/production.min.js",
+    "spa-account-forgot-password" : "//cdn.toasttab.com/spa/spa-account-forgot-password/main.3b6379d49a4917d4d961.js",
+    "insights-public-spa" : "//cdn.toasttab.com/spa/insights-public-spa/main.5d1a20ce8dadec91736b.js"
+  }
+}
+</script>
+
+
+
+<script src="https://cdn.toasttab.com/static/2623ba5c52e4b8007224e906b00fef77a555b932/projects/scripts/systemjs/6.8.3/system.min.js"></script>
+<script src="https://cdn.toasttab.com/static/2623ba5c52e4b8007224e906b00fef77a555b932/projects/scripts/systemjs/6.8.3/extras/named-exports.min.js"></script>
+
+    <script type="text/plain" class="optanon-category-C0004">
+    (function(apiKey){
+        (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+            v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+                o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+            y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+            z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+
+        pendo.initialize({
+            ignoreHashRouting: true,
+            visitor: {
+                id: '',
+                full_name: '',
+                email: ''
+            },
+            account: {
+                id: '',
+                management_group_guid: '',
+                name: ''
+            }
+        });
+    })('21d7c162-0d47-4267-4e39-e46c3484c34c');
+</script>
+
+    
+<script type="text/plain" class="optanon-category-C0002">
+window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
+heap.load("1811500362", {
+  eventPropertiesStorage: 'localstorage',
+  metadataStorage: 'localstorage'
+})
+</script>
+
+    <script>
+        window.__TOAST_BANQUET_INITIAL_DATA__ = {"session":{},"featureFlags":{"mu-marriott-pilot-restaurant":false,"hot-caribou-sso-activation":false,"dot-fundraising-receipt-lookup":true,"loy-tracking-page-v2":true,"wex-buffet-evolution-theme":true}}
+    </script>
+</head>
+<body>
+    
+<script type="text/plain" class="optanon-category-C0002">
+  window.utag_cfg_ovrd = window.utag_cfg_ovrd || {};
+  window.utag_cfg_ovrd.noview = true;
+  (function(a,b,c,d) {
+      a='//tags.tiqcdn.com/utag/toast/us-user/prod/utag.js';
+      b=document;c='script';d=b.createElement(c);d.src=a;
+      d.type='text/java'+c;d.async=true;
+      a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a)})();
+</script>
+    <input id="authenticity-token" type="hidden" value="570edf82d2650dc6de8388fe020e930dd6b1a0f2">
+    <div id="single-spa-application:root"></div>
+    <script>
+        System.import("public-banquet-root");
+    </script>
+
+    <div id="banquetPortalsContainer" data-tw-spa></div>
+
+    <!-- Probably not wanted since it fetches restaurant data from the context -->
+<!-- <script src="https://cdn.toasttab.com/bob-release-441-3/javascripts/thirdPartyDataCollectors.js"></script> -->
+<!-- What would we want to track in Google Analytics since we don't have the restaurant context -->
+<!-- <script src="https://cdn.toasttab.com/bob-release-441-3/javascripts/toast-ganalytics.js"></script> -->
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9aabbd9aef5f815b',t:'MTc2NTE5MTQzMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

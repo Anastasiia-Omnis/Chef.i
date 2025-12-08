@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="address=no">
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://nochestogo.skydigitalordering.com/css/style.css?v=6.47">
+        <link rel="shortcut icon" href="https://nochestogo.skydigitalordering.com/uploads/favicon.png" type="image/x-icon">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600;700;800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <link href="https://nochestogo.skydigitalordering.com/css/jquery.datetimepicker.min.css" rel="stylesheet" type="text/css">
+                    <title>Noches de Colombia Online Ordering powered by Sky Digital Ordering Powered by SKY Food Network LLC.</title>
+                <style>
+
+.label-style {
+    color:  #717171;
+}
+body {
+    background-color: #FCFCFC;
+}
+.signin-links a, .otp-links a, .resend-otp a{
+    color: #004CBD;
+}
+.profileform input, .signinform input, .signupform input, .form-address input, .forgotform input, .resetform input{
+    color: #333333 !important;
+}
+.profileform input, .form-address input, .deliveryform input, .forgotform input, .resetform input{
+    border: 1px solid #707070 !important;
+}
+/*Save buttons*/
+.savebutton {
+    background-color: #004CBD !important;
+    border-color: #004CBD !important;
+    color: #FFFFFF !important;
+}
+/*Top Bar*/
+.header-title-section {
+    background-color: #030303;
+    border-color: #030303;
+    color: #FFFFFF;
+}.fa-bars:before{
+        content: '';
+        display: inline-block;
+        width: 28px;
+        height: 36px;
+        background-image: url(https://nochestogo.skydigitalordering.com/uploads/1648457725a.png);
+        background-size: cover;
+    }.fa-shopping-bag:before {
+        content: '';
+        display: inline-block;
+        width: 28px;
+        height: 36px;
+        background-image: url(https://nochestogo.skydigitalordering.com/uploads/1648457725c.png);
+        background-size: cover;
+    }.fa-circle-chevron-left:before {
+        content: '';
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://nochestogo.skydigitalordering.com/uploads/1668705271b.png);
+        background-size: cover;
+    }
+/*Welcome Bar*/
+#topnav {
+    background: #004CBD;
+    color: #FFFFFF;
+}
+
+#topnav a.btn-register {
+    color: #FFFFFF;
+}
+/*Welcome Bar*/
+
+/*Top Location Bar*/
+#locationnav {
+    background: #FD873E;
+    color: #030303;
+}
+
+#locationnav a.btn-register {
+    color: #030303;
+}
+/*Top Location Bar*/
+
+/*Menu Section*/
+/*Category Color*/
+.mobile-border {
+    background-color: #FD873E;
+    border-color: #FD873E;
+}
+.mobile-fixed-height .category-section:first-child .mobile-border {
+    border-color: #FD873E;
+}
+.border-items {
+    border: 1px solid #FD873E;
+    background-color: #FFFFFF;
+}
+.img-right-border {
+    border-right : 1px solid #FD873E;
+    background-color: #FFFFFF;
+}
+
+.cat-name {
+    color: #FFFFFF;
+}
+
+.backgound-color {
+    background-color: #FD873E;
+    border-color: #FD873E;
+}
+
+#foodCategory .background-hover:hover {
+    background-color: #FD873E;
+}
+.categories-link {
+  background-color: #00000030;
+}
+.background-hover:hover {
+    background-color: #FD873E;
+}
+div.scrollmenu a{
+    background-color: #FFFFFF;
+    color: #030303;
+}
+.scrollmenu a.active-category{
+    color: #030303;
+}
+/*Category Color*/
+
+/*Category Sidebar*/
+.side-menu {
+    background-color: #FFFFFF;
+    color: #030303;
+}
+.side-menu:hover {
+    background-color: #FFFFFF;
+    color: #030303;
+}
+
+.category-nav-heading {
+    color: #E34358;
+}
+
+.border-bottom-cat {
+    border-bottom: 1px solid #030303;
+}
+/*Category Sidebar*/
+
+/*Food Item*/
+.hover-item-radio:hover {
+    background-color: #E8E8E8;
+}
+
+.font-color {
+    color: #030303;
+}
+
+.food-desc {
+    color: #030303;
+}
+
+.food-price {
+    color: #030303;
+}
+#foodItemsContainer li a.ui-icon-carat-r::after {
+        background-image: url(uploads/../uploads/1591604629i.png);
+    }
+#foodItemsContainer li {
+    border-bottom: 1px solid #FD873E;
+}.fa-circle-chevron-right:before {
+        content: '';
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background-image: url(uploads/../uploads/1591604629i.png);
+        background-size: cover;
+    }
+/*Item Detail*/
+.item-name {
+    color: #030303;
+}
+
+.item-desc {
+    color: #030303;
+}
+
+.btn-outline-danger {
+    --bs-btn-color: #AFAFAF !important;
+    --bs-btn-border-color: #AFAFAF !important;
+}
+
+.btn-outline-danger:hover {
+    background-color: #E8E8E8;
+}
+
+.btn-check:checked+.btn {
+    background-color: #AFAFAF;
+}
+
+.order-price {
+    color: #030303;
+}
+
+.item-border {
+    border-color: #FD873E;
+}
+.modal-popup{
+    background-color: #FFFFFF;
+}
+.modal-popup h2, h3, h5, .modal-title, .delete-message{
+    color: #696866;
+}
+.item-section.item-cart .ui-btn.ui-btn-c {
+    background-color: #004CBD;
+    border-color: #004CBD;
+    color: #FFFFFF;
+}
+ 
+    .fa-circle-plus:before{
+        content: '';
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-image: url(https://nochestogo.skydigitalordering.com/uploads/1710328822d.png);
+        background-size: cover;
+    }
+    .fa-circle-minus:before{
+        content: '';
+        display: inline-block;
+        width: 26px;
+        height: 25px;
+        background-image: url(https://nochestogo.skydigitalordering.com/uploads/1710328822e.png);
+        background-size: cover;
+    }
+ /*Modifiers*/
+.group_container .size-label, .title-mod {
+    background: #FCFCFC;
+    color: #030303;
+}
+.custom-checkbox .mod_checkbox, .size-picking .size-pick-label {
+    color: #575757;
+}
+.modifiers-background {
+    background: #D1DDDD;
+    color: #575757 !important;
+}
+.custom-checkbox input[type='checkbox']:checked + .mod_checkbox::before,
+.size-picking input[type='radio']:checked + .size-pick-label::before, #showhidepass:checked, #showhidepass1:checked {
+    background-color: #FD873E;
+    border-color: #FD873E;
+}
+.modifier-price-color{
+    color: #575757;
+}
+@media screen and (min-width: 768px) {
+    .qty-spin, .modifer-itemsection:not(:first-child), .size-itemsection:not(:first-child) {
+        border-top : 1px solid #FD873E;
+    }
+}
+
+/*Modifiers*/
+
+/*Item Detail*/
+
+.bg-color-footer {
+    background: #2E2E2E;
+}
+
+.bg-singin-container {
+    background-color: #FD873E;
+}
+
+html head+body .form-button,
+html head+body .form-button:visited,
+html head+body .form-button:hover,
+html head+body .form-button:active {
+    background-color: #004CBD !important;
+    border-color: #004CBD !important;
+    color: #FFFFFF !important;
+}
+
+/*Order Screen*/
+.bg-color-order-thanks {
+    background-color: #FD873E;
+}
+.cd-cart-thanks, .order-branding{
+    color: #030303;
+}
+
+.tip-button,
+.tip-button:hover,
+.tip-button:visited,
+.tip-button:active {
+    background-color: #004CBD!important;
+    color: #FFFFFF !important;
+}
+
+.order-select, .change-type  {
+    color: #030303;
+}
+.modifier-group-label{
+    color: #030303;
+}
+.quantity a {
+    color: #030303;
+}
+
+.toppings .qty1 {
+    color: #696866;
+}
+
+.cd_price_style, .mod_prices {
+    color: #004CBD;
+}
+
+.cd-cart-subtotal,
+#cd-cart .cd-cart-discount,
+#cd-cart .cd-show-coupon,
+#cd-cart .cd-cart-coupon,
+.cd-cart-discount,
+.cd-cart-tax,
+.cd-cart-discount-info,
+.cd-cart-tax-order,
+.cd-cart-total,
+#cd-cart .cd-cart-total .cd-price {
+    color: #000000;
+}
+
+/*Item Detail*/
+/*Time*/
+.time-title {
+    color: #717171;
+}
+
+.time-value {
+    background-color: #004CBD;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+.footer-links a, .footer-link-two a{
+    color:  #FFFFFF;
+}
+/*Time*/
+
+/*Thank you*/
+.thankyou-title,
+.thankyou-message {
+    color: #717171;
+}
+
+/*Thank you*/
+/*Mini Cart*/
+.bd-color-purple{
+    background: #FFFFFF;
+}
+#running-total {
+    background: #FFFFFF;
+    color: #AF182F;
+}
+
+#running-total .btn-style-order,
+#running-total .btn-style-order:active {
+    background-color: #004CBD !important;
+    border-color: #004CBD !important;
+    color: #FFFFFF !important;
+}
+
+#running-total a.running-total-heading-color,
+#running-total a.running-total-heading-color:hover,
+#running-total .tips {
+    color: #AF182F;
+}
+
+/*Mini Cart*/
+/*Slide Navigation*/
+#offcanvasScrolling, #orderLocation {
+    background-color: #FFFFFF;
+}
+
+.orderNow ul li a {
+    color: #000000;
+}
+
+#navpanel ul#bottommenu li a,
+#navpanel .powered_by {
+    color: #000000;
+}
+
+/*Slide Navigation*/
+/*Alert Message*/
+.ui-dialog .ui-dialog-title {
+    color: #696866;
+}
+
+/*Alert Message*/
+.fa-circle-xmark {
+    color: #030303 !important;
+}
+.container-address-button input:checked ~ .location-save{
+    background-color: #FD873E;
+}
+         </style>
+            </head>
+
+    <body>
+        <!-- header title section starts-->
+        <div class="nav-mobile">
+            <div class="container container-fluid-mobile mt-lg-2">
+                                    <div class="row align-items-center heightHeader header-title-section">
+                        <div class="col-2 text-start">
+                            <div class="toggle">
+                                <a data-bs-toggle="offcanvas" href="#orderLocation" role="button" aria-controls="offcanvasExample">
+                                    <i class="fa-solid fa-2xl fa-bars text-white text-decoration-none"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-8 text-center">
+                            <h1 id="noches" class="text-truncate"><a href="https://nochestogo.skydigitalordering.com/index" class=" anchor-link text-white text-uppercase mobile-size">Noches de Colombia</a></h1>                        </div>
+                    </div>
+                                </div>
+        </div>
+        <!-- offcanvas start -->
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-keyboard="true" data-bs-backword="true" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <div class="offcanvas-title text-center text-bold text-uppercase" id="offcanvasExampleLabel">Noches de Colombia</div>
+                <i data-bs-dismiss="offcanvas" class="fa-solid fa-circle-xmark sidebar-close"></i>
+            </div>
+            <div class="account-user-name ps-3">
+                            </div>
+            <div class="offcanvas-body">
+                <div class="orderNow">
+                    <ul class="list-group list-unstyled">
+                                                    <li class="pb-4"><a href="index" class="text-decoration-none d-block width-inherit">Order Now</a></li>
+                                                            <li class="pb-4"><a href="order-location" class="text-decoration-none d-block width-inherit">Locations</a></li>
+                                                        <li class="pb-2"><a class="login-btn text-decoration-none d-block width-inherit" href="signin/gotohome">Sign In</a></li>
+                                            </ul>
+                </div>
+                <hr>
+                                    <div class="logo-Pic mb-100">
+                        <img class="rounded-image" src="https://nochestogo.skydigitalordering.com/uploads/1708978296a.png" alt="Noches de Colombia">
+                    </div>
+                    <div class="download-discreption">
+                        Download our App for easier and faster checkout.
+                    </div>
+                    <div class="download-app-button mt-5">
+                                                    <a target="_blank" class="float-start text-decoration-none text-dark" href="https://apps.apple.com/us/app/noches-to-go/id1561042760?platform=iphone">iPhone</a>
+                            <a target="_blank" class="float-end text-decoration-none text-dark" href="https://play.google.com/store/apps/details?id=com.skyordering.nochestogo">Android</a>
+                                            </div>
+                    <hr class="line-padding">
+                                <div class="orderNow">
+                    <ul class="list-group list-unstyled">
+                                            </ul>
+                </div>
+            </div>
+        </div>
+        <!-- header subtotal section ends --><div class="container mobile-location-container minimum-height">
+    <div class="row backgroung-color-locations">
+        <div class="col-lg-12 col-md-12 col-sm-12 px-0 background-color-list">
+            <ul id="location-list" class="list-group list-unstyled w-100">
+                                    <li class="border-bottom-color display-contents">
+                        <a href="https://colombiakaliente.skydigitalordering.com/select-location-qr/1" class="text-decoration-none text-dark">
+                            <div class="loc-detail">
+                                <div class="location-address-order">Colombia Kaliente</div>
+                                <div class="location-city-order">30 E. Palisade Ave.</div>
+                                <div class="location-city-order">Englewood, NJ 07631</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="border-bottom-color display-contents">
+                        <a href="https://noches49.skydigitalordering.com/select-location-qr/22" class="text-decoration-none text-dark">
+                            <div class="loc-detail">
+                                <div class="location-address-order text-uppercase">4907 Bergenline Ave</div>
+                                <div class="location-city-order text-uppercase">West New York, NJ 07093</div>
+                            </div>
+                        </a>
+                    </li>
+                                    <li class="border-bottom-color display-contents" id="location-29">
+                        <a href="#" onclick="order_location_save(event, 29, 0, 0)" class="text-decoration-none text-dark">
+                            <div class="loc-detail">
+                                <div class="location-address-order text-uppercase">172 Broad Ave</div>
+                                <div class="location-city-order text-uppercase">Fairview, NJ 07022</div>
+                            </div>
+                        </a>
+                    </li>
+                                    <li class="border-bottom-color display-contents" id="location-17">
+                        <a href="#" onclick="order_location_save(event, 17, 0, 0)" class="text-decoration-none text-dark">
+                            <div class="loc-detail">
+                                <div class="location-address-order text-uppercase">382 Main Street</div>
+                                <div class="location-city-order text-uppercase">Hackensack, NJ 07601</div>
+                            </div>
+                        </a>
+                    </li>
+                                    <li class="border-bottom-color display-contents" id="location-6">
+                        <a href="#" onclick="order_location_save(event, 6, 0, 0)" class="text-decoration-none text-dark">
+                            <div class="loc-detail">
+                                <div class="location-address-order text-uppercase">365 21st Avenue</div>
+                                <div class="location-city-order text-uppercase">Paterson, NJ 07501</div>
+                            </div>
+                        </a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+</div>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-keyboard="true" data-bs-backward="true" tabindex="-1" id="orderLocation" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <div class="offcanvas-title text-center text-bold" id="offcanvasExampleLabel">Noches de Colombia</div>
+        <i data-bs-dismiss="offcanvas" style="font-size: 27px; position:absolute; cursor:pointer;" class="fa-solid fa-circle-xmark"></i>
+    </div>
+    <div class="offcanvas-body">
+        <div class="orderNow">
+            <ul class="list-group list-unstyled">
+                <li class="pb-2"><a href="index" class="text-decoration-none d-block width-inherit">Order Now</a></li>
+            </ul>
+        </div>
+        <hr>
+                    <div class="logo-Pic mb-100">
+                <img class="rounded-image" src="https://nochestogo.skydigitalordering.com/uploads/1708978296a.png" alt="Noches de Colombia">
+            </div>
+            <div class="download-discreption">
+                Download our App for easier and faster checkout.
+            </div>
+            <div class="download-app-button mt-5">
+                                    <a target="_blank" class="float-start text-decoration-none text-dark" href="https://apps.apple.com/us/app/noches-to-go/id1561042760?platform=iphone">iPhone</a>
+                    <a target="_blank" class="float-end text-decoration-none text-dark" href="https://play.google.com/store/apps/details?id=com.skyordering.nochestogo">Android</a>
+                            </div>
+            <hr class="line-padding">
+            </div>
+</div>
+
+<!-- footer title section starts-->
+<div class="container bg-color-footer footer-mobile margin-bottom:0px;">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-12 col-lg-12 text-center footer-links py-3">
+                            <a href="https://nochestogo.skydigitalordering.com/page/7" class="text-decoration-none mx-1">Privacy Policy</a>
+                            <a href="https://nochestogo.skydigitalordering.com/page/8" class="text-decoration-none mx-1">Refunds Policy</a>
+                            <a href="https://nochestogo.skydigitalordering.com/page/9" class="text-decoration-none mx-1">Terms & Conditions</a>
+                    </div>
+    </div>
+            <div class="row justify-content-center footer-link-two">
+            <div class="col-12 text-center px-0" id="powered_by">
+                <a target="_blank" href="https://skydigitalordering.com/" class="text-decoration-none">Sky Digital Ordering Powered by SKY Food Network LLC.</a>
+            </div>
+        </div>
+    </div>
+<!-- js for map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALgcf_CNqcqqMROGV9RI3Y_OmZYh50QiU&libraries=drawing,geometry,places"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<!-- js for google recapcha -->
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+</script>
+<script type="text/javascript">
+    /*declare base_url variable to be used in js files*/
+    var basepath = 'https://nochestogo.skydigitalordering.com/';
+</script>
+<!-- js for date time picker -->
+<script type="text/javascript" src="https://nochestogo.skydigitalordering.com/js/jquery.datetimepicker.full.min.js"></script>
+<script src="https://nochestogo.skydigitalordering.com/js/javascript.js?v=6.47"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/accounting@0.4.1/accounting.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</body>
+
+</html>

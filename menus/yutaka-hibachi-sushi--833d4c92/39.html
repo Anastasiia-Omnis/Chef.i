@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+1<style type="text/css">
+#load{
+position:absolute;
+z-index:1;
+border:3px double #999;
+background:url(images/dot.png) repeat;
+width:100%;
+height:100%;
+top:0px;
+left:0px;
+text-align:center;
+line-height:300px;
+font-family:"Trebuchet MS", verdana, arial,tahoma;
+font-size:18pt;
+}
+</style>
+<link href="https://ezonlineordernow.com/css/style_sheet.css"  type="text/css" rel="stylesheet"/>
+<LINK href="https://ezonlineordernow.com/css/mobanwang.css" type=text/css rel=stylesheet>
+<title>Yutaka Hibachi & Sushi</title>
+<meta name="description" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en" />
+
+<script type="text/javascript" src="https://ezonlineordernow.com/js/jquery-1.91.js"></script>
+<script>
+$(document).ready(function(){
+  $("#close_cart").click(function(){
+    $("#cart_box").fadeOut().fast;
+  });
+});
+
+
+function get_detail(str, oid) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		$("#cart_box").fadeIn().fast;
+      document.getElementById("cart_box").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/get_info.php?q="+str+"&oid="+oid+"&id="+Math.random(),true);
+  xhttp.send();
+}
+function remove_product(action_, remove_pid) {
+ var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	document.getElementById("container_cart").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/save_info.php?oid=6346768&action_="+action_+"&remove_id="+remove_pid+"&id="+Math.random(),true);
+  xhttp.send();
+
+	
+}
+
+function save_product(action_, remove_pid, mod_value, modi_cnt) {
+		var pid=document.getElementById("pid").value;
+		var product_price=document.getElementById("product_price").value;
+		var qty_=document.getElementById("qty_box").value;
+		var request_=document.getElementById("request_").value;
+		request_.replace(/[^a-zA-Z ]/g, " ");
+
+var x = document.getElementsByName("size_");
+var i;
+for (i = 0; i < x.length; i++) {
+
+   if(x[i].checked== true){
+	   
+	var size_=x[i].value;
+	break;
+   
+  }
+}
+if(mod_value!=""){
+var chk_er="";
+if(document.modifier.elements["modi0[]"]){
+var modi_00="MOD_00";  var chk_opt0=""; var mod0_qty="";
+	 for(x=0; x<document.modifier.elements["modi0[]"].length; x++){
+        if(document.modifier.elements["modi0[]"][x].checked==true){
+			//var mod0_qty="modi_qty_"+document.modifier.elements["modi0[]"][x].value;
+			var tmp=document.modifier.elements["modi0[]"][x].value.split("::");
+   var mod0_qty="modi_qty_"+tmp[0];
+           chk_opt0=1;
+modi_00=modi_00+","+document.modifier.elements["modi0[]"][x].value+":"+document.getElementById(mod0_qty).value;
+        }
+    }
+		if(document.getElementById("opt0").value=="" &&  chk_opt0==""){
+		chk_er=1;
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi1[]"]){
+var modi_01="MOD_01"; var chk_opt1="";  var mod1_qty="";
+	 for(x=0; x<document.modifier.elements["modi1[]"].length; x++){
+        if(document.modifier.elements["modi1[]"][x].checked==true){
+			
+		var tmp=document.modifier.elements["modi1[]"][x].value.split("::");
+   var mod1_qty="modi_qty_"+tmp[0];        
+modi_01=modi_01+","+document.modifier.elements["modi1[]"][x].value+"::"+document.getElementById(mod1_qty).value;
+
+//alert(modi_01);
+chk_opt1=1;
+        }
+    }
+	if(document.getElementById("opt1").value=="" &&  chk_opt1==""){
+		chk_er=1;
+		$("#required_box").html("Please select required option");
+	}
+	
+}
+
+if(document.modifier.elements["modi2[]"]){
+var modi_02="MOD_02";   var chk_opt2=""; var mod2_qty="";
+	 for(x=0; x<document.modifier.elements["modi2[]"].length; x++){
+        if(document.modifier.elements["modi2[]"][x].checked==true){
+		var tmp=document.modifier.elements["modi2[]"][x].value.split("::");
+   var mod2_qty="modi_qty_"+tmp[0];	
+           chk_opt2=1;
+modi_02=modi_02+","+document.modifier.elements["modi2[]"][x].value+"::"+document.getElementById(mod2_qty).value;
+        }
+    }
+		if(document.getElementById("opt2").value=="" &&  chk_opt2==""){
+		chk_er=2;
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi3[]"]){
+var modi_03="MOD_03";  var chk_opt3=""; var mod3_qty="";
+	 for(x=0; x<document.modifier.elements["modi3[]"].length; x++){
+        if(document.modifier.elements["modi3[]"][x].checked==true){
+			var tmp=document.modifier.elements["modi3[]"][x].value.split("::");
+   var mod3_qty="modi_qty_"+tmp[0];
+           chk_opt3=1;
+modi_03=modi_03+","+document.modifier.elements["modi3[]"][x].value+"::"+document.getElementById(mod3_qty).value;
+        }
+    }
+	if(document.getElementById("opt3").value=="" &&  chk_opt3==""){
+		chk_er=3;
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi4[]"]){
+var modi_04="MOD_04";  var chk_opt4=""; var mod4_qty="";
+	 for(x=0; x<document.modifier.elements["modi4[]"].length; x++){
+        if(document.modifier.elements["modi4[]"][x].checked==true){
+			
+			var tmp=document.modifier.elements["modi4[]"][x].value.split("::");
+   var mod4_qty="modi_qty_"+tmp[0];
+   
+           chk_opt4=4;
+modi_04=modi_04+","+document.modifier.elements["modi4[]"][x].value+"::"+document.getElementById(mod4_qty).value;
+        }
+    }
+			if(document.getElementById("opt4").value=="" &&  chk_opt4==""){
+		chk_er=1;
+		$("#required_box").html("Please select required option");
+	}
+
+}
+
+if(document.modifier.elements["modi5[]"]){
+var modi_05="MOD_05";  var chk_opt5=""; var mod5_qty="";
+	 for(x=0; x<document.modifier.elements["modi5[]"].length; x++){
+        if(document.modifier.elements["modi5[]"][x].checked==true){
+			var tmp=document.modifier.elements["modi5[]"][x].value.split("::");
+   var mod5_qty="modi_qty_"+tmp[0];
+           chk_opt5=5;
+modi_05=modi_05+","+document.modifier.elements["modi5[]"][x].value+"::"+document.getElementById(mod5_qty).value;
+        }
+    }
+	if(document.getElementById("opt5").value=="" &&  chk_opt5==""){
+		
+		$("#required_box").html("Please select required option");
+	}
+}
+
+if(document.modifier.elements["modi6[]"]){
+var modi_06="MOD_06";  var chk_opt6=""; var mod6_qty="";
+	 for(x=0; x<document.modifier.elements["modi6[]"].length; x++){
+        if(document.modifier.elements["modi6[]"][x].checked==true){
+           chk_opt6=6;
+		   var tmp=document.modifier.elements["modi6[]"][x].value.split("::");
+   var mod6_qty="modi_qty_"+tmp[0];
+modi_06=modi_06+","+document.modifier.elements["modi6[]"][x].value+"::"+document.getElementById(mod6_qty).value;
+        }
+    }
+	if(document.getElementById("opt6").value=="" &&  chk_opt6==""){
+		chk_er=6;
+		$("#required_box").html("Please select required option");
+	}
+}
+}
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	document.getElementById("container_cart").innerHTML = this.responseText;
+    }
+  };
+  if(chk_er=="" || modi_cnt<=0){
+  xhttp.open("GET", "https://ezonlineordernow.com/save_info.php?oid=6346768&pid="+pid+"&product_price="+product_price+"&size_="+size_+"&qty_="+qty_+"&action_="+action_+"&remove_id="+remove_pid+"&request_="+request_+"&modi_01="+modi_01+"&modi_02="+modi_02+"&modi_03="+modi_03+"&modi_04="+modi_04+"&modi_05="+modi_05+"&modi_06="+modi_06+"&modi_00="+modi_00+"&id="+Math.random(),true);
+  xhttp.send();
+    $("#cart_box").fadeOut().fast;
+}
+}
+
+
+function del_qty(){
+	var qty_=document.getElementById("qty_box").value;
+	if(qty_>=2){
+	document.getElementById("qty_box").value=eval(document.getElementById("qty_box").value)-1;
+	}
+}
+
+function add_qty(){
+	var qty_=document.getElementById("qty_box").value;
+
+	document.getElementById("qty_box").value=eval(document.getElementById("qty_box").value)+1;
+
+}
+
+
+function remove_item(action_, remove_pid) {
+			
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+
+
+		
+      document.getElementById("container_cart").innerHTML = this.responseText;
+	 
+    }
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/remove_item.php?action_="+action_+"&remove_id="+remove_pid+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+
+function get_ship(action_) {
+		
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		if(action_=="delivery"){
+	document.getElementById('delivery_').style.background = '#F90';	
+	document.getElementById('pickup_').style.background = '';
+	$("#pickup_box").fadeOut().fast;
+	$("#delivery_box").fadeIn().fast;
+	}
+		if(action_=="pickup"){
+	document.getElementById('delivery_').style.background = '';	
+	document.getElementById('pickup_').style.background = '#F90';	
+	$("#delivery_box").fadeOut().fast; 
+	$("#pickup_box").fadeIn().fast;
+		}	
+    }	
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/get_ship.php?action_="+action_+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+
+function get_pay(action_) {
+		
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		if(action_=="cc"){
+	document.getElementById('cc').style.background = '#F90';	
+	document.getElementById('cash').style.background = '';
+$("#cc_box").fadeIn().fast;$("#cash_box").fadeOut().fast;
+$("#show_tip").fadeIn().fast;
+
+	}
+		if(action_=="cash"){
+	document.getElementById('cc').style.background = '';	
+	document.getElementById('cash').style.background = '#F90';	
+$("#cc_box").fadeOut().fast;$("#cash_box").fadeIn().fast;$("#show_tip").fadeOut().fast;
+		}	
+    }	
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/get_pay.php?action_="+action_+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+function get_tip(action_) {
+		var cTip=document.getElementById('ct_tip').value; 
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		if(action_=="0.15"){
+	document.getElementById('tip_15').style.background = '#F90';	
+	document.getElementById('tip_18').style.background = '';
+	document.getElementById('tip_20').style.background = '';
+	document.getElementById('tip_custom').style.background = '';
+	}
+		if(action_=="0.18"){
+	document.getElementById('tip_15').style.background = '';
+	document.getElementById('tip_custom').style.background = '';	
+	document.getElementById('tip_18').style.background = '#F90';
+	document.getElementById('tip_20').style.background = '';
+	}
+		if(action_=="0.20"){
+	document.getElementById('tip_15').style.background = '';	
+	document.getElementById('tip_18').style.background = '';
+	document.getElementById('tip_custom').style.background = '';
+	document.getElementById('tip_20').style.background = '#F90';
+	}
+			if(action_=="customize"){
+
+	document.getElementById('tip_15').style.background = '';	
+	document.getElementById('tip_18').style.background = '';
+	document.getElementById('tip_20').style.background = '';
+	document.getElementById('tip_custom').style.background = '#F90';
+	}	
+    }	
+	document.getElementById("show_total").innerHTML = this.responseText;
+	$("#customize_tip").fadeOut().fast;
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/get_tip.php?action_="+action_+"&c_tip="+cTip+"&id="+Math.random(),true);
+  xhttp.send();
+
+}
+
+
+
+function get_input_tip() {
+	var action_=document.getElementById('ct_tip').value; 
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	document.getElementById("show_total").innerHTML = this.responseText; 
+  };
+  xhttp.open("GET", "https://ezonlineordernow.com/get_tip_amt.php?action_="+action_+"&id="+Math.random(),true);
+  xhttp.send();
+}
+
+}
+
+
+$(document).ready(function(){
+  $("#tip_custom").click(function(){
+
+    $("#customize_tip").toggle().fast;
+  });
+});
+
+</script>
+<script type="text/livescript">
+function copy_address(){
+	document.getElementById('delivery_street').value=document.getElementById('street').value;
+	document.getElementById('delivery_apt').value=document.getElementById('apt').value;
+	document.getElementById('delivery_city').value=document.getElementById('city').value;
+	document.getElementById('delivery_state').value=document.getElementById('state').value;
+	document.getElementById('delivery_zip_code').value=document.getElementById('zip_code').value;
+	
+}
+
+function chk_opt_box(url){
+document.getElementById(url).checked=true;
+}
+var ray={
+ajax:function(st)
+	{
+		this.show('load');
+	},
+show:function(el)
+	{
+		this.getID(el).style.display='';
+	},
+getID:function(el)
+	{
+		return document.getElementById(el);
+	}
+}
+
+
+</script>
+
+</head>
+<body><div id="load" style="display:none; z-index:9999999999999999; color:#FFFFFF; line-height:38px; font-size:32px; text-align:center; padding-top:200px;">Loading ..... Please wait.<br />
+  <img src="https://ezonlineordernow.com/images/loader.gif" width="125" height="15" /></div>
+<div id="top"><a href="https://ezonlineordernow.com/index.php/restaurant" target="_self"><img src="https://ezonlineordernow.com/images/logo.png" height="38" width="50"alt=""  style="margin-top:2px; margin-left:2px;"/><span style="font-size:24px; line-height:80px;"></span></a>   <a href="https://ezonlineordernow.com/index.php/login"  id="login" target="_self">Login/Register</a>
+</div>
+
+<div id="container_box">
+<div id="closed_msg">Sorry, the online order is closed now! Current Time: 08:14:54</div>
+
+<script>
+
+function close_box(){
+    $("#cart_box").fadeOut().fast;
+}
+
+
+</script>
+
+<div id="container_m">
+<h6 style="background:#FFF;"><p  class="logo"> Yutaka Hibachi & Sushi</p>
+<p style="line-height:24px; margin-bottom:15px;">90 W Main St<br />Somerville NJ 08876<br />
+ Tel:908-218-5523<br> 908-218-5110</p>
+<p><img src="https://ezonlineordernow.com/images/Pickup_icon.png" width="30" height="30" style="position:relative; top:10px;" /><strong>Pickup:</strong> 20 mins   &nbsp;  &nbsp;</p>
+
+<div id="time_shift">
+<strong style="padding-right:20px;">Business Hours</strong><br><div class="left_box"><strong>Mon:</strong> </div><div class="mid_box">11:30 am~10:00 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Tue:</strong> </div><div class="mid_box">11:30 am~10:00 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Wed:</strong> </div><div class="mid_box">11:30 am~10:00 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Thurs:</strong> </div><div class="mid_box">11:30 am~10:00 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Fri:</strong> </div><div class="mid_box">11:30 am~11:00 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Sat:</strong> </div><div class="mid_box">12:30 pm~11:00 pm&nbsp; &nbsp; </div><div class="right_box"></div><div class="left_box"><strong>Sun:</strong> </div><div class="mid_box">12:00 pm~9:30 pm&nbsp; &nbsp; </div><div class="right_box"></div></div>
+
+</h6><h5>
+<button type="button"  id="btn_sub_cate" style="background:#F90;" onclick="window.location='https://ezonlineordernow.com/index.php/restaurant/sub/1'">Menu</button><button type="button"  id="btn_sub_cate" onclick="window.location='https://ezonlineordernow.com/index.php/restaurant/sub/2'">Promotion</button><button type="button"  id="btn_sub_cate" onclick="window.location='https://ezonlineordernow.com/index.php/restaurant/sub/3'">Hibachi</button>
+</h5>
+
+<h1>Soup<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32676', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>Miso Soup</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32677', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>Clear Mushroom Soup</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32678', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Lemongrass Hot/Sour Soup</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33004', '6346768')"><span style="float:right; margin-right:5px;">6.50</span>TomYum Koong<br /><span class="btn_cate_desc">Spicy sour soup with shrimp, lemongrass and mushrooms</span></button>
+<h1>Salad<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32679', '6346768')"><span style="float:right; margin-right:5px;">5.50</span>Avocado Salad</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32680', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>House Salad</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32681', '6346768')"><span style="float:right; margin-right:5px;">6.50</span>Ika Salad<br /><span class="btn_cate_desc">Cocked marinated squid. Served w. cucumber and ponzu sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32682', '6346768')"><span style="float:right; margin-right:5px;">5.00</span>Seaweed Salad<br /><span class="btn_cate_desc">Japanese marinated green seaweed with sesame.(seasoned)</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32683', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Special Kani Salad<br /><span class="btn_cate_desc">Crab stick mixed with Japanese spicy mayonnaise, cucumber, flying fish roe and scallion. Topped with crispy thin noodle</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32684', '6346768')"><span style="float:right; margin-right:5px;">5.00</span>Salmon Skin Salad<br /><span class="btn_cate_desc">Broiled crispy salmon skin, pieces. Served with cucumber, scallion, eel sauce, and ponzu sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32685', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Yutaka Salad<br /><span class="btn_cate_desc">Spicy crunchy, crab stick, octopus, white radish, cucumber, scallion, flying fish roe, and seaweed salad, surrounded by avocado</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33301', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>W.fish tempura salad</button>
+<h1>Sushi Bar Appetizer<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32686', '6346768')"><span style="float:right; margin-right:5px;">9.00</span>Spicy Crab Jalapeno<br /><span class="btn_cate_desc">JalapeÃƒÂ±o stuffed with spicy kani and served in tempura style. Topped with spicy mayo sauce   Yutakas sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32687', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Pepper Tuna Tataki<br /><span class="btn_cate_desc">Seared tuna with pepper. Served with radish, onion and ponzu sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32688', '6346768')"><span style="float:right; margin-right:5px;">9.00</span>Sushi App<br /><span class="btn_cate_desc">4 pieces of assorted nigiri sushi</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32689', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Sashimi App<br /><span class="btn_cate_desc">Chef choice 7 pieces assorted raw fish</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32690', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Seafood Sunomono<br /><span class="btn_cate_desc">Mixed marinated octopus, kani, shrimp, surf clam, and raw finish. Served with sweet vinegar sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33233', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>W.Tuna Sushi Pizza<br /><span class="btn_cate_desc">We use the crispy torilla skin with our chefÃ¢â‚¬â„¢s special guacamole sauce, topped with chives and tobiko, and comes with Italian chili paste.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32691', '6346768')"><span style="float:right; margin-right:5px;">12.00</span>Tuna Sushi Pizza<br /><span class="btn_cate_desc">We use the crispy torilla skin with our chefÃ¢â‚¬â„¢s special guacamole sauce, topped with chives and tobiko, and comes with Italian chili paste.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32692', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Sushi Bullet<br /><span class="btn_cate_desc">White fish and crab stick and avocado roll with tempura style. Spicy tuna on the top. Comes with wasabi creamy sauce, spicy creamy sauce and BBQ sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32693', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Salmon Tartar<br /><span class="btn_cate_desc">(Chopped spicy tuna, salmon or yellowtail, onion, cucumber and different kind of fish roe. Served with chefÃ¢â‚¬â„¢s special sauce)</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32694', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Tuna   Mango Tartar<br /><span class="btn_cate_desc">(Chopped spicy tuna, salmon or yellowtail, onion, cucumber and different kind of fish roe. Served with chefÃ¢â‚¬â„¢s special sauce)</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32695', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Usuzukuri</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32696', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Yellowtail Jalapeno<br /><span class="btn_cate_desc">Yellowtail sashimi, comes with slice jalapeno and cilantro. Served with yuzu soy.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32697', '6346768')"><span style="float:right; margin-right:5px;">9.00</span>Monkey Ball<br /><span class="btn_cate_desc">Tempura style: spicy tuna, shrimp, crab meat mixed with cheese sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32698', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Tuna Martini<br /><span class="btn_cate_desc">Tuna seaweed salad, crunchy cucumber, scallion, tobiko, served with spicy sauce.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32699', '6346768')"><span style="float:right; margin-right:5px;">9.00</span>Tiger Eye<br /><span class="btn_cate_desc">cream cheese, crab meat and scallion. Served tempura style and layered with home-made special sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32700', '6346768')"><span style="float:right; margin-right:5px;">9.00</span>Green Phoenix<br /><span class="btn_cate_desc">Avocado wrapped around spicy tuna. Topped with tobiko, served with ponzu sauce.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33005', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Fireball</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33006', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Mountain Top</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33007', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Salmon Lover</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33008', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Wasabi Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33009', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Foxy Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33010', '6346768')"><span style="float:right; margin-right:5px;">12.00</span>Spring Wrap</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33011', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Sashimi Jalapeno</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33012', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Cajun Tuna</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33013', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Black Angel</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33014', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Hawaii Rainbow</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33288', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Tuna Tartar</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33289', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Yel Tartar</button>
+<h1>Kitchen Appetizer<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32701', '6346768')"><span style="float:right; margin-right:5px;">5.00</span>Edamame</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32702', '6346768')"><span style="float:right; margin-right:5px;">5.00</span>Japanese Spring Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32703', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Pork Gyoza</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32704', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Shrimp Gyoza</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32705', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Veg Gyoza</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32706', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Shumai</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32707', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Age Tofu</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32708', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Sweet Potato Temp App</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32709', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Money Bag</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32710', '6346768')"><span style="float:right; margin-right:5px;">9.00</span>Shr Veg Temp App</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32711', '6346768')"><span style="float:right; margin-right:5px;">9.00</span>Beef Negi App</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32712', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>House Special Dumpling</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32713', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Crispy Calamari</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32714', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Crispy Duck</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32715', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Rock Shr </button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32716', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Soft Shell Crab</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32717', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Fried Oyster<br /><span class="btn_cate_desc">Deep fried kumamoto served in mango chili sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32718', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Grill Yellowtail Cheek</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32719', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Ck Skewer</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32720', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>St Skewer</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32721', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Sca/ Shr Skewer</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33175', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Veg Tempura App</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33176', '6346768')"><span style="float:right; margin-right:5px;">12.00</span>Ginger Duck Roll<br /><span class="btn_cate_desc">Shredded Peking Duck, spring mix, avocado, spicy mayonnaise and balsamic glazed</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33177', '6346768')"><span style="float:right; margin-right:5px;">9.00</span>Ck /Veg Temp App</button>
+<h1>Sashimi<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33304', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>King Crab SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33305', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>Crab Stick SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33306', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Eel SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33307', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>Egg Omelet SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33308', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Fluke SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33309', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Flying Fish Roe SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33310', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>Mackerel SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33311', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Octopus SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33312', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Salmon SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33313', '6346768')"><span style="float:right; margin-right:5px;">4.50</span>Salmon Roe SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33314', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Scallop SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33315', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Shrimp SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33316', '6346768')"><span style="float:right; margin-right:5px;">5.50</span>Sea Urchin SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33317', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Smoke Sal SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33318', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Spicy Tuna SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33319', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>Squid SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33320', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Striped Bass SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33321', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Surf Clam SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33322', '6346768')"><span style="float:right; margin-right:5px;">5.50</span>Sweet Shrimp SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33323', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Tuna SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33324', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Wasabi Tobiko SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33325', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>White Tuna SA</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33326', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Yellowtail SA</button>
+<h1>Sushi<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32722', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>King Crab Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32723', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>Crab Stick Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32724', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Eel Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32725', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>Egg Omelet Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32726', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Fluke Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32727', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Flying Fish Roe Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32728', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>Mackerel Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32729', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Octopus Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32730', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Salmon Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32731', '6346768')"><span style="float:right; margin-right:5px;">4.50</span>Salmon Roe Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32732', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Scallop Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32733', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Shrimp Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32734', '6346768')"><span style="float:right; margin-right:5px;">5.50</span>Sea Urchin Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32735', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Smoke Sal Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32736', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Spicy Tuna Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32737', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>Squid Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32738', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Striped Bass Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32739', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Surf Clam Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32740', '6346768')"><span style="float:right; margin-right:5px;">5.50</span>Sweet Shr Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32741', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Tuna Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32742', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Wasabi Tobiko Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32743', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>White Tuna Su</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32744', '6346768')"><span style="float:right; margin-right:5px;">3.50</span>Yellowtail Su</button>
+<h1>Hand Roll<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33340', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Alaska Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33341', '6346768')"><span style="float:right; margin-right:5px;">5.50</span>Avocado  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33342', '6346768')"><span style="float:right; margin-right:5px;">4.50</span>Asparagus   Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33343', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Boston   Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33344', '6346768')"><span style="float:right; margin-right:5px;">6.50</span>California  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33345', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Christmas   Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33346', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Crab Temp   Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33347', '6346768')"><span style="float:right; margin-right:5px;">4.50</span>Cucumber  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33348', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Eel Avocado  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33349', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Eel Cucumber  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33350', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>East  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33351', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Futo Maki  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33352', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Green Dragon   Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33353', '6346768')"><span style="float:right; margin-right:5px;">4.50</span>Kampyo  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33354', '6346768')"><span style="float:right; margin-right:5px;">4.50</span>Oshinko  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33355', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Philly  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33356', '6346768')"><span style="float:right; margin-right:5px;">9.50</span>Rock N   Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33357', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Rainbow  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33358', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Salmon Skin  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33359', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Shr Asp  Hand Roll </button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33360', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Shr Avo  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33361', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Shrimp Tempura Hand Roll </button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33372', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy  Crunch Sal  Hand Roll<img src="https://ezonlineordernow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33375', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy Crunch W.Tuna  Hand Roll<img src="https://ezonlineordernow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33376', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy Crunch Scallop Hand Roll<img src="https://ezonlineordernow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33374', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy Crunch Yel  Hand Roll<img src="https://ezonlineordernow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33373', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy Crunch Tuna  Hand Roll<img src="https://ezonlineordernow.com/images/spicy.png"  height="20" width="20" style="float:right;"/></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33362', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy Crunch Shrimp Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33363', '6346768')"><span style="float:right; margin-right:5px;">8.50</span>Spicy Lobster  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33364', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Spicy Crab  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33365', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Spider  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33366', '6346768')"><span style="float:right; margin-right:5px;">5.00</span>Salmon  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33367', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Sweet Potato  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33368', '6346768')"><span style="float:right; margin-right:5px;">9.50</span>Toyo  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33369', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Tuna  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33370', '6346768')"><span style="float:right; margin-right:5px;">5.50</span>Veg  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33371', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Yellowtail  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33377', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Crab  Hand Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33378', '6346768')"><span style="float:right; margin-right:5px;">5.50</span>Avocado cucumber  Hand Roll</button>
+<h1>Regular Roll<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32745', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Alaska Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32746', '6346768')"><span style="float:right; margin-right:5px;">5.50</span>Avocado Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32747', '6346768')"><span style="float:right; margin-right:5px;">4.50</span>Asparagus Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32748', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Boston Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32749', '6346768')"><span style="float:right; margin-right:5px;">6.50</span>California Roll<br /><span class="btn_cate_desc">Crabstick, avocado, and cucumber</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32750', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Christmas Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32751', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Crab Tempura Roll<br /><span class="btn_cate_desc">Crabstick tempura, cucumber. Wrapped inside out with sesame.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32752', '6346768')"><span style="float:right; margin-right:5px;">4.50</span>Cucumber Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32753', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Eel Avocado Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32754', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Eel Cucumber Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32755', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>East Roll<br /><span class="btn_cate_desc">Shrimp, egg custard, avocado, cucumber and fish roe</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32756', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Futo Maki<br /><span class="btn_cate_desc">Crabstick, egg custard and various vegetable and fish roe</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32757', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Green Dragon Roll<br /><span class="btn_cate_desc">Baked eel   cucumber inside topped with sliced avocado, and BBQ eel sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32758', '6346768')"><span style="float:right; margin-right:5px;">4.50</span>Kampyo Roll<br /><span class="btn_cate_desc">Marinated sweet squash</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32759', '6346768')"><span style="float:right; margin-right:5px;">4.50</span>Oshinko Roll<br /><span class="btn_cate_desc">Pickled radish</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32760', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Philadelphia Roll<br /><span class="btn_cate_desc">Smoked salmon, cream cheese,   scallion</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32761', '6346768')"><span style="float:right; margin-right:5px;">9.50</span>Rock N Roll<br /><span class="btn_cate_desc">Spicy crunchy tuna and yellowtail with fish roe</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32762', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Rainbow Roll<br /><span class="btn_cate_desc">Crabmeat, avocado, cucumber inside, top with various fish and avocado</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32763', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Salmon Skin Roll<br /><span class="btn_cate_desc">Baked salmon skin, cucumber</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32764', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Shrimp Asparagus Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32765', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Shrimp Avocado Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32766', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Shrimp Tempura Roll<br /><span class="btn_cate_desc">Shrimp tempura, cucumber, avocado and eel sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33243', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy Crunchy Salmon Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33247', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy Crunchy Scallop Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33246', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy Crunch W.Tuna Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32767', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy Crunch Shrimp Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33245', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy Crunchy Yellowtail Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33244', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Spicy Crunchy Tuna Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32768', '6346768')"><span style="float:right; margin-right:5px;">8.50</span>Spicy Lobster Roll<br /><span class="btn_cate_desc">Cooked lobster salad with cucumber</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32769', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Spicy Crab Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32770', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Spider Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32771', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Salmon Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32772', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Sweet Potato Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32773', '6346768')"><span style="float:right; margin-right:5px;">9.50</span>Toyo Roll<br /><span class="btn_cate_desc">Spicy crunchy tuna on top of California</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32774', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Tuna Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32775', '6346768')"><span style="float:right; margin-right:5px;">5.50</span>Veg Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32776', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Yellowtail Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33285', '6346768')"><span style="float:right; margin-right:5px;">6.00</span>Crab Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33286', '6346768')"><span style="float:right; margin-right:5px;">5.50</span>Avocado cucumber Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33407', '6346768')"><span style="float:right; margin-right:5px;">7.00</span>Salmon Avocado ROLL</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33408', '6346768')"><span style="float:right; margin-right:5px;">7.50</span>Tuna Avocado Roll</button>
+<h1>Chef Special Roll<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32805', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Beauty and The Beast<br /><span class="btn_cate_desc">Shrimp tempura, spicy tuna avocado and banana inside, topped with chefs special sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32826', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Colorful Dragon Roll<br /><span class="btn_cate_desc">Spicy king crab covered with avocado and different colored tobiko.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32827', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Caterpillar Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32806', '6346768')"><span style="float:right; margin-right:5px;">15.00</span>Arigato Roll<br /><span class="btn_cate_desc">Spicy crunchy tuna roll topped with who pieces of eel and sesame</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32828', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Carribean Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32807', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Sea World<br /><span class="btn_cate_desc">Spicy crunchy salmon, topped with whole white tuna. Topped with Yutakas special sauce and different color tobikos</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32829', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Crazy Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32808', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Samura Roll<br /><span class="btn_cate_desc">White fish tempura with eel and avocado, served with special sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32830', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Captain Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32809', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>T.G.I.F<br /><span class="btn_cate_desc">Tuna, salmon, yellowtail, radish, masago, avocado all wrapped with rue paper and YutakaÃ¢â‚¬â„¢s special sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32831', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Dinosaur Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32810', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Sunshine Roll<br /><span class="btn_cate_desc">Salmon tempura inside, covered with salmon and avocado, served with chefs special sauce.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32811', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Colorful Dragon</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32832', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Fantastic Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32812', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Amazing Tuna <br /><span class="btn_cate_desc">White tuna tempura, spicy tuna and avocado wrapped inside. Topped with seared pepper tuna and served with mango sauce.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32833', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Fancy Tuna</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32834', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Golden Salmon<br /><span class="btn_cate_desc">Spicy tuna and crunchy inside. Topped with fresh salmon, surrounded by shredded mango and chefs special sauce </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32813', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Dynamite Roll<br /><span class="btn_cate_desc">Tuna, salmon, yellowtail, asparagus and tobiko, served tempura style. Topped with chefs special sauce.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32835', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Godzilla Roll<br /><span class="btn_cate_desc">Deep fried spicy tuna, avocado, scallion, and flying fish roe. Served with chefs special sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32814', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Downtown Super Tuna<br /><span class="btn_cate_desc">White tuna wrapped with spicy tuna, cucumber, radish, sprouts, served with chefs special sauce.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32836', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Honey Roll<br /><span class="btn_cate_desc">Spicy tuna and avocado wrapped in soybean paper. Tuna wrap around with chefÃ¢â‚¬â„¢s special sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32815', '6346768')"><span style="float:right; margin-right:5px;">15.00</span>Sashimi Roll<br /><span class="btn_cate_desc">Spicy tuna, yellowtail, asparagus wrapped with soybean paper. Topped with salmon, eel, avocado, served with special sauce. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32837', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Happy Roll<br /><span class="btn_cate_desc">Yellowtail and crunchy inside. Topped with red tuna and white tuna. Served with special sauce and green seaweed </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32816', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Japanese Chip </button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32817', '6346768')"><span style="float:right; margin-right:5px;">15.00</span>Valentine Roll<br /><span class="btn_cate_desc">Crabmeat, crunchy with Japanese mayonnaise inside. Topped with yellowtail, avocado and chefs jalapeno sauce. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32838', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>J   G Roll<br /><span class="btn_cate_desc">Spicy lobster salad, crunchy, and cucumber inside. Topped with eel, avocado, served with chefs special sauce </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32818', '6346768')"><span style="float:right; margin-right:5px;">15.00</span>Sleeping Beauty<br /><span class="btn_cate_desc">Spicy tuna, king crab meat, avocado and crunchy wrapped with soybean paper</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32839', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>King Tuna Roll<br /><span class="btn_cate_desc">Crunchy spicy tuna and avocado, wrapped inside out, with seared white tuna. Served with chefs special sauc</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32840', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Miracle Roll<br /><span class="btn_cate_desc">Baked eel, cucumber, and crunchy inside, topped with spicy lobster salad, served with chefs special sauce </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32819', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>King Crab Cali Roll<br /><span class="btn_cate_desc">Alask king crabmeat, cucumber, avocado and tobiko, wrapped in soybean paper.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32841', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Neptune Roll<br /><span class="btn_cate_desc">Cooked shrimp, avocado and cucumber wrapped inside out. Topped with spicy scallop and bonito flake </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32820', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Plum Tree<br /><span class="btn_cate_desc">Shrimp tempura, eel, avocado inside. Topped with lobster salad, mango, red tobiko, with chefs special sauce. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32842', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>New Life<br /><span class="btn_cate_desc">Shrimp tempura, cucumber inside, spicy tuna on top and avocado over it </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32821', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Sunset Blvd<br /><span class="btn_cate_desc">Spicy crunchy salmon, mango, crabstick, wrapped with green soy paper served with chefs special sauce.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32843', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Ocean 3 Roll<br /><span class="btn_cate_desc">Scallop, mango, tobiko, crunchy, mixed with special sauce. Topped with avocado and tobiko. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32822', '6346768')"><span style="float:right; margin-right:5px;">15.00</span>Imperial Rainbow<br /><span class="btn_cate_desc">Spicy crunchy tuna, cream cheese, kawari, wrapped with tuna, salmon and avocado served with cheese special sauce. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32844', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Pink Lady<br /><span class="btn_cate_desc">Fresh salmon and avocado and crunchy inside. Topped with red tuna. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32823', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Garden State Roll<br /><span class="btn_cate_desc">Spicy shrimp, white fish tempura, baked eel, seaweed salad, cucumber wrapped with soy paper. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32824', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Fuji Mountain Roll<br /><span class="btn_cate_desc">Spicy crunchy salmon, kani tempura inside top with seared white tuna, served with special sauce.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32845', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Rainbow Deluxe<br /><span class="btn_cate_desc">Spicy crunchy tuna and cucumber inside, topped with four different kinds of tobiko.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32846', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Red Phoenix Roll<br /><span class="btn_cate_desc">Spicy crunchy yellowtail and cucumber inside. Topped with pepper tuna, avocado and chefs special sauce </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32825', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Sapporo Roll<br /><span class="btn_cate_desc">Spicy crabmeat, cucumber,   seaweed salad wrapped inside top with seared white tuna. Served with special sauce Fancy Tuna 13.00 </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32847', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Sushi Generation <br /><span class="btn_cate_desc">Eel and avocado inside. Topped with spicy tuna and chefs special sauce </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32848', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Summer Roll<br /><span class="btn_cate_desc">Crabstick, asparagus and shrimp tempura inside. Topped with cooked shrimp, mango, and avocado </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32849', '6346768')"><span style="float:right; margin-right:5px;">15.00</span>Sweet Heart<br /><span class="btn_cate_desc">Shrimp tempura, crabmeat, eel, avocado and tobiko, wrapped in soybean paper, (heart shaped roll) served with chefÃ¢â‚¬â„¢s special sauce. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32850', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Sakura Roll<br /><span class="btn_cate_desc">Tuna, salmon, yellowtail, crabstick, asparagus, flying fish roe, bonito flake, and mayonnaise. Wrapped with soybean paper. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32851', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Spicy Mango Lobster Roll<br /><span class="btn_cate_desc">Spicy lobster salad, mango, crunchy, tobiko, and avocado, wrapped with yellow soybean paper. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32852', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Snow Mountain<br /><span class="btn_cate_desc">Shrimp tempura inside. Topped with spicy crabmeat, scallion and fish roe, served with chefs special sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32853', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Yummy Roll<br /><span class="btn_cate_desc">Baked eel and avocado, wrapped inside out, topped with spicy crunchy yellowtail </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33015', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Crystal Roll<br /><span class="btn_cate_desc">Spicy crunch   cucumber. Wrapped inside. Top with sweet shrimp and different kind of tobiko </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33016', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Trasury Island</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33017', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Out of Control</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33018', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Angel Dragon</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33019', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Outstanding Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33020', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Volcano Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33021', '6346768')"><span style="float:right; margin-right:5px;">15.00</span>Agenl Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33022', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Bonsai Tree </button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33023', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>India Roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33024', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Ivory Tower</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33099', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Manchester<br /><span class="btn_cate_desc">Shrimp tempura roll inside. Topped with eel and avocado and chefs special sauce</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33296', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>banzai roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33297', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>spring warp</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33298', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>wasabi  roll</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33299', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>foxy roll</button>
+<h1>Naruto   Boat<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32854', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Bamboo Special Naruto<br /><span class="btn_cate_desc">Spicy tuna wrapped with thinly sliced avocado served with chefs special sauce. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32855', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Eel Naruto<br /><span class="btn_cate_desc">Baked eel, avocado, and flying fish roe, wrapped with cucumber. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32856', '6346768')"><span style="float:right; margin-right:5px;">12.00</span>Kani Naruto<br /><span class="btn_cate_desc">Crabstick, avocado, and flying roe wrapped with cucumber.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32857', '6346768')"><span style="float:right; margin-right:5px;">15.00</span>Rainbow Naruto<br /><span class="btn_cate_desc">Tuna, salmon, yellowtail, asparagus and flying fish roe wrapped with cucumber</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32858', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Spicy Tuna Naruto<br /><span class="btn_cate_desc">Spicy crunchy tuna, avocado, and flying fish roe wrapped with cucumber.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32864', '6346768')"><span style="float:right; margin-right:5px;">63.00</span>Love at First Sight <br /><span class="btn_cate_desc">10 pieces of sushi, 15 pieces of sashimi with one spicy tuna roll, dragon roll and California roll. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32865', '6346768')"><span style="float:right; margin-right:5px;">83.00</span>Yutaka Boat<br /><span class="btn_cate_desc">12 pieces of sushi, 21 pieces of sashimi with dragon roll, spicy tuna roll, and rainbow roll.</span></button>
+<h1>Special Combo Roll Dinner<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32859', '6346768')"><span style="float:right; margin-right:5px;">1.00</span>California Roll Dinner<br /><span class="btn_cate_desc">3 California rolls </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32860', '6346768')"><span style="float:right; margin-right:5px;">16.00</span>Match Combo Dinner <br /><span class="btn_cate_desc">Yellowtail scallion roll, tuna roll, and California roll</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32861', '6346768')"><span style="float:right; margin-right:5px;">18.00</span>Spicy Roll Dinner <br /><span class="btn_cate_desc">Spicy tuna roll, tuna roll, and yellowtail roll</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32862', '6346768')"><span style="float:right; margin-right:5px;">18.00</span>Tri Combo Dinner<br /><span class="btn_cate_desc">Spicy tuna roll, Alaska roll, and eel avocado roll</span></button>
+<h1>Sushi Bar Entree<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32866', '6346768')"><span style="float:right; margin-right:5px;">25.00</span>Chirashi<br /><span class="btn_cate_desc">Variety raw fish and shell fish on the bed of sushi rice </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32867', '6346768')"><span style="float:right; margin-right:5px;">23.00</span>Maguro Sushi Dinner<br /><span class="btn_cate_desc">8 pieces raw tuna sushi and tuna roll </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32868', '6346768')"><span style="float:right; margin-right:5px;">21.00</span>Sushi For 1<br /><span class="btn_cate_desc">8 pieces assorted sushi and California roll</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32869', '6346768')"><span style="float:right; margin-right:5px;">40.00</span>Sushi For 2<br /><span class="btn_cate_desc">16 pieces assorted sushi and California roll and spicy tuna roll. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32870', '6346768')"><span style="float:right; margin-right:5px;">27.00</span>Sashimi Deluxe</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32871', '6346768')"><span style="float:right; margin-right:5px;">24.00</span>Sushi Special Dinner</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32872', '6346768')"><span style="float:right; margin-right:5px;">30.00</span>Sushi   Sashimi Combo<br /><span class="btn_cate_desc">5 pieces sushi, 12 pieces sashimi, with Christmas roll. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32873', '6346768')"><span style="float:right; margin-right:5px;">21.00</span>Tekka Don<br /><span class="btn_cate_desc">9 pieces raw tuna on bed of sushi rice. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32874', '6346768')"><span style="float:right; margin-right:5px;">21.00</span>Tri-color Nigirl Sushi<br /><span class="btn_cate_desc">3 pieces of each of tuna, salmon, and yellowtail. </span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32875', '6346768')"><span style="float:right; margin-right:5px;">21.00</span>Unagi Don<br /><span class="btn_cate_desc">9 pieces of baked eel on bed of sushi rice.</span></button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('34419', '6346768')"><span style="float:right; margin-right:5px;">25.00</span>Tri Color Sashimi</button>
+<h1>Udon<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33178', '6346768')"><span style="float:right; margin-right:5px;">16.00</span>Nabe Yaki Udon</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33179', '6346768')"><span style="float:right; margin-right:5px;">22.00</span>Seafood Udon</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33180', '6346768')"><span style="float:right; margin-right:5px;">16.00</span>Tempura Udon</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33181', '6346768')"><span style="float:right; margin-right:5px;">18.00</span>Chicken Yaki Udon</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33182', '6346768')"><span style="float:right; margin-right:5px;">18.00</span>Beef Yaki Udon</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33183', '6346768')"><span style="float:right; margin-right:5px;">18.00</span>Vegetbale Yaki Udon</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33184', '6346768')"><span style="float:right; margin-right:5px;">18.00</span>Shrimp Yaki Udon</button>
+<h1>Fried Rice<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32883', '6346768')"><span style="float:right; margin-right:5px;">8.00</span>Veg Fried Rice</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32884', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Chicken and Vegetable Fried Rice</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32885', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Beef and Vegetable Fried Rice</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32886', '6346768')"><span style="float:right; margin-right:5px;">11.00</span>Shrimp and  Vegetable Fried Rice</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33431', '6346768')"><span style="float:right; margin-right:5px;">10.00</span>Pork fried rice</button>
+<h1>Tempura <span class="btn_cate_desc">Served w. Soup, white or brown rice</span><span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32887', '6346768')"><span style="float:right; margin-right:5px;">15.00</span>Vegetable Tempura D</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32888', '6346768')"><span style="float:right; margin-right:5px;">21.00</span>Shrimp and Vegetable Tempura D</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32889', '6346768')"><span style="float:right; margin-right:5px;">18.00</span>Chicken and Vegetable Tempura D</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32890', '6346768')"><span style="float:right; margin-right:5px;">21.00</span>Shrimp Avocado Sweet Potato Temp D</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32891', '6346768')"><span style="float:right; margin-right:5px;">18.00</span>Chicken katsu Tempura D</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32892', '6346768')"><span style="float:right; margin-right:5px;">26.00</span>Seafood Tempura D</button>
+<h1>Teriyaki <span class="btn_cate_desc">Served w. Soup, white or brown rice</span><span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32893', '6346768')"><span style="float:right; margin-right:5px;">19.00</span>Ck Teriyaki</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32894', '6346768')"><span style="float:right; margin-right:5px;">24.00</span>Steak Teriyaki(10 oz)</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32895', '6346768')"><span style="float:right; margin-right:5px;">30.00</span>Steak Teriyaki(14 oz)</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32896', '6346768')"><span style="float:right; margin-right:5px;">20.00</span>Salmon Teriyaki</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32897', '6346768')"><span style="float:right; margin-right:5px;">24.00</span>Shr Teriyaki</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32898', '6346768')"><span style="float:right; margin-right:5px;">22.00</span>Beef Negi Teriyaki D</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32899', '6346768')"><span style="float:right; margin-right:5px;">28.00</span>Seafood Teriyaki</button>
+<h1>Sushi Lunch Special <span class="btn_cate_desc">Served w. Soup</span><span class="btn_cate_desc" style="color:#F00;">  (11:00:00-15:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32939', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Sushi Lunch</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32940', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Sashimi Lunch</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32941', '6346768')"><span style="float:right; margin-right:5px;">16.00</span>SA   SU Combo L</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32942', '6346768')"><span style="float:right; margin-right:5px;">13.00</span>Yataka Bento</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32943', '6346768')"><span style="float:right; margin-right:5px;">15.00</span>Chirashi Lunch</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32944', '6346768')"><span style="float:right; margin-right:5px;">12.00</span>Any 2 Roll</button>
+<h1>Lunch Box <span class="btn_cate_desc">Served w. Soup, White or Brown Rice,  Shumai, and California Roll</span><span class="btn_cate_desc" style="color:#F00;">  (11:00:00-15:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32965', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Chicken Teriyaki Box</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32966', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Beef Teriyaki Box</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32967', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Beef Negi Box</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32968', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Shrimp Tempura Box</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32969', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Shrimp Teriyaki Box</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('32970', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Salmon Teriyaki Box</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33250', '6346768')"><span style="float:right; margin-right:5px;">14.00</span>Chicken Katsu Box</button>
+<h1>Dessert<span class="btn_cate_desc" style="color:#F00;">  (12:00:00-20:00:00)</span></h1>
+<button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33100', '6346768')"><span style="float:right; margin-right:5px;">3.00</span>Ice Cream</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33101', '6346768')"><span style="float:right; margin-right:5px;">4.50</span>Banana Tempura</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33102', '6346768')"><span style="float:right; margin-right:5px;">5.00</span>Tempura Ice Cream</button><button type="button" class="btn_cate" disabled="disabled" onclick="get_detail('33103', '6346768')"><span style="float:right; margin-right:5px;">5.00</span>Temp Cheese Cake</button></div>
+<div id="container_cart">
+<div id="cart_top"><h2 style="font-size:32px; font-family:'Times New Roman', Times, serif; ">Yutaka Hibachi & Sushi</h2>
+</div>
+<div id="cart_content" style="z-index:9999;">
+<h2 style="font-size:32px; font-family:'Times New Roman', Times, serif; color:#CCC; ">No Item(s) <br>Need to add something?</h2>
+	
+</div>
+
+<div id="cart_box"></div>
+<script type="text/javascript">
+
+
+
+function check_box0(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi0[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+	
+if(document.getElementById(url).checked==true){
+	$("#error0").empty();
+	$("#count_0").html(o);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+}else{
+	if(o<url1){ $("#error0").empty();
+document.getElementById(url).checked=true;
+document.getElementById(url5).value=o+1;
+$("#count_0").html(o+1);
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error0").html("Item(s) over limit");
+	
+}
+}
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+function check_box1(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi1[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error1").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_1").empty();
+}else{
+	if(o<url1){ $("#error1").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error1").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error1").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error1").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_1").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+function check_box2(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi2[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error2").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_2").empty();
+}else{
+	if(o<url1){ $("#error2").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error2").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error2").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error2").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_2").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+function check_box3(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi3[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error3").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_3").empty();
+}else{
+	if(o<url1){ $("#error3").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error3").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error3").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error3").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_3").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+function check_box4(url, url1, url2, url3, url4, url5, url6){
+
+ var x = document.getElementsByName("modi4[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error4").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_4").empty();
+}else{
+	if(o<url1){ $("#error4").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error4").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error4").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error4").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_4").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+function check_box5(url, url1, url2, url3, url4, url5, url6){  
+
+ var x = document.getElementsByName("modi5[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error5").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_5").empty();
+}else{
+	if(o<url1){ $("#error5").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error5").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error5").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error5").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_5").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+function check_box6(url, url1, url2, url3, url4, url5, url6){  
+
+ var x = document.getElementsByName("modi6[]");
+      var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  //o++;
+			var tmp2=x[i].value.split("::");
+		
+			var mod1_qty="modi_qty_"+tmp2[0];
+			o=o+eval(document.getElementById(mod1_qty).value);
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+
+
+if(url6=="add" || (document.getElementById(url).checked==false && url6=="plus")){
+if(document.getElementById(url).checked==true ){ 
+	$("#error6").empty();
+	o=o-eval(document.getElementById(url5).value);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+document.getElementById(url5).value="";
+
+$("#count_6").empty();
+}else{
+	if(o<url1){ $("#error6").empty();
+
+if(url6=="add"){document.getElementById(url5).value=1; o++; }else{document.getElementById(url5).value=0;}
+document.getElementById(url).checked=true;
+
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error6").html("Item(s) over limit");
+	
+}
+
+}
+
+}
+
+if(url6=="mins" && document.getElementById(url5).value>=1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)-1;
+
+o--;	$("#error6").empty();
+
+if(document.getElementById(url5).value<=0){
+	document.getElementById(url).checked=false; 
+	document.getElementById(url3).style.background = '';
+	document.getElementById(url5).value='';
+	}else{
+document.getElementById(url3).style.background = '#9C0';
+
+	}
+}else if(url6=="plus"){ 
+
+if(o<url1){
+document.getElementById(url5).value=eval(document.getElementById(url5).value)+1;
+o++;
+
+}else{
+$("#error6").html("Item(s) over limit");	
+}
+document.getElementById(url3).style.background = '#9C0';
+}
+
+$("#count_6").html(o);
+if(url4!="" && o<=url1){
+$("#tmp_box").toggle().fast;
+}
+}
+
+
+
+function get_mtp(url, url1, url2, url3, url4, url5, url6, url7, url8){ 
+
+ 
+ var x = document.getElementsByName("modi7[]");
+    var i;
+    var o=0;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            if(x[i].checked == true){  o++;
+			document.getElementById(url3).style.background = '#9C0';
+			}else{
+			document.getElementById(url3).style.background = '';	
+			}
+        }
+    }
+	
+if(document.getElementById(url).checked==true){
+	$("#error7").empty();
+	$("#count_7").html(o);
+	document.getElementById(url3).style.background = '';
+document.getElementById(url).checked=false;
+}else{
+	if(o<url1){ $("#error7").empty();
+document.getElementById(url).checked=true;
+
+$("#count_7").html(o+1);
+document.getElementById(url3).style.background = '#9C0';
+}else{
+	document.getElementById(url3).style.background = '';
+	$("#error7").html("Item(s) over limit");
+	
+}
+}
+
+	$("#tmp_box").toggle().fast;
+	
+}
+</script></div>
+</body>
+</html>

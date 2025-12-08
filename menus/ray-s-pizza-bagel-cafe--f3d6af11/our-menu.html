@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lorem Ipsum Generator. With our simple and useful tool you can generate a standard text which you can place in your web design to look more realistic.">
+    <title>Lorem Ipsum Generator</title>
+    <meta name="csrf-token" content="9OouDqg9UPnpmmHp52iKknMkI3dh1qNY1ZIA3Qhv">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css" integrity="" crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" href="https://web.archive.org/web/20230210000942cs_/https://loremipsumgenerator.org/css/app.css">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-102533267-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+    <body>
+        <nav class="nav has-shadow" id="top">
+            <div class="container">
+                <div class="nav-left">
+                    <a class="nav-item" href="https://loremipsumgenerator.org/">
+                        <img src="https://web.archive.org/web/20230210000942im_/https://loremipsumgenerator.org/images/logo-horizontal.png" alt="Lorem Ipsum Generator">
+                    </a>
+                    <a class="nav-item is-tab  is-active " href="https://loremipsumgenerator.org/">
+                        Generator                    </a>
+                    <a class="nav-item is-tab " href="https://loremipsumgenerator.org/help">
+                        What is this?                    </a>
+                    <a class="nav-item is-tab " href="https://loremipsumgenerator.org/contact">
+                        Contact                    </a>
+                </div>
+                <span class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+                <div class="nav-right nav-menu">
+                    <div class="tabs is-toggle is-small">
+                        <ul>
+                            <li class=" is-active  ">
+                                <a href="https://loremipsumgenerator.org/">
+                                    <span>English</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="https://loremipsumgenerator.org/de">
+                                    <span>Deutsch</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="https://loremipsumgenerator.org/sv">
+                                    <span>Svenska</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    <section class="section">
+        <div class="container content" id="app">
+
+            <h1>Lorem Ipsum Generator</h1>
+            <p>With our simple and useful tool you can generate a standard text which you can place in your web design to look more realistic. Would you like to get new text generated for your next project?</p>
+            <hr/>
+            <div class="columns">
+                <div class="column is-4">
+                    <strong>Your configuration</strong>
+                    <p>Use the following options to generate a new lorem ipsum text for your next project. <a href="https://loremipsumgenerator.org/help">What is this?</a></p>
+                    <div class="field">
+                        <strong>Number of paragraphs</strong>
+                        <p class="control">
+                            <label class="radio">
+                                <input type="radio" name="paragraphs" v-model="settings.paragraphs" value="3" @click="generateText()">
+                                3
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="paragraphs" v-model="settings.paragraphs" value="4" @click="generateText()">
+                                4
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="paragraphs" v-model="settings.paragraphs" value="5" @click="generateText()">
+                                5
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="paragraphs" v-model="settings.paragraphs" value="6" @click="generateText()">
+                                6
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="paragraphs" v-model="settings.paragraphs" value="7" @click="generateText()">
+                                7
+                            </label>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <strong>Length of paragraphs</strong>
+                        <p class="control">
+                            <label class="radio">
+                                <input type="radio" name="length" value="short" v-model="settings.length" @click="generateText()">
+                                Short                            </label>
+                            <label class="radio">
+                                <input type="radio" name="length" value="medium" v-model="settings.length" @click="generateText()">
+                                Medium                            </label>
+                            <label class="radio">
+                                <input type="radio" name="length" value="long" v-model="settings.length" @click="generateText()">
+                                Long                            </label>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label class="label">Ipsum Generator</label>
+                        <p class="control">
+                            <span class="select">
+                              <select v-model="settings.type">
+                                    <option value="lorem">Lorem ipsum (Latin)</option>
+                                    <option value="swedish">Swedish (Svenska)</option>
+                              </select>
+                            </span>
+                        </p>
+                    </div>
+
+                    <span class="button is-primary is-large" @click="generateText()">Generate lorem ipsum</span>
+
+                </div>
+                <div class="column is-6">
+                    <div class="tabs is-right">
+                        <ul>
+                            <li :class="{ 'is-active': (lorem.type == 'text') }">
+                                <a @click="lorem.type = 'text'">
+                                    <span class="icon is-small"><i class="fa fa-font"></i></span>
+                                    <span>Text</span>
+                                </a>
+                            </li>
+                            <li :class="{ 'is-active': (lorem.type == 'html') }">
+                                <a @click="lorem.type = 'html'">
+                                    <span class="icon is-small"><i class="fa fa-code"></i></span>
+                                    <span>HTML</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="field">
+                        <div class="columns">
+                            <div class="column is-8"><label class="label">Your lorem ipsum text</label></div>
+                            <div class="column is-4 has-text-right">
+                                <button class="is-danger button" data-clipboard-target="#loremtext" v-show="lorem.type == 'text'">Copy to Clipboard</button>
+                                <button class="is-danger button" v-cloak data-clipboard-target="#loremhtml" v-show="lorem.type == 'html'">Copy to Clipboard</button>
+                            </div>
+
+                        </div>
+
+                        <p class="control">
+                            <textarea id="loremtext" class="textarea large-textarea" placeholder="" rows="20" v-model="lorem.content.text" v-show="lorem.type == 'text'">Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus.
+Vivamus integer non suscipit taciti mus etiam at primis tempor sagittis sit, euismod libero facilisi aptent elementum felis blandit cursus gravida sociis erat ante, eleifend lectus nullam dapibus netus feugiat curae curabitur est ad. Massa curae fringilla porttitor quam sollicitudin iaculis aptent leo ligula euismod dictumst, orci penatibus mauris eros etiam praesent erat volutpat posuere hac. Metus fringilla nec ullamcorper odio aliquam lacinia conubia mauris tempor, etiam ultricies proin quisque lectus sociis id tristique, integer phasellus taciti pretium adipiscing tortor sagittis ligula.
+Mollis pretium lorem primis senectus habitasse lectus scelerisque donec, ultricies tortor suspendisse adipiscing fusce morbi volutpat pellentesque, consectetur mi risus molestie curae malesuada cum. Dignissim lacus convallis massa mauris enim ad mattis magnis senectus montes, mollis taciti phasellus accumsan bibendum semper blandit suspendisse faucibus nibh est, metus lobortis morbi cras magna vivamus per risus fermentum. Dapibus imperdiet praesent magnis ridiculus congue gravida curabitur dictum sagittis, enim et magna sit inceptos sodales parturient pharetra mollis, aenean vel nostra tellus commodo pretium sapien sociosqu.</textarea>
+                            <textarea id="loremhtml" v-cloak class="textarea large-textarea" placeholder="" rows="20" v-model="lorem.content.html" v-show="lorem.type == 'html'"><p>Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus. </p>
+                        <p>Vivamus integer non suscipit taciti mus etiam at primis tempor sagittis sit, euismod libero facilisi aptent elementum felis blandit cursus gravida sociis erat ante, eleifend lectus nullam dapibus netus feugiat curae curabitur est ad. Massa curae fringilla porttitor quam sollicitudin iaculis aptent leo ligula euismod dictumst, orci penatibus mauris eros etiam praesent erat volutpat posuere hac. Metus fringilla nec ullamcorper odio aliquam lacinia conubia mauris tempor, etiam ultricies proin quisque lectus sociis id tristique, integer phasellus taciti pretium adipiscing tortor sagittis ligula. </p>
+                        <p>Mollis pretium lorem primis senectus habitasse lectus scelerisque donec, ultricies tortor suspendisse adipiscing fusce morbi volutpat pellentesque, consectetur mi risus molestie curae malesuada cum. Dignissim lacus convallis massa mauris enim ad mattis magnis senectus montes, mollis taciti phasellus accumsan bibendum semper blandit suspendisse faucibus nibh est, metus lobortis morbi cras magna vivamus per risus fermentum. Dapibus imperdiet praesent magnis ridiculus congue gravida curabitur dictum sagittis, enim et magna sit inceptos sodales parturient pharetra mollis, aenean vel nostra tellus commodo pretium sapien sociosqu. </p></textarea>
+                        </p>
+                    </div>
+                </div>
+                <div class="column is-2"><strong>Ads on here?</strong>
+                    <p>Would you like your ad to appear here? This is a premium place for ads aimed for developers and designers</p><p>Contact us today to put your ad here for cheap prices.</p></div>
+            </div>
+        </div>
+        <div class="content container">
+            <h2>Why use Lorem Ipsum Generator?</h2>
+
+            <p>When you construct a web design you are most likely to not have any content in the beginning. So for the first time you show your web design for your client it can be useful to have some text to show so your client can imagine how it will look like when it is finished. That is why you should use our Lorem Ipsum Generator to generate simple text to fill your projects with. We hope you enjoy it and find it useful!</p>
+
+
+
+        </div>
+    </section>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://web.archive.org/web/20230210000942js_/https://loremipsumgenerator.org/js/app.js"></script>
+
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"11e4e68865394f719dcda1ab17e68c7e","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

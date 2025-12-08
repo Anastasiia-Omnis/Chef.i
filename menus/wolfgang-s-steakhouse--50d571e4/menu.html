@@ -1,0 +1,740 @@
+<style>
+.image-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+}
+.image-slider .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.image-slider img {
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 6px;
+}
+.image-slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+}
+.image-slider button:hover {
+    background: rgba(0,0,0,0.6);
+}
+.image-slider .prev { left: 10px; }
+.image-slider .next { right: 10px; }
+@media (min-width: 992px) {
+  /* hide mobile image on desktop */
+  .giftcard-img {
+    display: none !important;
+  }
+}
+@media (max-width: 991.98px) {
+  /* hide right-column desktop image on mobile */
+  .giftcard-img-desktop {
+    display: none !important;
+  }
+
+  /* spacing for mobile image below heading */
+  .giftcard-img {
+    margin: 1rem 0;
+  }
+}
+@media (min-width: 992px) {
+  /* Hide mobile slider on desktop */
+  .image-slider-mobile {
+    display: none !important;
+  }
+}
+@media (max-width: 991.98px) {
+  /* Hide desktop slider on mobile */
+  .image-slider-desktop {
+    display: none !important;
+  }
+
+  .image-slider-mobile {
+    margin: 1rem 0;
+  }
+
+  .image-slider-mobile img {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--================ Basic page needs ================-->
+    <title>Wolfgang&#039;s Steakhouse by Wolfgang Zwiener</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!--================ Mobile specific metas ================-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--================ Favicon ================-->
+    <link rel="shortcut icon" href="https://wolfgangssteakhouse.net/images/favicon.ico">
+    <!--================ Google web fonts ================-->
+
+
+    <!--================ Vendor CSS ================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp"
+            rel="stylesheet">
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CCardo%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.7.1" media="all" />
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/css_theme/bootstrap.min.css">
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/css_theme/animate.min.css">
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/css_theme/linearicons.css">
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/vendors/owl-carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/vendors/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/vendors/arcticmodal/jquery.arcticmodal-0.3.css">
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/vendors/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/vendors/revolution/css/settings.css">
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/vendors/revolution/css/layers.min.css">
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/vendors/revolution/css/navigation.min.css">
+    <!--================ Theme CSS ================-->
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/css_theme/style.css">
+    <link rel="stylesheet" href="https://wolfgangssteakhouse.net/css_theme/responsive.css">
+    <meta name="csrf-token" content="lJGX8j5c60ZARwpBDDvMGifCaPttS2fTx0f2iRJc">
+    <!--================ Vendor JS ================-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPDY9QMJYT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YPDY9QMJYT');
+    </script>
+    </head>
+
+<body>
+
+<div id="mad-page-wrapper" class="mad-page-wrapper">
+    <!--================ Header ================-->
+    <header id="mad-header" class="mad-header with-bg header-white">
+    <div class="mad-header-section--sticky-xl">
+        <div class="container">
+            <div class="mad-header-items">
+                <div class="mad-header-item">
+                    <a href="/" class="mad-logo">
+                        <img class="standard-logo" src="/wolf-logo.png" srcset="/images/logo@2x1.png 2x" alt="Wolfgang&#039;s Steakhouse by Wolfgang Zwiener" />
+                    </a>
+                </div>
+                <!--================ Navigation ================-->
+                <nav class="mad-navigation-container">
+                    <ul class="mad-navigation mad-navigation--vertical-sm">
+                        <li class="menu-item current-menu-item"><a href="https://wolfgangssteakhouse.net">Home</a></li>
+                        
+                        
+                        <li class="menu-item "><a href="https://wolfgangssteakhouse.net/locations">Locations</a></li>
+                        <li class="menu-item "><a href="https://wolfgangssteakhouse.net/menus">Menus</a></li>
+                        <li class="menu-item "><a href="https://wolfgangssteakhouse.net/reservation">Reservation</a></li>
+                        <li class="menu-item "><a href="https://wolfgangssteakhouse.net/private-events">Private events</a></li>
+                        <li class="menu-item "><a href="https://wolfgangssteakhouse.net/items">Shop</a></li>
+                        <li class="menu-item "><a href="https://wolfgangssteakhouse.net/gift-card">Gift cards</a></li>
+                        <li class="menu-item "><a href="https://wolfgangssteakhouse.net/about-us">About us</a></li>
+
+                    </ul>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </nav>
+                <!--================ End of Navigation ================-->
+            </div>
+        </div>
+    </div>
+</header>    <!--================ End of Header ================-->
+    <div style="flex: 1;">
+            <!--================ Slider Revolution ================-->
+<div dir="ltr" class="rev_slider_wrapper fullscreenbanner-container">
+    <div id="rev-slider-1" data-version="5.4.5" class="mad-d-none rev-slider fullscreenabanner">
+        <ul>
+            <!--================ Slide 1 ================-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--================ End of Slide 1 ================-->
+            <!--================ Slide 1 ================-->
+            <li data-transition="fade">
+                <!-- MAIN IMAGE -->
+                <img src="/images/sliders/1.jpg" alt="" data-bgposition="top center" data-bgfit="cover"
+                     data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                <!--================ Layer ================-->
+                <div data-start="0" data-x="left" data-y="top" data-hoffset="['30', '30', '30', '30']"
+                     data-voffset="['100', '100', '100', '100']" data-width="['800', '800', '800', '100%']" data-height="['auto']"
+                     data-textAlign="['left']" data-color="['#ffffff']"  data-fontsize="['50', '40', '30', '24']" data-lineheight="['96']"
+                     class="tp-caption tp-resizeme tp-layer-section-title">Classic Never Goes Out Of Style<br>
+                    <div class="btn-set"><a href="/reservation" class="btn btn-huge no-texture">Book a Table</a></div></div>
+                <!--================ End of Layer ================-->
+                <!--================ Layer ================-->
+                <!--================ End of Layer ================-->
+            </li>
+            <!--================ End of Slide 1 ================-->
+            <!--================ Slide 1 ================-->
+            <li data-transition="fade">
+                <!-- MAIN IMAGE -->
+                <img src="/images/sliders/2.jpg" alt="" data-bgposition="top center" data-bgfit="cover"
+                     data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                <!--================ Layer ================-->
+                <div data-start="0" data-x="left" data-y="top" data-hoffset="['30', '30', '30', '30']"
+                     data-voffset="['100', '100', '100', '100']" data-width="['800', '800', '800', '100%']" data-height="['auto']"
+                     data-textAlign="['left']" data-color="['#ffffff']" data-fontsize="['50', '40', '30', '24']" data-lineheight="['96']"
+                     class="tp-caption tp-resizeme tp-layer-section-title">Classic Never Goes Out Of Style<br>
+                    <div class="btn-set"><a href="/reservation" class="btn btn-huge no-texture">Book a Table</a></div></div>
+                <!--================ End of Layer ================-->
+                <!--================ Layer ================-->
+                <!--================ End of Layer ================-->
+            </li>
+            <li data-transition="fade">
+                <!-- MAIN IMAGE -->
+                <img src="/images/sliders/3-2.jpg" alt="" data-bgposition="top center" data-bgfit="cover"
+                     data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                <!--================ Layer ================-->
+                <div data-start="0" data-x="left" data-y="top" data-hoffset="['30', '30', '30', '30']"
+                     data-voffset="['100', '100', '100', '100']" data-width="['800', '800', '800', '100%']" data-height="['auto']"
+                     data-textAlign="['left']" data-color="['#ffffff']" data-fontsize="['50', '40', '30', '24']" data-lineheight="['96']"
+                     class="tp-caption tp-resizeme tp-layer-section-title">Classic Never Goes Out Of Style<br>
+                    <div class="btn-set"><a href="/reservation" class="btn btn-huge no-texture">Book a Table</a></div></div>
+                <!--================ End of Layer ================-->
+                <!--================ Layer ================-->
+                <!--================ End of Layer ================-->
+            </li>
+            <li data-transition="fade">
+                <!-- MAIN IMAGE -->
+                <img src="/images/sliders/4.jpg" alt="" data-bgposition="top center" data-bgfit="cover"
+                     data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                <!--================ Layer ================-->
+                <div data-start="0" data-x="left" data-y="top" data-hoffset="['30', '30', '30', '30']"
+                     data-voffset="['100', '100', '100', '100']" data-width="['800', '800', '800', '100%']" data-height="['auto']"
+                     data-textAlign="['left']" data-color="['#ffffff']" data-fontsize="['50', '40', '30', '24']" data-lineheight="['96']"
+                     class="tp-caption tp-resizeme tp-layer-section-title">Classic Never Goes Out Of Style<br>
+                    <div class="btn-set"><a href="/reservation" class="btn btn-huge no-texture">Book a Table</a></div></div>
+                <!--================ End of Layer ================-->
+                <!--================ Layer ================-->
+                <!--================ End of Layer ================-->
+            </li>
+            <!--================ End of Slide 1 ================-->
+        </ul>
+        <div class="mad-arrow"><img class="svg" src="/steakbreak_svg_icons/short_arrow_left.svg" alt=""></div>
+        <div class="slide-status-numbers"></div>
+
+
+
+
+
+
+
+
+    </div>
+</div>
+<!--================ End of Slider Revolution ================-->    <div class="mad-content" style="padding-bottom: 0%">
+        <div class="container wide-style-2">
+            <div class="mad-section ">
+                <div class="row hr-size-2">
+                    <div class="col-lg-6">
+                        <figure class="mad-img-holder">
+                            <div class="mad-img"><img src="/images/about-wolfgang.jpg" alt=""></div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mad-top-offset">
+                            <h2>Hello & Welcome!</h2>
+                            <p class="mad-text-big">Welcome. After 4 decades of experience, it is fair to say that Wolfgang Zwiener learned his craft well. Taking the core principles from his years as Peter Luger’s head waiter, Wolfgang didn’t just duplicate an exceptional steakhouse; he improved upon it making Wolfgang’s Steakhouse extraordinary. Wolfgang’s Steakhouse is serving lunch and dinner seven days a week including all major holidays...</p>
+                            <a href="/about-us" class="mad-read-more">More About Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="with-section-element">
+                    <div class="mad-section-element">
+                        <!--================ Icon Boxes ================-->
+                        <div class="mad-icon-boxes hr-type item-col-3">
+                            <div class="mad-col">
+                                <!--================ Icon Box ================-->
+                                <article class="mad-icon-box">
+                                    <i class="mad-icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px" viewBox="0 0 595.3 418" style="enable-background:new 0 0 595.3 418;" xml:space="preserve"><style >	.st0{fill:#7A7879;}</style><g>	<path class="st0" d="M306,14.5c7.9,1.7,16.1,2.6,23.6,5.3c41.6,14.7,66.4,43.9,73.1,87.6c3.9,25.5-1.9,49.4-15.6,71.3  c-5.6,9-11.3,17.9-17.1,27.2c1.2,0.8,2.2,1.5,3.2,2.1c17.9,10.1,35.9,20.3,53.9,30.3c3.2,1.8,5.1,4,6.3,7.4  c17.9,47.5,36,95,54,142.4c0.4,1,1,2,1.4,3c0,1.3,0,2.5,0,3.8c-3.4,4.3-5.3,4.8-10.2,2c-28.5-16.1-57-32.1-85.5-48.3  c-2.4-1.4-4.1-1.3-6.4,0c-28.2,16-56.6,31.9-84.8,47.9c-3.7,2.1-6.7,2.1-10.4,0c-28.2-16.1-56.5-31.9-84.8-47.9  c-2.4-1.3-4-1.4-6.4,0c-28.1,16-56.3,31.8-84.5,47.7c-0.8,0.4-1.5,0.9-2.3,1.3c-2.4,1.4-4.8,1.4-6.9-0.5c-2.1-1.9-2.3-4.2-1.3-6.8  c4.4-11.5,8.8-23.1,13.1-34.7c13.9-36.6,27.9-73.2,41.7-109.9c1.3-3.4,3.2-5.6,6.3-7.4c17.9-9.9,35.7-20,53.5-30.1  c1.1-0.6,2.1-1.3,3.6-2.1c-0.7-1.3-1.4-2.4-2.1-3.5c-5.4-8.7-11-17.3-16.3-26c-39.6-65.6,1.5-151.1,77.4-161.1  c1.7-0.2,3.4-0.6,5.1-0.9C294,14.5,300,14.5,306,14.5z M201.4,121.3c-0.2,17.7,4.7,35.1,14.5,50.8c25,39.9,50.2,79.7,75.3,119.5  c3.6,5.7,7.9,5.7,11.5-0.1c25.1-39.7,50.2-79.4,75.1-119.2c12.3-19.7,16.8-41.2,13.7-64.2c-6.9-52-56.5-89.3-108.3-81.4  C236.1,33.8,201.8,73.4,201.4,121.3z M121.8,379.9c1.1-0.5,1.6-0.7,2.1-1c24.3-13.7,48.5-27.3,72.7-41.1c1.3-0.8,2.4-2.8,2.8-4.4  c3.6-16.2,7-32.5,10.5-48.7c0.9-4,3.6-5.8,7-4.9c3.2,0.8,4.7,3.6,3.9,7.3c-1,4.8-2,9.5-3,14.3c-2.5,11.9-5,23.9-7.6,36  c27,15.2,53.8,30.3,80.7,45.4c0.3-0.8,0.4-1,0.4-1.3c0-24.5,0.1-49,0-73.5c0-1-1-2.1-1.7-2.9c-2.6-2.8-6-5-8-8.2  c-15-23.3-29.7-46.8-44.5-70.3c-0.7-1.1-1.4-2.1-2.5-3.7c-0.4,1.3-0.5,1.7-0.6,2.2c-2.7,12.7-5.4,25.4-8.2,38.1  c-0.9,4-3.6,6-6.8,5.3c-3.3-0.7-4.9-3.7-4.1-7.6c1.5-7.1,3-14.2,4.5-21.2c1.4-6.6,2.8-13.3,4.3-20.4c-1.2,0.5-1.8,0.7-2.3,1  c-16,9-32,18-47.9,27.1c-1.4,0.8-2.6,2.6-3.2,4.2c-15.8,41.3-31.4,82.5-47.1,123.8C122.7,376.8,122.4,378.1,121.8,379.9z   M302.8,382.9c1.5-0.7,2.6-1.2,3.7-1.8c24.6-13.8,49.1-27.8,73.8-41.5c3-1.7,3.4-3.3,2.7-6.5c-6-27.8-11.9-55.7-17.8-83.5  c-1.8-8.6-3.7-17.2-5.8-26.8c-1.2,1.9-2,3-2.7,4.2c-14.7,23.3-29.4,46.7-44.2,70c-1.8,2.9-4.3,5.6-7.1,7.5c-2.3,1.5-2.8,3-2.8,5.4  c0.1,23,0,46,0,69C302.6,380.1,302.7,381.3,302.8,382.9z M370.5,219.2c0.1,1.2,0,1.7,0.1,2.2c8,37.6,15.9,75.2,24.1,112.8  c0.3,1.5,1.9,3.2,3.3,4c18.9,10.8,37.8,21.4,56.7,32c5.6,3.2,11.2,6.3,17.5,9.8c-0.4-1.5-0.6-2.3-0.9-3.1  c-15.9-42-31.8-84-47.8-125.9c-0.6-1.5-1.9-2.9-3.3-3.7c-5.6-3.3-11.3-6.4-16.9-9.6C392.5,231.6,381.7,225.6,370.5,219.2z"></path>	<path class="st0" d="M235.2,121.3c0.1-34.2,27.9-61.9,62.1-61.8c34,0.1,61.6,28,61.5,62c-0.1,34.2-27.9,61.9-62.1,61.8  C262.7,183.1,235.1,155.3,235.2,121.3z M347.6,121.3c-0.1-28.1-22.9-50.7-51-50.5c-27.8,0.1-50.4,23.1-50.2,50.9  c0.2,27.9,22.9,50.4,50.8,50.3C325,171.9,347.7,149.1,347.6,121.3z"></path></g></svg></i>
+                                    <div class="mad-icon-box-content">
+                                        <h6 class="mad-icon-box-title"><a href="/locations/">Our locations</a></h6>
+                                        <p>Visit us up at the nearest location!</p>
+                                    </div>
+                                </article>
+                                <!--================ End of Icon Box ================-->
+                            </div>
+                            <div class="mad-col">
+                                <!--================ Icon Box ================-->
+                                <article class="mad-icon-box">
+                                    <i class="mad-icon-box-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px" viewBox="0 0 595.3 418" style="enable-background:new 0 0 595.3 418;" xml:space="preserve"><style >	.st0{fill:#7A7879;}</style><g>	<g>		<path class="st0" d="M149.3,404c-3.5-2.1-4.5-5.2-4.5-9.2c0.1-121.9,0-243.7,0-365.6c0-7.1,2.1-9.2,9.1-9.2   c96.4,0,192.7,0,289.1,0c7,0,9.1,2.1,9.1,9.2c0,121.9,0,243.7,0,365.6c0,3.9-1,7.1-4.5,9.2C348.3,404,248.8,404,149.3,404z    M158,32.9c0,119.6,0,238.9,0,358.1c93.9,0,187.4,0,281.1,0c0-119.5,0-238.8,0-358.1C345.2,32.9,251.8,32.9,158,32.9z"></path>		<path class="st0" d="M296.7,167.1c-29.3,0-58.5,0-87.8,0c-2.5,0-5,0.1-7.5-0.2c-5.6-0.6-8.8-2.6-9.3-5.6c-0.5-3.1,2.2-5.4,7.5-6.4   c2.7-0.5,5.8-0.6,8.7-0.6c58.8,0,117.5,0,176.3,0c2.5,0,5,0.1,7.4,0.4c6.1,0.9,9.1,3.2,8.6,6.6c-0.5,3.3-4.1,5.2-10,5.6   c-2.2,0.2-4.5,0.1-6.8,0.1C354.8,167.1,325.7,167.1,296.7,167.1z"></path>		<path class="st0" d="M296.8,109.6c-29,0-58.1,0-87.1,0c-2.7,0-5.5,0-8.1-0.3c-6-0.5-9.3-2.7-9.5-5.9c-0.2-3.2,2.8-5.5,8.7-6.2   c2.6-0.3,5.4-0.4,8.1-0.4c58.3,0,116.6,0,174.9,0c1.6,0,3.2,0,4.8,0c7.8,0.4,12.3,2.8,12.2,6.5c-0.1,3.7-4.7,6.1-12.7,6.2   c-20.2,0.1-40.4,0.1-60.6,0.1C317.3,109.6,307,109.6,296.8,109.6z"></path>		<path class="st0" d="M296.3,218.4c28.8,0,57.6,0,86.4,0c2.5,0,5,0,7.5,0.2c6.6,0.5,10.5,2.8,10.6,6.1c0.1,3.4-3.7,5.7-10.3,6.3   c-2.2,0.2-4.5,0.2-6.8,0.2c-58.1,0-116.1,0-174.2,0c-11.7,0-17.3-2.1-17.5-6.4c-0.1-4.3,5.5-6.5,17.2-6.5   C238.2,218.4,267.3,218.4,296.3,218.4z"></path>		<path class="st0" d="M296.3,274.4c28.8,0,57.6,0,86.4,0c2.5,0,5,0,7.5,0.2c6.6,0.5,10.5,2.8,10.6,6.1c0.1,3.4-3.7,5.7-10.3,6.3   c-2.2,0.2-4.5,0.2-6.8,0.2c-58.1,0-116.1,0-174.2,0c-11.7,0-17.3-2.1-17.5-6.4c-0.1-4.3,5.5-6.5,17.2-6.5   C238.2,274.4,267.3,274.4,296.3,274.4z"></path>		<path class="st0" d="M319.4,359.1c-21.3,0-42.6,0-63.9,0c-2.3,0-4.5,0-6.8-0.1c-5.9-0.4-10.3-2.9-10.2-6c0.1-3.2,2.8-5.5,8.7-6.3   c2.6-0.3,5.4-0.4,8.1-0.4c42.8,0,85.7,0,128.5,0c1.6,0,3.2,0,4.8,0c7.7,0.4,12.3,2.9,12.2,6.6c-0.1,3.7-4.8,6.2-12.6,6.2   C365.2,359.2,342.3,359.1,319.4,359.1z"></path>	</g></g></svg></i>
+                                    <div class="mad-icon-box-content">
+                                        <h6 class="mad-icon-box-title"><a href="/menus/">Menus</a></h6>
+                                        <p>See what we're serving!
+                                        </p>
+                                    </div>
+                                </article>
+                                <!--================ End of Icon Box ================-->
+                            </div>
+                            <div class="mad-col">
+                                <!--================ Icon Box ================-->
+                                <article class="mad-icon-box">
+                                    <i class="mad-icon-box-icon">												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px" viewBox="0 0 595.3 418" style="enable-background:new 0 0 595.3 418;" xml:space="preserve"><style >	.st0{fill:#A4A4A4;}</style><g>	<path class="st0" d="M532.2,30.9c-4.6-0.4-9.3-1.3-13.9-1c-9.2,0.6-17,4.5-23.2,11.5c-11.8,13.4-18.1,29.8-24.3,46  c-8.4,21.7-16.5,43.6-24.6,65.4c-8.3,22.3-16.4,44.7-24.7,67c-4.5,12.3-9.2,24.5-13.8,36.8c-6.3,17.1-12.6,34.1-18.9,51.2  c-4.9,13.4-9.8,26.8-14.7,40.2c-2.1,5.8-3.9,11.7-6,17.4c-0.3,0.9-1.5,2-2.2,2c-0.9-0.1-2.3-1-2.6-1.9  c-6.7-16.6-13.3-33.2-19.9-49.7c-10.5-26.3-21-52.6-31.6-78.9c-4.3-10.7-9.1-21.2-13.7-31.7c-0.5-1.2-1.3-2.2-2.4-3.9  c-1.5,3.7-2.7,6.6-3.7,9.5c-6.1,16.9-12.2,33.8-18.4,50.7c-5.5,15.2-11.1,30.4-16.7,45.6c-7.1,19.5-14.3,38.9-21.5,58.4  c-0.3,0.9-1.5,2-2.2,1.9c-0.8-0.1-1.8-1.3-2.1-2.2c-6.3-17.7-12.5-35.4-18.9-53.1c-4.9-13.5-10.2-26.9-15.3-40.3  c-7.4-19.4-14.9-38.8-22.3-58.2c-10-26.3-19.9-52.6-30-78.8c-8.2-21.4-16.6-42.8-25.2-64c-4.6-11.2-10-22-18.4-31  c-4.3-4.6-9.7-7.6-16.3-8.4c-6.7-0.8-12.8,0.9-18.5,4c-2,1.1-3.5,1.3-4.7-1.4c3.9-3.6,8.7-5.9,13.7-7.9c9.7-3.9,19.3-2.3,28.9,0.4  c7.5,2.1,14.9,5.5,22.9,4.6c5.9-0.7,11.8-2.3,17.6-4c11.5-3.4,22.9-3.8,34.4-0.2c2.2,0.7,4.1,1.5,2.9,4.2  c-4.6-0.5-9.3-1.5-13.8-1.3c-12.1,0.6-20.3,10.7-18.9,23.3c1.3,11.6,6.1,22,10,32.7c6.9,19,14.1,37.9,21.3,56.8  c9.2,24.5,18.4,48.9,27.7,73.4c6.5,17.1,13.2,34.2,19.7,51.3c4.9,12.8,9.8,25.7,15,39.3c0.9-1.2,1.5-1.7,1.8-2.4  c6.2-17.3,12.4-34.6,18.7-51.9c4.1-11.3,8.2-22.7,12.3-34c4.1-11.3,8.2-22.6,12.1-34c0.6-1.6,0.4-3.8-0.3-5.4  c-10.1-23.5-20.3-47-30.6-70.4c-7.4-17-14.8-34.1-22.5-51.1c-3.1-6.8-7.3-13.1-12.7-18.5c-5.6-5.6-12.1-8.4-20-7.9  c-1.1,0.1-2.2,0.2-3.2,0c-0.7-0.2-1.6-0.9-1.7-1.5c-0.1-0.6,0.7-1.6,1.3-1.8c9-2.7,18-4.9,27.4-1.9c3.7,1.2,7.5,2.3,11.2,3.6  c6.4,2.1,12.7,1.7,19-0.6c7.7-2.7,15.6-4.3,23.7-3.7c3.8,0.2,7.5,1.1,11.2,1.9c0.9,0.2,1.6,1.2,2.4,1.9c-0.9,0.3-1.8,0.9-2.7,0.9  c-5.3-0.1-10.5-0.1-15.6,2.4c-5.4,2.6-8.2,9.1-7.5,15.1c1.3,11,6.5,20.5,10.6,30.5c5,12.1,10.2,24.2,15.3,36.2  c3.6,8.4,7.2,16.7,10.8,25.1c0.3,0.8,0.8,1.5,1.7,3.2c1.7-4.7,3.1-8.5,4.5-12.4c4.5-12.6,9.3-25.2,13.6-37.9  c3.7-11,7.4-22.1,9.8-33.4c1.5-7.5,1.9-15.8-3.8-22.5c-4.4-5.2-9.9-7-16.4-6.1c-1.2,0.2-2.5,0.4-3.8,0.6c-0.8-1.9-0.7-3,1.4-3.7  c9.5-3.4,18.9-2.9,28.4-0.3c5,1.4,10.1,2.4,15.2,3c8.6,1,16.5-2.4,24.5-4.7c10.2-3,19.4-1.1,28.7,3.4c-0.3,1-0.5,1.9-0.7,2.5  c-5-0.5-9.7-1.5-14.4-1.5c-12.6,0.1-22.6,5.5-30.3,15.4c-9,11.6-14.5,25.1-19.9,38.6c-4.8,12-9.4,24.1-14,36.1  c-5.1,13.1-10.1,26.3-15.1,39.4c-0.3,0.8,0,2.1,0.4,3c9,21.5,18,42.9,27,64.4c8.8,20.9,17.5,41.8,26.3,62.7c2,4.9,4.2,9.7,6.3,14.5  c0.3,0.8,1.2,1.3,1.7,1.9c0.5-0.6,1.1-1.2,1.3-1.9c5.1-13.5,10.1-27.1,15.1-40.7c5.4-14.7,10.9-29.3,16.3-44  c5.3-14.6,10.7-29.1,15.9-43.8c6.5-18.3,13.1-36.5,19.1-55c4.6-14.4,8.5-29.2,12.4-43.8c1.8-6.8,3.6-13.8,4.2-20.8  c0.8-10.3-3.6-22.3-17.1-24.5c-4.5-0.7-9.2-0.4-13.8-0.7c-0.8-0.1-1.7-0.8-2.5-1.2c0.6-0.7,1.1-1.9,1.8-2.1  c6.4-1.9,13.1-3.5,19.8-2.5c8,1.2,16,3,23.7,5.4c8.4,2.6,16.2,2.2,24.1-1.3c11.7-5.2,23.5-5.8,35.6-1.1c0.4,0.2,0.8,0.1,1.3,0.2  C532.2,28.8,532.2,29.9,532.2,30.9z"></path>	<path class="st0" d="M322.5,406.1c-1.3-0.8-2.5-2.2-3.8-2.3c-3.6-0.1-5.5-2.5-7.5-4.8c-3.1-3.4-4-3.4-6.7,0.3  c-0.4,0.6-1.6,1.1-2.1,0.9c-0.9-0.3-2-1-2.3-1.8c-1.2-3,1.2-6.5,4.4-6.6c2.5-0.1,4-1,5.1-3.4c0.8-1.8,2.4-3.4,4-4.6  c1.8-1.5,4.1-1.1,5.3,0.8c0.8,1.2,1.3,3.5,0.6,4.4c-1,1.4-3.1,2.1-4.7,2.9c-0.4,0.2-1.2-0.3-1.8-0.4c-0.9,3,0.5,5.8,4.6,8  c3,1.6,6.1,2.9,9.4,3.8c1.7,0.5,2.3,1.2,2.1,2.8C326.7,406.1,324.6,406.1,322.5,406.1z"></path>	<path class="st0" d="M270.5,406.1c0.5-0.5,0.9-1.3,1.4-1.4c4.3-1.1,7.8-3.4,10.6-6.7c1.2-1.4,1.8-3.4,3-5.9c-2.1,0-3.1,0.1-4.1,0  c-2.5-0.2-4-1.6-3.9-4.1c0.2-2.4,1.4-3.9,4.1-3.9c3,0.1,5.4,0.7,6.6,3.8c0.9,2.3,2.5,3.5,5.2,3.4c2.9-0.1,4.3,1.7,4.1,4.5  c-0.1,1-0.7,2.2-1.5,2.9c-0.3,0.3-1.9-0.5-2.5-1.1c-3.4-3.1-3.7-2.9-6.9,0.6c-2.2,2.4-5.1,4.3-7.6,6.4c-0.5,0.4-0.9,1-1.4,1.5  C275.2,406.1,272.9,406.1,270.5,406.1z"></path>	<path class="st0" d="M307.6,381.6c-0.9-0.3-2.1-0.8-3.7-1.4c-0.1,2.7,4.3,6.2-1.6,7.2c-0.9,3.3-0.9,3.3-3.8,0.5  c-0.1-0.1-0.2-0.2-0.2-0.2c-5.8,0.2-2.6-3.3-1.9-6.2c-2.4,0.7-4.3,1.2-5.6,1.6c-1.3-1.5-2.2-2.6-3.2-3.6c-0.7-0.7-1.5-1.4-2.3-2.1  c0.9-0.7,1.8-1.5,2.8-2.2c0.3-0.2,0.8-0.2,1.4-0.3c-0.1-1-0.2-1.8-0.3-2.6c1.4-1.3,7.9,3.5,8.3,6c0.1,0.6,0.1,1.2,0.1,1.7  c1.9,0,3.6,0,4.9,0c0.1-1.5-0.1-3.2,0.6-4.5c0.8-1.5,2.4-2.7,3.9-3.8c0.6-0.4,2.3-0.6,2.5-0.2c1.3,1.7,2.3,3.7,3.3,5.6  c0,0.1-1.6,0.8-2.3,1.4C309.5,379.6,308.7,380.6,307.6,381.6z"></path>	<path class="st0" d="M299.5,376.1c-1.7-2-3.2-3.5-4.4-5.2c-0.7-0.9-1-2-1.5-3c1-0.4,2-0.8,3.5-1.4c0.1-0.4,0.2-1.4,0.7-2.1  c0.4-0.6,1.2-1.2,1.8-1.2c0.6,0,1.3,0.6,1.9,1.1c1,0.8,1.9,1.8,3.3,2.5C305.5,370.7,301.7,372.5,299.5,376.1z"></path></g></svg></i>
+                                    <div class="mad-icon-box-content">
+                                        <h6 class="mad-icon-box-title"><a href="/private-events/">Private dining</a></h6>
+                                        <p>Host an event with us!
+                                        </p>
+                                    </div>
+                                </article>
+                                <!--================ End of Icon Box ================-->
+                            </div>
+                        </div>
+                        <!--================ End of Icon Boxes ================-->
+                    </div>
+                </div>
+            </div>
+            <div class="mad-section--stretched-content">
+                <div class="align-center">
+                    <h4>Our Menu</h4>
+                </div>
+                <div class="mad-menu-cards item-col-2">
+                    <div class="mad-col">
+                        <div class="mad-menu-card">
+                            <div class="mad-menu-border"></div>
+                            <a href="#" class="mad-card-img with-overlay"><img src="/images_front/dinner-min.jpg" alt=""></a>
+                            <div class="mad-card-text">
+                                <h2>Dinner</h2>
+                                <a href="/menus/" class="mad-read-more">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mad-col">
+                        <div class="mad-menu-card">
+                            <div class="mad-menu-border"></div>
+                            <a href="#" class="mad-card-img with-overlay"><img src="/images_front/lunch-min.jpg" alt=""></a>
+                            <div class="mad-card-text">
+                                <h2>Lunch</h2>
+                                <a href="/menus/" class="mad-read-more">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="no-pb mad-section--stretched">
+              <div class="row hr-size-2 align-items-center giftcard-row">
+                <!-- Text column -->
+                <div class="col-lg-6 d-flex flex-column">
+                  <div class="mad-top-offset mad-bottom-offset text-center text-lg-start w-100">
+                    <h3>PHYSICAL GIFT CARDS</h3>
+                
+                    <figure class="mad-img-holder img-overlay giftcard-img">
+                      <div class="mad-img">
+                        <img src="/images_front/wolfgang-giftcard (1).png" alt=""
+                             class="img-fluid mx-auto d-block" style="max-width: 400px;">
+                      </div>
+                    </figure>
+                
+                    <p class="mad-text-big content-element-5">
+                      Your gift card will be mailed to the address indicated on the form below within 1–2 business days only to be used in New York City locations only.
+                      The gift card will never expire and is simple to redeem—just present after dining.
+                    </p>
+                
+                    <a href="/gift-card" class="btn btn-big no-texture">
+                      <span class="texture"></span><span>Buy Now</span>
+                    </a>
+                  </div>
+                </div>
+            
+                <!-- Image column (only visible on large screens) -->
+                <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center">
+                  <figure class="mad-img-holder img-overlay giftcard-img-desktop">
+                    <div class="mad-img">
+                      <img src="/images_front/wolfgang-giftcard (1).png" alt=""
+                           class="img-fluid mx-auto d-block" style="max-width: 400px;">
+                    </div>
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <div class="no-pb mad-section--stretched">
+              <div class="row hr-size-2 align-items-center knives-row">
+            
+                <!-- Text Column -->
+                <div class="col-lg-6 d-flex flex-column">
+                  <div class="mad-top-offset mad-bottom-offset text-center text-lg-start w-100">
+                    <h3>Wolfgang's Steak Knives (4 per set)</h3>
+                
+                    <!-- Mobile Slider (below h3 on mobile) -->
+                    <div class="image-slider image-slider-mobile d-block d-lg-none mb-3">
+                      <div class="slides">
+                        <img style="object-fit: contain;" src="/knife_images/SKT_0597.jpeg" alt="">
+                        <img style="object-fit: contain;" src="/knife_images/SKT_0611.jpeg" alt="">
+                        <img style="object-fit: contain;" src="/knife_images/SKT_0616.jpeg" alt="">
+                      </div>
+                      <button style="width: 40px; height: 40px;" class="prev">&#10094;</button>
+                      <button style="width: 40px; height: 40px;" class="next">&#10095;</button>
+                    </div>
+                
+                    <p class="mad-text-big content-element-5">
+                      4 steak knives per set (no options to sell in another format). Knife set is shipped directly to the home.
+                      Estimated delivery time - 2 to 3 business days tracking provided USPS priority delivery.
+                      Pricing for the knives - $99.99 per set plus shipping $19.99 - flat shipping per order.
+                    </p>
+                
+                    <a href="/knives" class="btn btn-big no-texture">
+                      <span class="texture"></span><span>Buy Now</span>
+                    </a>
+                  </div>
+                </div>
+            
+                <!-- Desktop Slider -->
+                <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center">
+                  <div class="image-slider image-slider-desktop">
+                    <div class="slides">
+                      <img style="object-fit: contain;" src="/knife_images/SKT_0597.jpeg" alt="">
+                      <img style="object-fit: contain;" src="/knife_images/SKT_0611.jpeg" alt="">
+                      <img style="object-fit: contain;" src="/knife_images/SKT_0616.jpeg" alt="">
+                    </div>
+                    <button style="width: 40px; height: 40px;" class="prev">&#10094;</button>
+                    <button style="width: 40px; height: 40px;" class="next">&#10095;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div data-bg-image-src="/images/1920x528_redbg1.jpg"
+                 class="mad-section with-texture mad-section--stretched mad-colorizer--scheme-color-4 mad-colorizer--scheme-light">
+
+                <div class="row align-items-center">
+                    <div class="col-xl-12">
+                        <h3 class="mad-section-title align-center">Make a Reservation</h3>
+                    </div>
+                    <div class="col-xl-12">
+                        <form class="mad-form style-2">
+                            <div class="form-group">
+                                <div class="form-col with-icon">
+                                    <select class="location" name="location">
+                                        <option selected="selected" value="0">Location</option>
+                                                                                <option value="75409">Times Square – NYC</option>
+                                                                                <option value="6491">TriBeCa – NYC</option>
+                                                                                <option value="3603">Park Avenue - NYC</option>
+                                                                                <option value="159115">Somerville - NJ</option>
+                                                                                <option value="1042963">BROADWAY - NYC</option>
+                                                                                <option value="1">Lyndhurst - NJ</option>
+                                                                            </select>
+                                    <i class="material-icons">place</i>
+                                </div>
+                                <div class="form-col with-icon">
+                                    <input type="text" name="startDate" data-dateformat="yy-mm-dd" autocomplete="off" placeholder="Date" class="steakbreak-datepicker">
+                                    <i class="material-icons">calendar_today</i>
+                                </div>
+                                <div class="form-col with-icon">
+                                    <select class="time-picker" name="ResTime">
+                                    <option value="14:00" selected="selected">2:00 PM</option>
+                                    <option value="14:30" >2:30 PM</option>
+                                    <option value="15:00" >3:00 PM</option>
+                                    <option value="15:30" >3:30 PM</option>
+                                    <option value="16:00" >4:00 PM</option>
+                                    <option value="16:30" >4:30 PM</option>
+                                    <option value="17:00" >5:00 PM</option>
+                                    <option value="17:30" >5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                    <option value="21:30">9:30 PM</option>
+                                    <option value="22:00">10:00 PM</option>
+                                    <option value="22:30">10:30 PM</option>
+                                    <option value="23:00">11:00 PM</option>
+                                    <option value="22:30">11:30 PM</option>
+                                    </select>
+                                    <i class="material-icons">access_time</i>
+                                </div>
+                                <div class="form-col with-icon">
+                                    <select class="mad-custom-select" name="partySize">
+                                        <option value="0" selected="selected">Guest Number</option>
+                                        <option value="1">1 person</option>
+                                        <option value="2">2 persons</option>
+                                        <option value="3">3 persons</option>
+                                        <option value="4">4 persons</option>
+                                        <option value="5">5 persons</option>
+                                        <option value="6">6 persons</option>
+                                        <option value="7">7 persons</option>
+                                        <option value="8">8 persons</option>
+                                        <option value="9">9 persons</option>
+                                        <option value="10">10 persons</option>
+                                        <option value="11">11 persons</option>
+                                        <option value="12">12 persons</option>
+                                        <option value="13">13 persons</option>
+                                        <option value="14">14 persons</option>
+                                        <option value="15">15 persons</option>
+                                        <option value="16">16 persons</option>
+                                        <option value="17">17 persons</option>
+                                        <option value="18">18 persons</option>
+                                        <option value="19">19 persons</option>
+                                        <option value="20">20 persons</option>
+                                        <option value="21">Larger party</option>
+                                    </select>
+                                    <i class="material-icons-outlined">people</i>
+                                </div>
+                                <div class="form-col no-fw">
+                                    <button class="btn btn-big btn-style-3 no-texture">Book a Table</button>
+                                </div>
+                            </div>
+                            <span class="mad-form-tag">Powered by OpenTable</span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    </div>
+
+    <!--================ Footer ================-->
+<footer id="mad-footer" class="mad-footer">
+    <div class="mad-footer-main">
+        <div class="container wide-style-2">
+            <div class="content-element-8">
+                <div class="row vr-size-1">
+                    <div class="col-lg-4">
+                        <section class="mad-widget">
+                            <h5 class="mad-widget-title">Join Our Mailing List</h5>
+                            <p>Sign up now and get news and special offers.</p>
+                            <form class="mad-newsletter-form one-line">
+                                <input type="hidden" name="_token" value="lJGX8j5c60ZARwpBDDvMGifCaPttS2fTx0f2iRJc">                                <input type="email" name="email" placeholder="Enter Your Email Address">
+                                <button type="submit" class="btn btn-big icon-btn no-texture btn2">
+                                    <i class="material-icons">mail_outline</i>
+                                </button>
+                            </form>
+                        </section>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <section class="mad-widget">
+                            <div class="content-element-3">
+                                <h5 class="mad-widget-title">Stay Connected</h5>
+                                <p>Follow us on social media channels</p>
+                            </div>
+                            <div class="mad-social-icons style-3 size-big">
+                                <ul class="justify-content-center">
+                                    <li><a href="https://www.instagram.com/wolfgangssteakhouse/"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://www.facebook.com/wolfgangs2025/"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.tiktok.com/@wolfgangssteakhouse?_t=ZT-8wljRYbUIpf&_r=1"><i class="fab fa-tiktok"></i></a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <section class="mad-widget">
+                            <h5 class="mad-widget-title">Contact Us</h5>
+                            <div class="mad-vr-list">
+                                <ul>
+                                    <li>
+                                        +1 212 925 0350<br>
+                                        <a href="mailto:info@wolfgangssteakhouse.net" class="mad-link color-2">info@wolfgangssteakhouse.net</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+                                Please request your receipt directly from the location where you dined.
+                                The corresponding email address can be found under the
+                                “<a href="https://wolfgangssteakhouse.net/locations" class="mad-link color-2 underline">Locations</a>” tab.
+                            </p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <section class="mad-widget">
+                <div class="mad-hr-list">
+                    <ul class="justify-content-center">
+                        <li><a href="https://wolfgangssteakhouse.net/jobs" class="mad-link">Jobs</a></li>
+                        <li><a href="https://wolfgangssteakhouse.net/contact-us" class="mad-link">Contact</a></li>
+                        <li><a href="https://wolfgangssteakhouse.net/items" class="mad-link">Shop</a></li>
+                        <li><a href="https://wolfgangssteakhouse.net/gift-card" class="mad-link">Gift cards</a></li>
+                        <li><a href="https://wolfgangssteakhouse.net/about-us" class="mad-link">About us</a></li>
+                        <li><a href="https://wolfgangssteakhouse.net/press">Press</a></li>
+                        <li>
+                                                            <a href="/login" class="mad-link">Login</a>
+                                                    </li>
+                    </ul>
+                </div>
+                <p class="copyrights">
+                    ©2025 Wolfgang's Steakhouse by Wolfgang Zwiener.
+                    Powered by <a href="https://studiolasso.com/" target="_blank">Studio Lasso</a>.
+                </p>
+            </section>
+        </div>
+    </div>
+</footer>    <!--================ End of Footer ================-->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/luxon@3.7.2/build/global/luxon.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/js/app.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/modernizr.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/jquery-3.3.1.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/jquery.easing.1.3.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/monkeysan.jquery.nav.1.0.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/monkeysan.tabs.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/handlebars-v4.0.5.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/jquery.parallax-1.1.3.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/monkeysan.validator.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/arcticmodal/jquery.arcticmodal-0.3.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/retina.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+<script src="https://wolfgangssteakhouse.net/js_theme/modules/mad.newsletter-form.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/js_theme/modules/mad.sticky-header-section.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/mad.customselect.js"></script>
+<script src="https://wolfgangssteakhouse.net/vendors/jquery-ui/jquery-ui.min.js"></script>
+<script src="https://wolfgangssteakhouse.net/js_theme/mad.app.js"></script>
+    <script src="https://wolfgangssteakhouse.net/js_theme/modules/reservation-form.js?v=1"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sliders = document.querySelectorAll('.image-slider');
+    
+        sliders.forEach(slider => {
+            const slides = slider.querySelector('.slides');
+            const images = slider.querySelectorAll('img');
+            const total = images.length;
+            let index = 0;
+        
+            slider.querySelector('.next').addEventListener('click', () => {
+                index = (index + 1) % total;
+                slides.style.transform = `translateX(-${index * 100}%)`;
+            });
+        
+            slider.querySelector('.prev').addEventListener('click', () => {
+                index = (index - 1 + total) % total;
+                slides.style.transform = `translateX(-${index * 100}%)`;
+            });
+        });
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,3085 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js" id="ng-app" data-ng-app="main">
+<!--<![endif]-->
+
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <base href="/web/" />
+    
+    <meta property="og:type" content="business.business" />
+    <meta property="og:title" content="Uncle Gussy&#39;s Online Ordering" />
+    <meta property="og:image" content="https://storage.googleapis.com/content.togoorder.com/togoorder/Tools/Images/Logos/fve41gzq.bxj.png" />
+    <meta property="business:contact_data:street_address" content="345 Park Ave">
+    <meta property="business:contact_data:locality" content="New York">
+    <meta property="business:contact_data:region" content="NY">
+    <meta property="business:contact_data:postal_code" content="10154">
+    <meta property="business:contact_data:country_name" content="United States" />
+    <meta property="place:location:latitude" content="40.75812300" />
+    <meta property="place:location:longitude" content="-73.97264200" />
+    <meta property="og:description" content="Order ahead, and skip the line. Online ordering has never been easier!" />
+
+
+    <title data-ng-bind="title">ToGoOrder.com</title>
+
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-navbutton-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+
+    <!--[if lte IE 9]>
+    <script src="//cdn.rawgit.com/jpillora/xdomain/0.6.17/dist/xdomain.min.js" slave="https://api.togoorder.com/proxy.html"></script>
+    <![endif]-->
+    
+    <style type="text/css">
+        @-webkit-viewport {
+            width: device-width;
+        }
+
+        @-moz-viewport {
+            width: device-width;
+        }
+
+        @-ms-viewport {
+            width: device-width;
+        }
+
+        @-o-viewport {
+            width: device-width;
+        }
+
+        @viewport {
+            width: device-width;
+        }
+    </style>
+    
+    <script type="text/javascript">
+        if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+    
+    <script type="text/javascript">
+	    
+    </script>
+    <script src="https://htp.tokenex.com/iframe/iframe-v3.min.js"></script>
+
+
+    <link href="/web/Content/siteless?v=3LpEm3oNgsRoAn_AIEdlGZVpDZ1Jwc9ibpFHCBeIvi01" rel="stylesheet"/>
+
+    
+    <style>
+			
+			.navbar-brand { background-image: url('https://storage.googleapis.com/content.togoorder.com/togoorder/Tools/Images/Logos/fve41gzq.bxj.png'); }
+
+			.security-dialog .modal-header-image { background-image: url('https://storage.googleapis.com/content.togoorder.com/togoorder/Tools/Images/Logos/fve41gzq.bxj.png'); }
+			
+    </style>
+    <style>
+			
+			.back-btn {
+				 display: none;
+			 }
+		
+
+    </style>
+
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' type="text/css" />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css" />
+
+
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    font-size: 16px !important;
+    font-family: 'Lato' !important;
+    font-weight: normal !important;
+    -webkit-font-smoothing: antialiased;
+    background-size: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #FFF;
+    /* CHANGE */
+}
+
+#wrap.state-locationHome {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%), url("https://storage.googleapis.com/content.togoorder.com/merchant-content/Uncle%20Gussy's/bg2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#wrap {
+    background-size: cover;
+    background-position: center;
+}
+
+#wrap::before {
+  content: "";
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url("https://storage.googleapis.com/content.togoorder.com/merchant-content/Uncle%20Gussy's/bg2.jpg");
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: top left;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(1) opacity(0.2);
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 25px;
+    clear: both;
+    padding-bottom: 75px;
+}
+
+p,
+span,
+li,
+ul {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+p {
+    font-weight: normal !important;
+    font-family: 'Lato' !important;
+    font-size: 1em !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-weight: bold !important;
+    font-family: 'Lato' !important;
+}
+
+.glyphicon {
+    font-family: 'Glyphicons Halflings' !important;
+}
+
+.menu-section-menu-items .item-text.item-price:before,
+.price.ng-binding:before,
+.item-price .ng-binding:before,
+.order-total.ng-binding:before {
+    content: "$";
+}
+
+/* ====== Logo & Navigation ====== */
+.navbar {
+    background-color: #fff;
+    background-size: 100% !important;
+    min-height: 70px !important;
+    /* MATCH WITH HEIGHT OF NAVBAR-BRAND BELOW */
+    /* CHANGE BACK  - 70PX */
+    box-shadow: inset 0 30px 0px 0px rgba(246, 246, 246, .0);
+    border-bottom: 0px solid #fff;
+}
+
+.navbar-nav>li>a {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-right {
+    float: right !important;
+    margin-right: -15px;
+    position: relative;
+    color: #2b99d1;
+    top: 44px !important;
+}
+
+.navbar-default .navbar-nav>li>a {
+    /* Sign in/Up and Home */
+    color: #2b99d1;
+    padding-right: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+.navbar-collapse {
+    /* left and right padding on navbar */
+    overflow-x: visible;
+    padding-right: 0;
+    padding-left: 15px;
+}
+
+.navbar-default .navbar-text {
+    /* Navigation Address */
+    color: #2b99d1;
+    margin-right: 1em !important;
+    position: relative;
+    top: 50px !important;
+}
+
+.nav-location-address {
+    /* Navigation Address */
+    display: block;
+    font-size: 1.125em !important;
+}
+
+.nav-location-address:before {
+    content: 'YOU ARE ORDERING FROM:';
+    letter-spacing: 1px;
+    display: block;
+    text-align: right;
+    font-size: 12px;
+}
+
+.location-0000 .nav-location-address:after {
+    content: ' | xxx.xxx.xxxx';
+}
+
+p.navbar-text.navbar-right.nav-location-address {
+    top: 35px !important;
+}
+
+.location-information p:before {
+    /* mobile one */
+    content: 'YOU ARE ORDERING FROM:';
+    display: block;
+}
+
+.navbar .container {
+    width: 100%;
+    max-width: 1175px;
+    padding: 0 25px;
+}
+
+.location-information p {
+    display: none;
+}
+
+.dropdown-menu {
+    border: 0px solid #fff;
+}
+
+.dropdown-menu>li>a {
+    padding: 15px 20px;
+}
+
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+    text-decoration: none;
+    color: #fff;
+    background-color: #424141;
+    /* change */
+    /* unhide */
+}
+
+.dropdown-menu>.active>a {
+    background-color: #ee6534;
+}
+
+.dropdown-menu>.active>a:hover {
+    background-color: #ee6534;
+}
+
+.menu-selection {
+    background-color: #fff;
+}
+
+.menu-list ul .menu-selection .row {
+    padding: 20px 10px 25px 10px;
+    border: .5px solid #efefef;
+    border-bottom: 0px solid #eee;
+}
+
+.menu-list ul .menu-selection:first-child .row {
+    border-bottom: .5px solid #eee;
+}
+
+.menu-list ul .menu-selection:nth-child(2) .row {
+    border-top: 0px solid #eee;
+}
+
+.menu-list ul .menu-selection:last-child .row {
+    border-bottom: .5px solid #efefef;
+}
+
+.menu-list ul .menu-selection .row .menu-info {
+    margin-bottom: 15px !important;
+    line-height: 2.6;
+    width: 45%;
+}
+
+.menu-list ul .menu-selection .row .menu-title {
+    text-align: center;
+    width: 30%;
+    line-height: 2.5;
+}
+
+.menu-order {
+    line-height: 2.5;
+}
+
+.menu-list ul .menu-selection .row .menu-title span {
+    font-size: 1.5em;
+}
+
+.menu-list .available-weekday {
+    height: 30px !important;
+}
+
+.menu-selection .row .menu-order .btn-menu-order {
+    background-color: #CFA670 !important;
+    color: #fff !important;
+    width: 100%;
+    text-transform: uppercase !important;
+    font-weight: bold !important;
+    font-size: 0.875em !important;
+    margin-top: 0 !important;
+    max-width: 300px;
+    height: 50px;
+    font-size: 1.125em !important;
+}
+
+.menu-selection .row .menu-order .btn-menu-order:hover {
+    background-color: #CFA670 !important;
+}
+
+.usual-btn {
+    border: 0px solid #2b99d1;
+    background-color: #2b99d1;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 3px;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Lato';
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 30px auto;
+    padding: 0px;
+    -webkit-box-shadow: 25px 25px 35px -15px rgba(0, 0, 0, .0);
+    box-shadow: 25px 25px 35px -15px rgba(0, 0, 0, .0);
+    transition: all .2s ease-in 0s !important;
+}
+
+/* makes Type of Menu Vertical vs Horizontal */
+.menu-list ul .menu-selection .row div {
+    display: block !important;
+    width: 100% !important;
+}
+
+.no-touch .usual-btn:hover {
+    -webkit-box-shadow: 25px 25px 35px -15px rgba(0, 0, 0, .0) !important;
+    box-shadow: 25px 25px 35px -15px rgba(0, 0, 0, .0) !important;
+    border-color: #2b99d1;
+    background-color: #2b99d1 !important;
+    color: #fff !important;
+}
+
+.available-hours {
+    font-size: 0.875em;
+}
+
+.header-instructions.wizard {
+    /* headline above type of togo */
+    padding-top: 0px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.header-instructions#choose-an-order-type h1 {
+    font-size: 24px;
+}
+
+.header-instructions#choose-a-section {
+    text-align: left;
+}
+
+.header-instructions#choose-a-section h1 {
+    font-size: 22px;
+    color: #2b99d1;
+}
+
+.header-instructions#choose-an-item {
+    text-align: left;
+}
+
+.header-instructions#choose-an-item h2 {
+    font-size: 22px;
+    color: #2b99d1;
+}
+
+[data-ng-controller="chooseOrderType as vm"] .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 350px);
+}
+
+.list-choices.order-type-list {
+    width: 100%;
+    max-width: 300px;
+    min-width: 150px;
+    margin: 0 auto;
+}
+
+#order-type-choice-view {
+    padding: 5px 10px;
+    margin-left: 0;
+}
+
+.order-type-list ul li span {
+    transition: all .2s ease-in 0s;
+    color: #ffffff;
+    font-size: 18px;
+    /* 21px */
+    text-transform: uppercase;
+}
+
+.order-type-list ul li:hover span {
+    color: #fff;
+    transition: all .2s ease-in 0s;
+}
+
+.list-choices,
+.menu-list {
+    -webkit-box-shadow: 25px 25px 35px -15px rgba(0, 0, 0, .2);
+    box-shadow: 25px 25px 35px -15px rgba(0, 0, 0, .2);
+}
+
+div#choose-a-section:before {
+    content: '1. ';
+    font-size: 22px;
+    color: #2b99d1;
+}
+
+div#choose-an-item:before {
+    content: '2. ';
+    font-size: 22px;
+    color: #2b99d1;
+}
+
+.list-choices .item,
+.list-choices .item:last-child {
+    border-bottom: 1px solid #efefef;
+}
+
+.primary-inverse {
+    background-color: rgba(0, 0, 0, .0);
+    color: #ffffff !important;
+    /* match list choices color below */
+}
+
+.primary-inverse ul li {
+    border: none;
+    /* set extra border properties below */
+}
+
+/* ===== Choose an Order Type ==== */
+.list-choices.order-type-list .item {
+    padding: 14px !important;
+    border-bottom: none;
+    /* must match above border */
+    cursor: pointer;
+    background-color: #ee6534;
+    border: 0px solid #ee6534;
+    border-bottom: 0px solid #ee6534;
+    border-radius: 3px !important;
+    margin-bottom: 16px !important;
+    margin-top: 20px !important;
+}
+
+.list-choices.order-type-list .item:last-child {
+    border-bottom: 0px solid #ee6534;
+}
+
+.list-choices.order-type-list .item:first-child {
+    border-bottom: 0px solid #ee6534;
+}
+
+.list-choices.order-type-list .item:nth-child(2) {
+    border-top: 0px solid #ee6534;
+}
+
+.list-choices.order-type-list .item.active {
+    background-color: #ee6534;
+    color: #ffffff;
+}
+
+.list-choices.order-type-list ul li:hover {
+    background-color: #ee6534;
+}
+
+.list-choices.order-type-list ul li:hover span {
+    transition: 0s;
+}
+
+/* ===== */
+.primary-inverse li,
+.menu-section-menu-items li {
+    padding: 20px !important;
+}
+
+.item-text {
+    /* (2.) Choose Item Headers */
+    text-transform: uppercase !important;
+    font-size: 1.125em;
+    letter-spacing: 0px;
+    font-family: 'Lato';
+}
+
+.menu-section-menu-items .item-text.item-price {
+    /* price */
+    text-align: left;
+    font-weight: bold;
+    font-family: 'Lato';
+    float: none;
+    font-size: inherit;
+    display: block;
+    width: 100%;
+}
+
+.selected-content {
+    /* middle column container and box shadow */
+    background-color: #ffffff;
+    -webkit-box-shadow: 25px 25px 35px -15px rgba(0, 0, 0, .3);
+    box-shadow: 25px 25px 35px -15px rgba(0, 0, 0, .3);
+}
+
+.selected-menu-section-container .item {
+    padding: 0;
+    border-bottom: 1px solid #efefef;
+    border-left: 1px solid #efefef;
+    border-top: 0 !important;
+    cursor: pointer;
+}
+
+.no-touch .menu-section-menu-items .item:hover {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-color: none;
+    -webkit-transition: all .2s ease-out !important;
+    -o-transition: all .2s ease-out !important;
+    transition: all .2s ease-out !important;
+    -webkit-box-shadow: 0px 4px 25px 2px rgba(0, 0, 0, .3);
+    box-shadow: 0px 4px 25px 2px rgba(0, 0, 0, .3);
+    border-bottom: 3px solid #6a6a6a;
+}
+
+.menu-section-menu-items .item-text {
+    -webkit-transition: text-shadow 0;
+    -o-transition: text-shadow 0;
+    transition: text-shadow 0;
+    text-shadow: none;
+    transition: none !important;
+}
+
+.no-touch .menu-section-menu-items .item:hover .item-text {
+    text-shadow: 0 0 0 rgba(0, 0, 0, .0);
+}
+
+.menu-section-menu-items {
+    list-style-type: none;
+    padding: 0;
+    padding-top: 0;
+    margin: 0;
+}
+
+.menu-section-menu-items p {
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: normal !important;
+    color: #000 !important;
+}
+
+/* ===== Product Detail Popup ===== */
+.consumer-name-container {
+    /* Hides the Who Is This For input */
+    display: none !important;
+}
+
+.row.hidden-xs.ng-scope {
+    /* extra nav links above product detail */
+    visibility: hidden
+}
+
+.change {
+    font-size: 14px;
+    text-transform: none;
+}
+
+.delivery-info sup .change {
+    color: #424141;
+    font-size: 14px;
+}
+
+.menu-item-detail {
+    margin-top: 9px;
+}
+
+.top-form-container {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+.top-form-container h1 {
+    font-size: 1.625em;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: .25em !important;
+    text-transform: uppercase;
+}
+
+.form-section {
+    border-top: 1px solid #414141;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 0px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.form-section .row.header-row .col-xs-12 {
+    padding-bottom: 10px;
+}
+
+.col-xs-12.included-group-header-content.ng-scope {
+    padding-bottom: 0px !important;
+}
+
+.form-section h2 {
+    text-transform: capitalize;
+    font-size: 1.250em;
+    font-weight: bold;
+    letter-spacing: 0;
+    display: inline;
+    padding-bottom: 10px;
+}
+
+/* Many Counter */
+.quantity-container {
+    margin-bottom: 20px !important;
+}
+
+.input-group.how-many input,
+.input-group.how-many .input-group-btn {
+    height: 50px !important;
+    margin-top: 20px;
+}
+
+.input-group.how-many input {
+    width: 100px !important;
+    border: 1px solid #6a6a6a;
+    font-size: 22px !important;
+    font-weight: bold !important;
+    font-family: 'Lato';
+    padding-top: 10px !important;
+    color: #000;
+}
+
+span.input-group-btn button {
+    height: 50px !important;
+    top: 5px !important;
+    width: 50px !important;
+    font-size: 30px !important;
+    font-weight: bold !important;
+    font-family: 'Lato';
+    color: #fff;
+    background-color: #ee6534;
+    border: 0px solid #CFA670;
+}
+
+span.input-group-btn button:hover,
+span.input-group-btn button:focus,
+span.input-group-btn button:active,
+.input-group-btn>.btn:focus,
+.input-group-btn>.btn:active {
+    color: #fff !important;
+    background-color: #ee6534;
+    border: 0px solid #ee6534 !important;
+}
+
+span.input-group-btn .btn-default[disabled]:hover {
+    border: 0px solid #fff !important;
+}
+
+/* Calendar */
+.form-group.ng-scope.invalid .input-group .input-group-btn:last-child>.btn {
+    height: 46px !important;
+    top: -5px !important;
+    width: 50px !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    font-family: 'Lato';
+    line-height: 1;
+    color: #fff;
+    background-color: #6a6a6a;
+    border: 0px solid #6a6a6a;
+}
+
+/* Pickup date calendar - checkout */
+#pickup-time-form span.input-group-btn button {
+    top: -5px !important;
+    height: 46px !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+}
+
+@media only screen and (max-width: 460px) {
+
+    #pickup-time-form .pickup-day-container,
+    #pickup-time-form .pickup-time-container {
+        width: 100%;
+    }
+
+    #pickup-time-form .pickup-day-container {
+        margin-bottom: 15px;
+    }
+}
+
+/* ===== */
+.included-groups .included-group-header,
+.included-groups .included-group-items {
+    /* Kills onload animation of modifiers */
+    -webkit-transition: opacity 0s, margin-left .0s;
+    -o-transition: opacity 0s, margin-left 0s;
+    transition: opacity 0s, margin-left 0s;
+    opacity: 1;
+}
+
+.included-group-expanded .included-group-items {
+    margin-left: 0;
+}
+
+.menu-item-options .special-instructions h2 small {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.top-form-container p.menu-item-description.ng-binding {
+    margin-bottom: 20px !important;
+    line-height: 1.5;
+}
+
+.radio,
+.checkbox {
+    position: relative;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.btn-link-nav {
+    color: #2b99d1;
+    /* change */
+    /* #000 */
+    transition: all .2s ease-in 0s;
+}
+
+.btn-link-nav .glyphicon-chevron-left {
+    color: #2b99d1 !important;
+    margin-right: 5px;
+    font-size: 0.875em;
+}
+
+.btn-link-nav:hover {
+    color: #2b99d1;
+    text-decoration: underline;
+    transition: all .2s ease-out 0s;
+}
+
+.cart-sidebar .glyphicon.glyphicon-chevron-left {
+    color: #6a6a6a !important;
+}
+
+.btn.btn-togo {
+    letter-spacing: 0px;
+}
+
+.btn.btn-link-nav {
+    letter-spacing: 0px;
+    /* change */
+    /* 0 */
+}
+
+.radio-buttons {
+    /* matches distance from headline like checkboxes */
+    margin-top: 5px;
+    transition: none 0s !important;
+}
+
+.radio-buttons .btn.btn-primary.btn-togo:hover {
+    background-color: rgba(0, 0, 0, .0) !important;
+    /* font-weight: bold;*/
+}
+
+.form-control {
+    margin-top: 0;
+    height: 46px !important;
+}
+
+.btn.change-quantity {
+    font-size: 14px;
+}
+
+.menu-item-detail .btn-add-to-cart {
+    /* Active "Add to Cart" btn */
+    width: 100%;
+    background-color: #ee6534 !important;
+    color: #fff !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    padding: .625em;
+    text-transform: uppercase !important;
+    width: 65%;
+    max-width: 500px;
+    min-width: 155px;
+}
+
+.menu-item-detail .btn-add-to-cart:hover {
+    background-color: #ee6534 !important;
+}
+
+.btn-add-to-cart {
+    /* Inactive "Add to Cart" btn */
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #ee6534;
+    color: #fff !important;
+    text-transform: capitalize;
+    padding: .625em;
+    transition: all .2s ease-in 0s;
+}
+
+.no-touch .btn.btn-togo.btn-primary:hover,
+.btn.btn-togo.btn-primary:focus,
+.btn.btn-togo.btn-primary:active,
+.btn.btn-togo.btn-primary.active,
+.open>.dropdown-toggle.btn.btn-togo.btn-primary {
+    background-color: #ee6534;
+    border-color: rgba(0, 0, 0, .0);
+}
+
+.no-touch .btn.btn-togo.btn-info:hover,
+.no-touch .btn.btn-togo.btn-info:active {
+    /* removes blur from add to cart button when choices aren't selected */
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    -ms-filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='0px');
+    filter: blur(0px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='0px');
+    background-color: #ee6534 !important;
+    color: #fff !important;
+}
+
+.show-validation .header-row.invalid {
+    /* Error and Validation in Detail */
+    color: #c01111;
+    background-color: rgba(0, 0, 0, .0);
+    padding: inherit;
+}
+
+small.validation-message.ng-scope {
+    font-family: 'Lato';
+}
+
+.header-row .validation-message {
+    float: right;
+    color: #c01111;
+    text-transform: capitalize;
+    line-height: 28px;
+    font-size: .875em;
+}
+
+.header-row .required-alert {
+    color: #c01111;
+    font-size: 1em;
+    position: relative;
+    top: -4px;
+}
+
+.input-group .form-control {
+    /* centers quantity picker */
+    text-align: center;
+}
+
+.btn-info:focus,
+.btn-info.focus,
+.btn-info:active:focus {
+    color: #fff;
+    background-color: #000;
+    border-color: rgba(0, 0, 0, .0);
+}
+
+.btn:focus {
+    /* Fix - removes borders from btn after click */
+    outline: none !important;
+    outline-offset: 0px;
+}
+
+.btn-info:active {
+    color: #fff;
+    background-color: #000;
+    border-color: rgba(0, 0, 0, .0);
+}
+
+.btn.btn-togo.btn-info {
+    /* add to cart button font size & Sign In/Up Button */
+    font-family: 'Lato';
+    font-size: 18px !important;
+    width: 100%;
+    max-width: 300px;
+    min-width: 175px;
+    padding: .625em;
+    background-color: #ee6534 !important;
+    color: #fff !important;
+}
+
+.radio-buttons input:checked+.btn.btn-primary.btn-togo {
+    background-color: rgba(0, 0, 0, .0);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, .0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, .0);
+}
+
+.fat-label.included-item .btn.btn-togo.btn-primary:hover {
+    background-color: rgba(0, 0, 0, .0) !important;
+}
+
+.menu-item-options .included-item input:checked+span {
+    font-weight: bold !important;
+}
+
+.col-sm-offset-2.col-sm-8.selected-content.button-col {
+    /* FIX - removes box shadow on add to cart btn */
+    box-shadow: none;
+    padding-right: 0px;
+    margin-left: 0 !important;
+    background-color: rgba(0, 0, 0, .0) !important;
+}
+
+.menu-item-options .row.bottom-fixed .col-sm-offset-2 {
+    margin-left: 0;
+    width: 100% !important;
+}
+
+.menu-item-options .included-item input:checked+span {
+    letter-spacing: 0px;
+}
+
+.btn:active,
+.btn.active {
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, .0);
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, .0);
+}
+
+.btn-edit-item:hover {
+    background-color: #CFA670 !important;
+    border: none !important;
+}
+
+.btn-edit-item {
+    width: 45% !important;
+    min-width: 150px;
+    background-color: #CFA670 !important;
+    border: none !important;
+    padding: .625em !important;
+    color: #fff !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    text-transform: uppercase !important;
+}
+
+/* ===== Right Column - Cart ===== */
+.cart-in-page {
+    margin-top: 31px;
+}
+
+#checkout .cart-in-page {
+    margin-top: 39px;
+}
+
+.cart-container {
+    background-color: #fff;
+    -webkit-box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, .2);
+    box-shadow: 15px 25px 35px -15px rgba(0, 0, 0, .3);
+    padding: 20px;
+    font-size: 1em;
+}
+
+.cart-item-container .editable-cart-item {
+    cursor: pointer;
+    border: 0 solid transparent !important;
+    -webkit-transition: all .75s;
+    -o-transition: all .75s;
+    transition: all .75s;
+    border-bottom: 1px solid transparent;
+}
+
+.cart-item-container .parent-cart-item-container {
+    /*padding: 0.156em 0em; 
+  padding: 0.313em 0.625em; */
+    padding: 0.313em;
+    margin-bottom: 0 !important;
+    border: 0px solid #fff;
+}
+
+select#pickupTime {
+    margin-bottom: 5px;
+}
+
+div#cart-header {
+    text-align: center;
+    color: #000;
+    /* Change */
+}
+
+.cart-help {
+    font-style: italic;
+    margin: auto auto;
+    text-align: center;
+    margin-bottom: 1em;
+    color: #333333;
+}
+
+.cart-item-text>.item-name {
+    font-size: 0.875em;
+}
+
+.cart-item-container .item-details {
+    padding-left: 30px;
+    text-indent: -15px;
+    padding-bottom: 1px;
+}
+
+.delivery-info sup.ng-scope {
+    top: -.5em;
+    display: block;
+    top: 10px;
+    padding-bottom: 15px;
+}
+
+.cart-container .order-type {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.250em;
+    text-transform: uppercase;
+    /* change */
+    padding: 8px 0;
+    font-weight: bold;
+    color: #424141;
+}
+
+.cart-container .delivery-info .delivery-info-header {
+    text-transform: uppercase;
+    /* change */
+    font-size: 1.125em;
+    display: block;
+    text-align: center;
+    padding-bottom: 8px !important;
+    letter-spacing: 0px;
+}
+
+.is-usual {
+    padding: 10px 0;
+}
+
+.is-usual label span:nth-child(2),
+.is-usual label span:nth-child(3) {
+    padding-left: 5px !important;
+}
+
+.cart-section.cart-summary .row {
+    margin-bottom: 5px;
+}
+
+.cart-section.cart-summary .row:last-child {
+    margin-bottom: 0px;
+}
+
+.cart-summary:after {
+    /* FIX- fixes size of togo summary information */
+    font-size: 14px !important;
+    line-height: 1.35;
+}
+
+/* adjusts size of headline that is a merchant specific message in checkout */
+button#checkout {
+    color: #fff;
+    background-color: #ee6534;
+    border-color: #ee6534;
+    padding: .625em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 0;
+    font-size: 18px;
+    width: 100% !important;
+    max-width: 335px;
+}
+
+button#checkout:hover {
+    background-color: #ee6534;
+    border-color: #ee6534;
+}
+
+.cart-item-container .special-instructions {
+    /* special instructions */
+    cursor: pointer;
+    font-style: italic;
+    color: #6a6a6a;
+    font-size: 0.875em;
+    margin-bottom: 0.313em;
+}
+
+.consumer-name-header {
+    /* Consumer name */
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
+    font-size: .875em;
+    padding: .5em 0 !important;
+}
+
+.row.total {
+    font-size: 1em;
+}
+
+.estimated-total-label {
+    text-align: left !important;
+    padding-bottom: 10px;
+}
+
+/*===== Find A Location page =====*/
+.merchant-landing #view-container {
+    background-color: #fff !important;
+}
+
+/* ===== FIX - logo and home icon desktop - mobile =====*/
+.merchant-landing .navbar-brand {
+    left: 37px !important;
+    position: relative;
+}
+
+.merchant-landing span.glyphicon.glyphicon-home {
+    /* Home Icon */
+    margin-right: 10px !important;
+}
+
+li.list-group-item.location-list-item.ng-scope {
+    padding: 15px !important;
+}
+
+li.list-group-item.location-list-item.ng-scope .location-info-expander i {
+    color: #6a6a6a;
+}
+
+.label-default {
+    background-color: #333;
+    color: #fff;
+}
+
+#location-search {
+    padding: 12px 10px;
+    background-color: #6a6a6a;
+}
+
+#location-search .form-group .col-xs-10 {
+    width: 100%;
+    padding: 0 5px !important;
+}
+
+#location-list .list-group-item {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* ===== Enter Delivery Address =====*/
+.form-group.center-block.text-center form.ng-pristine.ng-invalid.ng-invalid-required,
+.form-group.center-block.text-center form.ng-pristine.ng-valid.ng-valid-required {
+    width: 75%;
+    min-width: 300px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group.center-block.text-center form .form-group textarea.form-control.form-control-floating.ng-pristine {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-group.center-block.text-center form .change.change-order-type.text-center.ng-scope {
+    padding: 10px;
+    color: #000;
+    /* change */
+    /* to white on light BGs */
+}
+
+.form-group.center-block.text-center form .change.change-order-type.text-center.ng-scope .dropup .btn-link,
+.form-group.center-block.text-center form .change.change-order-type.text-center.ng-scope .dropdown .btn-link {
+    color: #6a6a6a;
+}
+
+/* ===== Checkout =====*/
+.selected-content.top-form-container.checkout {
+    position: relative;
+    top: 20px;
+}
+
+.selected-content.top-form-container.checkout .form-section .row.body-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.selected-content.top-form-container.checkout .form-section .row.body-row .pickup-day-container,
+.selected-content.top-form-container.checkout .form-section .ng-scope .row.body-row .col-sm-offset-1,
+.selected-content.top-form-container.checkout .form-section .row.body-row .col-sm-offset-1 {
+    margin-left: 0;
+    width: 100%;
+}
+
+.selected-content.top-form-container.checkout .form-section .row.body-row .col-sm-offset-1+div {
+    width: 100%;
+}
+
+#new-payment-div .row.body-row.ng-scope .form-group.checkbox {
+    margin-bottom: 15px;
+}
+
+#complete-order-form .row .col-sm-offset-2.col-sm-8 {
+    margin-left: 0 !important;
+}
+
+.checkout .form-section .order-total {
+    text-align: left !important;
+}
+
+.show-validation .header-row.invalid .validation-message {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+}
+
+.cart-in-page .cart-sidebar.static-cart {
+    position: relative;
+    top: -19px;
+}
+
+.checkout .form-section .order-total-summary {
+    text-align: left;
+}
+
+.checkout .order-total {
+    margin-bottom: 20px !important;
+    letter-spacing: 0px;
+}
+
+.btn-complete-order {
+    background-color: #6a6a6a !important;
+    color: #fff !important;
+}
+
+.btn-complete-order:hover {
+    background-color: #0000ee !important;
+}
+
+.show-validation .body-row.invalid select.ng-invalid {
+    -webkit-box-shadow: inset 3px 0 1px 0 #c01111;
+    box-shadow: inset 3px 0 1px 0 #c01111;
+}
+
+.form-sub-section h3 {
+    text-transform: none;
+    font-size: 14px;
+    letter-spacing: 0px;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 7px !important;
+}
+
+/* ===== Success / Thank You page =====*/
+.order-complete .location-info h4,
+.customer-arrival .location-info h4 {
+    letter-spacing: 0;
+    font-size: 1.375em !important;
+    font-weight: normal !important;
+    line-height: 1.75em !important;
+}
+
+.pickup-date h3>span.ng-binding,
+.pickup-date h4 {
+    letter-spacing: 0;
+    font-size: 22px !important;
+    font-weight: normal !important;
+    line-height: 1.75em !important;
+}
+
+.delivery-info.ng-scope>h4 {
+    font-size: 1em !important;
+    font-weight: bold;
+    color: #424141;
+    margin: 0 auto 20px !important;
+    width: 75%;
+}
+
+.order-complete .pickup-date h3,
+.customer-arrival .pickup-date h3 {
+    letter-spacing: 0em;
+}
+
+.order-complete .location-info h3,
+.customer-arrival .location-info h3 {
+    letter-spacing: 0em;
+}
+
+/* ========== Modals ========== */
+.item-prompt .col-xs-12 h1 {
+    font-size: 2.250em;
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 10px !important;
+}
+
+.item-prompt .col-xs-12 .menu-item-description.ng-binding {
+    margin-top: 10px !important;
+}
+
+.item-prompt .col-xs-12 .btn-link {
+    float: none !important;
+    text-align: center !important;
+    margin: 20px auto 0px auto;
+    display: block;
+}
+
+.item-prompt .col-xs-12 .btn-link .glyphicon.glyphicon-chevron-right {
+    color: #424141;
+}
+
+/* ====== New Order ====== */
+.modal-footer .btn+.btn {
+    margin-left: 0px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+/* ====== Sign In/Up ====== */
+.continue-as-guest {
+    font-weight: bold !important;
+    padding: 15px;
+    color: #424141;
+    font-size: 1.125em;
+}
+
+.forgot-password {
+    padding-bottom: 5px;
+    font-size: 1.125em;
+}
+
+.security-dialog .modal-header-header {
+    padding: 30px 15px 0px;
+}
+
+.security-dialog .ui.accordion {
+    padding-top: 10px;
+}
+
+.security-dialog .modal-header-image {
+    max-width: 250px;
+    background-size: contain;
+    display: none;
+}
+
+.modal-title {
+    padding: 10px;
+    margin: 0;
+    line-height: 1.17647059;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0px;
+    font-size: 2.250em;
+    text-align: center;
+}
+
+.modal-dialog {
+    width: 500px;
+    margin: 30px auto;
+    margin-top: 50px;
+}
+
+.modal-dialog .modal-content .modal-body p {
+    text-align: center;
+}
+
+.modal-body.ng-scope div p {
+    padding: 0 25px !important;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    border: none;
+    border: none;
+    border-radius: 3px;
+    -webkit-box-shadow: 25px 25px 35px -15px rgba(0, 0, 0, .3);
+    box-shadow: 25px 25px 35px -15px rgba(0, 0, 0, .3);
+    background-clip: padding-box;
+    outline: 0;
+}
+
+.modal-footer {
+    padding: 20px 20px 30px 20px !important;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+
+a.security-footer-link.sign-up {
+    font-weight: bold;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.modal-footer .footer-links {
+    float: none !important;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content form .modal-body .ng-scope .form-group.checkbox.ng-scope {
+    margin-bottom: 10px !important;
+}
+
+.modal-footer>.btn.btn-togo.btn-primary.ng-binding.ng-scope {
+    font-size: 1.125em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #ee6534 !important;
+    padding: .625em;
+    width: 100%;
+    max-width: 300px;
+    min-width: 175px;
+}
+
+.modal-footer>.btn.btn-togo.btn-primary.ng-binding.ng-scope:hover {
+    color: #fff;
+    background-color: #ee6534 !important;
+}
+
+.modal-footer>.btn.btn-togo.btn-primary.ng-binding {
+    font-size: 1.125em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #ee6534 !important;
+    padding: .625em;
+    width: 100%;
+    max-width: 300px;
+    min-width: 175px;
+}
+
+.modal-footer>button.btn.btn-togo.btn-default.ng-binding.ng-scope {
+    font-size: 1.125em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #ee6534 !important;
+    padding: .625em;
+    width: 100%;
+    max-width: 300px;
+    min-width: 175px;
+    border-radius: 3px;
+}
+
+.modal-dialog.modal-md .modal-content .modal-footer.ng-scope button:nth-child(2) {
+    /* Start New Order BTN */
+    background-color: #ee6534;
+}
+
+.modal-dialog.modal-md .modal-content .modal-footer.ng-scope button:nth-child(2):hover {
+    /* Start New Order BTN - hover */
+    background-color: #ee6534;
+    color: #fff !important;
+}
+
+.modal-body>.text-danger {
+    display: none !important;
+}
+
+.modal-header>.text-danger {
+    margin-top: 10px;
+}
+
+.modal-header {
+    text-transform: uppercase;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.security-dialog .close {
+    margin-top: 0 !important;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.validation-message,
+.validation-header {
+    font-size: 0.750em;
+}
+
+.text-danger {
+    color: #c01111;
+}
+
+.text-danger i {
+    display: none;
+}
+
+span.input-group-btn button {
+    height: 36px;
+}
+
+.input-group-btn {
+    top: 5px;
+}
+
+.modal-body.ng-scope.checkbox {
+    margin-bottom: 10px;
+}
+
+.admin-page {
+    max-width: 550px;
+    background-color: #fff;
+    padding: 30px 25px;
+    box-shadow: 25px 25px 35px -15px rgba(0, 0, 0, .2);
+}
+
+.admin-page h2 {
+    text-transform: uppercase;
+}
+
+.admin-section .web-view-label {
+    margin-bottom: 24px !important;
+}
+
+.admin-section form .form-group {
+    width: 100% !important;
+    margin: 0 auto 15px auto;
+    max-width: 300px;
+    min-width: 175px;
+}
+
+.admin-page .admin-section h5.ng-binding {
+    font-size: 0.875em;
+    margin-bottom: 20px !important;
+    margin-top: 10px !important;
+    font-family: "Lato" !important;
+}
+
+.admin-page .admin-section form .form-group {
+    margin-bottom: 30px !important;
+}
+
+.admin-section form .btn.btn-togo.btn-primary,
+.admin-section form .btn.btn-togo.btn-info {
+    /* Update btn */
+    font-size: 1.125em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #ee6534 !important;
+    padding: .625em;
+    width: 100%;
+    max-width: 300px;
+    min-width: 175px;
+    margin-bottom: 15px !important;
+    letter-spacing: 0px !important;
+}
+
+.admin-section form .btn.btn-togo.btn-primary:hover {
+    background-color: #ee6534 !important;
+}
+
+.admin-section form .btn.btn-default.btn-togo {
+    /* cancel btn */
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    background-color: #ee6534 !important;
+    border: 1px solid #ee6534;
+    padding: .625em;
+    width: 100%;
+    max-width: 300px;
+    min-width: 175px;
+    letter-spacing: 0px !important;
+}
+
+.admin-section form .btn.btn-default.btn-togo:hover {
+    background-color: #2b99d1 !important;
+    color: #fff !important;
+}
+
+.admin-section h2 {
+    color: #000;
+    /* change to brand's primary */
+}
+
+/* standardizes admin modal widths */
+.state-personalInfo div#view-container,
+.state-changeBirthdate div#view-container,
+.state-changeName div#view-container,
+.state-changeEmail div#view-container,
+.state-changeCallbackNumber div#view-container,
+.state-changePassword div#view-container,
+.state-changeEmailOptIn div#view-container {
+    max-width: 600px;
+    min-width: 175px;
+}
+
+/* ====== Panel Footer ====== */
+.panel-footer {
+    padding: 10px 15px;
+    padding-top: 14px;
+    background-color: #2b99d1;
+    /* change */
+    border-top: 0px solid #ddd;
+}
+
+.panel-footer p,
+.panel-footer a {
+    color: #ffffff;
+    /* change */
+}
+
+.merchant-landing .panel-footer {
+    top: 0px;
+}
+
+#footer #terms-security {
+    float: right;
+    min-width: 155px;
+    position: relative;
+    right: 5px;
+}
+
+/* MENU NUTRITION */
+p.menu-item-nutrition.ng-binding.ng-scope {
+    font-size: 14px !important;
+    padding-top: 5px !important;
+    padding-bottom: 20px !important;
+    font-style: italic;
+}
+
+/* MENU NUTRITION */
+/* ========== Custom Styles ========== */
+.no-touch .btn.btn-togo.btn-info:hover {
+    background-color: #ee6534 !important;
+}
+
+/* Add price to product detail */
+
+.menu-item-detail .item-price {
+    display: block !important;
+    padding-bottom: 10px !important;
+    padding-left: 11px !important;
+    font-size: 21px;
+}
+
+.menu-section-menu-items .item {
+    padding: 12px !important;
+}
+
+.selected-menu-section-container .item.has-image .item-image {
+    width: 100px;
+    height: 90px;
+    display: block;
+    background-size: cover;
+    background-position: 50%;
+    margin-bottom: 8px !important;
+    float: right;
+    margin-left: 8px !important;
+}
+
+.selected-content.top-form-container.menu-item-detail.ng-scope h1 {
+    color: #ee6534;
+    display: inline-block;
+    letter-spacing: 0px;
+    /* change */
+    width: 65%;
+    font-family: "Lato";
+}
+
+.menu-item-detail.has-image .item-image .item-image-img {
+    display: block;
+    height: 200px;
+    float: right !important;
+    max-width: 80%;
+}
+
+.menu-item-detail.has-image .item-image {
+    float: left !important;
+    width: auto !important;
+    margin-bottom: 20px !important;
+    margin-right: 15px !important;
+    margin-left: 10px !important;
+    max-width: 250px;
+    background-size: cover;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    /* Hamburger bar color */
+    background-color: #2b99d1 !important;
+    /* CHANGE */
+}
+
+.btn.btn-togo.btn-primary {
+    font-size: 18px !important;
+    font-family: 'Lato';
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #ee6534;
+    padding: .625em;
+    width: 100%;
+    max-width: 300px;
+    min-width: 100px;
+    border-radius: 3px !important;
+    letter-spacing: 0px;
+}
+
+.modal-footer>.btn.btn-togo.btn-primary:hover {
+    color: #fff;
+    background-color: #ee6534 !important;
+}
+
+.btn-delete-item {
+    background-color: #fff !important;
+    border: 1px solid #6a6a6a !important;
+    color: #6a6a6a !important;
+    font-weight: bold !important;
+    font-size: 1.125em !important;
+    text-transform: uppercase !important;
+    margin: 0 1em;
+    width: 45% !important;
+    min-width: 150px;
+}
+
+.btn-delete-item:hover {
+    background-color: #6a6a6a !important;
+    transition: all .2s ease-in 0s;
+    color: #fff !important;
+}
+
+.navbar-default {
+    /* NavBar background */
+    background-color: #ffffff !important;
+    /* CHANGE */
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #2b99d1;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: #ee6534;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+    color: #ee6534;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #ee6534;
+}
+
+.navbar-brand {
+    /* Logo Size */
+    background-position-x: 5px;
+    background-position-y: 50%;
+    background-size: 110px;
+    height: 100px;
+}
+
+.selected-menu-section-container .item .item-text.item-name {
+    /* desktop item headlines */
+    color: #424141;
+    /* change */
+    /* Menu items headers, middle column */
+    letter-spacing: 0px;
+    /* change */
+}
+
+.selected-menu-section-container .item:hover .item-text.item-name {
+    /* desktop item headlines */
+    color: #ee6534;
+    /* change */
+}
+
+.modal-dialog.modal-md .modal-content .modal-footer.ng-scope button:first-child {
+    /* Modals nevermind btn */
+    background-color: #ee6534 !important;
+    color: #fff !important;
+}
+
+.modal-dialog.modal-md .modal-content .modal-footer.ng-scope button:first-child:hover {
+    /* Continue BTN - hover */
+    background-color: #ee6534 !important;
+}
+
+.modal-dialog.modal-md .modal-content .modal-footer.ng-scope button:nth-child(2) {
+    /* Modals sign in btn */
+    background-color: #ee6534 !important;
+    color: #fff !important;
+}
+
+.modal-dialog.modal-md .modal-content .modal-footer.ng-scope button:nth-child(2):hover {
+    /* Start New Order BTN - hover */
+    background-color: #ee6534 !important;
+    color: #fff !important;
+}
+
+/* === Yes, Please - FIX === */
+.modal-dialog.modal-md .modal-content .modal-body .btn.btn-link.btn-link-nav {
+    background-color: #424141 !important;
+    padding: .625em;
+    width: 100%;
+    max-width: 300px !important;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 18px !important;
+    font-family: 'Lato';
+    font-weight: bold;
+}
+
+.modal-dialog.modal-md .modal-content .modal-body .btn.btn-link.btn-link-nav:hover {
+    background-color: #0000ee;
+}
+
+.modal-dialog.modal-md .modal-content .modal-body .btn.btn-link.btn-link-nav .glyphicon {
+    color: #fff;
+}
+
+/* ==== Birthday Admin Button FIX ===== */
+
+.ng-valid-date .form-group .input-group .input-group-btn:last-child>.btn {
+    height: 46px !important;
+    top: -5px !important;
+    font-size: 20px !important;
+}
+
+/* ===== */
+.header-instructions {
+    font-family: "Lato" !important;
+    font-weight: bold !important;
+    /* change */
+    /* normal */
+    text-transform: uppercase !important;
+    font-size: 1.125em;
+    color: #fff;
+    /* change */
+    letter-spacing: 0px;
+    /* change */
+}
+
+.primary-inverse .item:hover,
+.primary-inverse .item:active {
+    color: #fff;
+    /* change */
+    background-color: #6a6a6a;
+}
+
+.list-choices.menu-sections .item {
+    font-size: 1.500em;
+    color: #ffffff;
+    background-color: #ee6534;
+}
+
+.list-choices.menu-sections .item:hover {
+    background-color: #fff;
+    color: #ee6534;
+}
+
+.list-choices.menu-sections .item span {
+    /* Types of menus headers */
+    text-transform: uppercase !important;
+    font-size: 0.885em !important;
+}
+
+.list-choices .item.active {
+    background-color: #fff;
+    color: #ee6534;
+}
+
+.list-choices .item.active:hover {
+    background-color: #fff;
+    color: #ee6534;
+}
+
+.radio-buttons .btn.btn-primary.btn-togo {
+    background-color: rgba(0, 0, 0, .0);
+    color: #000 !important;
+    font-family: "Lato" !important;
+    font-weight: normal;
+    text-transform: capitalize !important;
+    max-width: 1000px;
+    padding: 0 !important;
+}
+
+#promo-code-div button.btn.btn-default {
+    height: 46px;
+    /* keep this size */
+    border-radius: 0px 3px 3px 0px !important;
+    /* match border radius above */
+    position: relative;
+    top: -5px;
+}
+
+.how-many span.input-group-btn button {
+    border-radius: 3px 0 0 3px !important;
+}
+
+.how-many span.input-group-btn:last-child button {
+    border-radius: 0px 3px 3px 0px !important;
+}
+
+.order-total {
+    color: #424141 !important;
+}
+
+#existing-payment-div .form-sub-section h3 {
+    font-size: 16px !important;
+}
+
+.special-instructions h2 small {
+    letter-spacing: 0 !important;
+    line-height: 1.5;
+    font-weight: bold;
+    font-family: 'Lato';
+    color: #424141;
+    /* change */
+    font-size: 14px;
+}
+
+/* ========= template updates ========= */
+div#required-msg,
+#mandatory-msg {
+    text-align: center;
+    color: #fff;
+}
+
+#guest-contact-form #required-msg {
+    text-align: left !important;
+}
+
+div#required-msg span#mandatory-msg,
+.state-getDeliveryAddress .change.change-order-type.text-center.ng-scope,
+.state-getDeliveryAddress .change.change-order-type.text-center.ng-scope .dropdown .btn-link {
+    color: #2b99d1 !important;
+}
+
+.modal-body div#required-msg,
+.modal-body div#required-msg span#mandatory-msg,
+#checkout div#required-msg,
+#checkout div#required-msg span#mandatory-msg {
+    color: #424141 !important;
+}
+
+#checkout div#required-msg,
+#checkout div#required-msg span#mandatory-msg {
+    text-align: left !important;
+}
+
+.location-0000 .change.change-order-type.text-center::after {
+    content: 'You are ordering from: zzzzzzzzzz';
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-size: 16px !important;
+    font-family: "Lato" !important;
+    margin-top: 4px;
+    font-weight: normal !important;
+    text-transform: none !important;
+    margin-top: 16px;
+}
+
+.cart-section.order-type-control .order-type span:after {
+    display: block;
+    width: 100%;
+    color: #424141;
+    font-size: 16px !important;
+    font-family: 'Lato' !important;
+    margin-top: 4px;
+    font-weight: normal !important;
+    text-transform: none !important;
+}
+
+.location-0000 .cart-section.order-type-control .order-type span:after {
+    content: 'You are ordering from: zzzzzzzzzz';
+}
+
+.form-sub-section.active {
+    margin-bottom: 0px;
+}
+
+div#existing-payment-div {
+    margin-bottom: 16px;
+}
+
+span.cc-images {
+    position: relative;
+    top: 8px;
+}
+
+.btn-togo.size .price {
+    margin-right: 16px !important;
+}
+
+.row.tight-columns.content-container.loyalty-admin-nav {
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.loyalty-card-big,
+.giftCard-card-big,
+.mealPlan-card-big {
+    width: 100%;
+    max-width: 280px;
+}
+
+/* === Offers Page styling === */
+.tab-content.clearfix {
+    background-color: #fff;
+    padding: 24px 32px;
+    border: 1px solid #ddd;
+    border-top: 0px;
+}
+
+span#standard-panel-title,
+.admin-section.slide-reveal .web-view-label {
+    font-size: 32px;
+    color: #424141;
+}
+
+.standard-tab #standard-panel-title {
+    font-size: 16px;
+    color: #424141;
+}
+
+/* === Rewards Page styling === */
+small.enter-another-loyalty-card {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+p.loyalty-account-number {
+    padding-bottom: 24px !important;
+}
+
+/* === New Modifer popup Fix === */
+.row.body-row.included-group-items.selection-optional.included-group-expanded,
+.row.body-row.included-group-items.selection-required.included-group-expanded,
+.row.body-row.included-group-items.invalid.selection-required.included-group-expanded,
+.row.body-row.included-group-items.invalid.selection-optional.included-group-expanded {
+    margin-left: auto !important;
+}
+
+.included-group .selected-modifiers {
+    margin-left: 32px;
+}
+
+.selected-modifiers li.ng-binding.ng-scope {
+    padding: 4px 0 !important;
+}
+
+.included-group-header-content h2.group-title span {
+    font-size: .93em !important;
+}
+
+.included-group-collapsed {
+    padding: 0 12px 6px 12px !important;
+}
+
+.included-group-popup>.included-group-items {
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    margin: 10vh auto;
+    background-color: #fff !important;
+    width: 80vw;
+    border: 1px solid #424141 !important;
+    border-radius: 5px;
+    padding: 32px !important;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+    max-width: 600px;
+}
+
+.included-group-header-content {
+    margin-left: 0px !important;
+}
+
+.included-group-items {
+    margin-left: 0px !important;
+}
+
+.col-xs-12.included-group-header {
+    margin-bottom: 8px;
+}
+
+.state-getDeliveryAddress .Catering-for-Pickup span,
+.state-getDeliveryAddress .change.change-order-type.text-center.ng-scope a {
+    color: #000 !important;
+}
+
+.state-getDeliveryAddress .Catering-for-Pickup span:hover,
+.state-getDeliveryAddress .change.change-order-type.text-center.ng-scope a:hover {
+    color: #2b99d1 !important;
+}
+
+/* Inactive Page */
+.coming-soon h1 {
+    line-height: .854;
+    margin-bottom: 24px !important;
+}
+
+.coming-soon h1 span {
+    font-size: 24px;
+}
+
+.coming-soon a {
+    text-decoration: underline;
+    margin-bottom: 150px;
+}
+
+.site-alert {
+    height: 100%;
+    min-height: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: #fff;
+    z-index: 1000;
+    padding-top: 150px;
+}
+
+.loyalty-card {
+    background: url();
+    /* change card bg */
+    background-size: 100% auto;
+    margin: 0 auto;
+}
+
+.sold-out-note {
+    font-family: 'Century Gothic';
+    color: red;
+}
+
+@media only screen and (max-width:991px) {
+    .cart-tab {
+        position: fixed;
+        top: 118px;
+        height: 120px;
+        width: 27px;
+        right: -2px;
+        border-left: 0px solid #fff;
+        border-top: 0px solid #fff;
+        border-bottom: 0px solid #fff;
+        background-image: url(/web/Content/images/view-cart.png);
+        background-position: 3px center;
+    }
+
+    .primary-inverse.cart-tab.checkout-tab {
+        display: block;
+        height: 190px;
+        width: 44px;
+        background-color: #424141;
+        background-image: url(/web/Content/images/cart-check-out.png);
+        background-position: 50%;
+        border: 0px solid #fff;
+        box-shadow: 10px 15px 30px -10px rgba(0, 0, 0, .85) !important;
+        right: 0;
+    }
+
+    .is-usual {
+        margin-bottom: 25px;
+    }
+
+    button#checkout {
+        width: 100% !important;
+        max-width: 1500px;
+    }
+
+    .menu-list ul .menu-selection .row .menu-title,
+    .menu-list ul .menu-selection .row .menu-info {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #checkout .primary-inverse.cart-tab {
+        display: none !important;
+    }
+
+    .navbar-brand {
+        background-position-x: 15px;
+        max-width: 225px;
+    }
+
+    .nav-location-address:before {
+        content: 'YOU ARE ORDERING FROM: ';
+    }
+
+    .cart-tab.checkout-tab {
+        border-radius: 3px 0 0 3px;
+    }
+
+    .bottom-fixed .selected-content.button-col .btn.btn-togo.btn-add-to-cart.ng-scope.btn-info,
+    .bottom-fixed .selected-content.button-col .btn.btn-togo.btn-add-to-cart.ng-scope.btn-primary,
+    .btn.btn-togo.btn-add-to-cart.ng-scope.btn-primary {
+        border-radius: 3px 3px 0 0 !important;
+    }
+
+    .primary-inverse.cart-tab {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, .0) !important;
+        background-image: none;
+    }
+
+    .location-0000 .nav-location-address:after {
+        display: block;
+    }
+
+    .nav-location-address:before {
+        text-align: right;
+    }
+
+    p.navbar-text.navbar-right.nav-location-address {
+        top: 28px !important;
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .merchant-landing .navbar-brand {
+        left: -15px !important;
+        width: 55%;
+        background-size: 37%;
+        background-position: 0 50%;
+    }
+
+    .merchant-landing span.glyphicon.glyphicon-home {
+        margin-right: 10px !important;
+        color: #2b99d1;
+        margin-top: 1px !important;
+    }
+
+    .nav>li>a {
+        padding-left: 0px;
+    }
+
+    .navbar.navbar-default .container>.navbar-header {
+        margin-left: -15px;
+        margin-right: 0px !important;
+    }
+
+    .modal-dialog {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .admin-page {
+        margin-top: 50px;
+    }
+
+    .selected-content {
+        -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .0);
+        box-shadow: 0 0 0 rgba(0, 0, 0, .0);
+    }
+
+    .navbar-toggle .icon-bar {
+        display: block;
+        width: 30px;
+        height: 4px;
+        margin-bottom: 4px !important;
+    }
+
+    .nav-location-address {
+        display: none;
+    }
+
+    .location-information {
+        text-align: center;
+        font-size: 14px !important;
+        font-size: .95em;
+        padding: 5px;
+        background-color: #ee6534;
+    }
+
+    .location-information p {
+        color: #ffffff;
+        float: none;
+        display: block;
+        position: relative;
+        top: 0;
+        background-color: #ee6534;
+    }
+
+    .mapboxgl-ctrl-geocoder--icon-search {
+        top: 7px !important;
+    }
+
+    .navbar.navbar-default .container {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .navbar-collapse {
+        overflow-x: visible;
+        padding: 0 !important;
+        border-top: none;
+    }
+
+    .navbar-default .navbar-nav>li>a {
+        color: #2b99d1;
+        padding-right: 0;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+        font-size: 13px;
+        text-align: left;
+        padding-right: 60px;
+    }
+
+    .navbar-nav li a {
+        margin-bottom: 40px !important;
+        font-size: 1em !important;
+    }
+
+    .nav .nav-divider {
+        display: none !important;
+    }
+
+    .usual-btn {
+        width: 100%;
+        max-width: 300px;
+        min-width: 150px;
+    }
+
+    #order-type-choice-view {
+        margin-top: 0px;
+    }
+
+    .header-instructions {
+        text-align: center;
+    }
+
+    .selected-menu-section-header {
+        padding-top: 30px;
+        padding-left: 6px;
+        padding-right: 6px;
+        margin: 0 10px;
+    }
+
+    .selected-menu-section-header h1 {
+        text-transform: uppercase;
+        font-size: 2em;
+        padding-bottom: 20px !important;
+        color: #ee6534 !important;
+        letter-spacing: 0 !important;
+    }
+
+    .menu-sections-container .header-instructions {
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+
+    span.item-text.item-name.ng-binding {
+        color: #424141 !important;
+    }
+
+    .list-choices,
+    .menu-list {
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, .0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, .0);
+    }
+
+    .list-choices.order-type-list ul li:hover {
+        background-color: #CFA670;
+    }
+
+    #menu-choice-view .menu-list ul .menu-selection .row {
+        padding: 25px 0 25px 0 !important;
+    }
+
+    .menu-list ul .menu-selection .row .menu-title span {
+        line-height: 1.5;
+    }
+
+    #menu-choice-view .menu-list ul .menu-selection .row .menu-info {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 2.2;
+    }
+
+    .modal-title {
+        font-size: 1.875em;
+    }
+
+    .form-group.center-block.text-center form .change.change-order-type.text-center.ng-scope {
+        padding: 15px;
+        font-size: 1em;
+        background-color: rgba(0, 0, 0, .0);
+    }
+
+    .change {
+        font-size: 1em;
+        text-transform: none;
+        margin-top: 30px;
+    }
+
+    div.selected-content.selected-menu-section,
+    .menu-item-detail {
+        margin-top: 25px;
+    }
+
+    .no-touch .menu-section-menu-items .item span:first-child {
+        color: #424141;
+    }
+
+    .no-touch .menu-section-menu-items .item:hover {
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, .0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, .0);
+        border-bottom: .5px solid #eee;
+    }
+
+    .quantity-container {
+        margin-bottom: 20px !important;
+    }
+
+    .input-group.how-many input,
+    .input-group.how-many .input-group-btn {
+        height: 50px !important;
+        margin-top: 20px;
+    }
+
+    .input-group.how-many input {
+        width: 100px !important;
+        border: 1px solid #6a6a6a;
+        font-size: 22px !important;
+        font-weight: bold !important;
+        font-family: 'Lato';
+        padding-top: 10px !important;
+        color: #000;
+    }
+
+    span.input-group-btn button {
+        height: 50px !important;
+        top: 5px !important;
+        width: 50px !important;
+        font-size: 30px !important;
+        font-weight: bold !important;
+        font-family: 'Lato';
+        line-height: 1;
+        color: #fff;
+        background-color: #ee6534;
+        border: 0px solid #ee6534;
+    }
+
+    span.input-group-btn button:hover,
+    span.input-group-btn button:focus,
+    span.input-group-btn button:active,
+    .input-group-btn>.btn:focus,
+    .input-group-btn>.btn:active {
+        color: #fff !important;
+        background-color: #ee6534;
+        border: 0px solid #ee6534 !important;
+    }
+
+    span.input-group-btn .btn-default[disabled]:hover {
+        border: 0px solid #fff !important;
+    }
+
+    .row.bottom-fixed .col-sm-offset-2.col-sm-8.selected-content.button-col button {
+        width: 49% !important;
+        display: inline-block;
+        margin: 0;
+        padding: 32px 0px !important;
+        border-radius: 3px 3px 0 0 !important;
+        position: relative;
+        bottom: -1px;
+        font-size: 0.875em !important;
+    }
+
+    .bottom-fixed .selected-content.button-col {
+        padding-left: 0px !important;
+    }
+
+    .bottom-fixed .selected-content.button-col .btn.btn-togo.btn-add-to-cart.ng-scope.btn-info,
+    .bottom-fixed .selected-content.button-col .btn.btn-togo.btn-add-to-cart.ng-scope.btn-primary {
+        width: 100% !important;
+        max-width: 1000px;
+        padding: 1.75em .625em;
+        letter-spacing: 2px;
+        font-weight: bold !important;
+        transition: all 0s ease-in 0s;
+    }
+
+    .btn.btn-togo.btn-add-to-cart.ng-scope.btn-primary {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin-left: 0;
+        z-index: 10;
+        width: 100% !important;
+        max-width: 1000px;
+        padding: 1.75em .625em;
+        letter-spacing: 2px;
+        font-weight: bold !important;
+        transition: all 0s ease-in 0s;
+    }
+
+    .row.bottom-fixed .col-sm-offset-2.col-sm-8.selected-content.button-col {
+        background-color: rgba(0, 0, 0, .0);
+        text-align: center;
+    }
+
+    .btn.btn-togo.btn-info {
+        transition: all 0s ease-in 0s !important;
+    }
+
+    .no-touch .btn.btn-togo.btn-info:hover {
+        background-color: #ee6534 !important;
+        transition: all 0s ease-in 0s !important;
+    }
+
+    .menu-item-detail .btn-add-to-cart {
+        background-color: #ee6534 !important;
+    }
+
+    .menu-item-detail .btn-add-to-cart:hover {
+        background-color: #ee6534 !important;
+    }
+
+    .cart-tab.checkout-tab {
+        height: 190px;
+        width: 44px;
+        background-color: #ee6534;
+        background-image: url(/web/Content/images/cart-check-out.png);
+        background-position: 50%;
+        border: 0px solid #fff;
+    }
+
+    .ui.right.sidebar.active .cart-sidebar {
+        border-color: rgba(0, 0, 0, .0);
+    }
+
+    .ui.right.sidebar.active {
+        margin-left: -100% !important;
+        background-color: rgba(0, 0, 0, .65);
+    }
+
+    div#cart-header {
+        margin-top: 10px;
+        padding-bottom: 0px;
+    }
+
+    .cart-help {
+        padding-bottom: 1.25em;
+    }
+
+    #footer div.row div.col-xs-4>p {
+        padding-left: 10px !important;
+    }
+
+    .menu-item-detail .item-price {
+        font-size: 18px;
+    }
+
+    .selected-content.top-form-container.menu-item-detail.ng-scope h1 {
+        width: 65%;
+    }
+
+    .personal-info .col-xs-3.text-left {
+        display: block;
+        width: 100%;
+    }
+
+    .personal-info .row {
+        padding-top: 30px;
+    }
+
+    .personal-info .row .col-xs-2 {
+        float: right;
+        top: -9px;
+    }
+
+    .nav.navbar-nav.navbar-right {
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .navbar-right {
+        top: 0px !important;
+        float: none !important;
+        margin-right: -15px;
+        position: relative;
+        padding: 30px 15px 0 15px !important;
+        background-color: #fff;
+        color: #000;
+    }
+
+    .navbar-brand {
+        background-size: 80px;
+        height: 70px;
+        width: 70%;
+        max-width: 250px;
+        background-position-x: 5px;
+        background-position-y: 50%;
+        margin-left: 20px !important;
+    }
+
+    .navbar-toggle {
+        margin: 16px 10px 3px 0;
+        max-height: 32px;
+    }
+
+    .container>.navbar-collapse {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .list-choices.menu-sections .item {
+        font-size: 1.500em;
+        background-color: #fff !important;
+        color: #ee6534;
+    }
+
+    .btn-edit-item {
+        background-color: #ee6534 !important;
+        border: 1px solid #ee6534 !important;
+    }
+
+    .btn-delete-item {
+        background-color: rgba(255, 255, 255, .95) !important;
+    }
+
+    .menu-section-menu-items .item-text.item-price {
+        text-align: left;
+        float: none;
+        font-size: inherit;
+        display: block;
+        width: 100%;
+    }
+
+    div#choose-a-section:before {
+        content: '';
+    }
+
+    div#choose-an-item:before {
+        content: '';
+    }
+
+    .toast-success,
+    .toast-warning {
+        font-size: 14px !important;
+    }
+
+    #edit-email div span.ng-binding {
+        font-size: 13px;
+    }
+
+    button#adas-access-tool-general-button img#widget-iconz {
+        width: 50px;
+    }
+
+    .included-group-popup>.included-group-items {
+        margin: 24px;
+        margin: 32px;
+    }
+
+    .site-alert {
+        height: 100%;
+        min-height: 100%;
+        margin: auto;
+        text-align: center;
+        background-color: #fff;
+        z-index: 1000;
+        padding-top: 75px;
+    }
+
+    .coming-soon img {
+        max-width: 80%;
+        max-height: 25%;
+    }
+}
+
+@media only screen and (max-width: 639px) {
+    .mapboxgl-ctrl-geocoder--icon-close {
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width:600px) {
+
+    .loyalty-account .col-xs-7,
+    .loyalty-account .col-xs-5 {
+        display: block;
+        margin-bottom: 16px;
+        width: 100%;
+    }
+
+    p.dollar-balance,
+    p.points-balance,
+    p.loyalty-account-number {
+        text-align: center;
+        margin-bottom: 8px !important;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .header-instructions.wizard {
+        padding-top: 0px;
+    }
+
+    p.menu-item-nutrition.ng-binding.ng-scope {
+        padding-bottom: 0px !important;
+    }
+
+    .menu-item-detail.has-image .item-image {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+        max-width: 500px;
+        background-size: cover;
+        width: 100%;
+    }
+
+    .menu-item-detail.has-image .item-image .item-image-img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ========= client revisions ======== */
+    </style>
+
+        
+
+
+    <script src="/web/bundles/modernizr?v=uGUH3oOa-5BJTmcGR2O6Ep6uxOxzI_KigT6XyflqDFM1"></script>
+
+
+
+
+
+
+</head>
+<body data-ng-controller="rootController as vm" style="background-image: none" ng-class="vm.bodyClass">
+    
+    
+    <div class="hidden" id="menu-item-footnote">
+        
+    </div>
+
+    <div data-page-wait-spinner="" data-ng-show="vm.showSpinner"></div>
+    <div id="wrap" class="ng-cloak" data-ng-class="'state-'+vm.activeStateName">
+        <button onclick="document.querySelector('#view-container').focus()" class="sr-only sr-only-focusable">Skip to Main Content</button>
+        <script type="text/javascript">
+            document.getElementById('wrap').style.visibility = 'hidden';
+        </script>
+        <nav role="navigation" class="navbar navbar-default" aria-label="Site Navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle"
+                            data-toggle="collapse"
+                            data-target="#navbarCollapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="sr-only">Navigation</span>
+                    </button>
+                        <a class="navbar-brand" href="https://unclegussys.com"><span class="sr-only">Home</span></a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        
+    
+
+                        <li data-ng-repeat="state in vm.mainMenuStates"
+                            data-ng-class="{active : vm.activeStateName===state.name}">
+                            <a data-ng-click="vm.goToState(state)" title="{{(state.data.linkText||state.data.title)}}"
+                               class="{{state.name.replace('.','-')}}">
+                                <span data-ng-if="::!state.data.icon" class="{{::state.data.linkClass}}">
+                                    <span data-ng-bind="::(state.data.linkText||state.data.title)"></span>
+                                </span>
+                                <span data-ng-if="::state.data.icon" class="glyphicon {{::state.data.icon}}" aria-hidden="true"></span>
+                            </a>
+                        </li>
+
+                        
+                        <li data-ng-repeat-start="state in vm.itemsWithSubMenus"
+                            class="nav-divider visible-xs">
+                        </li>
+                        <li data-ng-repeat="subState in state.items"
+                            data-ng-class="{active : vm.activeStateName===subState.name}"
+                            class="visible-xs">
+                            <a data-ng-if="::!subState.data.icon"
+                               data-ng-click="vm.goToState(subState)"
+                               class="{{subState.name.replace('.','-')}}">
+                                <span class="{{::subState.data.linkClass}}">
+                                    <span data-ng-bind="::(subState.data.linkText||subState.data.title)"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li data-ng-repeat-end="" class="hidden"></li>
+
+                        
+                        <li data-ng-repeat="state in vm.itemsWithSubMenus"
+                            class="dropdown hidden-xs">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span data-ng-if="::!state.data.icon" class="{{::state.data.linkClass}}">
+                                    <span data-ng-bind="::(state.data.linkText||state.data.title)"></span>
+                                </span>
+                                <span data-ng-if="::state.data.icon" class="glyphicon {{::state.data.icon}}" aria-hidden="true"></span>
+                                <span data-ng-bind="::((state.data.linkText||state.data.title)+' Navigation')" class="sr-only"></span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li data-ng-repeat="subState in state.items"
+                                    data-ng-class="{active : vm.activeStateName===subState.name}">
+                                    <a data-ng-if="::!subState.data.icon" title="{{(subState.data.linkText||subState.data.title)}}"
+                                       data-ng-click="vm.goToState(subState)"
+                                       class="{{subState.name.replace('.','-')}}">
+                                        <span class="{{::subState.data.linkClass}}">
+                                            <span data-ng-bind="::(subState.data.linkText||subState.data.title)"></span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <p class="navbar-text navbar-right nav-location-address">345 Park Ave, New York</p>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="container location-information">
+            <p><span class="location-name">Uncle Gussy&#39;s</span> 345 Park Ave, New York | 929.600.1111</p>
+        </div>
+        <div style="text-align: center; background-color: white;" id="bannerMessage">
+            <h4><strong></strong></h4>
+        </div>
+        <!--[if lt IE 9]>
+        <div class="site-alert">
+            <img src="Content/images/togo-logo-75x75.png">
+            <h1>You are using an <strong>outdated</strong> browser.</h1>
+            <p> Please <a href="http://browsehappy.com/"><u>upgrade your browser</u></a> to improve your experience.</p>
+        </div>
+    <![endif]-->
+        <div class="no-js">
+            <div class="site-alert">
+                <img src="Content/images/togo-logo-75x75.png" alt="ToGo Logo" />
+                <h1>Javascript is required to use this site.</h1>
+                <p>Please allow javascript and try again.</p>
+            </div>
+        </div>
+        <div class="no-storage">
+            <div class="site-alert">
+                <img src="Content/images/togo-logo-75x75.png" alt="ToGo Logo" />
+                <h1>Cookies are required to use this site.</h1>
+                <p>
+                    This site uses browser storage to enhance your user experience. Please "<a href="https://www.whatismybrowser.com/guides/how-to-enable-cookies/" target="_blank" rel="noopener">allow cookies</a>" in your browser's settings (or turn off 'private' mode) and try again.
+                </p>
+                <p class="embedded">
+                    If that doesn't work, <a href="https://togoorder.com/web/6196" target="_top"><u>click here to un-embed the application</u></a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="container body-content" id="view-container" tabindex="-1">
+            <div data-ng-show="vm.showView" class="view-container-animate">
+                <div data-ng-if="vm.activeStateName!='locationHome' && vm.activeStateName!='' && !vm.isOrderFlow" class="pull-left">
+                    <a class="btn btn-link btn-link-nav nav-top go-home" data-ng-click="vm.goToState('locationHome')"><span>Main Menu</span></a>
+                </div>
+                <div class="container" id="app-nav">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a class="btn btn-link btn-link-nav nav-top cancel-order" data-ng-click="vm.cancelOrder()"><span>Home</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div data-ui-view="" class="ng-cloak">
+                    
+<!-- Location.cshtml -->
+
+
+                </div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+    <div id="footer" class="panel-footer ng-cloak" tabindex="-1">
+        <div class="row">
+            <div class="col-xs-4">
+                <p>&copy; 2025 - ToGoTechnologies, LLC</p>
+            </div>
+            <div class="col-xs-offset-4 col-xs-4">
+                <div id="terms-security">
+                    <p>
+                        <a class="mr-10" data-ng-click="vm.reportProblem()">
+                            <span class="visible-xs">Report a Problem</span>
+                            <span class="hidden-xs">Report a Problem</span>
+                        </a>
+                        <a class="mr-10" data-ng-click="vm.showTerms()">
+                            <span class="visible-xs">Terms &amp; Privacy</span>
+                            <span class="hidden-xs">Terms of Service and Privacy Policy</span>
+                        </a>
+                        <a data-ng-click="vm.showAccessibilityStatement()">
+                            <span>Accessibility Statement</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+
+
+    </script>
+    <script src="/web/bundles/bootstrapping?v=UGAuKO63F4-ahPgdBZPAaFjkJAEH5MBUeXeOlMng-SU1"></script>
+
+    <script src="/web/bundles/app?v=icLDvJS4aQVsgZyMEJYULFrU-X8A56b1qGuYLXSd3J81"></script>
+
+
+
+    <script type="text/javascript">
+		$(document.documentElement).addClass('NotMobile');
+    </script>
+
+        <script type="text/javascript">
+            $(document.documentElement).addClass((window.top !== window.self) ? 'embedded' : 'no-embedded');
+        </script>
+
+    
+
+    <script type="text/javascript">
+
+	    window.togoorder = window.togoorder || {};
+	    togoorder.merchantId = 3945;
+	    togoorder.merchantName = "Uncle Gussy's";
+	    togoorder.locationId = 6196;
+	    togoorder.isMobileApp = false;
+	    togoorder.isUnlistedOrderType = false;
+
+	    togoorder.merchantLocation = {"MerchantId":3945,"LocationName":"Uncle Gussy's","Id":6196,"MobileMessage":null,"SalesTaxRate":8.88000,"SalesTaxRoundingStrategy":0,"OrderTypeViewModels":[{"OrderType":2,"Description":"Take Out","MenuIds":[19929],"WaitTimeInMinutes":30,"DeliveryFee":0.000,"LargeOrderThreshold":100.000,"LargeOrderWaitTimeInMinutes":45,"MinimumOrder":10.000,"MaximumOrder":1500.000,"FulfillmentType":1,"FulfillmentTypeDescription":"Customer Pickup","ConvenienceFee":0.99000,"SurchargePercentage":0.00000,"IsConvenienceFeePreTax":false,"IsSurchargePreTax":false,"IsSurchargeOnNetSales":false,"IsDeliveryFeePreTax":false,"DeliveryZones":[],"HoursOfOperation":{"WeekdayHours":[{"StartDayOfWeek":1,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Mon - Fri","Stop":"3 PM","Start":"10 AM"}],"StartDate":null,"EndDate":null,"IsOpenLaterToday":true,"IsOpenNow":false,"AllAvailableWeekdayHours":[]},"EarliestDayOrderable":"Monday","InstructionsField":null,"IsUnlisted":false,"IsCurbsideOffered":false,"IsVehicleInformationRequired":false,"IsDeferredPaymentAllowed":false,"IsPayNowAllowed":true,"IsFutureDayOrderingAllowed":true,"IsCreditCardPaymentAllowed":true,"DeliveryService":0,"DeliveryServiceHasOwnZones":false,"ExternalBusinessName":null,"DeliveryFeePaidByCustomer":null,"DeliveryServiceChargePaidByCustomer":null,"IsDeliveryServiceChargePercentageOfSales":false,"IsAlwaysCustomerArrival":false,"ExternalUrl":null,"Priority":0,"ShouldCompleteOrderAndLogout":false,"MessageDisplayed":false,"Message":"Please Note We Will be Closed On Thursday 11/27 and Friday 11/28! Have a Happy Thanksgiving!","CardChargeTiming":0},{"OrderType":10,"Description":"Catering","MenuIds":[19938],"WaitTimeInMinutes":2160,"DeliveryFee":0.000,"LargeOrderThreshold":0.000,"LargeOrderWaitTimeInMinutes":0,"MinimumOrder":0.000,"MaximumOrder":0.0,"FulfillmentType":2,"FulfillmentTypeDescription":"Delivery","ConvenienceFee":0.00000,"SurchargePercentage":0.00000,"IsConvenienceFeePreTax":false,"IsSurchargePreTax":false,"IsSurchargeOnNetSales":false,"IsDeliveryFeePreTax":false,"DeliveryZones":[{"Id":"c454be12-dd0c-4abe-8fd4-c51ac2a40373","FlatFee":25.00,"PerMileFee":0.00000,"PercentageFee":0.00000,"MinimumDeliveryTimeInMinutes":0,"Coordinates":[{"Lat":40.77782388,"Lng":-74.00467714},{"Lat":40.69770165,"Lng":-74.03076967},{"Lat":40.69770165,"Lng":-74.01566347},{"Lat":40.70915360,"Lng":-73.97583803},{"Lat":40.73569370,"Lng":-73.97240480},{"Lat":40.82720180,"Lng":-73.87421450},{"Lat":40.84018988,"Lng":-73.95043215},{"Lat":40.77054403,"Lng":-74.00742372}]}],"HoursOfOperation":{"WeekdayHours":[{"StartDayOfWeek":1,"StartTime":"10:00:00","StopTime":"1.02:00:00","WeekDay":"Mon","Stop":"2 AM","Start":"10 AM"},{"StartDayOfWeek":2,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Tue - Fri","Stop":"3 PM","Start":"10 AM"}],"StartDate":null,"EndDate":null,"IsOpenLaterToday":false,"IsOpenNow":false,"AllAvailableWeekdayHours":[]},"EarliestDayOrderable":"Tuesday","InstructionsField":null,"IsUnlisted":false,"IsCurbsideOffered":false,"IsVehicleInformationRequired":false,"IsDeferredPaymentAllowed":false,"IsPayNowAllowed":true,"IsFutureDayOrderingAllowed":true,"IsCreditCardPaymentAllowed":true,"DeliveryService":0,"DeliveryServiceHasOwnZones":false,"ExternalBusinessName":null,"DeliveryFeePaidByCustomer":null,"DeliveryServiceChargePaidByCustomer":null,"IsDeliveryServiceChargePercentageOfSales":false,"IsAlwaysCustomerArrival":false,"ExternalUrl":null,"Priority":2,"ShouldCompleteOrderAndLogout":false,"MessageDisplayed":true,"Message":"Please Enter Your Address Before Placing Catering Order to Confirm We Can Deliver To You","CardChargeTiming":0},{"OrderType":10,"Description":"Catering","MenuIds":[19938],"WaitTimeInMinutes":2160,"DeliveryFee":0.000,"LargeOrderThreshold":0.000,"LargeOrderWaitTimeInMinutes":0,"MinimumOrder":0.000,"MaximumOrder":0.0,"FulfillmentType":1,"FulfillmentTypeDescription":"Customer Pickup","ConvenienceFee":0.00000,"SurchargePercentage":0.00000,"IsConvenienceFeePreTax":false,"IsSurchargePreTax":false,"IsSurchargeOnNetSales":false,"IsDeliveryFeePreTax":false,"DeliveryZones":[],"HoursOfOperation":{"WeekdayHours":[{"StartDayOfWeek":1,"StartTime":"10:00:00","StopTime":"1.02:00:00","WeekDay":"Mon","Stop":"2 AM","Start":"10 AM"},{"StartDayOfWeek":2,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Tue - Fri","Stop":"3 PM","Start":"10 AM"}],"StartDate":null,"EndDate":null,"IsOpenLaterToday":false,"IsOpenNow":false,"AllAvailableWeekdayHours":[]},"EarliestDayOrderable":"Tuesday","InstructionsField":null,"IsUnlisted":false,"IsCurbsideOffered":false,"IsVehicleInformationRequired":false,"IsDeferredPaymentAllowed":false,"IsPayNowAllowed":true,"IsFutureDayOrderingAllowed":true,"IsCreditCardPaymentAllowed":true,"DeliveryService":0,"DeliveryServiceHasOwnZones":false,"ExternalBusinessName":null,"DeliveryFeePaidByCustomer":null,"DeliveryServiceChargePaidByCustomer":null,"IsDeliveryServiceChargePercentageOfSales":false,"IsAlwaysCustomerArrival":false,"ExternalUrl":null,"Priority":3,"ShouldCompleteOrderAndLogout":false,"MessageDisplayed":false,"Message":"Please Note We Will Be Closed From 8/25-9/2! Thank You For Supporting New York's Favorite Greek Food Truck!","CardChargeTiming":0},{"OrderType":4,"Description":"Delivery","MenuIds":[19929],"WaitTimeInMinutes":45,"DeliveryFee":0.000,"LargeOrderThreshold":100.000,"LargeOrderWaitTimeInMinutes":60,"MinimumOrder":40.000,"MaximumOrder":0.0,"FulfillmentType":2,"FulfillmentTypeDescription":"Delivery","ConvenienceFee":0.00000,"SurchargePercentage":0.00000,"IsConvenienceFeePreTax":false,"IsSurchargePreTax":false,"IsSurchargeOnNetSales":false,"IsDeliveryFeePreTax":false,"DeliveryZones":[{"Id":"86b5ae11-a96f-4dd1-95dc-c675d6d95f22","FlatFee":5.00,"PerMileFee":0.00000,"PercentageFee":0.00000,"MinimumDeliveryTimeInMinutes":10,"Coordinates":[{"Lat":40.75482595,"Lng":-73.98445592},{"Lat":40.76061227,"Lng":-74.00187955},{"Lat":40.77965804,"Lng":-73.98823247},{"Lat":40.77575833,"Lng":-73.97655949},{"Lat":40.76808822,"Lng":-73.98188100},{"Lat":40.76574801,"Lng":-73.97613034}]},{"Id":"90760d92-94ed-4417-beba-d50b4a3eac2a","FlatFee":5.00,"PerMileFee":0.00000,"PercentageFee":0.00000,"MinimumDeliveryTimeInMinutes":0,"Coordinates":[{"Lat":40.76435135,"Lng":-73.97268057},{"Lat":40.76571651,"Lng":-73.97611380},{"Lat":40.75472942,"Lng":-73.98452521},{"Lat":40.74835738,"Lng":-73.96821738},{"Lat":40.76688662,"Lng":-73.95079375},{"Lat":40.77273689,"Lng":-73.96710158}]},{"Id":"9f6eece7-289d-41a2-b946-d510610f268c","FlatFee":5.00,"PerMileFee":0.00000,"PercentageFee":0.00000,"MinimumDeliveryTimeInMinutes":0,"Coordinates":[{"Lat":40.76103630,"Lng":-74.00186200},{"Lat":40.75655036,"Lng":-74.00572438},{"Lat":40.74250544,"Lng":-73.97233624},{"Lat":40.74861794,"Lng":-73.96795887}]}],"HoursOfOperation":{"WeekdayHours":[{"StartDayOfWeek":1,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Mon - Fri","Stop":"3 PM","Start":"10 AM"}],"StartDate":null,"EndDate":null,"IsOpenLaterToday":true,"IsOpenNow":false,"AllAvailableWeekdayHours":[]},"EarliestDayOrderable":"Monday","InstructionsField":null,"IsUnlisted":false,"IsCurbsideOffered":false,"IsVehicleInformationRequired":false,"IsDeferredPaymentAllowed":false,"IsPayNowAllowed":true,"IsFutureDayOrderingAllowed":true,"IsCreditCardPaymentAllowed":true,"DeliveryService":0,"DeliveryServiceHasOwnZones":false,"ExternalBusinessName":null,"DeliveryFeePaidByCustomer":null,"DeliveryServiceChargePaidByCustomer":null,"IsDeliveryServiceChargePercentageOfSales":false,"IsAlwaysCustomerArrival":false,"ExternalUrl":null,"Priority":1,"ShouldCompleteOrderAndLogout":false,"MessageDisplayed":false,"Message":"Please Note We Will be Closed On Thursday 11/27 and Friday 11/28! Have a Happy Thanksgiving!","CardChargeTiming":0}],"TimeZoneId":"Eastern Standard Time","NumberOfOrdersPerPickupTime":0,"AddressSummary":"345 Park Ave, New York","PickupInstructions":"Please Come to the Pickup Window Upon Arrival (Rear Window Driver Side)","CurbsideInstructions":"","DriveThruInstructions":"","DeliveryInstructions":"Delivery times, including scheduled deliveries, are estimations and subject to potential changes influenced by factors beyond our control.","CateringForPickupInstructions":"Please Come to the Pickup Window Upon Arrival (Rear Window Driver Side)","CateringForDeliveryInstructions":"","DineInInstructions":"","TimeZoneOffset":-300.0,"TimeZoneName":"Eastern Standard Time","IsTipAllowed":true,"Phone":"929.600.1111","ConsumerNameMaxLength":1000,"SpecialInstructionsMaxLength":22,"IsMobileTruck":false,"IsActive":true,"LoyaltyProfile":{"IsPreTax":true,"IsOfferPreTax":false,"LoyaltyProviderType":4,"IsAchEnabled":false,"AccountPrefix":null,"AccountLength":0,"DoNotCoverTip":true},"BypassMenuAndHoursScreen":true,"MenuWorkflow":0,"Latitude":40.75812300,"Longitude":-73.97264200,"AvailableDays":[{"DayOfWeek":0,"WeekDay":"Sunday","HoursOfOperation":{"WeekdayHours":[],"StartDate":null,"EndDate":null,"IsOpenLaterToday":false,"IsOpenNow":false,"AllAvailableWeekdayHours":[]},"OrderTypeMenuIds":{}},{"DayOfWeek":1,"WeekDay":"Monday","HoursOfOperation":{"WeekdayHours":[{"StartDayOfWeek":1,"StartTime":"10:00:00","StopTime":"1.02:00:00","WeekDay":"Mon","Stop":"2 AM","Start":"10 AM"}],"StartDate":null,"EndDate":null,"IsOpenLaterToday":true,"IsOpenNow":false,"AllAvailableWeekdayHours":[{"StartDayOfWeek":1,"StartTime":"10:00:00","StopTime":"1.02:00:00","WeekDay":"Mon","Stop":"3 PM","Start":"10 AM"}]},"OrderTypeMenuIds":{"2":{"1":[19929]},"10":{"2":[19938],"1":[19938]},"4":{"2":[19929]}}},{"DayOfWeek":2,"WeekDay":"Tuesday","HoursOfOperation":{"WeekdayHours":[{"StartDayOfWeek":2,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Tue","Stop":"3 PM","Start":"10 AM"}],"StartDate":null,"EndDate":null,"IsOpenLaterToday":false,"IsOpenNow":false,"AllAvailableWeekdayHours":[{"StartDayOfWeek":2,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Tue","Stop":"3 PM","Start":"10 AM"}]},"OrderTypeMenuIds":{"2":{"1":[19929]},"10":{"2":[19938],"1":[19938]},"4":{"2":[19929]}}},{"DayOfWeek":3,"WeekDay":"Wednesday","HoursOfOperation":{"WeekdayHours":[{"StartDayOfWeek":3,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Wed","Stop":"3 PM","Start":"10 AM"}],"StartDate":null,"EndDate":null,"IsOpenLaterToday":false,"IsOpenNow":false,"AllAvailableWeekdayHours":[{"StartDayOfWeek":3,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Wed","Stop":"3 PM","Start":"10 AM"}]},"OrderTypeMenuIds":{"2":{"1":[19929]},"10":{"2":[19938],"1":[19938]},"4":{"2":[19929]}}},{"DayOfWeek":4,"WeekDay":"Thursday","HoursOfOperation":{"WeekdayHours":[{"StartDayOfWeek":4,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Thu","Stop":"3 PM","Start":"10 AM"}],"StartDate":null,"EndDate":null,"IsOpenLaterToday":false,"IsOpenNow":false,"AllAvailableWeekdayHours":[{"StartDayOfWeek":4,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Thu","Stop":"3 PM","Start":"10 AM"}]},"OrderTypeMenuIds":{"2":{"1":[19929]},"10":{"2":[19938],"1":[19938]},"4":{"2":[19929]}}},{"DayOfWeek":5,"WeekDay":"Friday","HoursOfOperation":{"WeekdayHours":[{"StartDayOfWeek":5,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Fri","Stop":"3 PM","Start":"10 AM"}],"StartDate":null,"EndDate":null,"IsOpenLaterToday":false,"IsOpenNow":false,"AllAvailableWeekdayHours":[{"StartDayOfWeek":5,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Fri","Stop":"3 PM","Start":"10 AM"}]},"OrderTypeMenuIds":{"2":{"1":[19929]},"10":{"2":[19938],"1":[19938]},"4":{"2":[19929]}}},{"DayOfWeek":6,"WeekDay":"Saturday","HoursOfOperation":{"WeekdayHours":[],"StartDate":null,"EndDate":null,"IsOpenLaterToday":false,"IsOpenNow":false,"AllAvailableWeekdayHours":[]},"OrderTypeMenuIds":{}}],"CartUiBehavior":0,"MenuSectionUiType":0,"MenuItemUiType":0,"IsPosPriceSource":false,"IsCancelOrderOnPriceCheckFail":false,"UsePosSandbox":false,"MerchantSignUpWithLoyalty":false,"Now":"2025-12-08T08:02:32.7772926","MealPlanProfile":null,"GiftCardProfile":null,"IsGuestEmailRequired":true,"IsGuestNameRequired":true,"IsGuestPhoneRequired":true,"IsOnlyGuestCheckout":false,"MerchantLocationCount":1,"PromotionAvailability":0,"Menus":{"19929":{"MenuId":19929,"MenuName":"Menu","HoursOfOperation":{"WeekdayHours":[{"StartDayOfWeek":1,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Mon - Fri","Stop":"3 PM","Start":"10 AM"}],"StartDate":"2025-09-24T00:00:00","EndDate":"2026-10-01T00:00:00","IsOpenLaterToday":true,"IsOpenNow":false,"AllAvailableWeekdayHours":[{"StartDayOfWeek":1,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Mon","Stop":"3 PM","Start":"10 AM"},{"StartDayOfWeek":2,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Tue","Stop":"3 PM","Start":"10 AM"},{"StartDayOfWeek":3,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Wed","Stop":"3 PM","Start":"10 AM"},{"StartDayOfWeek":4,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Thu","Stop":"3 PM","Start":"10 AM"},{"StartDayOfWeek":5,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Fri","Stop":"3 PM","Start":"10 AM"}]},"StartDate":"2025-09-24T00:00:00","EndDate":"2026-10-01T00:00:00","IsAvailable":true,"Priority":0},"19938":{"MenuId":19938,"MenuName":"Catering Menu","HoursOfOperation":{"WeekdayHours":[{"StartDayOfWeek":1,"StartTime":"10:00:00","StopTime":"1.02:00:00","WeekDay":"Mon","Stop":"2 AM","Start":"10 AM"},{"StartDayOfWeek":2,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Tue - Fri","Stop":"3 PM","Start":"10 AM"}],"StartDate":null,"EndDate":null,"IsOpenLaterToday":true,"IsOpenNow":false,"AllAvailableWeekdayHours":[{"StartDayOfWeek":1,"StartTime":"10:00:00","StopTime":"1.02:00:00","WeekDay":"Mon","Stop":"2 AM","Start":"10 AM"},{"StartDayOfWeek":2,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Tue","Stop":"3 PM","Start":"10 AM"},{"StartDayOfWeek":3,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Wed","Stop":"3 PM","Start":"10 AM"},{"StartDayOfWeek":4,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Thu","Stop":"3 PM","Start":"10 AM"},{"StartDayOfWeek":5,"StartTime":"10:00:00","StopTime":"15:00:00","WeekDay":"Fri","Stop":"3 PM","Start":"10 AM"}]},"StartDate":null,"EndDate":null,"IsAvailable":true,"Priority":2}},"CustomOptIn":null,"AcceptsImHereLink":true,"CustomGuestOptIn":"","IsPosIntegrationFailToCustomer":false,"MaximumOrderExceededMsg":"","IsMaximumOrderExceededPhone":true,"PosIntegrationFailToCustomerMessage":null,"PosIntegrationFailToCustomerShowLocationPhone":null,"ConvenienceFeeLabel":"Service Fee","SurchargeLabel":null,"IsSectionBranding":false,"CrmSettings":null,"UserSpecificRecommendations":false,"NewLoyaltyLayoutIsUsed":false,"LoyaltyStartingPoint":0,"LoyaltyEndingPoint":0,"LoyaltyGroupingIncrement":0,"ToGoAdminStatus":0,"IsInternational":false,"StartOverLogsUserOut":false,"GratuityLevels":[{"Id":4897,"Value":20.00000,"IsPercentage":true,"IsDefault":false,"LocationId":6196},{"Id":4898,"Value":18.00000,"IsPercentage":true,"IsDefault":false,"LocationId":6196},{"Id":4899,"Value":15.00000,"IsPercentage":true,"IsDefault":false,"LocationId":6196},{"Id":4900,"Value":10.00000,"IsPercentage":true,"IsDefault":false,"LocationId":6196}],"DigitalWalletProfiles":[]};
+	    togoorder.applicationId = "6a15df20-7130-4389-82a1-a3d9017b4e49";
+	    togoorder.apiUrl = "https://api.togoorder.com/";
+        togoorder.baseUrlToMainSite = 'http://togoorder.com';
+	    togoorder.locationWebsite = "https://unclegussys.com";
+	    togoorder.PosIntegrationType = "None";
+
+        togoorder.MapBoxApiKey = 'pk.eyJ1IjoidG9nb3RlY2hub2xvZ2llcyIsImEiOiJjazZreTN1cGMwNjV4M21uMHp1cTBkeWM4In0.fJRCOJ-euC69KZugAJrg1Q';
+        togoorder.recaptchaKey = '6Ld5FsQZAAAAANc2TPVtH28SJEVq1ug4KvlFKWeq';
+
+        togoorder.merchantLocationAddress1 = '345 Park Ave';
+            togoorder.merchantLocationAddress2 = null;
+        togoorder.merchantLocationCity = 'New York';
+        togoorder.merchantLocationState = 'NY';
+        togoorder.merchantLocationZip = '10154';
+
+	    var body = $('body');
+	    body.css('backgroundImage', '');
+	    body.addClass('location-6196');
+	    if (body.css('backgroundAttachment') === 'fixed' && body.css('backgroundSize') === 'cover') {
+		    var bg = body.css('backgroundImage');
+		    if (bg) {
+			    bg = bg.replace('url(', '').replace(/('|")/g, '').replace(')', '');
+			    body.css('backgroundImage', 'none');
+			    body.css('backgroundAttachment', 'scroll');
+			    body.css('backgroundSize', 'auto');
+				if (bg !== 'none') {
+                    if (bg == '') bg = 'https://togoorder.com/web/'; // this fixes bug for iPhones in IOS 15.4.1 . Weird issue... where the bg is empty still when it should have this URL value so this needs to be set or backstretch will error causing the home screen not to work (https://youtrack.ftservices.cloud/issue/WOC-1540).
+				    var b = $.backstretch(bg, { centeredY: (body.css('backgroundPositionY') === "50%") });
+			    }
+		    }
+	    }
+
+	    document.getElementById('wrap').style.visibility = 'visible';
+
+	    $(function() {
+		    togoorder.utcNow = moment.utc("2025-12-08T13:02:32.7772926Z");
+
+		    $(".backstretch img").one("load",
+			    function() {
+				    $('.backstretch').css(
+					    { 'opacity': 1, 'transform': 'none' }
+				    ).attr('aria-hidden', 'True');
+			    }).each(function() {
+			    if (this.complete) $(this).load();
+		    }).attr('alt', '');
+	    });
+
+    </script>
+        
+
+
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDenEdNzeBXcEKTw-PNJjOPNbHbkEnUYyM&libraries=geometry"></script>
+    
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+    <script src='https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js'></script>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+
+    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+
+    <script src="https://api.togoorder.com/signalr/hubs"></script>
+    <script>
+		$(function () {
+			$.connection.hub.url = "https://api.togoorder.com/signalr";
+		});
+    </script>
+    <script type="text/javascript">!function () { var b = function () { window.__AudioEyeSiteHash = "7c6579f3f6a072766f4e5ad680559b11"; var a = document.createElement("script"); a.src = "https://wsmcdn.audioeye.com/aem.js"; a.type = "text/javascript"; a.setAttribute("async", ""); document.getElementsByTagName("body")[0].appendChild(a) }; "complete" !== document.readyState ? window.addEventListener ? window.addEventListener("load", b) : window.attachEvent && window.attachEvent("onload", b) : b() }();</script>
+    <span id="is-xs" class="visible-xs"></span>
+    <span id="is-sm" class="visible-sm"></span>
+    <span id="is-md" class="visible-md"></span>
+    <span id="is-lg" class="visible-lg"></span>
+</body>
+</html>

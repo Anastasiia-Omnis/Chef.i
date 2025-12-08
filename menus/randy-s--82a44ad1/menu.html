@@ -1,0 +1,858 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head><title>
+	Randy Chinese Food 16-93 Putnam Ave Ridgewood NY 11385 Tel:718.381.1198 Tel:718.386.1671 Online Order
+</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0 , minimum-scale=1.0,maximum-scale=1.0, user-scalable=0" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <script src="lazyload.js"></script>
+
+    <link href="template/heroMobile2.css" rel="stylesheet" />
+
+
+    <style>
+        .fixPosition {
+            position: fixed;
+            /*    right: 30%;*/
+            left: 5%；
+        }
+
+        .navLogo {
+            width: 100%;
+            height: 30px;
+        }
+
+        .onlineOrderLogo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .leftEven {
+            width: 50%;
+            float: left;
+            text-align: left;
+        }
+
+        .rightEven {
+            width: 50%;
+            float: right;
+            text-align: right;
+        }
+
+
+        .buttonSelect {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            border: 2px solid #04AA6D;
+        }
+
+        .buttonUnSelect {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+
+        function clearPostBackMaster() {
+            $get('__EVENTTARGET').value = $get('__EVENTARGUMENT').value = '';
+            Sys.WebForms.PageRequestManager.getInstance().remove_endRequest(clearPostBackMaster);
+
+            document.getElementById('hidEventNameMaster').value = "";
+
+            $('#UpdatePanel2').show();
+            // TODO: anything you want after __doPostBack
+            //    $('#divAItemBody').show();
+        }
+
+        function clearPostBackStoreLocation() {
+            $get('__EVENTTARGET').value = $get('__EVENTARGUMENT').value = '';
+            Sys.WebForms.PageRequestManager.getInstance().remove_endRequest(clearPostBackStoreLocation);
+
+            document.getElementById('hidEventNameMaster').value = "";
+
+            $('#UpdatePanel4').show();
+            // TODO: anything you want after __doPostBack
+            //    $('#divAItemBody').show();
+        }
+
+        function clearPostBackViewStoreLocation() {
+            $get('__EVENTTARGET').value = $get('__EVENTARGUMENT').value = '';
+            Sys.WebForms.PageRequestManager.getInstance().remove_endRequest(clearPostBackViewStoreLocation);
+
+            document.getElementById('hidEventNameMaster').value = "";
+
+            $('#UpdatePanel6').show();
+            // TODO: anything you want after __doPostBack
+            //    $('#divAItemBody').show();
+        }
+
+
+        function RaiseEventMaster(pEventName, pEventValue) {
+            document.getElementById('hidEventNameMaster').value = pEventName;
+            document.getElementById('hidEventValueMaster').value = pEventValue;
+            if (document.getElementById('UpdatePanel2') != null) {
+                __doPostBack('UpdatePanel2', '');
+            }
+        }
+
+        function RaiseEventStoreLocation(pEventName, pEventValue) {
+            document.getElementById('hidEventNameMaster').value = pEventName;
+            document.getElementById('hidEventValueMaster').value = pEventValue;
+            if (document.getElementById('UpdatePanel4') != null) {
+                __doPostBack('UpdatePanel4', '');
+
+            }
+
+
+        }
+
+        function RaiseEventViewStoreLocation(pEventName, pEventValue) {
+            document.getElementById('hidEventNameMaster').value = pEventName;
+            document.getElementById('hidEventValueMaster').value = pEventValue;
+            if (document.getElementById('UpdatePanel6') != null) {
+                __doPostBack('UpdatePanel6', '');
+
+            }
+
+
+        }
+
+        function viewDeliveryInfo() {
+
+            $('#myModalDeliveryInfo').modal('show');
+        }
+
+        function viewShoppingCart() {
+
+            // // remove 11-29-2020
+            ////will fix iphone or ipad brower
+            //if (isAppleDevice(/(iphone|ipod|ipad)/) == true) {
+            //    $('body').css('overflow', 'hidden');
+            //    $('body').css('position', 'fixed');
+            //    $('body').css('width', '100%');
+            //}
+
+
+
+
+            $('#myShoppingCartModal').modal('show');
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(clearPostBackMaster);
+            RaiseEventMaster("viewShoppingCart", "");
+            //   return false;  'no need return false will cause ie8 does support
+
+            //if (isAppleDevice(/(iphone|ipod|ipad)/) == true) {
+
+            //    $('#myShoppingCartModal').on('hidden.bs.modal', function (e) {
+
+            //        $('body').css('overflow', 'visible');
+            //        $('body').css('position', 'static');
+            //    })
+
+            //}
+
+
+        }
+
+        function showStoreLocation(initHide) {
+
+            location.href = 'storeLocationMobile.aspx';
+            return;
+
+            if (initHide == true) {
+                $('#myMultiStore').modal('hide');
+                // return false;
+            } else {
+
+                //will fix iphone or ipad brower
+                if (isAppleDevice(/(iphone|ipod|ipad)/) == true) {
+                    $('body').css('overflow', 'hidden');
+                    $('body').css('position', 'fixed');
+                    $('body').css('width', '100%');
+                }
+
+                $('#myMultiStore').modal('show');
+                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(clearPostBackViewStoreLocation);
+                RaiseEventViewStoreLocation("showStoreLocation", "");
+
+
+                if (isAppleDevice(/(iphone|ipod|ipad)/) == true) {
+
+                    $('#myMultiStore').on('hidden.bs.modal', function (e) {
+
+                        $('body').css('overflow', 'visible');
+                        $('body').css('position', 'static');
+                    })
+
+                }
+
+
+            }
+
+
+        }
+
+        function changeStoreLocation(initStoreID) {
+
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(clearPostBackStoreLocation);
+            RaiseEventStoreLocation("changeStoreLocation", initStoreID);
+            $('#myMultiStore').modal('hide');
+        }
+
+
+        function updateOrderInfo(initAction, initStrTip, initOrderType, initSelectTimeButton) {
+
+            if (typeof initStrTip === "undefined") {
+                initStrTip = "";
+            }
+
+            if (typeof initOrderType === "undefined") {
+                initOrderType = "";
+            }
+            if (typeof initSelectTimeButton === "undefined") {
+                initSelectTimeButton = "";
+            }
+
+
+            if (initAction == 2) {
+                $('#myShoppingCartModal').modal('hide');
+                return false;
+
+            }
+
+            //if (typeof initButtonSelect === "undefined") {
+            //    initButtonSelect = "";
+            //}
+
+
+
+            var tip = initStrTip;
+
+            if (initStrTip == 'Custom') {
+                tip = document.getElementById('orderTip').value;
+            }
+
+            var tempOrderType = initOrderType;
+
+            var timeOrder = '';
+            var dateOrder = '';
+            var windowsTimeOrder = '';
+            var selectTimeValue = initSelectTimeButton;
+
+            try {
+
+                var timeOrder = document.getElementById('selectTime').value;
+                var dateOrder = document.getElementById('selectDate').value;
+            }
+            catch (err) {
+                console.log('Error Msg:' + err.message);
+            }
+
+            try {
+
+                windowsTimeOrder = document.getElementById('selectWindowsTime').value;
+
+            }
+            catch (err) {
+                console.log('Error Msg:' + err.message);
+            }
+
+
+            if (initAction == 2) {
+                $('#myShoppingCartModal').modal('hide');
+                return false;
+            } else if (initAction == 3) {
+
+
+                var tempCouponCode = document.getElementById('txtCouponCode').value;
+                var tempParam = "updateOrder=" + initAction + "&couponCode=" + tempCouponCode;
+
+                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(clearPostBackMaster);
+                RaiseEventMaster("viewShoppingCart", tempParam);
+
+
+            } else {
+
+                $('#myShoppingCartModal').modal('show');
+                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(clearPostBackMaster);
+
+                var tempParam = "updateOrder=" + initAction + "&updateTip=" + tip + "&orderType=" + tempOrderType + "&selectTime=" + timeOrder + "&selectDate=" + dateOrder + "&selectWindowsTime=" + windowsTimeOrder + "&selectTimeValue=" + selectTimeValue;
+                RaiseEventMaster("viewShoppingCart", tempParam);
+
+            }
+
+            if (initAction == 1) {
+                this.disabled = true;
+
+            }
+
+            if (document.getElementById('HiddenFieldIsMenuByOrderType').value == "1") {
+                if (tempOrderType != "") {
+                    window.location = "menuMobile.aspx";
+                }
+            }
+
+
+
+            //end method
+        }
+
+
+        function removeItem(initOrderDishID) {
+            // add on 11-28-2020
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(clearPostBackMaster);
+
+            var tempParam = "RemoveID=" + initOrderDishID;
+
+
+            RaiseEventMaster("viewShoppingCart", tempParam);
+
+        }
+
+
+        function showItemImge(initID) {
+
+            ////will fix iphone or ipad brower
+            //if (isAppleDevice(/(iphone|ipod|ipad)/) == true) {
+            //    $('body').css('overflow', 'hidden');
+            //    $('body').css('position', 'fixed');
+            //    $('body').css('width', '100%');
+            //}
+
+
+            $('#myItemImgContent').attr("src", initID);
+            $('#myItemImg').modal('show');
+
+
+            //if (isAppleDevice(/(iphone|ipod|ipad)/) == true) {
+
+            //    $('#myItemImg').on('hidden.bs.modal', function (e) {
+
+            //        $('body').css('overflow', 'visible');
+            //        $('body').css('position', 'static');
+            //    })
+
+            //}
+
+        }
+
+
+
+        function isAppleDevice() {
+
+            return (
+
+                (navigator.userAgent.toLowerCase().indexOf("ipad") > -1) ||
+
+                (navigator.userAgent.toLowerCase().indexOf("iphone") > -1) ||
+
+                (navigator.userAgent.toLowerCase().indexOf("ipod") > -1)
+
+            );
+
+        }
+
+
+
+    </script>
+
+
+
+</head>
+<body>
+
+
+
+    <div class="container containerBackground">
+
+        <form method="post" action="homeMobile.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/randy/WebResource.axd?d=RcQBYqb-DZuCw8GGJ2HIBUfZOV42_GRUQNzlNIJKt2BxchOZNmvUEoBh3X6yy4r2AOi9TiMLOfv9unEOUkUCtAQutizaRu-2o3MydnA9aLk1&amp;t=638343939423008439" type="text/javascript"></script>
+
+
+<script src="/randy/ScriptResource.axd?d=LwAz7u2Io73dB0bDVRyBI9ZhSMlcCp4riJ06ueIy3Zpoc5szAcebVxg5yCu_NPGkSczr67RGWR5JeRjQCyuz-dWfM6sy9cAtke8Xj3voGI2qet8XYeZqCXG0ZsRuS5yQ2eU4EHxIAYZfCJGbE-TLmslV1gxYi_Ze9gjX0cXpZonGkz5-Q_7pz3StNnAiCl1O0&amp;t=ffffffffadad19fc" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/randy/ScriptResource.axd?d=yq_CByfaLTZx6YbzZBlSwoZ1HhsRRFiG6Esq6zTYWds-S-lWMJ5HV7DrrkKP-yIyFmx1EJCiBONsrQqOPWsZvcrlc-3_utSZHXufhaySqe9JQWp8WBeOhRrhbpobIaPwh4pogIJxgECpdxsTsIJ7CKW-sfYrQ2JJGO0BgN_7fzqpoN3q5a1EcDPDqOrt84dv0&amp;t=ffffffffadad19fc" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6AB32040" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAATvHF74BMZBFlbVISMTuLFc93/gn8kqkz4EuynSZAbLJqf26HOYvsy/mp01CbtlzIaLeYLWJ7paC845xLvnBvW7dcFhE23hOuXK8XYCedWCSbHDAapf+8N2KkcWks/Uq54=" />
+</div>
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['tctl00$UpdatePanel4','UpdatePanel4','tctl00$UpdatePanel2','UpdatePanel2','tctl00$UpdatePanel6','UpdatePanel6'], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+
+
+            <input type="hidden" name="ctl00$HiddenFieldIsMenuByOrderType" id="HiddenFieldIsMenuByOrderType" />
+
+            <input type="hidden" name="ctl00$hidEventNameMaster" id="hidEventNameMaster" />
+            <input type="hidden" name="ctl00$hidEventValueMaster" id="hidEventValueMaster" />
+
+
+            <div id="headerDiv">
+
+                <div id="UpdateProgress4" style="display:none;">
+	
+                        Processing...
+                    
+</div>
+                <div id="UpdatePanel4">
+	
+                        <div id="storeHeader" class="contentBackground"> 
+         <div class="text-center">
+<span ID="rest_name">
+Randy
+</span>
+                     </BR>
+<span ID="rest_storeName">Chinese Food</span>
+         </div>
+ 
+         <div class="text-center">
+<span ID="rest_storeAddress">16-93 Putnam Ave Ridgewood NY 11385</span>
+         </div>
+ 
+         <div class="text-center">
+<span class="rest_phone" >Tel:718.381.1198 Tel:718.386.1671</span>
+         </div>
+ 
+ 
+ 
+ 
+         <div class="text-center">
+         <div class="row">
+ 
+             <div class="col-sm-8">
+ 
+<span ID ="card_type" > Acceptable Payment: <img src=amex.gif /><img src=discover.gif /><img src=visa.gif /><img src=master.gif /><img src=cash.gif /></span>
+             </div>
+             <div class="col-sm-4">
+<span ID ="miniOrder" > Mini Delivery:$10.00</span>
+             </div>
+ 
+         </div>
+         </div>
+</div>
+                    
+</div>
+
+
+
+                
+
+
+
+                <div>
+
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="homeMobile.aspx">
+
+                                    
+
+                                    <img style="max-width: 75px; max-height: 75px; margin-top: -15px;" src="template/rstLogo.png">
+                                </a>
+
+
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+
+                                <button type="button" class="navbar-toggle" onclick="location.href='menuMobile.aspx'">
+                                    <span>Online</span><br />
+                                    <span>Order</span>
+                                </button>
+                                
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <ul class="nav navbar-nav">
+
+                                    <li class="active"  >
+<a href="homeMobile.aspx" 
+ > <span class="glyphicon glyphicon-home"></span>
+Home
+</a>
+
+</li>
+<li>
+<a href="menuMobile.aspx" 
+ > <span class="glyphicon glyphicon-menu-hamburger"></span>
+Order Online
+</a>
+
+</li>
+<li>
+<a href="contactUsMobile.aspx" 
+ > <span class="glyphicon glyphicon-phone-alt"></span>
+Contact Us
+</a>
+
+</li>
+<li>
+<a href="directionMobile.aspx" 
+ > <span class="glyphicon glyphicon-map-marker"></span>
+Location
+</a>
+
+</li>
+<li>
+<a href="photoMobile.aspx" 
+ > <span class="glyphicon glyphicon-picture"></span>
+Photo
+</a>
+
+</li>
+<li>
+<a href="registerMobile.aspx?reigster=1" 
+ > <span class="glyphicon glyphicon-user"></span>
+Register
+</a>
+
+</li>
+<li>
+<a href="registerMobile.aspx?reigster=0" 
+ > <span class="glyphicon glyphicon-log-in"></span>
+Sign In
+</a>
+
+</li>
+<li>
+<a href="javascript:viewShoppingCart()" 
+ > <span class="glyphicon glyphicon-shopping-cart"></span>
+Cart
+</a>
+
+</li>
+<li>
+<a href="javascript:viewShoppingCart()" 
+ > <span class="glyphicon glyphicon-check"></span>
+Check Out
+</a>
+
+</li>
+
+                                </ul>
+
+                                
+                            </div>
+                        </div>
+                    </nav>
+
+
+
+                    
+                </div>
+
+            </div>
+            
+
+            
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="myShoppingCartModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            
+                        </div>
+                        <div id="shoppingCartModalBody" class="modal-body">
+
+
+                            <div id="UpdateProgress2" style="display:none;">
+	
+                                    Processing...
+                                
+</div>
+                            <div id="UpdatePanel2">
+	
+                                    <div id="myShoppingCartContent" class="table-responsive">
+                                    </div>
+                                
+</div>
+
+
+                        </div>
+
+
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Cancel</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myMultiStore" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            
+                        </div>
+                        <div id="multiStoreModalBody" class="modal-body">
+
+                            <div id="UpdateProgress6" style="display:none;">
+	
+                                    Processing...
+                                
+</div>
+                            <div id="UpdatePanel6">
+	
+                                    <div id="myMultiStoreContent" class="table-responsive">
+                                    </div>
+                                
+</div>
+
+
+                        </div>
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn  btn-danger btn-block" data-dismiss="modal">Close</button>
+                        </div>
+
+                        <br />
+                        <br />
+                        <br />
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myItemImg" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            
+                        </div>
+
+                        <div id="itemImgModalBody" class="modal-body">
+
+                            <div class="text-center">
+
+                                <img class="img-responsive center-block" src="dummyPic.png" id="myItemImgContent" />
+
+                            </div>
+
+
+
+                        </div>
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn  btn-danger btn-block" data-dismiss="modal">Close</button>
+                        </div>
+
+                        <br />
+                        <br />
+                        <br />
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModalDeliveryInfo" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Delivery Info </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div id="divDeliveryInfo"><div style="border-style: solid;border-width: thin;" >
+<table border= "0" align ="Center" >
+<tr><th rowspan="2" style="width:130px" >Delivery Fee </th><td></td><td>$2.00 within 300 miles </td></tr>
+<tr><th rowspan="2" style="width:130px" > </th><td>$10.00 within 600 miles </td></tr>
+
+<tr><th rowspan="2" style="width:130px" ><br/> Minimum Delivery </th><td><br/>$10.00 </td></tr>
+</table>
+</div>
+<br />
+<br />
+</div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn  btn-danger btn-block" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div>
+                
+                
+                <br />
+                <br />
+
+                <div class="text-center contentBackground">
+                    <span id="lblMsgForCustomerNote" style="color:Red;font-size:Medium;"><h3><a href="https://heroorder.com/randy/template/webImages/coupon.png">Free Coupon with purchase over</a></h3></span>
+
+                </div>
+                <br />
+
+                
+
+
+    <div class="contentBackground">
+
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+              <ol class="carousel-indicators">
+                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                 <li data-target="#myCarousel" data-slide-to="1"></li>
+                 <li data-target="#myCarousel" data-slide-to="2"></li>
+             </ol>
+     <div class="carousel-inner">
+  <div Class="item active">
+  <img data-src = "template/webImages/slideImage/ChickenCashNut.jpg" alt="ChickenCashNut.jpg"  Class="lazyload" style="width:  100%;">
+  </div>
+  <div Class="item">
+  <img data-src = "template/webImages/slideImage/GeneralTsoChk.jpg" alt="GeneralTsoChk.jpg"  Class="lazyload" style="width:  100%;">
+  </div>
+  <div Class="item">
+  <img data-src = "template/webImages/slideImage/sesame_orange_chicken.jpg" alt="sesame_orange_chicken.jpg"  Class="lazyload" style="width:  100%;">
+  </div>
+  </div>
+
+
+
+            
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div>
+    </div>
+
+
+            </div>
+
+        
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"UpdatePanel4","displayAfter":500,"dynamicLayout":true}, null, null, $get("UpdateProgress4"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"UpdatePanel2","displayAfter":500,"dynamicLayout":true}, null, null, $get("UpdateProgress2"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"UpdatePanel6","displayAfter":500,"dynamicLayout":true}, null, null, $get("UpdateProgress6"));
+});
+//]]>
+</script>
+</form>
+
+        <!-- Footer -->
+        <br />
+        <footer class="page-footer font-small cyan darken-3 mt-4 contentBackground">
+
+
+            <div class="footer-copyright text-center py-3">
+                
+            </div>
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+                © 2024 Copyright:
+                <a href="http://www.herohomepos.com">herohomepos.com</a>
+
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+        <BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>
+    </div>
+
+
+</body>
+</html>

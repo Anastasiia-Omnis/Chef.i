@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang='en'>
+	<head>
+		<meta charset="UTF-8">
+<script type="text/javascript">
+/* <![CDATA[ */
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+/* ]]> */
+</script>
+
+		 
+		<meta name="robots" content="index, follow" />
+		<meta name="revisit-after" content="1" />
+		<meta name="author" content="Owen Piccirillo 2024 Copyright by MESstudios.com" /> 
+
+		<link rel="apple-touch-icon" sizes="180x180" href="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/favicons/favicon-16x16.png">
+		<link rel="manifest" href="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/favicons/site.webmanifest">
+		<link rel="mask-icon" href="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+ 
+     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		 
+		<link rel="preconnect" href="https://fonts.gstatic.com"> 
+		 
+		
+		
+		
+		
+		
+		
+		
+		<link href="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/js/awesome5/all.min.css" rel="stylesheet">
+		<link href="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/js/animate.css" rel="stylesheet"> 
+		<link href="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/js/swiper.css" rel="stylesheet" >
+		
+		<!-- Jquery -->
+		<script src="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/js/jquery-1.10.2.js" type="text/javascript"></script> 
+		<script src="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/js/jquery.wow.js" type="text/javascript" ></script>
+		<script src="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/js/jquery.bxslider.js" type="text/javascript"></script> 
+		<script src="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/js/behavior.js" type="text/javascript"></script>
+ 
+ 		<title>Menus &#x2d; Botte Italian Restaurants &#8211; Authentic Italian Dining Experience, NY</title>
+<link data-rocket-prefetch href="https://www.gstatic.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://inkindscript.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://fonts.googleapis.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://website-widgets.pages.dev" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://tag.brandcdn.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://googleads.g.doubleclick.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.google.com" rel="dns-prefetch">
+<link data-rocket-preload as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&#038;family=Playfair+Display&#038;family=Rowdies:wght@300&#038;family=Roboto+Slab:wght@300;400&#038;family=Teko&#038;display=swap" rel="preload">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&#038;family=Playfair+Display&#038;family=Rowdies:wght@300&#038;family=Roboto+Slab:wght@300;400&#038;family=Teko&#038;display=swap" media="print" onload="this.media=&#039;all&#039;" rel="stylesheet">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&#038;family=Playfair+Display&#038;family=Rowdies:wght@300&#038;family=Roboto+Slab:wght@300;400&#038;family=Teko&#038;display=swap"></noscript><link rel="preload" data-rocket-preload as="image" href="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/img/test.jpg?v=2" fetchpriority="high">
+
+<!-- The SEO Framework by Sybre Waaijer -->
+<meta name="robots" content="max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+<link rel="canonical" href="https://www.botterestaurants.com/upper-east-side/menus/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Botte Italian Restaurants &#8211; Authentic Italian Dining Experience, NY" />
+<meta property="og:title" content="Menus" />
+<meta property="og:url" content="https://www.botterestaurants.com/upper-east-side/menus/" />
+<meta property="og:image" content="https://www.botterestaurants.com/wordpress/wp-content/uploads/2024/06/ues.png" />
+<meta property="og:image:width" content="464" />
+<meta property="og:image:height" content="114" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Menus" />
+<meta name="twitter:image" content="https://www.botterestaurants.com/wordpress/wp-content/uploads/2024/06/ues.png" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.botterestaurants.com/#/schema/WebSite","url":"https://www.botterestaurants.com/","name":"Botte Italian Restaurants &#8211; Authentic Italian Dining Experience, NY","inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.botterestaurants.com/search/{search_term_string}/"},"query-input":"required name=search_term_string"},"publisher":{"@type":"Organization","@id":"https://www.botterestaurants.com/#/schema/Organization","name":"Botte Italian Restaurants &#8211; Authentic Italian Dining Experience, NY","url":"https://www.botterestaurants.com/","logo":{"@type":"ImageObject","url":"https://www.botterestaurants.com/wordpress/wp-content/uploads/2024/03/seo.png","contentUrl":"https://www.botterestaurants.com/wordpress/wp-content/uploads/2024/03/seo.png","width":1194,"height":344,"contentSize":"469340"}}},{"@type":"WebPage","@id":"https://www.botterestaurants.com/upper-east-side/menus/","url":"https://www.botterestaurants.com/upper-east-side/menus/","name":"Menus &#x2d; Botte Italian Restaurants &#8211; Authentic Italian Dining Experience, NY","inLanguage":"en-US","isPartOf":{"@id":"https://www.botterestaurants.com/#/schema/WebSite"},"breadcrumb":{"@type":"BreadcrumbList","@id":"https://www.botterestaurants.com/#/schema/BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":"https://www.botterestaurants.com/","name":"Botte Italian Restaurants &#8211; Authentic Italian Dining Experience, NY"},{"@type":"ListItem","position":2,"item":"https://www.botterestaurants.com/upper-east-side/","name":"Upper East Side"},{"@type":"ListItem","position":3,"name":"Menus"}]},"potentialAction":{"@type":"ReadAction","target":"https://www.botterestaurants.com/upper-east-side/menus/"}}]}</script>
+<!-- / The SEO Framework by Sybre Waaijer | 8.42ms meta | 6.46ms boot -->
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-block-library-inline-css' type='text/css'>
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=wp-block-library-inline-css */
+</style><style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<link rel='stylesheet' id='wp-components-css' href='https://www.botterestaurants.com/wordpress/wp-includes/css/dist/components/style.min.css?ver=a4e739bb107d4e2fd327962f789bf319' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-preferences-css' href='https://www.botterestaurants.com/wordpress/wp-includes/css/dist/preferences/style.min.css?ver=a4e739bb107d4e2fd327962f789bf319' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-editor-css' href='https://www.botterestaurants.com/wordpress/wp-includes/css/dist/block-editor/style.min.css?ver=a4e739bb107d4e2fd327962f789bf319' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-reusable-blocks-css' href='https://www.botterestaurants.com/wordpress/wp-includes/css/dist/reusable-blocks/style.min.css?ver=a4e739bb107d4e2fd327962f789bf319' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-patterns-css' href='https://www.botterestaurants.com/wordpress/wp-includes/css/dist/patterns/style.min.css?ver=a4e739bb107d4e2fd327962f789bf319' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-editor-css' href='https://www.botterestaurants.com/wordpress/wp-includes/css/dist/editor/style.min.css?ver=a4e739bb107d4e2fd327962f789bf319' type='text/css' media='all' />
+<link rel='stylesheet' id='block-robo-gallery-style-css-css' href='https://www.botterestaurants.com/wordpress/wp-content/plugins/robo-gallery/includes/extensions/block/dist/blocks.style.build.css?ver=5.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css' href='https://www.botterestaurants.com/wordpress/wp-content/plugins/tablepress/css/build/default.css?ver=3.2.5' type='text/css' media='all' />
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+<!-- Google Analytics snippet added by Site Kit -->
+<!-- Google Ads snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-NSKGCJ2V" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["www.botterestaurants.com"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-NSKGCJ2V");
+gtag("config", "AW-16944301340");
+ window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); }; 
+//# sourceURL=google_gtagjs-js-after
+/* ]]> */
+</script>
+<meta name="generator" content="Site Kit by Google 1.167.0" /><meta name="google-site-verification" content="wNzSDgDmkSclZneiN0C9-tCKckRncKf4pyDBbi7JR0c">
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-MZD423DP' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MZD423DP');</script>
+<!-- End Google Tag Manager -->
+		<style type="text/css" id="wp-custom-css">
+			#iframe-flex {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    z-index: -9999 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+}
+		</style>
+		 		   				
+				
+ 		<link href="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/style.css?v=1765163613" type="text/css" rel="stylesheet" media="screen" /> 
+
+ 
+ 
+<script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+
+<script src="https://inkindscript.com/inkind.js" async></script>
+
+ 
+<!-- Privacy policy at http://tag.brandcdn.com/privacy -->
+<script type="text/javascript" src="//tag.brandcdn.com/autoscript/hiltongardeninntribecabottetribeca_vgtstmvfouvtvfe9/Hilton_Garden_Inn_Tribeca_Botte_Tribeca.js"></script>
+
+
+<link rel='stylesheet' id='gforms_reset_css-css' href='https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/legacy/css/formreset.min.css?ver=2.9.23.2' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_formsmain_css-css' href='https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/legacy/css/formsmain.min.css?ver=2.9.23.2' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_ready_class_css-css' href='https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/legacy/css/readyclass.min.css?ver=2.9.23.2' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_browsers_css-css' href='https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/legacy/css/browsers.min.css?ver=2.9.23.2' type='text/css' media='all' />
+<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta name="generator" content="WP Rocket 3.20.1.2" data-wpr-features="wpr_preconnect_external_domains wpr_automatic_lazy_rendering wpr_oci wpr_preload_links wpr_desktop" /></head>
+<body class="wp-singular page-template-default page page-id-248 page-parent page-child parent-pageid-9 wp-theme-html5blank-stable">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZD423DP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<style>
+/* Hide off-screen initially */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 100000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Make visible when in focus */
+.skip-to-content:focus {
+    top: 10px;
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+    transition: top 0.3s ease; 
+}
+
+a:focus {
+  outline: 3px solid #007bff; /* Adds a visible blue outline */
+  outline-offset: 2px; /* Adds some space between the link text and the outline */
+  border-radius: 4px;
+}
+ 
+	
+</style>	
+<script>
+function skipToContent() { document.getElementById('main-content').scrollIntoView(); }
+</script>	
+<!-- "Skip to content" button inside a form -->
+<button onclick="skipToContent()" class="skip-to-content" tabindex="1">Skip to main content</button>
+
+ 
+	
+	
+<!--
+-->
+
+	
+
+
+
+
+
+
+
+
+<!--
+
+-->
+
+
+<div  class="phone-pulse xmobile-show">
+<div  class="phone-bg"></div>
+<div  class="phone-button"><a href="tel://(212) 207-0052"><i class="fas fa-phone-volume"></i></a></div>
+</div>
+
+  
+<div  class="header-wrapper">
+	
+			
+<div  class="promo-text"><a href="/"><i class="fas fa-home header-home "></i></a> &nbsp; <strong><a href="/upper-east-side" style="color: white; text-decoration: none;">BOTTE UES</a></strong><span style="float: right; padding-right: 15px;"><a href="/upper-east-side/contact">Gift Cards Available!</a></span></div>	
+ 
+	<div  class="header-bottom">
+		 
+			
+		<div  class="logo">
+			<a href="/upper-east-side">
+				<img src="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/img/logo-botte-restaurants.png" alt="Botte Logo - Upper East Side" />
+			</a>
+		</div>
+		
+		<div  class="desktop-phone mobile-hide">
+			<a href="tel://(212) 207-0052"><i class="fas fa-phone-volume"></i> (212) 207-0052</a>
+			<a href="https://www.instagram.com/botterestaurants/" style="color: white" target="_blank"><i class="fab fa-instagram"></i></a> 
+			<a href="https://www.facebook.com/bottebar" style="color: white" target="_blank"><i class="fab fa-facebook"></i></a> 
+		</div>
+		
+		<div  class="home-phone"><a href="/upper-east-side/order-online" class="book-party-mobile">ORDER <span class="mobile-hide">ONLINE</span></a></div>
+		 
+		
+		<div class="nav-container">
+			<span class="activenav"></span><span class="activenav"></span>
+		</div>
+				
+		
+		<div  class="clr mobile-show"></div>
+		
+		
+			<div  class="header-navigation">
+				 
+				<div class="menu-uppereastside-container"><ul id="menu-uppereastside" class="menu"><li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-75"><a href="https://www.botterestaurants.com/upper-east-side/">Home</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="https://www.botterestaurants.com/upper-east-side/order-online/">Order Online</a></li>
+<li id="menu-item-301" class="footer-nav-hide menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-301"><a href="#">Menus</a>
+<ul class="sub-menu">
+	<li id="menu-item-294" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-294"><a href="https://www.botterestaurants.com/upper-east-side/menus/all-day-menu/">All Day Menu</a></li>
+	<li id="menu-item-295" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-295"><a href="https://www.botterestaurants.com/upper-east-side/menus/brunch/">Brunch</a></li>
+	<li id="menu-item-296" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296"><a href="https://www.botterestaurants.com/upper-east-side/menus/lunch/">Lunch</a></li>
+	<li id="menu-item-297" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-297"><a href="https://www.botterestaurants.com/upper-east-side/menus/happy-hour/">Happy Hour</a></li>
+	<li id="menu-item-298" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298"><a href="https://www.botterestaurants.com/upper-east-side/menus/wine/">Wine</a></li>
+	<li id="menu-item-299" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-299"><a href="https://www.botterestaurants.com/upper-east-side/menus/cocktails/">Cocktails</a></li>
+	<li id="menu-item-300" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-300"><a href="https://www.botterestaurants.com/upper-east-side/menus/dessert/">Dessert</a></li>
+</ul>
+</li>
+<li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="https://www.botterestaurants.com/upper-east-side/private-events/">Private Events</a></li>
+<li id="menu-item-79" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="https://www.botterestaurants.com/upper-east-side/reservations/">Reservations</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://www.botterestaurants.com/upper-east-side/gallery/">Gallery</a></li>
+<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="https://www.botterestaurants.com/upper-east-side/about/">About</a></li>
+<li id="menu-item-83" class="footer-nav-hide menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-83"><a href="#">Locations</a>
+<ul class="sub-menu">
+	<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-84"><a href="https://www.botterestaurants.com/upper-east-side/">BOTTE UES</a></li>
+	<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85"><a href="https://www.botterestaurants.com/brooklyn/">BOTTE BROOKLYN</a></li>
+	<li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="https://www.botterestaurants.com/astoria/">BOTTE BAR ASTORIA</a></li>
+</ul>
+</li>
+<li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="https://www.botterestaurants.com/upper-east-side/contact/">Contact</a></li>
+</ul></div>				  	 
+				<div class="mobile-show">	 
+				  	
+					<div class="header-top-left" style="float: none">
+						<a href="https://www.instagram.com/botterestaurants/" style="color: white" target="_blank"><i class="fab fa-instagram"></i></a> 
+						<a href="https://www.facebook.com/bottebar" style="color: white" target="_blank"><i class="fab fa-facebook"></i></a> 
+						<a class="mobile-show-inline" href="(212) 207-0052" style="color: #ffeb99;"><i class="fas fa-phone-volume"></i> (212) 207-0052</a>
+					</div>
+					  
+				</div>
+			 
+	   
+			</div>
+			
+			<div  class="clr"></div>
+ 	
+	</div>
+
+</div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<div  class="page-hero-top"><div  class="page-mask"></div> 
+ 
+	
+	 <div  class="hero-featured wow fadeIn" style="background: url(https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/img/page.jpg) center center no-repeat;"></div>  
+
+ 
+</div>
+
+
+ 
+<!-- Full Content Page Wrapper to hide content when mobile nav is clicked -->	
+<div  class="page-content-wrapper">
+	
+	<div  class="page-content-center">
+		
+		<div  class="page-content-padding">
+		
+		<div class="home-intro">
+			
+			<div class="home-intro-content wow fadeIn">
+	
+ 
+				<main role="main">
+					<!-- section -->
+					<section>
+			 
+			
+								
+						<!-- article -->
+						<article id="post-248" class="post-248 page type-page status-publish has-post-thumbnail hentry">
+			
+										 
+			
+							<div  class="clr"></div>
+			 
+			
+						</article>
+						<!-- /article -->
+			
+								
+			 
+								
+					</section>
+					<!-- /section -->
+				</main>
+	
+	
+			</div>
+			
+		</div>
+		
+		</div>
+	 
+		 	
+	
+	</div>
+			
+	<div  class="clr"></div>
+			
+</div>
+
+
+    
+                      
+<div  class="clr"></div>
+
+ 
+
+<div  class="hero-me-two wow fadeIn">
+
+	
+	<div  class="hero-mask"></div>
+		
+		<div  class="hero-content">
+				
+				
+			<a href="https://search.google.com/local/writereview?placeid=ChIJI43xgLlYwokR9H-LXHs36gc" target="_blank"><img src="/wordpress/wp-content/themes/html5blank-stable/img/google-reviews.png" alt="" width="140"></a>	
+			<br />
+			<a href="https://search.google.com/local/writereview?placeid=ChIJI43xgLlYwokR9H-LXHs36gc" target="_blank" style="color: #ffeb99; padding-bottom: 10px; display: inline-block;">(CLICK HERE TO WRITE A REVIEW)</a>
+			<br />
+			
+			<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>	
+			
+			<br />
+		 	 
+
+			<!-- Begin Testimonials Loop -->
+			<div  id="camps-quote">
+				<div id="testimonials">
+			    
+			 
+					<div class="slide">
+					<div class="testimonial-quote">
+					
+					<p style="padding: 0px;">"I blown away by the delicious chicken parmigiana, which had vodka sauce instead of red sauce. The breading was crispy and the chicken was juicy and flavorful. There was homemade and fresh pasta part of the chicken parmigiana dish. The service was also outstanding - the waitstaff was friendly and attentive. "<br /><em> - Connor D.</em></p>
+					</div>
+					</div>
+				 
+					<div class="slide"  style="display: none">
+					<div class="testimonial-quote">
+					
+					<p style="padding: 0px;">"Awesome dining atmosphere that made me feel so relax and would make a great spot to sit and drink with friends. Food are so delicious that I’m not really much of a meat person and I don’t usually finish up a main course, but I actually ate the whole thing here and would like to ask for more and more! "<br /><em> - Queenie L.</em></p>
+					</div>
+					</div>
+					
+					
+					<div class="slide"  style="display: none">
+					<div class="testimonial-quote">
+					
+					<p style="padding: 0px;">"We were able to get a reservation in fairly last minute and we were promptly seated upon arrival. The atmosphere is very nice and gives off "cool industrial italian basement" vibes (in a great way). The food and drinks were good and it was great that they had vegan and vegetarian options for those with dietary restrictions."<br /><em> - Michel A.</em></p>
+					</div>
+					</div>
+				 
+					 
+			
+				</div>
+			</div>  
+			<!-- End Testimonials -->
+ 
+	
+		</div>
+		
+</div>
+
+
+<div  class="clr"></div>	
+
+ 
+
+
+<div  class="footer-subscribe">
+	 
+	
+		 
+			<div  class="footer-subscribe-text">
+				
+				<div  class="footer-subscribe-padding">
+					
+				<p><i class="fal fa-envelope"></i> Email List</p>
+			
+				<p style="padding: 0px;">Sign up to receive updates and promotions from BOTTE UES.</p>
+				
+				
+                <div class='gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper gform-theme--no-framework' data-form-theme='legacy' data-form-index='0' id='gform_wrapper_1' ><style>#gform_wrapper_1[data-form-index="0"].gform-theme,[data-parent-form="1_0"]{--gf-color-primary: #204ce5;--gf-color-primary-rgb: 32, 76, 229;--gf-color-primary-contrast: #fff;--gf-color-primary-contrast-rgb: 255, 255, 255;--gf-color-primary-darker: #001AB3;--gf-color-primary-lighter: #527EFF;--gf-color-secondary: #fff;--gf-color-secondary-rgb: 255, 255, 255;--gf-color-secondary-contrast: #112337;--gf-color-secondary-contrast-rgb: 17, 35, 55;--gf-color-secondary-darker: #F5F5F5;--gf-color-secondary-lighter: #FFFFFF;--gf-color-out-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-out-ctrl-light-rgb: 17, 35, 55;--gf-color-out-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-out-ctrl-light-lighter: #F5F5F5;--gf-color-out-ctrl-dark: #585e6a;--gf-color-out-ctrl-dark-rgb: 88, 94, 106;--gf-color-out-ctrl-dark-darker: #112337;--gf-color-out-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-color-in-ctrl: #fff;--gf-color-in-ctrl-rgb: 255, 255, 255;--gf-color-in-ctrl-contrast: #112337;--gf-color-in-ctrl-contrast-rgb: 17, 35, 55;--gf-color-in-ctrl-darker: #F5F5F5;--gf-color-in-ctrl-lighter: #FFFFFF;--gf-color-in-ctrl-primary: #204ce5;--gf-color-in-ctrl-primary-rgb: 32, 76, 229;--gf-color-in-ctrl-primary-contrast: #fff;--gf-color-in-ctrl-primary-contrast-rgb: 255, 255, 255;--gf-color-in-ctrl-primary-darker: #001AB3;--gf-color-in-ctrl-primary-lighter: #527EFF;--gf-color-in-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-in-ctrl-light-rgb: 17, 35, 55;--gf-color-in-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-in-ctrl-light-lighter: #F5F5F5;--gf-color-in-ctrl-dark: #585e6a;--gf-color-in-ctrl-dark-rgb: 88, 94, 106;--gf-color-in-ctrl-dark-darker: #112337;--gf-color-in-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-radius: 3px;--gf-font-size-secondary: 14px;--gf-font-size-tertiary: 13px;--gf-icon-ctrl-number: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 0C4.26522 5.96046e-08 4.51957 0.105357 4.70711 0.292893L7.70711 3.29289C8.09763 3.68342 8.09763 4.31658 7.70711 4.70711C7.31658 5.09763 6.68342 5.09763 6.29289 4.70711L4 2.41421L1.70711 4.70711C1.31658 5.09763 0.683417 5.09763 0.292893 4.70711C-0.0976311 4.31658 -0.097631 3.68342 0.292893 3.29289L3.29289 0.292893C3.48043 0.105357 3.73478 0 4 0ZM0.292893 9.29289C0.683417 8.90237 1.31658 8.90237 1.70711 9.29289L4 11.5858L6.29289 9.29289C6.68342 8.90237 7.31658 8.90237 7.70711 9.29289C8.09763 9.68342 8.09763 10.3166 7.70711 10.7071L4.70711 13.7071C4.31658 14.0976 3.68342 14.0976 3.29289 13.7071L0.292893 10.7071C-0.0976311 10.3166 -0.0976311 9.68342 0.292893 9.29289Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-select: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 0.292893C0.683417 -0.097631 1.31658 -0.097631 1.70711 0.292893L5 3.58579L8.29289 0.292893C8.68342 -0.0976311 9.31658 -0.0976311 9.70711 0.292893C10.0976 0.683417 10.0976 1.31658 9.70711 1.70711L5.70711 5.70711C5.31658 6.09763 4.68342 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292893Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-search: url("data:image/svg+xml,%3Csvg width='640' height='640' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M256 128c-70.692 0-128 57.308-128 128 0 70.691 57.308 128 128 128 70.691 0 128-57.309 128-128 0-70.692-57.309-128-128-128zM64 256c0-106.039 85.961-192 192-192s192 85.961 192 192c0 41.466-13.146 79.863-35.498 111.248l154.125 154.125c12.496 12.496 12.496 32.758 0 45.254s-32.758 12.496-45.254 0L367.248 412.502C335.862 434.854 297.467 448 256 448c-106.039 0-192-85.962-192-192z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-label-space-y-secondary: var(--gf-label-space-y-md-secondary);--gf-ctrl-border-color: #686e77;--gf-ctrl-size: var(--gf-ctrl-size-md);--gf-ctrl-label-color-primary: #112337;--gf-ctrl-label-color-secondary: #112337;--gf-ctrl-choice-size: var(--gf-ctrl-choice-size-md);--gf-ctrl-checkbox-check-size: var(--gf-ctrl-checkbox-check-size-md);--gf-ctrl-radio-check-size: var(--gf-ctrl-radio-check-size-md);--gf-ctrl-btn-font-size: var(--gf-ctrl-btn-font-size-md);--gf-ctrl-btn-padding-x: var(--gf-ctrl-btn-padding-x-md);--gf-ctrl-btn-size: var(--gf-ctrl-btn-size-md);--gf-ctrl-btn-border-color-secondary: #686e77;--gf-ctrl-file-btn-bg-color-hover: #EBEBEB;--gf-field-img-choice-size: var(--gf-field-img-choice-size-md);--gf-field-img-choice-card-space: var(--gf-field-img-choice-card-space-md);--gf-field-img-choice-check-ind-size: var(--gf-field-img-choice-check-ind-size-md);--gf-field-img-choice-check-ind-icon-size: var(--gf-field-img-choice-check-ind-icon-size-md);--gf-field-pg-steps-number-color: rgba(17, 35, 55, 0.8);}</style><div id='gf_1' class='gform_anchor' tabindex='-1'></div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_1' id='gform_1'  action='/upper-east-side/menus/#gf_1' data-formid='1' novalidate>
+                        <div class='gform-body gform_body'><ul id='gform_fields_1' class='gform_fields top_label form_sublabel_below description_below validation_below'><li id="field_1_4" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_4'>Phone</label><div class='ginput_container'><input name='input_4' id='input_1_4' type='text' value='' autocomplete='new-password'/></div><div class='gfield_description' id='gfield_description_1_4'>This field is for validation purposes and should be left unchanged.</div></li><li id="field_1_3" class="gfield gfield--type-hidden gform_hidden field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><div class='ginput_container ginput_container_text'><input name='input_3' id='input_1_3' type='hidden' class='gform_hidden'  aria-invalid="false" value='https://www.botterestaurants.com/upper-east-side/menus/ Menus' /></div></li><li id="field_1_1" class="gfield gfield--type-email gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_1'>Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_1' id='input_1_1' type='email' value='' class='large' tabindex='1000'  placeholder='Enter your email address' aria-required="true" aria-invalid="false"  />
+                        </div></li><li id="field_1_2" class="gfield gfield--type-captcha field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label screen-reader-text' for='input_1_2'></label><div id='input_1_2' class='ginput_container ginput_recaptcha' data-sitekey='6LfxZ2cpAAAAAM1opANHyjlgJsWnalUA-Gaug-jn'  data-theme='light' data-tabindex='1001'  data-badge=''></div></li></ul></div>
+        <div class='gform-footer gform_footer top_label'> <input type='submit' id='gform_submit_button_1' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' value='Submit' tabindex='1002' /> <input type='hidden' name='gform_ajax' value='form_id=1&amp;title=&amp;description=&amp;tabindex=0&amp;theme=legacy&amp;hash=2fe68d97c97b1b784f2c2d05a4c471e6' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_1' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_1' id='gform_theme_1' value='legacy' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_1' id='gform_style_settings_1' value='' />
+            <input type='hidden' class='gform_hidden' name='is_submit_1' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='1' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_1' value='WyJbXSIsIjE3ZGMxOTZhOWE2ZDFiODg3ODg4ZTg2NDhmNzQzNWQxIl0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_1' id='gform_target_page_number_1' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_1' id='gform_source_page_number_1' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        <p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="62"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_1' id='gform_ajax_frame_1' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {gformInitSpinner( 1, 'https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_1').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1').val();gformInitSpinner( 1, 'https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [1, current_page]);window['gf_submitting_1'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_1').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1]);window['gf_submitting_1'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1').text());}else{jQuery('#gform_1').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "1", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_1" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_1";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_1" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 1, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} ); 
+/* ]]> */
+</script>
+	
+				
+				</div>
+			
+			</div>
+		 
+		
+			 
+		
+		</div>
+			
+		<div  class="clr"></div>
+		
+	 
+
+</div>
+
+
+
+<div  class="clr"></div>
+
+
+ 
+ 
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12085.627643131224!2d-73.9504538!3d40.7750676!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258b980f18d23%3A0x7ea377b5c8b7ff4!2sBotte%20UES!5e0!3m2!1sen!2sus!4v1707147834965!5m2!1sen!2sus" width="100%" height="550" style="border:0; display: block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ 
+ 
+
+
+<div  class="call-to-action">
+	
+	<div  class="page-content-center" style="border: none; padding: 0px 20px;">
+		
+		<h3 style="padding: 0px 20px;">Upper East Side, New York</h3>
+		
+		<p>Are you planning a special event? Use our Party Room to entertain your guests!</p>
+
+	  <a href="/upper-east-side/private-events/" class="link-button" >PRIVATE EVENTS</a>
+	
+	</div>
+	
+</div>
+
+
+ 
+
+<div  class="insta-wrapper">
+<div  class="insta-square" data-wow-delay=".0s">
+<div  class="insta-post" style="background-image: url(/wordpress/wp-content/themes/html5blank-stable/img/insta-d-1.jpg)"><img src="/wordpress/wp-content/themes/html5blank-stable/img/instagram-clear.png"></div><div  class="clr"></div>
+</div>
+<div  class="insta-square" data-wow-delay=".0s">
+<div  class="insta-post" style="background-image: url(/wordpress/wp-content/themes/html5blank-stable/img/insta-d-2.jpg)"><img src="/wordpress/wp-content/themes/html5blank-stable/img/instagram-clear.png"></div><div  class="clr"></div>
+</div>
+<div  class="insta-square" data-wow-delay=".0s">
+<div  class="insta-post" style="background-image: url(/wordpress/wp-content/themes/html5blank-stable/img/insta-d-3.jpg)"><img src="/wordpress/wp-content/themes/html5blank-stable/img/instagram-clear.png"></div><div  class="clr"></div>
+</div>
+<div  class="insta-square" data-wow-delay=".0s">
+<div  class="insta-post" style="background-image: url(/wordpress/wp-content/themes/html5blank-stable/img/insta-d-4.jpg)"><img src="/wordpress/wp-content/themes/html5blank-stable/img/instagram-clear.png"></div><div  class="clr"></div>
+</div>
+<div  class="insta-square" data-wow-delay=".0s">
+<div  class="insta-post" style="background-image: url(/wordpress/wp-content/themes/html5blank-stable/img/insta-d-5.jpg)"><img src="/wordpress/wp-content/themes/html5blank-stable/img/instagram-clear.png"></div><div  class="clr"></div>
+</div>
+<div  class="insta-square" data-wow-delay=".0s">
+<div  class="insta-post" style="background-image: url(/wordpress/wp-content/themes/html5blank-stable/img/insta-d-6.jpg)"><img src="/wordpress/wp-content/themes/html5blank-stable/img/instagram-clear.png"></div><div  class="clr"></div>
+</div>
+<div  class="clr"></div>
+</div>
+ 
+  
+
+
+<div  class="footer-wrapper">
+	
+	<div  class="footer-decor" style="display: block">
+		<div  class="footer-decor-top"></div> 
+	</div>
+
+	<div  class="footer-center">
+	
+	
+	
+		<div  class="logo-footer"><img src="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/img/logo-botte-restaurants.png" class="img-res" alt="" /></div>
+		 
+	  				 
+		<div data-wpr-lazyrender="1" class="footer-social">
+			<a href="https://www.instagram.com/botterestaurants/" style="color: white" target="_blank"><i class="fab fa-instagram"></i></a> 
+			<a href="https://www.facebook.com/bottebar" style="color: white" target="_blank"><i class="fab fa-facebook"></i></a> 
+		</div>
+		
+		<div data-wpr-lazyrender="1" class="footer-nav">
+			<div class="menu-uppereastside-container"><ul id="menu-uppereastside-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-75"><a href="https://www.botterestaurants.com/upper-east-side/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="https://www.botterestaurants.com/upper-east-side/order-online/">Order Online</a></li>
+<li class="footer-nav-hide menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-301"><a href="#">Menus</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-294"><a href="https://www.botterestaurants.com/upper-east-side/menus/all-day-menu/">All Day Menu</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-295"><a href="https://www.botterestaurants.com/upper-east-side/menus/brunch/">Brunch</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296"><a href="https://www.botterestaurants.com/upper-east-side/menus/lunch/">Lunch</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-297"><a href="https://www.botterestaurants.com/upper-east-side/menus/happy-hour/">Happy Hour</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298"><a href="https://www.botterestaurants.com/upper-east-side/menus/wine/">Wine</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-299"><a href="https://www.botterestaurants.com/upper-east-side/menus/cocktails/">Cocktails</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-300"><a href="https://www.botterestaurants.com/upper-east-side/menus/dessert/">Dessert</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="https://www.botterestaurants.com/upper-east-side/private-events/">Private Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="https://www.botterestaurants.com/upper-east-side/reservations/">Reservations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://www.botterestaurants.com/upper-east-side/gallery/">Gallery</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="https://www.botterestaurants.com/upper-east-side/about/">About</a></li>
+<li class="footer-nav-hide menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-83"><a href="#">Locations</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-84"><a href="https://www.botterestaurants.com/upper-east-side/">BOTTE UES</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85"><a href="https://www.botterestaurants.com/brooklyn/">BOTTE BROOKLYN</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="https://www.botterestaurants.com/astoria/">BOTTE BAR ASTORIA</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="https://www.botterestaurants.com/upper-east-side/contact/">Contact</a></li>
+</ul></div>		</div>
+		
+		
+		<div data-wpr-lazyrender="1" class="clr"></div>
+		<div data-wpr-lazyrender="1" style="text-align: center"><p>Viewing BOTTE UES Website:</p><a href="/brooklyn" class="link-button">BOTTE Brooklyn &raquo;</a> <a href="/astoria" class="link-button">BOTTE BAR Astoria &raquo;</a>    <!-- <a href="/bar-parioli" class="link-button">BAR PARIOLI &raquo;</a> --></div>
+		<br /><br />
+		<div data-wpr-lazyrender="1" class="clr"></div>
+		
+		
+		<div data-wpr-lazyrender="1" class="footer-third">
+			
+			<div class="footer-third-padding">
+				<h4>BOTTE UES</h4>
+				
+				<p>We offer simplicity, freshness and quality through many types of dishes. Enjoy fresh pizzas, charcuterie boards, small plates, homemade pastas, and more! </p>
+		 		<p><i class="fas fa-phone-volume"></i> &nbsp;<a href="tel://(212) 207-0052">(212) 207-0052</a></p> 
+				<p><i class="fas fa-envelope"></i> &nbsp;<a href="/cdn-cgi/l/email-protection#5e373038311e3c312a2a3b3d2b3d37303f703d3133"><span class="__cf_email__" data-cfemail="afc6c1c9c0efcdc0dbdbcaccdaccc6c1ce81ccc0c2">[email&#160;protected]</span></a></p> 
+				<p><i class="fas fa-map-marker"></i> &nbsp;<a href="https://maps.app.goo.gl/kpJKsKVaQtneKd7r7" target="_blank">1606 1st Ave., New York, NY 10028</a></p>
+				 
+				<a href="/upper-east-side/about" style="display:inline-block; color: #ffeb99; border: 1px solid #ffeb99; padding: 10px 15px; border-radius: 5px; margin-bottom: 15px; font-size: 16px; text-decoration: none;">ABOUT US</a>
+			</div>
+			
+		</div>
+		
+		<div data-wpr-lazyrender="1" class="footer-third">
+			
+			<div class="footer-third-padding">
+				<h4>HOURS</h4>
+				  
+				  <div class="footer-hours">
+				  <p>Monday<span>4:00pm - 10:00pm</span></p>
+				  <p>Tuesday<span>4:00pm - 10:00pm</span></p>
+				  <p>Wednesday<span>4:00pm - 10:00pm</span></p>
+				  <p>Thursday<span>4:00pm - 10:00pm</span></p>
+				  <p>Friday<span>12:00pm - 11:00pm</span></p>
+				  <p>Saturday<span>12:00pm - 11:00pm</span></p>
+				  <p>Sunday<span>12:00pm - 10:00pm</span></p>
+				  <br />
+				  
+				  <p>*BRUNCH: Fri, Sat & Sun 12pm-4:00pm</p>
+				  
+				  </div>
+				  
+			</div>
+			
+		</div>
+
+ 
+	
+		<div data-wpr-lazyrender="1" class="footer-third">
+			
+			<div class="footer-third-padding">
+				<h4>EMPLOYMENT</h4> 
+				<p>At Botte Restaurants, we believe in the power of passionate individuals coming together to create extraordinary experiences.</p>
+			 
+				<a href="/employment-opportunities/" style="display:inline-block; color: #ffeb99; border: 1px solid #ffeb99; padding: 10px 15px; border-radius: 5px; margin-bottom: 15px; font-size: 16px; text-decoration: none;">WE'RE HIRING &nbsp; <i class="fal fa-clipboard-user"></i></a>
+			</div>
+			
+		</div>
+		
+		<div data-wpr-lazyrender="1" class="clr"></div>
+
+		<div data-wpr-lazyrender="1" class="footer-nav-copy">
+		<div class="menu-footer-container"><ul id="menu-footer" class="menu"><li id="menu-item-125" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-125"><a rel="privacy-policy" href="https://www.botterestaurants.com/privacy-policy/">Privacy Policy &#038; Terms</a></li>
+<li id="menu-item-126" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-126"><a href="https://www.botterestaurants.com/accessibility/">Accessibility</a></li>
+</ul></div>		</div>
+		
+		<div class="clr"></div>	
+
+		
+		<div data-wpr-lazyrender="1" style="text-align: center; padding: 10px 0px 60px" class="scroll-top top-scroll">  
+			<img src="/wordpress/wp-content/themes/html5blank-stable/img/icon-top.png" alt="" width="35">
+		</div>
+		
+	</div>
+	
+	
+</div>
+
+<div data-wpr-lazyrender="1" class="footer-copyright">
+	
+	<div  class="footer-center">
+		
+	2025 &copy; Botte Restaurants. All rights reserved.<span style="float:right;">Design by <a href="http://www.messtudios.com" target="_blank" title="Website Designed and Developed Owen Piccirillo at MESstudios.com">MES</a></span>
+
+	</div>
+	
+</div>
+ 
+
+ 
+ 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wordpress/wp-*.php","/wordpress/wp-admin/*","/wordpress/wp-content/uploads/*","/wordpress/wp-content/*","/wordpress/wp-content/plugins/*","/wordpress/wp-content/themes/html5blank-stable/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZD423DP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+		<script type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://www.botterestaurants.com","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" id="wp-consent-api-js-extra">
+/* <![CDATA[ */
+var consent_api = {"consent_type":"","waitfor_consent_hook":"","cookie_expiration":"30","cookie_prefix":"wp_consent","services":[]};
+//# sourceURL=wp-consent-api-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.botterestaurants.com/wordpress/wp-content/plugins/wp-consent-api/assets/js/wp-consent-api.min.js?ver=2.0.0" id="wp-consent-api-js"></script>
+<script type="text/javascript" src="https://www.botterestaurants.com/wordpress/wp-includes/js/dist/dom-ready.min.js?ver=f77871ff7694fffea381" id="wp-dom-ready-js"></script>
+<script type="text/javascript" src="https://www.botterestaurants.com/wordpress/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1" id="wp-hooks-js"></script>
+<script type="text/javascript" src="https://www.botterestaurants.com/wordpress/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.botterestaurants.com/wordpress/wp-includes/js/dist/a11y.min.js?ver=cb460b4676c94bd228ed" id="wp-a11y-js"></script>
+<script type="text/javascript" src="https://www.botterestaurants.com/wordpress/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://www.botterestaurants.com/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" defer='defer' src="https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.9.23.2" id="gform_json-js"></script>
+<script type="text/javascript" id="gform_gravityforms-js-extra">
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms","number_formats":[],"spinnerUrl":"https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/images/spinner.svg","version_hash":"e4ab115aa87d3af2af79e3fa1005e359","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+//# sourceURL=gform_gravityforms-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" defer='defer' src="https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.9.23.2" id="gform_gravityforms-js"></script>
+<script type="text/javascript" defer='defer' src="https://www.google.com/recaptcha/api.js?hl=en&amp;ver=a4e739bb107d4e2fd327962f789bf319#038;render=explicit" id="gform_recaptcha-js"></script>
+<script type="text/javascript" defer='defer' src="https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.9.23.2" id="gform_placeholder-js"></script>
+<script type="text/javascript" defer='defer' src="https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=380b7a5ec0757c78876bc8a59488f2f3" id="gform_gravityforms_utils-js"></script>
+<script type="text/javascript" defer='defer' src="https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=8673c9a2ff188de55f9073009ba56f5e" id="gform_gravityforms_theme_vendors-js"></script>
+<script type="text/javascript" id="gform_gravityforms_theme-js-extra">
+/* <![CDATA[ */
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"e4ab115aa87d3af2af79e3fa1005e359"},"ajax":{"ajaxurl":"https://www.botterestaurants.com/wordpress/wp-admin/admin-ajax.php","ajax_submission_nonce":"47fcecd5b0","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again."}}}},"hmr_dev":"","public_path":"https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/assets/js/dist/","config_nonce":"a588f2e8fe"};
+//# sourceURL=gform_gravityforms_theme-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" defer='defer' src="https://www.botterestaurants.com/wordpress/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=96b168b3a480baf99058dabf9338533b" id="gform_gravityforms_theme-js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 1) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } ); 
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "1", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_1" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_1";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_1" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 1, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } ); 
+/* ]]> */
+</script>
+ 
+
+<!-- Swipy --> 
+<script src="https://www.botterestaurants.com/wordpress/wp-content/themes/html5blank-stable/js/swiper.js" type="text/javascript"></script> 
+
+
+
+
+
+ 
+ 
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9aabc2c43c1bfe8e',t:'MTc2NTE5MTY0NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"74ed5b1216f34a69b76c2c3975dd6654","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1765163613 -->

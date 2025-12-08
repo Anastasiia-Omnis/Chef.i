@@ -1,0 +1,2404 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.krischs.com/',
+        AccountUUID: 'c5b1b9c640a84cd0bdbf32be18aa716b',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '1de4aef4',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Fri Sep 20 19:05:00 UTC 2024',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'our-menu',
+        InitialPageUuid: 'b9a80226a6a94129894b7b932a54aede',
+        InitialPageId: '1133813825',
+        InitialEncodedPageAlias: 'b3VyLW1lbnU=',
+        InitialHeaderUuid: 'da4f5154a04444d6985269cb6c7b7095',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '47690',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 4,
+            NavbarLiveHomePage: 'https://www.krischs.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: false,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 9;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.krischs.com/our-menu">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon"
+      href="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Fav-57px.png"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/1de4aef4/site_favicon_16_1667412342324.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Montserrat:wght@100..900&amp;subset=latin-ext&amp;display=swap"  />
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="stylesheet" type="text/css" href="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/WIDGET_CSS/cc6ac50a2d068f69e8cde723f5bd464b.css" id="widgetCSS" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="our-menu"] #dm [data-show-on-page-only="our-menu"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/1de4aef4/files/1de4aef4_1.min.css?v=60" id="siteGlobalCss" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody a.span.textonly
+{
+	color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.dmform-error
+{
+	font-style:normal !important;
+}
+*#dm *.dmBody div.dmforminput textarea
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.dmforminput *.fileUploadLink
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.checkboxwrapper span
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.radiowrapper span
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody nav.u_1144820115
+{
+	color:black !important;
+}
+*#dm *.dmBody nav.u_1289721856
+{
+	color:black !important;
+}
+*#dm *.dmBody div.u_1243667655
+{
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Lunch-Dinner-Header-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody *.u_1083732570
+{
+	background-image:url(https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_1-f103d3fa-2880w.jpg) !important;
+}
+*#dm *.dmBody *.u_1723985552
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1143612003
+{
+	display:none !important;
+}
+*#dm *.dmBody div.u_1087956055 .color-overlay
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody *.u_1545679173
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1906597740
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1053840292
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1166529714
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1207325462
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1144945050
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1659704537
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1058979018
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1567636904
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1993728816
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1928311589
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1658728708
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1674729658
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1384657845
+{
+	display:none !important;
+}
+*#dm *.dmBody a.u_1956629636 .iconBg
+{
+	display:none !important;
+}
+*#dm *.dmBody a.u_1956629636:hover span.text
+{
+	color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody a.u_1956629636.hover span.text
+{
+	color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody a.u_1956629636 span.text
+{
+	font-weight:bold !important;
+}
+*#dm *.dmBody a.u_1956629636:hover
+{
+	background-color:rgba(255,255,255,1) !important;
+	background-image:none !important;
+	border-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody a.u_1956629636.hover
+{
+	background-color:rgba(255,255,255,1) !important;
+	background-image:none !important;
+	border-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody a.u_1818388904 span.text
+{
+	font-weight:bold !important;
+}
+*#dm *.dmBody a.u_1818388904:hover
+{
+	background-color:rgba(255,255,255,1) !important;
+	background-image:none !important;
+	border-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody a.u_1818388904.hover
+{
+	background-color:rgba(255,255,255,1) !important;
+	background-image:none !important;
+	border-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody a.u_1818388904
+{
+	background-color:rgba(222,57,32,1) !important;
+	border-color:rgba(222,57,32,1) !important;
+	border-style:solid !important;
+	border-width:1px !important;
+}
+*#dm *.dmBody a.u_1956629636
+{
+	border-radius:50px !important;
+	-moz-border-radius:50px !important;
+	-webkit-border-radius:50px !important;
+	background-color:rgba(222,57,32,1) !important;
+	border-color:rgba(222,57,32,1) !important;
+	border-style:solid !important;
+	border-width:1px !important;
+}
+*#dm *.dmBody *.u_1087956055 .flex-direction-nav a
+{
+	color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody *.u_1272523287
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1993385355
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1173753595
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1352380415
+{
+	display:none !important;
+}
+*#dm *.dmBody div.u_1309726106 .color-overlay
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody *.u_1309726106 .flex-direction-nav a
+{
+	color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody nav.u_1768548719
+{
+	color:black !important;
+}
+*#dm *.dmBody div.u_1106408430
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody *.u_1822653563 .photoGalleryThumbs .image-container a
+{
+	background-size:contain !important;
+}
+*#dm *.dmBody *.u_1258144841 .photoGalleryThumbs .image-container a
+{
+	background-size:contain !important;
+}
+*#dm *.dmBody *.u_1160946865 .photoGalleryThumbs .image-container a
+{
+	background-size:contain !important;
+}
+*#dm *.dmBody *.u_1516064802 .photoGalleryThumbs .image-container a
+{
+	background-size:contain !important;
+}
+*#dm *.dmBody div.u_1859290653 .float-text
+{
+	font-weight:600 !important;
+}
+*#dm *.dmBody *.u_1859290653 .bgColor
+{
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_1859290653 .fab.child.float
+{
+	background-image:initial !important;
+	background-color:rgba(211,15,15,1) !important;
+}
+*#dm *.dmBody div.u_1859290653 .navTrigger
+{
+	background-image:initial !important;
+	background-color:rgba(255,255,255,1) !important;
+}
+*#dm *.dmBody *.u_1859290653 .navBtnMobile svg
+{
+	fill:rgba(211,15,15,1) !important;
+}
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.d-page-1716942098 DIV.dmInner
+{
+	background-repeat:no-repeat !important;
+	background-size:cover !important;
+	background-attachment:fixed !important;
+	background-position:50% 50% !important;
+}
+*#dm *.d-page-1716942098 DIV#dmSlideRightNavRight
+{
+	background-repeat:no-repeat !important;
+	background-image:none !important;
+	background-size:cover !important;
+	background-attachment:fixed !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody a.u_1956629636
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:281px !important;
+	position:relative !important;
+	height:48px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	text-align:center !important;
+	display:block !important;
+	margin-right:0 !important;
+	margin-left:auto !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+}
+*#dm *.dmBody div.u_1536759948
+{
+	margin-left:0 !important;
+	padding-top:0 !important;
+	padding-left:40px !important;
+	padding-bottom:75px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody a.u_1818388904
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:280px !important;
+	position:relative !important;
+	height:47.5px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	text-align:center !important;
+	display:block !important;
+	margin-left:0 !important;
+	margin-top:0 !important;
+	margin-bottom:10px !important;
+	margin-right:0 !important;
+}
+*#dm *.dmBody div.u_1409812216
+{
+	margin-left:0 !important;
+	padding-top:0 !important;
+	padding-left:40px !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1087956055
+{
+	margin-left:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:auto !important;
+	padding-right:0 !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:1504px !important;
+	max-width:100% !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody *.u_1812353766 .photoGalleryThumbs
+{
+	padding:2px !important;
+}
+*#dm *.dmBody *.u_1812353766 .layout-container
+{
+	padding:2px !important;
+}
+*#dm *.dmBody *.u_1812353766 .photoGalleryViewAll
+{
+	padding:0 4px !important;
+}
+*#dm *.dmBody div.u_1309726106 .slides .slide-button
+{
+	width:191px !important;
+	height:82px !important;
+}
+*#dm *.dmBody div.u_1309726106
+{
+	height:821px !important;
+}
+*#dm *.dmBody *.u_1812353766 .photoGalleryThumbs .image-container a
+{
+	padding-top:245px !important;
+}
+*#dm *.dmBody div.u_1298570213
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1637967866
+{
+	margin-left:0 !important;
+	padding-top:75px !important;
+	padding-left:40px !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1691281073
+{
+	margin-left:0 !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody div.u_1812353766
+{
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	padding-right:0 !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:32px !important;
+	margin-bottom:10px !important;
+	min-width:25px !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1106408430
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_BreakfastMenu
+{
+	margin-left:0 !important;
+	padding-top:75px !important;
+	padding-left:40px !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1243667655
+{
+	margin-left:0 !important;
+	padding-top:140px !important;
+	padding-left:40px !important;
+	padding-bottom:100px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:40px !important;
+	margin-right:0 !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:center !important;
+	background-position:50% 50% !important;
+	background-repeat:no-repeat !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1140565007
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1425190981
+{
+	padding-top:75px !important;
+	padding-left:40px !important;
+	padding-bottom:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_LunchDinnerMenu
+{
+	padding-top:75px !important;
+	padding-left:40px !important;
+	padding-bottom:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1124065277
+{
+	margin-left:0 !important;
+	padding-top:35px !important;
+	padding-left:40px !important;
+	padding-bottom:75px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1103119049
+{
+	margin-left:0 !important;
+	padding-top:35px !important;
+	padding-left:40px !important;
+	padding-bottom:75px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody *.u_1822653563 .photoGalleryThumbs
+{
+	padding:0 !important;
+}
+*#dm *.dmBody *.u_1822653563 .layout-container
+{
+	padding:0 !important;
+}
+*#dm *.dmBody *.u_1822653563 .photoGalleryViewAll
+{
+	padding:0 0 !important;
+}
+*#dm *.dmBody div.u_1404377750
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1700623295
+{
+	padding-top:75px !important;
+	padding-left:40px !important;
+	padding-bottom:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1211737614
+{
+	padding-top:35px !important;
+	padding-left:40px !important;
+	padding-bottom:75px !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody *.u_1258144841 .photoGalleryThumbs
+{
+	padding:0 !important;
+}
+*#dm *.dmBody *.u_1258144841 .layout-container
+{
+	padding:0 !important;
+}
+*#dm *.dmBody *.u_1258144841 .photoGalleryViewAll
+{
+	padding:0 0 !important;
+}
+*#dm *.dmBody *.u_1258144841 .photoGalleryThumbs .image-container a
+{
+	padding-top:960px !important;
+}
+*#dm *.dmBody *.u_1822653563 .photoGalleryThumbs .image-container a
+{
+	padding-top:780px !important;
+}
+*#dm *.dmBody div.u_1935638682
+{
+	padding-top:35px !important;
+	padding-left:40px !important;
+	padding-bottom:75px !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody *.u_1160946865 .photoGalleryThumbs
+{
+	padding:0 !important;
+}
+*#dm *.dmBody *.u_1160946865 .layout-container
+{
+	padding:0 !important;
+}
+*#dm *.dmBody *.u_1160946865 .photoGalleryViewAll
+{
+	padding:0 0 !important;
+}
+*#dm *.dmBody *.u_1160946865 .photoGalleryThumbs .image-container a
+{
+	padding-top:476px !important;
+}
+*#dm *.dmBody div.u_1893983648
+{
+	padding-top:35px !important;
+	padding-left:40px !important;
+	padding-bottom:75px !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody *.u_1516064802 .photoGalleryThumbs
+{
+	padding:0 !important;
+}
+*#dm *.dmBody *.u_1516064802 .layout-container
+{
+	padding:0 !important;
+}
+*#dm *.dmBody *.u_1516064802 .photoGalleryViewAll
+{
+	padding:0 0 !important;
+}
+*#dm *.dmBody *.u_1516064802 .photoGalleryThumbs .image-container a
+{
+	padding-top:708px !important;
+}
+*#dm *.dmBody div.u_DessertMenu
+{
+	padding-top:75px !important;
+	padding-left:40px !important;
+	padding-bottom:0 !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1859290653 .float-text
+{
+	font-size:15px !important;
+}
+*#dm *.dmBody div.u_1480916674
+{
+	padding-top:2px !important;
+	padding-left:40px !important;
+	padding-bottom:2px !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1859290653 .float-text
+{
+	font-size:15px !important;
+}
+*#dm *.dmBody div.u_1480916674
+{
+	padding-top:2px !important;
+	padding-left:40px !important;
+	padding-bottom:2px !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-22, .size-22, .size-22 > font { font-size: 22px !important; }.font-size-14, .size-14, .size-14 > font { font-size: 14px !important; }.font-size-65, .size-65, .size-65 > font { font-size: 65px !important; }.font-size-48, .size-48, .size-48 > font { font-size: 48px !important; }.font-size-20, .size-20, .size-20 > font { font-size: 20px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Georgia Fallback";
+  src: local('Arial');
+  ascent-override: 92.2092%;
+  descent-override: 22.0458%;
+  size-adjust: 99.4469%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.krischs.com/our-menu">
+
+  <title>
+    Our Menu | Krisch's Restaurant &amp; Ice Cream Parlour of Massapequa, NY
+  </title>
+  <meta name="keywords" content="menu, breakfast, lunch, dinner, dessert, ice cream, krischs, old fashioned"/>
+  <meta name="description" content="Visit Krisch's Restaurant &amp; Ice Cream Parlour for Breakfast, Lunch, Dinner or Dessert. We have been serving the Massapequa community since 1955."/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Our Menu | Krisch's Restaurant &amp; Ice Cream Parlour of Massapequa, NY"/>
+  <meta name="twitter:description" content="Visit Krisch's Restaurant &amp; Ice Cream Parlour for Breakfast, Lunch, Dinner or Dessert. We have been serving the Massapequa community since 1955."/>
+  <meta name="twitter:image" content="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krisch-Main-Header-239a3b5f-13f2c27c-1920w.jpg"/>
+  <meta property="og:description" content="Visit Krisch's Restaurant &amp; Ice Cream Parlour for Breakfast, Lunch, Dinner or Dessert. We have been serving the Massapequa community since 1955."/>
+  <meta property="og:title" content="Our Menu | Krisch's Restaurant &amp; Ice Cream Parlour of Massapequa, NY"/>
+  <meta property="og:image" content="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krisch-Main-Header-239a3b5f-13f2c27c-1920w.jpg"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="our-menu"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="Hamburger" data-responsive-name="ResponsiveDesktopTopTabletHamburger" class="runtime-module-container dm-bfs dm-layout-sec hasStickyHeader rows-1200 hamburger-reverse dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div id="site_content"> <div class="p_hfcontainer showOnMedium"> <div id="hamburger-drawer" class="hamburger-drawer layout-drawer" layout="e9d510f4eb904e939c2be8efaf777e6e===header" data-origin="side-reverse"> <div class="u_1579853418 dmRespRow" style="text-align: center;" id="1579853418"> <div class="dmRespColsWrapper" id="1165385148"> <div class="u_1482056896 dmRespCol small-12 medium-12 large-12 empty-column" id="1482056896"></div> 
+</div> 
+</div> 
+ <div class="u_1693895970 dmRespRow middleDrawerRow" style="text-align: center;" id="1693895970"> <div class="dmRespColsWrapper" id="1525545027"> <div class="dmRespCol small-12 u_1054482793 medium-12 large-12" id="1054482793"> <nav class="u_1768548719 effect-bottom main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_2" layout-sub="" data-show-vertical-sub-items="HIDE" id="1768548719" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmUDNavigationItem_00  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         HOME
+        " data-auto="page-text-style">HOME<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101862776  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         ABOUT
+        " data-auto="page-text-style">ABOUT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="#" class="unifiednav__item  dmUDNavigationItem_010101567792  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         OUR MENU
+        " data-auto="page-text-style">OUR MENU<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/breakfast" class="unifiednav__item  dmUDNavigationItem_010101265372  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           BREAKFAST
+          " data-auto="page-text-style">BREAKFAST<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/lunch-and-dinner" class="unifiednav__item  dmUDNavigationItem_010101779372  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           LUNCH & DINNER
+          " data-auto="page-text-style">LUNCH &amp; DINNER<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/dessert" class="unifiednav__item  dmUDNavigationItem_010101903875  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           DESSERT
+          " data-auto="page-text-style">DESSERT<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/gallery" class="unifiednav__item  dmUDNavigationItem_010101812730  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         GALLERY
+        " data-auto="page-text-style">GALLERY<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/blog" class="unifiednav__item  dmUDNavigationItem_010101340868  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         NEWS
+        " data-auto="page-text-style">NEWS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101282666  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         CONTACT
+        " data-auto="page-text-style">CONTACT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1879811179" style="text-align: center;" id="1879811179"> <div class="dmRespColsWrapper" id="1539939903"> <div class="u_1867142547 dmRespCol small-12 medium-12 large-12" id="1867142547"> <div class="u_1501108704 dmNewParagraph" id="1501108704" style="transition: none;"><div style="text-align: left;"><span style=""><span style=""><font style="color: rgb(255, 255, 255);"><span style="" class="font-size-22 lh-1"><b style=""><span style="font-weight: 700;">Get in touch</span></b></span></font></span></span></div></div> <a class="u_1998412316 dmPageLink dmWidget dmButtonLink dmHomeDefaultBtn" href="https://order.mixbowl.co/krischs/setup?sourceUrl=https%3A%2F%2Fkrischs.com%2F&sourceName=website" data-element-type="dPageLinkId" id="1998412316" target="_blank" file="false"> <span class="iconBg" id="1946401537"> <span class="icon hasFontIcon icon-external-link" id="1784910892"></span> 
+</span> 
+ <span class="text" id="1597779167">ORDER ONLINE NOW</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="layout-drawer-overlay" id="layout-drawer-overlay"></div> 
+</div> 
+ <div class="site_content"> <div id="hamburger-header-container" class="showOnMedium hamburger-header-container p_hfcontainer"> <div id="hamburger-header" class="hamburger-header p_hfcontainer" layout="44dc38f951e9489490b055748e10ba9f===header"> <div class="u_1996427980 dmRespRow" style="text-align: center;" id="1996427980"> <div class="dmRespColsWrapper" id="1232137200"> <div class="dmRespCol small-12 u_1803818116 medium-4 large-4 empty-column content-removed" id="1803818116"></div> 
+ <div class="dmRespCol small-12 medium-4 large-4" id="1202968742"> <div class="u_1340605076 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1340605076"> <a href="/" id="1842039149" file="false"><img src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Retina-4-28-1920w.png" id="1641611594" class="" data-dm-image-path="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Retina-4-28.png" width="498" height="314" alt="Krisch's Restaurant & Ice Cream Parlour" title="Krisch's Restaurant & Ice Cream Parlour" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="dmRespCol small-12 medium-4 large-4 empty-column" id="1271113821"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <button class="showOnMedium layout-drawer-hamburger hamburger-on-header" id="layout-drawer-hamburger" aria-label="menu" aria-controls="hamburger-drawer" aria-expanded="false"> <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+</button> 
+ <div class="dmHeaderContainer fHeader d-header-wrapper showOnLarge"> <div id="hcontainer" class="dmHeader p_hfcontainer u_hcontainer" freeheader="true" layout="f014fc9487554eb885e18628ee6309e9===header" data-scrollable-target="body" data-scrollable-target-threshold="1" data-scroll-responder-id="1" logo-size-target="82%" mini-header-show-only-navigation-row="true"> <div dm:templateorder="75" class="dmHeaderResp dmHeaderStack noSwitch" id="1685079315"> <div class="dmRespRow u_1588061107" style="text-align: center;" id="1588061107"> <div class="dmRespColsWrapper" id="1481159770"> <div class="u_1018885490 dmRespCol small-12 large-11 medium-11" id="1018885490"> <div class="u_1899901245 dmNewParagraph" id="1899901245" style="transition: none 0s ease 0s; text-align: left; display: block;" data-version="5"><p class="m-text-align-center m-size-11 size-14" style="line-height: 1.5; letter-spacing: 0px;"><span class="font-size-14 m-font-size-11" style="color:rgb(255, 255, 255);font-weight:700;display:initial;font-family:Montserrat, 'Montserrat Fallback';"><span class="font-size-14 m-font-size-11" style="color:rgb(255, 255, 255);font-weight:700;display:initial;font-family:Montserrat, 'Montserrat Fallback';">Visit Us:</span> 
+</span><span class="font-size-14 m-font-size-11" m-font-size-set="true" style="color:rgb(255, 255, 255);font-weight:700;display:initial;font-family:Montserrat, 'Montserrat Fallback';">11 Central Ave,</span><span class="" style="display: initial; color: rgb(255, 255, 255);"><span style="display: initial; color: rgb(255, 255, 255);">&nbsp;</span> 
+</span><span class="font-size-14 m-font-size-11" m-font-size-set="true" style="color:rgb(255, 255, 255);font-weight:700;display:initial;font-family:Montserrat, 'Montserrat Fallback';">Massapequa, NY 11758&nbsp; &bull;&nbsp; Call Us: (516) 797-3149</span></p></div></div> 
+ <div class="u_1189746009 dmRespCol small-12 large-1 medium-1" id="1189746009"> <div class="u_1661932140 align-center text-align-center dmSocialHub gapSpacing" id="1661932140" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.facebook.com/Krischs/" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.instagram.com/krischsrestaurant/" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.tiktok.com/@krischtoks" target="_blank" dm_dont_rewrite_url="true" aria-label="tiktok" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Tiktok&apos;)"> <span class="dmSocialTiktok dm-social-icons-tiktok oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow dmDefaultListContentRow u_1934629211" style="text-align:center" id="1934629211"> <div class="dmRespColsWrapper" id="1830673367"> <div class="u_1925048423 small-12 dmRespCol large-3 medium-3" id="1925048423"> <div class="u_1230082432 imageWidget align-center" data-widget-type="image" id="1230082432" data-element-type="image"> <a href="/" id="1885779177"><img src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Retina-4-28-1920w.png" id="1118115235" class="" data-dm-image-path="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Retina-4-28.png" alt="Krisch's Restaurant & Ice Cream Parlour of Massapequa, NY" title="Krisch's Restaurant & Ice Cream Parlour of Massapequa, NY" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1582578933 dmRespCol small-12 large-7 medium-7" id="1582578933"> <nav class="u_1979263326 effect-text-color main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1979263326" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmUDNavigationItem_00  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         HOME
+        " data-auto="page-text-style">HOME<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101862776  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         ABOUT
+        " data-auto="page-text-style">ABOUT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="#" class="unifiednav__item  dmUDNavigationItem_010101567792  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         OUR MENU
+        " data-auto="page-text-style">OUR MENU<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/breakfast" class="unifiednav__item  dmUDNavigationItem_010101265372  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           BREAKFAST
+          " data-auto="page-text-style">BREAKFAST<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/lunch-and-dinner" class="unifiednav__item  dmUDNavigationItem_010101779372  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           LUNCH & DINNER
+          " data-auto="page-text-style">LUNCH &amp; DINNER<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/dessert" class="unifiednav__item  dmUDNavigationItem_010101903875  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           DESSERT
+          " data-auto="page-text-style">DESSERT<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/gallery" class="unifiednav__item  dmUDNavigationItem_010101812730  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         GALLERY
+        " data-auto="page-text-style">GALLERY<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/blog" class="unifiednav__item  dmUDNavigationItem_010101340868  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         NEWS
+        " data-auto="page-text-style">NEWS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item  dmUDNavigationItem_010101282666  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         CONTACT
+        " data-auto="page-text-style">CONTACT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="u_1670287931 dmRespCol small-12 large-2 medium-2" id="1670287931"> <a data-display-type="block" class="u_1301885335 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="https://order.mixbowl.co/krischs/setup?sourceUrl=https%3A%2F%2Fkrischs.com%2F&sourceName=website" data-element-type="dButtonLinkId" id="1301885335" target="_blank"> <span class="iconBg" aria-hidden="true" id="1593421823"> <span class="icon hasFontIcon icon-star" id="1049443759"></span> 
+</span> 
+ <span class="text" id="1938636415">ORDER ONLINE</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true"></div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_our-menu dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="u_1243667655 dmRespRow" style="text-align: center;" id="1243667655"> <div class="dmRespColsWrapper" id="1173148036"> <div class="dmRespCol small-12 u_1620106714 medium-12 large-12" id="1620106714"> <div class="dmNewParagraph u_1106408430" data-element-type="paragraph" data-version="5" id="1106408430" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="m-size-34 text-align-center size-65" style="line-height: 1;"><span class="m-font-size-34 font-size-65" m-font-size-set="true" style="font-weight: bold; color: rgb(255, 255, 255); display: unset; text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 15px;">OUR MENU</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1480916674" id="1480916674"> <div class="dmRespColsWrapper" id="1042378711"> <div class="dmRespCol large-12 medium-12 small-12" id="1018138413"> <div class="widget-548d69 u_1859290653 dmCustomWidget" data-lazy-load="false" data-title="" id="1859290653" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="548d695f2d8d4fd8ba434f1886b01d0d" data-widget-version="20" data-widget-config="eyJpY29uTGlzdCI6W3siYnRuSWNvbiI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIHZpZXdCb3g9XCIwIDAgMTAwIDEwMFwiPjxwYXRoIGQ9XCJNMjMuMjIsMTAuNDdjMS4yNC0xLjUzLDEuOS0xLjgyLDMuMTEuMDksNi4zNiwxMCwxMi42MywyMC4wNywxOS4yNywyOS44OSw1Ljc1LDguNSwxMS45NSwxNi43LDE4LDI1cTYuMSw4LjQ2LDEyLjIxLDE2LjkxYzEuNTgsMi4xOCwxLjI3LDMuNzktMSw1LjI0TDcxLjEyLDkwYy0yLjEyLDEuMzQtMy42MSwxLTQuODYtMS4xN3EtNS04LjczLTEwLTE3LjQ5QzUyLjE1LDY0LjI0LDQ4LjA2LDU3LjE2LDQ0LDUwYy0uNTUtMS0xLTEuMDktMi0uNjQtNC4yOSwxLjkyLTctMi44NS05LjE0LTctMy40My02LjYxLTYuNzMtMTMuMjgtMTAtMjBDMjEuODQsMjAuMzMsMjEuMTcsMTMsMjMuMjIsMTAuNDdaXCIvPjxwYXRoIGQ9XCJNNTUuMTEsNTAuMzdjLTEtMS40My0yLjczLTQuMzQtMy44Mi01LjczLDAtMS4wOSwxLjM5LTIuMiwxLjkzLTIuNzJhMi40MSwyLjQxLDAsMCwwLC41Ni0yLjU5Yy0uNjUtMi41LTEuMzMtNS0uNDMtNy42M2EyMywyMywwLDAsMSwyLjkzLTUuMjFjMy42MS01LjQsNy4yNi0xMC43OCwxMC45LTE2LjE2YTEuNjEsMS42MSwwLDAsMSwyLjM5LS42LDEuNTUsMS41NSwwLDAsMSwuNSwyLjM3cS01LDguMTMtMTAsMTYuMjVjLS4zNy42LS45MywxLjIxLS4wNywxLjg5czEuNTIuNjEsMi4yLS40MWMzLjUzLTUuMzQsNy4xOC0xMC42MSwxMC42Ny0xNiwuODctMS4zMywxLjUxLTEuMzUsMi40My0uODRhMS43OSwxLjc5LDAsMCwxLC40OCwyLjcyQzcyLjM3LDIxLjEzLDY5LDI2LjYxLDY1LjY2LDMyYy0uNTguOTMtLjU3LDEuNTUuNDUsMi4wOXMxLjMtLjA1LDEuNzQtLjcxUTczLDI1LjY2LDc4LjI2LDE3LjkyYzEuMTgtMS43NiwxLjc2LTIuMzMsMy0xLjM4YTEuNDMsMS40MywwLDAsMSwuMywyLjIyYy00LjIzLDYuNzgtOC40LDEzLjYtMTIuNywyMC4zNWE5LDksMCwwLDEtNi41Miw0LjNjLS4wOSwwLTQsMS4yNC01LjM1LDMuNDRDNTYuOSw0Ny4yLDU1LjU0LDUwLjE0LDU1LjExLDUwLjM3WlwiLz48cGF0aCBkPVwiTTQ0LjI4LDU0Ljc0YzEuNDQsMi41LDIuNzMsNC43OSw0LjA2LDcuMDZhMS4xOSwxLjE5LDAsMCwxLDAsMS4zN2MtNC42NCw4LjA2LTEwLjg4LDE4LTE1LjUzLDI2LjFhMi43MiwyLjcyLDAsMCwxLTQsMWMtMS40OC0uODgtMi45My0xLjgyLTQuMzctMi43Ni0xLjgyLTEuMTgtMi4xMS0yLjY5LS44MS00LjQ5cTguNDMtMTEuNzIsMTYuODgtMjMuNDFDNDEuMiw1OC42NCw0My41LDU1LjgyLDQ0LjI4LDU0Ljc0WlwiLz4gPC9zdmc+IiwiYnRuVGV4dCI6Ik9yZGVyIE9ubGluZSIsImJ0bkxpbmsiOnsidmFsdWUiOiJodHRwczovL29yZGVyLm1peGJvd2wuY28va3Jpc2Nocy9zZXR1cD9zb3VyY2VVcmw9aHR0cHMlM0ElMkYlMkZrcmlzY2hzLmNvbSUyRiZzb3VyY2VOYW1lPXdlYnNpdGUiLCJsYWJlbCI6IiIsInR5cGUiOiJ1cmwiLCJocmVmIjoiaHR0cHM6Ly9vcmRlci5taXhib3dsLmNvL2tyaXNjaHMvc2V0dXA/c291cmNlVXJsPWh0dHBzJTNBJTJGJTJGa3Jpc2Nocy5jb20lMkYmc291cmNlTmFtZT13ZWJzaXRlIiwicmF3X3VybCI6Imh0dHBzOi8vb3JkZXIubWl4Ym93bC5jby9rcmlzY2hzL3NldHVwP3NvdXJjZVVybD1odHRwcyUzQSUyRiUyRmtyaXNjaHMuY29tJTJGJnNvdXJjZU5hbWU9d2Vic2l0ZSIsInRhcmdldCI6Il9ibGFuayIsInJlbCI6bnVsbH19LHsiYnRuSWNvbiI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIHZpZXdCb3g9XCIwIDAgMTUzNiAxNzkyXCI+PHBhdGggZmlsbD1cImluaGVyaXRcIiBkPVwiTTc2OCA3ODZoNzI1cTEyIDY3IDEyIDEyOCAwIDIxNy05MSAzODcuNXQtMjU5LjUgMjY2LjUtMzg2LjUgOTZxLTE1NyAwLTI5OS02MC41dC0yNDUtMTYzLjUtMTYzLjUtMjQ1LTYwLjUtMjk5IDYwLjUtMjk5IDE2My41LTI0NSAyNDUtMTYzLjUgMjk5LTYwLjVxMzAwIDAgNTE1IDIwMWwtMjA5IDIwMXEtMTIzLTExOS0zMDYtMTE5LTEyOSAwLTIzOC41IDY1dC0xNzMuNSAxNzYuNS02NCAyNDMuNSA2NCAyNDMuNSAxNzMuNSAxNzYuNSAyMzguNSA2NXE4NyAwIDE2MC0yNHQxMjAtNjAgODItODIgNTEuNS04NyAyMi41LTc4aC00MzZ2LTI2NHpcIi8+IDwvc3ZnPiIsImJ0blRleHQiOiJHb29nbGUgUmV2aWV3cyIsImJ0bkxpbmsiOnsidmFsdWUiOiJodHRwczovL3d3dy5nb29nbGUuY29tL21hcHMvcGxhY2UvS3Jpc2NoJ3MvQDQwLjY3Nzg1NiwtNzMuNDcxMTk1LDE3ei9kYXRhPSE0bTghM203ITFzMHg4OWMyN2Y3OTMxNTc3NTcxOjB4ZjRiYTZjYzBlYjMwZjcyYyE4bTIhM2Q0MC42Nzc4NTYhNGQtNzMuNDcxMTk1ITltMSExYjEhMTZzJTJGZyUyRjF4YjJmaG42P2VudHJ5PXR0dSIsImxhYmVsIjoiIiwidHlwZSI6InVybCIsImhyZWYiOiJodHRwczovL3d3dy5nb29nbGUuY29tL21hcHMvcGxhY2UvS3Jpc2NoJ3MvQDQwLjY3Nzg1NiwtNzMuNDcxMTk1LDE3ei9kYXRhPSE0bTghM203ITFzMHg4OWMyN2Y3OTMxNTc3NTcxOjB4ZjRiYTZjYzBlYjMwZjcyYyE4bTIhM2Q0MC42Nzc4NTYhNGQtNzMuNDcxMTk1ITltMSExYjEhMTZzJTJGZyUyRjF4YjJmaG42P2VudHJ5PXR0dSIsInJhd191cmwiOiJodHRwczovL3d3dy5nb29nbGUuY29tL21hcHMvcGxhY2UvS3Jpc2NoJ3MvQDQwLjY3Nzg1NiwtNzMuNDcxMTk1LDE3ei9kYXRhPSE0bTghM203ITFzMHg4OWMyN2Y3OTMxNTc3NTcxOjB4ZjRiYTZjYzBlYjMwZjcyYyE4bTIhM2Q0MC42Nzc4NTYhNGQtNzMuNDcxMTk1ITltMSExYjEhMTZzJTJGZyUyRjF4YjJmaG42P2VudHJ5PXR0dSIsInRhcmdldCI6Il9ibGFuayIsInJlbCI6bnVsbH19LHsiYnRuSWNvbiI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIHZpZXdCb3g9XCIwIDAgMTUzNiAxNzkyXCI+PHBhdGggZmlsbD1cImluaGVyaXRcIiBkPVwiTTE0NTEgMTI4cTM1IDAgNjAgMjV0MjUgNjB2MTM2NnEwIDM1LTI1IDYwdC02MCAyNWgtMzkxdi01OTVoMTk5bDMwLTIzMmgtMjI5di0xNDhxMC01NiAyMy41LTg0dDkxLjUtMjhsMTIyLTF2LTIwN3EtNjMtOS0xNzgtOS0xMzYgMC0yMTcuNSA4MHQtODEuNSAyMjZ2MTcxaC0yMDB2MjMyaDIwMHY1OTVoLTczNXEtMzUgMC02MC0yNXQtMjUtNjB2LTEzNjZxMC0zNSAyNS02MHQ2MC0yNWgxMzY2elwiLz4gPC9zdmc+IiwiYnRuVGV4dCI6IkZhY2Vib29rIiwiYnRuTGluayI6eyJ2YWx1ZSI6Imh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9LcmlzY2hzLyIsImxhYmVsIjoiIiwidHlwZSI6InVybCIsImhyZWYiOiJodHRwczovL3d3dy5mYWNlYm9vay5jb20vS3Jpc2Nocy8iLCJyYXdfdXJsIjoiaHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL0tyaXNjaHMvIiwidGFyZ2V0IjoiX2JsYW5rIiwicmVsIjpudWxsfX0seyJidG5JY29uIjoiPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgdmlld0JveD1cIjAgMCAxNTM2IDE3OTJcIj48cGF0aCBmaWxsPVwiaW5oZXJpdFwiIGQ9XCJNMTAyNCA4OTZxMC0xMDYtNzUtMTgxdC0xODEtNzUtMTgxIDc1LTc1IDE4MSA3NSAxODEgMTgxIDc1IDE4MS03NSA3NS0xODF6TTExNjIgODk2cTAgMTY0LTExNSAyNzl0LTI3OSAxMTUtMjc5LTExNS0xMTUtMjc5IDExNS0yNzkgMjc5LTExNSAyNzkgMTE1IDExNSAyNzl6TTEyNzAgNDg2cTAgMzgtMjcgNjV0LTY1IDI3LTY1LTI3LTI3LTY1IDI3LTY1IDY1LTI3IDY1IDI3IDI3IDY1ek03NjggMjY2cS03IDAtNzYuNS0wLjV0LTEwNS41IDAtOTYuNSAzLTEwMyAxMC03MS41IDE4LjVxLTUwIDIwLTg4IDU4dC01OCA4OHEtMTEgMjktMTguNSA3MS41dC0xMCAxMDMtMyA5Ni41IDAgMTA1LjUgMC41IDc2LjUtMC41IDc2LjUgMCAxMDUuNSAzIDk2LjUgMTAgMTAzIDE4LjUgNzEuNXEyMCA1MCA1OCA4OHQ4OCA1OHEyOSAxMSA3MS41IDE4LjV0MTAzIDEwIDk2LjUgMyAxMDUuNSAwIDc2LjUtMC41IDc2LjUgMC41IDEwNS41IDAgOTYuNS0zIDEwMy0xMCA3MS41LTE4LjVxNTAtMjAgODgtNTh0NTgtODhxMTEtMjkgMTguNS03MS41dDEwLTEwMyAzLTk2LjUgMC0xMDUuNS0wLjUtNzYuNSAwLjUtNzYuNSAwLTEwNS41LTMtOTYuNS0xMC0xMDMtMTguNS03MS41cS0yMC01MC01OC04OHQtODgtNThxLTI5LTExLTcxLjUtMTguNXQtMTAzLTEwLTk2LjUtMy0xMDUuNSAwLTc2LjUgMC41ek0xNTM2IDg5NnEwIDIyOS01IDMxNy0xMCAyMDgtMTI0IDMyMnQtMzIyIDEyNHEtODggNS0zMTcgNXQtMzE3LTVxLTIwOC0xMC0zMjItMTI0dC0xMjQtMzIycS01LTg4LTUtMzE3dDUtMzE3cTEwLTIwOCAxMjQtMzIydDMyMi0xMjRxODgtNSAzMTctNXQzMTcgNXEyMDggMTAgMzIyIDEyNHQxMjQgMzIycTUgODggNSAzMTd6XCIvPiA8L3N2Zz4iLCJidG5UZXh0IjoiSW5zdGFncmFtIiwiYnRuTGluayI6eyJ2YWx1ZSI6Imh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20va3Jpc2Noc3Jlc3RhdXJhbnQvIiwibGFiZWwiOiIiLCJ0eXBlIjoidXJsIiwiaHJlZiI6Imh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20va3Jpc2Noc3Jlc3RhdXJhbnQvIiwicmF3X3VybCI6Imh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20va3Jpc2Noc3Jlc3RhdXJhbnQvIiwidGFyZ2V0IjoiX2JsYW5rIiwicmVsIjpudWxsfX0seyJidG5JY29uIjoiPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgdmlld0JveD1cIjAgMCAxNDA4IDE3OTJcIj48cGF0aCBmaWxsPVwiaW5oZXJpdFwiIGQ9XCJNMTQwMSAzNDlsLTY0MCAxMjgwcS0xNyAzNS01NyAzNS01IDAtMTUtMi0yMi01LTM1LjUtMjIuNXQtMTMuNS0zOS41di01NzZoLTU3NnEtMjIgMC0zOS41LTEzLjV0LTIyLjUtMzUuNSA0LTQyIDI5LTMwbDEyODAtNjQwcTEzLTcgMjktNyAyNyAwIDQ1IDE5IDE1IDE0IDE4LjUgMzQuNXQtNi41IDM5LjV6XCIvPiA8L3N2Zz4iLCJidG5UZXh0IjoiR2V0IERpcmVjdGlvbnMiLCJidG5MaW5rIjp7InZhbHVlIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9tYXBzL2Rpci8vS3Jpc2NoJ3MsKzExK0NlbnRyYWwrQXZlLCtNYXNzYXBlcXVhLCtOWSsxMTc1OC9ANDAuNjc3ODU2LC03My40NzM3Njk5LDE3ei9kYXRhPSE0bTkhNG04ITFtMCExbTUhMW0xITFzMHg4OWMyN2Y3OTMxNTc3NTcxOjB4ZjRiYTZjYzBlYjMwZjcyYyEybTIhMWQtNzMuNDcxMTk1ITJkNDAuNjc3ODU2ITNlMD9lbnRyeT10dHUiLCJsYWJlbCI6IiIsInR5cGUiOiJ1cmwiLCJocmVmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9tYXBzL2Rpci8vS3Jpc2NoJ3MsKzExK0NlbnRyYWwrQXZlLCtNYXNzYXBlcXVhLCtOWSsxMTc1OC9ANDAuNjc3ODU2LC03My40NzM3Njk5LDE3ei9kYXRhPSE0bTkhNG04ITFtMCExbTUhMW0xITFzMHg4OWMyN2Y3OTMxNTc3NTcxOjB4ZjRiYTZjYzBlYjMwZjcyYyEybTIhMWQtNzMuNDcxMTk1ITJkNDAuNjc3ODU2ITNlMD9lbnRyeT10dHUiLCJyYXdfdXJsIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9tYXBzL2Rpci8vS3Jpc2NoJ3MsKzExK0NlbnRyYWwrQXZlLCtNYXNzYXBlcXVhLCtOWSsxMTc1OC9ANDAuNjc3ODU2LC03My40NzM3Njk5LDE3ei9kYXRhPSE0bTkhNG04ITFtMCExbTUhMW0xITFzMHg4OWMyN2Y3OTMxNTc3NTcxOjB4ZjRiYTZjYzBlYjMwZjcyYyEybTIhMWQtNzMuNDcxMTk1ITJkNDAuNjc3ODU2ITNlMD9lbnRyeT10dHUiLCJ0YXJnZXQiOiJfYmxhbmsiLCJyZWwiOm51bGx9fV0sImRlc2t0b3BQb3NpdGlvbiI6InJpZ2h0Qm90dG9tIiwibW9iaWxlUG9zaXRpb24iOiJyaWdodEJvdHRvbSIsImJ0bkljb25Nb2JpbGUiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiB2aWV3Qm94PVwiMCAwIDE1MzYgMTc5MlwiPjxwYXRoIGZpbGw9XCJpbmhlcml0XCIgZD1cIk0xMjE2IDk2MHYtMTI4cTAtMjYtMTktNDV0LTQ1LTE5aC0yNTZ2LTI1NnEwLTI2LTE5LTQ1dC00NS0xOWgtMTI4cS0yNiAwLTQ1IDE5dC0xOSA0NXYyNTZoLTI1NnEtMjYgMC00NSAxOXQtMTkgNDV2MTI4cTAgMjYgMTkgNDV0NDUgMTloMjU2djI1NnEwIDI2IDE5IDQ1dDQ1IDE5aDEyOHEyNiAwIDQ1LTE5dDE5LTQ1di0yNTZoMjU2cTI2IDAgNDUtMTl0MTktNDV6TTE1MzYgODk2cTAgMjA5LTEwMyAzODUuNXQtMjc5LjUgMjc5LjUtMzg1LjUgMTAzLTM4NS41LTEwMy0yNzkuNS0yNzkuNS0xMDMtMzg1LjUgMTAzLTM4NS41IDI3OS41LTI3OS41IDM4NS41LTEwMyAzODUuNSAxMDMgMjc5LjUgMjc5LjUgMTAzIDM4NS41elwiLz4gPC9zdmc+IiwiZGlzYWJsZUJ1dHRvbiI6ZmFsc2V9"> <div class="mainContainer"><!--Show and Hide Button--> <div class="navTrigger navBtnMobile"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1536 1792"> <path fill="inherit" d="M1216 960v-128q0-26-19-45t-45-19h-256v-256q0-26-19-45t-45-19h-128q-26 0-45 19t-19 45v256h-256q-26 0-45 19t-19 45v128q0 26 19 45t45 19h256v256q0 26 19 45t45 19h128q26 0 45-19t19-45v-256h256q26 0 45-19t19-45zM1536 896q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"></path> 
+</svg> 
+</div> 
+<!--Show and Hide Button End--> <div id="float-container" class="IconsWrapper fuUpward slideup hideWrapper"> <div class="float-container focus" id="1"> <span class="fab child float" id="child-1"> <a class="menu-link" value="https://order.mixbowl.co/krischs/setup?sourceUrl=https%3A%2F%2Fkrischs.com%2F&sourceName=website" label="" type="url" href="https://order.mixbowl.co/krischs/setup?sourceUrl=https%3A%2F%2Fkrischs.com%2F&sourceName=website" raw_url="https://order.mixbowl.co/krischs/setup?sourceUrl=https%3A%2F%2Fkrischs.com%2F&sourceName=website" target="_blank"><!--<a href="#" class="menu-link" target="_blank">--> <span class="icon-container desktop"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100"> <path d="M23.22,10.47c1.24-1.53,1.9-1.82,3.11.09,6.36,10,12.63,20.07,19.27,29.89,5.75,8.5,11.95,16.7,18,25q6.1,8.46,12.21,16.91c1.58,2.18,1.27,3.79-1,5.24L71.12,90c-2.12,1.34-3.61,1-4.86-1.17q-5-8.73-10-17.49C52.15,64.24,48.06,57.16,44,50c-.55-1-1-1.09-2-.64-4.29,1.92-7-2.85-9.14-7-3.43-6.61-6.73-13.28-10-20C21.84,20.33,21.17,13,23.22,10.47Z"></path> 
+ <path d="M55.11,50.37c-1-1.43-2.73-4.34-3.82-5.73,0-1.09,1.39-2.2,1.93-2.72a2.41,2.41,0,0,0,.56-2.59c-.65-2.5-1.33-5-.43-7.63a23,23,0,0,1,2.93-5.21c3.61-5.4,7.26-10.78,10.9-16.16a1.61,1.61,0,0,1,2.39-.6,1.55,1.55,0,0,1,.5,2.37q-5,8.13-10,16.25c-.37.6-.93,1.21-.07,1.89s1.52.61,2.2-.41c3.53-5.34,7.18-10.61,10.67-16,.87-1.33,1.51-1.35,2.43-.84a1.79,1.79,0,0,1,.48,2.72C72.37,21.13,69,26.61,65.66,32c-.58.93-.57,1.55.45,2.09s1.3-.05,1.74-.71Q73,25.66,78.26,17.92c1.18-1.76,1.76-2.33,3-1.38a1.43,1.43,0,0,1,.3,2.22c-4.23,6.78-8.4,13.6-12.7,20.35a9,9,0,0,1-6.52,4.3c-.09,0-4,1.24-5.35,3.44C56.9,47.2,55.54,50.14,55.11,50.37Z"></path> 
+ <path d="M44.28,54.74c1.44,2.5,2.73,4.79,4.06,7.06a1.19,1.19,0,0,1,0,1.37c-4.64,8.06-10.88,18-15.53,26.1a2.72,2.72,0,0,1-4,1c-1.48-.88-2.93-1.82-4.37-2.76-1.82-1.18-2.11-2.69-.81-4.49q8.43-11.72,16.88-23.41C41.2,58.64,43.5,55.82,44.28,54.74Z"></path> 
+</svg> 
+</span> 
+<!--</a>--></a> 
+</span> 
+ <span class="float-text-container" id="float-text-1"> <a class="menu-link" value="https://order.mixbowl.co/krischs/setup?sourceUrl=https%3A%2F%2Fkrischs.com%2F&sourceName=website" label="" type="url" href="https://order.mixbowl.co/krischs/setup?sourceUrl=https%3A%2F%2Fkrischs.com%2F&sourceName=website" raw_url="https://order.mixbowl.co/krischs/setup?sourceUrl=https%3A%2F%2Fkrischs.com%2F&sourceName=website" target="_blank"><!--<a href="#" class="menu-link" target="_blank">--> <span class="float-text" id="text-1">Order Online</span> 
+<!--</a>--></a> 
+</span> 
+</div> 
+ <div class="float-container focus" id="1"> <span class="fab child float" id="child-1"> <a class="menu-link" value="https://www.google.com/maps/place/Krisch's/@40.677856,-73.471195,17z/data=!4m8!3m7!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!8m2!3d40.677856!4d-73.471195!9m1!1b1!16s%2Fg%2F1xb2fhn6?entry=ttu" label="" type="url" href="https://www.google.com/maps/place/Krisch's/@40.677856,-73.471195,17z/data=!4m8!3m7!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!8m2!3d40.677856!4d-73.471195!9m1!1b1!16s%2Fg%2F1xb2fhn6?entry=ttu" raw_url="https://www.google.com/maps/place/Krisch's/@40.677856,-73.471195,17z/data=!4m8!3m7!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!8m2!3d40.677856!4d-73.471195!9m1!1b1!16s%2Fg%2F1xb2fhn6?entry=ttu" target="_blank"><!--<a href="#" class="menu-link" target="_blank">--> <span class="icon-container desktop"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1536 1792"> <path fill="inherit" d="M768 786h725q12 67 12 128 0 217-91 387.5t-259.5 266.5-386.5 96q-157 0-299-60.5t-245-163.5-163.5-245-60.5-299 60.5-299 163.5-245 245-163.5 299-60.5q300 0 515 201l-209 201q-123-119-306-119-129 0-238.5 65t-173.5 176.5-64 243.5 64 243.5 173.5 176.5 238.5 65q87 0 160-24t120-60 82-82 51.5-87 22.5-78h-436v-264z"></path> 
+</svg> 
+</span> 
+<!--</a>--></a> 
+</span> 
+ <span class="float-text-container" id="float-text-1"> <a class="menu-link" value="https://www.google.com/maps/place/Krisch's/@40.677856,-73.471195,17z/data=!4m8!3m7!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!8m2!3d40.677856!4d-73.471195!9m1!1b1!16s%2Fg%2F1xb2fhn6?entry=ttu" label="" type="url" href="https://www.google.com/maps/place/Krisch's/@40.677856,-73.471195,17z/data=!4m8!3m7!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!8m2!3d40.677856!4d-73.471195!9m1!1b1!16s%2Fg%2F1xb2fhn6?entry=ttu" raw_url="https://www.google.com/maps/place/Krisch's/@40.677856,-73.471195,17z/data=!4m8!3m7!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!8m2!3d40.677856!4d-73.471195!9m1!1b1!16s%2Fg%2F1xb2fhn6?entry=ttu" target="_blank"><!--<a href="#" class="menu-link" target="_blank">--> <span class="float-text" id="text-1">Google Reviews</span> 
+<!--</a>--></a> 
+</span> 
+</div> 
+ <div class="float-container focus" id="1"> <span class="fab child float" id="child-1"> <a class="menu-link" value="https://www.facebook.com/Krischs/" label="" type="url" href="https://www.facebook.com/Krischs/" raw_url="https://www.facebook.com/Krischs/" target="_blank"><!--<a href="#" class="menu-link" target="_blank">--> <span class="icon-container desktop"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1536 1792"> <path fill="inherit" d="M1451 128q35 0 60 25t25 60v1366q0 35-25 60t-60 25h-391v-595h199l30-232h-229v-148q0-56 23.5-84t91.5-28l122-1v-207q-63-9-178-9-136 0-217.5 80t-81.5 226v171h-200v232h200v595h-735q-35 0-60-25t-25-60v-1366q0-35 25-60t60-25h1366z"></path> 
+</svg> 
+</span> 
+<!--</a>--></a> 
+</span> 
+ <span class="float-text-container" id="float-text-1"> <a class="menu-link" value="https://www.facebook.com/Krischs/" label="" type="url" href="https://www.facebook.com/Krischs/" raw_url="https://www.facebook.com/Krischs/" target="_blank"><!--<a href="#" class="menu-link" target="_blank">--> <span class="float-text" id="text-1">Facebook</span> 
+<!--</a>--></a> 
+</span> 
+</div> 
+ <div class="float-container focus" id="1"> <span class="fab child float" id="child-1"> <a class="menu-link" value="https://www.instagram.com/krischsrestaurant/" label="" type="url" href="https://www.instagram.com/krischsrestaurant/" raw_url="https://www.instagram.com/krischsrestaurant/" target="_blank"><!--<a href="#" class="menu-link" target="_blank">--> <span class="icon-container desktop"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1536 1792"> <path fill="inherit" d="M1024 896q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zM1162 896q0 164-115 279t-279 115-279-115-115-279 115-279 279-115 279 115 115 279zM1270 486q0 38-27 65t-65 27-65-27-27-65 27-65 65-27 65 27 27 65zM768 266q-7 0-76.5-0.5t-105.5 0-96.5 3-103 10-71.5 18.5q-50 20-88 58t-58 88q-11 29-18.5 71.5t-10 103-3 96.5 0 105.5 0.5 76.5-0.5 76.5 0 105.5 3 96.5 10 103 18.5 71.5q20 50 58 88t88 58q29 11 71.5 18.5t103 10 96.5 3 105.5 0 76.5-0.5 76.5 0.5 105.5 0 96.5-3 103-10 71.5-18.5q50-20 88-58t58-88q11-29 18.5-71.5t10-103 3-96.5 0-105.5-0.5-76.5 0.5-76.5 0-105.5-3-96.5-10-103-18.5-71.5q-20-50-58-88t-88-58q-29-11-71.5-18.5t-103-10-96.5-3-105.5 0-76.5 0.5zM1536 896q0 229-5 317-10 208-124 322t-322 124q-88 5-317 5t-317-5q-208-10-322-124t-124-322q-5-88-5-317t5-317q10-208 124-322t322-124q88-5 317-5t317 5q208 10 322 124t124 322q5 88 5 317z"></path> 
+</svg> 
+</span> 
+<!--</a>--></a> 
+</span> 
+ <span class="float-text-container" id="float-text-1"> <a class="menu-link" value="https://www.instagram.com/krischsrestaurant/" label="" type="url" href="https://www.instagram.com/krischsrestaurant/" raw_url="https://www.instagram.com/krischsrestaurant/" target="_blank"><!--<a href="#" class="menu-link" target="_blank">--> <span class="float-text" id="text-1">Instagram</span> 
+<!--</a>--></a> 
+</span> 
+</div> 
+ <div class="float-container focus" id="1"> <span class="fab child float" id="child-1"> <a class="menu-link" value="https://www.google.com/maps/dir//Krisch's,+11+Central+Ave,+Massapequa,+NY+11758/@40.677856,-73.4737699,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!2m2!1d-73.471195!2d40.677856!3e0?entry=ttu" label="" type="url" href="https://www.google.com/maps/dir//Krisch's,+11+Central+Ave,+Massapequa,+NY+11758/@40.677856,-73.4737699,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!2m2!1d-73.471195!2d40.677856!3e0?entry=ttu" raw_url="https://www.google.com/maps/dir//Krisch's,+11+Central+Ave,+Massapequa,+NY+11758/@40.677856,-73.4737699,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!2m2!1d-73.471195!2d40.677856!3e0?entry=ttu" target="_blank"><!--<a href="#" class="menu-link" target="_blank">--> <span class="icon-container desktop"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1408 1792"> <path fill="inherit" d="M1401 349l-640 1280q-17 35-57 35-5 0-15-2-22-5-35.5-22.5t-13.5-39.5v-576h-576q-22 0-39.5-13.5t-22.5-35.5 4-42 29-30l1280-640q13-7 29-7 27 0 45 19 15 14 18.5 34.5t-6.5 39.5z"></path> 
+</svg> 
+</span> 
+<!--</a>--></a> 
+</span> 
+ <span class="float-text-container" id="float-text-1"> <a class="menu-link" value="https://www.google.com/maps/dir//Krisch's,+11+Central+Ave,+Massapequa,+NY+11758/@40.677856,-73.4737699,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!2m2!1d-73.471195!2d40.677856!3e0?entry=ttu" label="" type="url" href="https://www.google.com/maps/dir//Krisch's,+11+Central+Ave,+Massapequa,+NY+11758/@40.677856,-73.4737699,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!2m2!1d-73.471195!2d40.677856!3e0?entry=ttu" raw_url="https://www.google.com/maps/dir//Krisch's,+11+Central+Ave,+Massapequa,+NY+11758/@40.677856,-73.4737699,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!2m2!1d-73.471195!2d40.677856!3e0?entry=ttu" target="_blank"><!--<a href="#" class="menu-link" target="_blank">--> <span class="float-text" id="text-1">Get Directions</span> 
+<!--</a>--></a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_BreakfastMenu" id="BreakfastMenu" data-anchor="Breakfast Menu"> <div class="dmRespColsWrapper" id="1986948961"> <div class="dmRespCol large-12 medium-12 small-12" id="1930209242"> <div class="u_1298570213 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1298570213" style="text-align: left;"> <h1 class="m-text-align-center text-align-center m-size-25 size-48" style="line-height: 1.3;"><span class="font-size-48 m-font-size-25" m-font-size-set="true" style="display: unset; color: rgb(222, 57, 32); text-transform: uppercase;">Breakfast Menu</span></h1> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1124065277" id="1124065277"> <div class="dmRespColsWrapper" id="1370998282"> <div class="dmRespCol small-12 large-6 medium-6 u_1691281073" id="1691281073"> <div class="u_1309726106 flex-container dmImageSlider dmNoMargin dmNoMark" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1309726106"> <div class="flexslider ed-version nav-layout-2 arrows-visible" sliderscriptparams="{'stretch':false,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':8000,'animationDuration':600,'pausePlay':true}" id="1613785665"> <ul class="slides" id="1228726064"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1616989577" class="" show-caption="false"><img dm="true" src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_2-1920w.jpg" id="1238237020" onerror="handleImageLoadError(this)"/> <div class="color-overlay" id="1539580735"></div> 
+ <div class="slide-inner" id="1039270693"> <div class="text-wrapper" id="1378500218"> <h3 class="slide-title u_1272523287" id="1272523287">Slide title</h3> 
+ <div class="slide-text richText u_1993385355" id="1993385355">Write your caption here</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix slide-button-invisible" id="1261211604"> <span class="iconBg" id="1957451565"> <span class="icon hasFontIcon icon-star" id="1757261342"></span> 
+</span> 
+ <span class="text" id="1098641730">Button</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1635270372" class="" show-caption="false"><img dm="true" src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_3-1920w.jpg" id="1638242929" onerror="handleImageLoadError(this)"/> <div class="color-overlay" id="1443773542"></div> 
+ <div class="slide-inner" id="1062494358"> <div class="text-wrapper" id="1628120160"> <h3 class="slide-title u_1173753595" id="1173753595">Slide title</h3> 
+ <div class="slide-text richText u_1352380415" id="1352380415">Write your caption here</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix slide-button-invisible" id="1134790679"> <span class="iconBg" id="1363912789"> <span class="icon hasFontIcon icon-star" id="1652870588"></span> 
+</span> 
+ <span class="text" id="1970290294">Button</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1384437667" id="1384437667"> <div class="u_1812353766 dmPhotoGallery newPhotoGallery dmPhotoGalleryResp photo-gallery-done text-layout-over captionAlignment-center_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="3" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1812353766" data-placeholder="false" data-rows-to-show="4"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-3" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1386212525" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Stuffed+French+Toast.JPG" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Stuffed+French+Toast-640w.JPG');"><img id="1183380011" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Stuffed+French+Toast-1920w.JPG" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1532503482" class="caption-container u_1532503482" style="display:none"> <span class="caption-inner"> <a id="1551335677" class="caption-button dmWidget  clearfix u_1551335677" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1960942951" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/36.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/36-640w.jpg');"><img id="1134596809" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/36-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1736778329" class="caption-container u_1736778329" style="display:none"> <span class="caption-inner"> <a id="1528175979" class="caption-button dmWidget  clearfix u_1528175979" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="2"> <div index="2" class="photoGalleryThumbs animated  " data-index="2"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1742635457" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/24.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/24-640w.jpg');"><img id="1570184005" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/24-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1825120916" class="caption-container u_1825120916" style="display:none"> <span class="caption-inner"> <a id="1859179796" class="caption-button dmWidget  clearfix u_1859179796" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-3" data-index="3"> <div index="3" class="photoGalleryThumbs animated  " data-index="3"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1060478462" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/9.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/9-640w.jpg');"><img id="1260827752" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/9-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1769399510" class="caption-container u_1769399510" style="display:none"> <span class="caption-inner"> <a id="1083973727" class="caption-button dmWidget  clearfix u_1083973727" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="4"> <div index="4" class="photoGalleryThumbs animated  " data-index="4"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1612210084" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/360151840_1490852718118321_3958977986950807375_n.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/360151840_1490852718118321_3958977986950807375_n-640w.jpg');"><img id="1340925091" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/360151840_1490852718118321_3958977986950807375_n-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1347911713" class="caption-container u_1347911713" style="display:none"> <span class="caption-inner"> <a id="1938540851" class="caption-button dmWidget  clearfix u_1938540851" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="5"> <div index="5" class="photoGalleryThumbs animated  " data-index="5"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1660447341" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/359734392_178546295210432_2810589626235291362_n.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/359734392_178546295210432_2810589626235291362_n-640w.jpg');"><img id="1081684656" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/359734392_178546295210432_2810589626235291362_n-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1693845432" class="caption-container u_1693845432" style="display:none"> <span class="caption-inner"> <a id="1489973327" class="caption-button dmWidget  clearfix u_1489973327" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row  photogallery-hidden-row " data-index=""> <div class="photogallery-column column-3" data-index="6"> <div index="6" class="photoGalleryThumbs animated  " data-index="6"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1084839165" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/354397083_214789151496251_7830810283780890400_n.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/354397083_214789151496251_7830810283780890400_n-640w.jpg');"><img id="1834666401" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/354397083_214789151496251_7830810283780890400_n-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1920960848" class="caption-container u_1920960848" style="display:none"> <span class="caption-inner"> <a id="1245220931" class="caption-button dmWidget  clearfix u_1245220931" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="7"> <div index="7" class="photoGalleryThumbs animated  " data-index="7"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1528658879" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/358173280_930435401386946_3819789672358604075_n.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/358173280_930435401386946_3819789672358604075_n-640w.jpg');"><img id="1527520625" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/358173280_930435401386946_3819789672358604075_n-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1335819812" class="caption-container u_1335819812" style="display:none"> <span class="caption-inner"> <a id="1759134625" class="caption-button dmWidget  clearfix u_1759134625" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="8"> <div index="8" class="photoGalleryThumbs animated  " data-index="8"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1803425245" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/5.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/5-640w.jpg');"><img id="1348018590" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/5-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1552087785" class="caption-container u_1552087785" style="display:none"> <span class="caption-inner"> <a id="1788512071" class="caption-button dmWidget  clearfix u_1788512071" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photoGalleryViewAll link" isall="true" data-viewall="View more" data-viewless="View less">View more</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_LunchDinnerMenu" id="LunchDinnerMenu" data-anchor="Lunch Dinner Menu"> <div class="dmRespColsWrapper" id="1422349114"> <div class="dmRespCol large-12 medium-12 small-12" id="1055186929"> <div class="u_1140565007 dmNewParagraph ql-disabled" data-element-type="paragraph" data-version="5" id="1140565007" style="text-align: left;"> <h1 class="m-text-align-center text-align-center m-size-25 size-48" style="line-height: 1.3;"><span class="font-size-48 m-font-size-25" m-font-size-set="true" style="display: unset; color: rgb(222, 57, 32); text-shadow: none; text-transform: uppercase;">Lunch &amp; Dinner Menu</span></h1> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1935638682 dmRespRow fullBleedChanged fullBleedMode hide-for-small hide-for-large" id="1935638682"> <div class="dmRespColsWrapper" id="1141142402"> <div class="dmRespCol large-12 medium-12 small-12" id="1071964498"> <div class="dmPhotoGallery newPhotoGallery dmPhotoGalleryResp u_1160946865 photo-gallery-done text-layout-over captionAlignment-center_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="3" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1160946865" data-placeholder="false" data-rows-to-show="100"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-3" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1885531889" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Menu_Page_4.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_4-640w.jpg');"><img id="1901268869" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_4-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1364309512" class="caption-container u_1364309512" style="display:none"> <span class="caption-inner"> <a id="1990868688" class="caption-button dmWidget  clearfix u_1990868688" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1073224472" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Menu_Page_5.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_5-640w.jpg');"><img id="1650768057" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_5-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1223621612" class="caption-container u_1223621612" style="display:none"> <span class="caption-inner"> <a id="1883349971" class="caption-button dmWidget  clearfix u_1883349971" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="2"> <div index="2" class="photoGalleryThumbs animated  " data-index="2"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1339499764" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Menu_Page_6.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_6-640w.jpg');"><img id="1438926512" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_6-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1646532805" class="caption-container u_1646532805" style="display:none"> <span class="caption-inner"> <a id="1068324133" class="caption-button dmWidget  clearfix u_1068324133" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1103119049 dmRespRow fullBleedChanged fullBleedMode hide-for-medium" id="1103119049"> <div class="dmRespColsWrapper" id="1354184804"> <div class="dmRespCol large-12 medium-12 small-12" id="1770045342"> <div class="dmPhotoGallery newPhotoGallery dmPhotoGalleryResp u_1822653563 photo-gallery-done text-layout-over captionAlignment-center_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="3" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1822653563" data-placeholder="false" data-rows-to-show="100" data-mobile-columns="1"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-3" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1982410668" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Menu_Page_4.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_4-640w.jpg');"><img id="1657344464" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_4-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1272011322" class="caption-container u_1272011322" style="display:none"> <span class="caption-inner"> <a id="1807955059" class="caption-button dmWidget  clearfix u_1807955059" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1264559257" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Menu_Page_5.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_5-640w.jpg');"><img id="1508865465" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_5-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1768735719" class="caption-container u_1768735719" style="display:none"> <span class="caption-inner"> <a id="1790752214" class="caption-button dmWidget  clearfix u_1790752214" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="2"> <div index="2" class="photoGalleryThumbs animated  " data-index="2"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1986499147" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Menu_Page_6.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_6-640w.jpg');"><img id="1512638141" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_6-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1030261127" class="caption-container u_1030261127" style="display:none"> <span class="caption-inner"> <a id="1226867105" class="caption-button dmWidget  clearfix u_1226867105" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_DessertMenu" id="DessertMenu" data-anchor="Dessert Menu"> <div class="dmRespColsWrapper" id="1962906609"> <div class="dmRespCol large-12 medium-12 small-12" id="1622141360"> <div class="u_1404377750 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1404377750" style="text-align: left;"> <h1 class="m-size-25 text-align-center m-text-align-center size-48" style="line-height: 1.3;"><span class="m-font-size-25 font-size-48" m-font-size-set="true" style="text-transform: uppercase; text-shadow: none; color: rgb(222, 57, 32); display: unset;">Dessert Menu</span></h1> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1893983648 dmRespRow hide-for-small hide-for-large" id="1893983648"> <div class="dmRespColsWrapper" id="1014236320"> <div class="dmRespCol large-12 medium-12 small-12" id="1862806715"> <div class="dmPhotoGallery newPhotoGallery dmPhotoGalleryResp u_1516064802 photo-gallery-done text-layout-over captionAlignment-center_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="2" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1516064802" data-placeholder="false" data-rows-to-show="100"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-2" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1241948366" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Menu_Page_7.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_7-640w.jpg');"><img id="1883328160" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_7-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1317570893" class="caption-container u_1317570893" style="display:none"> <span class="caption-inner"> <a id="1342078588" class="caption-button dmWidget  clearfix u_1342078588" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-2" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1777856970" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Menu_Page_8.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_8-640w.jpg');"><img id="1593681739" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_8-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1491777188" class="caption-container u_1491777188" style="display:none"> <span class="caption-inner"> <a id="1425039438" class="caption-button dmWidget  clearfix u_1425039438" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1211737614 dmRespRow hide-for-medium" id="1211737614"> <div class="dmRespColsWrapper" id="1415389121"> <div class="dmRespCol large-12 medium-12 small-12" id="1062317827"> <div class="dmPhotoGallery newPhotoGallery dmPhotoGalleryResp u_1258144841 photo-gallery-done text-layout-over captionAlignment-center_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="2" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1258144841" data-placeholder="false" data-rows-to-show="100" data-mobile-columns="1"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-2" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1696614166" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Menu_Page_7.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_7-640w.jpg');"><img id="1769746129" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_7-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1627677049" class="caption-container u_1627677049" style="display:none"> <span class="caption-inner"> <a id="1123139171" class="caption-button dmWidget  clearfix u_1123139171" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-2" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-label="" data-dm-force-device="mobile" class="u_1981402222" data-image-url="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Menu_Page_8.jpg" style="background-image: url('https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_8-640w.jpg');"><img id="1359932026" data-src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Menu_Page_8-1920w.jpg" alt="" aria-label="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1114829320" class="caption-container u_1114829320" style="display:none"> <span class="caption-inner"> <a id="1120480747" class="caption-button dmWidget  clearfix u_1120480747" href="" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1536759948" id="1536759948"> <div class="dmRespColsWrapper" id="1461206130"> <div class="dmRespCol large-12 medium-12 small-12" id="1454185908"> <div class="dmRespRow u_1409812216" id="1409812216"> <div class="dmRespColsWrapper" id="1994499360"> <div class="dmRespCol large-6 medium-6 small-12" id="1629895593"> <a class="u_1956629636 dmPageLink dmWidget dmButtonLink dmHomeDefaultBtn" href="https://irp.cdn-website.com/1de4aef4/files/uploaded/Krischs-Menu.pdf" data-element-type="dPageLinkId" id="1956629636" file="true" data-buttonstyle="ROUND_SIDES" target="_blank"> <span class="iconBg" id="1514078301"> <span class="icon hasFontIcon icon-external-link" id="1919205242"></span> 
+</span> 
+ <span class="text" id="1035294658">DOWNLOAD PDF</span> 
+</a> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12" id="1990153507"> <a class="u_1818388904 dmPageLink dmWidget dmButtonLink dmHomeDefaultBtn" href="https://order.mixbowl.co/krischs/setup?sourceUrl=https%3A%2F%2Fkrischs.com%2F&sourceName=website" data-element-type="dPageLinkId" id="1818388904" target="_blank" file="false"> <span class="iconBg" id="1102160884"> <span class="icon hasFontIcon icon-external-link" id="1161180088"></span> 
+</span> 
+ <span class="text" id="1926351511">ORDER ONLINE NOW</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="14" class="dmFooterResp dmFullFooterResp" id="1631300199"> <div class="dmRespRow dmDividerRow" id="1650456545"> <div class="dmRespColsWrapper" id="1979176825"> <div class="large-12 medium-12 small-12 dmRespCol" id="1734719188"> <div class="dmDividerWrapper clearfix" data-element-type="dDividerId" id="1369694637"><hr class="dmDivider defaultDivider" id="1772949412"/></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow dmFooterContent u_1752685838" id="1752685838"> <div class="dmRespColsWrapper" id="1381615818"> <div class="dmRespCol small-12 dmFooterCol large-3 medium-3 u_1012184870" id="1012184870"> <div class="dmFooterDefaultH3 dmNewParagraph" id="1115103742" data-version="5" style="text-align: center;"> <h3><span style="display: initial;">Follow Us</span></h3> 
+</div> 
+ <div class="u_1699532565 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1699532565"> <a href="/" id="1889104625"><img src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/Krischs-Retina-4-28-1920w.png" alt="Krisch's Restaurant & Ice Cream Parlour of Massapequa, NY" id="1550630432" class="" data-dm-image-path="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/Krischs-Retina-4-28.png" width="498" height="314" title="Krisch's Restaurant & Ice Cream Parlour of Massapequa, NY" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div class="u_1867547700 align-center text-align-center dmSocialHub gapSpacing" id="1867547700" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.facebook.com/Krischs/" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.instagram.com/krischsrestaurant/" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://www.tiktok.com/@krischtoks" target="_blank" dm_dont_rewrite_url="true" aria-label="tiktok" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Tiktok&apos;)"> <span class="dmSocialTiktok dm-social-icons-tiktok oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1423658246 dmRespCol small-12 large-3 medium-3" id="1423658246"> <div class="u_1661397841 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1661397841"><p class="m-text-align-center m-size-16 size-20" style="line-height: 1.4; letter-spacing: 0px;"><span class="font-size-20 m-font-size-16" m-font-size-set="true" style="font-weight: bold; color: rgb(255, 255, 255); display: initial;">CONTACT INFO</span></p><p class="m-text-align-center" style="line-height: 1.5; letter-spacing: 0px;"><span class="font-size-16 m-font-size-16" m-font-size-set="true" style="display: initial;"><br/></span></p><p class="m-size-16 m-text-align-center size-16" style="line-height: 1.5; letter-spacing: 0px;"><span class="font-size-16 m-font-size-16" m-font-size-set="true" style="color: rgb(255, 255, 255); font-weight: 700; display: initial;">ADDRESS:</span><span class="font-size-16 m-font-size-16" m-font-size-set="true" style="display: initial; color: rgb(255, 255, 255);"><br/></span><a href="https://www.google.com/maps/dir//Krisch's/@40.8378393,-73.7416962,10.26z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!2m2!1d-73.471195!2d40.677856" target="_blank" runtime_url="https://www.google.com/maps/dir//Krisch's/@40.8378393,-73.7416962,10.26z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!2m2!1d-73.471195!2d40.677856" type="url" m-font-size-set="true" class="font-size-16 m-font-size-16" style="display: initial; color: rgb(255, 255, 255);">11 Central Ave,</a></p><p class="m-size-16 m-text-align-center size-16" style="line-height: 1.5; letter-spacing: 0px;"><a href="https://www.google.com/maps/dir//Krisch's/@40.8378393,-73.7416962,10.26z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!2m2!1d-73.471195!2d40.677856" target="_blank" runtime_url="https://www.google.com/maps/dir//Krisch's/@40.8378393,-73.7416962,10.26z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c27f7931577571:0xf4ba6cc0eb30f72c!2m2!1d-73.471195!2d40.677856" type="url" class="font-size-16 m-font-size-16" m-font-size-set="true" style="display: initial; color: rgb(255, 255, 255);">Massapequa, NY 11758</a></p><p class="m-text-align-center" style="line-height: 1.5; letter-spacing: 0px;"><span class="font-size-16 m-font-size-16" m-font-size-set="true" style="display: initial;"><br/></span></p><p class="m-size-16 m-text-align-center size-16" style="line-height: 1.5; letter-spacing: 0px;"><span class="font-size-16 m-font-size-16" m-font-size-set="true" style="color: rgb(255, 255, 255); font-weight: 700; display: initial;">PHONE:</span><span class="font-size-16 m-font-size-16" m-font-size-set="true" style="display: initial; color: rgb(255, 255, 255);"><br/></span><a href="tel:516-797-3149" target="_blank" type="call" m-font-size-set="true" class="font-size-16 m-font-size-16" style="display: initial; color: rgb(255, 255, 255);">516-797-3149</a></p></div> 
+</div> 
+ <div class="u_1299527262 dmRespCol small-12 large-3 medium-3" id="1299527262"> <div class="u_1081870194 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1081870194"><p style="letter-spacing: 0px; line-height: 1.4;" class="m-text-align-center m-size-16 size-20"><span style="display: initial; font-weight: bold; color: rgb(255, 255, 255);" class="font-size-20 m-font-size-16" m-font-size-set="true">HOURS</span></p><p style="letter-spacing: 0px; line-height: 1.4;" class="m-text-align-center"><span class="m-font-size-16" m-font-size-set="true" style="display: initial;"><br/></span></p><p style="letter-spacing: 0px; line-height: 1.5;" class="m-size-16 m-text-align-center"><span style="display: initial; color: rgb(255, 255, 255);" class="m-font-size-16" m-font-size-set="true">Monday 12 PM &ndash; 9 PM</span></p><p style="letter-spacing: 0px; line-height: 1.5;" class="m-size-16 m-text-align-center"><span style="display: initial; color: rgb(255, 255, 255);" class="m-font-size-16" m-font-size-set="true">Tues &ndash; Thurs 11 AM &ndash; 9 PM<br/>Friday 11 AM &ndash; 10 PM<br/>Saturday 9 AM &ndash; 10 PM<br/>Sunday 9 AM &ndash; 9 PM</span><span style="display: initial;"><br/></span></p></div> 
+</div> 
+ <div class="dmRespCol large-3 medium-3 small-12" id="1428835013"> <div class="dmRespRow u_1484583435" id="1484583435"> <div class="dmRespColsWrapper" id="1562921051"> <div class="dmRespCol small-12 medium-12 large-12" id="1841499267"> <div class="u_1143033792 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1143033792"> <a id="1246404152" class="" target="_blank" file="false" href="https://www.ubereats.com/store/krischs-restaurant-%26-ice-cream-parlour/BgpjfviCXmemaW-Ibt5LcQ"><img src="https://lirp.cdn-website.com/1de4aef4/dms3rep/multi/opt/EN_Order+with_vertical_white+on+black-2x-1920w.png" alt="Uber East - Order from Krisch's Restaurant" id="1697148657" class="" data-dm-image-path="https://irp.cdn-website.com/1de4aef4/dms3rep/multi/EN_Order+with_vertical_white+on+black-2x.png" width="698" height="721" title="Uber East - Order from Krisch's Restaurant" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <a class="u_1085080418 dmPageLink dmWidget dmButtonLink dmHomeDefaultBtn" href="https://order.mixbowl.co/krischs/setup?sourceUrl=https%3A%2F%2Fkrischs.com%2F&sourceName=website" data-element-type="dPageLinkId" id="1085080418" target="_blank" file="false"> <span class="iconBg" id="1973393182"> <span class="icon hasFontIcon icon-external-link" id="1834043129"></span> 
+</span> 
+ <span class="text" id="1946244606">ORDER ONLINE</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1027606610" id="1027606610"> <div class="dmRespColsWrapper" id="1981182908"> <div class="dmRespCol large-12 medium-12 small-12" id="1221026631"> <div class="widget-1f5975 u_1227539723 dmCustomWidget" data-lazy-load="" data-title="" id="1227539723" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="1f5975986930429f819d4cd2154b5c4a" data-widget-version="25" data-widget-config="eyJjb3B5cmlnaHRUZXh0IjoiPHAgY2xhc3M9XCJydGVCbG9ja1wiPjxzcGFuIHN0eWxlPVwiY29sb3I6cmdiYSgyNTUsIDI1NSwgMjU1LCAxKVwiPktyaXNjaCYjeDI3O3MgUmVzdGF1cmFudCAmYW1wOyBJY2UgQ3JlYW0gUGFybG91ciB8IEFsbCBSaWdodHMgUmVzZXJ2ZWQgfCA8YSB2YWx1ZT1cImh0dHA6Ly9iaXQubHkvcHNkcHJpdmFjeVwiIGxhYmVsPVwiXCIgdHlwZT1cInVybFwiIGhyZWY9XCJodHRwOi8vYml0Lmx5L3BzZHByaXZhY3lcIiB0YXJnZXQ9XCJfYmxhbmtcIiBkYXRhLXJ1bnRpbWUtdXJsPVwiaHR0cDovL2JpdC5seS9wc2Rwcml2YWN5XCI+UHJpdmFjeSBQb2xpY3kgJmFtcDsgQWNjZXNzaWJpbGl0eTwvYT4gfCBQb3dlcmVkIGJ5PGEgdmFsdWU9XCJodHRwczovL3d3dy5wc2RpZ2l0YWxsaS5jb20vXCIgbGFiZWw9XCJcIiB0eXBlPVwidXJsXCIgaHJlZj1cImh0dHBzOi8vd3d3LnBzZGlnaXRhbGxpLmNvbS9cIiB0YXJnZXQ9XCJfYmxhbmtcIiBkYXRhLXJ1bnRpbWUtdXJsPVwiaHR0cHM6Ly93d3cucHNkaWdpdGFsbGkuY29tL1wiPiBQUyBEaWdpdGFsPC9hPjwvc3Bhbj48L3A+In0="> <div class="copyright"> <div>&copy; 2025&nbsp;</div> 
+ <div><p class="rteBlock"><span style="color:rgba(255, 255, 255, 1)">Krisch's Restaurant &amp; Ice Cream Parlour | All Rights Reserved | <a value="http://bit.ly/psdprivacy" label="" type="url" href="http://bit.ly/psdprivacy" target="_blank" data-runtime-url="http://bit.ly/psdprivacy">Privacy Policy &amp; Accessibility</a> 
+| Powered by <a value="https://www.psdigitalli.com/" label="" type="url" href="https://www.psdigitalli.com/" target="_blank" data-runtime-url="https://www.psdigitalli.com/">PS Digital</a></span></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1728098978" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script>
+    window.customWidgetsFunctions["548d695f2d8d4fd8ba434f1886b01d0d~20"] = function (element, data, api) {
+        $(document).ready(function () {
+	displayType();
+	
+});
+
+function displayType() {
+	if (isMobile()) {
+		displayMobile();
+	} else {
+		displayDesktop();
+	}
+}
+
+function displayMobile() {
+    if (data.config.mobilePosition == 'leftBottom'){
+        $(element).find('.navTrigger').addClass("leftBottom");
+        $(element).find('.navTrigger').removeClass("rightBottom");
+        
+        $(element).find('#float-container').addClass("leftBottom");
+        $(element).find('#float-container').removeClass("rightBottom");
+        
+        
+        $(element).find('#float-container').addClass("leftIconText");
+        btnClick();
+    }else {
+        $(element).find('.navTrigger').addClass("rightBottom");
+        $(element).find('.navTrigger').removeClass("leftBottom");
+        
+        $(element).find('#float-container').addClass("rightBottom");
+        $(element).find('#float-container').removeClass("leftBottom");
+        
+        $(element).find('#float-container').removeClass("leftIconText");
+        btnClick();
+    }
+    if(data.config.disableButton === true) {
+        $(element).find('.navTrigger').hide()
+    }
+}
+
+function displayDesktop() {
+    if (data.config.desktopPosition == 'leftBottom'){
+        $(element).find('#float-container').addClass("leftBottom");
+        $(element).find('#float-container').css({"left":"0px"})
+        console.log("left");
+        
+    }else{
+        $(element).find('#float-container').addClass("rightBottom");
+        $(element).find('#float-container').css({"right":"0px"})
+        
+        console.log("right");
+    }
+}
+function btnClick(){
+    const clickHandler = () => {
+       $(element).find('.mainContainer').toggleClass('bgColor');
+       $(element).find('.IconsWrapper ').toggleClass('hideWrapper');
+        if ($('.focus').hasClass('socialEntrance')) {
+            
+            $(element).find('.IconsWrapper').css("pointer-events","none");
+            $('.IconsWrapper div').each(function(i) {
+                var div = $(this);
+                setTimeout(function() {
+                    div.toggleClass('socialEntrance');
+                }, i * 50);
+            });
+            setTimeout(function() {
+                $('.navTrigger').toggleClass('followActive');
+            });
+        } else {
+            $(element).find('.IconsWrapper').css("pointer-events","auto");
+            $('.navTrigger').toggleClass('followActive');
+  
+                $($('.IconsWrapper div').get().reverse()).each(function(i) {
+                    var div = $(this);
+                    setTimeout(function() {
+                        div.toggleClass('socialEntrance');
+                    }, i * 50);
+                });
+       
+        }
+    };
+    
+    $(element).find('.navTrigger').off('click');
+    $(element).find('.navTrigger').on('click', clickHandler);
+    
+    $( ".navTrigger" ).click(function() {
+      $(element).find('#float-container').toggleClass("slidedown slideup");
+    });
+}
+
+function isMobile() {
+	return data.device === 'mobile';
+}
+    };
+</script>
+<script>
+    window.customWidgetsFunctions["1f5975986930429f819d4cd2154b5c4a~25"] = function (element, data, api) {
+        null
+    };
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5968";
+    var build = "2025-11-27T12_19_14";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-11-27T12_19_14";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5968';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5968';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =false;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '1de4aef4'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 1de4aef4 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'More';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'Less';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Site Wide Html Markup -->
+<div id="swh-cff5794771ed469a986088c66c9496cb"><script type="text/javascript" src="https://cdn.userway.org/widget.js?account=Vb27tGJNm3&platfAppInstalledSiteId=2222897"></script></div><!--  Site Wide Html Markup -->
+</body>
+</html>
