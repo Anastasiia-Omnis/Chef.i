@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.4",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+	
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://www.thebronzeowlnyc.com/xmlrpc.php" />
+
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+	
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+            <script data-no-defer="1" data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer data-cookieconsent="ignore">
+                var ctPublicFunctions = {"_ajax_nonce":"a5d5eebcc0","_rest_nonce":"16e6058b1b","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/www.thebronzeowlnyc.com\/wp-json\/","data__cookies_type":"none","data__ajax_type":"admin_ajax","data__bot_detector_enabled":"1","data__frontend_data_log_enabled":1,"cookiePrefix":"","wprocket_detected":true,"host_url":"www.thebronzeowlnyc.com","text__ee_click_to_select":"Click to select the whole data","text__ee_original_email":"The complete one is","text__ee_got_it":"Got it","text__ee_blocked":"Blocked","text__ee_cannot_connect":"Cannot connect","text__ee_cannot_decode":"Can not decode email. Unknown reason","text__ee_email_decoder":"CleanTalk email decoder","text__ee_wait_for_decoding":"The magic is on the way!","text__ee_decoding_process":"Please wait a few seconds while we decode the contact data."}
+            </script>
+        
+            <script data-no-defer="1" data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer data-cookieconsent="ignore">
+                var ctPublic = {"_ajax_nonce":"a5d5eebcc0","settings__forms__check_internal":"0","settings__forms__check_external":"0","settings__forms__force_protection":0,"settings__forms__search_test":"1","settings__data__bot_detector_enabled":"1","settings__sfw__anti_crawler":0,"blog_home":"https:\/\/www.thebronzeowlnyc.com\/","pixel__setting":"3","pixel__enabled":true,"pixel__url":null,"data__email_check_before_post":"1","data__email_check_exist_post":0,"data__cookies_type":"none","data__key_is_ok":true,"data__visible_fields_required":true,"wl_brandname":"Anti-Spam by CleanTalk","wl_brandname_short":"CleanTalk","ct_checkjs_key":"777bfa20268f504c3b7664ff6e09e57ed4881b289c3034a80a0df024b329b6c5","emailEncoderPassKey":"b6d2de7c164542996bfdf04ea26aebef","bot_detector_forms_excluded":"W10=","advancedCacheExists":true,"varnishCacheExists":false,"wc_ajax_add_to_cart":false,"theRealPerson":{"phrases":{"trpHeading":"The Real Person Badge!","trpContent1":"The commenter acts as a real person and verified as not a bot.","trpContent2":" Anti-Spam by CleanTalk","trpContentLearnMore":"Learn more"},"trpContentLink":"https:\/\/cleantalk.org\/help\/the-real-person?utm_id=&amp;utm_term=&amp;utm_source=admin_side&amp;utm_medium=trp_badge&amp;utm_content=trp_badge_link_click&amp;utm_campaign=apbct_links","imgPersonUrl":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/real_user.svg","imgShieldUrl":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/shield.svg"}}
+            </script>
+        
+	<!-- This site is optimized with the Yoast SEO plugin v26.4 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Manhattan Cocktail Bar Drinks Menu – The Bronze Owl</title>
+<link crossorigin data-rocket-preconnect href="https://fd.cleantalk.org" rel="preconnect">
+<link crossorigin data-rocket-preconnect href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin data-rocket-preconnect href="https://www.googletagmanager.com" rel="preconnect">
+<link crossorigin data-rocket-preconnect href="https://www.clickcease.com" rel="preconnect">
+<link data-rocket-preload as="style" href="https://fonts.googleapis.com/css?family=Libre%20Baskerville%3Aregular%2Citalic%2C700%7CMontserrat%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2Citalic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic&#038;subset=latin%2Clatin-ext&#038;display=swap" rel="preload">
+<link href="https://fonts.googleapis.com/css?family=Libre%20Baskerville%3Aregular%2Citalic%2C700%7CMontserrat%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2Citalic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic&#038;subset=latin%2Clatin-ext&#038;display=swap" media="print" onload="this.media=&#039;all&#039;" rel="stylesheet">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre%20Baskerville%3Aregular%2Citalic%2C700%7CMontserrat%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2Citalic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic&#038;subset=latin%2Clatin-ext&#038;display=swap"></noscript><link rel="preload" data-rocket-preload as="image" href="https://www.thebronzeowlnyc.com/wp-content/uploads/hero_drinks-2.webp" fetchpriority="high">
+	<meta name="description" content="Bronze Owl Is Manhattan&#039;s hottest new cocktail bar, specializing in Italian-inspired cocktails that put bold, innovative twists on classic recipes. See our inspired bar drinks menu." />
+	<link rel="canonical" href="https://www.thebronzeowlnyc.com/menus/libations/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Manhattan Cocktail Bar Drinks Menu – The Bronze Owl" />
+	<meta property="og:description" content="Bronze Owl Is Manhattan&#039;s hottest new cocktail bar, specializing in Italian-inspired cocktails that put bold, innovative twists on classic recipes. See our inspired bar drinks menu." />
+	<meta property="og:url" content="https://www.thebronzeowlnyc.com/menus/libations/" />
+	<meta property="og:site_name" content="The Bronze Owl" />
+	<meta property="article:publisher" content="https://www.facebook.com/bronzeowlnyc" />
+	<meta property="article:modified_time" content="2025-11-19T08:05:10+00:00" />
+	<meta property="og:image" content="https://www.thebronzeowlnyc.com/wp-content/uploads/opengraph-thumb-1.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="675" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fd.cleantalk.org' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="The Bronze Owl &raquo; Feed" href="https://www.thebronzeowlnyc.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The Bronze Owl &raquo; Comments Feed" href="https://www.thebronzeowlnyc.com/comments/feed/" />
+<meta content="Divi v.4.27.4" name="generator"/><style id='wp-block-library-theme-inline-css' type='text/css'>
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='cleantalk-public-css-css' href='https://www.thebronzeowlnyc.com/wp-content/cache/background-css/1/www.thebronzeowlnyc.com/wp-content/plugins/cleantalk-spam-protect/css/cleantalk-public.min.css?ver=6.68_1763407263&wpr_t=1763979550' type='text/css' media='all' />
+<link rel='stylesheet' id='cleantalk-email-decoder-css-css' href='https://www.thebronzeowlnyc.com/wp-content/plugins/cleantalk-spam-protect/css/cleantalk-email-decoder.min.css?ver=6.68_1763407263' type='text/css' media='all' />
+<link rel='stylesheet' id='cleantalk-trp-css-css' href='https://www.thebronzeowlnyc.com/wp-content/plugins/cleantalk-spam-protect/css/cleantalk-trp.min.css?ver=6.68_1763407263' type='text/css' media='all' />
+
+<link rel='stylesheet' id='wpforms-choicesjs-css' href='https://www.thebronzeowlnyc.com/wp-content/cache/background-css/1/www.thebronzeowlnyc.com/wp-content/plugins/wpforms-lite/assets/css/integrations/divi/choices.min.css?ver=10.2.0&wpr_t=1763979550' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='divi-style-css' href='https://www.thebronzeowlnyc.com/wp-content/cache/background-css/1/www.thebronzeowlnyc.com/wp-content/cache/min/1/wp-content/themes/Divi/style-static.min.css?ver=1761833339&wpr_t=1763979550' type='text/css' media='all' />
+<script type="text/javascript" src="https://www.thebronzeowlnyc.com/wp-content/plugins/cleantalk-spam-protect/js/apbct-public-bundle.min.js?ver=6.68_1763407263" id="apbct-public-bundle.min-js-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.thebronzeowlnyc.com/wp-content/cache/min/1/ct-bot-detector-wrapper.js?ver=1761833340" id="ct_bot_detector-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.thebronzeowlnyc.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.thebronzeowlnyc.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" data-rocket-defer defer></script>
+<link rel="https://api.w.org/" href="https://www.thebronzeowlnyc.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.thebronzeowlnyc.com/wp-json/wp/v2/pages/55" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.thebronzeowlnyc.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+<link rel='shortlink' href='https://www.thebronzeowlnyc.com/?p=55' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.thebronzeowlnyc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.thebronzeowlnyc.com%2Fmenus%2Flibations%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.thebronzeowlnyc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.thebronzeowlnyc.com%2Fmenus%2Flibations%2F&#038;format=xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><script type="application/ld+json" class="custom-schema">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https://www.thebronzeowlnyc.com/menus/libations/#breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.thebronzeowlnyc.com/"},{"@type":"ListItem","position":2,"name":"Drink Menu","item":"https://www.thebronzeowlnyc.com/menus/libations/"}]},{"@type":"WebPage","@id":"https://www.thebronzeowlnyc.com/menus/libations/#webpage","url":"https://www.thebronzeowlnyc.com/menus/libations/","name":"Cocktail Bar Drinks Menu","description":"Cocktail Bar Drinks Menu — Bartender’s Choice, Owl Classics, Beers, Wines, Non-Alcoholic, Spirits and more.","inLanguage":"en-US"}]}</script><script type="application/ld+json" class="custom-schema">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https://www.thebronzeowlnyc.com/menus/#breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.thebronzeowlnyc.com/"},{"@type":"ListItem","position":2,"name":"Menus","item":"https://www.thebronzeowlnyc.com/menus/"}]},{"@type":"WebPage","@id":"https://www.thebronzeowlnyc.com/menus/#webpage","url":"https://www.thebronzeowlnyc.com/menus/","name":"Food & Cocktail Menus — The Bronze Owl","description":"Food & Cocktail Menus — Small bites by Chef Franklin Becker; inventive spirits by The Hospitality Dept.","inLanguage":"en-US"},{"@type":"ItemList","@id":"https://www.thebronzeowlnyc.com/menus/#menu-list","itemListElement":[{"@type":"MenuSection","name":"Food Menu","url":"https://www.thebronzeowlnyc.com/menus/food/"},{"@type":"MenuSection","name":"Drink Menu","url":"https:// www.thebronzeowlnyc.com/menus/libations/"}]}]}</script><script type="application/ld+json" class="global-schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.thebronzeowlnyc.com/#organization","name":"The Bronze Owl","url":"https://www.thebronzeowlnyc.com/","logo":{"@type":"ImageObject","url":"https://www.thebronzeowlnyc.com/wp-content/uploads/logo_main-2.png"},"sameAs":["https://www.instagram.com/bronzeowlnyc/","https://www.facebook.com/bronzeowlnyc","https://www.yelp.com/biz/bronze-owl-new-york","https://www.opentable.com/r/the-bronze-owl-new-york","https://www.tripadvisor.com/Restaurant_Review-g60763-d28043309-Reviews-The_Bronze_Owl-New_York_City_New_York.html"]},{"@type":["LocalBusiness","BarOrPub"],"@id":"https://www.thebronzeowlnyc.com/#localbusiness","name":"The Bronze Owl","url":"https://www.thebronzeowlnyc.com/","image":"https://www.thebronzeowlnyc.com/wp-content/uploads/logo_main-2.png","telephone":"+1-646-838-9026","priceRange":"$$$","servesCuisine":["Italian","Small Plates"],"acceptsReservations":"https://www.opentable.com/r/the-bronze-owl-new-york","menu":["https://www.thebronzeowlnyc.com/menus/food/","https://www.thebronzeowlnyc.com/menus/libations/"],"address":{"@type":"PostalAddress","streetAddress":"52 W 33rd St","addressLocality":"New York","addressRegion":"NY","postalCode":"10001","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday"],"opens":"07:00","closes":"11:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday"],"opens":"17:00","closes":"24:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Thursday","Friday","Saturday"],"opens":"07:00","closes":"11:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Thursday","Friday","Saturday"],"opens":"17:00","closes":"01:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"11:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"17:00","closes":"23:00"}],"sameAs":["https://www.instagram.com/bronzeowlnyc/","https://www.facebook.com/bronzeowlnyc","https://www.yelp.com/biz/bronze-owl-new-york","https://www.opentable.com/r/the-bronze-owl-new-york","https://www.tripadvisor.com/Restaurant_Review-g60763-d28043309-Reviews-The_Bronze_Owl-New_York_City_New_York.html"],"parentOrganization":{"@id":"https://www.thebronzeowlnyc.com/#organization"}}]}</script><!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-WP17BN7N4D"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WP17BN7N4D');
+</script>
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+  (function($) {
+    $(document).ready(function() {
+      // ✅ Track phone link clicks only
+      $('body').on('click', 'a[href^="tel:"]', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'phone_click', {
+            'event_category': 'Contact',
+            'event_label': $(this).attr('href'),
+            'value': 1
+          });
+          console.log('GA4: Phone click tracked');
+        }
+      });
+    });
+  })(jQuery);
+});</script>
+
+
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+  (function($) {
+    $(document).ready(function() {
+      // ✅ Track email link clicks only
+      $('body').on('click', 'a[href^="mailto:"]', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'email_click', {
+            'event_category': 'Contact',
+            'event_label': $(this).attr('href'),
+            'value': 1
+          });
+          console.log('GA4: Email click tracked');
+        }
+      });
+    });
+  })(jQuery);
+});</script>
+
+
+
+<link rel="icon" href="https://www.thebronzeowlnyc.com/wp-content/uploads/cropped-favicon-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.thebronzeowlnyc.com/wp-content/uploads/cropped-favicon-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.thebronzeowlnyc.com/wp-content/uploads/cropped-favicon-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.thebronzeowlnyc.com/wp-content/uploads/cropped-favicon-1-270x270.png" />
+<style id="et-critical-inline-css">body,.et_pb_column_1_2 .et_quote_content blockquote cite,.et_pb_column_1_2 .et_link_content a.et_link_main_url,.et_pb_column_1_3 .et_quote_content blockquote cite,.et_pb_column_3_8 .et_quote_content blockquote cite,.et_pb_column_1_4 .et_quote_content blockquote cite,.et_pb_blog_grid .et_quote_content blockquote cite,.et_pb_column_1_3 .et_link_content a.et_link_main_url,.et_pb_column_3_8 .et_link_content a.et_link_main_url,.et_pb_column_1_4 .et_link_content a.et_link_main_url,.et_pb_blog_grid .et_link_content a.et_link_main_url,body .et_pb_bg_layout_light .et_pb_post p,body .et_pb_bg_layout_dark .et_pb_post p{font-size:16px}.et_pb_slide_content,.et_pb_best_value{font-size:18px}body{color:#ffffff}h1,h2,h3,h4,h5,h6{color:#ffffff}#et_search_icon:hover,.mobile_menu_bar:before,.mobile_menu_bar:after,.et_toggle_slide_menu:after,.et-social-icon a:hover,.et_pb_sum,.et_pb_pricing li a,.et_pb_pricing_table_button,.et_overlay:before,.entry-summary p.price ins,.et_pb_member_social_links a:hover,.et_pb_widget li a:hover,.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active,.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active,.et_pb_gallery .et_pb_gallery_pagination ul li a.active,.wp-pagenavi span.current,.wp-pagenavi a:hover,.nav-single a,.tagged_as a,.posted_in a{color:#143630}.et_pb_contact_submit,.et_password_protected_form .et_submit_button,.et_pb_bg_layout_light .et_pb_newsletter_button,.comment-reply-link,.form-submit .et_pb_button,.et_pb_bg_layout_light .et_pb_promo_button,.et_pb_bg_layout_light .et_pb_more_button,.et_pb_contact p input[type="checkbox"]:checked+label i:before,.et_pb_bg_layout_light.et_pb_module.et_pb_button{color:#143630}.footer-widget h4{color:#143630}.et-search-form,.nav li ul,.et_mobile_menu,.footer-widget li:before,.et_pb_pricing li:before,blockquote{border-color:#143630}.et_pb_counter_amount,.et_pb_featured_table .et_pb_pricing_heading,.et_quote_content,.et_link_content,.et_audio_content,.et_pb_post_slider.et_pb_bg_layout_dark,.et_slide_in_menu_container,.et_pb_contact p input[type="radio"]:checked+label i:before{background-color:#143630}a{color:#e3be83}#main-header,#main-header .nav li ul,.et-search-form,#main-header .et_mobile_menu{background-color:#143630}.nav li ul{border-color:#e3be83}.et_secondary_nav_enabled #page-container #top-header{background-color:#143630!important}#et-secondary-nav li ul{background-color:#143630}.et_header_style_centered .mobile_nav .select_page,.et_header_style_split .mobile_nav .select_page,.et_nav_text_color_light #top-menu>li>a,.et_nav_text_color_dark #top-menu>li>a,#top-menu a,.et_mobile_menu li a,.et_nav_text_color_light .et_mobile_menu li a,.et_nav_text_color_dark .et_mobile_menu li a,#et_search_icon:before,.et_search_form_container input,span.et_close_search_field:after,#et-top-navigation .et-cart-info{color:#f7ecda}.et_search_form_container input::-moz-placeholder{color:#f7ecda}.et_search_form_container input::-webkit-input-placeholder{color:#f7ecda}.et_search_form_container input:-ms-input-placeholder{color:#f7ecda}#top-menu li a{font-size:16px}body.et_vertical_nav .container.et_search_form_container .et-search-form input{font-size:16px!important}#top-menu li a,.et_search_form_container input{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none;letter-spacing:2px}.et_search_form_container input::-moz-placeholder{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none;letter-spacing:2px}.et_search_form_container input::-webkit-input-placeholder{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none;letter-spacing:2px}.et_search_form_container input:-ms-input-placeholder{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none;letter-spacing:2px}#top-menu li.current-menu-ancestor>a,#top-menu li.current-menu-item>a,#top-menu li.current_page_item>a{color:#e3be83}#main-footer .footer-widget h4,#main-footer .widget_block h1,#main-footer .widget_block h2,#main-footer .widget_block h3,#main-footer .widget_block h4,#main-footer .widget_block h5,#main-footer .widget_block h6{color:#143630}.footer-widget li:before{border-color:#143630}#footer-widgets .footer-widget li:before{top:10.6px}@media only screen and (min-width:981px){.et_header_style_left #et-top-navigation,.et_header_style_split #et-top-navigation{padding:35px 0 0 0}.et_header_style_left #et-top-navigation nav>ul>li>a,.et_header_style_split #et-top-navigation nav>ul>li>a{padding-bottom:35px}.et_header_style_split .centered-inline-logo-wrap{width:70px;margin:-70px 0}.et_header_style_split .centered-inline-logo-wrap #logo{max-height:70px}.et_pb_svg_logo.et_header_style_split .centered-inline-logo-wrap #logo{height:70px}.et_header_style_centered #top-menu>li>a{padding-bottom:13px}.et_header_style_slide #et-top-navigation,.et_header_style_fullscreen #et-top-navigation{padding:26px 0 26px 0!important}.et_header_style_centered #main-header .logo_container{height:70px}#logo{max-height:36%}.et_pb_svg_logo #logo{height:36%}.et_header_style_left .et-fixed-header #et-top-navigation,.et_header_style_split .et-fixed-header #et-top-navigation{padding:35px 0 0 0}.et_header_style_left .et-fixed-header #et-top-navigation nav>ul>li>a,.et_header_style_split .et-fixed-header #et-top-navigation nav>ul>li>a{padding-bottom:35px}.et_header_style_centered header#main-header.et-fixed-header .logo_container{height:70px}.et_header_style_split #main-header.et-fixed-header .centered-inline-logo-wrap{width:70px;margin:-70px 0}.et_header_style_split .et-fixed-header .centered-inline-logo-wrap #logo{max-height:70px}.et_pb_svg_logo.et_header_style_split .et-fixed-header .centered-inline-logo-wrap #logo{height:70px}.et_header_style_slide .et-fixed-header #et-top-navigation,.et_header_style_fullscreen .et-fixed-header #et-top-navigation{padding:26px 0 26px 0!important}.et_fixed_nav #page-container .et-fixed-header#top-header{background-color:#143630!important}.et_fixed_nav #page-container .et-fixed-header#top-header #et-secondary-nav li ul{background-color:#143630}.et-fixed-header #top-menu a,.et-fixed-header #et_search_icon:before,.et-fixed-header #et_top_search .et-search-form input,.et-fixed-header .et_search_form_container input,.et-fixed-header .et_close_search_field:after,.et-fixed-header #et-top-navigation .et-cart-info{color:#f7ecda!important}.et-fixed-header .et_search_form_container input::-moz-placeholder{color:#f7ecda!important}.et-fixed-header .et_search_form_container input::-webkit-input-placeholder{color:#f7ecda!important}.et-fixed-header .et_search_form_container input:-ms-input-placeholder{color:#f7ecda!important}.et-fixed-header #top-menu li.current-menu-ancestor>a,.et-fixed-header #top-menu li.current-menu-item>a,.et-fixed-header #top-menu li.current_page_item>a{color:#e3be83!important}}@media only screen and (min-width:1350px){.et_pb_row{padding:27px 0}.et_pb_section{padding:54px 0}.single.et_pb_pagebuilder_layout.et_full_width_page .et_post_meta_wrapper{padding-top:81px}.et_pb_fullwidth_section{padding:0}}h1,h1.et_pb_contact_main_title,.et_pb_title_container h1{font-size:60px}h2,.product .related h2,.et_pb_column_1_2 .et_quote_content blockquote p{font-size:51px}h3{font-size:43px}h4,.et_pb_circle_counter h3,.et_pb_number_counter h3,.et_pb_column_1_3 .et_pb_post h2,.et_pb_column_1_4 .et_pb_post h2,.et_pb_blog_grid h2,.et_pb_column_1_3 .et_quote_content blockquote p,.et_pb_column_3_8 .et_quote_content blockquote p,.et_pb_column_1_4 .et_quote_content blockquote p,.et_pb_blog_grid .et_quote_content blockquote p,.et_pb_column_1_3 .et_link_content h2,.et_pb_column_3_8 .et_link_content h2,.et_pb_column_1_4 .et_link_content h2,.et_pb_blog_grid .et_link_content h2,.et_pb_column_1_3 .et_audio_content h2,.et_pb_column_3_8 .et_audio_content h2,.et_pb_column_1_4 .et_audio_content h2,.et_pb_blog_grid .et_audio_content h2,.et_pb_column_3_8 .et_pb_audio_module_content h2,.et_pb_column_1_3 .et_pb_audio_module_content h2,.et_pb_gallery_grid .et_pb_gallery_item h3,.et_pb_portfolio_grid .et_pb_portfolio_item h2,.et_pb_filterable_portfolio_grid .et_pb_portfolio_item h2{font-size:36px}h5{font-size:31px}h6{font-size:28px}.et_pb_slide_description .et_pb_slide_title{font-size:91px}.et_pb_gallery_grid .et_pb_gallery_item h3,.et_pb_portfolio_grid .et_pb_portfolio_item h2,.et_pb_filterable_portfolio_grid .et_pb_portfolio_item h2,.et_pb_column_1_4 .et_pb_audio_module_content h2{font-size:31px}	h1,h2,h3,h4,h5,h6{font-family:'Libre Baskerville',Georgia,"Times New Roman",serif}body,input,textarea,select{font-family:'Montserrat',Helvetica,Arial,Lucida,sans-serif}#wpforms-form-1148 label.wpforms-field-label{color:#fff!important;font-size:12px!important;line-height:19px;font-weight:600;margin-bottom:5px!important;font-family:'Montserrat'}#wpforms-form-1148 .wpforms-field-large{height:30px!important;background-color:transparent!important;border:0px solid!important;border-bottom:1px solid #fff!important;border-radius:0px!important;color:#fff!important;font-size:12px!important;line-height:19px;font-family:'Montserrat'}#wpforms-form-1148 .wpforms-field-large:focus{outline:0!important;box-shadow:0px 0px 0px!important}#wpforms-form-1148 textarea#wpforms-1148-field_5:focus{outline:0!important;box-shadow:0px 0px 0px!important}#wpforms-form-1148 .wpforms-field{padding-bottom:10px!important;padding-top:0px!important}#wpforms-form-1148 textarea#wpforms-1148-field_5{height:60px!important;background-color:transparent!important;border:0px solid!important;border-bottom:1px solid #fff!important;border-radius:0px!important;color:#fff!important;font-size:12px!important;line-height:19px;font-family:'Montserrat'}#wpforms-form-1148 button#wpforms-submit-1148{color:#143630;font-size:15px!important;font-weight:700;border-radius:0px;padding:10px 20px;background-color:#e3be83!important}#wpforms-form-1148 span.wpforms-required-label{color:#e3be83!important}.et_pb_text_2 h3{margin:40px 0 20px 0;border-bottom:1px solid #37544f}.et_pb_text_4 h3{margin:40px 0 20px 0;border-bottom:1px solid #37544f}.et_pb_text_2_tb_footer ul{list-style:none;padding:0}.et_pb_text_2_tb_footer ul li a{display:block;padding:8px 0;color:#e3be83;transition:all 0.5s ease}.et_pb_text_2_tb_footer ul li a:hover{color:#fff;font-size:1.1em}.et_pb_text_3_tb_footer ul{list-style:none;padding:0}.et_pb_text_3_tb_footer ul li a{display:block;padding:8px 0;color:#e3be83;transition:all 0.5s ease}.et_pb_text_3_tb_footer ul li a:hover{color:#fff;font-size:1.1em}.et_pb_text_2 h3{margin:40px 0 20px 0;border-bottom:1px solid #37544f}.et_pb_text_4 h3{margin:40px 0 20px 0;border-bottom:1px solid #37544f}.et_pb_text_2_tb_footer ul{list-style:none;padding:0}.et_pb_text_2_tb_footer ul li a{display:block;padding:8px 0;color:#e3be83;transition:all 0.5s ease}.et_pb_text_2_tb_footer ul li a:hover{color:#fff;font-size:1.1em}.et_pb_text_3_tb_footer ul{list-style:none;padding:0}.et_pb_text_3_tb_footer ul li a{display:block;padding:8px 0;color:#e3be83;transition:all 0.5s ease}.et_pb_text_3_tb_footer ul li a:hover{color:#fff;font-size:1.1em}</style>
+<link rel="stylesheet" id="et-core-unified-55-cached-inline-styles" href="https://www.thebronzeowlnyc.com/wp-content/cache/background-css/1/www.thebronzeowlnyc.com/wp-content/et-cache/55/et-core-unified-55.min.css?ver=1763735549&wpr_t=1763979550" /><link rel="preload" as="style" id="et-core-unified-tb-146-deferred-55-cached-inline-styles" href="https://www.thebronzeowlnyc.com/wp-content/et-cache/55/et-core-unified-tb-146-deferred-55.min.css?ver=1763997541" onload="this.onload=null;this.rel='stylesheet';" /><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><style id="wpr-lazyload-bg-container"></style><style id="wpr-lazyload-bg-exclusion"></style>
+<noscript>
+<style id="wpr-lazyload-bg-nostyle">.apbct-check_email_exist-load{--wpr-bg-522c496a-206b-494c-a08c-6495c965595b: url('https://www.thebronzeowlnyc.com/wp-content/plugins/cleantalk-spam-protect/css/images/checking_email.gif');}.apbct-check_email_exist-good_email{--wpr-bg-f859c426-ea03-4d73-8a31-5d6a35321ff3: url('https://www.thebronzeowlnyc.com/wp-content/plugins/cleantalk-spam-protect/css/images/good_email.svg');}.apbct-check_email_exist-bad_email{--wpr-bg-c51edaf8-29e4-407d-a5e2-40c2e09e757a: url('https://www.thebronzeowlnyc.com/wp-content/plugins/cleantalk-spam-protect/css/images/bad_email.svg');}div.wpforms-container .wpforms-form .choices[data-type*="select-one"] .choices__button{--wpr-bg-3ee58714-ada9-4603-8599-9227865de10c: url('https://www.thebronzeowlnyc.com/wp-content/plugins/wpforms-lite/assets/css/integrations/images/cross-inverse.svg');}div.wpforms-container .wpforms-form .choices[data-type*="select-one"] .choices__button{--wpr-bg-e73fa681-9905-4b2e-bd60-1cf4e2ed99de: url('https://www.thebronzeowlnyc.com/wp-content/plugins/wpforms-lite/assets/images/cross-inverse.svg');}div.wpforms-container .wpforms-form .choices[data-type*="select-multiple"] .choices__button,div.wpforms-container .wpforms-form .choices[data-type*="text"] .choices__button{--wpr-bg-e316bcf7-afa5-4091-b905-fa239b6ddb11: url('https://www.thebronzeowlnyc.com/wp-content/plugins/wpforms-lite/assets/css/integrations/images/cross.svg');}div.wpforms-container .wpforms-form .choices[data-type*="select-multiple"] .choices__button,div.wpforms-container .wpforms-form .choices[data-type*="text"] .choices__button{--wpr-bg-93391166-90d9-4123-ab94-ceaa09073046: url('https://www.thebronzeowlnyc.com/wp-content/plugins/wpforms-lite/assets/images/cross.svg');}.et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*="select-one"] .choices__button{--wpr-bg-64cd59b2-b9bf-4edf-9a51-0af48ff8aacb: url('https://www.thebronzeowlnyc.com/wp-content/plugins/wpforms-lite/assets/css/integrations/images/cross-inverse.svg');}.et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*="select-one"] .choices__button{--wpr-bg-2f5bae07-af7b-44b8-8726-cbbf2d2825f2: url('https://www.thebronzeowlnyc.com/wp-content/plugins/wpforms-lite/assets/images/cross-inverse.svg');}.et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*="select-multiple"] .choices__button,.et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*="text"] .choices__button{--wpr-bg-e9a01587-cd7c-4d97-9419-8ae5ac786100: url('https://www.thebronzeowlnyc.com/wp-content/plugins/wpforms-lite/assets/css/integrations/images/cross.svg');}.et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*="select-multiple"] .choices__button,.et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*="text"] .choices__button{--wpr-bg-15d9e3a5-2cde-4618-842c-8cf5555b8f03: url('https://www.thebronzeowlnyc.com/wp-content/plugins/wpforms-lite/assets/images/cross.svg');}.et_pb_preload:before{--wpr-bg-98e3a2ea-fb88-4bb6-96ad-6d86abba809f: url('https://www.thebronzeowlnyc.com/wp-content/themes/Divi/includes/builder/styles/images/preloader.gif');}.et_subscribe_loader{--wpr-bg-81187efb-2f14-4aaf-a6e0-bdcf071b4a0d: url('https://www.thebronzeowlnyc.com/wp-content/themes/Divi/includes/builder/styles/images/subscribe-loader.gif');}.form-contact select{--wpr-bg-a67c5815-ee60-4fcc-b120-4bdf21f1f18e: url('https://www.thebronzeowlnyc.com/wp-content/uploads/arrow_down-1.png');}</style>
+</noscript>
+<script type="application/javascript">const rocket_pairs = [{"selector":".apbct-check_email_exist-load","style":".apbct-check_email_exist-load{--wpr-bg-522c496a-206b-494c-a08c-6495c965595b: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/checking_email.gif');}","hash":"522c496a-206b-494c-a08c-6495c965595b","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/checking_email.gif"},{"selector":".apbct-check_email_exist-good_email","style":".apbct-check_email_exist-good_email{--wpr-bg-f859c426-ea03-4d73-8a31-5d6a35321ff3: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/good_email.svg');}","hash":"f859c426-ea03-4d73-8a31-5d6a35321ff3","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/good_email.svg"},{"selector":".apbct-check_email_exist-bad_email","style":".apbct-check_email_exist-bad_email{--wpr-bg-c51edaf8-29e4-407d-a5e2-40c2e09e757a: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/bad_email.svg');}","hash":"c51edaf8-29e4-407d-a5e2-40c2e09e757a","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/cleantalk-spam-protect\/css\/images\/bad_email.svg"},{"selector":"div.wpforms-container .wpforms-form .choices[data-type*=\"select-one\"] .choices__button","style":"div.wpforms-container .wpforms-form .choices[data-type*=\"select-one\"] .choices__button{--wpr-bg-3ee58714-ada9-4603-8599-9227865de10c: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/css\/integrations\/images\/cross-inverse.svg');}","hash":"3ee58714-ada9-4603-8599-9227865de10c","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/css\/integrations\/images\/cross-inverse.svg"},{"selector":"div.wpforms-container .wpforms-form .choices[data-type*=\"select-one\"] .choices__button","style":"div.wpforms-container .wpforms-form .choices[data-type*=\"select-one\"] .choices__button{--wpr-bg-e73fa681-9905-4b2e-bd60-1cf4e2ed99de: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/images\/cross-inverse.svg');}","hash":"e73fa681-9905-4b2e-bd60-1cf4e2ed99de","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/images\/cross-inverse.svg"},{"selector":"div.wpforms-container .wpforms-form .choices[data-type*=\"select-multiple\"] .choices__button,div.wpforms-container .wpforms-form .choices[data-type*=\"text\"] .choices__button","style":"div.wpforms-container .wpforms-form .choices[data-type*=\"select-multiple\"] .choices__button,div.wpforms-container .wpforms-form .choices[data-type*=\"text\"] .choices__button{--wpr-bg-e316bcf7-afa5-4091-b905-fa239b6ddb11: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/css\/integrations\/images\/cross.svg');}","hash":"e316bcf7-afa5-4091-b905-fa239b6ddb11","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/css\/integrations\/images\/cross.svg"},{"selector":"div.wpforms-container .wpforms-form .choices[data-type*=\"select-multiple\"] .choices__button,div.wpforms-container .wpforms-form .choices[data-type*=\"text\"] .choices__button","style":"div.wpforms-container .wpforms-form .choices[data-type*=\"select-multiple\"] .choices__button,div.wpforms-container .wpforms-form .choices[data-type*=\"text\"] .choices__button{--wpr-bg-93391166-90d9-4123-ab94-ceaa09073046: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/images\/cross.svg');}","hash":"93391166-90d9-4123-ab94-ceaa09073046","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/images\/cross.svg"},{"selector":".et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"select-one\"] .choices__button","style":".et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"select-one\"] .choices__button{--wpr-bg-64cd59b2-b9bf-4edf-9a51-0af48ff8aacb: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/css\/integrations\/images\/cross-inverse.svg');}","hash":"64cd59b2-b9bf-4edf-9a51-0af48ff8aacb","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/css\/integrations\/images\/cross-inverse.svg"},{"selector":".et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"select-one\"] .choices__button","style":".et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"select-one\"] .choices__button{--wpr-bg-2f5bae07-af7b-44b8-8726-cbbf2d2825f2: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/images\/cross-inverse.svg');}","hash":"2f5bae07-af7b-44b8-8726-cbbf2d2825f2","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/images\/cross-inverse.svg"},{"selector":".et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"select-multiple\"] .choices__button,.et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"text\"] .choices__button","style":".et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"select-multiple\"] .choices__button,.et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"text\"] .choices__button{--wpr-bg-e9a01587-cd7c-4d97-9419-8ae5ac786100: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/css\/integrations\/images\/cross.svg');}","hash":"e9a01587-cd7c-4d97-9419-8ae5ac786100","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/css\/integrations\/images\/cross.svg"},{"selector":".et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"select-multiple\"] .choices__button,.et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"text\"] .choices__button","style":".et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"select-multiple\"] .choices__button,.et-db #et-boc .et-l .et_pb_module div.wpforms-container .wpforms-form .choices[data-type*=\"text\"] .choices__button{--wpr-bg-15d9e3a5-2cde-4618-842c-8cf5555b8f03: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/images\/cross.svg');}","hash":"15d9e3a5-2cde-4618-842c-8cf5555b8f03","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/plugins\/wpforms-lite\/assets\/images\/cross.svg"},{"selector":".et_pb_preload","style":".et_pb_preload:before{--wpr-bg-98e3a2ea-fb88-4bb6-96ad-6d86abba809f: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/themes\/Divi\/includes\/builder\/styles\/images\/preloader.gif');}","hash":"98e3a2ea-fb88-4bb6-96ad-6d86abba809f","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/themes\/Divi\/includes\/builder\/styles\/images\/preloader.gif"},{"selector":".et_subscribe_loader","style":".et_subscribe_loader{--wpr-bg-81187efb-2f14-4aaf-a6e0-bdcf071b4a0d: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/themes\/Divi\/includes\/builder\/styles\/images\/subscribe-loader.gif');}","hash":"81187efb-2f14-4aaf-a6e0-bdcf071b4a0d","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/themes\/Divi\/includes\/builder\/styles\/images\/subscribe-loader.gif"},{"selector":".form-contact select","style":".form-contact select{--wpr-bg-a67c5815-ee60-4fcc-b120-4bdf21f1f18e: url('https:\/\/www.thebronzeowlnyc.com\/wp-content\/uploads\/arrow_down-1.png');}","hash":"a67c5815-ee60-4fcc-b120-4bdf21f1f18e","url":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/uploads\/arrow_down-1.png"}]; const rocket_excluded_pairs = [];</script><meta name="generator" content="WP Rocket 3.20.0.3" data-wpr-features="wpr_lazyload_css_bg_img wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_oci wpr_minify_css wpr_cdn wpr_preload_links wpr_mobile" /></head>
+<body class="wp-singular page-template-default page page-id-55 page-child parent-pageid-51 wp-theme-Divi et-tb-has-template et-tb-has-footer et_pb_button_helper_class et_fullwidth_nav et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_cover_background et_pb_gutter linux et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db">
+	<div  id="page-container">
+<div  id="et-boc" class="et-boc">
+			
+		
+
+	<header  id="main-header" data-height-onload="70">
+		<div class="container clearfix et_menu_container">
+					<div class="logo_container">
+				<span class="logo_helper"></span>
+				<a href="https://www.thebronzeowlnyc.com/">
+				<img src="https://www.thebronzeowlnyc.com/wp-content/uploads/logo_main-2.png" width="500" height="46" alt="The Bronze Owl" id="logo" data-height-percentage="36" />
+				</a>
+			</div>
+					<div id="et-top-navigation" data-height="70" data-fixed-height="70">
+									<nav id="top-menu-nav">
+					<ul id="top-menu" class="nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="https://www.thebronzeowlnyc.com/about/">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-75"><a href="https://www.thebronzeowlnyc.com/menus/">Menus</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="https://www.thebronzeowlnyc.com/menus/food/">Food</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-55 current_page_item menu-item-77"><a href="https://www.thebronzeowlnyc.com/menus/libations/" aria-current="page">Drinks</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="https://www.thebronzeowlnyc.com/events/">Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://www.thebronzeowlnyc.com/contact/">Contact</a></li>
+</ul>					</nav>
+				
+				
+				
+				
+				<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Select Page</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				</div>
+			</div>			</div> <!-- #et-top-navigation -->
+		</div> <!-- .container -->
+			</header> <!-- #main-header -->
+<div  id="et-main-area">
+	
+<div id="main-content">
+
+
+			
+				<article id="post-55" class="post-55 page type-page status-publish hentry">
+
+				
+					<div class="entry-content">
+					<div class="et-l et-l--post">
+			<div class="et_builder_inner_content et_pb_gutters3">
+		<div class="et_pb_section et_pb_section_0 et_pb_section_parallax et_pb_with_background et_section_regular" >
+				
+				<span class="et_parallax_bg_wrap"><span
+						class="et_parallax_bg"
+						style="background-image: url(https://www.thebronzeowlnyc.com/wp-content/uploads/hero_drinks-2.webp);"
+					></span><span
+						class="et_parallax_gradient"
+						style="background-image: linear-gradient( 157deg, #06100e 1%, rgba(6,16,14,0.7) 51%, rgba(227,190,131,0.9) 100% );"
+					></span></span>
+				
+				<span class="et_pb_background_pattern"></span>
+				
+				
+				<div class="et_pb_row et_pb_row_0">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_heading et_pb_heading_0 et_pb_bg_layout_">
+				
+				
+				
+				
+				<div class="et_pb_heading_container"><h1 class="et_pb_module_heading">Cocktail Menu</h1></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_1 et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_1 et_pb_gutters4">
+				<div class="et_pb_column et_pb_column_2_3 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_0 menu-cat  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2><em>Cocktails</em></h2>
+<p>Ask About The Boozy Italian Ice Of The Day!</p></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_1 menu-cat  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Bartender&#8217;s Choice</h2></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_2 menu-block  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><ul>
+<li><strong>RUM, FORREST, RUM  </strong><br />Planteray rum, pear brandy, lime, grapefruit, cinnamon</li>
+<li><strong>C.R.E.A.M.SICLE </strong><br />ALB vodka, passionfruit, lemon, aperol</li>
+<li><strong>WHISKEY A GA-GA  </strong><br />Bulleit rye, amaretto, cognac, orange bitters, lemon twist</li>
+<li><strong>DAVE  </strong><br />Astral reposado, lichi li, lillet, orange bitters, lemon twist</li>
+<li><strong>SHOGUN SPRITZ  </strong><br />Shochu, pineapple, lemon, ginger, giffard passionfruit, prosecco</li>
+<li><strong>HOODIE SEASON  </strong><br />Bulleit bourbon, apple brandy, maple, lemon, chai concentrate, averna amaro</li>
+<li><strong>THE OTHER SIDE  </strong><br />Barr Hill gin, melon bitters, lime, mint leaves, lime wheel</li>
+<li><strong>TRINIDAD SOUR  </strong><br />Bulleit rye, angostura bitters, lemon, orgeat</li>
+<li><strong>CLASSIC SAZERAC  </strong><br />Bulleit rye, absinthe, peychunds</li>
+<li><strong>PB COBBLER  </strong><br />Fino sherry, frangelico, chambord, banana</li>
+<li><strong>MAMBO ITALIANO  </strong><br />Astral reposado, lillet, fino sherry, italicus, suze, mezcal, lemon twist</li>
+</ul>
+<p><em>substitutions may incur an upcharge<br />please let us know of any allergies</em></p></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_3 menu-cat  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Owl Classics</h2></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_4 menu-block  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><ul>
+<li><strong>PRESSURE SENSITIVE</strong><br />Astral tequila, velvet falernum, almond, lime, lime oil</li>
+<li><strong>CIAO FOR NOW</strong><br />ALB vodka, aperol, lemon, green strawberry bitters, prosecco</li>
+<li><strong>MARTINGALE 125</strong><br />Martingale cognac, lemon, legras &amp; haas blanc de blancs champagne</li>
+<li><strong>DANCE IN THE DESERT</strong><br />Astral reposado, aperol, grapefruit juice, lime juice, agave syrup</li>
+<li><strong>ESCAPE TO MILAN</strong><br />Barr Hill gin, amaro montenegro, cocchi rose, quince, grapefruit bitters</li>
+<li><strong>MOCHA &#8216;SPRESSOTINI</strong><br />ALB vodka, martingale cognac, frothave coffee, creme de cacao, espresso</li>
+</ul></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_2 et_pb_sticky_module  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_button_module_wrapper et_pb_button_0_wrapper  et_pb_module ">
+				<a class="et_pb_button et_pb_button_0 et_pb_bg_layout_light" href="/reservations">Reserve a Table</a>
+			</div><div class="et_pb_module et_pb_text et_pb_text_33  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p>Please ask your server for the full wine &amp; spirits list.</p></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_34  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p>Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of food borne illness.</p>
+<p>Before placing your order please inform your server if you or a person in your party has a food allergy.</p>
+<p>20% Gratuity added to parties of 6 or more.</p>
+<p><a href="/wp-content/uploads/Bronze-Owl-Menu-12.10.24.pdf" target="_blank" rel="noopener">Download PDF Menu →</a></p></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_2 et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_2">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_3  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_divider_0 et_pb_space et_pb_divider_hidden"><div class="et_pb_divider_internal"></div></div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</div>
+						</div>
+
+				
+				</article>
+
+			
+
+</div>
+
+	<footer class="et-l et-l--footer">
+			<div class="et_builder_inner_content et_pb_gutters3">
+		<div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_0_tb_footer">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_0_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+				
+				
+				
+				
+				<a href="https://www.hospitalitydept.com" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" width="150" height="32" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%2032'%3E%3C/svg%3E" alt="Hospitality Department" title="" class="wp-image-469" data-lazy-src="https://www.thebronzeowlnyc.com/wp-content/uploads/logo_hospdept-1.png" /><noscript><img decoding="async" width="150" height="32" src="https://www.thebronzeowlnyc.com/wp-content/uploads/logo_hospdept-1.png" alt="Hospitality Department" title="" class="wp-image-469" /></noscript></span></a>
+			</div><div class="et_pb_module et_pb_text et_pb_text_0_tb_footer  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner">Experience Hospitality at Our Other Properties</div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_1_tb_footer et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_1_tb_footer et_pb_equal_columns et_pb_gutters3">
+				<div class="et_pb_column et_pb_column_1_6 et_pb_column_1_tb_footer footerlogo-col  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_1_tb_footer et_animated et-waypoint">
+				
+				
+				
+				
+				<a href="https://www.bldiner.com/" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" width="600" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="B&amp;L Diner" title="" data-lazy-srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-diner-1.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-diner-1-480x320.png 480w" data-lazy-sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-916" data-lazy-src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-diner-1.png" /><noscript><img decoding="async" width="600" height="400" src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-diner-1.png" alt="B&amp;L Diner" title="" srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-diner-1.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-diner-1-480x320.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-916" /></noscript></span></a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_2_tb_footer footerlogo-col  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_2_tb_footer et_animated et-waypoint">
+				
+				
+				
+				
+				<a href="#" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" width="600" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="B&amp;L Bakery" title="" data-lazy-srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-bakery-1.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-bakery-1-480x320.png 480w" data-lazy-sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-918" data-lazy-src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-bakery-1.png" /><noscript><img decoding="async" width="600" height="400" src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-bakery-1.png" alt="B&amp;L Bakery" title="" srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-bakery-1.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bl-bakery-1-480x320.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-918" /></noscript></span></a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_3_tb_footer footerlogo-col  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_3_tb_footer et_animated et-waypoint">
+				
+				
+				
+				
+				<a href="https://www.pointsevennyc.com" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" width="600" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Point Seven Restaurant" title="" data-lazy-srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_point7-3.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_point7-3-480x320.png 480w" data-lazy-sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-340" data-lazy-src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_point7-3.png" /><noscript><img decoding="async" width="600" height="400" src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_point7-3.png" alt="Point Seven Restaurant" title="" srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_point7-3.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_point7-3-480x320.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-340" /></noscript></span></a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_4_tb_footer footerlogo-col  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_4_tb_footer et_animated et-waypoint">
+				
+				
+				
+				
+				<a href="https://www.coralomakase.com" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" width="600" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Coral Omakase" title="" data-lazy-srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_coral-1.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_coral-1-480x320.png 480w" data-lazy-sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-155" data-lazy-src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_coral-1.png" /><noscript><img decoding="async" width="600" height="400" src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_coral-1.png" alt="Coral Omakase" title="" srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_coral-1.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_coral-1-480x320.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-155" /></noscript></span></a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_5_tb_footer footerlogo-col  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_5_tb_footer et_animated et-waypoint">
+				
+				
+				
+				
+				<a href="https://www.pointsevennyc.com/bento" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" width="600" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Bento by 7" title="" data-lazy-srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bento-1.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bento-1-480x320.png 480w" data-lazy-sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-154" data-lazy-src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bento-1.png" /><noscript><img decoding="async" width="600" height="400" src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bento-1.png" alt="Bento by 7" title="" srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bento-1.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_bento-1-480x320.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-154" /></noscript></span></a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_6_tb_footer footerlogo-col  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_6_tb_footer et_animated et-waypoint">
+				
+				
+				
+				
+				<a href="https://www.instagram.com/sweetgraffitidoughnuts/" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" width="600" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Sweet Graffiti" title="" data-lazy-srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_sweet-graffiti-3.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_sweet-graffiti-3-480x320.png 480w" data-lazy-sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-865" data-lazy-src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_sweet-graffiti-3.png" /><noscript><img decoding="async" width="600" height="400" src="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_sweet-graffiti-3.png" alt="Sweet Graffiti" title="" srcset="https://www.thebronzeowlnyc.com/wp-content/uploads/brand_sweet-graffiti-3.png 600w, https://www.thebronzeowlnyc.com/wp-content/uploads/brand_sweet-graffiti-3-480x320.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-865" /></noscript></span></a>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_2_tb_footer et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_2_tb_footer">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_7_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_7_tb_footer">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="111" height="201" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20111%20201'%3E%3C/svg%3E" alt="logo_footer-1" title="logo_footer-1" class="wp-image-1288" data-lazy-src="https://www.thebronzeowlnyc.com/wp-content/uploads/logo_footer-1.webp" /><noscript><img decoding="async" width="111" height="201" src="https://www.thebronzeowlnyc.com/wp-content/uploads/logo_footer-1.webp" alt="logo_footer-1" title="logo_footer-1" class="wp-image-1288" /></noscript></span>
+			</div><div class="et_pb_module et_pb_text et_pb_text_1_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p style="text-align: left;">Contact Us</p></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_8_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_2_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><ul>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/menus/food">Food Menu</a></li>
+<li><a href="/menus/libations">Drink Menu</a></li>
+<li><a href="/events">Events</a></li>
+<li><a href="https://www.thebronzeowlnyc.com/blog/">Blogs</a></li>
+</ul>
+</ul>
+<p>&nbsp;</p></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_9_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_3_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><ul>
+<li><a href="/about">About</a></li>
+<li><a href="/press">Press</a></li>
+<li><a href="/contact">Contact Us</a></li>
+<li style="border-bottom: 1px solid #283f3b; margin-bottom: 5px; padding-bottom: 5px;"><a href="https://culinaryagents.com/groups/2624-The-Hospitality-Department/jobs" target="_blank" rel="noopener">Careers</a></li>
+<li><a href="/about/privacy">Privacy Policy</a></li>
+<li><a href="https://www.thebronzeowlnyc.com/about/terms-conditions/">Terms &amp; Conditions</a></li>
+<li><a href="/about/accessibility">Accessibility Statement</a></li>
+</ul></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_10_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_4_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p><strong>THE BRONZE OWL</strong><br />52 W 33rd St<br />New York, NY 10001<br />Phone No.: (646) 838-9026</p>
+<p><strong>HOURS</strong><br />Mon – Wed, 5 pm – 12 am<br />Thu – Sat, 5 pm – 1 am<br />Sunday, 5 pm &#8211; 11pm</p>
+<p><strong>DRESS CODE</strong><br />Proper attire required. no shorts, flip flops, slides or gym wear.</p></div>
+			</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_footer clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li
+            class='et_pb_social_media_follow_network_0_tb_footer et_pb_social_icon et_pb_social_network_link  et-social-instagram'><a
+              href='https://www.instagram.com/bronzeowlnyc/'
+              class='icon et_pb_with_border'
+              title='Follow on Instagram'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li><li
+            class='et_pb_social_media_follow_network_1_tb_footer et_pb_social_icon et_pb_social_network_link  et-social-facebook'><a
+              href='https://www.facebook.com/bronzeowlnyc'
+              class='icon et_pb_with_border'
+              title='Follow on Facebook'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li>
+			</ul>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</footer>
+		</div>
+
+			
+		</div>
+		</div>
+
+			<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/Divi\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<script type="text/javascript">
+				var et_animation_data = [{"class":"et_pb_image_1_tb_footer","style":"flip","repeat":"once","duration":"1500ms","delay":"200ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_image_2_tb_footer","style":"flip","repeat":"once","duration":"1500ms","delay":"400ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_image_3_tb_footer","style":"flip","repeat":"once","duration":"1500ms","delay":"600ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_image_4_tb_footer","style":"flip","repeat":"once","duration":"1500ms","delay":"800ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_image_5_tb_footer","style":"flip","repeat":"once","duration":"1500ms","delay":"1000ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_image_6_tb_footer","style":"flip","repeat":"once","duration":"1500ms","delay":"1200ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"}];
+				</script>
+	
+      <!--  ClickCease.com tracking-->
+      <script type="rocketlazyloadscript" data-rocket-type='text/javascript'>var script = document.createElement('script');
+      script.async = true; script.type = 'text/javascript';
+      var target = 'https://www.clickcease.com/monitor/stat.js';
+      script.src = target;var elem = document.head;elem.appendChild(script);
+      </script>
+      <noscript>
+      <a href="https://www.clickcease.com" rel="nofollow"><img src="https://monitor.clickcease.com" alt="ClickCease"></a>
+      </noscript>
+      <!--  ClickCease.com tracking-->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/menus\/food\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.thebronzeowlnyc.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket_lazyload_css-js-extra">
+/* <![CDATA[ */
+var rocket_lazyload_css_data = {"threshold":"300"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket_lazyload_css-js-after">
+/* <![CDATA[ */
+!function o(n,c,a){function u(t,e){if(!c[t]){if(!n[t]){var r="function"==typeof require&&require;if(!e&&r)return r(t,!0);if(s)return s(t,!0);throw(e=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",e}r=c[t]={exports:{}},n[t][0].call(r.exports,function(e){return u(n[t][1][e]||e)},r,r.exports,o,n,c,a)}return c[t].exports}for(var s="function"==typeof require&&require,e=0;e<a.length;e++)u(a[e]);return u}({1:[function(e,t,r){"use strict";{const c="undefined"==typeof rocket_pairs?[]:rocket_pairs,a=(("undefined"==typeof rocket_excluded_pairs?[]:rocket_excluded_pairs).map(t=>{var e=t.selector;document.querySelectorAll(e).forEach(e=>{e.setAttribute("data-rocket-lazy-bg-"+t.hash,"excluded")})}),document.querySelector("#wpr-lazyload-bg-container"));var o=rocket_lazyload_css_data.threshold||300;const u=new IntersectionObserver(e=>{e.forEach(t=>{t.isIntersecting&&c.filter(e=>t.target.matches(e.selector)).map(t=>{var e;t&&((e=document.createElement("style")).textContent=t.style,a.insertAdjacentElement("afterend",e),t.elements.forEach(e=>{u.unobserve(e),e.setAttribute("data-rocket-lazy-bg-"+t.hash,"loaded")}))})})},{rootMargin:o+"px"});function n(){0<(0<arguments.length&&void 0!==arguments[0]?arguments[0]:[]).length&&c.forEach(t=>{try{document.querySelectorAll(t.selector).forEach(e=>{"loaded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&"excluded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&(u.observe(e),(t.elements||=[]).push(e))})}catch(e){console.error(e)}})}n(),function(){const r=window.MutationObserver;return function(e,t){if(e&&1===e.nodeType)return(t=new r(t)).observe(e,{attributes:!0,childList:!0,subtree:!0}),t}}()(document.querySelector("body"),n)}},{}]},{},[1]);
+/* ]]> */
+</script>
+<script type="text/javascript" id="divi-custom-script-js-extra">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"https:\/\/www.thebronzeowlnyc.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"04b1250062","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"c020326afd","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"55","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"https:\/\/www.thebronzeowlnyc.com\/wp-content\/themes\/Divi\/includes\/builder\/frontend-builder\/assets\/vendors","accent_color":"#143630","waypoints_options":[]};
+var et_pb_box_shadow_elements = [];
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.thebronzeowlnyc.com/wp-content/themes/Divi/js/scripts.min.js?ver=4.27.4" id="divi-custom-script-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.thebronzeowlnyc.com/wp-content/cache/min/1/wp-content/themes/Divi/core/admin/js/common.js?ver=1761833340" id="et-core-common-js" data-rocket-defer defer></script>
+<script type="text/javascript" id="et-builder-modules-script-sticky-js-extra">
+/* <![CDATA[ */
+var et_pb_sticky_elements = {"et_pb_column_2":{"id":"et_pb_column_2","selector":".et_pb_column_2","position":{"desktop":"top","tablet":"none","phone":"none"},"topOffset":"40px","bottomOffset":"0px","topLimit":"none","bottomLimit":"section","offsetSurrounding":"on","transition":"on","styles":{"positioning":"relative"},"stickyStyles":{"position_origin_r":"top_left","horizontal_offset":"","vertical_offset":""}}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.thebronzeowlnyc.com/wp-content/cache/min/1/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js?ver=1761834788" id="et-builder-modules-script-sticky-js" data-rocket-defer defer></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.thebronzeowlnyc.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>	
+	</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1763997550 -->

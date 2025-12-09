@@ -1,0 +1,3014 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.yves-nyc.com/',
+        AccountUUID: 'ba8d74f8fdf048a8a761c68589fa1130',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '3fb8d8cf',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Tue Dec 02 18:48:39 UTC 2025',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'menus',
+        InitialPageUuid: '23880bc113514724b6ee4208fa5f80ae',
+        InitialPageId: '1192963023',
+        InitialEncodedPageAlias: 'bWVudXM=',
+        InitialHeaderUuid: '39fda57bf6b74026ac07e6debdd7693b',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: -1,
+            NavbarLiveHomePage: 'https://www.yves-nyc.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.yves-nyc.com/menus">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon"
+      href="https://irp.cdn-website.com/3fb8d8cf/dms3rep/multi/Yves-Favicon.png"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/3fb8d8cf/site_favicon_16_1738013031172.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    :root {
+  --color_1: rgba(33, 39, 27, 1);
+  --color_2: rgba(255,255,255,1);
+  --color_3: rgba(0, 0, 0, 1);
+  --color_4: rgba(231, 231, 224, 1);
+  --color_5: rgba(0, 0, 0, 1);
+  --color_6: rgba(0, 0, 0, 1);
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Comfortaa:ital,wght@0,300..700;1,300..700&amp;subset=latin-ext&amp;display=swap"  />
+
+<style>
+@font-face {
+  font-family: "Certia-SemiBold";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-SemiBold-9c08_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-LightItalic";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-LightItalic-a2a9_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-RegularItalic";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-RegularItalic-f0d2_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "NHaasGroteskTXPro-55Rg 2";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/NHaasGroteskTXPro-55Rg+2-34b1_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-MediumItalic";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-MediumItalic-ef5a_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-SemiBoldItalic";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-SemiBoldItalic-a154_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-Thin";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-Thin-c2c5_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-ExtraBold";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-ExtraBold-1f3c_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-Black";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-Black-1c6_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "NHaasGroteskTXPro-55Rg";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/NHaasGroteskTXPro-55Rg-a1c1_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-Medium";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-Medium-400b_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-Regular";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-Regular-392d_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-BoldItalic";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-BoldItalic-65b2_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "NHaasGroteskDSPro-55Rg";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/NHaasGroteskDSPro-55Rg-1dc7_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-Light";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-Light-bd39_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-BlackItalic";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-BlackItalic-9dd5_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-Bold";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-Bold-ca20_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-ThinItalic";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-ThinItalic-2539_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Certia-ExtraBoldItalic";
+  src: url("https://irp.cdn-website.com/3fb8d8cf/fonts/Certia-ExtraBoldItalic-6ac8_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="stylesheet" type="text/css" href="https://static.cdn-website.com/mnlt/production/5984/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/WIDGET_CSS/c4ab357c478282334fa53dc25f3feeef.css" id="widgetCSS" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="menus"] #dm [data-show-on-page-only="menus"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/3fb8d8cf/files/3fb8d8cf_1.min.css?v=137" id="siteGlobalCss" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody a.span.textonly
+{
+	color:var(--color_2) !important;
+}
+*#dm *.dmBody div.dmform-error
+{
+	font-style:normal !important;
+}
+*#dm *.dmBody div.dmforminput textarea
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.dmforminput *.fileUploadLink
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.checkboxwrapper span
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.radiowrapper span
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody nav.u_1144820115
+{
+	color:black !important;
+}
+*#dm *.dmBody div.u_1370089134 .menuCategory .menuCategroyTitle
+{
+	font-family:'Certia-Bold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1370089134 .menuItemBox .menuItemName
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1370089134 .menuItemBox .menuItemPrice
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1370089134 .menuItemDesc
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1370089134 .menuItemDesc .rteBlock
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1370089134 .menuItemBox
+{
+	border-bottom-width:0px !important;
+	border-bottom-style:solid !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuCategory .menuCategroyTitle
+{
+	font-family:'Certia-Bold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuItemBox .menuItemName
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuItemBox .menuItemPrice
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuItemDesc
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuItemDesc .rteBlock
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuItemBox
+{
+	border-bottom-width:0px !important;
+	border-bottom-style:solid !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuCategory .menuCategroyTitle
+{
+	font-family:'Certia-Bold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuItemBox .menuItemName
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuItemBox .menuItemPrice
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuItemDesc
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuItemDesc .rteBlock
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuItemBox
+{
+	border-bottom-width:0px !important;
+	border-bottom-style:solid !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuCategory .menuCategroyTitle
+{
+	font-family:'Certia-Bold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuItemBox .menuItemName
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuItemBox .menuItemPrice
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuItemDesc
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuItemDesc .rteBlock
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuItemBox
+{
+	border-bottom-width:0px !important;
+	border-bottom-style:solid !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuCategory .menuCategroyTitle
+{
+	font-family:'Certia-Bold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuItemBox .menuItemName
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuItemBox .menuItemPrice
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuItemDesc
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuItemDesc .rteBlock
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuItemBox
+{
+	border-bottom-width:0px !important;
+	border-bottom-style:solid !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuCategory .menuCategroyTitle
+{
+	font-family:'Certia-Bold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuItemBox .menuItemName
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuItemBox .menuItemPrice
+{
+	font-family:'Certia-SemiBold' !important;
+	color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuItemDesc
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuItemDesc .rteBlock
+{
+	color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuItemBox
+{
+	border-bottom-width:0px !important;
+	border-bottom-style:solid !important;
+}
+*#dm *.dmBody div.u_1138710589
+{
+	background-color:var(--color_4) !important;
+}
+*#dm *.dmBody div.u_Menu
+{
+	background-color:var(--color_4) !important;
+}
+*#dm *.dmBody div.u_pa_5401802
+{
+	background-color:var(--color_4) !important;
+}
+*#dm *.dmBody div.u_Menu
+{
+	background-color:var(--color_4) !important;
+}*#dm *.dmBody div.u_pa_2293611 { background-color:var(--color_4) !important; }
+
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.d-page-1716942098 DIV.dmInner
+{
+	background-repeat:no-repeat !important;
+	background-size:cover !important;
+	background-attachment:fixed !important;
+	background-position:50% 50% !important;
+}
+*#dm *.d-page-1716942098 DIV#dmSlideRightNavRight
+{
+	background-repeat:no-repeat !important;
+	background-image:none !important;
+	background-size:cover !important;
+	background-attachment:fixed !important;
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody div.u_1929193443
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:635px !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	display:block !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1290839646
+{
+	margin-left:0px !important;
+	padding-top:72.5px !important;
+	padding-left:40px !important;
+	padding-bottom:72.5px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+	padding-right:40px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	min-height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1370089134 .menuCategory .menuCategroyTitle
+{
+	font-size:30px !important;
+}
+*#dm *.dmBody div.u_1370089134 .menuItemDesc
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1370089134 .menuItemDesc .rteBlock
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuCategory .menuCategroyTitle
+{
+	font-size:30px !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuItemDesc
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuItemDesc .rteBlock
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuCategory .menuCategroyTitle
+{
+	font-size:30px !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuItemDesc
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1644339988 .menuItemDesc .rteBlock
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuCategory .menuCategroyTitle
+{
+	font-size:30px !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuItemDesc
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuItemDesc .rteBlock
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuCategory .menuCategroyTitle
+{
+	font-size:30px !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuItemDesc
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1237490542 .menuItemDesc .rteBlock
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuCategory .menuCategroyTitle
+{
+	font-size:30px !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuItemDesc
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuItemDesc .rteBlock
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuCategory .menuCategroyTitle
+{
+	font-size:30px !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuItemDesc
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1975553061 .menuItemDesc .rteBlock
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuCategory .menuCategroyTitle
+{
+	font-size:30px !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuItemDesc
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuItemDesc .rteBlock
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuCategory .menuCategroyTitle
+{
+	font-size:30px !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuItemDesc
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1693907203 .menuItemDesc .rteBlock
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuCategory .menuCategroyTitle
+{
+	font-size:30px !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuItemDesc
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuItemDesc .rteBlock
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuCategory .menuCategroyTitle
+{
+	font-size:30px !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuItemDesc
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1723722624 .menuItemDesc .rteBlock
+{
+	font-size:16px !important;
+}
+*#dm *.dmBody div.u_1138710589
+{
+	margin-left:20px !important;
+	padding-top:15px !important;
+	padding-left:40px !important;
+	padding-bottom:15px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_Menu
+{
+	margin-left:20px !important;
+	padding-top:15px !important;
+	padding-left:40px !important;
+	padding-bottom:15px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_pa_5401802
+{
+	margin-left:20px !important;
+	padding-top:15px !important;
+	padding-left:40px !important;
+	padding-bottom:15px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_Menu
+{
+	margin-left:20px !important;
+	padding-top:15px !important;
+	padding-left:40px !important;
+	padding-bottom:15px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_pa_2293611
+{
+	margin-left:20px !important;
+	padding-top:15px !important;
+	padding-left:40px !important;
+	padding-bottom:15px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:20px !important;
+	padding-right:40px !important;
+	width:auto !important;
+}
+
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-20, .size-20, .size-20 > font { font-size: 20px !important; }.font-size-11, .size-11, .size-11 > font { font-size: 11px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Comfortaa Fallback";
+  src: local('Arial');
+  ascent-override: 74.2135%;
+  descent-override: 19.7117%;
+  size-adjust: 118.7115%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+
+  <link type="application/rss+xml" rel="alternate" href="https://www.yves-nyc.com/feed/rss2"/>
+  <link type="application/atom+xml" rel="alternate" href="https://www.yves-nyc.com/feed/atom"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.yves-nyc.com/menus"/>
+  <title>
+    
+    Yves | French Restaurant Menu in Tribeca
+  
+  </title>
+  <meta name="description" content="Explore Yves' menu featuring modern French cuisine. From brunch to dinner, enjoy expertly crafted dishes in the heart of Tribeca."/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Yves | French Restaurant Menu in Tribeca"/>
+  <meta name="twitter:description" content="Explore Yves' menu featuring modern French cuisine. From brunch to dinner, enjoy expertly crafted dishes in the heart of Tribeca."/>
+  <meta name="twitter:image" content="https://lirp.cdn-website.com/3fb8d8cf/dms3rep/multi/opt/Yves-NYC-1920w.jpg"/>
+  <meta property="og:description" content="Explore Yves' menu featuring modern French cuisine. From brunch to dinner, enjoy expertly crafted dishes in the heart of Tribeca."/>
+  <meta property="og:title" content="Yves | French Restaurant Menu in Tribeca"/>
+  <meta property="og:image" content="https://lirp.cdn-website.com/3fb8d8cf/dms3rep/multi/opt/Yves-NYC-1920w.jpg"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="menus"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true" desktop-global-classes="" tablet-global-classes=""> <div dmtemplateid="Hamburger" data-responsive-name="ResponsiveDesktopTopTabletHamburger" class="runtime-module-container dm-bfs dm-layout-sec hasAnimations rows-1200 hide-back-to-top inMiniHeaderMode hasStickyHeader hamburger-reverse dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div id="site_content"> <div class="p_hfcontainer showOnMedium"> <div id="hamburger-drawer" class="hamburger-drawer layout-drawer" layout="e9d510f4eb904e939c2be8efaf777e6e===header" data-origin="side-reverse"> <div class="u_1596118600 dmRespRow middleDrawerRow" style="text-align: center;" id="1596118600"> <div class="dmRespColsWrapper" id="1320990438"> <div class="dmRespCol small-12 u_1515736374 medium-12 large-12" id="1515736374"> <nav class="u_1494646248 effect-bottom main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_2" layout-sub="" data-show-vertical-sub-items="HIDE" id="1494646248" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" aria-haspopup="true" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menus" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_010101891034  unifiednav__item_has-sub-nav" target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="Menus" data-auto="page-text-style">Menus<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#Dinner" class="unifiednav__item  dmUDNavigationItem_010101436328  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Dinner" data-auto="page-text-style">Dinner<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#BRUNCH" class="unifiednav__item  dmUDNavigationItem_010101943098  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Brunch" data-auto="page-text-style">Brunch<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#Cocktails" class="unifiednav__item  dmUDNavigationItem_010101857144  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Cocktails" data-auto="page-text-style">Cocktails<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#WineBeer" class="unifiednav__item  dmUDNavigationItem_010101799619  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Wine & Beer" data-auto="page-text-style">Wine &amp; Beer<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/privateDining" class="unifiednav__item  dmUDNavigationItem_010101497849  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Private Dining" data-auto="page-text-style">Private Dining<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/hours-and-location" class="unifiednav__item  dmUDNavigationItem_01010165061  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Hours & Location" data-auto="page-text-style">Hours &amp; Location<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101215837  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="About" data-auto="page-text-style">About<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="https://yves.shop.securetree.com" class="unifiednav__item  dmUDNavigationItem_010101700014  " target="_blank" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Gift Cards" data-auto="page-text-style">Gift Cards<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1194468113" style="text-align: center;" id="1194468113"> <div class="dmRespColsWrapper" id="1047830963"> <div class="dmRespCol empty-column" id="1448315454"></div> 
+</div> 
+</div> 
+ <div class="u_1546469598 dmRespRow" style="text-align: center;" id="1546469598"> <div class="dmRespColsWrapper" id="1907793612"> <div class="u_1572765657 dmRespCol small-12 medium-12 large-12" id="1572765657"> <div data-element-type="html" class="dmCustomHtml u_1727274749" id="1727274749"> <div style="text-align: center;"><!-- Custom Button --> <button id="customResyButton" style="background-color: #e7e7e0; color: #21261C; padding: 10px 20px; border: none; border-radius: 0px; cursor: pointer; font-size: 20px; text-align: center; width: 100%; height:50px; font-weight: bold; text-transform:UPPERCASE;"> <span style="pointer-events: none;">Reserve Now</span> 
+</button> 
+</div> 
+ <script>
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+        const venueID = '785'; 
+        const apiKey = 'Ojc7fB5BRy1DqUBrtnb36ngmv4Yt1iWE'; 
+        const customButton = document.getElementById('customResyButton');
+        // Add click listener to the button
+        customButton.addEventListener('click', function () {
+            if (window.resyWidget && typeof window.resyWidget.openModal === 'function') {
+                // Call the Resy modal-opening logic
+                window.resyWidget.openModal({
+                    venueId: venueID,
+                    apiKey: apiKey
+                });
+            } else {
+                console.error('Resy widget is not properly loaded or openModal function is unavailable.');
+            }
+        });
+    });
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+          </script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="layout-drawer-overlay" id="layout-drawer-overlay"></div> 
+</div> 
+ <div class="site_content"> <div id="hamburger-header-container" class="showOnMedium hamburger-header-container p_hfcontainer"> <div id="hamburger-header" class="hamburger-header p_hfcontainer" layout="44dc38f951e9489490b055748e10ba9f===header"> <div class="u_1705692124 dmRespRow" style="text-align: center;" id="1705692124"> <div class="dmRespColsWrapper" id="1469942216"> <div class="dmRespCol small-12 u_1655486006 medium-12 large-12" id="1655486006"> <div class="u_1923160809 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1923160809"> <a href="/" id="1573522578" file="false"><img src="https://lirp.cdn-website.com/3fb8d8cf/dms3rep/multi/opt/Yves-Logo-1920w.png" id="1761992403" class="" data-dm-image-path="https://irp.cdn-website.com/3fb8d8cf/dms3rep/multi/Yves-Logo.png" width="490" height="190" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <button class="showOnMedium layout-drawer-hamburger hamburger-on-header" id="layout-drawer-hamburger" aria-label="menu" aria-controls="hamburger-drawer" aria-expanded="false"> <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+</button> 
+ <div class="dmHeaderContainer fHeader d-header-wrapper showOnLarge"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" headerlayout="b58ba5b5703b4cd7b5f5f7951565dc87===horizontal-layout-5" layout="78f5c343822e4eb3aac27f4ad5d13812===header" secondary-image="https://lirp.cdn-website.com/3fb8d8cf/dms3rep/multi/opt/Yves-Logo-1920w.png" has-secondary-image="true" data-scrollable-target="body" data-scrollable-target-threshold="1" data-scroll-responder-id="1" logo-size-target="66%"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="dmRespRow dmDefaultListContentRow u_1861705244 fullBleedChanged fullBleedMode" style="text-align:center" id="1861705244"> <div class="dmRespColsWrapper" id="1914255413"> <div class="u_1677919435 small-12 dmRespCol large-2 medium-2" id="1677919435"> <div class="u_1011018909 imageWidget align-center" data-widget-type="image" id="1011018909" data-element-type="image"> <a href="/" id="1042954107" file="false"><img src="https://lirp.cdn-website.com/3fb8d8cf/dms3rep/multi/opt/Yves-Logo-1920w.png" id="1456770677" class="" data-dm-image-path="https://irp.cdn-website.com/3fb8d8cf/dms3rep/multi/Yves-Logo.png" width="490" height="190" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1246161842 dmRespCol small-12 large-8 medium-8" id="1246161842"> <span id="1630001966"></span> 
+ <nav class="u_1112353738 effect-bottom2 main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1112353738" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" aria-haspopup="true" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menus" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_010101891034  unifiednav__item_has-sub-nav" target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="Menus" data-auto="page-text-style">Menus<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#Dinner" class="unifiednav__item  dmUDNavigationItem_010101436328  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Dinner" data-auto="page-text-style">Dinner<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#BRUNCH" class="unifiednav__item  dmUDNavigationItem_010101943098  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Brunch" data-auto="page-text-style">Brunch<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#Cocktails" class="unifiednav__item  dmUDNavigationItem_010101857144  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Cocktails" data-auto="page-text-style">Cocktails<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#WineBeer" class="unifiednav__item  dmUDNavigationItem_010101799619  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Wine & Beer" data-auto="page-text-style">Wine &amp; Beer<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/privateDining" class="unifiednav__item  dmUDNavigationItem_010101497849  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Private Dining" data-auto="page-text-style">Private Dining<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/hours-and-location" class="unifiednav__item  dmUDNavigationItem_01010165061  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Hours & Location" data-auto="page-text-style">Hours &amp; Location<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item  dmUDNavigationItem_010101215837  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="About" data-auto="page-text-style">About<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="https://yves.shop.securetree.com" class="unifiednav__item  dmUDNavigationItem_010101700014  " target="_blank" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Gift Cards" data-auto="page-text-style">Gift Cards<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="u_1096153291 dmRespCol small-12 large-2 medium-2" id="1096153291"> <div class="u_1055666538 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1055666538" style="transition: opacity 1s ease-in-out;"> <h2 class="m-size-16 text-align-center size-20" style="letter-spacing: initial;"><strong style="color: var(--color_2); display: unset; font-weight: bold;" class="m-font-size-16 font-size-20">RESERVATIONS</strong></h2> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true"></div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_menus dm-home-page" themewaschanged="true" desktop-global-classes="" tablet-global-classes=""> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="u_1290839646 dmRespRow" id="1290839646"> <div class="dmRespColsWrapper" id="1223814379"> <div class="u_1170616548 dmRespCol small-12 medium-12 large-12" id="1170616548"> <div class="u_1929193443 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1929193443" style="transition: none; text-align: left;"> <h1 class="text-align-center"><span style="display: initial;">Our Menus</span></h1> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1451744574" lock-element-for-editing="true"> <div class="dmRespColsWrapper" id="1384737755"> <div class="dmRespCol small-12 u_1576046104 medium-12 large-12" id="1576046104"> <div data-element-type="html" class="dmCustomHtml u_1161470521" id="1161470521"><!-- Dropdown Menu for Yves--> <div class="menu-dropdown-container"> <style>/* Dropdown container */
+        .menu-dropdown-container .dropdown {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        /* Main dropdown button */
+        .menu-dropdown-container .dropbtn {
+            background-color: #21261C;
+            color: #FFF !important;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+            width: 100%;
+            align-content: center;
+            font-size: 14pt;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Arrow styling */
+        .menu-dropdown-container .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid white;
+            margin-left: 10px;
+        }
+        /* Dropdown content */
+        .menu-dropdown-container .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #21261C;
+            width: 100%;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        /* Individual menu buttons inside dropdown */
+        .menu-dropdown-container .dropdown-content button {
+            background-color: #21261C;
+            color: #FFF !important;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+            width: 100%;
+            align-content: center;
+            font-size: 14pt;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+        /* Hover effect for menu items */
+        .menu-dropdown-container .dropdown-content button:hover {
+            background-color: #2c3425;
+        }
+        /* Show dropdown on click - important for click functionality */
+        .menu-dropdown-container .show {
+            display: block;
+        }</style> 
+ <div class="dropdown"> <button onclick="toggleDropdown()" class="dropbtn">Please Select A Menu Here <span class="arrow-down"></span> 
+</button> 
+ <div id="menuDropdown" class="dropdown-content"> <button class="menu-button" data-target="#Dinner">Dinner</button> 
+ <button class="menu-button" data-target="#Brunch">Brunch</button> 
+ <button class="menu-button" data-target="#Cocktails">Cocktails</button> 
+ <button class="menu-button" data-target="#WineBeer">Wine &amp; Beer</button> 
+ <button class="menu-button" data-target="#WineBottle">Wine Bottle</button> 
+ <button class="menu-button" data-target="#KidsMenu">Kids Menu</button> 
+</div> 
+</div> 
+ <script>
+
+
+   // Toggle function for dropdown
+        function toggleDropdown() {
+            document.getElementById("menuDropdown").classList.toggle("show");
+        }
+        // Close the dropdown if clicked outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn') && !event.target.matches('.arrow-down')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+                  </script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_pa_2293611" id="pa_2293611" lock-element-for-editing="true" data-page-element-type="section" data-page-element-id="1244437678"> <div class="dmRespColsWrapper" id="1967493339"> <div class="dmRespCol large-12 medium-12 small-12 u_1323843730" id="1323843730"> <div data-element-type="html" class="dmCustomHtml u_1429053915" id="1429053915"> <div id="MenuChanger" style="width:100%;"></div> 
+<br/></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="Dinner" data-anchor="Dinner"> <div class="dmRespColsWrapper" id="1654374134"> <div class="dmRespCol large-12 medium-12 small-12" id="1658253885"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1974424945" style="transition: opacity 1s ease-in-out;"> <h2 class="text-align-center"><span style="display: unset;">DINNER</span></h2> 
+</div> 
+ <div class="default u_1370089134 dmRestaurantMenu dmWs" id="1370089134" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" show_pics="false" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-3" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" menu_data="W3sidGl0bGUiOiIiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjoxLCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkJyZWFkICYgQnV0dGVyIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5yb3NlbWFyeSBnYXJsaWMgYnV0dGVyPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxMS4wMCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MSwidGl0bGUiOiJPeXN0ZXJzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5ob3VzZSBtaWdub25ldHRlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiI0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoyLCJ0aXRsZSI6IlNocmltcCBMJ2FpbCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6ImdhcmxpYyBzaHJpbXAiLCJwcmljZXMiOlt7InByaWNlIjoiMTkifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjMsInRpdGxlIjoiRXNjYXJnb3QiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJnYXJsaWMtcGFyc2xleSBidXR0ZXIsIHB1ZmYgcGFzdHJ5IiwicHJpY2VzIjpbeyJwcmljZSI6IjE4In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo0LCJ0aXRsZSI6IkxpdHRsZSBHZW0gU2FsYWQiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJxdWluaW9hLCBhdm9jYWRvLCBhbG1vbmRzLCBwaWNrbGVkIG9uaW9ucywgY3JlYW15IGRpbGwgZHJlc3NpbmciLCJwcmljZXMiOlt7InByaWNlIjoiMTkifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjUsInRpdGxlIjoiSmFtYm9uIGV0IEZyb21hZ2UgQ3JvcXVldHRlcyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+c3BpbmFjaCBiw6ljaGFtZWw8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE3In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo2LCJ0aXRsZSI6IlNvdXBlIMOgIEzigJlvaWdub24iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJncnV5w6hyZSwgdGh5bWUgY3JvdXRvbnMsIGNoaXZlcyIsInByaWNlcyI6W3sicHJpY2UiOiIxNyJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NywidGl0bGUiOiJGcm9tYWdlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5iYWtlZCBUaHJlZSBTaXN0ZXJzLCB0aHltLCBob25leSwgY3Jvc3RpbmkgfCAyMTwvcD48YnI+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjIxIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo4LCJ0aXRsZSI6IkFzc29ydG1lbnQgZGUgU2F1Y2lzc2VzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5zYXVlcmtyYXV0LCBob3JzZXJhZGlzaCBtdXN0YXJkwqA8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjI2In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJFbnRyZWVzIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6MiwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJNb3VsZXMgTWFyaW5pw6hyZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+dmluIGJsYW5jLCBzaGFsbG90cywgZ2FybGljIGJ1dHRlciwgcGFyc2xleSwgZnJpdGVzwqA8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjI4In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6Ildob2xlIEdyaWxsZWQgQnJhbnppbm8iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPnJvb3QgdmVnZXRhYmxlcywgYmV1cnJlIGJsYW5jPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiI0NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJZdmVzIENoZWVzZWJ1cmdlciIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6ImRyeS1hZ2VkIGJsZW5kLCBncnV5w6hyZSBjaGVlc2UsIGNhcmFtZWxpemVkIG9uaW9ucywgZGlqb25uYWlzZSwgcG9tbWUgZnJpdGVzIiwicHJpY2VzIjpbeyJwcmljZSI6IjI3In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjozLCJ0aXRsZSI6Ik9uZ2xldCBkZSBCxZN1ZiIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+cG90YXRvIHLDtnN0aSwgYm9yZGVsYWlzZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMzkifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjQsInRpdGxlIjoiSHVudGVy4oCZcyBTdGV3ICB2ZW5pc29uIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj52ZW5pc29uLCBnYXJsaWMgc2F1Y2lzc29uLCB3aW50ZXIgdmVnZXRhYmxlcywgY2hhbXBpZ25vbnMgfCAzODwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDM4In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJTaWRlcyIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjMsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiU3dpc3MgQ2hhcmQgR3JhdGluIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjE0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IlBvbW1lcyBGcml0ZXMiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiMTIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IkRlc3NlcnQiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjo0LCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlByb2ZpdGVyb2xlcyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6ImNob3V4IHBhc3RyeSwgaWNlIGNyZWFtLCB3YXJtIFZhbHJob25hIGNob2NvbGF0ZSIsInByaWNlcyI6W3sicHJpY2UiOiIxMiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MSwidGl0bGUiOiJJY2UgQ3JlYW0gb3IgU29yYmV0IGR1IEpvdXIiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJJbCBMYWJvcmF0b3JpbyBkZWwgR2VsYXRvIiwicHJpY2VzIjpbeyJwcmljZSI6IjkifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjIsInRpdGxlIjoiQ2hvY29sYXRlIFRhcnQgQ2FrZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6ImZyZXNoIHdoaXBwZWQgY3JlYW0sIGNob2NvbGF0ZSBkcml6emxlIiwicHJpY2VzIjpbeyJwcmljZSI6IjE0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9XQ=="> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle"></h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Bread &amp; Butter</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">rosemary garlic butter</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$11.00</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Oysters</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">house mignonette</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Shrimp L'ail</div> 
+ <div class="menuItemDesc">garlic shrimp</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Escargot</div> 
+ <div class="menuItemDesc">garlic-parsley butter, puff pastry</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Little Gem Salad</div> 
+ <div class="menuItemDesc">quinioa, avocado, almonds, pickled onions, creamy dill dressing</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Jambon et Fromage Croquettes</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">spinach b&eacute;chamel</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$17</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Soupe &agrave; L&rsquo;oignon</div> 
+ <div class="menuItemDesc">gruy&egrave;re, thyme croutons, chives</div> 
+</div> 
+ <div class="menuItemPrice">$17</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Fromage</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">baked Three Sisters, thym, honey, crostini | 21</p> 
+<br/></div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$21</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Assortment de Saucisses</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">sauerkraut, horseradish mustard&nbsp;</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$26</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Entrees</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Moules Marini&egrave;re</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">vin blanc, shallots, garlic butter, parsley, frites&nbsp;</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$28</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Whole Grilled Branzino</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">root vegetables, beurre blanc</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$45</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Yves Cheeseburger</div> 
+ <div class="menuItemDesc">dry-aged blend, gruy&egrave;re cheese, caramelized onions, dijonnaise, pomme frites</div> 
+</div> 
+ <div class="menuItemPrice">$27</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Onglet de B&oelig;uf</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">potato r&ouml;sti, bordelaise</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$39</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Hunter&rsquo;s Stew  venison</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">venison, garlic saucisson, winter vegetables, champignons | 38</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$38</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Sides</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Swiss Chard Gratin</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$14</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Pommes Frites</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$12</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Dessert</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Profiteroles</div> 
+ <div class="menuItemDesc">choux pastry, ice cream, warm Valrhona chocolate</div> 
+</div> 
+ <div class="menuItemPrice">$12</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Ice Cream or Sorbet du Jour</div> 
+ <div class="menuItemDesc">Il Laboratorio del Gelato</div> 
+</div> 
+ <div class="menuItemPrice">$9</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Chocolate Tart Cake</div> 
+ <div class="menuItemDesc">fresh whipped cream, chocolate drizzle</div> 
+</div> 
+ <div class="menuItemPrice">$14</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="Brunch" data-anchor="Brunch"> <div class="dmRespColsWrapper" id="1210879126"> <div class="dmRespCol large-12 medium-12 small-12" id="1573625725"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1416456538" style="transition: opacity 1s ease-in-out;"> <h2 class="text-align-center"><span style="display: unset;">BRUNCH</span></h2> 
+</div> 
+ <div class="default u_1644339988 dmRestaurantMenu dmWs" id="1644339988" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" show_pics="false" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-3" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" menu_data="W3sidGl0bGUiOiJTbWFsbCIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjEsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiWW9ndXJ0ICYgR3Jhbm9sYSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6InNlYXNvbmFsIGZydWl0cywgaG9uZXkiLCJwcmljZXMiOlt7InByaWNlIjoiMTYifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjEsInRpdGxlIjoiQXZvY2FkbyBUb2FzdCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6InBpY2tsZWQgZmVubmVsLCBtdXN0YXJkIGdyZWVucyBhZGQgcG9hY2hlZCBlZ2ciLCJwcmljZXMiOlt7InByaWNlIjoiMjEifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjIsInRpdGxlIjoiTGl0dGxlIEdlbSBTYWxhZCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6InF1aW5vYSwgYXZvY2FkbywgYWxtb25kcywgcGlja2xlZCBvbmlvbnMsIGNyZWFtIGRpbGwgZHJlc3NpbmcgKHZlZ2V0YXJpYW4gb3B0aW9uKSIsInByaWNlcyI6W3sicHJpY2UiOiIxOSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MywidGl0bGUiOiJUdW5hIE5pY29pc2UgU2FsYWQiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJtaXggZ3JlZW5zLCBoYXJpY290IHZlcnRzLCBmaW5nZXJsaW5nIHBvdGF0bywgb2xpdmVzLCByZWQgb25pb25zLCBjaGl2ZSAmIGJhc2lsIHZpbmFpZ3JldHRlIiwicHJpY2VzIjpbeyJwcmljZSI6IjI1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo0LCJ0aXRsZSI6IkNyb3F1ZXR0ZXMiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJoYW0gJiBncnV5w6hyZSwgc3BpbmFjaCBiw6ljaGFtZWwiLCJwcmljZXMiOlt7InByaWNlIjoiMTgifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjUsInRpdGxlIjoiRnJlbmNoIE9uaW9uIFNvdXAiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJncnV5w6hyZSwgdGh5bWUgY3JvdXRvbnMsIGNoaXZlcyIsInByaWNlcyI6W3sicHJpY2UiOiIxNyJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NiwidGl0bGUiOiJDaGFyY3V0ZXJpZSAmIENoZWVzZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+cHJvc2NpdXR0byBkaSBwYXJtYSwgYnJlc2FvbGEsIHNhbGFtaSBkaSBmaW5vY2NoaW8sIMKgZm9udGluYSwgZmluZSBoZXJicyBjaMOodnJlLCBhZ2VkIHBlY29yaW5vLCBhY2NvdXRyZW1lbnRzwqA8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjMyIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJMYXJnZSIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjIsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiUG9hY2hlZCBFZ2dzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5wb3RhdG8gcsO2c3RpLCBjcsOobWUgZnJhw65jaGUsIGNoaXZlcyB8IDE5IGFkZCBiYWNvbiB8IDUgYWRkIHNhbG1vbiB8IDY8L3A+PGJyPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxOSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MSwidGl0bGUiOiJFZ2dzIEJlbmVkaWN0IiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoicG9hY2hlZCBlZ2dzLCBlbmdsaXNoIG11ZmZpbiwgamFtYm9uLCBzcGluYWNoLCBob2xsYW5kYWlzZSBzYXVjZSIsInByaWNlcyI6W3sicHJpY2UiOiIyMiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJNb25zaWV1ciBQYXJpc2luaSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6ImphbWJvbiwgYsOpY2hhbWVsLCBncnV5w6hyZSwgc3Vubnkgc2lkZSBlZ2dzLCBzb3VyZG91Z2giLCJwcmljZXMiOlt7InByaWNlIjoiMjIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjMsInRpdGxlIjoiRnJlbmNoIFRvYXN0IiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiYmx1ZWJlcnJ5ICYgcGVhciBjb21wb3RlLCB2YW5pbGxhIGljZSBjcmVhbSIsInByaWNlcyI6W3sicHJpY2UiOiIxOCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NCwidGl0bGUiOiJZdmVzIENoZWVzZWJ1cmdlciIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6ImRyeS1hZ2VkIGJsZW5kLCBncnV5w6hyZSwgY2FyYW1lbGl6ZWQgb25pb25zLCBkaWpvbm5haXNlLCBwb21tZSBmcml0ZXMiLCJwcmljZXMiOlt7InByaWNlIjoiMjcifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjUsInRpdGxlIjoiQ2hpY2tlbiBTY2huaXR6ZWwiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJzYXVjZSBncmliaWNoZSwgYml0dGVyIGdyZWVucywgcG9hY2hlZCBlZ2csIGxlbW9uIiwicHJpY2VzIjpbeyJwcmljZSI6IjI5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo2LCJ0aXRsZSI6IlN0ZWFrIG4nIEVnZ3MiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPmhhbmdlciBzdGVhaywgY2hpbWljaHVycmksIHN1bm55IHNpZGUgZWdncywgdGFycmFnb24gdmluYWlncmV0dGU8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjMzIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJTaWRlcyIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjMsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiVHdvIEVnZ3MiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJhbnkgc3R5bGUiLCJwcmljZXMiOlt7InByaWNlIjoiOCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MSwidGl0bGUiOiJQb21tZSBGcml0ZXMiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJ3aXRoIGFzc29ydGVkIHNhdWNlcyIsInByaWNlcyI6W3sicHJpY2UiOiIxMCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJNYXBsZSBCcmVha2Zhc3QgU2F1c2FnZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MywidGl0bGUiOiJBcHBsZXdvb2QgU21va2VkIEJhY29uIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjkifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjQsInRpdGxlIjoiQXZvY2FkbyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6Im9saXZlIG9pbCwgbGVtb24sIEZsZXVyIGRlIFNlbCIsInByaWNlcyI6W3sicHJpY2UiOiI4In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo1LCJ0aXRsZSI6IkZyZXNoIEJlcnJpZXMiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiMTIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX1d"> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Small</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Yogurt &amp; Granola</div> 
+ <div class="menuItemDesc">seasonal fruits, honey</div> 
+</div> 
+ <div class="menuItemPrice">$16</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Avocado Toast</div> 
+ <div class="menuItemDesc">pickled fennel, mustard greens add poached egg</div> 
+</div> 
+ <div class="menuItemPrice">$21</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Little Gem Salad</div> 
+ <div class="menuItemDesc">quinoa, avocado, almonds, pickled onions, cream dill dressing (vegetarian option)</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Tuna Nicoise Salad</div> 
+ <div class="menuItemDesc">mix greens, haricot verts, fingerling potato, olives, red onions, chive &amp; basil vinaigrette</div> 
+</div> 
+ <div class="menuItemPrice">$25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Croquettes</div> 
+ <div class="menuItemDesc">ham &amp; gruy&egrave;re, spinach b&eacute;chamel</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">French Onion Soup</div> 
+ <div class="menuItemDesc">gruy&egrave;re, thyme croutons, chives</div> 
+</div> 
+ <div class="menuItemPrice">$17</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Charcuterie &amp; Cheese</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">prosciutto di parma, bresaola, salami di finocchio, &nbsp;fontina, fine herbs ch&egrave;vre, aged pecorino, accoutrements&nbsp;</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$32</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Large</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Poached Eggs</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">potato r&ouml;sti, cr&egrave;me fra&icirc;che, chives | 19 add bacon | 5 add salmon | 6</p> 
+<br/></div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Eggs Benedict</div> 
+ <div class="menuItemDesc">poached eggs, english muffin, jambon, spinach, hollandaise sauce</div> 
+</div> 
+ <div class="menuItemPrice">$22</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Monsieur Parisini</div> 
+ <div class="menuItemDesc">jambon, b&eacute;chamel, gruy&egrave;re, sunny side eggs, sourdough</div> 
+</div> 
+ <div class="menuItemPrice">$22</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">French Toast</div> 
+ <div class="menuItemDesc">blueberry &amp; pear compote, vanilla ice cream</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Yves Cheeseburger</div> 
+ <div class="menuItemDesc">dry-aged blend, gruy&egrave;re, caramelized onions, dijonnaise, pomme frites</div> 
+</div> 
+ <div class="menuItemPrice">$27</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Schnitzel</div> 
+ <div class="menuItemDesc">sauce gribiche, bitter greens, poached egg, lemon</div> 
+</div> 
+ <div class="menuItemPrice">$29</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Steak n' Eggs</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">hanger steak, chimichurri, sunny side eggs, tarragon vinaigrette</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$33</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Sides</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Two Eggs</div> 
+ <div class="menuItemDesc">any style</div> 
+</div> 
+ <div class="menuItemPrice">$8</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Pomme Frites</div> 
+ <div class="menuItemDesc">with assorted sauces</div> 
+</div> 
+ <div class="menuItemPrice">$10</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Maple Breakfast Sausage</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$11</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Applewood Smoked Bacon</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$9</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Avocado</div> 
+ <div class="menuItemDesc">olive oil, lemon, Fleur de Sel</div> 
+</div> 
+ <div class="menuItemPrice">$8</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Fresh Berries</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$12</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="Cocktails" data-anchor="Cocktails"> <div class="dmRespColsWrapper" id="1563686043"> <div class="dmRespCol large-12 medium-12 small-12" id="1477836806"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1764244797" style="transition: opacity 1s ease-in-out;"> <h2 class="text-align-center"><span style="display: unset;">COCKTAILS</span></h2> 
+</div> 
+ <div class="default u_1975553061 dmRestaurantMenu dmWs" id="1975553061" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" show_pics="false" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-3" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" menu_data="W3sidGl0bGUiOiJDb2NrdGFpbHMiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjoxLCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlNlY29uZCBCbG9vbSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+RGVzb2xhcyBNZXpjYWwsIENhcmRlbnhlIFNvdG9sIGRlbCBEZXNpZXJ0bywgcm9zZSwgbGltZSwgc2FsdCwgY29jb2HCoDwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTkifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjEsInRpdGxlIjoiUHV0IEEgUGluIEluIEl0IiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj52b2RrYSwgUm9ja2V54oCZcyBCb3RhbmljYWwgTGlxdWV1ciwgdmVnZXRhbMKgPC9wPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5jaGFydHJldXNlLCBwaW5lIG5lZWRsZcKgPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxOSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJZdmVzIFZlc3BlciIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+R2FyZGVuZXIgR2luLCBWb2RrYSwgQ2FwIENvcnNlIEJsYW5jLCBMZW1vbmdyYXNzwqA8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjozLCJ0aXRsZSI6IldhdGVyZnJvbnQsIE9uY2UiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlRlcXVpbGEsIEdyYXBlZnJ1aXQsIFF1aW5xdWluYSwgQmxhbmPCoDwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTkifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjQsInRpdGxlIjoiU2FtZSBUaW1lIE5leHQgV2VlayIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+cGVhciBnaW4sIHBvbWVncmFuYXRlLCBob25leSzCoDwvcD48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+YmFueXVscyB2aW5lZ2FyLCB3YWxudXQgfDwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTkifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjUsInRpdGxlIjoiVGFydGUgVGF0aW4iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPmJyb3duIGJ1dHRlciBmYXQtd2FzaGVkIHJ5ZSzCoDwvcD48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+YWxsc3BpY2UsIGFwcGxlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxOSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NiwidGl0bGUiOiJUcmlwbGUgRW50ZW5kcmUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPmNvZ25hYywgcXVpbnF1aW5hIGJsZW5kLCBiaXR0ZXJzwqA8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJIb3QgQ29ja3RhaWxzIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6MiwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJWaW4gQ2hhdWQiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPll2ZXMgUm91Z2UsIGNpdHJ1cywgc3BpY2UswqA8L3A+PHAgY2xhc3M9XCJydGVCbG9ja1wiPmhlcmJhbCBsaXF1ZXVywqA8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE5LjAwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IlNpbmdlZCBDaXRydXMgUHVuY2giLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkhheW1hbuKAmXMgQ2l0cnVzIGdpbiwgc2luZ2VkIG9yYW5nZSzCoDwvcD48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+c3BpY2U8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE5LjAwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJOb24tQWxjb2hvbGljIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6MywiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJQZXRpdCBKYXJkaW4iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkhlcmJzIGRlIFByb3ZlbmNlLCBsaW1lLCBob25leSwgZ2luZ2VyPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIxMiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MSwidGl0bGUiOiJFc3ByZXp6byBNYXJ0aW5pIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiY2hhaSBjb25jZW50cmF0ZSwgZXNwcmVzc28sIG51dG1lZyIsInByaWNlcyI6W3sicHJpY2UiOiIxMyJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfV0="> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Cocktails</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Second Bloom</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Desolas Mezcal, Cardenxe Sotol del Desierto, rose, lime, salt, cocoa&nbsp;</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Put A Pin In It</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">vodka, Rockey&rsquo;s Botanical Liqueur, vegetal&nbsp;</p> 
+ <p class="rteBlock">chartreuse, pine needle&nbsp;</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Yves Vesper</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Gardener Gin, Vodka, Cap Corse Blanc, Lemongrass&nbsp;</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Waterfront, Once</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Tequila, Grapefruit, Quinquina, Blanc&nbsp;</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Same Time Next Week</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">pear gin, pomegranate, honey,&nbsp;</p> 
+ <p class="rteBlock">banyuls vinegar, walnut |</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Tarte Tatin</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">brown butter fat-washed rye,&nbsp;</p> 
+ <p class="rteBlock">allspice, apple</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Triple Entendre</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">cognac, quinquina blend, bitters&nbsp;</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Hot Cocktails</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Vin Chaud</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Yves Rouge, citrus, spice,&nbsp;</p> 
+ <p class="rteBlock">herbal liqueur&nbsp;</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19.00</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Singed Citrus Punch</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Hayman&rsquo;s Citrus gin, singed orange,&nbsp;</p> 
+ <p class="rteBlock">spice</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$19.00</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Non-Alcoholic</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Petit Jardin</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Herbs de Provence, lime, honey, ginger</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$12</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Esprezzo Martini</div> 
+ <div class="menuItemDesc">chai concentrate, espresso, nutmeg</div> 
+</div> 
+ <div class="menuItemPrice">$13</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="WineBeer" lock-element-for-editing="true" data-anchor="WineBeer"> <div class="dmRespColsWrapper" id="1321084325"> <div class="dmRespCol large-12 medium-12 small-12" id="1439839813"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1977805789" style="transition: opacity 1s ease-in-out;"> <h2 class="text-align-center"><span style="display: unset;">WINE &amp; BEER</span></h2> 
+</div> 
+ <div class="default u_1693907203 dmRestaurantMenu dmWs" id="1693907203" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" show_pics="false" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-3" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" menu_data="W3sidGl0bGUiOiJTcGFya2xpbmciLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjoxLCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlRpbnkncyBQcm9zZWNjbyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlZhbGRvYmJpYWRlbmUsIE5WIC0gVmVuZXRvLCBJdGFseSIsInByaWNlcyI6W3sicHJpY2UiOiIxNiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MSwidGl0bGUiOiJDcmVtYW50IERlIEJvdXJnb2duZSBSb3PDqSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkJydXQsIFZpY3RvcmluZSBEZSBDaGFzdGVuYSBOViAtIEJ1cmd1bmR5LCBGcmFuY2UiLCJwcmljZXMiOlt7InByaWNlIjoiMTcifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjIsInRpdGxlIjoiTGFtYnJ1c2NvIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiR3Jhc3Bhcm9zc2EsIEJlY2NvIFJvc3NvLCBJdGFseSIsInByaWNlcyI6W3sicHJpY2UiOiIxNiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MywidGl0bGUiOiJDaGFybGVzIEhlaWRzaWVjayIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkJydXQgUmVzZXJ2ZSBOViwgRnJhbmNlIiwicHJpY2VzIjpbeyJwcmljZSI6IjI1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJSb3PDqSAmIE9yYW5nZSIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjIsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiWXZlcyBSb3PDqSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkxvbmcgSXNsYW5kLCBOZXcgWW9yayAyMDIyIiwicHJpY2VzIjpbeyJwcmljZSI6IjE2In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6Ik9yYW5nZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkNoZW5pbiBCbGFuYywgU2F1dmlnbm9uIEJsYW5jLCBMb2lyZSBWYWxsZXksIEZyYW5jZSIsInByaWNlcyI6W3sicHJpY2UiOiIxNyJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJSb3PDqSBDcmVtYW50IERlIEJvdXJnb2duZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxOCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfSx7InRpdGxlIjoiV2hpdGUgV2luZSIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjMsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2hhYmxpcyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkRvbWFpbmUgZHUgQ29sb21iaWVyIiwicHJpY2VzIjpbeyJwcmljZSI6IjE5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6Ik11c2NhZGV0IiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiU29sZW5jZSwgJ0xlb25pZGVzJyAtIFJob25lLCBGcmFuY2UiLCJwcmljZXMiOlt7InByaWNlIjoiMTgifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjIsInRpdGxlIjoiU2F1dmlnbm9uIEJsYW5jIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiQ2xlbWVudCAmIEZsb3JpYW4gQmVydGhpZXItIExvaXJlLCBGcmFuY2UiLCJwcmljZXMiOlt7InByaWNlIjoiMTcifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjMsInRpdGxlIjoiUGlub3QgQmxhbmMiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJHZXJub3QgJiBIZWlrZSBIZWlucmljaCwgJ05ha2VkIFdoaXRlJyAtIEJ1cmdlbmxhbmQsIEF1c3RyaWEiLCJwcmljZXMiOlt7InByaWNlIjoiMTgifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IlJlZCBXaW5lIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6NCwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJQaW5vdCBOb2lyIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiRG9tYWluZSBWYWxlcnkgUmVuYWRhdCwgUmV1aWxseSBSb3VnZSAnTGVzIExpZ25pcyctIExvaXJlLCBGcmFuY2UsIDIwMjAiLCJwcmljZXMiOlt7InByaWNlIjoiMTcifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjEsInRpdGxlIjoiQ290ZSBkdSBSaG9uZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkRvbWFpbmUgZHUgSkFTLCBDdXZlZSBQcmVzdGlnZSAtIEZyYW5jZSIsInByaWNlcyI6W3sicHJpY2UiOiIxNiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJCb3JkZWF1eCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkNoYXRlYXUgUGluZXksIEdyYW5kIENydS0gU2FpbnQtRW1pbGlvbiwgRnJhbmNlLCAyMDE4IiwicHJpY2VzIjpbeyJwcmljZSI6IjE5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjozLCJ0aXRsZSI6IlNtaXRoICYgTWlsbHMgU3VwZXIgVHVzY2FuIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiTGUgTG9nZ2UgZGkgUGlldHJhbmVyYSwgMjAxNiIsInByaWNlcyI6W3sicHJpY2UiOiIxNyJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfSx7InRpdGxlIjoiRHJhZnQgQmVlciIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjUsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiUmFkZWJlcmdlciIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MSwidGl0bGUiOiJNb250YXVrIFdhdmUgQ2hhc2VyIElQQSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJLcm9uZW5ib3VyZyBCbGFuYyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MywidGl0bGUiOiJEZWxpcml1bSBUcmVtZW5zIEJlbGdpYW4gQWxlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjE1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo0LCJ0aXRsZSI6IkJyb29rbHluIExhZ2VyIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjEwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJCb3R0bGUgQmVlciIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjYsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiU3RpZWdsIExhZ2VyIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjExIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IldlaWhlbnN0YXBoYW5lciBIZWZlIFdlaXNzYmllciIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfV0="> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Sparkling</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Tiny's Prosecco</div> 
+ <div class="menuItemDesc">Valdobbiadene, NV - Veneto, Italy</div> 
+</div> 
+ <div class="menuItemPrice">$16</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Cremant De Bourgogne Ros&eacute;</div> 
+ <div class="menuItemDesc">Brut, Victorine De Chastena NV - Burgundy, France</div> 
+</div> 
+ <div class="menuItemPrice">$17</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Lambrusco</div> 
+ <div class="menuItemDesc">Grasparossa, Becco Rosso, Italy</div> 
+</div> 
+ <div class="menuItemPrice">$16</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Charles Heidsieck</div> 
+ <div class="menuItemDesc">Brut Reserve NV, France</div> 
+</div> 
+ <div class="menuItemPrice">$25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Ros&eacute; &amp; Orange</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Yves Ros&eacute;</div> 
+ <div class="menuItemDesc">Long Island, New York 2022</div> 
+</div> 
+ <div class="menuItemPrice">$16</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Orange</div> 
+ <div class="menuItemDesc">Chenin Blanc, Sauvignon Blanc, Loire Valley, France</div> 
+</div> 
+ <div class="menuItemPrice">$17</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Ros&eacute; Cremant De Bourgogne</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">White Wine</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Chablis</div> 
+ <div class="menuItemDesc">Domaine du Colombier</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Muscadet</div> 
+ <div class="menuItemDesc">Solence, 'Leonides' - Rhone, France</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Sauvignon Blanc</div> 
+ <div class="menuItemDesc">Clement &amp; Florian Berthier- Loire, France</div> 
+</div> 
+ <div class="menuItemPrice">$17</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Pinot Blanc</div> 
+ <div class="menuItemDesc">Gernot &amp; Heike Heinrich, 'Naked White' - Burgenland, Austria</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Red Wine</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Pinot Noir</div> 
+ <div class="menuItemDesc">Domaine Valery Renadat, Reuilly Rouge 'Les Lignis'- Loire, France, 2020</div> 
+</div> 
+ <div class="menuItemPrice">$17</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Cote du Rhone</div> 
+ <div class="menuItemDesc">Domaine du JAS, Cuvee Prestige - France</div> 
+</div> 
+ <div class="menuItemPrice">$16</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Bordeaux</div> 
+ <div class="menuItemDesc">Chateau Piney, Grand Cru- Saint-Emilion, France, 2018</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Smith &amp; Mills Super Tuscan</div> 
+ <div class="menuItemDesc">Le Logge di Pietranera, 2016</div> 
+</div> 
+ <div class="menuItemPrice">$17</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Draft Beer</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Radeberger</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$11</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Montauk Wave Chaser IPA</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$11</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Kronenbourg Blanc</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$11</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Delirium Tremens Belgian Ale</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$15</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Brooklyn Lager</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$10</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Bottle Beer</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Stiegl Lager</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$11</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Weihenstaphaner Hefe Weissbier</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$12</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="WineBottle" data-anchor="WineBottle"> <div class="dmRespColsWrapper" id="1658951929"> <div class="dmRespCol large-12 medium-12 small-12" id="1107594707"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1418371488" style="transition: opacity 1s ease-in-out;"> <h2 class="text-align-center"><span style="display: unset;">WINE BY THE BOTTLE</span></h2> 
+</div> 
+ <div class="default u_1723722624 dmRestaurantMenu dmWs" id="1723722624" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" show_pics="false" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-3" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" menu_data="W3sidGl0bGUiOiJCbGFuYyIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjIsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2hhcmRvbm5heSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkRvbWFpbmUgQmFycmF1ZCwgTWFjb24tVmlsbGFnZSDigJRCb3VyZ29nbmUsIDIwMjEiLCJwcmljZXMiOlt7InByaWNlIjoiNjgifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjEsInRpdGxlIjoiU2FuY2VycmUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJDeXByaWVuIFBlcmNoYXVkIOKAlExvaXJlLCBGcmFuY2UgMjAyMiIsInByaWNlcyI6W3sicHJpY2UiOiI5MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJWZXJtZW50aW5vIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiVGVycmUgQmlhbmNoZSDigJRMaWd1cmlhLCAyMDIwIiwicHJpY2VzIjpbeyJwcmljZSI6IjkwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjozLCJ0aXRsZSI6IkNoZW5pbiBCbGFuYyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlNhdmVubmnDqHJlcywgUm9jaGUgQXV4IE1vaW5lc+KAlExvaXJlLCBGcmFuY2UgMjAxOSIsInByaWNlcyI6W3sicHJpY2UiOiI5NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NCwidGl0bGUiOiJHcmVjbyBkaSBUdWZvIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiQmVuaXRvIEZlcnJhcmEgJ1ZpZ25hIENpY29nbmEnIOKAlENhbXBhbmlhLCAyMDE5IiwicHJpY2VzIjpbeyJwcmljZSI6IjEwMCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NSwidGl0bGUiOiJCZWF1bmUtR3LDqXZlcyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkxvdWlzIExhdG91ciwgMWVyIENydeKAlEJ1cmd1bmR5LCAyMDE4IiwicHJpY2VzIjpbeyJwcmljZSI6IjE5NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfSx7InRpdGxlIjoiUm9zZSIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjMsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiUm9zZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkZhYmllbiBKb3V2ZXMgJ0EgVGFibGUhJyDigJRDYWhvcnMsIEZyYW5jZSwgMjAyMiIsInByaWNlcyI6W3sicHJpY2UiOiI3NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfSx7InRpdGxlIjoiU3BhcmtsaW5nIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6NCwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDaGFybGVzIEhlaWRzaWVjayIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkJydXQgUmVzZXJ2ZSwgTlYg4oCUIEZyYW5jZSAoMzc1bUwpIiwicHJpY2VzIjpbeyJwcmljZSI6IjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IlJvc2UgQ3JlbWFudCBEZSBCb3VyZ29nbmUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJWaWN0b3JpbmUgRGUgQ2hhc3RlbmF5LCBOViDigJQgQnVyZ3VuZHksIEZyYW5jZSIsInByaWNlcyI6W3sicHJpY2UiOiI3MiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJWZXV2ZSBDbGljcXVvdCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkJydXQsICdZZWxsb3cgTGFiZWwnIOKAlCBSZWltcywgRnJhbmNlICgzNzVtTCkiLCJwcmljZXMiOlt7InByaWNlIjoiNzUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjMsInRpdGxlIjoiQmlsbGVjYXJ0LVNhbG1vbiBSb3NlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiTlYsIEJydXQgUsOpc2VydmUg4oCUIEZyYW5jZSIsInByaWNlcyI6W3sicHJpY2UiOiIxMjAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjQsInRpdGxlIjoiQ2hhcmxlcyBIZWlkc2llY2siLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJCcnV0IE1pbGxlc2ltZSAyMDEyIOKAlCBGcmFuY2UiLCJwcmljZXMiOlt7InByaWNlIjoiMjc1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJSb3VnZSIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjUsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2hhdGVhdW5ldWYtZHUtUGFwZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlBhdHJpY2sgR2FsYW50IDIwMjAg4oCUUmhvbmUgVmFsbGV5LCBGcmFuY2UiLCJwcmljZXMiOlt7InByaWNlIjoiOTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjEsInRpdGxlIjoiQmVhdWpvbGFpcyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkRvbWFpbmUgR2FnZXQgQ3J1IOKAlEJlYXVqb2xhaXMsIEZyYW5jZSIsInByaWNlcyI6W3sicHJpY2UiOiI4MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJHYW1heSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkRvbWFpbmUgZGUgUm9iZXJ0IEN1dmVlIFRyYWRpdGlvbiAyMDIwIOKAlEZsZXVyaWUsIEZyYW5jZSIsInByaWNlcyI6W3sicHJpY2UiOiI4NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MywidGl0bGUiOiJNZW5jaWEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJCaWVyem8gVmVyb25pY2EgT3J0ZWdhLCAnUk9DJyDigJRNZW5jaWEsIFNwYWluLCAyMDE2IiwicHJpY2VzIjpbeyJwcmljZSI6IjEwNSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NCwidGl0bGUiOiJUYXVyYXNpIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiU2FsdmF0b3JlIE1vbGV0dGllcmksICdDaW5xdWUgUXVlcmNlJ+KAlENhbXBhbmlhLCAyMDA4IiwicHJpY2VzIjpbeyJwcmljZSI6IjExNSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NSwidGl0bGUiOiJCb3JkZWF1eCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkNvdXZlbnQgZGVzIEphY29iaW5zLCBTdC4gRW1pbGlvbiBHcmFuZCBDcnUsIDIwMTAg4oCUQm9yZGVhdXgsIEZyYW5jZSIsInByaWNlcyI6W3sicHJpY2UiOiIxNTAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjYsInRpdGxlIjoiQnJ1bmVsbG8gZGkgTW9udGFsY2lubyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkF6aWVuZGEgQWdyaWNvbGEgQ2VyYmFpYSwgZC5vLmMuZy7igJRUdXNjYW55LCAyMDE2IiwicHJpY2VzIjpbeyJwcmljZSI6IjE1MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NywidGl0bGUiOiJCYXJvbG8iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiInUHJhcG8nIEV0dG9yZSBHZXJtYW5vLCBkLm8uYy5nLuKAlFBpZWRtb250LCAyMDE2IiwicHJpY2VzIjpbeyJwcmljZSI6IjE5MCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6OCwidGl0bGUiOiJTaGlyYXoiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJNYXRhcm8gUGVuZm9sZHMgQmluIDIsIDIwMTkg4oCUU291dGggQXVzdHJhaWxpYSIsInByaWNlcyI6W3sicHJpY2UiOiI3MiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfV0="> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Blanc</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Chardonnay</div> 
+ <div class="menuItemDesc">Domaine Barraud, Macon-Village &mdash;Bourgogne, 2021</div> 
+</div> 
+ <div class="menuItemPrice">$68</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Sancerre</div> 
+ <div class="menuItemDesc">Cyprien Perchaud &mdash;Loire, France 2022</div> 
+</div> 
+ <div class="menuItemPrice">$90</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Vermentino</div> 
+ <div class="menuItemDesc">Terre Bianche &mdash;Liguria, 2020</div> 
+</div> 
+ <div class="menuItemPrice">$90</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Chenin Blanc</div> 
+ <div class="menuItemDesc">Savenni&egrave;res, Roche Aux Moines&mdash;Loire, France 2019</div> 
+</div> 
+ <div class="menuItemPrice">$95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Greco di Tufo</div> 
+ <div class="menuItemDesc">Benito Ferrara 'Vigna Cicogna' &mdash;Campania, 2019</div> 
+</div> 
+ <div class="menuItemPrice">$100</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Beaune-Gr&eacute;ves</div> 
+ <div class="menuItemDesc">Louis Latour, 1er Cru&mdash;Burgundy, 2018</div> 
+</div> 
+ <div class="menuItemPrice">$195</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Rose</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Rose</div> 
+ <div class="menuItemDesc">Fabien Jouves 'A Table!' &mdash;Cahors, France, 2022</div> 
+</div> 
+ <div class="menuItemPrice">$75</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"></div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Sparkling</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Charles Heidsieck</div> 
+ <div class="menuItemDesc">Brut Reserve, NV &mdash; France (375mL)</div> 
+</div> 
+ <div class="menuItemPrice">$50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Rose Cremant De Bourgogne</div> 
+ <div class="menuItemDesc">Victorine De Chastenay, NV &mdash; Burgundy, France</div> 
+</div> 
+ <div class="menuItemPrice">$72</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Veuve Clicquot</div> 
+ <div class="menuItemDesc">Brut, 'Yellow Label' &mdash; Reims, France (375mL)</div> 
+</div> 
+ <div class="menuItemPrice">$75</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Billecart-Salmon Rose</div> 
+ <div class="menuItemDesc">NV, Brut R&eacute;serve &mdash; France</div> 
+</div> 
+ <div class="menuItemPrice">$120</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Charles Heidsieck</div> 
+ <div class="menuItemDesc">Brut Millesime 2012 &mdash; France</div> 
+</div> 
+ <div class="menuItemPrice">$275</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Rouge</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Chateauneuf-du-Pape</div> 
+ <div class="menuItemDesc">Patrick Galant 2020 &mdash;Rhone Valley, France</div> 
+</div> 
+ <div class="menuItemPrice">$95</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Beaujolais</div> 
+ <div class="menuItemDesc">Domaine Gaget Cru &mdash;Beaujolais, France</div> 
+</div> 
+ <div class="menuItemPrice">$80</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Gamay</div> 
+ <div class="menuItemDesc">Domaine de Robert Cuvee Tradition 2020 &mdash;Fleurie, France</div> 
+</div> 
+ <div class="menuItemPrice">$85</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Mencia</div> 
+ <div class="menuItemDesc">Bierzo Veronica Ortega, 'ROC' &mdash;Mencia, Spain, 2016</div> 
+</div> 
+ <div class="menuItemPrice">$105</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Taurasi</div> 
+ <div class="menuItemDesc">Salvatore Molettieri, 'Cinque Querce'&mdash;Campania, 2008</div> 
+</div> 
+ <div class="menuItemPrice">$115</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Bordeaux</div> 
+ <div class="menuItemDesc">Couvent des Jacobins, St. Emilion Grand Cru, 2010 &mdash;Bordeaux, France</div> 
+</div> 
+ <div class="menuItemPrice">$150</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Brunello di Montalcino</div> 
+ <div class="menuItemDesc">Azienda Agricola Cerbaia, d.o.c.g.&mdash;Tuscany, 2016</div> 
+</div> 
+ <div class="menuItemPrice">$150</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Barolo</div> 
+ <div class="menuItemDesc">'Prapo' Ettore Germano, d.o.c.g.&mdash;Piedmont, 2016</div> 
+</div> 
+ <div class="menuItemPrice">$190</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Shiraz</div> 
+ <div class="menuItemDesc">Mataro Penfolds Bin 2, 2019 &mdash;South Austrailia</div> 
+</div> 
+ <div class="menuItemPrice">$72</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="KidsMenu" data-anchor="KidsMenu"> <div class="dmRespColsWrapper" id="1517536979"> <div class="dmRespCol large-12 medium-12 small-12" id="1767684619"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1769964558" style="transition: opacity 1s ease-in-out;"> <h2 class="text-align-center"><span style="display: unset;">KIDS MENU</span></h2> 
+</div> 
+ <div class="default u_1237490542 dmRestaurantMenu dmWs" id="1237490542" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" show_pics="false" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-3" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" menu_data="W3sidGl0bGUiOiIiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjoyLCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlNwYWdoZXR0aSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6ImJ1dHRlciBvciByZWQgc2F1Y2UiLCJwcmljZXMiOlt7InByaWNlIjoiMTQifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjEsInRpdGxlIjoiQ2hpY2tlbiBTY2huaXR6ZWwgRmluZ2VycyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6ImZyZW5jaCBmcmllcyIsInByaWNlcyI6W3sicHJpY2UiOiIxOSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJHcmlsbGVkIENoZWVzZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6ImdydXnDqHJlICYgY2hlZGRhciwgYnJpb2NoZSwgZnJlbmNoIGZyaWVzIiwicHJpY2VzIjpbeyJwcmljZSI6IjE1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjozLCJ0aXRsZSI6IkhhbWJ1cmdlciIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6ImZyZW5jaCBmcmllcyIsInByaWNlcyI6W3sicHJpY2UiOiIxOCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NCwidGl0bGUiOiJDaGVlc2VidXJnZXIiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJmcmVuY2ggZnJpZXMiLCJwcmljZXMiOlt7InByaWNlIjoiMjEifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjUsInRpdGxlIjoiTWFya2V0IFZlZ2V0YWJsZXMiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJob3VzZW1hZGUgcmFuY2giLCJwcmljZXMiOlt7InByaWNlIjoiMTIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX1d"> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle"></h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Spaghetti</div> 
+ <div class="menuItemDesc">butter or red sauce</div> 
+</div> 
+ <div class="menuItemPrice">$14</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Schnitzel Fingers</div> 
+ <div class="menuItemDesc">french fries</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Grilled Cheese</div> 
+ <div class="menuItemDesc">gruy&egrave;re &amp; cheddar, brioche, french fries</div> 
+</div> 
+ <div class="menuItemPrice">$15</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Hamburger</div> 
+ <div class="menuItemDesc">french fries</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Cheeseburger</div> 
+ <div class="menuItemDesc">french fries</div> 
+</div> 
+ <div class="menuItemPrice">$21</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Market Vegetables</div> 
+ <div class="menuItemDesc">housemade ranch</div> 
+</div> 
+ <div class="menuItemPrice">$12</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="dmRespRow u_1632155419 fullBleedChanged fullBleedMode" style="text-align: center;" id="1632155419"> <div class="dmRespColsWrapper" id="1253858808"> <div class="u_1063824722 dmRespCol small-12 large-2 medium-2" id="1063824722"> <div class="u_1901167991 imageWidget align-center" data-widget-type="image" id="1901167991" data-element-type="image"> <a href="/" id="1067941554"><img src="https://lirp.cdn-website.com/3fb8d8cf/dms3rep/multi/opt/Yves-Favicon-1920w.png" id="1669146944" class="" data-dm-image-path="https://irp.cdn-website.com/3fb8d8cf/dms3rep/multi/Yves-Favicon.png" width="180" height="180" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1470016257 dmRespCol small-12 large-3 medium-3" id="1470016257"> <nav class="u_1130444844 unifiednav_vertical effect-none main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_4" layout-sub="" data-show-vertical-sub-items="HOVER" id="1130444844" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="https://irp.cdn-website.com/md/dmtmpl/b2864b33-531c-4e9d-8c2d-ff10001f141f/dms3rep/multi/logo_dark-65be99d6.svg" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" aria-haspopup="true" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="#" class="unifiednav__item    unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Menus" data-auto="page-text-style">Menus<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#Dinner" class="unifiednav__item    " target="" data-target-page-alias="menus#Dinner"> <span class="nav-item-text " data-link-text="Dinner" data-auto="page-text-style">Dinner<span class="icon icon-angle-right" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#Brunch" class="unifiednav__item    " target="" data-target-page-alias="menus#Brunch"> <span class="nav-item-text " data-link-text="Brunch" data-auto="page-text-style">Brunch<span class="icon icon-angle-right" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#Cocktails" class="unifiednav__item    " target="" data-target-page-alias="menus#Cocktails"> <span class="nav-item-text " data-link-text="Cocktails" data-auto="page-text-style">Cocktails<span class="icon icon-angle-right" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/menus#WineBeer" class="unifiednav__item    " target="" data-target-page-alias="menus#WineBeer"> <span class="nav-item-text " data-link-text="Wine & Beer" data-auto="page-text-style">Wine &amp; Beer<span class="icon icon-angle-right" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/hours-and-location" class="unifiednav__item    " target="" data-target-page-alias="hours-and-location"> <span class="nav-item-text " data-link-text="Hours & Location" data-auto="page-text-style">Hours &amp; Location<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/privateDining" class="unifiednav__item    " target="" data-target-page-alias="privateDining"> <span class="nav-item-text " data-link-text="Private Dining" data-auto="page-text-style">Private Dining<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/about" class="unifiednav__item    " target="" data-target-page-alias="about"> <span class="nav-item-text " data-link-text="About" data-auto="page-text-style">About<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="https://yves.shop.securetree.com" class="unifiednav__item    " target="_blank" data-target-page-alias="https://yves.shop.securetree.com"> <span class="nav-item-text " data-link-text="Gift Cards" data-auto="page-text-style">Gift Cards<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/accessibility" class="unifiednav__item    " target="" data-target-page-alias="accessibility"> <span class="nav-item-text " data-link-text="Accessibility" data-auto="page-text-style">Accessibility<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="u_1145671085 dmRespCol small-12 large-3 medium-3" id="1145671085"> <div class="u_1729910211 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1729910211" style="transition: none 0s ease 0s; text-align: left; display: block;" data-binding="W3siYmluZGluZ05hbWUiOiJ0ZXh0IiwidmFsdWUiOiJjb250ZW50X2xpYnJhcnkuZ2xvYmFsLnBob25lLnBob25lIn1d" data-diy-text="">212-431-3385</div> 
+ <div class="u_1001899659 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1001899659" style="transition: opacity 1s ease-in-out 0s;" data-binding="W3siYmluZGluZ05hbWUiOiJ0ZXh0IiwidmFsdWUiOiJjb250ZW50X2xpYnJhcnkuZ2xvYmFsLmVtYWlsLjYyMDc4MzU4ODE5NDkwNjkwMDAifV0=" data-diy-text="">info@yves-nyc.com</div> 
+ <div class="u_1254005170 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1254005170" style="transition: opacity 1s ease-in-out 0s;" data-binding="W3siYmluZGluZ05hbWUiOiJ0ZXh0IiwidmFsdWUiOiJjb250ZW50X2xpYnJhcnkuZ2xvYmFsIn1d" data-diy-text="">385 Greenwich Street, NY, New York 10013, United States</div> 
+</div> 
+ <div class="u_1960809797 dmRespCol small-12 large-4 medium-4" id="1960809797"> <div class="u_1107046620 dmform default native-inputs" data-element-type="dContactUsRespId" captcha="true" data-require-captcha="true" data-captcha-position="bottomleft" id="1107046620" data-layout="layout-3"> <h3 class="dmform-title dmwidget-title" id="1420403888" hide="true">Subscribe to our newsletter</h3> 
+ <div class="dmform-wrapper" id="1089296123" captcha-lang="en"> <form method="post" class="dmRespDesignRow" locale="ENGLISH" id="1711255564"> <div class="dmforminput required  small-12 dmRespDesignCol medium-12 large-12" id="1247562396"> <label for="1733405672" id="1037358784" class="" hide="true" data-dm-for="dmform-1">Field label</label> 
+<input type="email" class="" name="dmform-1" id="1733405672" placeholder="Email" data-placeholder-original="Email"/><input type="hidden" name="label-dmform-1" value="Field label" id="1597729563" class=""/></div> 
+ <span id="undefined_clear" class="dmWidgetClear"></span> 
+ <div class="dmformsubmit dmWidget R" id="1502398816"><input class="" name="submit" type="submit" value="Subscribe" id="1160038020"/></div> 
+<input name="dmformsendto" type="hidden" value="O0wrseIfFLsSlLR4GAldF7BQXJ8YTG+rFCLmZlKznH3/2iZ+cXjCLu0z8KugpvpM" id="1418211126" data-dec="true"/><input class="dmActionInput" type="hidden" name="action" value="/_dm/s/rt/widgets/dmform.submit.jsp" id="1025236197"/><input name="dmformsubject" type="hidden" value="Form Message" id="1023292903"/><input name="dmformfrom" type="hidden" value="" id="1048928646"/><input name="dmformsubmitparams" type="hidden" value="8mpKnCSiNQXK/d9M7IDrSzRkXjNcoSR4aESuUOLT5DugXE462GOKl728L5BJDtXt6bp+Efvst3e1E9W8jB0bJJiTOFLtspCzz9GovU7TUI3qO4KBABjV6qgb2HGwVG5+J4HTiWgRrKjjpPr1vxQeTNpe221ygfDZB8JD+qPkmlCrlX0QBSoOgyP1nE68vbBycfvIKHqv3/bdtaxPn3a+qblnWA5nt4J9QtSwcpGMo5U=" data-dec="true"/><input type="hidden" name="page_uuid" value="39fda57bf6b74026ac07e6debdd7693b"/></form> 
+</div> 
+ <div class="dmform-success" style="display:none" id="1807426489">Thank you for contacting us.<br id="1467484988"/>We will get back to you as soon as possible.</div> 
+ <div class="dmform-error" style="display:none" id="1428986141">Oops, there was an error sending your message.<br id="1861842237"/>Please try again later.</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow fullBleedChanged fullBleedMode u_1036058482" id="1036058482"> <div class="dmRespColsWrapper" id="1616737894"> <div class="dmRespCol large-12 medium-12 small-12" id="1865443263"> <div class="dmDividerWrapper clearfix u_1355072188" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1355072188"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1955734865"/></div> 
+ <div class="dmRespRow u_1183140759 fullBleedChanged fullBleedMode" id="1183140759"> <div class="dmRespColsWrapper" id="1519079854"> <div class="dmRespCol large-6 medium-6 small-12 u_1491127253" id="1491127253"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1216585146" style="transition: opacity 1s ease-in-out;"><p class="size-11 m-size-9"><a href="https://lumer.io/?utm_source=Yves&utm_medium=Footer%20Link&utm_campaign=FooterL" target="_blank" runtime_url="https://lumer.io/?utm_source=Yves&utm_medium=Footer%20Link&utm_campaign=FooterL" type="url" style="text-decoration: none; display: unset;" class="font-size-11 m-font-size-9">Designed in light, built on Lumerio</a></p></div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12" id="1720675683"> <div class="u_1016009492 align-center text-align-center dmSocialHub gapSpacing" id="1016009492" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://facebook.com/p/Yves-100063855283694/" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style9" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="https://instagram.com/yves.nyc" target="_blank" dm_dont_rewrite_url="true" aria-label="instagram" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Instagram&apos;)"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style9" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+ <div id="swh-8563aeb1841d4d7092674ef2d6d545d5"> <div data-wrapper-source="appstore"> <script>    if (window.location.search.match(/[?,&]preview=true/) && window.top !== window) {      window.__AudioEyePreviewMode=true;    }  </script> 
+ <script type="text/javascript">!function(){    var b=function(){      window.__AudioEyeSiteHash = "abefe57d0ab1415b5c4501dc2535fdd3";      window.__AudioEyeInstallSource = "duda";      var a=document.createElement("script");      a.src="https://wsmcdn.audioeye.com/aem.js";      a.type="text/javascript";      a.setAttribute("async","");      document.getElementsByTagName("body")[0].appendChild(a)};      "complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();    </script> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5984";
+    var build = "2025-12-02T14_32_51";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-12-02T14_32_51";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5984';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5984';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =true;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5984/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5984/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '3fb8d8cf'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 3fb8d8cf -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Begin Body End Markup -->
+<!-- InkKind Script -->
+<script src="https://inkindscript.com/inkind.js" async></script>
+
+
+<!-- Begin Resy Script - Desktop -->
+<script src="https://widgets.resy.com/embed.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+        const venueID = '785'; 
+        const apiKey = 'Ojc7fB5BRy1DqUBrtnb36ngmv4Yt1iWE';
+        const customButton = document.getElementById('1055666538');
+
+        if (customButton) {
+            // Ensure cursor remains pointer
+            customButton.style.cursor = 'pointer';
+
+            // Add click listener to the button
+            customButton.addEventListener('click', function () {
+                if (window.resyWidget && typeof window.resyWidget.openModal === 'function') {
+                    // Call the Resy modal-opening logic
+                    window.resyWidget.openModal({
+                        venueId: venueID,
+                        apiKey: apiKey
+                    });
+                } else {
+                    console.error('Resy widget is not properly loaded or openModal function is unavailable.');
+                }
+            });
+        } else {
+            console.error('Custom button with specified ID not found.');
+        }
+    });
+</script>
+
+<style>
+#dm .p_hfcontainer div.u_1107046620 input.placeholder,
+#dm .p_hfcontainer div.u_1107046620 select.placeholder,
+#dm .p_hfcontainer div.u_1107046620 textarea.placeholder,
+div#dm .dmHeader.p_hfcontainer.scroll-responder_set#hcontainer .dmNewParagraph,
+div#dm .dmHeader.p_hfcontainer.scroll-responder_set#hcontainer .dmNewParagraph *,
+div#dm .hamburger-on-scrolled-header {
+  color:#FFF !important;
+}
+</style>
+
+<!-- End Resy Script - Desktop -->
+
+
+
+
+
+<!-- Lumer.io Menu Changer -->
+<script>
+$(document).ready(function () {
+    // Prevent execution on website builder
+    if (window.location.hostname === 'clients.madewithalchemy.com') {
+        console.log('Script not executed on MWA');
+        return;
+    }
+
+    // Function to reattach event handlers
+    function reattachEventHandlers() {
+        $('.menuCatArrow').off('click').on('click', function() {
+            var $arrow = $(this);
+            var $menuCategory = $arrow.closest('.menuCategory');
+            var $menuItemsWrapper = $menuCategory.find('.menuItemsWrapper');
+
+            $menuItemsWrapper.slideToggle(300); // Toggle the visibility of the collapsible content
+            $arrow.toggleClass('icon-chevron-up icon-chevron-down'); // Toggle the arrow icon
+        });
+    }
+
+    // Function to load the appropriate menu based on the target
+    function loadMenu(target) {
+        // Fade out current content in MenuChanger
+        $('#MenuChanger').fadeOut(500, function () {
+            // Load new content from the hidden div into MenuChanger
+            var newContent = $(target).html();
+            $('#MenuChanger').html(newContent);
+
+            // Apply max-width to divs with the specified class
+            $('#MenuChanger .dmRespColsWrapper').css('max-width', '100%');
+
+            // Reattach event handlers
+            reattachEventHandlers();
+
+            // Fade in new content
+            $('#MenuChanger').fadeIn(500);
+        });
+    }
+
+    // Ensure all menus are hidden initially
+    $('#Dinner, #Brunch, #Cocktails, #WineBeer, #KidsMenu, #WineBottle').hide();
+
+    // Check if there's a hash in the URL and load the corresponding menu
+    function checkHash() {
+        var hash = window.location.hash;
+        if (hash && $(hash).length) {
+            loadMenu(hash);
+        } else {
+            // Set Dinner as the default visible content in MenuChanger if no valid hash
+            var initialContent = $('#Dinner').html();
+            $('#MenuChanger').html(initialContent).show();
+            $('#MenuChanger .dmRespColsWrapper').css('max-width', '100%');
+            reattachEventHandlers();
+        }
+    }
+
+    // Check the URL hash on initial load
+    checkHash();
+
+    // Handle hashchange event to update the menu based on URL changes
+    $(window).on('hashchange', function () {
+        checkHash();
+    });
+
+    // Handle button click
+    $('.menu-button').click(function () {
+        var target = $(this).data('target');
+        loadMenu(target);
+    });
+
+    // Initial attachment of event handlers
+    reattachEventHandlers();
+});
+</script>
+
+<!-- AudioEye -->
+<script type="text/javascript">!function(){var b=function(){window.__AudioEyeSiteHash = "abefe57d0ab1415b5c4501dc2535fdd3"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();</script><!--  End Body End Markup -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>

@@ -1,0 +1,2501 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.somethinonmyrtle.com/',
+        AccountUUID: '3d875b9e5c88468a9855df44ab3479f3',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: 'bbe8da69',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Wed Dec 04 22:02:36 UTC 2024',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'menu',
+        InitialPageUuid: 'e650a159b1e3458f81bbc829cfdc7743',
+        InitialPageId: '1166165423',
+        InitialEncodedPageAlias: 'bWVudQ==',
+        InitialHeaderUuid: '2797ebacfe8e4930948fda193928522c',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '49880',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 4,
+            NavbarLiveHomePage: 'https://www.somethinonmyrtle.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: false,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+<meta name="google-site-verification" content="HByHfcB_CAcoyizC6VG19a84DsAdyeSYRWlUkWhFd24" data-swh-uuid="b7cb20167aa94112b744e546fa12b0a0"/>
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.somethinonmyrtle.com/menu">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon"
+      href="https://irp.cdn-website.com/bbe8da69/dms3rep/multi/2-f3030d40-01464b2d.png"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/bbe8da69/site_favicon_16_1689859759274.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    :root {
+  --color_1: rgba(229, 65, 64, 1);
+  --color_2: rgba(231, 163, 165, 1);
+  --color_3: rgba(0,0,0,1);
+}
+</style>
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+<style id="criticalCss">
+    @charset "UTF-8";.display_None,.dmPopupMask{display:none}.clearfix:after,.dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop=none]){visibility:hidden}@font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}:root{--color_1:rgba(229, 65, 64, 1);--color_2:rgba(231, 163, 165, 1);--color_3:rgba(0,0,0,1)}.dmInner{min-height:100vh!important;position:relative;min-width:768px!important}.dmPopup,.dmPopupMask{position:fixed;left:0}.dmDisplay_None{display:none!important}.clearfix:after{clear:both;line-height:0;height:0}.clearfix:after,.clearfix:before{content:' ';display:table}.clearfix{display:inline-block}#dm .dmWidget .icon{font-size:26px}body.dmRoot #dm .dmOuter .dmInner .dmWidget .icon.hasFontIcon{height:26px;margin-top:-13px;line-height:normal;text-align:center;background-image:none}.dmRoot .hasFontIcon{background-image:none!important}.dmPopupMask{margin:0;width:10px;z-index:1000000999;top:0}#dmRoot .dmPopup,.dmPopup,.dmPopupClose:before,[data-display-type=block]{display:block}.dmPopup{text-align:left;top:10px;width:93%;z-index:1000009999!important;box-sizing:border-box;background:#f5f5f5;overflow-y:auto;height:100%}.dmPopup .dmPopupTitle{text-align:left;font:700 19px Helvetica,Arial;margin:20px 20px 35px;color:#999}#dmPopup{opacity:0}.dmPopupClose,.dmPopupClose:before{position:absolute;visibility:visible}.dmPopupClose{border-radius:25px;width:27px;height:27px;z-index:1;background-color:rgba(255,255,255,.4);top:12px;right:12px}.dmPopupClose:before{font-size:20px;color:#000;top:3px;right:3px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar{width:5px;height:5px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-track{background:rgba(0,0,0,.1)}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-thumb{background:#c8c8c8;box-shadow:inset 0 1px 2px #454545;border-radius:45px}#dm .header-over-content #stickyHeaderSpacer{height:0!important}.dmRespRow.fullBleedMode>.dmRespColsWrapper{width:100%!important;max-width:100%!important}.dmRespRow.fullBleedMode{padding-left:0!important;padding-right:0!important}#dm .dmRespRow .dmRespColsWrapper{display:flex}#dm .dmInner .dmWidget.align-center,.align-center{margin-left:auto;margin-right:auto}.text-align-center{text-align:center}body.fix-mobile-scrolling{overflow:initial}.dmRestaurantMenu .menuItemDesc .richText{white-space:initial}#dmRoot{text-decoration-skip-ink:none}#dm .sticky-widgets-container-global [data-element-type]{position:fixed!important}@media (max-width:767px){#dmRoot.responsiveTablet #dm .dmInner .hide-for-small{display:none!important}}body{-webkit-overflow-scrolling:touch}nav{display:block}html{font-family:Source Sans Pro;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}strong{font-weight:700}hr{box-sizing:content-box;height:0}img{border:0;max-width:100%;-ms-interpolation-mode:bicubic;display:inline-block}button{font-family:inherit;font-size:100%;margin:0;line-height:normal;text-transform:none;-webkit-appearance:button}button::-moz-focus-inner{border:0;padding:0}*,:after,:before{box-sizing:border-box}.dmRespRow.dmRespRowNoPadding{padding:0}.dmRespRow{padding-top:15px;padding-bottom:15px}.dmRespRow:after,.dmRespRow:before{content:' ';display:table}.dmRespRow:after{clear:both}.dmRespRow,.dmRespRow .dmRespColsWrapper{max-width:960px;position:relative;margin:0 auto;width:100%}.dmHeader,.dmRespRow .dmRespCol>*{max-width:100%}.dmRespRow .dmRespCol{position:relative;width:100%;display:inline-block;vertical-align:top;float:left}.dmDesktopBody .dmRespRow .large-3{position:relative;width:25%}.dmDesktopBody .dmRespRow .large-6{position:relative;width:50%}.dmDesktopBody .dmRespRow .large-12{position:relative;width:100%}[class*=' dm-common-icons-']{speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:dm-common-icons!important}.dm-common-icons-close:before{content:'\e901'}#dm div.dmContent [class*=' icon-'],[class*=' icon-']{font-family:FontAwesome!important;font-weight:400;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased}[class*=' icon-']:before{text-decoration:none;display:inline-block;speak:none}a [class*=' icon-']{display:inline}[class*=' icon-']{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}.icon-star:before{content:'\f005'}.icon-chevron-up:before{content:'\f077'}.icon-phone:before{content:'\f095'}.icon-angle-down:before{content:'\f107'}#dm .dmRespRow .dmRespCol>.dmWidget{overflow:initial}@media (min-width:768px){#dm .dmRespRow .dmRespCol>.dmWidget{width:280px;max-width:100%}#dm .sticky-widgets-container-global .dmWidget{width:230px;max-width:100%}#dm .dmRespRow .dmRespCol.large-3>.dmWidget{width:100%}}@media (max-width:767px){#dm .dmInner .dmWidget{width:100%}}#dm .dmInner .dmWidget:not(.displayNone){display:inline-block}#dm .dmInner .dmWidget:not(.flexButton):not(.displayNone)[data-display-type=block]{display:block}#dm .dmInner .dmWidget{text-decoration:none;margin:10px 0;clear:both;position:relative;text-align:center;line-height:22px;box-shadow:none;background-image:none;padding:0;height:auto;border-style:solid;white-space:nowrap}#dm .dmInner .dmWidget:after{content:'';display:inline-block;height:100%;vertical-align:middle;width:0;margin-right:-.25em}.imageWidget img[width][height],img[width][height]{height:auto}#dm .dmInner .dmWidget .iconBg{position:absolute;left:0;width:50px;top:50%;margin-top:-13px}#dm .dmWidget .text{display:inline-block;vertical-align:middle;font-size:1.125em;line-height:normal;white-space:normal;padding:10px 7px;max-width:98%}p.rteBlock{margin:0}html:not(.ios-preview) #dm .hasStickyHeader .dmInner div.dmHeaderContainer{position:fixed!important;z-index:101;width:100%;min-width:768px}#dm .header-over-content .dmHeaderContainer{position:absolute;z-index:101;width:100%}#dm .sticky-widgets-container-global [data-element-type].sticky-desktop-position-bottom-right{top:initial!important;bottom:0!important;margin-bottom:40px;right:0!important;left:initial!important;margin-right:40px}.dmRestaurantMenu{width:100%}#dm .dmRestaurantMenu .dmwidget-title{padding:0;margin:0;background:0;box-shadow:none;font-size:30px;text-align:center;text-transform:none}#dm .dmRestaurantMenu[displaytitle=false] .dmwidget-title{display:none}.dmRestaurantMenu .menuCategory{background-color:transparent;text-align:left;font-weight:700;box-shadow:none;padding:20px 0 40px;margin-bottom:10px;clear:both}.menuCategroyTitle{font-size:30px;margin:0 0 25px}.categoryTextsWrapper{margin-bottom:10px}@media (max-width:767px){.dmRoot .dmRestaurantMenu .menuCategory{padding:10px 0 0}.dmRoot .menuCategroyTitle{font-size:20px;margin:0 0 20px}.dmRoot .menuItemBox.last{margin-bottom:10px}.dmRoot .menuItemBox.first{margin-top:-10px}}.dmRestaurantMenu .menuCategory2Cols{display:block}.menuCategory2Cols .dmRestaurantMenuCol{float:left;width:50%;box-sizing:border-box;padding:0 15px 0 0}.menuCategory2Cols .dmRestaurantMenuCol:last-child{float:right;padding:0 0 0 15px}#dm .dmRestaurantMenu .menuItemBox{padding:15px 0;box-shadow:none;text-align:left;font-size:16px}#dm .dmRespRow.dmRespRowNoPadding,.dmContent,.dmInner ul:not(.defaultList),DIV.dmBody{padding:0}.dmRestaurantMenu .menuItemLeft{float:left;width:79%}.dmRestaurantMenu .menuItemPrice{float:right;width:20%;text-align:right}@media (min-width:768px){.dmRoot .menuCatArrow{display:none}}@media (max-width:767px){.dmRoot .menuCatArrow{position:absolute;right:0;top:15px;display:inline!important}.dmRoot .menuCategory{position:relative}}.imageWidget{position:relative}.imageWidget a{font-style:italic;text-align:center}.dmNewParagraph[data-version]{line-height:initial}.dmNewParagraph[data-version] .text-align-center{text-align:center!important}.dmNewParagraph[data-version] h2,.dmNewParagraph[data-version] p{margin-top:0;margin-bottom:0}*{scrollbar-arrow-color:#fff;scrollbar-track-color:#f2f2f2;scrollbar-face-color:silver;scrollbar-highlight-color:silver;scrollbar-3dlight-color:silver;scrollbar-shadow-color:silver;scrollbar-darkshadow-color:silver;scrollbar-width:12px}body{width:100%;overflow:hidden;-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important}A IMG{border:0}h2,h3,ul{margin-left:0;margin-right:0}.dmInner *{-webkit-font-smoothing:antialiased}.clearfix,a,img,li,ul{vertical-align:top}#iscrollBody,#site_content{position:relative}.dmOuter{word-wrap:break-word}#dm .dmwidget-title,.innerPageTitle{white-space:nowrap;text-overflow:ellipsis;word-wrap:normal}.dmInner{font-size:16px}.dmDesktopBody .dmInner{min-width:960px}.dmHeader{text-align:center;position:relative;width:100%}DIV.dmBody{clear:both}.dmContent{margin:0}#site_content ul:not(.defaultList){-webkit-padding-start:0;-moz-padding-start:0;list-style-position:inside}#innerBar{position:relative;height:36px;width:100%;font-size:20px;margin:0;z-index:80}.dmLargeBody .dmBody .dmRespRowsWrapper{background-color:transparent}.dmRespRowsWrapper{max-width:960px;margin:0 auto}.dmRespCol>[dmle_extension]:not(:first-child){margin-top:10px}.dmLargeBody .imageWidget:not(.displayNone){display:inline-block;max-width:100%}#dm .dmRespColsWrapper{display:block}.imageWidget:not(.displayNone) img{width:100%}.imageWidget:not(.displayNone) img[width][height]{height:auto}.dmDivider.defaultDivider{min-height:1px;margin:0}h3{font-weight:400}.dmNewParagraph{text-align:left;margin:8px 0;padding:2px 0}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol,.dmLargeBody .fHeader .dmRespRow .dmRespCol{padding-left:.75%;padding-right:.75%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:first-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:first-child{padding-left:0;padding-right:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:last-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:last-child{padding-right:0;padding-left:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:only-child{padding-left:0;padding-right:0}#innerBar.lineInnerBar{display:table;width:100%;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;font-size:20px;margin-top:30px;margin-bottom:30px;background-color:transparent}.innerPageTitle{display:block;text-align:center;margin:3px 65px;padding:6px 0;overflow:hidden;box-sizing:border-box}#innerBar .titleLine{display:table-cell;vertical-align:middle;width:50%}.dmPageTitleRow:not(#innerBar){display:none}.titleLine hr{min-height:1px}.lineInnerBar .innerPageTitle{display:table-cell;vertical-align:middle;text-align:left;margin:0;padding:4px 15px 0;font-family:inherit;white-space:nowrap}.dmLargeBody .dmFooterResp>.dmRespRow .dmRespCol{padding-left:.75%;padding-right:.75%}.dmLargeBody .dmFooterResp>.dmRespRow .dmRespCol:first-child{padding-left:0;padding-right:1.5%}.dmLargeBody .dmFooterResp>.dmRespRow .dmRespCol:last-child{padding-right:0;padding-left:1.5%}.dmLargeBody .dmFooterResp>.dmRespRow .dmRespCol:only-child{padding-left:0;padding-right:0}.dmStandardDesktop{display:block}#dmFirstContainer .dmRespRowsWrapper:after,#dmFirstContainer .dmRespRowsWrapper:before{content:"";display:table}.dmInner a{outline:0;vertical-align:inherit}.dmLinksMenu>ul{display:block;margin:0;font-size:inherit}.standardHeaderLayout .dmHeader{float:none;display:block;height:auto}.dmStandardDesktop{margin:0 auto}#dm .dmwidget-title{margin:10px 0;font-size:23px;text-shadow:none;text-align:left;text-transform:capitalize;overflow:hidden}#dm .dmDivider{display:block;margin:10px 0}body{background-color:#eee}#dm .dmDividerWrapper{display:block;margin:10px 0}.dmRestaurantMenu[layout] .menuCategroyTitle{border-bottom:0}.dmDivider{min-height:2px;border:0 currentColor;color:gray;background:0 0}.dmRestaurantMenu .menuItemDesc{white-space:initial}#dm .dmDividerWrapper .dmDivider{margin:0}.main-navigation.unifiednav{display:flex;justify-content:flex-start;align-items:stretch;overflow:visible}.main-navigation.unifiednav ul{list-style:none;padding:0;margin:0;font-size:1rem}.main-navigation.unifiednav .unifiednav__container{display:flex;justify-content:flex-start;list-style:none}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap{display:flex;justify-content:flex-start;position:relative;font-weight:400}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::before{content:'';align-self:center;font-weight:700}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item{display:flex;justify-content:flex-start;align-items:center;flex-direction:row;color:inherit;text-decoration:none;position:relative;padding:12px 15px;margin:0;font-weight:inherit;letter-spacing:.03em}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:0 15px}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item .nav-item-text{white-space:nowrap}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{content:'';width:100%;height:0;border:0 solid transparent;border-top-color:currentColor;display:block;opacity:0}#dm .dmWidget:not([data-buttonstyle]) .iconBg,.dmFooterContainer .dmRespRow.dmDividerRow,.dmLargeBody #innerBar.lineInnerBar,.main-navigation.unifiednav .unifiednav__container .unifiednav__item:not(.unifiednav__item_has-sub-nav) .icon{display:none}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{opacity:1}.main-navigation.unifiednav.effect-bottom2{padding:calc(12px - .2em - 2px) 15px}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{transform:scaleX(0);border-top-width:2px}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after{margin-top:.2em}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{margin-bottom:.2em;border-top-color:transparent}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{transform:scaleX(1)}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{transform-origin:left}.main-navigation.unifiednav:not(.unifiednav_vertical)>.unifiednav__container{justify-content:inherit}#dm .p_hfcontainer nav.main-navigation.unifiednav{min-width:9em!important;text-align:initial!important}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container{flex-wrap:wrap;justify-content:inherit}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container .nav-item-text::before{text-align:left}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{content:''}#dm .dmBody .dmRespRowsWrapper{max-width:none;background-color:transparent}div.dmInner{font-weight:300;font-family:Roboto}.dmLargeBody .dmRespRow{width:100%;max-width:none;margin-left:0;margin-right:0;padding-left:40px;padding-right:40px}.dmRespRow:not(.desktopHeaderBox) .dmRespColsWrapper{max-width:960px}.lineInnerBar .innerPageTitle{text-transform:uppercase;font-size:24px;padding-left:0}h3{font-family:Lobster;font-size:25px}#iscrollBody{box-shadow:1px 0 0 1px rgba(0,0,0,.1)}.standardHeaderLayout .dmHeader{padding-bottom:25px}#dm div.dmInner{font-size:18px}#dm div.dmInner h3{font-family:"Trebuchet MS","Trebuchet MS Fallback"}#dm DIV.dmInner{background-repeat:no-repeat;background-image:none;background-size:cover;background-position:50% 0;background-attachment:fixed}#dm .dmInner div.dmHeader,#dm .dmInner div.dmHeader.u_hcontainer,#dm .dmInner div.u_hcontainer{background-position:50% 50%!important}#dm .dmRespCol div.dmNewParagraph,#dm .dmRestaurantMenu .menuItemBox,#dm div.dmInner,#dm div.dmInner .dmRespCol,.dmRestaurantMenu .menuItemDesc,.dmRestaurantMenu .menuItemName,.dmRestaurantMenu .menuItemPrice{font-family:Inter,"Inter Fallback";font-weight:400;color:var(--color_3)}#dm div.dmContent h2,#dm div.dmContent h3{font-family:Rottersand;font-weight:400;font-style:normal}.stickyHeaderSpacer{height:111px}.dmLargeBody .dm-layout-sec .dmBody .dmRespRowsWrapper,.dmLargeBody .dmBody .dmRespRowsWrapper{background-color:transparent}#dm div.dmNewParagraph p,#dm div.dmRespCol>*{line-height:1.5}#dm div.dmContent h2{color:#313131;direction:ltr;text-decoration:none;font-size:55px}#dm div.dmContent .dmNewParagraph[data-version] h2{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h2 *,#dm div.dmContent h3{text-decoration:none}#dm div.dmContent h3{color:#32363a;direction:ltr;font-size:45px}#dm DIV.dmOuter DIV.dmInner{background-color:rgba(255,255,255,1)}#dm .dmContent .dmRespRow,#dm .dmFooter .dmRespRow{margin:0;padding:15px 40px}#dm .dmContent .dmRespRow .dmRespCol,#dm .dmFooter .dmRespRow .dmRespCol{margin:0;padding:0}@media all{:root{--btn-text-direction:ltr;--btn-border-r-color:var(--btn-border-color);--btn-border-l-color:var(--btn-border-color);--btn-border-b-width:var(--btn-border-width);--btn-border-width:2px;--btn-border-radius:0px;--btn-border-t-width:var(--btn-border-width);--btn-border-tl-radius:var(--btn-border-radius);--btn-border-br-radius:var(--btn-border-radius);--btn-border-bl-radius:var(--btn-border-radius);--btn-bg-color:var(--color_1);--btn-border-color:rgba(255,255,255,1);--btn-border-tr-radius:var(--btn-border-radius);--btn-border-r-width:var(--btn-border-width);--btn-bg-image:none;--btn-border-b-color:var(--btn-border-color);--btn-border-l-width:var(--btn-border-width);--btn-border-t-color:var(--btn-border-color);--btn-text-align:center;--btn-text-color:rgb(255, 255, 255);--btn-text-decoration:none;--btn-text-font-weight:400;--btn-text-font-family:Inter,"Inter Fallback";--btn-icon-color:rgb(0, 0, 238);--btn-icon-fill:rgb(0, 0, 238);--btn-icon-wrpr-display:none;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:rgb(0, 0, 0);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:rgba(255,252,252,1);--btn-hover-text-color:var(--btn-text-color);--btn-hover-text-font-weight:700;--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style)}}@media (min-width:0px) and (max-width:767px){:root{--btn-text-font-size:18px}}#dm .dmWidget:not([data-buttonstyle]){overflow:initial;background-clip:border-box;border-radius:2px}#dm .dmWidget:not([data-buttonstyle]) .text{padding:10px 7px}#dm div.dmInner #site_content .dmWidget,#dm div.dmInner .dmHeader .dmWidget{background-color:var(--btn-bg-color);background-image:var(--btn-bg-image);border-color:var(--btn-border-color);border-bottom-color:var(--btn-border-b-color);border-left-color:var(--btn-border-l-color);border-right-color:var(--btn-border-r-color);border-top-color:var(--btn-border-t-color);border-radius:var(--btn-border-radius);border-bottom-left-radius:var(--btn-border-bl-radius);border-bottom-right-radius:var(--btn-border-br-radius);border-top-left-radius:var(--btn-border-tl-radius);border-top-right-radius:var(--btn-border-tr-radius);border-width:var(--btn-border-width);border-bottom-width:var(--btn-border-b-width);border-left-width:var(--btn-border-l-width);border-right-width:var(--btn-border-r-width);border-top-width:var(--btn-border-t-width);direction:var(--btn-text-direction);text-align:var(--btn-text-align)}#dm div.dmInner #site_content .dmWidget span.text{color:var(--btn-text-color);font-family:var(--btn-text-font-family);font-size:var(--btn-text-font-size);font-weight:var(--btn-text-font-weight);text-decoration:var(--btn-text-decoration)}#dm div.dmInner #site_content .dmWidget span.icon,#dm div.dmInner .dmHeader .dmWidget span.icon{color:var(--btn-icon-color);fill:var(--btn-icon-fill)}#dm div.dmInner #site_content .dmWidget:not([data-buttonstyle]) .iconBg,#dm div.dmInner .dmHeader .dmWidget:not([data-buttonstyle]) .iconBg{display:var(--btn-icon-wrpr-display)}#dm .dmInner .dmHeader.u_hcontainer:before,#dm .dmInner .dmHeader:before,#dm .dmInner .u_hcontainer:before{opacity:.5!important;background-color:#fff!important}#dm .dmInner div.dmHeader.u_hcontainer:before,#dm .dmInner div.dmHeader:before,#dm .dmInner div.u_hcontainer:before{background-color:rgba(35,35,35,1)!important;opacity:.3!important}#dm .p_hfcontainer div.u_1408467974 img{border-radius:0!important;-moz-border-radius:0!important;-webkit-border-radius:0!important}#dm .dmInner div.dmHeader,#dm .dmInner div.dmHeader.u_hcontainer,#dm .dmInner div.u_hcontainer{background-color:rgba(0,0,0,0)!important;background-repeat:no-repeat!important;background-image:none!important;background-size:cover!important}div#dm .header-over-content .dmInner .dmHeader:not(.scroll-responder_set){background-color:rgba(0,0,0,0)!important}#dm .p_hfcontainer .u_1408467974{width:100%!important}#dm .p_hfcontainer nav.u_1815945752.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{color:rgba(255,255,255,1)!important;font-weight:400!important;font-size:16px!important}#dm .p_hfcontainer .u_1815945752.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .u_1815945752.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{font-size:16px!important;color:rgba(255,255,255,1)!important}#dm .p_hfcontainer nav.u_1815945752.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected{color:var(--color_1)!important;font-weight:700!important}#dm .p_hfcontainer .u_1815945752.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{margin:0!important;padding:0 20px!important}#dm .dmInner div.u_hcontainer{float:none!important;top:auto!important;max-width:100%!important;left:0!important;width:100%!important;position:relative!important;min-width:0!important;text-align:center!important;height:auto!important;margin:0 auto!important;padding:0!important}@media (min-width:1025px){:root{--btn-text-font-size:18px}.responsiveTablet .stickyHeaderSpacer{height:120.31px!important}}#dm .dmInner div.fHeader .dmHeader[freeheader=true]{padding-top:12px!important;padding-bottom:12px!important}.fHeader #hcontainer.dmHeader[freeheader=true]{padding-top:initial!important;padding-bottom:initial!important}@media (min-width:768px) and (max-width:1024px){:root{--btn-text-font-size:18px}.responsiveTablet .stickyHeaderSpacer{height:124.47px!important}}#dm .p_hfcontainer div.u_1408467974,#dm .p_hfcontainer div.u_1670941726,#dm .p_hfcontainer nav.u_1815945752{height:auto!important;float:none!important;top:0!important;position:relative!important}#dm .p_hfcontainer div.u_1731139217{padding-left:0!important}#dm .p_hfcontainer nav.u_1815945752{left:0!important;width:calc(100% - 0px)!important;max-width:100%!important;justify-content:center!important;align-items:stretch!important;min-width:25px!important;text-align:start!important;padding:6.4px 15px!important;margin:26px auto 0!important}#dm .p_hfcontainer div.u_1398093612{padding:0!important}#dm .p_hfcontainer div.u_1670941726{background-color:rgba(0,0,0,0)!important;left:0!important;width:auto!important;max-width:100%!important;min-width:0!important;text-align:center!important;padding:10px 0!important;margin:0!important}#dm .p_hfcontainer div.u_1408467974{left:0!important;width:calc(100% - 55px)!important;max-width:330px!important;min-width:25px!important;text-align:center!important;display:block!important;padding:0!important;margin:0 auto!important}#dm .dmInner div.fHeader.dmHeaderContainer #hcontainer.dmHeader[freeheader=true]{margin:0!important;padding:0!important}#dm .p_hfcontainer a.u_1563290328{float:none!important;top:0!important;left:0!important;width:230px!important;position:relative!important;height:50px!important;max-width:231.5px!important;min-width:25px!important;text-align:center!important;padding:0!important;margin:26px auto 10px!important}#dm .dmBody .u_1819266916 .menuCategory .menuCategroyTitle,#dm .dmBody .u_1819266916 .menuItemBox .menuItemName,#dm .dmBody .u_1819266916 .menuItemBox .menuItemPrice,#dm .dmBody .u_1819266916 .menuItemDesc,#dm .dmBody .u_1819266916 .menuItemDesc .rteBlock{text-align:CENTER!important}a.u_1288271729{width:225px!important;height:50px!important;margin:0 40px 40px 0!important}#dm .dmBody div.u_1375496798,#dm .dmBody div.u_1753927787{float:none!important;top:0!important;left:0!important;position:relative!important;height:auto!important;max-width:100%!important}#dm .dmBody div.u_1819266916 .menuItemBox .menuItemName,#dm .dmBody div.u_1819266916 .menuItemBox .menuItemPrice{color:rgba(255,255,255,1)!important;text-decoration:underline!important;font-weight:700!important}#dm .dmBody div.u_1819266916 .menuItemDesc,#dm .dmBody div.u_1819266916 .menuItemDesc .rteBlock{color:rgba(255,255,255,1)!important}#dm .dmBody .u_1665482723{width:100%!important}#dm .dmBody div.u_1819266916 .menuItemBox{border-bottom-style:solid!important;border-bottom-color:#000!important;border-bottom-width:0!important;margin-bottom:0!important}#dm .dmBody div.u_1819266916 .menuCategory .menuCategroyTitle{color:rgba(255,255,255,1)!important;font-weight:400!important;border-bottom-width:1px!important;border-bottom-style:solid!important;border-bottom-color:#fff!important;font-size:32px!important}#dm .dmBody div.u_1375496798{background-color:var(--color_3)!important;width:auto!important;min-width:0!important;text-align:center!important;padding:0!important;margin:0!important}#dm .dmBody div.u_1753927787{width:calc(100% - 0px)!important;min-width:25px!important;padding:2px 0!important;margin:0 auto 8px!important}#dm .dmBody div.u_1700549860{background-color:rgba(0,0,0,0)!important;box-shadow:rgba(0,0,0,.25) 0 3px 11px 0!important;-moz-box-shadow:rgba(0,0,0,.25) 0 3px 11px 0!important;-webkit-box-shadow:rgba(0,0,0,.25) 0 3px 11px 0!important;padding:150px 0 50px!important;margin:0!important}#dm .dmBody div.u_1665482723,#dm .dmBody div.u_1819266916{text-align:center!important;padding:0!important;float:none!important;top:0!important;left:0!important;position:relative!important;height:auto!important;min-width:25px!important}#dm .dmBody div.u_1665482723{width:calc(100% - 0px)!important;max-width:94px!important;margin:29px auto 0!important}#dm .dmBody div.u_1819266916{width:calc(100% - 615px)!important;max-width:1158.81px!important;display:block!important;margin:0 auto!important}#dm .dmBody div.u_1162266804{float:none!important;top:0!important;left:0!important;width:calc(100% - 666px)!important;position:relative!important;height:auto!important;min-height:auto!important;max-width:907.25px!important;min-width:25px!important;padding:2px 0!important;margin:8px auto!important}.font-size-24,.size-24{font-size:24px!important}.font-size-60,.size-60{font-size:60px!important}#\31 190656151,#\31 253329467,#\31 365322294,#\31 761724359,#\31 815945752,#\31 979128535{order:0;flex-direction:row} #dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder {display: none;} @media (max-width:767px){ [data-hidden-on-mobile] {display:none!important}}
+    .dmDesktopBody [data-anim-desktop]:not([data-anim-desktop='none']) {
+      visibility: hidden;
+    }
+
+    
+</style>
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Inter Fallback";
+  src: local('Arial');
+  ascent-override: 90.199%;
+  descent-override: 22.4836%;
+  size-adjust: 107.4014%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Helvetica Fallback";
+  src: local('Arial');
+  ascent-override: 77.002%;
+  descent-override: 22.998%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lobster Fallback";
+  src: local('Arial');
+  ascent-override: 114.651%;
+  descent-override: 28.6627%;
+  size-adjust: 87.2212%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Poppins Fallback";
+  src: local('Arial');
+  ascent-override: 92.326%;
+  descent-override: 30.7753%;
+  line-gap-override: 8.793%;
+  size-adjust: 113.7274%;
+}@font-face {
+  font-family: "Lato Fallback";
+  src: local('Arial');
+  ascent-override: 101.3181%;
+  descent-override: 21.865%;
+  size-adjust: 97.4159%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lora Fallback";
+  src: local('Arial');
+  ascent-override: 95.2907%;
+  descent-override: 25.9539%;
+  size-adjust: 105.5717%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Josefin Sans Fallback";
+  src: local('Arial');
+  ascent-override: 72.9195%;
+  descent-override: 24.3065%;
+  size-adjust: 102.8531%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.somethinonmyrtle.com/menu">
+
+  <meta property="og:image" content="https://lirp.cdn-website.com/bbe8da69/dms3rep/multi/opt/Somthin+on+Myrtle%28b%29-72855b1e-1920w.png"/>
+  <title>
+    Menu | Brooklyn, NY | 929-356-4043
+  </title>
+  <meta name="keywords" content="Asian Bistro, Brooklyn, NY"/>
+
+  <meta name="description" content="Experience the best of Asian and Caribbean flavors at our Brooklyn-based Asian Bistro. Call (718) 789-1111 to savor our unique fusion cuisine today!"/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Menu | Brooklyn, NY | 929-356-4043"/>
+  <meta name="twitter:description" content="Experience the best of Asian and Caribbean flavors at our Brooklyn-based Asian Bistro. Call (718) 789-1111 to savor our unique fusion cuisine today!"/>
+  <meta property="og:description" content="Experience the best of Asian and Caribbean flavors at our Brooklyn-based Asian Bistro. Call (718) 789-1111 to savor our unique fusion cuisine today!"/>
+  <meta property="og:title" content="Menu | Brooklyn, NY | 929-356-4043"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="menu"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1073774207" class="dm-home-page" themewaschanged="true" desktop-global-classes="header-over-content" tablet-global-classes="header-over-content"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-sec hasAnimations inMiniHeaderMode hasStickyHeader header-over-content dmPageBody d-page-1708724882 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1708724882" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" layout="78f5c343822e4eb3aac27f4ad5d13812===header" data-scrollable-target="body" data-scrollable-target-threshold="1" data-scroll-responder-id="1" logo-size-target="35%" secondary-image="https://lirp.cdn-website.com/bbe8da69/dms3rep/multi/opt/3-d587102e-5df4c540-1920w.png" has-secondary-image="true"> <div dm:templateorder="75" class="dmHeaderResp dmHeaderStack noSwitch" id="1015007240"> <div class="u_1670941726 dmRespRow dmDefaultListContentRow fullBleedChanged fullBleedMode" style="text-align:center" id="1670941726"> <div class="dmRespColsWrapper" id="1190656151"> <div class="u_1398093612 small-12 dmRespCol large-3 medium-3" id="1398093612"> <div class="u_1408467974 imageWidget align-center" data-widget-type="image" id="1408467974" data-element-type="image"> <a href="/" id="1071718887"><img src="https://lirp.cdn-website.com/bbe8da69/dms3rep/multi/opt/2-f3030d40-01464b2d-396w.png" id="1096042189" class="" data-dm-image-path="https://irp.cdn-website.com/bbe8da69/dms3rep/multi/2-f3030d40-01464b2d.png" width="500" height="152" alt="Somethin’ on Myrtle logo" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1731601228 dmRespCol small-12 large-6 medium-6" id="1731601228"> <nav class="u_1815945752 effect-bottom2 main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1815945752" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="HORIZONTAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmUDNavigationItem_00  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Home
+        " data-auto="page-text-style">Home<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/#AboutUs" class="unifiednav__item  dmUDNavigationItem_010101834273  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="About Us" data-auto="page-text-style">About Us<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/menu" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_010101737656  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="Menu" data-auto="page-text-style">Menu<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/specials" class="unifiednav__item  dmUDNavigationItem_010101235469  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Specials" data-auto="page-text-style">Specials<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/#JoinOurTeam" class="unifiednav__item  dmUDNavigationItem_010101906702  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Join Our Team" data-auto="page-text-style">Join Our Team<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/#ContactUs" class="unifiednav__item  dmUDNavigationItem_010101792876  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Contact Us" data-auto="page-text-style">Contact Us<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="u_1731139217 dmRespCol small-12 large-3 medium-3" id="1731139217"> <a class="u_1563290328 default align-center dmCall voipReplacement dmWidget dmNoMark dmWwr" href="tel:(718) 789-1111" contenteditable="false" onclick=";return dm_gaq_push_event('ClickToCall', 'Call',null,'bbe8da69', this);" id="1563290328" dmle_extension="clicktocall" data-element-type="clicktocall" wr="true" data-display-type="block" icon="true" surround="true" description="Call Us Today" adwords="" icon-name="icon-phone" phone="(718) 789-1111" text="" image=""> <span class="iconBg" aria-hidden="true"> <span class="icon hasFontIcon icon-phone"></span> 
+</span> 
+ <span class="text">Call Us Today</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true"></div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr/></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"> <div class="innerPageTitle">Menu</div> 
+</div> 
+ <div class="titleLine display_None"><hr/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_menu dm-home-page" themewaschanged="true" desktop-global-classes="header-over-content" tablet-global-classes="header-over-content"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="117" class="dmFullRowRespTmpl mainBorder dmRespRowsWrapper" id="1708724882"> <div class="u_1375496798 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1375496798"> <div class="dmRespColsWrapper" id="1253329467"> <div class="u_1700549860 dmRespCol small-12 medium-12 large-12" id="1700549860" data-anim-desktop="fadeIn"> <div class="dmNewParagraph u_1162266804" data-element-type="paragraph" data-version="5" id="1162266804" style="transition: none; text-align: left; display: block;"><p class="text-align-center size-24 m-size-19" style=""><strong style="font-weight: bold; display: unset; color: rgb(255, 255, 255);" class="font-size-24 m-font-size-19">*Kindly inform your server of any food allergies or dietary restrictions.*</strong></p><p class="text-align-center size-24 m-size-19"><strong style="font-weight: bold; display: unset; color: rgb(255, 255, 255);" class="font-size-24 m-font-size-19">Please note:</strong> 
+ <strong style="font-weight: bold; display: unset; color: var(--color_1);" class="font-size-24 m-font-size-19">Substitutions are not allowed.</strong></p></div> 
+ <div class="u_1665482723 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1665482723"><img src="https://lirp.cdn-website.com/bbe8da69/dms3rep/multi/opt/3-d587102e-5df4c540-112w.png" alt="" id="1441693831" class="" data-dm-image-path="https://irp.cdn-website.com/bbe8da69/dms3rep/multi/3-d587102e-5df4c540.png" width="406" height="357" onerror="handleImageLoadError(this)"/></div> 
+ <div class="u_1753927787 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1753927787" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h2 class="text-align-center size-60 m-size-36"><span class="font-size-60 m-font-size-36" style="display: unset; color: rgb(255, 255, 255);" m-font-size-set="true">Dinner Menu</span></h2> 
+</div> 
+ <div class="u_1819266916 default dmRestaurantMenu dmWs" id="1819266916" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" num_columns="2" show_pics="false" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-5" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" businessname="Somethin’ On Myrtle" menu_data="W3sidGl0bGUiOiJBcHBldGl6ZXIiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjoxLCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkplcmsgQ2hpY2tlbiBTYXRheSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+Qm9uZWxlc3MgY2hpY2tlbiB0aGlnaHMgb24gYSBiYW1ib28gc2tld2VyIHdpdGggcGluZWFwcGxlIGdsYXplLCBzZWFzbWUgcGx1bSBzYXVjZSwgYW5kIG1hbmdvIGZlbm5lbCBzYWxhZC48L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IkNoaWNrZW4gV2luZ3MiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlBsYWluLCBUYWJhc2NvIEJ1ZmZhbG8sIExlbW9uIFBlcHBlciwgU2NvdGNoIEJvbm5ldCBKZXJrLCBvciBTd2VldCBhbmQgU291ci4gU2VydmVkIHdpdGggdmVnZXRhYmxlIGNydWRpdMOpLCByYW5jaCwgYW5kIGJsdWUgY2hlZXNlIGRyZXNzaW5nLjwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiMTYifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjIsInRpdGxlIjoiQ3J1c3RlZCBDYWxhbWFyaSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+RnJpZWQgb25pb25zIGFuZCBmcmllZCBwaWNrbGVzLiBTZXJ2ZWQgd2l0aCBwZXBwZXIgc295IGFuZCBzcmlyYWNoYSBhaW9saS48L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjE4In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjozLCJ0aXRsZSI6IkN1cnJ5IEdvYXQgQmFvIEJ1biIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+V2l0aCBtYW5nbyBmZW5uZWwgc2xhdywgYXZvY2FkbyBzYWxhZCwgYW5kIGN1cnJ5IHNvdXIgY3JlYW0uPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkMTgifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjQsInRpdGxlIjoiU291cHkgTmV3IFplYWxhbmQgR3JlZW4gTXVzc2VscyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+TWFkZSB3aXRoIHdoaXRlIHdpbmUgYW5kIENoaW5lc2UgdG9tYXRvIHNhdWNlLiBTZXJ2ZWQgd2l0aCBnYXJsaWMgZmxhdGJyZWEuPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIyMiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NSwidGl0bGUiOiJGcmllZCBEdW1wbGluZ3MiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlNwaWNlZCBDdXJyeSBTaHJpbXAgb3IgT3h0YWlsLiBTZXJ2ZWQgd3RoIG1hbmdvIGZlbm5lbCBzYWxhZCwgcGluZWFwcGxlIGNoaWxpIGdsYXplLCBhbmQgcGVwcGVyIHNveS48L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQyMi8kMjMifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjYsInRpdGxlIjoiTWFyeWxhbmQgU3R5bGUgQ3JhYiBDYWtlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5XaXRoIGJhYnkgYXJ1Z3VsYSBzYWxhZCwgc3JpcmFjaGEgYWlvbGksIGFuZCB3YXNhYmkgZGlsbCByZW1vdWxhZGUuPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkMjIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjcsInRpdGxlIjoiU2FsbW9uIGFuZCBMb2JzdGVyIEJpdGVzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5TZXJ2ZWQgd2l0aCBwaWNrbGVkIHZlZ2V0YWJsZXMgYW5kIGEgcnVuIG9mIHRoZSBob3VzZSBzYXVjZXMuPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkMjQifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjgsInRpdGxlIjoiRnJlbmNoIEZyaWVzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IiQ3In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJNYWluIENvdXJzZSIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjIsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiSmFzbWluZSBGcmllZCBSaWNlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5XaXRoIHlvdXIgY2hvaWNlIG9mIHZlZ2V0YWJsZXMsIGNoaWNrZW4sIHN0ZWFrLCBzaHJpbXAsIG9yIGxvYnN0ZXIgbWl4ZWQgaW4gdGhlIHJpY2VhIG5kIGFsb25nIHRoZSBzaWRlLiBHYXJuaXNoZWQgd2l0aCBiYWJ5IGxldHR1Y2UuPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkMTgvJDIyLyQyNC8kMjQvJDMyIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IkNoaWNrZW4sIFNocmltcCwgQmVlZiwgb3IgTG9ic3RlciB3aXRoIEJyb2Njb2xpIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5JbiBhIHJvYXN0ZWQgZ2FybGljIHNhdWNlIHdpdGggd2hpdGUgcmljZS48L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQyMi8kMjQvJDI0LyQzMiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJHcmlsbGVkIEhhbGYgQ2hpY2tlbiIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+SmVyayB3aXRoIHBpbmVhcHBsZSBnbGF6ZSwgb3IgZ2FybGljIGFuZCByb3NlbWFyeSB3aXRoIGxlbW9uIGJ1dHRlciBzYXVjZSwgYW5kIHlvdXIgY2hvaWNlIG9mIHN0YXJjaCBvciB2ZWdldGFibGVzLjwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDI1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjozLCJ0aXRsZSI6IlNhbG1vbiBGaWxldCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+R3JpbGxlZCwgUGFuIFNlYXJlZCBDYWp1biwgb3IgUGFua28gQ3J1c3RlZC4gU2VyZXZkIHdpdGggc3JpcmFjaGEgY2FycGVyIHNhdWNlIGFuZCBjb2NvbnV0IHJpY2Ugd2l0aCBncmVlbiBwZWFzLjwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDI4In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo0LCJ0aXRsZSI6IlZlZ2V0YWJsZSBMbyBNZWluIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5WZWdldGFibGUgbG8gbWVpbiB3aXRoIHlvdXIgY2hvaWNlIG9mIGJyYWlzZWQgY3VycnkgZ29hdCwgZ3JpbGxlZCBvciBmcmllZCBzaHJpbXAsIGdyaWxsZWQgb3IgZnJpZWQgbG9ic3Rlciwgb3IgYnJhaXNlZCBveHRhaWwuIFNlcnZlZCB3aXRoIHBpbmVhcHBsZSBnbGF6ZS48L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQyNi8kMjgvJDMyLyQzMiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NSwidGl0bGUiOiJTZWFmb29kIFBhc3RhIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5Mb25nIG5vb2RsZXMgaW4gcGluayB2b2RrYSBzYXVjZSB3aXRoIHNocmltcCwgc2FsbW9uLCBsb2JzdGVyIGdyZWVuIHBlYXMsIGFuZCBncmVlbiBvbmlvbnMuPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkMzIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjYsInRpdGxlIjoiV2hvbGUgU2VtaSBCb25lbGVzcyBSZWQgU25hcHBlciIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+RnJpZWQgb3IgRXNjb3ZpdGNoLiBTZXJ2ZWQgd2l0aCBmcmllZCByaWNlIGFuZCBncmlsbGVkIGJyb2Njb2xpLjwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDQyIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo3LCJ0aXRsZSI6IkdyaWxsZWQgUmFjayBvZiBMYW1iIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5NYXJpbmF0ZWQgd2l0aCBmcmVzaCB0aHltZSwgZ2FybGljLCByb3NlbWFyeSwgc295LCBhbmQgV29yY2VzdGVyc2hpcmUuIEdyaWxsZWQgdG8geW91ciBsaWtpbmcsIGFuZCBzZXJ2ZWQgd2l0aCB2ZWdldGFibGUgZnJpZWQgcmljZSwgbWFzY3VsaW5lIGdyZWVucywgcGluZWFwcGxlIGNoaWxpIGdsYXplLCBhbmQgc2VzYW1lIHBsdW0gc2F1Y2UuPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkNDUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjgsInRpdGxlIjoiU2Vhc29uZWQgU25vdyBDcmFiIEJvaWwiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPldpdGggc2Vhc29uaW5nIHZlZ2V0YWJsZXMsIHllbGxvdyBjb3JuLCBhbmQgcmVkIGJsaXNzIHBvdGF0b2VzIHN3aW1taW5nIGluIGEgYnJvdGggb2Ygd2hpdGUgd2luZSwgZnJlc2ggdGh5bWUsIGxlbW9uIGFuZCBPbGQgQmF5LjwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiNDUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjksInRpdGxlIjoiVG9tYWhhd2sgU3RlYWsgRGlhbmUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlBlcHBlcm9ybiByb2FzdGVkIGJvbmUtaW4ga2luZyBjdXQgcmliZXllIHdpdGggcGFyc2xleSBuZXcgcG90YXRvZXMsIGFuZCBncmlsbGVkIGFzcGFyYWd1cy48L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IjQ1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxMCwidGl0bGUiOiJTZWFmb29kIEJvdWlsbGFiYWlzc2UiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlNub3cgY3JhYiwgbXVzc2Vscywgc2hyaW1wLCBsb2JzdGVyIGFuZCBzYWxtb24gaW4gYSBzZWFmb29kIGJvaWwgaW5mdXNlZCB3aXRoIHdoaXRlIHdpbmUgbGVtb24sIE9sZCBCYXksIGFuZCBQZXJub2QuIFNlcnZlZCB3aXRoIGdhcmxpYyBmbGF0IGJyZWFkLjwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDYwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxMSwidGl0bGUiOiJWZWdhbiBMZW50aWwgU3RldyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+U2VydmVkIHdpdGggcXVpbm9hIGFuZCBiYWJ5IGFyYWd1bGEgc2FsYWQuPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkMjAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjEyLCJ0aXRsZSI6IlZlZ2FuIExlbW9uZ3Jhc3MgQ3VycnkgVmVnZXRhYmxlcyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+U2VydmVkIHdpdGggY29jb251dCByaWNlIGFuZCBnYXJuaXNoIHdpdGggbWFuZ28gZmVubmVsIHNhbGFkLjwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDI0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJEZXNzZXJ0cyIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjMsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiSG91c2VtYWRlIFBpbmVhcHBsZSBVcHNpZGUgRG93biBDYWtlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5QbGF0ZWQgd2l0aCBjYXJhbWVsLCByYXNwYmVycnkgc2F1Y2UsIGFuZCBjb2NvbnV0IHJ1bSB3aGlwcGVkIGNyZWFtLjwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDEyIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJCcnVuY2giLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjo0LCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlR3byBIb3VycyBVbmxpbWl0ZWQgbWltb3NhIG9yIEJlbGxpbmkiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHVsIGNsYXNzPVwicnRlQmxvY2sgZGVmYXVsdExpc3RcIj48bGk+SmFtYmFsYXlhIFNocmltcCAmYW1wOyBHcml0czwvbGk+PGxpPk1hcnlsYW5kIFN0eWxlIENyYWIgQ2FrZXMgJmFtcDsgR3JpdHM8L2xpPjxsaT5Ud2luIEJ1cmdlcnMgY29va2VkIGluIE9uaW9ucyBvbiBhIFBvdGF0byBSb2xsLCBDaGlwIEN1dCBGcmllczwvbGk+PGxpPlBhbiBGcmllZCBDaGlja2VuICZhbXA7IEJlbGdpYW4gV2FmZmxlcywgU3Rld2VkIFN0cmF3YmVycmllcyAmYW1wOyBNYXBsZSBCdXR0ZXI8L2xpPjwvdWw+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQ1NSB8IEZvb2QgT25seTogJDI1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IlR3byBIb3VycyBVbmxpbWl0ZWQgbWltb3NhIG9yIEJlbGxpbmkiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHVsIGNsYXNzPVwicnRlQmxvY2sgZGVmYXVsdExpc3RcIj48bGk+TlkgU2lybG9pbiBTZXJ2ZWQgJmFtcDsgVHdvIEVnZ3M8L2xpPjwvdWw+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQ2MCB8IEZvb2QgT25seTogJDMwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJTaWRlcyIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjUsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiRWdncyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIkNSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJHcml0cyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIkNiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDaGlwIEN1dCBGcmllcyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiU21va2VkIEJhY29uIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IiQ3In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IldhZmZsZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIkOSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJGcmllZCBDaGlja2VuIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IiQxNiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfSx7InRpdGxlIjoiU2lnbmF0dXJlIENvY2t0YWlscyIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjYsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiSG9seSBHcmFpbCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+ROKAmXVzc2UgQ29nbmFjLCBQYXNzaW9uZnJ1aXQgTGlxdWV1ciwgUGFzc2lvbmZydWl0IFB1cmVlLCBDb2ludHJlYXUsIEZyZXNoIExlbW9uIEp1aWNlLCBGZWUgRm9hbTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDIwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkF0b21pYyBCb21iISIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+Q2FzYW1pZ29zIEJsYW5jbywgRG9uIEp1bGlvIFJlcG9zYWRvLCBBbmdvc3R1cmEgQml0dGVycywgQnJvd24gU3VnYXIsIExlbW9uIFplc3Q8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQyMCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJUaGUgQmx1ZXByaW50IiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5CdWxsaWV0IEJvdXJib24gV2hpc2tleSwgRnJlc2ggTGVtb24gSnVpY2UsIEFnYXZlLCBNdWRkbGVkIEJsdWViZXJyaWVzPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkMTgifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiWmhlbiIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+SGVuZHJpY2tzIEdpbiwgUm9zZW1hcnkgU3lydXAsIEVsZGVyZmxvd2VyLCBGcmVzaCBMZW1vbiBKdWljZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDE4In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlJ5dSBEcmFnb24iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPkRvbiBKdWxpbyBSZXBvc2FkbywgRHJhZ29uIGZydWl0LCBTd2VldCBDaGlsaSBTeXJ1cCwgQWdhdmUsIEZyZXNoIExlbW9uIEp1aWNlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkMTgifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiVGhlIE5vdG9yaW91cyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+TW91bnQgR2F5LCBGcmVzaCBMaW1lIEp1aWNlLCBQaW5lYXBwbGUgSnVpY2UsIE9yYW5nZSBKdWljZSwgUGFzc2lvbmZydWl0IFB1cmVlLCBDcmVhbSBPZiBDb2NvbnV0LCBQb21lZ3JhbmF0ZSBTeXJ1cDwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDE4In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkZyZW5jaCBLaXNzIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5IZW5uZXNzeSBDb2duYWMsIFByb3NlY2NvLCBEaXNhcm9ubm8sIENyZW1lIERlIENhc3NpcywgRnJlc2ggTGVtb24gSnVpY2U8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQxOCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJUb2t5byBEcmlmdCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+VGVxdWlsYSBCbGFuY28sIFNob2NodSwgTGF2ZW5kZXIsIEdpbmdlciBMaXF1ZXVyLCBGcmVzaCBMZW1vbiBKdWljZTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDE4In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlRva3lvIFRlYSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+Vm9ka2EsIEdpbiwgUnVtLCBUZXF1aWxhLCBGcmVzaCBMZW1vbiBKdWljZSwgTWlkb3JpPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkMTgifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiUmVkIFBlb255IFNhbmdyaWEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiI8ZGl2IGNsYXNzPSdyaWNoVGV4dCc+PHAgY2xhc3M9XCJydGVCbG9ja1wiPlRpdG/igJlzIFZvZGthLCBHdWF2YSwgQ3JlbWUgRGUgQ2Fzc2lzLCBTaW1wbGUgU3lydXAsIFNha2U8L3A+PC9kaXY+IiwicHJpY2VzIjpbeyJwcmljZSI6IiQxOCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJSZWQgQmFsbG9vbiIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IjxkaXYgY2xhc3M9J3JpY2hUZXh0Jz48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+RmlubGFuZGlhIEdyYXBlZnJ1aXQgVm9ka2EsIFl1enUsIFBvbWVncmFuYXRlPC9wPjwvZGl2PiIsInByaWNlcyI6W3sicHJpY2UiOiIkMTgifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiU09NIFB1bmNoIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiPGRpdiBjbGFzcz0ncmljaFRleHQnPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5XcmF5IGFuZCBOZXBoZXcsIE1hbmdvLCBHdWF2YTwvcD48L2Rpdj4iLCJwcmljZXMiOlt7InByaWNlIjoiJDE2In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJBbGNvaG9saWMgQmV2ZXJhZ2VzIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6NywiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJCZWVyIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjcifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiV2hpdGUgV2luZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJSZWQgV2luZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIxMCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJXYXRlcm1lbG9uIFdJbmUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiMTIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ2hhbXBhZ25lIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjEyIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJOb24tQWxjb2hvbGljIEJldmVyYWdlcyIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjgsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiU3ByaXRlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjQifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiR2luZ2VyIEFsZSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkNva2UgQ29sYSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkxlbW9uYWRlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjQifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiUGluZWFwcGxlIEp1aWNlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjQifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiQ3JhbmJlcnJ5IEp1aWNlIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjQifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiU2VsdHplciBXYXRlciIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IkJvdHRsZWQgV2F0ZXIiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiNiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJTcGFya2xpbmcgV2F0ZXIiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiOCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJNb2NrdGFpbCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI4In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9XQ=="> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Appetizer</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Jerk Chicken Satay</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Boneless chicken thighs on a bamboo skewer with pineapple glaze, seasme plum sauce, and mango fennel salad.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$15</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken Wings</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Plain, Tabasco Buffalo, Lemon Pepper, Scotch Bonnet Jerk, or Sweet and Sour. Served with vegetable crudit&eacute;, ranch, and blue cheese dressing.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$16</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Crusted Calamari</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Fried onions and fried pickles. Served with pepper soy and sriracha aioli.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Curry Goat Bao Bun</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">With mango fennel slaw, avocado salad, and curry sour cream.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Soupy New Zealand Green Mussels</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Made with white wine and Chinese tomato sauce. Served with garlic flatbrea.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$22</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Fried Dumplings</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Spiced Curry Shrimp or Oxtail. Served wth mango fennel salad, pineapple chili glaze, and pepper soy.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$22/$23</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Maryland Style Crab Cake</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">With baby arugula salad, sriracha aioli, and wasabi dill remoulade.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$22</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Salmon and Lobster Bites</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Served with pickled vegetables and a run of the house sauces.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$24</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">French Fries</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$7</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Main Course</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Jasmine Fried Rice</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">With your choice of vegetables, chicken, steak, shrimp, or lobster mixed in the ricea nd along the side. Garnished with baby lettuce.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18/$22/$24/$24/$32</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Chicken, Shrimp, Beef, or Lobster with Broccoli</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">In a roasted garlic sauce with white rice.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$22/$24/$24/$32</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Grilled Half Chicken</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Jerk with pineapple glaze, or garlic and rosemary with lemon butter sauce, and your choice of starch or vegetables.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Salmon Filet</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Grilled, Pan Seared Cajun, or Panko Crusted. Serevd with sriracha carper sauce and coconut rice with green peas.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$28</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Vegetable Lo Mein</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Vegetable lo mein with your choice of braised curry goat, grilled or fried shrimp, grilled or fried lobster, or braised oxtail. Served with pineapple glaze.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$26/$28/$32/$32</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Seafood Pasta</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Long noodles in pink vodka sauce with shrimp, salmon, lobster green peas, and green onions.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$32</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Whole Semi Boneless Red Snapper</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Fried or Escovitch. Served with fried rice and grilled broccoli.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$42</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Grilled Rack of Lamb</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Marinated with fresh thyme, garlic, rosemary, soy, and Worcestershire. Grilled to your liking, and served with vegetable fried rice, masculine greens, pineapple chili glaze, and sesame plum sauce.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$45</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Seasoned Snow Crab Boil</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">With seasoning vegetables, yellow corn, and red bliss potatoes swimming in a broth of white wine, fresh thyme, lemon and Old Bay.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$45</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Tomahawk Steak Diane</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Pepperorn roasted bone-in king cut ribeye with parsley new potatoes, and grilled asparagus.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$45</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Seafood Bouillabaisse</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Snow crab, mussels, shrimp, lobster and salmon in a seafood boil infused with white wine lemon, Old Bay, and Pernod. Served with garlic flat bread.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$60</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Vegan Lentil Stew</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Served with quinoa and baby aragula salad.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$20</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Vegan Lemongrass Curry Vegetables</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Served with coconut rice and garnish with mango fennel salad.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$24</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Desserts</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Housemade Pineapple Upside Down Cake</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Plated with caramel, raspberry sauce, and coconut rum whipped cream.</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$12</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"></div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Brunch</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Two Hours Unlimited mimosa or Bellini</div> 
+ <div class="menuItemDesc"> <div class="richText"> <ul class="rteBlock defaultList"> <li>Jambalaya Shrimp &amp; Grits</li> 
+ <li>Maryland Style Crab Cakes &amp; Grits</li> 
+ <li>Twin Burgers cooked in Onions on a Potato Roll, Chip Cut Fries</li> 
+ <li>Pan Fried Chicken &amp; Belgian Waffles, Stewed Strawberries &amp; Maple Butter</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$55 | Food Only: $25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Two Hours Unlimited mimosa or Bellini</div> 
+ <div class="menuItemDesc"> <div class="richText"> <ul class="rteBlock defaultList"> <li>NY Sirloin Served &amp; Two Eggs</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$60 | Food Only: $30</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Sides</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Eggs</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$5</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Grits</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$6</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Chip Cut Fries</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice"></div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Smoked Bacon</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$7</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Waffle</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$9</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Fried Chicken</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$16</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Signature Cocktails</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Holy Grail</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">D&rsquo;usse Cognac, Passionfruit Liqueur, Passionfruit Puree, Cointreau, Fresh Lemon Juice, Fee Foam</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$20</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Atomic Bomb!</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Casamigos Blanco, Don Julio Reposado, Angostura Bitters, Brown Sugar, Lemon Zest</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$20</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">The Blueprint</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Bulliet Bourbon Whiskey, Fresh Lemon Juice, Agave, Muddled Blueberries</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Zhen</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Hendricks Gin, Rosemary Syrup, Elderflower, Fresh Lemon Juice</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Ryu Dragon</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Don Julio Reposado, Dragon fruit, Sweet Chili Syrup, Agave, Fresh Lemon Juice</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">The Notorious</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Mount Gay, Fresh Lime Juice, Pineapple Juice, Orange Juice, Passionfruit Puree, Cream Of Coconut, Pomegranate Syrup</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">French Kiss</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Hennessy Cognac, Prosecco, Disaronno, Creme De Cassis, Fresh Lemon Juice</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Tokyo Drift</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Tequila Blanco, Shochu, Lavender, Ginger Liqueur, Fresh Lemon Juice</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Tokyo Tea</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Vodka, Gin, Rum, Tequila, Fresh Lemon Juice, Midori</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Red Peony Sangria</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Tito&rsquo;s Vodka, Guava, Creme De Cassis, Simple Syrup, Sake</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Red Balloon</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Finlandia Grapefruit Vodka, Yuzu, Pomegranate</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$18</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">SOM Punch</div> 
+ <div class="menuItemDesc"> <div class="richText"> <p class="rteBlock">Wray and Nephew, Mango, Guava</p> 
+</div> 
+</div> 
+</div> 
+ <div class="menuItemPrice">$16</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Alcoholic Beverages</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Beer</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$7</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">White Wine</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$10</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Red Wine</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$10</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Watermelon WIne</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$12</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Champagne</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$12</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Non-Alcoholic Beverages</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Sprite</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Ginger Ale</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Coke Cola</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Lemonade</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Pineapple Juice</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">Cranberry Juice</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Seltzer Water</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Bottled Water</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$6</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">Sparkling Water</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$8</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">Mocktail</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$8</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmNewParagraph u_1600710522" data-element-type="paragraph" data-version="5" id="1600710522" style="transition: none; text-align: left; display: block;"><p class="text-align-center"><strong style="color: rgb(255, 255, 255); display: unset; font-weight: bold;">This item is prepared to your preference and may contain raw or undercooked ingredients. Consuming raw or undercooked meats, seafood, shellfish, or eggs may increase the risk of foodborne illness, particularly for those with certain medical conditions.</strong> 
+ </p><p class="text-align-center"><strong style="color: var(--color_1); display: unset; font-weight: bold;">Please note: No substitutions allowed.</strong></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="sticky-widgets-container-global" id="1028022891"> <a data-display-type="block" class="u_1288271729 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient sticky-desktop-position-bottom-right sticky-mobile-position-bottom-right hide-for-small" file="false" href="/join-our-team" data-element-type="dButtonLinkId" id="1288271729" link_type="popup" popup_target="join-our-team"> <span class="iconBg" aria-hidden="true" id="1098162878"> <span class="icon hasFontIcon icon-star" id="1640855589"></span> 
+</span> 
+ <span class="text" id="1849886801">Join Our Team</span> 
+</a> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="14" class="dmFooterResp dmFullFooterResp" id="1258744771"> <div class="dmRespRow dmDividerRow" id="1044134790"> <div class="dmRespColsWrapper" id="1365322294"> <div class="large-12 medium-12 small-12 dmRespCol" id="1297550383"> <div class="dmDividerWrapper clearfix" id="1475082935" data-element-type="dDividerId"><hr class="dmDivider defaultDivider" id="1089527600"/></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1280584812 dmRespRow fullBleedChanged fullBleedMode" id="1280584812"> <div class="dmRespColsWrapper" id="1979128535"> <div class="u_1615476048 dmRespCol small-12 large-4 medium-4" id="1615476048"> <div class="u_1686810101 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1686810101"><img src="https://lirp.cdn-website.com/bbe8da69/dms3rep/multi/opt/3-d587102e-5df4c540-82w.png" alt="Somethin’ on Myrtle logo" id="1818906279" class="" data-dm-image-path="https://irp.cdn-website.com/bbe8da69/dms3rep/multi/3-d587102e-5df4c540.png" width="406" height="357" onerror="handleImageLoadError(this)"/></div> 
+ <div class="u_1149867692 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1149867692"> <a href="/" id="1579292459"><img src="https://lirp.cdn-website.com/bbe8da69/dms3rep/multi/opt/2-f3030d40-01464b2d-329w.png" alt="Somethin’ on Myrtle logo" id="1861163983" class="" data-dm-image-path="https://irp.cdn-website.com/bbe8da69/dms3rep/multi/2-f3030d40-01464b2d.png" width="500" height="152" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div class="u_1163719426 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1163719426" style="transition: opacity 1s ease-in-out 0s; text-align: left; display: block;" data-quillbot-parent="e-PIBzw4_0xmmUplEjTBg"> <h1 class="text-align-center"><span style="display: unset; color: rgb(255, 252, 252);">Asian Bistro</span></h1> 
+</div> 
+</div> 
+ <div class="u_1763849238 dmRespCol small-12 large-4 medium-4" id="1763849238"> <div class="u_1228898600 dmNewParagraph" id="1228898600" style="transition: none 0s ease 0s; text-align: left; display: block;" data-element-type="paragraph" data-version="5" data-quillbot-parent="vZXOh4beViu1-KYsDQmku"> <h5 class="text-align-center m-size-30"><span style="color: rgb(255, 255, 255); display: initial;" class="m-font-size-30" m-font-size-set="true">Get in Touch</span></h5> 
+</div> <div class="u_1711768018 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1711768018"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1121252431"/></div> 
+ <div class="u_1474636917 dmNewParagraph" id="1474636917" style="transition: none 0s ease 0s; text-align: left; display: block;" data-version="5" data-quillbot-parent="rGF2_YrRzxXtSX5-sSdnP" data-diy-text=""><p class="text-align-center"><span style="display: initial; color: rgb(255, 255, 255);">(718) 789-1111</span><span style="display: initial;"><br/></span></p></div> <div class="u_1654574027 dmNewParagraph" id="1654574027" style="transition: opacity 1s ease-in-out 0s; text-align: left;" data-version="5" data-quillbot-parent="rGF2_YrRzxXtSX5-sSdnP" data-diy-text=""><p class="text-align-center"><a href="mailto:somethingonmyrtle@gmail.com" target="_blank" style="display: initial; color: rgb(255, 255, 255);">somethingonmyrtle@gmail.com</a><span style="display: initial;"><br/></span></p></div></div> 
+ <div class="u_1386086210 dmRespCol small-12 large-4 medium-4" id="1386086210"> <div class="u_1308089173 default align-center inlineMap" data-type="inlineMap" data-lat="40.6937" data-lng="-73.96476" data-address="503 Myrtle Ave, Brooklyn, NY 11205, United States of America" data-height="" data-msid="" data-mapurl="" data-lang="en" data-color-scheme="" data-zoom="13" data-layout="layout3" data-popup-display="" data-popup-show="false" data-popup-title="" data-popup-title-visible="false" data-popup-description="" data-popup-description-visible="false" id="1308089173" dmle_extension="mapextension" data-element-type="mapextension" modedesktop="map" modemobile="button" addresstodisplay="503 Myrtle Ave, Brooklyn, NY 11205, United States of America" geocompleteaddress="503 Myrtle Ave, Brooklyn, NY 11205, United States of America" data-popup-display-desktop="" data-popup-display-mobile="" data-display-type="block" layout="layout3" modetablet="map" wr="true" icon="true" surround="true" adwords="" icon-name="icon-map-marker" provider="mapbox" lon="-73.96476" lat="40.6937" zoom="13"> <div class="mapContainer" style="height: 100%; width: 100%; overflow: hidden; z-index: 0;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1320925187 dmRespRow dmFooterContent" id="1320925187"> <div class="dmRespColsWrapper" id="1761724359"> <div class="dmRespCol large-12 medium-12 small-12 dmFooterCol" id="1530487677"> <div class="u_1966454636 widget-1f5975 dmCustomWidget" data-lazy-load="" data-title="" id="1966454636" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="1f5975986930429f819d4cd2154b5c4a" data-widget-version="25" data-widget-config="eyJjb3B5cmlnaHRUZXh0IjoiPHAgY2xhc3M9XCJydGVCbG9ja1wiPkFsbCBSaWdodHMgUmVzZXJ2ZWQgfCBTb21ldGhpbuKAmSBvbiBNeXJ0bGU8L3A+In0="> <div class="copyright"> <div>&copy; 2025&nbsp;</div> 
+ <div><p class="rteBlock">All Rights Reserved | Somethin&rsquo; on Myrtle</p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1165567033" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link rel="preload" href="https://irp.cdn-website.com/fonts/css2?family=Inter:wght@100..900&family=Roboto:wght@100;300;400;500;700;900&family=Lobster:wght@400&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700;900&family=Lora:wght@400..700&family=Josefin+Sans:wght@100..700&amp;subset=latin-ext&amp;display=swap"  as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<style>
+@font-face {
+  font-family: "Rottersand";
+  src: url("https://irp.cdn-website.com/bbe8da69/fonts/Rottersand-e212_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Rottersand-Swash";
+  src: url("https://irp.cdn-website.com/bbe8da69/fonts/Rottersand-Swash-1718_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Abuget";
+  src: url("https://irp.cdn-website.com/bbe8da69/fonts/Abuget-7622_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "GoogleFonts-KaushanScript-Regular";
+  src: url("https://irp.cdn-website.com/bbe8da69/fonts/GoogleFonts-KaushanScript-Regular-f7f9_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Black Pen";
+  src: url("https://irp.cdn-website.com/bbe8da69/fonts/Black+Pen-731a_400.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+<style>
+@font-face {
+  font-family: "Mottingham Script_dafont";
+  src: url("https://irp.cdn-website.com/bbe8da69/fonts/Mottingham+Script_dafont-9e0d_400.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="preload" as="style" fetchpriority="low" onload="loadCSS(this)" href="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link rel="preload" href="https://irp.cdn-website.com/WIDGET_CSS/f5be35cacf9eededa7f465ca57e01b47.css" id="widgetCSS" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="menu"] #dm [data-show-on-page-only="menu"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/bbe8da69/files/bbe8da69_1.min.css?v=48" id="siteGlobalCss" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody div.u_CONTACTUS
+{
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody a.span.textonly
+{
+	color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody section.u_Home
+{
+	background-image:url(https://lirp.cdn-website.com/md/dmtmpl/6aa3c308-092e-4f2a-9749-74a9d95f0133/dms3rep/multi/opt/darker%20BG%20the%20Fine%20Tavern-1944x1299-2880w.jpg) !important;
+	background-position:center center !important;
+	background-color:rgba(0,0,0,0) !important;
+	border-style:solid !important;
+	border-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody *.u_1064625944:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1064625944.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.u_1064625944 *.bgExtraLayerOverlay
+{
+	background-image:linear-gradient(90deg,rgba(4,17,33,1) 0,rgba(102,102,102,1) 100%) !important;
+}
+*#dm *.dmBody nav.u_1947775040
+{
+	color:white !important;
+}
+*#dm *.dmBody div.u_1064625944:before
+{
+	opacity:0.24 !important;
+	background-image:linear-gradient(90deg,rgba(4,17,33,1) 0,rgba(102,102,102,1) 100%) !important;
+}
+*#dm *.dmBody div.u_1064625944.before
+{
+	opacity:0.24 !important;
+	background-image:linear-gradient(90deg,rgba(4,17,33,1) 0,rgba(102,102,102,1) 100%) !important;
+}
+*#dm *.dmBody div.u_1064625944>.bgExtraLayerOverlay
+{
+	opacity:0.24 !important;
+}
+*#dm *.dmBody *.u_1253731132:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1253731132.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1253731132>.bgExtraLayerOverlay
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.u_1253731132:before
+{
+	opacity:0.38 !important;
+}
+*#dm *.dmBody div.u_1253731132.before
+{
+	opacity:0.38 !important;
+}
+*#dm *.dmBody div.u_1253731132>.bgExtraLayerOverlay
+{
+	opacity:0.38 !important;
+}
+*#dm *.dmBody div.u_1571652513
+{
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/md/pexels/dms3rep/multi/opt/pexels-photo-548389-2880w.jpeg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody *.u_1571652513:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1571652513.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1571652513>.bgExtraLayerOverlay
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.u_1571652513:before
+{
+	opacity:0.25 !important;
+}
+*#dm *.dmBody div.u_1571652513.before
+{
+	opacity:0.25 !important;
+}
+*#dm *.dmBody div.u_1571652513>.bgExtraLayerOverlay
+{
+	opacity:0.25 !important;
+}
+*#dm *.dmBody div.u_1064625944
+{
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/md/pexels/dms3rep/multi/opt/pexels-photo-1822605-2880w.jpeg) !important;
+}
+*#dm *.dmBody div.u_FAQs *.bgExtraLayerOverlay
+{
+	background-image:linear-gradient(90deg,rgba(4,17,33,1) 0,rgba(102,102,102,1) 100%) !important;
+}
+*#dm *.dmBody div.u_Gallery
+{
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/md/pexels/dms3rep/multi/opt/pexels-photo-548389-2880w.jpeg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody *.u_Gallery:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_Gallery.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_Gallery>.bgExtraLayerOverlay
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.u_Gallery:before
+{
+	opacity:0.25 !important;
+}
+*#dm *.dmBody div.u_Gallery.before
+{
+	opacity:0.25 !important;
+}
+*#dm *.dmBody div.u_Gallery>.bgExtraLayerOverlay
+{
+	opacity:0.25 !important;
+}
+*#dm *.dmBody div.u_1253731132
+{
+	background-color:rgba(0,0,0,0) !important;
+	box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-moz-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-webkit-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	background-repeat:no-repeat !important;
+	background-image:none !important;
+	background-size:cover !important;
+	border-style:solid !important;
+	border-width:0 !important;
+	border-color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1375496798
+{
+	background-color:var(--color_3) !important;
+}
+*#dm *.dmBody div.u_1483796934 input:not([type="submit"])
+{
+	border-style:solid !important;
+	border-width:0 !important;
+	border-color:rgba(221,221,221,1) !important;
+	background-color:rgba(247,247,247,1) !important;
+}
+*#dm *.dmBody div.u_1483796934 textarea
+{
+	border-style:solid !important;
+	border-width:0 !important;
+	border-color:rgba(221,221,221,1) !important;
+	background-color:rgba(247,247,247,1) !important;
+}
+*#dm *.dmBody div.u_1483796934 select
+{
+	border-style:solid !important;
+	border-width:0 !important;
+	border-color:rgba(221,221,221,1) !important;
+	background-color:rgba(247,247,247,1) !important;
+}
+*#dm *.dmBody div.u_1483796934 *.dmform-success
+{
+	font-style:normal !important;
+}
+*#dm *.dmBody div.u_1483796934 *.dmforminput label
+{
+	font-style:normal !important;
+	text-decoration:none !important;
+	font-weight:normal !important;
+}
+*#dm *.dmBody div.u_1483796934 *.dmforminput input
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody *.u_1483796934 *.dmformsubmit
+{
+	float:LEFT !important;
+}
+*#dm *.dmBody div.u_1808015388
+{
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_ContactUs
+{
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_FAQs
+{
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/bbe8da69/dms3rep/multi/opt/AdobeStock_212024254-2880w.jpg) !important;
+}
+*#dm *.dmBody *.u_FAQs:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_FAQs.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_FAQs>.bgExtraLayerOverlay
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.u_FAQs:before
+{
+	opacity:0.27 !important;
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_FAQs.before
+{
+	opacity:0.27 !important;
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_FAQs>.bgExtraLayerOverlay
+{
+	opacity:0.27 !important;
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_pa_7464595 *.bgExtraLayerOverlay
+{
+	background-image:linear-gradient(90deg,rgba(4,17,33,1) 0,rgba(102,102,102,1) 100%) !important;
+}
+*#dm *.dmBody div.u_pa_7464595
+{
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/bbe8da69/dms3rep/multi/opt/AdobeStock_212024254-2880w.jpg) !important;
+}
+*#dm *.dmBody *.u_pa_7464595:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_pa_7464595.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_pa_7464595>.bgExtraLayerOverlay
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.u_pa_7464595:before
+{
+	opacity:0.27 !important;
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_pa_7464595.before
+{
+	opacity:0.27 !important;
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_pa_7464595>.bgExtraLayerOverlay
+{
+	opacity:0.27 !important;
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody *.u_AboutUs:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_AboutUs.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_AboutUs>.bgExtraLayerOverlay
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.u_AboutUs:before
+{
+	opacity:0.38 !important;
+}
+*#dm *.dmBody div.u_AboutUs.before
+{
+	opacity:0.38 !important;
+}
+*#dm *.dmBody div.u_AboutUs>.bgExtraLayerOverlay
+{
+	opacity:0.38 !important;
+}
+*#dm *.dmBody div.u_AboutUs
+{
+	background-color:rgba(0,0,0,0) !important;
+	box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-moz-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-webkit-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	background-repeat:no-repeat !important;
+	background-image:none !important;
+	background-size:cover !important;
+	border-style:solid !important;
+	border-width:0 !important;
+	border-color:var(--color_1) !important;
+}
+*#dm *.dmBody div.u_1819266916 .menuItemBox .menuItemName
+{
+	color:rgba(255,255,255,1) !important;
+	text-decoration:underline !important;
+	font-weight:bold !important;
+}
+*#dm *.dmBody div.u_1819266916 .menuItemBox .menuItemPrice
+{
+	color:rgba(255,255,255,1) !important;
+	text-decoration:underline !important;
+	font-weight:bold !important;
+}
+*#dm *.dmBody *.u_1819266916 .menuItemBox .menuItemName
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody *.u_1819266916 .menuItemBox .menuItemPrice
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody div.u_1819266916 .menuItemDesc
+{
+	color:rgba(255,255,255,1) !important;
+}
+*#dm *.dmBody div.u_1819266916 .menuItemDesc .rteBlock
+{
+	color:rgba(255,255,255,1) !important;
+}
+*#dm *.dmBody *.u_1819266916 .menuCategory .menuCategroyTitle
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody div.u_1700549860
+{
+	background-color:rgba(0,0,0,0) !important;
+	box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-moz-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+	-webkit-box-shadow:rgba(0,0,0,0.25) 0 3px 11px 0 !important;
+}
+*#dm *.dmBody *.u_1665482723
+{
+	width:100% !important;
+}
+*#dm *.dmBody div.u_1819266916 .imageWrapper
+{
+	width:85px !important;
+	height:85px !important;
+	border-radius:50% !important;
+}
+*#dm *.dmBody div.u_1819266916 .menuItemBox
+{
+	border-bottom-style:solid !important;
+	border-bottom-color:rgb(0,0,0) !important;
+	border-bottom-width:0 !important;
+	margin-bottom:0 !important;
+}
+*#dm *.dmBody div.u_1819266916 .menuCategory .menuCategroyTitle
+{
+	color:rgba(255,255,255,1) !important;
+	font-weight:normal !important;
+	border-bottom-width:1px !important;
+	border-bottom-style:solid !important;
+	border-bottom-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1819266916 .menuItemDesc
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody *.u_1819266916 .menuItemDesc .rteBlock
+{
+	text-align:CENTER !important;
+}
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.dmBody div.u_CONTACTUS
+{
+	padding-top:50px !important;
+	padding-left:50px !important;
+	padding-bottom:50px !important;
+	float:none !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	top:auto !important;
+	max-width:none !important;
+	left:0 !important;
+	width:100% !important;
+	margin-top:40px !important;
+	position:relative !important;
+	margin-bottom:40px !important;
+	padding-right:50px !important;
+	min-width:0 !important;
+	text-align:center !important;
+	height:auto !important;
+}
+*#dm *.dmBody div.u_HOME
+{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-left:50px !important;
+	padding-right:50px !important;
+}
+*#dm *.dmBody section.u_Home
+{
+	padding-top:158px !important;
+	padding-bottom:258px !important;
+	padding-left:0 !important;
+	float:none !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	top:auto !important;
+	max-width:none !important;
+	left:0 !important;
+	width:100% !important;
+	margin-top:0 !important;
+	position:relative !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	text-align:center !important;
+	height:auto !important;
+}
+*#dm *.dmBody div.u_1064625944
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:137.5px !important;
+	padding-left:40px !important;
+	padding-bottom:137.5px !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:40px !important;
+	min-width:0 !important;
+	text-align:center !important;
+	background-attachment:fixed !important;
+	background-size:cover !important;
+	background-position:0 50% !important;
+}
+*#dm *.dmBody div.u_FAQs
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:45.5px !important;
+	padding-left:40px !important;
+	padding-bottom:45.5px !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:40px !important;
+	min-width:0 !important;
+	text-align:center !important;
+	background-attachment:fixed !important;
+	background-size:cover !important;
+	background-position:0 50% !important;
+}
+*#dm *.dmBody div.u_1483796934
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:calc(100% - 0px) !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+	text-align:left !important;
+}
+*#dm *.dmBody div.u_1808015388
+{
+	padding-top:20px !important;
+	padding-bottom:100px !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-left:40px !important;
+	max-width:none !important;
+	padding-right:40px !important;
+	min-width:0 !important;
+	text-align:left !important;
+}
+*#dm *.dmBody div.u_ContactUs
+{
+	padding-top:50px !important;
+	padding-bottom:68.5px !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	height:auto !important;
+	padding-left:40px !important;
+	max-width:100% !important;
+	padding-right:40px !important;
+	min-width:0 !important;
+	text-align:left !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+}
+*#dm *.dmBody div.u_pa_7464595
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:45.5px !important;
+	padding-left:40px !important;
+	padding-bottom:45.5px !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:40px !important;
+	min-width:0 !important;
+	text-align:center !important;
+	background-attachment:fixed !important;
+	background-size:cover !important;
+	background-position:0 50% !important;
+}
+*#dm *.dmBody div.u_1253731132
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	float:none !important;
+	top:0 !important;
+	max-width:100% !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	padding-right:25px !important;
+	min-width:0 !important;
+	text-align:center !important;
+	height:auto !important;
+	margin-left:100px !important;
+	margin-top:75px !important;
+	margin-bottom:75px !important;
+	margin-right:100px !important;
+	background-repeat:no-repeat !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_AboutUs
+{
+	padding-top:25px !important;
+	padding-left:25px !important;
+	padding-bottom:25px !important;
+	float:none !important;
+	top:0 !important;
+	max-width:100% !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	padding-right:25px !important;
+	min-width:0 !important;
+	text-align:center !important;
+	height:auto !important;
+	margin-left:100px !important;
+	margin-top:75px !important;
+	margin-bottom:75px !important;
+	margin-right:100px !important;
+	background-repeat:no-repeat !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1819266916 .menuCategory .menuCategroyTitle
+{
+	font-size:32px !important;
+}
+*#dm *.dmBody div.u_1819266916 .imageWrapper
+{
+	width:1px !important;
+	height:1px !important;
+}
+*#dm *.dmBody div.u_1375496798
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	text-align:center !important;
+	margin-top:0 !important;
+	margin-left:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+}
+*#dm *.dmBody div.u_1753927787
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0 !important;
+	padding-bottom:2px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:8px !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1700549860
+{
+	padding-top:150px !important;
+	padding-left:0 !important;
+	padding-right:0 !important;
+	padding-bottom:50px !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+}
+*#dm *.dmBody div.u_1665482723
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:94px !important;
+	margin-top:29px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	text-align:center !important;
+}
+*#dm *.dmBody div.u_1819266916
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 615px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:1158.81px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+	text-align:center !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1162266804
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 666px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	min-height:auto !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:907.246px !important;
+	margin-top:8px !important;
+	margin-bottom:8px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1600710522
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:calc(100% - 541px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	min-height:auto !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:1158.79px !important;
+	margin-top:8px !important;
+	margin-bottom:8px !important;
+	padding-right:0px !important;
+	min-width:25px !important;
+}
+
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-60, .size-60, .size-60 > font { font-size: 60px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script>
+    window.customWidgetsFunctions["1f5975986930429f819d4cd2154b5c4a~25"] = function (element, data, api) {
+        null
+    };
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5968";
+    var build = "2025-11-27T12_19_14";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-11-27T12_19_14";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script type="text/javascript">
+    window.popups =
+    [{"title":"Join Our Team","url":"/join-our-team","options":{"backgroundColor":"#FFFFFF","borderRadius":"5","width":"694.0160000000002","overlayColor":"rgba(0, 0, 0, 0.5)","height":"673.6097500000001","animation":"fadeIn"},"name":"join-our-team"}]</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5968';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5968';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =false;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5968/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: 'bbe8da69'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: bbe8da69 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'More';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'Less';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>

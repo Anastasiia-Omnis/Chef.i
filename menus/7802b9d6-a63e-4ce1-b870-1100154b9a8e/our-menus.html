@@ -1,0 +1,3150 @@
+<!doctype html>
+<html>
+<head>
+   <title>  Restaurant Menus / Openings - WhereYouEat.com</title>
+	<style>
+		   #main-banner #header{background: none !important;}
+	   </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/assets/images/favicon.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/assets/images/touch-icon-iphone.png">
+   <link rel="stylesheet" href="/assets/front/css/4.5.2_bootstrap.min.css">
+   <!--link href="/assets/front-page/css/font-awesome.min.css" rel="stylesheet"-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+   <link href="/assets/front-page/css/style_for_search.css?v=2055724250" rel="stylesheet">
+   <link href="/assets/front-page/css/style.css?v=1364864383" rel="stylesheet">
+<link href="/assets/front-page/css/viewbox.css?v=1360357860" rel="stylesheet">
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="/assets/front-page/js/jquery.viewbox.min.js"></script>
+ 
+	<script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoNTs5-LpWeYmQ0s5pI_3Ez4puqxYIHAY&libraries=places"></script>
+
+
+<script src="/assets/front/js/jquery.leanModal.min.js"></script>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=11651589; 
+var sc_invisible=1; 
+var sc_security="633c1e29"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - StatCounter" href="http://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="//c.statcounter.com/11651589/0/633c1e29/1/" alt="Web
+Analytics Made Easy - StatCounter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+<!-- Default Statcounter code for THE NEW WYE
+http://nono.com -->
+<script type="text/javascript">
+var sc_project=12414040;
+var sc_invisible=1;
+var sc_security="bb30e507";
+var sc_https=1;
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - StatCounter" href="https://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12414040/0/bb30e507/1/"
+alt="Web Analytics Made Easy -
+StatCounter"></a></div></noscript>
+<!-- End of Statcounter Code -->
+<script>
+     function init() {
+	var input = document.getElementById('locationName');
+	var autocomplete = new google.maps.places.Autocomplete(input);
+}
+	  google.maps.event.addDomListener(window, 'load', init);
+	  
+	function init1() {
+		var input = document.getElementById('locationName1');
+	var autocomplete = new google.maps.places.Autocomplete(input);
+	       }
+ google.maps.event.addDomListener(window, 'load', init1);
+ 
+	function init2() {
+	var input = document.getElementById('locationName2');
+	var autocomplete = new google.maps.places.Autocomplete(input);
+}
+	
+ google.maps.event.addDomListener(window, 'load', init2);
+	
+	
+	
+      function initMap() {
+      
+        
+     
+			
+			var geocoder = new google.maps.Geocoder();
+      document.getElementById('submit').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
+      }
+      
+
+      function geocodeAddress(geocoder) {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+			  var latitude = results[0].geometry.location.lat(); 
+			  var longitude = results[0].geometry.location.lng();
+			 	document.getElementById('lat').value=latitude;
+				document.getElementById('long').value=longitude;
+            
+           
+          } else {
+           // alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+		
+	
+    </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128038776-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128038776-1');
+</script>
+<style>
+.last-footer-class a {
+	color: #35793d;
+}
+.where-you-eat-s a {
+    text-decoration: underline;
+}
+.where-you-eat-s a:hover {
+    color: #fff;
+}
+.last-footer-class {
+    text-align: center;
+}
+.last-footer-class li {
+    display: inline-block;
+}
+.last-footer-class li {
+    color: #35793d;
+}
+.second-last-footer li {
+    color: #fff;
+	font-size: 20px;
+}
+.where-you-eat-s {
+    background: #900000;
+	padding: 15px 0 15px 0;
+	margin-bottom: 10px;
+}
+.where-you-eat-s h2 {
+    text-align: center;
+	color:#fff;
+}
+.form-m-d{display:none;}
+.resto_logo{
+    margin-top: 26px;
+}
+.logomb {
+    font-size: 40px;
+    font-weight: 400;
+}
+.logomb:hover {
+    color: #ffb643;
+    text-decoration: none;
+}
+
+@media (max-width:767px)
+
+{
+    .n-h-d{display:none;}
+    .form-m-d{display:block;}
+    .resto_logo{padding: 0px;}
+    .sublgo {
+    display: none !important;
+}
+
+#main-banner img {
+    width: 100%;
+}
+    .resto_logo{
+    margin-top: 0px;
+}
+.new_headereat {
+    float: left;
+    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+}
+.new_headereat .resto_logo {
+    float: left;
+    font-size: 24px;
+    width: 53% !important;
+}
+/*.new_headereat .resto_logo {
+    float: left;
+    font-size: 24px;
+    width: 80% !important;
+}*/
+#header .new_headereat .resto_logo a {
+    color: #000 !important;
+    text-align: left;
+    font-size: 22px !important;
+}
+span.sublgo {
+    float: left;
+    font-size: 7px;
+    color: #88001b;
+}
+/*.resto_menu {
+    float: right;
+    width: 20%;
+    position:absolute;
+    right:0;
+}*/
+.resto_menu button.navbar-toggler::before {
+    content: "\f0c9";
+    font: normal normal normal 14px/1 FontAwesome;
+        font-size: 38px;
+    width: 100% !important;
+    float: left;
+    text-align: center;
+    display: inline-block;
+    /*font-size: 35px;*/
+    color: #88001b;
+}}
+</style>    
+</head>
+<body>
+
+ 
+<section id="main-banner">
+
+<div class="">
+
+
+<header id="header" class="alt header-background">
+		
+<link href="/assets/front-page/css/bootstrapmodal.css" rel="stylesheet">
+
+<div class="new_headereat search_restorpage mini_hdddr">
+          <div class="container">
+              <div class="resto_menu">
+                  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler sider-bar-m" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div id="mySidebar_os" class="sidebar_os">
+       <a href="/" class="logotgl"><img src="/assets/images/toggle_logo.png"/></a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+   <div class="col-md-6">
+   
+   <div class="clearfix"></div>
+   <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#DiningGuides">
+   <i class="fa fa-angle-down"></i> Explore Our City Dining Guides</button>
+   <div id="DiningGuides" class="collapse in" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div class="card-body">
+   <ul class="dining-guides">
+     <li><a href="/city/staten-island.html">Staten Island</a></li>
+      <li><a href="/city/brooklyn.html">Brooklyn</a></li> 
+      <li><a href="/city/queens.html">Queens</a></li> 
+      <li><a href="/city/the-bronx.html">The Bronx</a></li> 
+       <li><a href="/city/manhattan.html">Manhattan</a></li>
+   </ul></div></div>
+    
+	<button type="button" class="btn btn-link" data-toggle="collapse" data-target="#RestaurantOwners">
+   <i class="fa fa-angle-down"></i> Restaurant Owners</button>
+   <div id="RestaurantOwners" class="collapse in" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div class="card-body">
+   <ul class="dining-login">
+            <!--li><a id="" href="#login-modal" class="login-id login-c-t" href="javascript:;">Login</a></li-->
+     	      <li><a href="#">Get WhereYouEat</a></li> 
+      <li><a href="/contact">Contact Us</a></li> 
+   </ul></div></div>
+   
+   <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#Support">
+   <i class="fa fa-angle-down"></i>Support</button>
+   <div id="Support" class="collapse in" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div class="card-body">
+   <ul class="dining-footer">
+    <li><a href="/contact">Suggestions & Comments</a></li>
+    <li><a href="#">Report a Problem</a></li>
+    <li><a href="#">800.865.8997</a></li>
+   </ul></div></div>
+   
+   <button type="button" class="btn btn-link clbtnn" data-toggle="collapse" data-target="#calbtn">Call @ 800.865.8997</button>
+</div>
+</div>
+ <div id="mySidebar_os_d" class="sidebar_os_d">
+      <a href="#" class="logotgl"><img src="/assets/images/toggle_logo.png"/></a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <div class="col-md-6">
+  
+   <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#menuaccount">
+   <i class="fa fa-angle-down"></i> MY ACCOUNT(Orders)</button>
+   <div id="menuaccount" class="collapse in" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div class="card-body">
+   <ul class="dining-guides">
+            <li><a href="/previous/1">Order History(190)</a></li>
+     <li><a href="/address/1">Addresses(0)</a></li> 
+          <li><a href="#">Payments</a></li> 
+   </ul>
+    </div></div>
+
+	<!--<button type="button" class="btn btn-link" data-toggle="collapse" data-target="#reservations">
+   <i class="fa fa-angle-down"></i> RESERVATIONS</button>
+   <div id="reservations" class="collapse in" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div class="card-body">
+   <ul class="dining-login">
+     <li><a href="#">Upcoming(0)</a></li>
+      <li><a href="#">History(7)</a></li> 
+   </ul></div></div>-->
+   <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#restaurant">
+   <i class="fa fa-angle-down"></i> RESTAURANTS</button>
+   <div id="restaurant" class="collapse in" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div class="card-body">
+   <ul class="dining-footer">
+          <li><a href="/dashboard">Following(6)</a></li>
+    <li><a href="/dashboard">Menu Drawer(6)</a></li>
+    <!--li><a href="#">My Reviews</a></li-->
+    <li><a href="/dashboard">My Photos(7)</a></li>
+       </ul></div></div>
+</div>
+</div>
+  <div id="mySidebar_os_r" class="sidebar_os_r">
+      <a href="#" class="logotgl"><img src="/assets/images/toggle_logo.png"/></a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+   <div class="col-md-6">
+       <form  id="rest-set-id-rest-val-main" class="toggle_input" method="post" action="/search/restaurant">
+           <input id="toggle_inpt" type="search" required="" name="search_by_res" value=""
+           placeholder="Type Name" class="inputtog" autocomplete="off">
+           <button style="" class="togbtninpt" type="submit" value="Find Restaurants" id="submittgl">
+               <i class="fa fa-search" aria-hidden="true"></i></button>
+       </form>
+       <div id="suggesstion-box-main-header"></div>
+   </div>
+  
+ <div class="col-md-6">
+<div class="accordian_nss">
+<div class="bs-example">
+  <div class="card">
+  <div class="card-header" id="headingThree">
+    <h2 class="mb-0">
+           <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseThree">
+   <i class="fa fa-angle-down"></i> STATEN ISLAND </button>
+   </h2>
+            </div>
+            <div id="collapseThree"  class="collapse in" aria-labelledby="headingThree" data-parent="#accordionExample">
+             <div class="card-body">
+            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#bycuisine"><i class="fa fa-angle-down"></i> By Cuisine </button>
+			<div id="bycuisine" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+             <div class="card-body">
+			 			 <li><a href="/restaurant-cuisine-staten-island-2.html">
+			     African</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-3.html">
+			     American</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-4.html">
+			     Asian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-5.html">
+			     Austrian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-6.html">
+			     Bistro</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-7.html">
+			     Cafe</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-8.html">
+			     Cajun/Creole</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-9.html">
+			     Caribbean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-10.html">
+			     Chicken</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-11.html">
+			     Chinese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-12.html">
+			     Colombian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-13.html">
+			     Continental</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-14.html">
+			     Cuban</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-15.html">
+			     Desserts</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-16.html">
+			     Dominican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-17.html">
+			     Eclectic</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-18.html">
+			     Ecuadorian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-19.html">
+			     Ethopian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-20.html">
+			     European</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-21.html">
+			     French</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-22.html">
+			     German</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-23.html">
+			     Greek</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-24.html">
+			     Gyros</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-25.html">
+			     Haitian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-26.html">
+			     Halal</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-27.html">
+			     Hawaiian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-28.html">
+			     Healthy</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-32.html">
+			     Indian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-33.html">
+			     Indonesian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-34.html">
+			     International</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-35.html">
+			     Iris</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-36.html">
+			     Irish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-37.html">
+			     Italian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-38.html">
+			     Jamaican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-39.html">
+			     Japanese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-40.html">
+			     Korean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-41.html">
+			     Kosher</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-42.html">
+			     Latin</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-43.html">
+			     Malaysian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-44.html">
+			     Mediterranean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-45.html">
+			     Mexican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-46.html">
+			     Middle Eastern</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-47.html">
+			     Moroccan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-48.html">
+			     Pakistani</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-49.html">
+			     Peruvian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-50.html">
+			     Pizzeria</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-51.html">
+			     Polish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-52.html">
+			     Russian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-53.html">
+			     Sandwiches</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-54.html">
+			     Scandinavian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-55.html">
+			     Seafood</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-56.html">
+			     Soul Food</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-57.html">
+			     Southwestern</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-58.html">
+			     Spanish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-59.html">
+			     Steakhouse</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-60.html">
+			     Tapas</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-61.html">
+			     Tex-Mex</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-62.html">
+			     Thai</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-63.html">
+			     Tibet</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-64.html">
+			     Turkish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-65.html">
+			     Uzbekistan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-66.html">
+			     Vegetarian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-67.html">
+			     Venezuelan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-68.html">
+			     Vietnamese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-81.html">
+			     plate</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-83.html">
+			     tst</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-84.html">
+			     Sushi</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-88.html">
+			     Armenian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-staten-island-89.html">
+			     Sri Lankin</a></li>
+			 
+				 			 </div>
+            </div>
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byneighborhood"><i class="fa fa-angle-down"></i> By Neighborhood </button>
+			<div id="byneighborhood" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+             <div class="card-body"> 			 <li><a href="/astoria-neighborhood-staten-island/3.html">
+			     Astoria</a></li>
+			 
+			 
+			 			 <li><a href="/auburndale-neighborhood-staten-island/4.html">
+			     auburndale</a></li>
+			 
+			 
+			 			 <li><a href="/bayside-neighborhood-staten-island/5.html">
+			     Bayside</a></li>
+			 
+			 
+			 			 <li><a href="/bellerose-neighborhood-staten-island/6.html">
+			     Bellerose</a></li>
+			 
+			 
+			 			 <li><a href="/breezy-point-roxbury-neighborhood-staten-island/7.html">
+			     Breezy Point Roxbury</a></li>
+			 
+			 
+			 			 <li><a href="/briarwood-neighborhood-staten-island/8.html">
+			     Briarwood</a></li>
+			 
+			 
+			 			 <li><a href="/broad-channel-neighborhood-staten-island/9.html">
+			     Broad Channel</a></li>
+			 
+			 
+			 			 <li><a href="/brookville-neighborhood-staten-island/10.html">
+			     Brookville</a></li>
+			 
+			 
+			 			 <li><a href="/browne-park-neighborhood-staten-island/11.html">
+			     Browne Park</a></li>
+			 
+			 
+			 			 <li><a href="/cambria-heights-neighborhood-staten-island/12.html">
+			     Cambria Heights</a></li>
+			 
+			 
+			 			 <li><a href="/clearview-neighborhood-staten-island/13.html">
+			     Clearview</a></li>
+			 
+			 
+			 			 <li><a href="/college-point-neighborhood-staten-island/14.html">
+			     College Point</a></li>
+			 
+			 
+			 			 <li><a href="/corona-neighborhood-staten-island/15.html">
+			     Corona</a></li>
+			 
+			 
+			 			 <li><a href="/ditmars-steinway-neighborhood-staten-island/16.html">
+			     Ditmars steinway</a></li>
+			 
+			 
+			 			 <li><a href="/douglaston-little-neck-neighborhood-staten-island/17.html">
+			     Douglaston Little Neck</a></li>
+			 
+			 
+			 			 <li><a href="/east-elmhurst-neighborhood-staten-island/18.html">
+			     East Elmhurst</a></li>
+			 
+			 
+			 			 <li><a href="/east-flushing-neighborhood-staten-island/19.html">
+			     East Flushing</a></li>
+			 
+			 
+			 			 <li><a href="/elmhurst-neighborhood-staten-island/20.html">
+			     Elmhurst</a></li>
+			 
+			 
+			 			 <li><a href="/far-rockaway-neighborhood-staten-island/21.html">
+			     Far Rockaway</a></li>
+			 
+			 
+			 			 <li><a href="/floral-park-neighborhood-staten-island/22.html">
+			     Floral Park</a></li>
+			 
+			 
+			 			 <li><a href="/flushing-neighborhood-staten-island/23.html">
+			     Flushing</a></li>
+			 
+			 
+			 			 <li><a href="/forest-hills-neighborhood-staten-island/24.html">
+			     Forest Hills</a></li>
+			 
+			 
+			 			 <li><a href="/forest-park-neighborhood-staten-island/25.html">
+			     Forest Park</a></li>
+			 
+			 
+			 			 <li><a href="/fresh-meadows-neighborhood-staten-island/26.html">
+			     Fresh Meadows</a></li>
+			 
+			 
+			 			 <li><a href="/glendale-neighborhood-staten-island/27.html">
+			     Glendale</a></li>
+			 
+			 
+			 			 <li><a href="/hillcrest-neighborhood-staten-island/28.html">
+			     Hillcrest</a></li>
+			 
+			 
+			 			 <li><a href="/holly-neighborhood-staten-island/29.html">
+			     Holly</a></li>
+			 
+			 
+			 			 <li><a href="/howard-beach-neighborhood-staten-island/30.html">
+			     Howard Beach</a></li>
+			 
+			 
+			 			 <li><a href="/hunters-point-neighborhood-staten-island/31.html">
+			     Hunters Point</a></li>
+			 
+			 
+			 			 <li><a href="/jackson-heights-neighborhood-staten-island/32.html">
+			     Jackson Heights</a></li>
+			 
+			 
+			 			 <li><a href="/abc1-neighborhood-staten-island/54.html">
+			     abc1</a></li>
+			 
+			 
+			 			 <li><a href="/good-neighborhood-staten-island/55.html">
+			     good</a></li>
+			 
+			 
+			 			 <li><a href="/nikal-time-se-neighborhood-staten-island/56.html">
+			     Nikal time se</a></li>
+			 
+			 
+			 			 <li><a href="/dongan-hills-neighborhood-staten-island/57.html">
+			     Dongan Hills</a></li>
+			 
+			 
+			 			 <li><a href="/chelsea-neighborhood-staten-island/58.html">
+			     Chelsea</a></li>
+			 
+			 
+			 			 <li><a href="/-neighborhood-staten-island/59.html">
+			     </a></li>
+			 
+			 
+			 			 <li><a href="/new-springville-neighborhood-staten-island/60.html">
+			     New Springville</a></li>
+			 
+			 
+			 			 <li><a href="/castleton-corners-neighborhood-staten-island/61.html">
+			     Castleton Corners</a></li>
+			 
+			 
+			 			 <li><a href="/westerleigh-neighborhood-staten-island/62.html">
+			     Westerleigh</a></li>
+			 
+			 
+			 			 <li><a href="/travis-neighborhood-staten-island/63.html">
+			     Travis</a></li>
+			 
+			 
+			 			 <li><a href="/graniteville-neighborhood-staten-island/64.html">
+			     Graniteville</a></li>
+			 
+			 
+			 			 <li><a href="/todt-hill-neighborhood-staten-island/65.html">
+			     Todt Hill</a></li>
+			 
+			 
+			 			 <li><a href="/bulls-head-neighborhood-staten-island/66.html">
+			     Bulls Head</a></li>
+			 
+			 
+			 			 <li><a href="/port-richmond-neighborhood-staten-island/67.html">
+			     Port Richmond</a></li>
+			 
+			 
+			 			 <li><a href="/mariners-harbor-neighborhood-staten-island/68.html">
+			     Mariners Harbor</a></li>
+			 
+			 
+			 			 <li><a href="/arlington-neighborhood-staten-island/69.html">
+			     Arlington</a></li>
+			 
+			 
+			 			 <li><a href="/stapleton-neighborhood-staten-island/70.html">
+			     Stapleton</a></li>
+			 
+			 
+			 			 <li><a href="/fox-hills-neighborhood-staten-island/71.html">
+			     Fox Hills</a></li>
+			 
+			 
+			 			 <li><a href="/rosebank-neighborhood-staten-island/72.html">
+			     Rosebank</a></li>
+			 
+			 
+			 			 <li><a href="/old-town-neighborhood-staten-island/73.html">
+			     Old Town</a></li>
+			 
+			 
+			 			 <li><a href="/eltingville-neighborhood-staten-island/74.html">
+			     Eltingville</a></li>
+			 
+			 
+			 			 <li><a href="/annadale-neighborhood-staten-island/75.html">
+			     Annadale</a></li>
+			 
+			 
+			 			 <li><a href="/huguenot-neighborhood-staten-island/76.html">
+			     Huguenot</a></li>
+			 
+			 
+			 			 <li><a href="/great-kills-neighborhood-staten-island/77.html">
+			     Great Kills</a></li>
+			 
+			 
+			 			 <li><a href="/west-brighton-neighborhood-staten-island/78.html">
+			     West Brighton</a></li>
+			 
+			 
+			 			 <li><a href="/livingston-neighborhood-staten-island/79.html">
+			     Livingston</a></li>
+			 
+			 
+			 			 <li><a href="/fresh-kills-neighborhood-staten-island/80.html">
+			     Fresh Kills</a></li>
+			 
+			 
+			 			 <li><a href="/rossville-neighborhood-staten-island/81.html">
+			     Rossville</a></li>
+			 
+			 
+			 			 <li><a href="/tottenville-neighborhood-staten-island/82.html">
+			     Tottenville</a></li>
+			 
+			 
+			 			 <li><a href="/princes-bay-neighborhood-staten-island/83.html">
+			     Princes Bay</a></li>
+			 
+			 
+			 			 <li><a href="/grant-city-neighborhood-staten-island/84.html">
+			     Grant City</a></li>
+			 
+			 
+			 			 <li><a href="/oakwood-heights-neighborhood-staten-island/85.html">
+			     Oakwood Heights</a></li>
+			 
+			 
+			 			 <li><a href="/new-dorp-neighborhood-staten-island/86.html">
+			     New Dorp</a></li>
+			 
+			 
+			 			 <li><a href="/midland-beach-neighborhood-staten-island/87.html">
+			     Midland Beach</a></li>
+			 
+			 
+			 			 <li><a href="/bay-terrace-neighborhood-staten-island/88.html">
+			     Bay Terrace</a></li>
+			 
+			 
+			 			 <li><a href="/oakwood-beach-neighborhood-staten-island/89.html">
+			     Oakwood Beach</a></li>
+			 
+			 
+			 			 <li><a href="/lighthouse-hill-neighborhood-staten-island/90.html">
+			     Lighthouse Hill</a></li>
+			 
+			 
+			 			 <li><a href="/south-beach-neighborhood-staten-island/91.html">
+			     South Beach</a></li>
+			 
+			 
+			 			 <li><a href="/shore-acres-neighborhood-staten-island/92.html">
+			     Shore Acres</a></li>
+			 
+			 
+			 			 <li><a href="/grasmere-neighborhood-staten-island/93.html">
+			     Grasmere</a></li>
+			 
+			 
+			 			 <li><a href="/clifton-neighborhood-staten-island/94.html">
+			     Clifton</a></li>
+			 
+			 
+			 			 <li><a href="/ward-hill-neighborhood-staten-island/95.html">
+			     Ward Hill</a></li>
+			 
+			 
+			 			 <li><a href="/st.-george-neighborhood-staten-island/96.html">
+			     St. George</a></li>
+			 
+			 
+			 			 <li><a href="/new-brighton-neighborhood-staten-island/97.html">
+			     New Brighton</a></li>
+			 
+			 
+			 			 <li><a href="/randall-manor-neighborhood-staten-island/98.html">
+			     Randall Manor</a></li>
+			 
+			 
+			 			 <li><a href="/silver-lake-neighborhood-staten-island/99.html">
+			     Silver Lake</a></li>
+			 
+			 
+			 			 <li><a href="/sunnyside-neighborhood-staten-island/100.html">
+			     Sunnyside</a></li>
+			 
+			 
+			 			 <li><a href="/pleasant-plains-neighborhood-staten-island/101.html">
+			     Pleasant Plains</a></li>
+			 
+			 
+			 			 <li><a href="/williamsburg-neighborhood-staten-island/102.html">
+			     Williamsburg</a></li>
+			 
+			 
+			 			 <li><a href="/greenpoint-neighborhood-staten-island/103.html">
+			     Greenpoint</a></li>
+			 
+			 
+			 			 <li><a href="/east-flatbush-neighborhood-staten-island/104.html">
+			     East Flatbush</a></li>
+			 
+			 
+			 			 <li><a href="/bushwick-neighborhood-staten-island/105.html">
+			     Bushwick</a></li>
+			 
+			 
+			 			 <li><a href="/brooklyn-heights-neighborhood-staten-island/106.html">
+			     Brooklyn Heights</a></li>
+			 
+			 
+			 			 <li><a href="/vinegar-hill-neighborhood-staten-island/107.html">
+			     Vinegar Hill</a></li>
+			 
+			 
+			 			 <li><a href="/bedford-stuyvesant-neighborhood-staten-island/108.html">
+			     Bedford-Stuyvesant</a></li>
+			 
+			 
+			 			 <li><a href="/bensonhurst-neighborhood-staten-island/109.html">
+			     Bensonhurst</a></li>
+			 
+			 
+			 			 <li><a href="/dumbo-neighborhood-staten-island/110.html">
+			     DUMBO</a></li>
+			 
+			 
+			 			 <li><a href="/stuyvesant-heights-neighborhood-staten-island/111.html">
+			     Stuyvesant Heights</a></li>
+			 
+			 
+			 			 <li><a href="/fort-greene-neighborhood-staten-island/112.html">
+			     Fort Greene</a></li>
+			 
+			 
+			 			 <li><a href="/downtown-brooklyn-neighborhood-staten-island/113.html">
+			     Downtown Brooklyn</a></li>
+			 
+			 
+			 			 <li><a href="/cobble-hill-neighborhood-staten-island/114.html">
+			     Cobble Hill</a></li>
+			 
+			 
+			 			 <li><a href="/boerum-hill-neighborhood-staten-island/115.html">
+			     Boerum Hill</a></li>
+			 
+			 
+			 			 <li><a href="/borough-park-neighborhood-staten-island/116.html">
+			     Borough Park</a></li>
+			 
+			 
+			 			 <li><a href="/sunset-park-neighborhood-staten-island/117.html">
+			     Sunset Park</a></li>
+			 
+			 
+			 			 <li><a href="/fort-hamilton-neighborhood-staten-island/118.html">
+			     Fort Hamilton</a></li>
+			 
+			 
+			 			 <li><a href="/bay-ridge-neighborhood-staten-island/119.html">
+			     Bay Ridge</a></li>
+			 
+			 
+			 			 <li><a href="/park-slope-neighborhood-staten-island/120.html">
+			     Park Slope</a></li>
+			 
+			 
+			 			 <li><a href="/sheepshead-bay-neighborhood-staten-island/121.html">
+			     Sheepshead Bay</a></li>
+			 
+			 
+			 			 <li><a href="/gravesend-neighborhood-staten-island/122.html">
+			     Gravesend</a></li>
+			 
+			 
+			 			 <li><a href="/windsor-terrace-neighborhood-staten-island/123.html">
+			     Windsor Terrace</a></li>
+			 
+			 
+			 			 <li><a href="/clinton-hill-neighborhood-staten-island/124.html">
+			     Clinton Hill</a></li>
+			 
+			 
+			 			 <li><a href="/prospect-heights-neighborhood-staten-island/125.html">
+			     Prospect Heights</a></li>
+			 
+			 
+			 			 <li><a href="/gowanus-neighborhood-staten-island/126.html">
+			     Gowanus</a></li>
+			 
+			 
+			 			 <li><a href="/carroll-gardens-neighborhood-staten-island/127.html">
+			     Carroll Gardens</a></li>
+			 
+			 
+			 			 <li><a href="/east-new-york-neighborhood-staten-island/128.html">
+			     East New York</a></li>
+			 
+			 
+			 			 <li><a href="/cypress-hills-neighborhood-staten-island/129.html">
+			     Cypress Hills</a></li>
+			 
+			 
+			 			 <li><a href="/kensington-neighborhood-staten-island/130.html">
+			     Kensington</a></li>
+			 
+			 
+			 			 <li><a href="/dyker-heights-neighborhood-staten-island/131.html">
+			     Dyker Heights</a></li>
+			 
+			 
+			 			 <li><a href="/flatbush-neighborhood-staten-island/132.html">
+			     Flatbush</a></li>
+			 
+			 
+			 			 <li><a href="/ditmas-park-neighborhood-staten-island/133.html">
+			     Ditmas Park</a></li>
+			 
+			 
+			 			 <li><a href="/midwood-neighborhood-staten-island/134.html">
+			     Midwood</a></li>
+			 
+			 
+			 			 <li><a href="/brighton-beach-neighborhood-staten-island/135.html">
+			     Brighton Beach</a></li>
+			 
+			 
+			 			 <li><a href="/greenwood-heights-neighborhood-staten-island/136.html">
+			     Greenwood Heights</a></li>
+			 
+			 
+			 			 <li><a href="/prospect-lefferts-gardens-neighborhood-staten-island/137.html">
+			     Prospect Lefferts Gardens</a></li>
+			 
+			 
+			 			 <li><a href="/brownsville-neighborhood-staten-island/138.html">
+			     Brownsville</a></li>
+			 
+			 
+			 			 <li><a href="/bath-beach-neighborhood-staten-island/139.html">
+			     Bath Beach</a></li>
+			 
+			 
+			 			 <li><a href="/crown-heights-neighborhood-staten-island/140.html">
+			     Crown Heights</a></li>
+			 
+			 
+			 			 <li><a href="/canarsie-neighborhood-staten-island/141.html">
+			     Canarsie</a></li>
+			 
+			 
+			 			 <li><a href="/prospect-park-neighborhood-staten-island/142.html">
+			     Prospect Park</a></li>
+			 
+			 
+			 			 <li><a href="/homecrest-neighborhood-staten-island/143.html">
+			     Homecrest</a></li>
+			 
+			 
+			 			 <li><a href="/coney-island-neighborhood-staten-island/144.html">
+			     Coney Island</a></li>
+			 
+			 
+			 			 <li><a href="/arden-heights-neighborhood-staten-island/145.html">
+			     Arden Heights</a></li>
+			 
+			 
+			 			 <li><a href="/sea-gate-neighborhood-staten-island/146.html">
+			     Sea Gate</a></li>
+			 
+			 
+			 			 <li><a href="/madison-neighborhood-staten-island/147.html">
+			     Madison</a></li>
+			 
+			 
+			 			 <li><a href="/brooklyn-navy-yard-neighborhood-staten-island/148.html">
+			     Brooklyn Navy Yard</a></li>
+			 
+			 
+			 			 <li><a href="/georgetown-neighborhood-staten-island/149.html">
+			     Georgetown</a></li>
+			 
+			 
+			 			 <li><a href="/red-hook-neighborhood-staten-island/150.html">
+			     Red Hook</a></li>
+			 
+			 
+			 			 <li><a href="/marine-park-neighborhood-staten-island/151.html">
+			     Marine Park</a></li>
+			 
+			 
+			 			 <li><a href="/mill-basin-neighborhood-staten-island/152.html">
+			     Mill Basin</a></li>
+			 
+			 
+			 			 <li><a href="/paedergat-basin-neighborhood-staten-island/153.html">
+			     Paedergat Basin</a></li>
+			 
+			 
+			 			 <li><a href="/manhattan-beach-neighborhood-staten-island/154.html">
+			     Manhattan Beach</a></li>
+			 
+			 
+			 			 <li><a href="/kings-highway-neighborhood-staten-island/155.html">
+			     Kings Highway</a></li>
+			 
+			 
+			 			 <li><a href="/richmond-hill-neighborhood-staten-island/156.html">
+			     Richmond Hill</a></li>
+			 
+			 
+			 			 <li><a href="/woodhaven-neighborhood-staten-island/157.html">
+			     Woodhaven</a></li>
+			 
+			 
+			 			 <li><a href="/jamaica-neighborhood-staten-island/158.html">
+			     Jamaica</a></li>
+			 
+			 
+			 			 <li><a href="/sunnyside-q-neighborhood-staten-island/159.html">
+			     Sunnyside q</a></li>
+			 
+			 
+			 			 <li><a href="/woodside-neighborhood-staten-island/160.html">
+			     Woodside</a></li>
+			 
+			 
+			 			 <li><a href="/rego-park-neighborhood-staten-island/161.html">
+			     Rego Park</a></li>
+			 
+			 
+			 			 <li><a href="/kew-gardens-neighborhood-staten-island/162.html">
+			     Kew Gardens</a></li>
+			 
+			 
+			 			 <li><a href="/ridgewood-neighborhood-staten-island/163.html">
+			     Ridgewood</a></li>
+			 
+			 
+			 			 <li><a href="/village-neighborhood-staten-island/164.html">
+			     Village</a></li>
+			 
+			 
+			 			 <li><a href="/hollis-neighborhood-staten-island/165.html">
+			     Hollis</a></li>
+			 
+			 
+			 			 <li><a href="/ozone-park-neighborhood-staten-island/166.html">
+			     Ozone Park</a></li>
+			 
+			 
+			 			 <li><a href="/long-island-city-neighborhood-staten-island/168.html">
+			     Long Island City</a></li>
+			 
+			 
+			 			 <li><a href="/saint-albans-neighborhood-staten-island/169.html">
+			     Saint Albans</a></li>
+			 
+			 
+			 			 <li><a href="/queens-village-neighborhood-staten-island/170.html">
+			     Queens Village</a></li>
+			 
+			 
+			 			 <li><a href="/oakland-gardens-neighborhood-staten-island/171.html">
+			     Oakland Gardens</a></li>
+			 
+			 
+			 			 <li><a href="/laurelton-neighborhood-staten-island/172.html">
+			     Laurelton</a></li>
+			 
+			 
+			 			 <li><a href="/rosedale-neighborhood-staten-island/173.html">
+			     Rosedale</a></li>
+			 
+			 
+			 			 <li><a href="/springfield-gardens-neighborhood-staten-island/174.html">
+			     Springfield Gardens</a></li>
+			 
+			 
+			 			 <li><a href="/richmondtown-neighborhood-staten-island/175.html">
+			     Richmondtown</a></li>
+			 
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byfeatures"><i class="fa fa-angle-down"></i> By Features </button>
+			<div id="byfeatures" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/buffet-style-feature-staten-island/1.html">Buffet Style</a></li>
+			 
+			 			 <li><a href="/byob-feature-staten-island/2.html">BYOB</a></li>
+			 
+			 			 <li><a href="/coupons-feature-staten-island/5.html">Coupons</a></li>
+			 
+			 			 <li><a href="/dine-in-dinner-specials-feature-staten-island/7.html">Dine In Dinner Specials</a></li>
+			 
+			 			 <li><a href="/gluten-free-feature-staten-island/8.html">Gluten Free</a></li>
+			 
+			 			 <li><a href="/happy-hour-feature-staten-island/9.html">Happy Hour</a></li>
+			 
+			 			 <li><a href="/live-band-feature-staten-island/10.html">Live Band</a></li>
+			 
+			 			 <li><a href="/lunch-specials-feature-staten-island/11.html">Lunch Specials</a></li>
+			 
+			 			 <li><a href="/on-site-parking-feature-staten-island/12.html">On Site Parking</a></li>
+			 
+			 			 <li><a href="/online-ordering-feature-staten-island/13.html">Online Ordering</a></li>
+			 
+			 			 <li><a href="/organic-feature-staten-island/14.html">Organic</a></li>
+			 
+			 			 <li><a href="/outdoor-dining-feature-staten-island/15.html">Outdoor Dining</a></li>
+			 
+			 			 <li><a href="/participants-feature-staten-island/16.html">Participants</a></li>
+			 
+			 			 <li><a href="/restaurant-s-bar-feature-staten-island/17.html">Restaurant & Bar</a></li>
+			 
+			 			 <li><a href="/sports-programming-feature-staten-island/18.html">Sports Programming</a></li>
+			 
+			 			 <li><a href="/sunday-brunch-feature-staten-island/19.html">Sunday Brunch</a></li>
+			 
+			 			 <li><a href="/wheelchair-accessable-feature-staten-island/21.html">Wheelchair Accessable</a></li>
+			 
+			 			 <li><a href="/wifi-feature-staten-island/22.html">WiFi</a></li>
+			 
+			 			 <li><a href="/restaurant-samp;-bar-feature-staten-island/24.html">Restaurant &amp; Bar</a></li>
+			 
+			 			 <li><a href="/heart-shaped-pizza-feature-staten-island/25.html">Heart Shaped Pizza</a></li>
+			 
+			 			 <li><a href="/this-way-on-bay-feature-staten-island/26.html">This way on Bay</a></li>
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byservices"><i class="fa fa-angle-down"></i> By Services </button>
+			<div id="byservices" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/alcohol-beer-wine-service-staten-island/1.html">Alcohol/Beer/Wine</a></li>
+			 
+			 			 <li><a href="/catering-service-staten-island/2.html">Catering</a></li>
+			 
+			 			 <li><a href="/delivery-service-staten-island/3.html">Delivery</a></li>
+			 
+			 			 <li><a href="/take-out-service-staten-island/4.html">Take Out</a></li>
+			 
+			 			 <li><a href="/wait-staff-dine-in-service-staten-island/5.html">Wait Staff/Dine In</a></li>
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			
+			
+			<!--button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byzipcode"><i class="fa fa-plus"></i> BY ZIP CODE </button>
+			<div id="byzipcode" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+             <div class="card-body">test</div>
+            </div-->
+			
+			</div>
+            </div>
+			
+        </div></div></div>
+		
+<div class="accordian_nss">
+<div class="bs-example">		
+<div class="card">
+  <div class="card-header" id="headingThreeb">
+    <h2 class="mb-0">
+   <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThreeb"><i class="fa fa-angle-down"></i>BROOKLYN</button></h2>
+            </div>
+            <div id="collapseThreeb"   class="collapse" aria-labelledby="headingThreeb" data-parent="#accordionExample">
+             <div class="card-body">
+            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#bycuisineb"><i class="fa fa-angle-down"></i> By Cuisine </button>
+			<div id="bycuisineb" class="collapse" aria-labelledby="headingThreeb" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/restaurant-cuisine-brooklyn-2.html">African</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-3.html">American</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-4.html">Asian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-5.html">Austrian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-6.html">Bistro</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-7.html">Cafe</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-8.html">Cajun/Creole</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-9.html">Caribbean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-10.html">Chicken</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-11.html">Chinese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-12.html">Colombian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-13.html">Continental</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-14.html">Cuban</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-15.html">Desserts</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-16.html">Dominican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-17.html">Eclectic</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-18.html">Ecuadorian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-19.html">Ethopian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-20.html">European</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-21.html">French</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-22.html">German</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-23.html">Greek</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-24.html">Gyros</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-25.html">Haitian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-26.html">Halal</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-27.html">Hawaiian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-28.html">Healthy</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-32.html">Indian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-33.html">Indonesian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-34.html">International</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-35.html">Iris</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-36.html">Irish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-37.html">Italian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-38.html">Jamaican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-39.html">Japanese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-40.html">Korean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-41.html">Kosher</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-42.html">Latin</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-43.html">Malaysian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-44.html">Mediterranean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-45.html">Mexican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-46.html">Middle Eastern</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-47.html">Moroccan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-48.html">Pakistani</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-49.html">Peruvian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-50.html">Pizzeria</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-51.html">Polish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-52.html">Russian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-53.html">Sandwiches</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-54.html">Scandinavian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-55.html">Seafood</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-56.html">Soul Food</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-57.html">Southwestern</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-58.html">Spanish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-59.html">Steakhouse</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-60.html">Tapas</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-61.html">Tex-Mex</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-62.html">Thai</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-63.html">Tibet</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-64.html">Turkish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-65.html">Uzbekistan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-66.html">Vegetarian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-67.html">Venezuelan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-68.html">Vietnamese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-81.html">plate</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-83.html">tst</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-84.html">Sushi</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-88.html">Armenian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-brooklyn-89.html">Sri Lankin</a></li>
+			 
+				 </div>
+            </div>
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byneighborhoodb"><i class="fa fa-angle-down"></i> By Neighborhood </button>
+			<div id="byneighborhoodb" class="collapse" aria-labelledby="headingThreeb" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/charleston-neighborhood-brooklyn/176.html">Charleston</a></li>
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byfeaturesb"><i class="fa fa-angle-down"></i> By Features </button>
+			<div id="byfeaturesb" class="collapse" aria-labelledby="headingThreeb" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/buffet-style-feature-brooklyn/1.html">Buffet Style</a></li>
+			 
+			 			 <li><a href="/byob-feature-brooklyn/2.html">BYOB</a></li>
+			 
+			 			 <li><a href="/coupons-feature-brooklyn/5.html">Coupons</a></li>
+			 
+			 			 <li><a href="/dine-in-dinner-specials-feature-brooklyn/7.html">Dine In Dinner Specials</a></li>
+			 
+			 			 <li><a href="/gluten-free-feature-brooklyn/8.html">Gluten Free</a></li>
+			 
+			 			 <li><a href="/happy-hour-feature-brooklyn/9.html">Happy Hour</a></li>
+			 
+			 			 <li><a href="/live-band-feature-brooklyn/10.html">Live Band</a></li>
+			 
+			 			 <li><a href="/lunch-specials-feature-brooklyn/11.html">Lunch Specials</a></li>
+			 
+			 			 <li><a href="/on-site-parking-feature-brooklyn/12.html">On Site Parking</a></li>
+			 
+			 			 <li><a href="/online-ordering-feature-brooklyn/13.html">Online Ordering</a></li>
+			 
+			 			 <li><a href="/organic-feature-brooklyn/14.html">Organic</a></li>
+			 
+			 			 <li><a href="/outdoor-dining-feature-brooklyn/15.html">Outdoor Dining</a></li>
+			 
+			 			 <li><a href="/participants-feature-brooklyn/16.html">Participants</a></li>
+			 
+			 			 <li><a href="/restaurant-s-bar-feature-brooklyn/17.html">Restaurant & Bar</a></li>
+			 
+			 			 <li><a href="/sports-programming-feature-brooklyn/18.html">Sports Programming</a></li>
+			 
+			 			 <li><a href="/sunday-brunch-feature-brooklyn/19.html">Sunday Brunch</a></li>
+			 
+			 			 <li><a href="/wheelchair-accessable-feature-brooklyn/21.html">Wheelchair Accessable</a></li>
+			 
+			 			 <li><a href="/wifi-feature-brooklyn/22.html">WiFi</a></li>
+			 
+			 			 <li><a href="/restaurant-samp;-bar-feature-brooklyn/24.html">Restaurant &amp; Bar</a></li>
+			 
+			 			 <li><a href="/heart-shaped-pizza-feature-brooklyn/25.html">Heart Shaped Pizza</a></li>
+			 
+			 			 <li><a href="/this-way-on-bay-feature-brooklyn/26.html">This way on Bay</a></li>
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byservicesb"><i class="fa fa-angle-down"></i> By Services </button>
+			<div id="byservicesb" class="collapse" aria-labelledby="headingThreeb" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/alcohol-beer-wine-service-brooklyn/1.html">Alcohol/Beer/Wine</a></li>
+			 
+			 			 <li><a href="/catering-service-brooklyn/2.html">Catering</a></li>
+			 
+			 			 <li><a href="/delivery-service-brooklyn/3.html">Delivery</a></li>
+			 
+			 			 <li><a href="/take-out-service-brooklyn/4.html">Take Out</a></li>
+			 
+			 			 <li><a href="/wait-staff-dine-in-service-brooklyn/5.html">Wait Staff/Dine In</a></li>
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			<!--button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byzipcodeb"><i class="fa fa-plus"></i> BY ZIP CODE </button>
+			<div id="byzipcodeb" class="collapse" aria-labelledby="headingThreeb" data-parent="#accordionExample">
+             <div class="card-body">test</div>
+            </div-->
+			
+			</div>
+            </div>
+			
+        </div></div></div>
+		
+<div class="accordian_nss">
+<div class="bs-example">		
+<div class="card">
+  <div class="card-header" id="headingThreen">
+    <h2 class="mb-0">
+   <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThreen"><i class="fa fa-angle-down"></i>QUEENS</button></h2>
+            </div>
+            <div id="collapseThreen"  class="collapse" aria-labelledby="headingThreen" data-parent="#accordionExample">
+             <div class="card-body">
+            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#bycuisinen"><i class="fa fa-angle-down"></i> By Cuisine </button>
+			<div id="bycuisinen" class="collapse" aria-labelledby="headingThreen" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/restaurant-cuisine-queens-2.html">African</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-3.html">American</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-4.html">Asian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-5.html">Austrian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-6.html">Bistro</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-7.html">Cafe</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-8.html">Cajun/Creole</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-9.html">Caribbean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-10.html">Chicken</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-11.html">Chinese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-12.html">Colombian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-13.html">Continental</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-14.html">Cuban</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-15.html">Desserts</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-16.html">Dominican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-17.html">Eclectic</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-18.html">Ecuadorian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-19.html">Ethopian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-20.html">European</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-21.html">French</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-22.html">German</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-23.html">Greek</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-24.html">Gyros</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-25.html">Haitian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-26.html">Halal</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-27.html">Hawaiian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-28.html">Healthy</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-32.html">Indian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-33.html">Indonesian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-34.html">International</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-35.html">Iris</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-36.html">Irish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-37.html">Italian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-38.html">Jamaican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-39.html">Japanese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-40.html">Korean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-41.html">Kosher</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-42.html">Latin</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-43.html">Malaysian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-44.html">Mediterranean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-45.html">Mexican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-46.html">Middle Eastern</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-47.html">Moroccan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-48.html">Pakistani</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-49.html">Peruvian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-50.html">Pizzeria</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-51.html">Polish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-52.html">Russian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-53.html">Sandwiches</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-54.html">Scandinavian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-55.html">Seafood</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-56.html">Soul Food</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-57.html">Southwestern</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-58.html">Spanish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-59.html">Steakhouse</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-60.html">Tapas</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-61.html">Tex-Mex</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-62.html">Thai</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-63.html">Tibet</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-64.html">Turkish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-65.html">Uzbekistan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-66.html">Vegetarian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-67.html">Venezuelan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-68.html">Vietnamese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-81.html">plate</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-83.html">tst</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-84.html">Sushi</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-88.html">Armenian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-queens-89.html">Sri Lankin</a></li>
+			 
+				 </div>
+            </div>
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byneighborhoodn"><i class="fa fa-angle-down"></i> By Neighborhood </button>
+			<div id="byneighborhoodn" class="collapse" aria-labelledby="headingThreen" data-parent="#accordionExample">
+             <div class="card-body">No record found</div>
+            </div>
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byfeaturesn"><i class="fa fa-angle-down"></i> By Features </button>
+			<div id="byfeaturesn" class="collapse" aria-labelledby="headingThreen" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/buffet-style-feature-queens/1.html">Buffet Style</a></li>
+			 
+			 			 <li><a href="/byob-feature-queens/2.html">BYOB</a></li>
+			 
+			 			 <li><a href="/coupons-feature-queens/5.html">Coupons</a></li>
+			 
+			 			 <li><a href="/dine-in-dinner-specials-feature-queens/7.html">Dine In Dinner Specials</a></li>
+			 
+			 			 <li><a href="/gluten-free-feature-queens/8.html">Gluten Free</a></li>
+			 
+			 			 <li><a href="/happy-hour-feature-queens/9.html">Happy Hour</a></li>
+			 
+			 			 <li><a href="/live-band-feature-queens/10.html">Live Band</a></li>
+			 
+			 			 <li><a href="/lunch-specials-feature-queens/11.html">Lunch Specials</a></li>
+			 
+			 			 <li><a href="/on-site-parking-feature-queens/12.html">On Site Parking</a></li>
+			 
+			 			 <li><a href="/online-ordering-feature-queens/13.html">Online Ordering</a></li>
+			 
+			 			 <li><a href="/organic-feature-queens/14.html">Organic</a></li>
+			 
+			 			 <li><a href="/outdoor-dining-feature-queens/15.html">Outdoor Dining</a></li>
+			 
+			 			 <li><a href="/participants-feature-queens/16.html">Participants</a></li>
+			 
+			 			 <li><a href="/restaurant-s-bar-feature-queens/17.html">Restaurant & Bar</a></li>
+			 
+			 			 <li><a href="/sports-programming-feature-queens/18.html">Sports Programming</a></li>
+			 
+			 			 <li><a href="/sunday-brunch-feature-queens/19.html">Sunday Brunch</a></li>
+			 
+			 			 <li><a href="/wheelchair-accessable-feature-queens/21.html">Wheelchair Accessable</a></li>
+			 
+			 			 <li><a href="/wifi-feature-queens/22.html">WiFi</a></li>
+			 
+			 			 <li><a href="/restaurant-samp;-bar-feature-queens/24.html">Restaurant &amp; Bar</a></li>
+			 
+			 			 <li><a href="/heart-shaped-pizza-feature-queens/25.html">Heart Shaped Pizza</a></li>
+			 
+			 			 <li><a href="/this-way-on-bay-feature-queens/26.html">This way on Bay</a></li>
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byservicesn"><i class="fa fa-angle-down"></i> By Services
+			</button>
+			<div id="byservicesn" class="collapse" aria-labelledby="headingThreen" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/alcohol-beer-wine-service-queens/1.html">Alcohol/Beer/Wine</a></li>
+			 
+			 			 <li><a href="/catering-service-queens/2.html">Catering</a></li>
+			 
+			 			 <li><a href="/delivery-service-queens/3.html">Delivery</a></li>
+			 
+			 			 <li><a href="/take-out-service-queens/4.html">Take Out</a></li>
+			 
+			 			 <li><a href="/wait-staff-dine-in-service-queens/5.html">Wait Staff/Dine In</a></li>
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			<!--button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byzipcoden"><i class="fa fa-plus"></i> BY ZIP CODE </button>
+			<div id="byzipcoden" class="collapse" aria-labelledby="headingThreen" data-parent="#accordionExample">
+             <div class="card-body">test</div>
+            </div-->
+			
+			</div>
+            </div>
+			
+        </div></div></div>	
+
+<div class="accordian_nss">
+<div class="bs-example">	
+<div class="card">
+  <div class="card-header" id="headingThreex">
+    <h2 class="mb-0">
+   <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThreex"><i class="fa fa-angle-down"></i>THE BRONX</button></h2>
+            </div>
+            <div id="collapseThreex" class="collapse" aria-labelledby="headingThreex" data-parent="#accordionExample">
+             <div class="card-body">
+            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#bycuisinex"><i class="fa fa-angle-down"></i> By Cuisine</button>
+			<div id="bycuisinex" class="collapse" aria-labelledby="headingThreex" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/restaurant-cuisine-the-bronx-2.html">African</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-3.html">American</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-4.html">Asian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-5.html">Austrian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-6.html">Bistro</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-7.html">Cafe</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-8.html">Cajun/Creole</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-9.html">Caribbean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-10.html">Chicken</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-11.html">Chinese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-12.html">Colombian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-13.html">Continental</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-14.html">Cuban</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-15.html">Desserts</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-16.html">Dominican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-17.html">Eclectic</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-18.html">Ecuadorian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-19.html">Ethopian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-20.html">European</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-21.html">French</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-22.html">German</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-23.html">Greek</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-24.html">Gyros</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-25.html">Haitian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-26.html">Halal</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-27.html">Hawaiian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-28.html">Healthy</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-32.html">Indian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-33.html">Indonesian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-34.html">International</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-35.html">Iris</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-36.html">Irish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-37.html">Italian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-38.html">Jamaican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-39.html">Japanese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-40.html">Korean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-41.html">Kosher</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-42.html">Latin</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-43.html">Malaysian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-44.html">Mediterranean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-45.html">Mexican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-46.html">Middle Eastern</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-47.html">Moroccan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-48.html">Pakistani</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-49.html">Peruvian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-50.html">Pizzeria</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-51.html">Polish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-52.html">Russian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-53.html">Sandwiches</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-54.html">Scandinavian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-55.html">Seafood</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-56.html">Soul Food</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-57.html">Southwestern</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-58.html">Spanish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-59.html">Steakhouse</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-60.html">Tapas</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-61.html">Tex-Mex</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-62.html">Thai</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-63.html">Tibet</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-64.html">Turkish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-65.html">Uzbekistan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-66.html">Vegetarian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-67.html">Venezuelan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-68.html">Vietnamese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-81.html">plate</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-83.html">tst</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-84.html">Sushi</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-88.html">Armenian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-bronx-89.html">Sri Lankin</a></li>
+			 
+				 </div>
+            </div>
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byneighborhoodx"><i class="fa fa-angle-down"></i> By Neighborhood</button>
+			<div id="byneighborhoodx" class="collapse" aria-labelledby="headingThreex" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/maspeth-neighborhood-the-bronx/167.html">Maspeth</a></li>
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byfeaturesx"><i class="fa fa-angle-down"></i> By Features </button>
+			<div id="byfeaturesx" class="collapse" aria-labelledby="headingThreex" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/buffet-style-feature-the-bronx/1.html">Buffet Style</a></li>
+			 
+			 			 <li><a href="/byob-feature-the-bronx/2.html">BYOB</a></li>
+			 
+			 			 <li><a href="/coupons-feature-the-bronx/5.html">Coupons</a></li>
+			 
+			 			 <li><a href="/dine-in-dinner-specials-feature-the-bronx/7.html">Dine In Dinner Specials</a></li>
+			 
+			 			 <li><a href="/gluten-free-feature-the-bronx/8.html">Gluten Free</a></li>
+			 
+			 			 <li><a href="/happy-hour-feature-the-bronx/9.html">Happy Hour</a></li>
+			 
+			 			 <li><a href="/live-band-feature-the-bronx/10.html">Live Band</a></li>
+			 
+			 			 <li><a href="/lunch-specials-feature-the-bronx/11.html">Lunch Specials</a></li>
+			 
+			 			 <li><a href="/on-site-parking-feature-the-bronx/12.html">On Site Parking</a></li>
+			 
+			 			 <li><a href="/online-ordering-feature-the-bronx/13.html">Online Ordering</a></li>
+			 
+			 			 <li><a href="/organic-feature-the-bronx/14.html">Organic</a></li>
+			 
+			 			 <li><a href="/outdoor-dining-feature-the-bronx/15.html">Outdoor Dining</a></li>
+			 
+			 			 <li><a href="/participants-feature-the-bronx/16.html">Participants</a></li>
+			 
+			 			 <li><a href="/restaurant-s-bar-feature-the-bronx/17.html">Restaurant & Bar</a></li>
+			 
+			 			 <li><a href="/sports-programming-feature-the-bronx/18.html">Sports Programming</a></li>
+			 
+			 			 <li><a href="/sunday-brunch-feature-the-bronx/19.html">Sunday Brunch</a></li>
+			 
+			 			 <li><a href="/wheelchair-accessable-feature-the-bronx/21.html">Wheelchair Accessable</a></li>
+			 
+			 			 <li><a href="/wifi-feature-the-bronx/22.html">WiFi</a></li>
+			 
+			 			 <li><a href="/restaurant-samp;-bar-feature-the-bronx/24.html">Restaurant &amp; Bar</a></li>
+			 
+			 			 <li><a href="/heart-shaped-pizza-feature-the-bronx/25.html">Heart Shaped Pizza</a></li>
+			 
+			 			 <li><a href="/this-way-on-bay-feature-the-bronx/26.html">This way on Bay</a></li>
+			 
+			 </div>
+            </div>
+			
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byservicesx"><i class="fa fa-angle-down"></i> By Services</button>
+			<div id="byservicesx" class="collapse" aria-labelledby="headingThreex" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/alcohol-beer-wine-service-the-bronx/1.html">Alcohol/Beer/Wine</a></li>
+			 
+			 			 <li><a href="/catering-service-the-bronx/2.html">Catering</a></li>
+			 
+			 			 <li><a href="/delivery-service-the-bronx/3.html">Delivery</a></li>
+			 
+			 			 <li><a href="/take-out-service-the-bronx/4.html">Take Out</a></li>
+			 
+			 			 <li><a href="/wait-staff-dine-in-service-the-bronx/5.html">Wait Staff/Dine In</a></li>
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			
+			
+			</div>
+            </div>
+			
+        </div></div></div>
+		
+<div class="accordian_nss">
+<div class="bs-example">	
+<div class="card">
+  <div class="card-header" id="headingThreex">
+    <h2 class="mb-0">
+   <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseManhattan"><i class="fa fa-angle-down"></i>Manhattan</button></h2>
+            </div>
+            <div id="collapseManhattan" class="collapse" aria-labelledby="headingManhattan" data-parent="#accordionExample">
+             <div class="card-body">
+            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#bycuisinexm"><i class="fa fa-angle-down"></i> By Cuisine</button>
+			<div id="bycuisinexm" class="collapse" aria-labelledby="headingThreex" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/restaurant-cuisine-the-manhattan-2.html">African</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-3.html">American</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-4.html">Asian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-5.html">Austrian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-6.html">Bistro</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-7.html">Cafe</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-8.html">Cajun/Creole</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-9.html">Caribbean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-10.html">Chicken</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-11.html">Chinese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-12.html">Colombian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-13.html">Continental</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-14.html">Cuban</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-15.html">Desserts</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-16.html">Dominican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-17.html">Eclectic</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-18.html">Ecuadorian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-19.html">Ethopian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-20.html">European</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-21.html">French</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-22.html">German</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-23.html">Greek</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-24.html">Gyros</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-25.html">Haitian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-26.html">Halal</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-27.html">Hawaiian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-28.html">Healthy</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-32.html">Indian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-33.html">Indonesian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-34.html">International</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-35.html">Iris</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-36.html">Irish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-37.html">Italian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-38.html">Jamaican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-39.html">Japanese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-40.html">Korean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-41.html">Kosher</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-42.html">Latin</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-43.html">Malaysian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-44.html">Mediterranean</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-45.html">Mexican</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-46.html">Middle Eastern</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-47.html">Moroccan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-48.html">Pakistani</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-49.html">Peruvian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-50.html">Pizzeria</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-51.html">Polish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-52.html">Russian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-53.html">Sandwiches</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-54.html">Scandinavian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-55.html">Seafood</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-56.html">Soul Food</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-57.html">Southwestern</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-58.html">Spanish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-59.html">Steakhouse</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-60.html">Tapas</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-61.html">Tex-Mex</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-62.html">Thai</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-63.html">Tibet</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-64.html">Turkish</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-65.html">Uzbekistan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-66.html">Vegetarian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-67.html">Venezuelan</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-68.html">Vietnamese</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-81.html">plate</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-83.html">tst</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-84.html">Sushi</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-88.html">Armenian</a></li>
+			 
+				 			 <li><a href="/restaurant-cuisine-the-manhattan-89.html">Sri Lankin</a></li>
+			 
+				 </div>
+            </div>
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byneighborhoodxm"><i class="fa fa-angle-down"></i> By Neighborhood</button>
+			<div id="byneighborhoodxm" class="collapse" aria-labelledby="headingThreex" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/ss-neighborhood-the-manhattan/178.html">ss</a></li>
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byfeaturesxm"><i class="fa fa-angle-down"></i> By Features </button>
+			<div id="byfeaturesxm" class="collapse" aria-labelledby="headingThreex" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/buffet-style-feature-the-manhattan/1.html">Buffet Style</a></li>
+			 
+			 			 <li><a href="/byob-feature-the-manhattan/2.html">BYOB</a></li>
+			 
+			 			 <li><a href="/coupons-feature-the-manhattan/5.html">Coupons</a></li>
+			 
+			 			 <li><a href="/dine-in-dinner-specials-feature-the-manhattan/7.html">Dine In Dinner Specials</a></li>
+			 
+			 			 <li><a href="/gluten-free-feature-the-manhattan/8.html">Gluten Free</a></li>
+			 
+			 			 <li><a href="/happy-hour-feature-the-manhattan/9.html">Happy Hour</a></li>
+			 
+			 			 <li><a href="/live-band-feature-the-manhattan/10.html">Live Band</a></li>
+			 
+			 			 <li><a href="/lunch-specials-feature-the-manhattan/11.html">Lunch Specials</a></li>
+			 
+			 			 <li><a href="/on-site-parking-feature-the-manhattan/12.html">On Site Parking</a></li>
+			 
+			 			 <li><a href="/online-ordering-feature-the-manhattan/13.html">Online Ordering</a></li>
+			 
+			 			 <li><a href="/organic-feature-the-manhattan/14.html">Organic</a></li>
+			 
+			 			 <li><a href="/outdoor-dining-feature-the-manhattan/15.html">Outdoor Dining</a></li>
+			 
+			 			 <li><a href="/participants-feature-the-manhattan/16.html">Participants</a></li>
+			 
+			 			 <li><a href="/restaurant-s-bar-feature-the-manhattan/17.html">Restaurant & Bar</a></li>
+			 
+			 			 <li><a href="/sports-programming-feature-the-manhattan/18.html">Sports Programming</a></li>
+			 
+			 			 <li><a href="/sunday-brunch-feature-the-manhattan/19.html">Sunday Brunch</a></li>
+			 
+			 			 <li><a href="/wheelchair-accessable-feature-the-manhattan/21.html">Wheelchair Accessable</a></li>
+			 
+			 			 <li><a href="/wifi-feature-the-manhattan/22.html">WiFi</a></li>
+			 
+			 			 <li><a href="/restaurant-samp;-bar-feature-the-manhattan/24.html">Restaurant &amp; Bar</a></li>
+			 
+			 			 <li><a href="/heart-shaped-pizza-feature-the-manhattan/25.html">Heart Shaped Pizza</a></li>
+			 
+			 			 <li><a href="/this-way-on-bay-feature-the-manhattan/26.html">This way on Bay</a></li>
+			 
+			 </div>
+            </div>
+			
+			<div class="clearfix"></div>
+			<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#byservicesxm"><i class="fa fa-angle-down"></i> By Services</button>
+			<div id="byservicesxm" class="collapse" aria-labelledby="headingThreex" data-parent="#accordionExample">
+             <div class="card-body">			 <li><a href="/alcohol-beer-wine-service-the-bronx/1.html">Alcohol/Beer/Wine</a></li>
+			 
+			 			 <li><a href="/catering-service-the-bronx/2.html">Catering</a></li>
+			 
+			 			 <li><a href="/delivery-service-the-bronx/3.html">Delivery</a></li>
+			 
+			 			 <li><a href="/take-out-service-the-bronx/4.html">Take Out</a></li>
+			 
+			 			 <li><a href="/wait-staff-dine-in-service-the-bronx/5.html">Wait Staff/Dine In</a></li>
+			 
+			 </div>
+            </div>
+			<div class="clearfix"></div>
+			
+			</div>
+            </div>
+			
+        </div></div></div>
+		
+		</div>
+</div>
+</nav></div>
+
+<div class="form-m-d">
+              <div class="resto_logo"><a class="logomb" href="/"><img src="/assets/front-page/images/wye-logo.png" /></a>
+              <span class="sublgo">Staten Islands local Restaurant Guide & Menu Portal</span>
+              
+              
+              </div>
+              
+              
+					<div class="rest_btnsss">
+                  <!--a href="#login-modal-4" id="modal_trigger_4" class="user_icn sidebar_s_d">
+                      <i class="fa fa-user" aria-hidden="true"></i></a-->
+                  <a href="#" class="srch_icn sidebar_os_c"><i class="fa fa-search" aria-hidden="true"></i> Search</a></div> </div>
+                  
+                  
+				          </div>
+    </div>
+    
+    <script>
+jQuery(document).ready(function(){
+    jQuery('.change-address-o-s').click(function() {
+            jQuery( ".change-address-class" ).toggle();
+            
+        });
+    jQuery('.login-c-t').click(function(event){
+    event.preventDefault();
+    jQuery("#modal_trigger").trigger("click");
+    });
+jQuery('.sider-bar-m').click(function(event){
+    event.preventDefault();
+    document.getElementById("mySidebar_os").style.width = "250px";
+    document.getElementById("mySidebar_os_r").style.width = "0";
+     document.getElementById("mySidebar_os_d").style.width = "0";
+});
+jQuery('.sidebar_os_c').click(function(event){
+    event.preventDefault();
+    
+    document.getElementById("mySidebar_os_r").style.width = "250px";
+    document.getElementById("mySidebar_os").style.width = "0";
+    document.getElementById("mySidebar_os_d").style.width = "0";
+}); 
+jQuery('.sidebar_s_d').click(function(event){
+    event.preventDefault();
+    
+    document.getElementById("mySidebar_os_d").style.width = "250px";
+    document.getElementById("mySidebar_os_r").style.width = "0";
+     document.getElementById("mySidebar_os").style.width = "0";
+}); 
+});
+
+function closeNav() {
+  document.getElementById("mySidebar_os").style.width = "0";
+    document.getElementById("mySidebar_os_r").style.width = "0";
+    document.getElementById("mySidebar_os_d").style.width = "0";
+}
+
+
+jQuery("#rest-set-id-n").keyup(function(){
+
+      var keyword =jQuery(this).val();
+	 
+		jQuery.ajax({
+		type: "POST",
+		url: "/serachauto",
+		data:{keyword:keyword},
+		beforeSend: function(){
+			//jQuery("#search-box-1").css("background","#FFF url(LoaderIcon.gif) no-repeat 165px");
+		},
+		success: function(data){
+    	 jQuery("#suggesstion-box-header").show();
+			jQuery("#suggesstion-box-main-rest").html(data);
+		
+		}
+		});
+	});
+jQuery("#toggle_inpt").keyup(function(){
+      var keyword =jQuery(this).val();
+		jQuery.ajax({
+		type: "POST",
+		url: "/serachauto_main",
+		data:{keyword:keyword},
+		beforeSend: function(){
+			//jQuery("#search-box-1").css("background","#FFF url(LoaderIcon.gif) no-repeat 165px");
+		},
+		success: function(data){
+    	 jQuery("#suggesstion-box-header").show();
+			jQuery("#suggesstion-box-main-header").html(data);
+		
+		}
+		});
+	});
+	function selectCountrymain(val) {
+		var str = val;
+var res = str.replace("-", "'");
+jQuery("#toggle_inpt").val(res);
+jQuery("#suggesstion-box-main-header").hide();
+jQuery("#rest-set-id-rest-val-main").submit();
+}
+function selectCountry(val) {
+	var str = val;
+var res = str.replace("-", "'");
+jQuery("#rest-set-id-n").val(res);
+jQuery("#suggesstion-box-main-rest").hide();
+jQuery("#rest-set-id-rest-val").submit();
+}
+</script>			<div class="new_headereat  n-h-d">
+          <div class="container">
+              
+              
+              
+              
+              <div class="resto_logo col-md-6"><a class="logomb" href="/"><img src="/assets/front-page/images/wye-logo.png" /></a>
+              <span class="sublgo" style="display:none;">Staten Islands local Restaurant Guide & Menu Portal</span></div>
+              
+             
+              
+       
+    
+				<div class="text-right col-md-6 col-sm-6 col-xs-12 cstm_rt_hdr">
+				<ul class="links">
+				<li> 					<!--a id="modal_trigger" href="#login-modal" class="modal_trigger1   delivery-full-div-hide" data-dismiss="modal" ><span class="imgs"><img src="/assets/front-page/images/2018-06-25.png"></span> <span style="color:#fff;">Login</span><span class="sr-only">(current)</span></a-->
+										
+					</li>
+				<li class="register-1">	  		<a class="nav-link" id="mylBtn" href="javascript:;">Restaurant Login</a>
+		    <div id="lmyModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="lclosem">&times;</span>
+      <h2 style="float:left">Restaurant  login</h2>
+    </div>
+	   
+    <div class="modal-body">
+	 <div id="login_message" class="text-left"></div>	
+     <div class="user_register_class" style="display:block;">
+					<form method="post" id="usserh_login">
+					 <div id="login_model"></div>
+						<div class="col-md-12 col-sm-12">
+						<label style="float:left">User Name</label>
+						<input type="text" class="form-control" name="user_name"  />
+							
+						<br /></div>
+				        <div class="col-md-12 col-sm-12">		  
+						<label style="float:left">Password</label>
+						<input type="password" class="form-control" name="password"  />
+						<br />	</div> 
+						
+						
+						<a class="btn btn-primary" href="/">Back </a>
+							<button class="btn btn-success" id="login-member-button" type="button">Login</button>
+					</form>
+				</div>
+				</div>
+				<div class="modal-footer"> 
+    </div>
+  </div>
+</div></li>
+ <li>
+        <!--a class="nav-link" id="myBtn" href="javascript:;">Restaurant Sign Up</a-->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="closem">&times;</span>
+      <h2>Restaurant  Register</h2>
+    </div>
+	
+    <div class="modal-body">
+     <div class="user_register_class" style="display:block;">
+					<form method="post" id="huserregstr">
+					 <div id="hr_message"></div>
+						<div class="col-md-6 col-sm-12">
+						<label>Name</label>
+						<input type="text"  class="form-control" name="first_name" />
+						<br />
+						
+						</div>
+						<div class="col-md-6 col-sm-12">
+						<label>Email Address</label>
+						<input type="email" class="form-control" name="email_addres"/>
+						<br /></div>
+						<div class="col-md-6 col-sm-12">
+						<label>User Name</label>
+						<input type="text" class="form-control" name="user_name"/>
+						<br /></div>
+				        <div class="col-md-6 col-sm-12">		  
+						<label>Password</label>
+						<input type="password" class="form-control" name="pass_word"/>
+						<br />	</div> 
+						
+						
+						<a class="btn btn-primary" href="/">Back </a>
+							<button class="btn btn-success" id="reg-homemember-button" type="button">Register</button>
+						
+					</form>
+				</div>
+    <div class="modal-footer"> 
+    </div>
+  </div>
+</div>
+</div>
+      </li>
+</ul></div>
+			 </div>
+        
+    </div>
+			</header>
+<style>
+.explore_our {
+    text-align: center;
+}
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url("/images/loader_new.gif") center no-repeat #fff;
+}
+
+a.manhattan {
+    display: inline-block;
+    float: none;
+}
+#suggesstion-box-s #country-list{top:inherit !important;}
+#suggesstion-box #country-list{width:85% !important;}
+.sub-btn-new:hover{background: #e54040;}
+.sub-btn-new:focus{background: #e54040;}
+.sub-btn-new:visited{background: #e54040;}
+.sub-btn-new{background: #900000;
+    border: none;position: absolute;padding: 3px 5px 3px 5px;}
+.inner_guides h3 {
+    color: #fff;
+    font-weight: bold;
+}
+.restaurant_name {
+    color: #fff;
+}
+input#search-box-2 {
+    color: #000;
+}
+ #main-banner #header
+		   {
+    background-image: none !important;
+} 
+#country-list li {
+    padding: 10px;
+    /*background: 
+#f0f0f0;*/
+border-bottom:
+    #bbb9b9 1px solid;
+    cursor: pointer;
+    color: #900000;
+    font-size: 15px;
+}
+#country-list {
+    list-style: none;
+}
+#country-list {
+    float: left;
+    list-style: none;
+    padding: 0;
+    width: 255px;
+    position: absolute;
+}
+.liked-moved {
+    display: block !important;
+    color: #666 !important;
+    text-shadow: inherit !important;
+	margin: 0px;
+}
+.w-for-only{color: #000 !important;}
+
+.banner .inner > h1 {
+    text-transform: none;
+    font-size: 36px;
+}
+.banner .where-main-class h1 .w-for-only {
+    font-size: 30px;
+    text-transform: none;
+}
+.banner .where-main-class .liked-moved {
+    font-size: 30px;
+    font-weight: 100;
+    color: #000 !important;
+    margin-bottom: 10px;
+}
+
+.banner .where-main-class .restaurant_name span {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+}
+
+
+.banner .where-main-class .restaurant_name label {
+    display: flex;
+    max-width: 300px;
+    font-weight: 700;
+    margin: 10px auto 20px;
+}
+
+.banner .where-main-class .restaurant_name label input[type="text"] {
+    height: 40px;
+    font-size: 16px;
+    width: 70%;
+    float: left;
+}
+
+.banner .where-main-class .restaurant_name label form {
+    width: 100%;
+}
+
+.banner .where-main-class .restaurant_name label .sub-btn-new {
+    width: 30%;
+    position: relative;
+    height: 40px;
+    float: right;
+}
+
+.banner .where-main-class h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.banner .where-main-class .search {
+    min-width: inherit;
+    width: 570px;
+    max-width: 100%;
+}
+.banner .where-main-class {
+    border: 8px solid rgba(181, 181, 181, 0.5);
+}
+.banner .where-main-class .restaurant_name label
+{
+position:relative;
+}
+.banner .where-main-class .restaurant_name label #suggesstion-box-s #country-list {
+    top: 100% !important;
+    left: 0px;
+}
+@media (max-width:1000px)
+{
+.banner .where-main-class{height:auto;}
+.banner .where-main-class .search{margin:auto;float:none;}
+
+.banner .where-main-class .search .form-wrapper{float:none;}
+
+
+}
+
+@media (max-width:767px)
+{
+.banner .where-main-class
+{
+height:auto;
+}
+.banner .where-main-class  .sub-btn-new{margin-top:0px;}
+}
+
+@media (max-width:649px)
+{
+.banner .where-main-class {height:auto;}
+.banner .where-main-class .restaurant_name label{float:none;width:300px;max-width:100%;inline-block}
+.banner .where-main-class .restaurant_name label input#search-box-2{width:70%;}
+.banner .inner > h1
+{
+font-size:20px;
+}
+}
+
+@media (max-width:480px)
+{
+.last-footer-class li {
+    display: block;
+    text-align: left;
+}
+.banner .where-main-class .liked-moved
+{
+font-size:20px;
+}
+
+.banner .where-main-class .restaurant_name label input#search-box-2{width:100%;}
+
+
+.banner .where-main-class .restaurant_name span {
+    font-size: 20px;
+    padding-top: 0px;
+    margin-top: 0;
+}
+.banner .where-main-class .restaurant_name label{margin-bottom:10px;}
+.banner .where-main-class h1 .w-for-only
+{
+font-size:22px;
+display:block;
+padding-bottom:5px;
+}
+
+}
+
+
+	   </style>	
+	   
+<script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
+<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css"/>
+  <script type="text/javascript" src="/assets/front-page/js/typeahead.js"></script>
+<!--script>
+placeSearch({
+  key: '3kI2GCnc8TvntfgGuBbSh5KCsb3M4aeO',
+  container: document.querySelector('#location-name-input')
+});
+</script-->
+ <script type="text/javascript">
+ 
+	 
+ jQuery(document).ready(function () {
+	 
+jQuery(document).on('change', '#locationName1', function() {
+	jQuery(".se-pre-con").show();
+		 setTimeout(function () {
+             jQuery('#search-new-place-id').submit();        
+                 }, 500);
+          });
+
+
+     jQuery('.btn-link').click(function(){
+		 jQuery(this).toggleClass('collapsed');
+		 var str=jQuery(this).attr('data-target');
+		 var res = str.replace("#", "");
+		 if(jQuery('#'+res).hasClass("collapse")){
+		 jQuery('#'+res).attr('class','collapsed');
+		 }else{
+		jQuery('#'+res).attr('class','collapse');	 
+		 }
+	 });
+     jQuery(".form-submit-data").click(function(){
+  jQuery(".sub-btn-new").trigger("click");
+});
+ 
+var google_api=false;
+ jQuery(".locationName1").keyup(function(){
+     var keyword =jQuery(this).val();
+		jQuery.ajax({
+		type: "POST",
+		url: "/serachauto_new_home",
+		data:{keyword:keyword},
+		beforeSend: function(){
+			//jQuery("#search-box-1").css("background","#FFF url(LoaderIcon.gif) no-repeat 165px");
+		},
+		success: function(data){
+    	 jQuery("#suggesstion-box1").show();
+			jQuery("#suggesstion-box1").html(data);
+                     
+               
+		
+			//jQuery("#search-box-1").css("background","#FFF");
+		
+		}
+		});
+	});
+	
+	
+	jQuery("#search-box-2").keyup(function(){
+      var keyword =jQuery(this).val();
+		jQuery.ajax({
+		type: "POST",
+		url: "/serachauto",
+		data:{keyword:keyword},
+		beforeSend: function(){
+			//jQuery("#search-box-1").css("background","#FFF url(LoaderIcon.gif) no-repeat 165px");
+		},
+		success: function(data){
+    	 jQuery("#suggesstion-box-s").show();
+			jQuery("#suggesstion-box-s").html(data);
+                     
+               
+		
+			//jQuery("#search-box-1").css("background","#FFF");
+		
+		}
+		});
+	});
+	
+	
+ });
+ 
+ 
+ 
+	function selectCountry(val) {
+		var stra = val;
+ var myarr = stra.split("~-~");
+ var myvar = myarr[1];
+ var str = myarr[0];
+var res = str.replace("-", "'");
+jQuery("#search-box-2").val(res);
+jQuery("#search-box-id").val(myvar);
+jQuery("#suggesstion-box-s").hide();
+jQuery("#search-home-p").submit();
+}
+	function selectCountryr(val) {
+jQuery("#search-box-2").val(val);
+jQuery("#suggesstion-box-s").hide();
+}
+ /*function selectCountryval(val) {
+jQuery("locationName1").val(val);
+jQuery("#suggesstion-box1").hide();
+}*/
+function selectCountryvalh(val) {
+jQuery(".locationName1").val(val);
+jQuery("#suggesstion-box1").hide();
+}
+      
+	   $(document).ready(function () {
+        $('#txtCountry').typeahead({
+			
+            source: function (query, result) {
+				var address=$('#txtCountry').val();
+                $.ajax({
+                    url: "/Order_front/mapquestapi",
+					data: {'query=':query,address:address},            
+                    dataType: "json",
+                    type: "POST",
+                    success: function (data) {
+						//alert("Hello");
+						setTimeout(function(){ 
+					
+						console.log(data);
+						result($.map(data, function (item) {
+							return item;
+                        }));
+						}, 1000);
+                    }
+                });
+            }
+        });
+		
+    });
+    </script>
+	   <div class="se-pre-con" style="display:none;"></div>
+<div class="banner">
+	<div class="banner_bg"></div>
+	<div class="container">
+		
+ <div class="content text-center col-sm-12 col-md-12">
+
+			<article>					
+					<div class="inner col-md-12 col-sm-12 col-xs-12 where-main-class">
+					<h1><b class="w-for-only">Welcome to The New WhereYouEat</b></h1>
+					<h2 class="liked-moved">Our menu links may have moved</h2>
+					<hr style="border-top: 2px solid #900000; margin-top: 0px;">
+					<div class="restaurant_name">
+			  <span>Search for a specific restaurant</span>
+			  <label>
+			      <form id="search-home-p" method="post" action="/search/restaurant" >
+			  <input class="" id="search-box-2" type="text" required value="" name="search_by_res_test" placeholder="Type restaurant name" / >
+			  <input class="" id="search-box-id" type="hidden" required value="" name="search_by_res" placeholder="Type restaurant name" / >
+			  <input type="Submit" class="sub-btn-new" Value="Search"/>
+			  <i class="fa fa-search form-submit-data" aria-hidden="true"></i>
+			  </form>
+			  <div id="suggesstion-box-s"></div>
+			  </label>
+			</div>	
+						<h1>Discover Restaurants Near You</h1>
+	<div class="col-md-12 col-sm-12 mobile-class-change1" style="display:none; background: rgba(0, 0, 0, 0.7);
+padding: 13px 0 13px 0px;
+margin: 0 0 21px 0;">	
+<div class="col-md-2"></div>
+	<div class="col-sm-12 form-group">	
+		<form class="form-wrapper cf" method="post" action="/search/restaurant" style="border-radius:10px; padding: 0px 0 0px 0px; border: 1px solid #999; box-shadow: none;">
+		
+			<span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+			
+    <input type="text" required style="width:87% !important" id="locationName" name="addresss" 
+    value="" placeholder="Type address to discover" class="location" >
+	 
+<div class="">	 
+<button  class="restro  btn btn-success" style="width:100%; border:none;background: #C00813;" type="submit"  value="Find Restaurants" id="submit">
+     <span class="c-f-m-d">Go</span>   
+</button>
+</div>	
+</form>
+
+<div class="col-md-2"></div></div>
+<div class="col-md-2"></div></div>	
+		<div class="search col-md-8 mobile-class-change">	
+<div class=""></div>		
+		<form class="form-wrapper cf col-md-12 col-sm-12 col-xs-12"  id="search-new-place-id" method="post" action="/search/restaurant">
+			<span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+    <input  id="locationName1" type="search" required  name="address" 
+    value="" 
+    placeholder="Type address to discover" class="location  change-address-var locationName" >
+    
+	
+    
+	 <input id="lat" type="hidden"  name="lat" value="">
+      <input id="long" type="hidden" name="long" value="">
+    <button style=" top: 2%;" class="restro" 
+    type="submit"  value="Find Restaurants" >
+        <i class="fa fa-search form-submit-data"  aria-hidden="true"></i> 
+        <span class="c-f-m-d">Go</span></button>
+    <div id="suggesstion-box"></div>
+</form>
+</div></div>
+			
+				</article>	
+ 
+			
+				
+				
+
+<div class="row add-mobile-icon" style="display:block;">					
+<div class="col-md-4 col-sm-6 col-xs-6"><h2>NO</h2><span style="color:#000;">Menu Mark-Ups</span></div> <div class="col-md-4 col-sm-6 col-xs-6"><h2>No</h2><span style="color:#000;"> Delivery Fees</span></div><div class="col-md-4 col-sm-12 col-xs-12 last"><h2>100% Free</h2><span style="color:#000;">Ordering From Partnering Restaurant</span>
+</div></div>	 
+			
+			
+
+</div> 
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+</div>
+<div class="col-md-12 where-you-eat-s">
+</div>
+	 <script>
+var modal = document.getElementById('myModal');
+var lmodal = document.getElementById('lmyModal');
+//var btn = document.getElementById("myBtn");
+var lbtn = document.getElementById("mylBtn");
+var span = document.getElementsByClassName("closem")[0];
+var lspan = document.getElementsByClassName("lclosem")[0];
+/*btn.onclick = function() {
+    modal.style.display = "block";
+}*/
+lbtn.onclick = function() {
+    lmodal.style.display = "block";
+}
+lspan.onclick = function() {
+    lmodal.style.display = "none";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == lmodal) {
+        lmodal.style.display = "none";
+    }
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+$(document).ready(function(){
+
+if($(window).width() <700) {	
+ //$('.location').attr("placeholder", "Type your Address");
+}
+});
+</script>
+</body>
+</html>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--script src="/assets/front/js/datetimepicker.js"></script-->
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+
+
+
+/* login popup */
+
+jQuery("#modal_trigger").leanModal({top : 60, overlay : 0.6, closeButton: ".modal_close" });
+jQuery("#modal_trigger1").leanModal({top : 60, overlay : 0.6, closeButton: ".modal_close" });
+jQuery("#modal_trigger2").leanModal({top : 60, overlay : 0.6, closeButton: ".modal_close" });
+jQuery("#modal_trigger3").leanModal({top : 60, overlay : 0.6, closeButton: ".modal_close" });		
+	jQuery(function(){
+		// Calling Login Form
+		jQuery("#login_form").click(function(){
+			jQuery(".social_login").hide();
+			jQuery(".user_login").show();
+			return false;
+		});
+
+		// Calling Register Form
+		jQuery("#register_form").click(function(){
+			jQuery(".user_register").show();
+				jQuery(".user_login").hide();
+				jQuery(".frget_password").hide();
+			jQuery(".header_title").text('Register');
+			return false;
+		});
+
+		// Going back to Social Forms
+		jQuery(".back_btn").click(function(){
+			jQuery(".user_login").show();
+			jQuery(".frget_password").hide();
+			jQuery(".user_register").hide();
+			jQuery(".header_title").text('Login');
+			return false;
+		});
+		// Calling Register Form
+		jQuery("#forget_password").click(function(){
+			jQuery(".frget_password").show();
+				jQuery(".user_login").hide();
+			jQuery(".user_register").hide();
+			jQuery(".header_title").text('Forgot');
+			return false;
+		});
+
+	})
+
+/* End */
+
+/* Start of show-hide-nab-menu */
+
+          jQuery(".tab-menu").click(function(e){
+			e.preventDefault();
+            var cls = jQuery(this).attr('data');
+			jQuery('.category').collapse("hide");
+            jQuery(".category").hide();
+            jQuery(cls).show();
+        });
+
+	
+	/* End of show-hide-nab-menu */
+
+
+/* ----------------start of lunch----dinner------listing-----------*/
+
+jQuery('.all-date212').hide();
+jQuery('.view-all').click(function(){
+   jQuery('.all-date212').show();
+jQuery('.view-one-date').hide();
+});
+jQuery('.hide-all').click(function(){
+ jQuery('.view-one-date').show();
+ jQuery('.all-date212').hide();
+});
+var windwidth2 = jQuery(window).width(); 
+jQuery('.or-summery,.gues,.avi-dis ').show();
+if(windwidth2 <=767)
+{
+jQuery('.or-summery, .gues, .avi-dis').show();
+}
+
+jQuery('.toggle_menu_btn').click(function(){
+  jQuery('.view_tab_bar').toggle();
+});
+
+
+/* Select state  */
+jQuery('#country').change(function () { 
+   
+var country = jQuery(this).val();   
+   
+     jQuery.ajax({
+     type:"POST",
+     url:"/findstate/"+country,
+   
+     success:function (data) {
+          jQuery('#selectedstate').html(data);
+          
+     }     
+     });
+ });
+/* End  */
+
+/* Select city */
+
+
+jQuery('#stateee').change(function () { 
+   
+var state = jQuery(this).val();   
+   
+     jQuery.ajax({
+     type:"POST",
+     url:"/findcity/"+state,
+    
+     success:function (data) {
+          jQuery('#selectedcity').html(data);
+          
+     }     
+     });
+ });
+
+
+/* End  */
+
+/* Customer login */
+
+jQuery("#l-member-button").click(function(e){
+e.preventDefault();
+   jQuery.ajax({
+	type:"post",
+	data:jQuery('#usser_login').serialize(),
+	url:"/login_member",
+	success:function(data){
+	//if(data.contains("alert-success")){ 
+	if(data.trim()=='true'){ 
+       window.location.href=window.location.pathname;
+        jQuery('#usser_login input').val(''); 
+        } else {
+	  jQuery('#l_message').html(data);
+               }
+	}
+  });			
+});
+
+jQuery("#login-member-button").click(function(e){
+e.preventDefault();
+   jQuery.ajax({
+	type:"post",
+	data:jQuery('#usserh_login').serialize(),
+	url:"/vc_site_admin/admin_user",
+	success:function(data){
+	//if(data.contains("alert-success")){ 
+	if(data.trim()=='true'){ 
+		
+		window.location.href="/admin/main";					
+        jQuery('#usserh_login input').val(''); 
+        } else {
+	  jQuery('#login_message').html(data);
+               }
+	}
+  });			
+});
+/*end */
+
+/* Customer Register */
+
+jQuery("#reg-member-button").click(function(e){
+e.preventDefault();
+   jQuery.ajax({
+	type:"post",
+	data:jQuery('#userregstr').serialize(),
+	url:"/reg_member",
+	success:function(data){
+	//if(data.contains("alert-success")){ 
+	if(data.trim()=='true'){ 
+
+        window.location.href="/dashboard";
+        jQuery('#userregstr input').val(''); 
+        } else {
+	  jQuery('#r_message').html(data);
+               }
+	}
+  });			
+});
+		
+jQuery("#reg-homemember-button").click(function(e){
+	
+e.preventDefault();
+   jQuery.ajax({
+	type:"post",
+	data:jQuery('#huserregstr').serialize(),
+	url:"/new_user",
+	success:function(data){
+	//if(data.contains("alert-success")){ 
+	if(data.trim()=='true'){
+		jQuery("#lmyModal").css("display", "block");
+			jQuery("#myModal").css("display", "none");
+        jQuery('#huserregstr input').val(''); 
+        } else {
+	  jQuery('#hr_message').html(data);
+               }
+	}
+  });		
+});
+/* End */
+
+
+/* Forget Password */
+
+jQuery("#forgetpasswordbutton").click(function(e){
+e.preventDefault();
+   jQuery.ajax({
+	type:"post",
+	data:jQuery('#forgetpassword').serialize(),
+	url:"/login_member/forgetpassword",
+	success:function(data){
+	//if(data.contains("alert-success")){ 
+	if(data.trim()=='true'){ 
+       // window.location.href="/dashboard";
+        jQuery('#forgetpassword input').val(''); 
+        } else {
+	  jQuery('#forget_message').html(data);
+               }
+	}
+  });			
+});
+
+/* End */
+
+
+/* reset_password Password */
+
+jQuery("#reset_passwordbutton").click(function(e){
+e.preventDefault();
+   jQuery.ajax({
+	type:"post",
+	data:jQuery('#reset_password').serialize(),
+	url:"/login_member/reset_password",
+	success:function(data){
+	//if(data.contains("alert-success")){ 
+	if(data.trim()=='true'){ 
+       // window.location.href="/dashboard";
+        jQuery('#reset_password input').val(''); 
+        } else {
+	  jQuery('#reset_password_message').html(data);
+               }
+	}
+  });			
+});
+
+/* End */
+
+
+
+
+/* Customer Logout */
+
+jQuery("#member-logout").click(function(e){
+e.preventDefault();
+   jQuery.ajax({
+	type:"post",
+	data:jQuery('#userlogout').serialize(),
+	url:"/login_member/logout",
+	success:function(data){
+	//if(data.contains("alert-success")){ 
+	if(data.trim()=='true'){ 
+        window.location.href=window.location.pathname;;
+        jQuery('#userlogout input').val(''); 
+        } else {
+	  //jQuery('#r_message').html(data);
+               }
+	}
+  });			
+});
+
+/* End */
+
+
+jQuery(document).on('click','.delete-item',function(event) {
+var rid= jQuery(this).attr('data-id');
+var cls = jQuery(this).attr('data-cls');
+var item_id = jQuery(this).attr('data-itemid');
+jQuery.ajax({
+       type:"POST",
+       url:"/cart/update_cart/",
+       data:"rowid="+rid+"&qty=0&id="+item_id,
+       success:function(data){
+          //jQuery(cls).hide();
+         window.location.href=window.location.pathname;
+       }
+    });
+  }); 
+  
+  	
+		
+        });
+		
+
+ </script>
+ 
+

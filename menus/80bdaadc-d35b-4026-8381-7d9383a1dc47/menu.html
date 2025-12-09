@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<!-- BRIGHT EDGE <script src="//cdn.bc0a.com/autopilot/f00000000303687/autopilot_sdk.js"></script> -->
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KZ5BZPV3');</script>
+<!-- End Google Tag Manager -->
+
+<title>Ted's Montana Grill</title>
+<meta name="description" id="metaDescription" content="Ted's Montana Grill">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styles/main.css" >
+<link rel="stylesheet" type="text/css" href="styles/locations.css" >
+<link rel="stylesheet" type="text/css" href="styles/lity.css" >
+<style>
+button#resWaitButton, button#resWait2Button {
+        font-size:1rem;
+        margin:8px 4px 8px 0px;
+	width:200px;
+    }
+@media (min-width:64rem)
+{
+    button#resWaitButton, button#resWait2Button {
+        font-size:1rem;
+	padding: 0.38rem 0rem
+    }
+}
+button#resWaitButton, button#resWait2Button {
+    font-weight:300
+} 
+    h5.callout {
+        padding-top: 0.5rem;
+        color: #8a282a;
+        text-transform: uppercase
+    }
+    
+</style>
+    
+    
+<style>        
+.marquee {
+    width: 100%;
+	line-height: 40px;
+	background-color: #8a282a;
+	color: white;
+  
+    box-sizing: border-box;
+margin: 0 auto;
+}
+.marquee p {
+    padding: 0;
+ 
+    text-align:center;
+    font-weight: bold;
+    font-size:15px;
+}
+
+</style>
+<script id="wisely-embedded-reservations" src="https://static.wisely.io/form/embed.js" data-env="prod"></script>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyCP0vGwfEWWdEkO98lY8xh3mUW-Ss7ANrc"></script>
+<script type="text/javascript" src="scripts/tmginit.js"></script>
+<script type="text/javascript" src="scripts/lity.js"></script>
+
+<script type="text/javascript">
+	
+function IsIE() {
+  var sAgent = window.navigator.userAgent;
+  var Idx = sAgent.indexOf("MSIE");
+
+  // If IE, return version number.
+  if (Idx > 0) 
+    return parseInt(sAgent.substring(Idx+ 5, sAgent.indexOf(".", Idx)));
+
+  // If IE 11 then look for Updated user agent string.
+  else if (!!navigator.userAgent.match(/Trident\/7\./)) 
+    return 11;
+
+  else
+    return 0; //It is not IE
+}
+
+var locOpts = {};
+if(IsIE() > 0) {
+	locOpts = {
+    	enableHighAccuracy: false,
+        maximumAge: 50000
+    }
+}
+	
+var geocoder;
+$(document).ready(function () {
+      
+	if(IsIE() > 0)
+		$('.container.location-nav .content').css('width', '64%');	
+
+    $('#loc-dir').on('click', '[data-lightbox]', lity);
+    
+    $('#location-link-current').click(function ()  {
+        $('#location-search-box').val('');
+		$('#ctStoreID').val('0');
+		$('#ctStoreDirect').val('0');
+        searchLocations();                     
+    });
+
+    $('#location-link-all').click(function ()  {
+        window.location.href = "locations.html#locations-all";                              
+    });
+
+    $('#location-link-search').click(function ()  {
+        $('#location-search-box').focus();                                
+    });
+	
+//	if($('#ctStoreID').val() == 0)
+//		$('#ctStoreID').val("050");	
+
+	$('#location-search-box').attr("value", "");	
+	
+	if($('#ctStoreDirect').val() > 0)
+		searchError();
+	else
+		searchLocations();
+	
+});
+
+function searchLocations() {
+	var posting = $.post('scripts/CtSaveLocation.php', { ct_location_addr:  addr, ct_location_id: $('#ctStoreID').val() });	
+	posting.done(function( data ) {
+    });
+    if(!geocoder)
+        geocoder = new google.maps.Geocoder();	
+    var addr = $("#location-search-box").val();
+	if(addr == "" && navigator.geolocation)	{
+		navigator.geolocation.getCurrentPosition(searchLocationsPoint, searchError, locOpts);			
+	} else 	{	
+		geocoder.geocode( { 'address': addr}, function(results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+				searchLocationsNear(results[0].geometry.location.lat(), results[0].geometry.location.lng());		 	    		
+			} else {
+				$('#stores').empty().append($('<p />').text('No results found.'));	
+				return;			
+			}		
+		});
+	}						
+}
+function searchError(err) {
+	searchLocationsNear(0, 0);
+};
+	
+function downloadUrl(url,callback) {
+	var request = window.ActiveXObject ?
+		new ActiveXObject('Microsoft.XMLHTTP') :
+		new XMLHttpRequest;
+
+	request.onreadystatechange = function() {
+		if (request.readyState == 4) {
+			request.onreadystatechange = null;
+			callback(request.responseText, request.status);
+		}
+	};
+	request.open('GET', url, true);
+	request.send(null);
+}
+
+function parseXml(str) {
+	if (window.ActiveXObject) {
+    	var doc = new ActiveXObject('Microsoft.XMLDOM');
+        doc.loadXML(str);
+        return doc;
+	} else if (window.DOMParser) {
+		return (new DOMParser).parseFromString(str, 'text/xml');
+	}
+}
+function searchLocationsPoint( position) {
+	searchLocationsNear(position.coords.latitude, position.coords.longitude)
+}
+function searchLocationsNear(lat, lng) {
+	var radius = '200';
+	var sid = $('#ctStoreID').val();
+	
+	if(lat == 0 && sid == 0)
+		return;
+	
+	var searchUrl = 'scripts/CtLocationsXmlV2.3.php?lat=' + lat + '&lng=' + lng + '&radius=' + radius + '&sid=' + sid;
+
+	downloadUrl(searchUrl, function(data) {
+		var xml = parseXml(data);
+		var markers = xml.documentElement.getElementsByTagName('marker');
+			
+		if(markers.length == 0) {				
+			$('#stores').empty().append($('<p style=\"text-align:center\" />').text('No results found within ' + radius + ' miles.'));		
+			return;
+		}			
+		
+		$('#stores').empty();
+		var beven = 1;							
+		for (var i = 0; i < markers.length; i++) {
+		   				
+			var tmgid = markers[i].getAttribute('tmgid');					 
+			var tmgname = markers[i].getAttribute('tmgname');
+            var tmgnickname = markers[i].getAttribute('tmgnickname');
+			var tmgaddress = markers[i].getAttribute('tmgaddress');
+			var tmgcity = markers[i].getAttribute('tmgcity');
+            var tmgstate = markers[i].getAttribute('tmgstate');
+            var tmgzip = markers[i].getAttribute('tmgzip');
+			var tmgphone = markers[i].getAttribute('tmgphone');
+            var tmgcallout = markers[i].getAttribute('tmgcallout');
+            var tmgmenu = markers[i].getAttribute('tmgmenu');
+			var tmgmenutitle = markers[i].getAttribute('tmgmenutitle');
+			var tmgmenu2 = markers[i].getAttribute('tmgmenu2');
+			var tmgmenutitle2 = markers[i].getAttribute('tmgmenutitle2');
+			var tmgmenu3 = markers[i].getAttribute('tmgmenu3');
+			var tmgmenutitle3 = markers[i].getAttribute('tmgmenutitle3');
+			var tmgmenu4 = markers[i].getAttribute('tmgmenu4');
+			var tmgmenutitle4 = markers[i].getAttribute('tmgmenutitle4');
+			var tmgmenu5 = markers[i].getAttribute('tmgmenu5');
+			var tmgmenutitle5 = markers[i].getAttribute('tmgmenutitle5');
+			var tmgevent1 = markers[i].getAttribute('tmgevent1');			
+			var tmgevent2 = markers[i].getAttribute('tmgevent2');			
+			var tmghours = markers[i].getAttribute('tmghours');			
+			var tmgdistance = parseFloat(markers[i].getAttribute('tmgdistance'));
+			var tmgmapuri = markers[i].getAttribute('tmgmapuri');	
+			var tmgfburl = markers[i].getAttribute('tmgfburl');	
+			var tmgonline = markers[i].getAttribute('tmgonline');	
+            var tmgdelivery = markers[i].getAttribute('tmgdelivery');	
+            var tmgreserve = markers[i].getAttribute('tmgreserve');	
+			var tmgincfile = markers[i].getAttribute('tmgincfile');	
+			var tmgimg = markers[i].getAttribute('tmgimg');	          
+            
+            var divhead ='<div class="location two-unequal">';       
+            var div = '<div class="column-left">';
+            div += '<div class="distance"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>' + tmgdistance.toFixed(1) + ' miles</div>'
+            div += '<div class="location-block"><h2>' + tmgcity + '</h2><h4>' + tmgnickname + '</h4><p class="address"> ' + tmgaddress + '<br>' + tmgcity + ', ' + tmgstate + ' ' + tmgzip +'</p>';
+            
+            if(tmgcallout)
+            {
+                div += '<h5 class="callout">' + tmgcallout + '</h5>';
+            }
+            
+            div += '<p class="phone">P:  <a href="tel:' + tmgphone +  '">' + tmgphone + '</a></p>';
+            
+           
+            if(tmgreserve)
+            {
+                if (tmgid == 'tmg050')
+		        {
+                    div += tmgreserve;
+                }
+                else
+                {
+                    div += '<button class="col-red" name="resWaitButton" id="resWaitButton" type="button" value="" onclick="' 
+                        + encodeURI(tmgreserve) + '">Make a Reservation</button>';
+                    if(tmgincfile)
+                    {
+                        div += '<button class="col-red" name="resWait2Button" id="resWait2Button" type="button" value="" onclick="' 
+                        + encodeURI(tmgincfile) + '">Join Waitlist</button>';
+                    }
+                }
+            }
+            else
+            {
+                div += '<div class=\"loc-hours\">Please call the restaurant for reservations.</div>';
+            }
+                
+
+            div += '<div class="location-links">';
+	       if(tmgmenu) {
+		      div += '<a href="/menu/' + tmgmenu + '">' + tmgmenutitle + '</a>';
+	       }
+	       if(tmgmenu2) {
+		      div += '<a href="/menu/' + tmgmenu2 + '">' + tmgmenutitle2 + '</a>';
+	       }
+	       if(tmgmenu3) {
+		      div += '<a href="/menu/' + tmgmenu3 + '">' + tmgmenutitle3 + '</a>';
+	       }
+	       if(tmgmenu4) {
+		      div += '<a href="/menu/' + tmgmenu4 + '">' + tmgmenutitle4 + '</a>';
+	       }
+	       if(tmgmenu5) {
+		      div += '<a href="/menu/' + tmgmenu5 + '">' + tmgmenutitle5 + '</a>';
+	       }
+	       if(tmgonline) {
+		      div +='<a id="tmgonline" href="' + tmgonline + '">Order Pickup</a>';
+	       }
+    
+           if(tmgdelivery) {
+		      div += tmgdelivery;
+	       }
+          
+	       div +='<a id="loc-dir" data-lity href="https://maps.google.com?q=' + tmgmapuri + '">Get Directions</a><a href="' + tmgfburl + '"                class="location-fb"><i class="fab fa-facebook" aria-hidden="true"></i></a>';
+	  
+	       div += '</div>';
+
+	    
+		  div += '<div class=\"loc-hours\">' + tmghours +  '</div>';
+ 
+            
+	       if(tmgevent1)
+		      div += '<div class=\"loc-event\">' + tmgevent1 + '</div>';
+	
+	       div += '</div></div>';
+ 
+            var divimage = '<div class="column-right"><div class="location-image"> <img src="images/locations/' + tmgimg + '" alt=""></div></div>';
+   
+            if(beven)
+                div = div + divimage;
+            else
+                div = divimage + div;
+    
+            div = divhead + div + '</div>';
+   
+			$('#stores').append(div);	
+            beven = 1 - beven;
+		}
+	});
+}
+
+function createEntry(beven, tmgid, tmgname, tmgnickname, tmgaddress, tmgcity, tmgstate, tmgzip, tmgphone, tmgmenu, tmgmenutitle, tmgmenu2, tmgmenutitle2, tmgmenu3, tmgmenutitle3, tmgmenu4, tmgmenutitle4, tmgmenu5, tmgmenutitle5, tmgevent1, tmgevent2, tmghours, tmgdistance, tmgmapuri, tmgimg, tmgfburl, tmgonline, tmgincfile) 
+{		
+     var divhead ='<div class="location two-unequal">';       
+     var div = '<div class="column-left">';
+     div += '<div class="distance"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>' + tmgdistance.toFixed(1) + ' miles</div>'
+     div += '<div class="location-block"><h2>' + tmgcity + '</h2><h4>' + tmgnickname + '</h4><p class="address"> ' + tmgaddress + '<br>' + tmgcity + ', ' + tmgstate + ' ' + tmgzip +'</p><p class="phone">P:  <a href="tel:' + tmgphone +  '">' + tmgphone + '</a></p><div class="location-links">';
+	if(tmgmenu) {
+		div += '<a href="/menu/' + tmgmenu + '">' + tmgmenutitle + '</a>';
+	}
+	if(tmgmenu2) {
+		div += '<a href="/menu/' + tmgmenu2 + '">' + tmgmenutitle2 + '</a>';
+	}
+	if(tmgmenu3) {
+		div += '<a href="/menu/' + tmgmenu3 + '">' + tmgmenutitle3 + '</a>';
+	}
+	if(tmgmenu4) {
+		div += '<a href="/menu/' + tmgmenu4 + '">' + tmgmenutitle4 + '</a>';
+	}
+	if(tmgmenu5) {
+		div += '<a href="/menu/' + tmgmenu5 + '">' + tmgmenutitle5 + '</a>';
+	}
+	
+	if(tmgonline) {
+		div +='<a id="tmgonline" href="' + tmgonline + '">Order Online</a>';
+	}
+	div +='<a id="loc-dir" data-lity href="https://maps.google.com?q=' + tmgmapuri + '">Get Directions</a><a href="' + tmgfburl + '" class="location-fb"><i class="fab fa-facebook" aria-hidden="true"></i></a>';
+	
+	div += '</div>';
+	div += '<div class=\"loc-hours\"><b>HOURS</b><br>' + tmghours + '</div>';
+	
+	if(tmgevent1)
+		div += '<div class=\"loc-event\">' + tmgevent1 + '</div>';
+	
+	div += '</div></div>';
+ 
+    var divimage = '<div class="column-right"><div class="location-image"> <img src="images/locations/' + tmgimg + '" alt=""></div></div>';
+   
+    if(beven)
+        div = div + divimage;
+    else
+        div = divimage + div;
+    
+    div = divhead + div + '</div>';
+    
+    return div;
+}	
+</script>
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '202738840274465');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=202738840274465&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZ5BZPV3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="header">
+	<h6 style="position:absolute;top:-500px;left:-500px;">Adot Pro Accessibility Link<a href="https://tedsmontanagrill.adotpro.com" title="Visit adot pro compliant version of this website">Visit adot pro compliant version of this website</a></h6>
+	
+	<div class="container">
+		<a href="index.html" class="logo"><img src="/images/logo.png" alt="Ted's Montana Grill"></a>
+		<div class="nav-locator"><a href="/locations.html"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></a>
+		</div>
+		<div id="nav-toggle">
+			<div class="nav-icon"></div>
+		</div>
+		<nav>
+			<ul>
+				<li> <a href="/locations.html">Locations</a></li>
+				<li> <a href="/menu.html">menu</a> </li>
+				<li> <a href="/events.html">events</a> </li>
+
+				<li> <a href="/our-story.html">our story</a> </li>
+				<li> <a href="/careers.html">careers</a> </li>
+				<li> <a href="/store.html">Gift Cards</a> </li>
+           <!--     <li> <a href="https://tedsbutchershoppe.com/">Butcher Shoppe</a> </li> -->				
+				<li class="nav-box-li"> <a id="nav-onor" href="/locations.html">Order Online</a></li>
+				<li class="nav-box-li"> <a id="nav-resv" href="/locations.html">Reservations</a></li>
+			<!--	<li id="nav-social-li"> <a id="nav-social" href="#">social</a></li> -->
+			</ul>
+			<div id="nav-box" style="padding-left:32px">
+				
+				<div id="nav-onor-butt"  style="padding:4px"> <a class="button col-grn nav" href="/locations.html">Order Online</a></div>
+				<div id="nav-resv-butt" style="padding:4px"> <a class="button col-grn nav" href="/locations.html">Reservations</a></div>
+			</div>
+		</nav>
+	</div>
+</header><div class="wrapper location-nav">
+    <div class="container location-nav">
+        <div class="content">
+            <div id="location-link-current" class="nav-item">
+                <div class="nav-icon"><i class="fa fa-crosshairs" aria-hidden="true"></i> </div>
+                <div class="nav-text">use current <br>
+                    location</div>
+            </div>
+            <div id="location-link-all" class="nav-item nav-item-all">
+                <div class="nav-icon"><i class="far fa-map-marker-alt" aria-hidden="true"></i></div>
+                <div class="nav-text">see all<br>
+                    locations </div>
+            </div>
+
+                        <form action="locations.html" method="post">
+                        	<input type="hidden" id="srchsrc" name="srchsrc" value="1" />
+				<input type="hidden" id="ctStoreID" name="ctStoreID" value="0" />
+				<input type="hidden" id="ctStoreDirect" name="ctStoreDirect" value="0" />
+                 		<input type="hidden" id="location-search-box" name="location-search-box" value="" />
+                        </form>
+                    
+        </div>
+    </div></div>
+
+<div class="marquee">
+	<p>Ted’s Holiday Hours:&nbsp; &nbsp; Open Christmas Eve &bull; Closed Christmas Day 
+ 
+</p>
+</div>
+
+<div id="stores" class="container">
+   
+</div>
+<div id="locations-all" class="locations-all">
+    <div class="container">
+        <h2 style="padding-left:32px">All Locations</h2>
+    </div>
+</div>
+<div class="container location four-equal">
+   
+    <div class="column-1"><div class="location-list-item"><h3>Colorado</h3><a class="featurelink" href="auroragatewaypark.html"><h5>Aurora</h5></a><p class="nickname">Gateway Park</p><p><b>(Near Denver International Airport)</b><br>
+16495 East 40th Circle<br>Aurora, CO 80011<br><span>P: <a href="tel:720-374-7220">720-374-7220</a></span></p></div><div class="location-list-item"><a class="featurelink" href="aurorasouthlands.html"><h5>Aurora</h5></a><p class="nickname">Southlands</p><p>6105 South Main Street<br>Suite 101<br>Aurora, CO 80015<br><span>P: <a href="tel:720-870-4470">720-870-4470</a></span></p></div><div class="location-list-item"><a class="featurelink" href="coloradosprings.html"><h5>Colorado Springs</h5></a><p class="nickname">Briargate</p><p>1685 Briargate Parkway<br>Colorado Springs, CO 80920<br><span>P: <a href="tel:719-598-6195">719-598-6195</a></span></p></div><div class="location-list-item"><a class="featurelink" href="greenwoodvillage.html"><h5>Greenwood Village</h5></a><p class="nickname">Greenwood Village</p><p>5370 Greenwood Plaza Blvd<br>Suite 110<br>Greenwood Village, CO 80111<br><span>P: <a href="tel:303-771-3038">303-771-3038</a></span></p></div><div class="location-list-item"><a class="featurelink" href="lakewood.html"><h5>Lakewood</h5></a><p class="nickname">Lakewood</p><p>330 S. Teller St., Bldg. 3M1<br>Lakewood, CO 80226<br><span>P: <a href="tel:303-922-7770">303-922-7770</a></span></p></div><div class="location-list-item"><a class="featurelink" href="littleton.html"><h5>Littleton</h5></a><p class="nickname">Aspen Grove</p><p>7301 S. Santa Fe Drive<br>Suite 610<br>Littleton, CO 80120<br><span>P: <a href="tel:720-283-2303">720-283-2303</a></span></p></div><div class="location-list-item"><a class="featurelink" href="westminster.html"><h5>Westminster</h5></a><p class="nickname">Westminster</p><p>11950 Bradburn Blvd.<br>Westminster, CO 80031<br><span>P: <a href="tel:303-410-8337">303-410-8337</a></span></p></div><div class="location-list-item"><h3>Connecticut</h3><a class="featurelink" href="southwindsor.html"><h5>South Windsor</h5></a><p class="nickname">South Windsor</p><p>500 Evergreen Way<br>Suite 500<br>South Windsor, CT 06074<br><span>P: <a href="tel:860-648-1100">860-648-1100</a></span></p></div><div class="location-list-item"><h3>Delaware</h3><a class="featurelink" href="christiana.html"><h5>Newark</h5></a><p class="nickname">Christiana</p><p>3194 Fashion Center Boulevard<br>Newark, DE 19702<br><span>P: <a href="tel:302-366-1601 ">302-366-1601 </a></span></p></div></div><div class="column-2"><div class="location-list-item"><h3>Florida</h3><a class="featurelink" href="coconutpoint.html"><h5>Estero</h5></a><p class="nickname">Coconut Point</p><p>8017 Plaza Del Lago Drive<br>Estero, FL 33928<br><span>P: <a href="tel:239-947-9318">239-947-9318</a></span></p></div><div class="location-list-item"><a class="featurelink" href="orangepark.html"><h5>Jacksonville</h5></a><p class="nickname">Orange Park</p><p>8635 Blanding Blvd.<br>Jacksonville, FL 32244<br><span>P: <a href="tel:904-771-1964">904-771-1964</a></span></p></div><div class="location-list-item"><a class="featurelink" href="stjohns.html"><h5>Jacksonville</h5></a><p class="nickname">St. John's</p><p>10281 Midtown Parkway<br>Suite 221<br>Jacksonville, FL 32246<br><span>P: <a href="tel:904-998-0010">904-998-0010</a></span></p></div><div class="location-list-item"><a class="featurelink" href="tallahassee.html"><h5>Tallahassee</h5></a><p class="nickname">Village Green</p><p>1954 Village Green Way<br>Tallahassee, FL 32308<br><span>P: <a href="tel:850-561-8337">850-561-8337</a></span></p></div><div class="location-list-item"><h3>Georgia</h3><a class="featurelink" href="avalon.html"><h5>Alpharetta</h5></a><p class="nickname">Avalon</p><p>6100 Avalon Boulevard<br>Alpharetta, GA 30009<br><span>P: <a href="tel:678-710-9025">678-710-9025</a></span></p></div><div class="location-list-item"><a class="featurelink" href="athens.html"><h5>Athens</h5></a><p class="nickname">Beechwood Promenade</p><p><b>Opening Summer 2026</b></p><p>196 Alps Road<br>Building D - Suite 42A<br>Athens, GA 30606<br><span>P: <a href="tel:404-266-1344">404-266-1344</a></span></p></div><div class="location-list-item"><a class="featurelink" href="downtownatlanta.html"><h5>Atlanta</h5></a><p class="nickname">Downtown </p><p>133 Luckie Street<br>Atlanta, GA 30303<br><span>P: <a href="tel:404-521-9796">404-521-9796</a></span></p></div><div class="location-list-item"><a class="featurelink" href="westsidevillage.html"><h5>Atlanta</h5></a><p class="nickname">Westside Village</p><p>2250 Marietta Blvd NW<br>Atlanta, GA 30318<br><span>P: <a href="tel:404-343-3406">404-343-3406</a></span></p></div><div class="location-list-item"><a class="featurelink" href="buford.html"><h5>Buford</h5></a><p class="nickname">Mill Creek</p><p>1680 Mall of Georgia Blvd.<br>Suite 1755<br>Buford, GA 30519<br><span>P: <a href="tel:678-546-3631">678-546-3631</a></span></p></div><div class="location-list-item"><a class="featurelink" href="cumming.html"><h5>Cumming</h5></a><p class="nickname"></p><p>410 Peachtree Parkway<br>Suite 100<br>Cumming, GA 30041<br><span>P: <a href="tel:678-947-3530">678-947-3530</a></span></p></div><div class="location-list-item"><a class="featurelink" href="kennesaw.html"><h5>Kennesaw</h5></a><p class="nickname"></p><p>2500 Cobb Place Lane<br>Suite 210<br>Kennesaw, GA 30144<br><span>P: <a href="tel:678-581-7890">678-581-7890</a></span></p></div><div class="location-list-item"><a class="featurelink" href="lawrenceville.html"><h5>Lawrenceville</h5></a><p class="nickname"></p><p>1250 Scenic Highway<br>Suite 1720<br>Lawrenceville, GA 30045<br><span>P: <a href="tel:770-979-6202">770-979-6202</a></span></p></div><div class="location-list-item"><a class="featurelink" href="westcobb.html"><h5>Marietta</h5></a><p class="nickname">West Cobb</p><p>3625 Dallas Highway SW<br>Suite 700<br>Marietta, GA 30064<br><span>P: <a href="tel:678-594-7242">678-594-7242</a></span></p></div><div class="location-list-item"><a class="featurelink" href="eastcobb.html"><h5>Marietta</h5></a><p class="nickname">East Cobb</p><p>640 Johnson Ferry Road<br>Marietta, GA 30068<br><span>P: <a href="tel:770-578-8337">770-578-8337</a></span></p></div><div class="location-list-item"><a class="featurelink" href="peachtreecity.html"><h5>Peachtree City</h5></a><p class="nickname">Peachtree City</p><p>314 City Circle<br>Suite 1320<br>Peachtree City, GA 30269<br><span>P: <a href="tel:678-829-0272">678-829-0272</a></span></p></div><div class="location-list-item"><a class="featurelink" href="peachtreecorners.html"><h5>Peachtree Corners</h5></a><p class="nickname">The Forum - Norcross</p><p>5165 Peachtree Parkway<br>Suite 205<br>Peachtree Corners, GA 30092<br><span>P: <a href="tel:678-405-0305">678-405-0305</a></span></p></div></div><div class="column-3"><div class="location-list-item"><h3>Illinois</h3><a class="featurelink" href="bolingbrook.html"><h5>Bolingbrook</h5></a><p class="nickname"></p><p>623 E. Boughton Road<br>Suite 110<br>Bolingbrook, IL 60440<br><span>P: <a href="tel:630-783-2493">630-783-2493</a></span></p></div><div class="location-list-item"><h3>Indiana</h3><a class="featurelink" href="traderspoint.html"><h5>Indianapolis</h5></a><p class="nickname">Traders Point</p><p>5910 West 86th Street<br>Suite 134<br>Indianapolis, IN 46278<br><span>P: <a href="tel:317-875-8337">317-875-8337</a></span></p></div><div class="location-list-item"><h3>Kentucky</h3><a class="featurelink" href="lexington.html"><h5>Lexington</h5></a><p class="nickname">Hamburg Pavilion</p><p>2304 Sir Barton Way<br>Suite 170<br>Lexington, KY 40509<br><span>P: <a href="tel:859-263-5228">859-263-5228</a></span></p></div><div class="location-list-item"><h3>Massachusetts</h3><a class="featurelink" href="westborough.html"><h5>Westborough</h5></a><p class="nickname"></p><p>400 Union Street<br>Suite A104<br>Westborough, MA 01581<br><span>P: <a href="tel:508-366-5050">508-366-5050</a></span></p></div><div class="location-list-item"><h3>Maryland</h3><a class="featurelink" href="gaithersburg.html"><h5>Gaithersburg</h5></a><p class="nickname">Downtown Crown</p><p>105 Ellington Boulevard<br>Gaithersburg, MD 20878<br><span>P: <a href="tel:301-330-0777">301-330-0777</a></span></p></div><div class="location-list-item"><h3>Montana</h3><a class="featurelink" href="bozeman.html"><h5>Bozeman</h5></a><p class="nickname"></p><p>105 W. Main Street<br>Suite B<br>Bozeman, MT 59715<br><span>P: <a href="tel:406-587-6000">406-587-6000</a></span></p></div><div class="location-list-item"><h3>North Carolina</h3><a class="featurelink" href="charlotte.html"><h5>Charlotte</h5></a><p class="nickname"></p><p>7404 Waverly Walk Ave<br>Charlotte, NC 28277<br><span>P: <a href="tel:704-841-7502">704-841-7502</a></span></p></div><div class="location-list-item"><a class="featurelink" href="durham.html"><h5>Durham</h5></a><p class="nickname">Renaissance Center</p><p>6911 Fayetteville Rd<br>Suite 102<br>Durham, NC 27713<br><span>P: <a href="tel:919-572-1210">919-572-1210</a></span></p></div><div class="location-list-item"><h3>New York</h3><a class="featurelink" href="newyork.html"><h5>New York</h5></a><p class="nickname">Time Life</p><p>110 West 51st Street at Sixth Avenue<br>New York, NY 10020<br><span>P: <a href="tel:212-245-5220">212-245-5220</a></span></p></div><div class="location-list-item"><h3>Ohio</h3><a class="featurelink" href="eastongateway.html"><h5>Columbus</h5></a><p class="nickname">Easton Gateway</p><p>4169 Worth Avenue<br>Columbus, OH 43219<br><span>P: <a href="tel:614-337-1457">614-337-1457</a></span></p></div><div class="location-list-item"><a class="featurelink" href="downtowncolumbus.html"><h5>Columbus</h5></a><p class="nickname">Arena District</p><p>191 West Nationwide Blvd.<br>Columbus, OH 43215<br><span>P: <a href="tel:614-227-0013">614-227-0013</a></span></p></div></div><div class="column-4"><div class="location-list-item"><h3>Tennessee</h3><a class="featurelink" href="nashville.html"><h5>Nashville</h5></a><p class="nickname">West End</p><p>2817 West End Avenue<br>Nashville, TN 37203<br><span>P: <a href="tel:615-329-3415">615-329-3415</a></span></p></div><div class="location-list-item"><h3>Virginia</h3><a class="featurelink" href="alexandria.html"><h5>Alexandria</h5></a><p class="nickname">Hoffman</p><p>2451 Eisenhower Ave.<br>Alexandria, VA 22314<br><span>P: <a href="tel:703-960-0500">703-960-0500</a></span></p></div><div class="location-list-item"><a class="featurelink" href="crystalcity.html"><h5>Arlington</h5></a><p class="nickname">Crystal City</p><p>2200 Crystal Drive<br>Suite A<br>Arlington, VA 22202<br><span>P: <a href="tel:703-416-8337">703-416-8337</a></span></p></div></div>   
+</div>
+<a href="#" id="back-to-top" class=""><i class="far fa-angle-up"></i></a>
+
+<div class="be-ix-link-block"><!--Link Block Target Div--></div>
+
+<footer id="footer-wide" class="footer">
+    <div class="container column-layout two-equal">
+        <div class="column-left">
+            <h3>BECOME A TED&rsquo;S INSIDER</h3>
+            <div class="search-wrap">
+                <div class="search">
+                    <form action="/join.html" method="post">
+                        <input name="srchEmailAddr" type="text" class="searchTerm" placeholder="Enter email address">
+                        <button type="submit" class="searchButton">GO</button>
+                    </form>
+                </div>
+            </div>
+            <p>Sign up to receive exclusive news and rewards, like a complimentary birthday dessert and appetizer to celebrate your anniversary.&nbsp;  You can unsubscribe at any time.</p>
+        </div>
+        <div class="column-right">
+            <nav>
+                <ul>
+                    <li> <a href="/locations.html">LOCATIONS</a> </li>
+                    <li> <a href="/careers.html">CAREERS</a> </li>
+                    <li> <a href="/menu.html">MENU</a> </li>
+		    <li> <a href="/events.html">EVENTS</a> </li>
+                    <li> <a href="/store.html">GIFT CARDS</a> </li>
+                    <li> <a href="/nutrition.html">NUTRITION</a> </li>
+                    <li> <a href="/our-story.html">OUR STORY</a> </li>
+                    <li> <a href="/locations.html">RESERVATIONS</a> </li>
+                    <li> <a href="/accessibility.html">ACCESSIBILITY</a> </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="container column-layout two-equal">
+        <div class="column-left">
+            <nav>
+                <p> <a href="/contact.html">CONTACT US</a> </p>
+                <p> <a href="/privacy.html">PRIVACY</a> </p>
+                <p> <a href="/faq.html">FAQ</a> </p>
+            </nav>
+        </div>
+        <div class="column-right">
+            <div class="nav-social-icons" style="text-align:right;padding-right:4rem"> <a href="https://www.facebook.com/tedsmontanagrill" target="_blank">
+                <div class="nav-social-link"> <i class="fab fa-facebook-f" aria-hidden="true"></i> </div>
+                </a> <a href="https://twitter.com/tedmontanagrill" target="_blank">
+                <div class="nav-social-link"> <i class="fab fa-twitter" aria-hidden="true"></i> </div>
+                </a> <a href="http://instagram.com/tedsmontanagrill" target="_blank">
+                <div class="nav-social-link"> <i class="fab fa-instagram" aria-hidden="true"></i> </div>
+                </a> <a href="http://www.linkedin.com/company/33601?trk=tyah&trkInfo=tarId%3A1397487429995%2Ctas%3ATed's%20%2Cidx%3A1-1-1" target="_blank">
+                <div class="nav-social-link"> <i class="fab fa-linkedin" aria-hidden="true"></i> </div>
+                </a> <a href="http://www.youtube.com/tedsmontanagrill" target="_blank">
+                <div class="nav-social-link" style="text-align:center"> <i class="fab fa-youtube fa-2x" aria-hidden="true"></i> </div>
+                </a> </div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="copyright"> 
+            <script type="text/javascript">!function(){var b=function(){window.__AudioEyeSiteHash = "304344bdb137366d21f4cc1d5cef1518"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();</script> 
+            &copy; 2023 Ted's Montana Grill, Inc.</div>
+    </div>
+</footer>
+<footer id="footer-narrow" class="footer">
+    <div class="container column-layout two-equal">
+        <div class="column-left">
+            <h3>BECOME A TED&rsquo;S INSIDER</h3>
+            <div class="search-wrap">
+                <div class="search">
+                    <form action="/join.html" method="post">
+                        <input name="srchEmailAddr" type="text" class="searchTerm" placeholder="Enter email address">
+                        <button type="submit" class="searchButton">GO</button>
+                    </form>
+                </div>
+            </div>
+            <p>Sign up to receive exclusive news and rewards, like a complimentary birthday dessert and appetizer to celebrate your anniversary.&nbsp;  You can unsubscribe at any time.</p>
+        </div>
+        <div class="column-right">
+            <nav>
+                <ul>
+                    <li> <a href="/locations.html">LOCATIONS</a> </li>
+                    <li> <a href="/careers.html">CAREERS</a> </li>
+                    <li> <a href="/menu.html">MENU</a> </li>
+		    <li> <a href="/events.html">EVENTS</a> </li>
+                    <li> <a href="/store.html">GIFT CARDS</a> </li>
+                    <li> <a href="/nutrition.html">NUTRITION</a> </li>
+                    <li> <a href="/our-story.html">OUR STORY</a> </li>
+                    <li> <a href="/locations.html">RESERVATIONS</a> </li>
+                    <li> <a href="/accessibility.html">ACCESSIBILITY</a> </li>
+                    <li> <a href="/contact.html">CONTACT US</a> </li>
+                    <li> <a href="/privacy.html">PRIVACY</a> </li>
+                    <li> <a href="/faq.html">FAQ</a> </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="info">
+        <div class="nav-social-icons"> <a href="https://www.facebook.com/tedsmontanagrill" target="_blank">
+            <div class="nav-social-link"> <i class="fab fa-facebook-f" aria-hidden="true"></i> </div>
+            </a> <a href="https://twitter.com/tedmontanagrill" target="_blank">
+            <div class="nav-social-link"> <i class="fab fa-twitter" aria-hidden="true"></i> </div>
+            </a> <a href="http://instagram.com/tedsmontanagrill" target="_blank">
+            <div class="nav-social-link"> <i class="fab fa-instagram" aria-hidden="true"></i> </div>
+            </a> <a href="http://www.linkedin.com/company/33601?trk=tyah&trkInfo=tarId%3A1397487429995%2Ctas%3ATed's%20%2Cidx%3A1-1-1" target="_blank">
+            <div class="nav-social-link"> <i class="fab fa-linkedin" aria-hidden="true"></i> </div>
+            </a> <a href="http://www.youtube.com/tedsmontanagrill" target="_blank">
+            <div class="nav-social-link"> <i class="fab fa-youtube fa-5x" aria-hidden="true"></i> </div>
+            </a> </div>
+        <div class="copyright"> 
+            <script type="text/javascript">!function(){var b=function(){window.__AudioEyeSiteHash = "304344bdb137366d21f4cc1d5cef1518"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();</script> 
+            &copy; 2023 Ted's Montana Grill, Inc.</div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+   
+</script>
+</body>
+	<script type="text/javascript">document.write("<img src='https://bidagent.xad.com/conv/142830?ts=" + Date.now() + "'>");</script>
+</html>

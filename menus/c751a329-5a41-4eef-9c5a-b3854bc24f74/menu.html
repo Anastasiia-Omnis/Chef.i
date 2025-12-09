@@ -1,0 +1,1966 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.farinellanyc.com/',
+        AccountUUID: 'ba8d74f8fdf048a8a761c68589fa1130',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '015d79c9',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Tue Jul 22 20:27:28 UTC 2025',
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'Menu',
+        InitialPageUuid: '12a453780eac47d1b3420bb08bf6fc6f',
+        InitialPageId: '1169061731',
+        InitialEncodedPageAlias: 'TWVudQ==',
+        InitialHeaderUuid: 'd1102934e7ff491dbb2392232ed365c9',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: -1,
+            NavbarLiveHomePage: 'https://www.farinellanyc.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.farinellanyc.com/Menu">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon"
+      href="https://irp.cdn-website.com/015d79c9/dms3rep/multi/farinellafavicon.png"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/015d79c9/site_favicon_16_1736466297146.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    :root {
+  --color_1: rgba(248, 248, 248, 1);
+  --color_2: rgba(0,0,0,1);
+  --color_3: rgba(249, 191, 39, 1);
+  --color_4: rgba(218, 32, 50, 1);
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Epilogue:ital,wght@0,100..900;1,100..900&amp;subset=latin-ext&amp;display=swap"  />
+
+<style>
+@font-face {
+  font-family: "MADFONT_";
+  src: url("https://irp.cdn-website.com/015d79c9/fonts/MADFONT_-6b1b_400.TTF");
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="stylesheet" type="text/css" href="https://static.cdn-website.com/mnlt/production/5989/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/WIDGET_CSS/140c6a90f2f0a869da522ca48b78928c.css" id="widgetCSS" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="Menu"] #dm [data-show-on-page-only="Menu"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/015d79c9/files/015d79c9_1.min.css?v=48" id="siteGlobalCss" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody *.u_1341713126:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1341713126.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1341713126>.bgExtraLayerOverlay
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.u_1341713126:before
+{
+	opacity:0.93 !important;
+	background-color:var(--color_4) !important;
+}
+*#dm *.dmBody div.u_1341713126.before
+{
+	opacity:0.93 !important;
+	background-color:var(--color_4) !important;
+}
+*#dm *.dmBody div.u_1341713126>.bgExtraLayerOverlay
+{
+	opacity:0.93 !important;
+	background-color:var(--color_4) !important;
+}
+*#dm *.dmBody div.u_1341713126
+{
+	background-repeat:no-repeat !important;
+	background-image:url(https://lirp.cdn-website.com/015d79c9/dms3rep/multi/opt/FARINELLA+61-0254cd57-2880w.jpg) !important;
+}
+*#dm *.dmBody div.u_1318448372 .menuItemBox
+{
+	border-bottom-width:0.666667px !important;
+	border-bottom-color:rgba(102,102,102,0.3) !important;
+	border-bottom-style:solid !important;
+}
+*#dm *.dmBody div.u_1318448372 .menuCategory .menuCategroyTitle
+{
+	border-bottom-width:0px !important;
+	font-family:'MADFONT_' !important;
+	color:var(--color_4) !important;
+}
+*#dm *.dmBody *.u_1318448372 .menuCategory .menuCategroyTitle
+{
+	text-align:CENTER !important;
+}
+*#dm *.dmBody div.u_1318448372 .menuItemBox .menuItemName
+{
+	font-weight:700 !important;
+}
+*#dm *.dmBody div.u_1318448372 .menuItemBox .menuItemPrice
+{
+	font-weight:700 !important;
+}
+*#dm *.dmBody div.u_1318448372
+{
+	background-color:var(--color_1) !important;
+	border-style:solid !important;
+	border-width:6px !important;
+	border-color:var(--color_3) !important;
+	border-top-style:solid !important;
+	border-top-width:0px !important;
+}
+*#dm *.dmBody div.u_1744852867
+{
+	background-color:rgba(248,248,248,1) !important;
+	border-style:solid !important;
+	border-width:6px !important;
+	border-bottom-style:solid !important;
+	border-color:rgba(250,191,39,1) !important;
+	border-bottom-width:0px !important;
+}
+*#dm *.dmBody div.u_1589699542
+{
+	background-color:rgba(248,248,248,0.46) !important;
+	background-repeat:no-repeat !important;
+	background-image:url('https://lirp.cdn-website.com/015d79c9/dms3rep/multi/opt/stripe-bg-2880w.png') !important;
+	background-size:cover !important;
+}
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.dmBody div.u_1483988041
+{
+	margin-left:0px !important;
+	padding-top:0px !important;
+	padding-left:80px !important;
+	padding-bottom:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+	padding-right:0px !important;
+}
+*#dm *.dmBody div.u_1032633350
+{
+	height:148px !important;
+}
+*#dm *.dmBody div.u_1341713126
+{
+	padding-top:49px !important;
+	padding-left:40px !important;
+	padding-bottom:49px !important;
+	padding-right:40px !important;
+	width:auto !important;
+	background-repeat:repeat !important;
+	background-size:cover !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	min-height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+	background-attachment:fixed !important;
+}
+*#dm *.dmBody div.u_1318448372 .menuCategory .menuCategroyTitle
+{
+	font-size:36px !important;
+}
+*#dm *.dmBody div.u_1318448372 .menuItemDesc
+{
+	font-size:14px !important;
+}
+*#dm *.dmBody div.u_1318448372 .menuItemDesc .rteBlock
+{
+	font-size:14px !important;
+}
+*#dm *.dmBody div.u_1141917069
+{
+	margin-left:0px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:15px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+	padding-right:0px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1318448372
+{
+	padding-top:20px !important;
+	padding-left:20px !important;
+	padding-bottom:20px !important;
+	padding-right:20px !important;
+	float:none !important;
+	top:0px !important;
+	left:0px !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	min-height:auto !important;
+	max-width:100% !important;
+	min-width:25px !important;
+	text-align:start !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+}
+*#dm *.dmBody div.u_1596961709
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:625px !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:12px !important;
+	margin-bottom:0px !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	display:block !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1173396557
+{
+	float:none !important;
+	top:0px !important;
+	left:0 !important;
+	width:625px !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:2px !important;
+	padding-left:0px !important;
+	padding-bottom:2px !important;
+	max-width:100% !important;
+	padding-right:0px !important;
+	min-width:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	margin-top:14px !important;
+	margin-bottom:0px !important;
+	display:block !important;
+	min-height:auto !important;
+}
+*#dm *.dmBody div.u_1589699542
+{
+	padding-top:50px !important;
+	padding-left:0px !important;
+	padding-bottom:50px !important;
+	padding-right:50px !important;
+	width:auto !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+	background-repeat:repeat !important;
+	background-size:auto !important;
+	background-position:50% 50% !important;
+	background-attachment:initial !important;
+}
+
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-22, .size-22, .size-22 > font { font-size: 22px !important; }.font-size-18, .size-18, .size-18 > font { font-size: 18px !important; }.font-size-16, .size-16, .size-16 > font { font-size: 16px !important; }.font-size-11, .size-11, .size-11 > font { font-size: 11px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Fahkwang Fallback";
+  src: local('Arial');
+  ascent-override: 88.8099%;
+  descent-override: 25.7267%;
+  size-adjust: 113.5009%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Jost Fallback";
+  src: local('Arial');
+  ascent-override: 111.656%;
+  descent-override: 39.1318%;
+  size-adjust: 95.8301%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Epilogue Fallback";
+  src: local('Arial');
+  ascent-override: 70.2338%;
+  descent-override: 20.8923%;
+  size-adjust: 112.4814%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+
+  <link type="application/rss+xml" rel="alternate" href="https://www.farinellanyc.com/feed/rss2"/>
+  <link type="application/atom+xml" rel="alternate" href="https://www.farinellanyc.com/feed/atom"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.farinellanyc.com/Menu"/>
+  <title>
+    
+    Farinella Menu | Roman Pizza, Calzoni, and Desserts
+  
+  </title>
+  <meta name="description" content="Explore Farinella’s menu of Roman pizzas, legendary calzoni, and freshly baked desserts. Made to be savored, shared, and remembered."/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Farinella Menu | Roman Pizza, Calzoni, and Desserts"/>
+  <meta name="twitter:description" content="Explore Farinella’s menu of Roman pizzas, legendary calzoni, and freshly baked desserts. Made to be savored, shared, and remembered."/>
+  <meta property="og:description" content="Explore Farinella’s menu of Roman pizzas, legendary calzoni, and freshly baked desserts. Made to be savored, shared, and remembered."/>
+  <meta property="og:title" content="Farinella Menu | Roman Pizza, Calzoni, and Desserts"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="Menu"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1785920551" desktop-global-classes="header-over-content" tablet-global-classes="header-over-content"> <div dmtemplateid="Hamburger" data-responsive-name="ResponsiveDesktopTopTabletHamburger" class="runtime-module-container dm-bfs dm-layout-sec hasAnimations rows-1200 inMiniHeaderMode hasStickyHeader hamburger-reverse header-over-content dmPageBody d-page-1125715846 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1125715846" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div id="site_content"> <div class="p_hfcontainer showOnMedium"> <div id="hamburger-drawer" class="hamburger-drawer layout-drawer" layout="e9d510f4eb904e939c2be8efaf777e6e===header" data-origin="side-reverse"> <div class="u_1150499903 dmRespRow" style="text-align: center;" id="1150499903"> <div class="dmRespColsWrapper" id="1201692809"> <div class="u_1010935867 dmRespCol small-12 medium-12 large-12 empty-column" id="1010935867"></div> 
+</div> 
+</div> 
+ <div class="u_1259362156 dmRespRow middleDrawerRow" style="text-align: center;" id="1259362156"> <div class="dmRespColsWrapper" id="1447950353"> <div class="dmRespCol small-12 u_1764096249 medium-12 large-12" id="1764096249"> <nav class="u_1388644512 effect-bottom main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_2" layout-sub="" data-show-vertical-sub-items="HIDE" id="1388644512" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/Menu" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_01010167199  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="Our Menu" data-auto="page-text-style">Our Menu<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/About" class="unifiednav__item  dmUDNavigationItem_010101436714  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Our story
+        " data-auto="page-text-style">Our story<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/Contact" class="unifiednav__item  dmUDNavigationItem_010101943230  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Hours & Location" data-auto="page-text-style">Hours &amp; Location<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="https://www.toasttab.com/farinella-columbus-circle/giftcards?utmCampaign=onlineOrdering" class="unifiednav__item  dmUDNavigationItem_010101922670  " target="_blank" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Gift Cards" data-auto="page-text-style">Gift Cards<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/Contact#WorkHere" class="unifiednav__item  dmUDNavigationItem_010101694940  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Work Here" data-auto="page-text-style">Work Here<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1130855436" style="text-align: center;" id="1130855436"> <div class="dmRespColsWrapper" id="1686114617"> <div class="u_1613903619 dmRespCol small-12 medium-12 large-12" id="1613903619"> <div class="u_1659161254 dmNewParagraph" id="1659161254" style="transition: none;"> <div style="text-align:left;"> <font style="color:rgb(255, 255, 255);"> <b> <span class="font-size-22 lh-1"> <div style="text-align: left;"> <span style=""> <span style=""> <font style="color: rgb(255, 255, 255);"> <span style="" class="font-size-22 lh-1"> <b style=""> <span style="font-weight: 700;">Get in touch</span> 
+</b> 
+</span> 
+</font> 
+</span> 
+</span> 
+</div> 
+</span> 
+</b> 
+</font> 
+</div> 
+</div> <div class="u_1653469609 dmNewParagraph" id="1653469609"> <div style="text-align:left;"> <font style="color:rgb(255, 255, 255);"> <span style="font-size:20px;"> <div> <span style="font-size: 20px;"> <font style="color: rgb(255, 255, 255);"></font> 
+</span> 
+</div> 
+ <div> <span style="font-weight: 400;" class="font-size-18 lh-1"> <font style="color: rgb(103, 103, 103);"> <div style="text-align: left;"> <span style="font-weight: inherit;"> <font style="">555-555-5555</font> 
+</span> 
+</div> 
+ <div style="text-align: left;"> <span style="font-weight: inherit;"> <font style="">mymail@mailservice.com</font> 
+</span> 
+</div> 
+</font> 
+</span> 
+</div> 
+ <div> <span style="font-size: 20px;"> <font style="color: rgb(255, 255, 255);"></font> 
+</span> 
+</div> 
+</span> 
+</font> 
+</div> 
+</div> <div class="u_1817547448 align-center text-align-center dmSocialHub gapSpacing" id="1817547448" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://wa.me/+555 555 55 55" target="_blank" dm_dont_rewrite_url="true" aria-label="whatsapp" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Whatsapp&apos;)"> <span class="dmSocialWhatsapp dm-social-icons-whatsapp oneIcon socialHubIcon style8" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="layout-drawer-overlay" id="layout-drawer-overlay"></div> 
+</div> 
+ <div class="site_content"> <div id="hamburger-header-container" class="showOnMedium hamburger-header-container p_hfcontainer"> <div id="hamburger-header" class="hamburger-header p_hfcontainer" layout="44dc38f951e9489490b055748e10ba9f===header"> <div class="u_1846717040 dmRespRow" style="text-align: center;" id="1846717040"> <div class="dmRespColsWrapper" id="1289713776"> <div class="dmRespCol small-12 medium-4 large-4 empty-column" id="1162752325"></div> 
+ <div class="dmRespCol small-12 u_1430928494 medium-4 large-4 content-removed" id="1430928494"> <div class="u_1505126685 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1505126685"> <a href="/" id="1934644120" file="false"><img src="https://lirp.cdn-website.com/015d79c9/dms3rep/multi/opt/70774FARINELLA_LOGO-1920w.png" id="1752855379" class="" data-dm-image-path="https://irp.cdn-website.com/015d79c9/dms3rep/multi/70774FARINELLA_LOGO.png" width="1920" height="455" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="dmRespCol small-12 medium-4 large-4" id="1830629640"> <a data-display-type="block" class="u_1988163143 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton button_2" file="false" href="https://order.online/store/farinella-columbus-new-york-23316544/?hideModal=true&pickup=true" data-element-type="dButtonLinkId" id="1988163143" data-buttonstyle="ROUND_SIDES" target="_blank"> <span class="iconBg" aria-hidden="true" id="1634981175"> <span class="icon hasFontIcon icon-star" id="1337275501"></span> 
+</span> 
+ <span class="text" id="1880692176">ORDER ONLINE</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <button class="showOnMedium layout-drawer-hamburger hamburger-on-header" id="layout-drawer-hamburger" aria-label="menu" aria-controls="hamburger-drawer" aria-expanded="false"> <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+</button> 
+ <div class="dmHeaderContainer fHeader d-header-wrapper showOnLarge"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" headerlayout="b58ba5b5703b4cd7b5f5f7951565dc87===horizontal-layout-5" layout="f014fc9487554eb885e18628ee6309e9===header" mini-header-show-only-navigation-row="true" data-scrollable-target="body" data-scrollable-target-threshold="1" data-scroll-responder-id="1" logo-size-target="100%"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="u_1846552967 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1846552967"> <div class="dmRespColsWrapper" id="1365317255"> <div class="u_1803849210 dmRespCol small-12 medium-12 large-12" id="1803849210"> <span id="1797165282"></span> 
+ <div class="u_1615309116 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1615309116" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h5 class="text-align-center"><a href="/contact_us" runtime_url="/contact_us" type="page" style="color:var(--color_2);font-weight:500;text-decoration:none;display:initial;font-family:Epilogue, 'Epilogue Fallback';" class="font-size-16 m-font-size-13">1792 Broadway at Columbus Circle,&nbsp; New York</a><a href="/Contact" runtime_url="/Contact" type="page" style="color:var(--color_2);font-weight:500;text-decoration:none;display:initial;font-family:Epilogue, 'Epilogue Fallback';">City</a><span style="font-weight:500;display:initial;font-family:Epilogue, 'Epilogue Fallback';">&nbsp; &nbsp; |&nbsp; &nbsp;</span><a href="tel:(646) 205-2230" type="call" style="color:var(--color_2);font-weight:500;display:initial;text-decoration:none;font-family:Epilogue, 'Epilogue Fallback';" runtime_url="tel:(646) 205-2230" aria-label="Order Online (opens in new tab OR phone app)">(646) 205-2230</a></h5> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1785973972 dmRespRow dmDefaultListContentRow fullBleedChanged fullBleedMode" style="text-align:center" id="1785973972"> <div class="dmRespColsWrapper" id="1517269500"> <div class="u_1493286235 small-12 dmRespCol large-2 medium-2" id="1493286235"> <div class="u_1033963313 imageWidget align-center" data-widget-type="image" id="1033963313" data-element-type="image"> <a href="/" id="1131037193"><img src="https://lirp.cdn-website.com/015d79c9/dms3rep/multi/opt/70774FARINELLA_LOGO-1920w.png" id="1006537386" class="" data-dm-image-path="https://irp.cdn-website.com/015d79c9/dms3rep/multi/70774FARINELLA_LOGO.png" width="1920" height="455" alt="Pizzeria Farinella (Logo)" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1263076390 dmRespCol small-12 large-8 medium-8" id="1263076390"> <span id="1509078082"></span> 
+ <nav class="u_1076147691 effect-none main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1076147691" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/Menu" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_01010167199  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="Our Menu" data-auto="page-text-style">Our Menu<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/About" class="unifiednav__item  dmUDNavigationItem_010101436714  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         Our story
+        " data-auto="page-text-style">Our story<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/Contact" class="unifiednav__item  dmUDNavigationItem_010101943230  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Hours & Location" data-auto="page-text-style">Hours &amp; Location<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="https://www.toasttab.com/farinella-columbus-circle/giftcards?utmCampaign=onlineOrdering" class="unifiednav__item  dmUDNavigationItem_010101922670  " target="_blank" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Gift Cards" data-auto="page-text-style">Gift Cards<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/Contact#WorkHere" class="unifiednav__item  dmUDNavigationItem_010101694940  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Work Here" data-auto="page-text-style">Work Here<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="u_1936248147 dmRespCol small-12 large-2 medium-2" id="1936248147"> <a data-display-type="block" class="u_1932763273 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton button_2" file="false" href="https://order.online/store/farinella-columbus-new-york-23316544/?hideModal=true&pickup=true" data-element-type="dButtonLinkId" id="1932763273" data-buttonstyle="ROUND_SIDES" target="_blank" aria-label="Order Online (opens in a new tab)"> <span class="iconBg" aria-hidden="true" id="1243122360"> <span class="icon hasFontIcon icon-star" id="1588942641"></span> 
+</span> 
+ <span class="text" id="1322885748">ORDER ONLINE</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true"></div> 
+ <div dmwrapped="true" id="dmFirstContainer" desktop-global-classes="header-over-content" tablet-global-classes="header-over-content" class="dmBody u_dmStyle_template_Menu"> <div id="allWrapper" class="allWrapper"> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="1" class="dmDefaultRespTmpl" id="1125715846"> <div class="innerPageTmplBox dmDefaultPage  dmRespRowsWrapper" id="1841797601"> <div class="u_1341713126 dmRespRow dmSectionParallaxNew hasBackgroundOverlay" id="1341713126"> <div class="dmRespColsWrapper" id="1760853918"> <div class="dmRespCol large-12 medium-12 small-12" id="1684557159"> <div data-element-type="spacer" class="dmSpacer u_1032633350" id="1032633350"></div> 
+ <div class="u_1173396557 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1173396557" style="text-align: left; transition: none; display: block;"> <h2 class="text-align-center"><span style="color:var(--color_1);display:initial;font-family:'MADFONT_';">OUR MENU</span></h2> 
+</div> 
+ <div class="u_1596961709 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1596961709" style="transition: none 0s ease 0s; text-align: left; display: block;"><p style="line-height: 1.5;" class="text-align-center"><span style="display: inline; color: var(--color_1);">Authentic Roman flavors, perfected in New York. From our crisp, airy pizzas topped with the finest Italian ingredients to fresh-baked bread, vibrant salads, and indulgent desserts, every item is crafted with care and served with style. Whether you&rsquo;re grabbing a quick slice or settling in for something sweet, we&rsquo;ve got a taste for every craving.</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1589699542" id="1589699542"> <div class="dmRespColsWrapper" id="1739095547"> <div class="u_1483988041 dmRespCol small-12 medium-12 large-12" id="1483988041"> <div class="dmRespRow u_1744852867" id="1744852867"> <div class="dmRespColsWrapper" id="1526496091"> <div class="dmRespCol small-12 medium-12 large-12" id="1384725612"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1491954113" style="transition: opacity 1s ease-in-out;"> <h1 class="text-align-center"><span style="display: unset;">PIZZA</span></h1> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1286251536" style="transition: opacity 1s ease-in-out;"> <h3 class="text-align-center"><span style="display: unset;">Slice / 2FT</span></h3> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow fullBleedChanged fullBleedMode u_1141917069" id="1141917069"> <div class="dmRespColsWrapper" id="1147380300"> <div class="dmRespCol small-12 medium-12 large-12" id="1574654766"> <div class="u_1318448372 default dmRestaurantMenu dmWs" id="1318448372" dmle_extension="restaurant_menu_resp" data-element-type="restaurant_menu_resp" show_pics="false" num_columns="2" mobile_category_show_all="false" mobile_category_show_one="false" forcedisplay="false" layout="layout-3" mobile_category_show_first="true" wr="true" displaytitle="false" hover_effect="" icon="false" surround="false" title="Menu" platform="dm" currency="$" menu_data="W3sidGl0bGUiOiIiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjoxLCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6Ik1BUkdIRVJJVEEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJTYW4gTWFyemFubyB0b21hdG8sIGZyZXNoIG1venphcmVsbGEsIGJhc2lsIiwicHJpY2VzIjpbeyJwcmljZSI6IjUgLyAxNCAvIDIyIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IkZVTkdISSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlNhbiBNYXJ6YW5vIHRvbWF0bywgZnJlc2ggbW96emFyZWxsYSwgbXVzaHJvb21zIiwicHJpY2VzIjpbeyJwcmljZSI6IjUgLyAxNiAvIDI0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoyLCJ0aXRsZSI6IlBPTU9ET1JJTkkiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJTYW4gTWFyemFubyB0b21hdG8sIGZyZXNoIG1venphcmVsbGEsIGNoZXJyeSB0b21hdG8sIGZyZXNoIGJhc2lsIiwicHJpY2VzIjpbeyJwcmljZSI6IjUuNTAgLyAxNiAvIDI0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjozLCJ0aXRsZSI6IlBFUFBFUk9OSSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlNhbiBNYXJ6YW5vIHRvbWF0bywgZnJlc2ggbW96emFyZWxsYSwgSXRhbGlhbiBwZXBwZXJvbmkiLCJwcmljZXMiOlt7InByaWNlIjoiNS41MCAvIDE2IC8gMjQifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjQsInRpdGxlIjoiUFJJTUFWRVJBIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiTXVzaHJvb21zLCB6dWNjaGluaSwgZnJlc2ggbW96emFyZWxsYSIsInByaWNlcyI6W3sicHJpY2UiOiI1IC8gMTcgLyAyNCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NSwidGl0bGUiOiJDQVBSRVNFIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiU2FuIE1hcnphbm8gdG9tYXRvLCBmcmVzaCBtb3p6YXJlbGxhLCBzbGljZWQgdG9tYXRvLCBiYXNpbCwgb3JlZ2FubyIsInByaWNlcyI6W3sicHJpY2UiOiI2IC8gMTggLyAyNCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NiwidGl0bGUiOiJDQUNJTyBFIFBFUEUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJGcmVzaCBtb3p6YXJlbGxhLCBQZWNvcmlubyBSb21hbm8sIGJsYWNrIHBlcHBlciIsInByaWNlcyI6W3sicHJpY2UiOiI2IC8gMTggLyAyNCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NywidGl0bGUiOiJELk8uQy4iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJTYW4gTWFyemFubyB0b21hdG8sIGZyZXNoIG1venphcmVsbGEsIFBhcm1pZ2lhbm8gUmVnZ2lhbm8sIGJhc2lsIiwicHJpY2VzIjpbeyJwcmljZSI6IjYgLyAxOCAvIDI5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo4LCJ0aXRsZSI6IlBST1NDSVVUVE8gQ09UVE8iLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJQcm9zY2l1dHRvIGNvdHRvIFJvdmFnbmF0aSwgZnJlc2ggbW96emFyZWxsYSwgYmxhY2sgcGVwcGVyIiwicHJpY2VzIjpbeyJwcmljZSI6IjcgLyAyMiAvIDI5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo5LCJ0aXRsZSI6IkJVRkZBTE8gTU9aWkFSRUxMQSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlNhbiBNYXJ6YW5vIHRvbWF0bywgSXRhbGlhbiBidWZmYWxvIG1venphcmVsbGEsIHNsaWNlZCB0b21hdG8sIGJhc2lsIiwicHJpY2VzIjpbeyJwcmljZSI6IjcgLyAyMiAvIDI5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxMCwidGl0bGUiOiJCSUFOQ0EiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJBcnVndWxhICYgc2hhdmVkIFBhcm1pZ2lhbm8gUmVnZ2lhbm8sIGZyZXNoIG1venphcmVsbGEgJiBmb250aW5hIiwicHJpY2VzIjpbeyJwcmljZSI6IjcgLyAyMiAvIDI5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxMSwidGl0bGUiOiJDQVBSSUNDSU9TQSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlNhbiBNYXJ6YW5vIHRvbWF0bywgcHJvc2NpdXR0byBjb3R0byBSb3ZhZ25hdGksIGZyZXNoIG1venphcmVsbGEsIG11c2hyb29tcywgYXJ0aWNob2tlcywgYmxhY2sgb2xpdmVzIiwicHJpY2VzIjpbeyJwcmljZSI6IjcgLyAyMiAvIDM0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxMiwidGl0bGUiOiJCT1NDQUlPTEEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJTYW4gTWFyemFubyB0b21hdG8sIG11c2hyb29tcywgSXRhbGlhbiBzd2VldCBzYXVzYWdlLCBtb3p6YXJlbGxhLCBzbW9rZWQgbW96emFyZWxsYSIsInByaWNlcyI6W3sicHJpY2UiOiI3IC8gMjIgLyAzNCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MTMsInRpdGxlIjoiVEFSVFVGTyBORVJPIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiT3VyIHNlY3JldCByZWNpcGUsIGEgYm91cXVldCBvZiBJdGFsaWFuIGNoZWVzZXMgJiBibGFjayB0cnVmZmxlIiwicHJpY2VzIjpbeyJwcmljZSI6IjggLyAyNCAvIDM5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxNCwidGl0bGUiOiIzIE1FQVQgUElaWkEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJTYW4gTWFyemFubyB0b21hdG8sIG1venphcmVsbGEsIEl0YWxpYW4gaGFtLCBQZXBwZXJvbmkgJiBzYXVzYWdlIiwicHJpY2VzIjpbeyJwcmljZSI6IjguNTAgLyAyNCAvIDM5In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJTYWxhZCIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjIsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiRkFSSU5FTExBIENBRVNBUiBTQUxBRCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlJvbWFpbmUsIFBhcm1pZ2lhbm8gUmVnZ2lhbm8sIGNyb8O7dG9ucyIsInByaWNlcyI6W3sicHJpY2UiOiIxMiJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MSwidGl0bGUiOiJJVEFMSUFOQSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkFydWd1bGEsIGNoZXJyeSB0b21hdG9lcywgc2hhdmVkIFBhcm1pZ2lhbm8gUmVnZ2lhbm8iLCJwcmljZXMiOlt7InByaWNlIjoiMTIifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjIsInRpdGxlIjoiQ0hJQ0tFTiBTQUxBRCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkZyZWUgcmFuZ2UgY2hpY2tlbiBicmVhc3QsIHJvbWFpbmUsIG1lc2NsdW4sIHN1bmRyaWVkIHRvbWF0b2VzLCByYWlzaW5zLCBwaW5lIG51dHMgJiBwZXN0byBkcmVzc2luZyIsInByaWNlcyI6W3sicHJpY2UiOiIxNCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MywidGl0bGUiOiJGQVJJTkVMTEEgQ0FFU0FSIFNBTEFEIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiUm9tYWluZSwgUGFybWlnaWFubyBSZWdnaWFubywgY3Jvw7t0b25zIiwicHJpY2VzIjpbeyJwcmljZSI6IjEwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJXaW5lIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6MywiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJXSElURSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IldoaXRlaGF2ZW4sIFNhdXZpZ25vbiBCbGFuYywgTlouIEhhbGYgYm90dGxlLCAzNzUgbWwiLCJwcmljZXMiOlt7InByaWNlIjoiMTkifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjEsInRpdGxlIjoiUkVEIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiQ2FiZXJuZXQgU2F1diwgU3QuIEZyYW5jaXMsIE5hcGEgVmFsbGV5IEhhbGYgYm90dGxlLCAzNzUgbWwiLCJwcmljZXMiOlt7InByaWNlIjoiMTkifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjIsInRpdGxlIjoiUk9Tw4kiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiJXaGlzcGVyaW5nIEFuZ2VsLCBQcm92ZW5jZSwgRlIgSGFsZiBib3R0bGUsIDM3NSBtbCIsInByaWNlcyI6W3sicHJpY2UiOiIxOSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MywidGl0bGUiOiJQUk9TRUNDTyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlpvbmluLCBWZW5ldG8sIElUIEhhbGYgQm90dGxlLCAzNzUgbWwiLCJwcmljZXMiOlt7InByaWNlIjoiMTUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IkJlZXIiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjo0LCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IlBFUk9OSSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI3In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IkNPUk9OQSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI3In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJEcmlua3MiLCJ0eXBlIjoic2VjdGlvbiIsIm9yZGVyTnVtIjo1LCJlbnRyaWVzIjpbeyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjowLCJ0aXRsZSI6IklUQUxJQU4gQ0hFRVNFQ0FLRSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI4In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IlNQQVJLTElORyBXQVRFUiIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlNhbiBCZW5lZGV0dG8iLCJwcmljZXMiOlt7InByaWNlIjoiNCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MiwidGl0bGUiOiJTQU4gUEVMTEVHUklOTyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkZsYXZvcmVkIHNwYXJrbGluZyB3YXRlciwgQXJhbmNpYXRhLCBMaW1vbmF0YSIsInByaWNlcyI6W3sicHJpY2UiOiI0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjozLCJ0aXRsZSI6Ik9SQU5HRSBKVUlDRSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6Ik5hdGFsaWUncyIsInByaWNlcyI6W3sicHJpY2UiOiI0LjUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjQsInRpdGxlIjoiU09EQSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkNvY2EgQ29sYSwgRGlldCBDb2tlLCBTcHJpdGUiLCJwcmljZXMiOlt7InByaWNlIjoiMyJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NSwidGl0bGUiOiJBUFBMRSBKVUlDRSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlJlZCBKYWNrZXQiLCJwcmljZXMiOlt7InByaWNlIjoiNC41In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo2LCJ0aXRsZSI6IlBVUkUgTEVBRiIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkxlbW9uIFRlYSIsInByaWNlcyI6W3sicHJpY2UiOiI0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX1dLCJjYXRlZ29yeSI6ZmFsc2V9LHsidGl0bGUiOiJQYXN0cmllcyAmIERlc3NlcnRzIiwidHlwZSI6InNlY3Rpb24iLCJvcmRlck51bSI6NiwiZW50cmllcyI6W3sidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MCwidGl0bGUiOiJDUk9JU1NBTlQiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiNCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6MSwidGl0bGUiOiJCUk9XTklFIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjQifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjIsInRpdGxlIjoiQ0FOTk9MSSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlNtYWxsIC8gTGFyZ2UiLCJwcmljZXMiOlt7InByaWNlIjoiMi41MCAvIDQuNTAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjMsInRpdGxlIjoiSVRBTElBTiBDSEVFU0VDQUtFIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjgifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjQsInRpdGxlIjoiQUxNT05EIENST0lTU0FOVCIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI1LjI1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo1LCJ0aXRsZSI6IlBBSU4gQVUgQ0hPQ09MQVQiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiNC4yNSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6NiwidGl0bGUiOiJDSU5OQU1PTiBST0xMIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjMuNzUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjcsInRpdGxlIjoiQk9NQk9MT05JIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiTnV0ZWxsYSwgQ3JlbWEsIFBsYWluIiwicHJpY2VzIjpbeyJwcmljZSI6IjQuNSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6OCwidGl0bGUiOiJCQUJBIEFMIFJVTSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI3LjUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjksInRpdGxlIjoiQ09PS0lFUyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IkNob2NvbGF0ZSBDaGlwLCBEb3VibGUgQ2hvY29sYXRlIENoaXAiLCJwcmljZXMiOlt7InByaWNlIjoiNC41In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxMCwidGl0bGUiOiJJTCBUSVJBTUlTVSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiI5LjUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfV0sImNhdGVnb3J5IjpmYWxzZX0seyJ0aXRsZSI6IkNvZmZlZSAmIFRlYSIsInR5cGUiOiJzZWN0aW9uIiwib3JkZXJOdW0iOjcsImVudHJpZXMiOlt7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjAsInRpdGxlIjoiSE9VU0UgQ09GRkVFIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjMgLyA0In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoxLCJ0aXRsZSI6IkVTUFJFU1NPIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjMuNTAgLyA0Ljc1In1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjoyLCJ0aXRsZSI6IklDRUQgTEFUVEUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiNS4yNSAvIDYuMjUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjMsInRpdGxlIjoiSUNFRCBDT0ZGRUUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiMy41MCAvIDQuNTAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjQsInRpdGxlIjoiQ09MRCBCUkVXIElDRUQgVEVBIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjQifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjUsInRpdGxlIjoiQ0FQUFVDQ0lOTyIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IlNtIC8gTGciLCJwcmljZXMiOlt7InByaWNlIjoiNC4yNSAvIDUuMjUifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjYsInRpdGxlIjoiTEFUVEUiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiNC41MCAvIDUuNTAifV0sIm9wdGlvbnMiOltdLCJhZGRpdGlvbnMiOltdLCJpdGVtUGljdHVyZSI6bnVsbCwic2hvd0Rlc2NyaXB0aW9uIjp0cnVlfSx7InR5cGUiOiJpdGVtIiwidG9wTWVudSI6dHJ1ZSwib3JkZXJOdW0iOjcsInRpdGxlIjoiQU1FUklDQU5PIiwiY2F0ZWdvcnkiOmZhbHNlLCJkZXNjIjoiIiwicHJpY2VzIjpbeyJwcmljZSI6IjMuNzUgLyA0LjUwIn1dLCJvcHRpb25zIjpbXSwiYWRkaXRpb25zIjpbXSwiaXRlbVBpY3R1cmUiOm51bGwsInNob3dEZXNjcmlwdGlvbiI6dHJ1ZX0seyJ0eXBlIjoiaXRlbSIsInRvcE1lbnUiOnRydWUsIm9yZGVyTnVtIjo4LCJ0aXRsZSI6IlRFQSIsImNhdGVnb3J5IjpmYWxzZSwiZGVzYyI6IiIsInByaWNlcyI6W3sicHJpY2UiOiIzIC8gNCJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9LHsidHlwZSI6Iml0ZW0iLCJ0b3BNZW51Ijp0cnVlLCJvcmRlck51bSI6OSwidGl0bGUiOiJNQVRDSEEiLCJjYXRlZ29yeSI6ZmFsc2UsImRlc2MiOiIiLCJwcmljZXMiOlt7InByaWNlIjoiNS43NSJ9XSwib3B0aW9ucyI6W10sImFkZGl0aW9ucyI6W10sIml0ZW1QaWN0dXJlIjpudWxsLCJzaG93RGVzY3JpcHRpb24iOnRydWV9XSwiY2F0ZWdvcnkiOmZhbHNlfV0="> <h3 class="dmwidget-title">Menu</h3> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle"></h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">MARGHERITA</div> 
+ <div class="menuItemDesc">San Marzano tomato, fresh mozzarella, basil</div> 
+</div> 
+ <div class="menuItemPrice">5 / 14 / 22</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">FUNGHI</div> 
+ <div class="menuItemDesc">San Marzano tomato, fresh mozzarella, mushrooms</div> 
+</div> 
+ <div class="menuItemPrice">5 / 16 / 24</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">POMODORINI</div> 
+ <div class="menuItemDesc">San Marzano tomato, fresh mozzarella, cherry tomato, fresh basil</div> 
+</div> 
+ <div class="menuItemPrice">5.50 / 16 / 24</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">PEPPERONI</div> 
+ <div class="menuItemDesc">San Marzano tomato, fresh mozzarella, Italian pepperoni</div> 
+</div> 
+ <div class="menuItemPrice">5.50 / 16 / 24</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">PRIMAVERA</div> 
+ <div class="menuItemDesc">Mushrooms, zucchini, fresh mozzarella</div> 
+</div> 
+ <div class="menuItemPrice">5 / 17 / 24</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">CAPRESE</div> 
+ <div class="menuItemDesc">San Marzano tomato, fresh mozzarella, sliced tomato, basil, oregano</div> 
+</div> 
+ <div class="menuItemPrice">6 / 18 / 24</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">CACIO E PEPE</div> 
+ <div class="menuItemDesc">Fresh mozzarella, Pecorino Romano, black pepper</div> 
+</div> 
+ <div class="menuItemPrice">6 / 18 / 24</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">D.O.C.</div> 
+ <div class="menuItemDesc">San Marzano tomato, fresh mozzarella, Parmigiano Reggiano, basil</div> 
+</div> 
+ <div class="menuItemPrice">6 / 18 / 29</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">PROSCIUTTO COTTO</div> 
+ <div class="menuItemDesc">Prosciutto cotto Rovagnati, fresh mozzarella, black pepper</div> 
+</div> 
+ <div class="menuItemPrice">7 / 22 / 29</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">BUFFALO MOZZARELLA</div> 
+ <div class="menuItemDesc">San Marzano tomato, Italian buffalo mozzarella, sliced tomato, basil</div> 
+</div> 
+ <div class="menuItemPrice">7 / 22 / 29</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">BIANCA</div> 
+ <div class="menuItemDesc">Arugula &amp; shaved Parmigiano Reggiano, fresh mozzarella &amp; fontina</div> 
+</div> 
+ <div class="menuItemPrice">7 / 22 / 29</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">CAPRICCIOSA</div> 
+ <div class="menuItemDesc">San Marzano tomato, prosciutto cotto Rovagnati, fresh mozzarella, mushrooms, artichokes, black olives</div> 
+</div> 
+ <div class="menuItemPrice">7 / 22 / 34</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">BOSCAIOLA</div> 
+ <div class="menuItemDesc">San Marzano tomato, mushrooms, Italian sweet sausage, mozzarella, smoked mozzarella</div> 
+</div> 
+ <div class="menuItemPrice">7 / 22 / 34</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">TARTUFO NERO</div> 
+ <div class="menuItemDesc">Our secret recipe, a bouquet of Italian cheeses &amp; black truffle</div> 
+</div> 
+ <div class="menuItemPrice">8 / 24 / 39</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">3 MEAT PIZZA</div> 
+ <div class="menuItemDesc">San Marzano tomato, mozzarella, Italian ham, Pepperoni &amp; sausage</div> 
+</div> 
+ <div class="menuItemPrice">8.50 / 24 / 39</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Salad</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">FARINELLA CAESAR SALAD</div> 
+ <div class="menuItemDesc">Romaine, Parmigiano Reggiano, cro&ucirc;tons</div> 
+</div> 
+ <div class="menuItemPrice">$12</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">ITALIANA</div> 
+ <div class="menuItemDesc">Arugula, cherry tomatoes, shaved Parmigiano Reggiano</div> 
+</div> 
+ <div class="menuItemPrice">$12</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">CHICKEN SALAD</div> 
+ <div class="menuItemDesc">Free range chicken breast, romaine, mesclun, sundried tomatoes, raisins, pine nuts &amp; pesto dressing</div> 
+</div> 
+ <div class="menuItemPrice">$14</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">FARINELLA CAESAR SALAD</div> 
+ <div class="menuItemDesc">Romaine, Parmigiano Reggiano, cro&ucirc;tons</div> 
+</div> 
+ <div class="menuItemPrice">$10</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Wine</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">WHITE</div> 
+ <div class="menuItemDesc">Whitehaven, Sauvignon Blanc, NZ. Half bottle, 375 ml</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">RED</div> 
+ <div class="menuItemDesc">Cabernet Sauv, St. Francis, Napa Valley Half bottle, 375 ml</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">ROS&Eacute;</div> 
+ <div class="menuItemDesc">Whispering Angel, Provence, FR Half bottle, 375 ml</div> 
+</div> 
+ <div class="menuItemPrice">$19</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">PROSECCO</div> 
+ <div class="menuItemDesc">Zonin, Veneto, IT Half Bottle, 375 ml</div> 
+</div> 
+ <div class="menuItemPrice">$15</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Beer</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">PERONI</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$7</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">CORONA</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$7</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Drinks</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">ITALIAN CHEESECAKE</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$8</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">SPARKLING WATER</div> 
+ <div class="menuItemDesc">San Benedetto</div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">SAN PELLEGRINO</div> 
+ <div class="menuItemDesc">Flavored sparkling water, Aranciata, Limonata</div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">ORANGE JUICE</div> 
+ <div class="menuItemDesc">Natalie's</div> 
+</div> 
+ <div class="menuItemPrice">$4.5</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">SODA</div> 
+ <div class="menuItemDesc">Coca Cola, Diet Coke, Sprite</div> 
+</div> 
+ <div class="menuItemPrice">$3</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">APPLE JUICE</div> 
+ <div class="menuItemDesc">Red Jacket</div> 
+</div> 
+ <div class="menuItemPrice">$4.5</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">PURE LEAF</div> 
+ <div class="menuItemDesc">Lemon Tea</div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Pastries &amp; Desserts</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">CROISSANT</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">BROWNIE</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">CANNOLI</div> 
+ <div class="menuItemDesc">Small / Large</div> 
+</div> 
+ <div class="menuItemPrice">2.50 / 4.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">ITALIAN CHEESECAKE</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$8</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">ALMOND CROISSANT</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$5.25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">PAIN AU CHOCOLAT</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$4.25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">CINNAMON ROLL</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$3.75</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">BOMBOLONI</div> 
+ <div class="menuItemDesc">Nutella, Crema, Plain</div> 
+</div> 
+ <div class="menuItemPrice">$4.5</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">BABA AL RUM</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$7.5</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">COOKIES</div> 
+ <div class="menuItemDesc">Chocolate Chip, Double Chocolate Chip</div> 
+</div> 
+ <div class="menuItemPrice">$4.5</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">IL TIRAMISU</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$9.5</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="menuCategory"> <h3 class="menuCategroyTitle">Coffee &amp; Tea</h3> 
+ <span class="menuCatArrow icon-chevron-up"></span> 
+ <div class="menuItemsWrapper menuCategory2Cols clearfix"> <div class="categoryTextsWrapper"></div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">HOUSE COFFEE</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">3 / 4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">ESPRESSO</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">3.50 / 4.75</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">ICED LATTE</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">5.25 / 6.25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">ICED COFFEE</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">3.50 / 4.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">COLD BREW ICED TEA</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+ <div class="dmRestaurantMenuCol"> <div class="menuItemBox first"> <div class="menuItemLeft"> <div class="menuItemName">CAPPUCCINO</div> 
+ <div class="menuItemDesc">Sm / Lg</div> 
+</div> 
+ <div class="menuItemPrice">4.25 / 5.25</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">LATTE</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">4.50 / 5.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">AMERICANO</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">3.75 / 4.50</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox "> <div class="menuItemLeft"> <div class="menuItemName">TEA</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">3 / 4</div> 
+ <div style="clear: both;"></div> 
+</div> 
+ <div class="menuItemBox last"> <div class="menuItemLeft"> <div class="menuItemName">MATCHA</div> 
+ <div class="menuItemDesc"></div> 
+</div> 
+ <div class="menuItemPrice">$5.75</div> 
+ <div style="clear: both;"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="sticky-widgets-container-global" id="1396055384"></div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1228724559 dmRespRow" id="1228724559"> <div class="dmRespColsWrapper" id="1776294984"> <div class="dmRespCol large-12 medium-12 small-12 u_1616246030" id="1616246030"> <div class="u_1829022344 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1829022344" background-image":""}"="" style="transition: none; text-align: left; display: block;"> <h2 class="m-text-align-center text-align-center"><span style="display: initial; color: var(--color_1);">Subscribe to our newsletter</span></h2> 
+</div> 
+ <div class="u_1271954341 dmform default native-inputs" data-element-type="dContactUsRespId" data-captcha-position="bottomleft" id="1271954341" data-layout="layout-3" captcha="true" data-require-captcha="true"> <h3 class="dmform-title dmwidget-title" id="1700439515" hide="true">Newsletter subscription</h3> 
+ <div class="dmform-wrapper" id="1225716946" captcha-lang="en"> <form method="post" class="dmRespDesignRow" locale="ENGLISH" id="1819067271"> <div class="dmforminput required  small-12 dmRespDesignCol medium-12 large-12" id="1835090558"> <label for="1899321521" id="1160056234" class="" hide="true" data-dm-for="dmform-0">Email</label> 
+<input type="email" name="dmform-0" placeholder="Email" id="1899321521" class="" data-placeholder-original="Email"/><input type="hidden" name="label-dmform-0" value="Email" id="1172039894" class=""/></div> 
+ <span id="1835090558_clear" class="dmWidgetClear"></span> 
+ <span id="1835090558_clear_clear" class="dmWidgetClear"></span> 
+ <div class="dmformsubmit dmWidget R" id="1299798827"><input class="" name="submit" type="submit" value="Subscribe" id="1227239793"/></div> 
+<input name="dmformsendto" type="hidden" value="O0wrseIfFLtHvMigkExsEiZ8jwialFoaADuX1K7YlB4UIuZmUrOcff/aJn5xeMIu7TPwq6Cm+kw=" id="1173282135" data-dec="true"/><input class="dmActionInput" type="hidden" name="action" value="/_dm/s/rt/widgets/dmform.submit.jsp" id="1106161409"/><input name="dmformsubject" type="hidden" value="Form Message" id="1702444208"/><input name="dmformfrom" type="hidden" value="" id="1379315601"/><input name="dmformsubmitparams" type="hidden" value="8mpKnCSiNQXK/d9M7IDrS6udsrTOKwrMRxT0vb1WFko0bej4Iah+dH8TQPsY8KTMvbwvkEkO1e3pun4R++y3d7UT1byMHRskmJM4Uu2ykLPP0ai9TtNQjeo7goEAGNXqqBvYcbBUbn4ngdOJaBGsqOOk+vW/FB5M2l7bbXKB8NkHwkP6o+SaUKuVfRAFKg6DI/WcTry9sHJx+8goeq/f9t21rE+fdr6puWdYDme3gn1C1LBykYyjlQ==" data-dec="true"/><input type="hidden" name="page_uuid" value="d1102934e7ff491dbb2392232ed365c9"/></form> 
+</div> 
+ <div class="dmform-success" style="display:none" id="1750904628">Thank you for contacting us.<br id="1190644033"/>We will get back to you as soon as possible.</div> 
+ <div class="dmform-error" style="display:none" id="1300231513">Oops, there was an error sending your message.<br id="1004150344"/>Please try again later.</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1632155419 fullBleedChanged fullBleedMode" style="text-align: center;" id="1632155419" mode="1"> <div class="dmRespColsWrapper" id="1253858808"> <div class="u_1063824722 dmRespCol small-12 large-2 medium-2" id="1063824722"> <div class="u_1180245539 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1180245539"> <a id="1404072396" href="/" file="false"><img src="https://lirp.cdn-website.com/015d79c9/dms3rep/multi/opt/70774FARINELLA_LOGO-1920w.png" alt="" id="1086859019" class="" data-dm-image-path="https://irp.cdn-website.com/015d79c9/dms3rep/multi/70774FARINELLA_LOGO.png" width="1920" height="455" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1940561751 dmRespCol small-12 large-10 medium-10" id="1940561751"> <div class="u_1420924511 dmRespRow" id="1420924511" mode="1"> <div class="dmRespColsWrapper" id="1602134095"> <div class="u_1086954820 dmRespCol small-12 medium-4 large-4" id="1086954820"> <nav class="u_1536101949 unifiednav_vertical effect-bottom2 main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_2" layout-sub="" data-show-vertical-sub-items="HOVER" id="1536101949" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="https://irp.cdn-website.com/md/dmtmpl/d157eac3-09bd-4d3c-b578-ed3ea1464d2f/dms3rep/multi/logo.svg" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/About" class="unifiednav__item    " target="" data-target-page-alias="about"> <span class="nav-item-text " data-link-text="
+         Our story
+        " data-auto="page-text-style">Our story<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item    " target="" data-target-page-alias="blog"> <span class="nav-item-text " data-link-text="Home" data-auto="page-text-style">Home<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/Contact" class="unifiednav__item    " target="" data-target-page-alias="contact"> <span class="nav-item-text " data-link-text="Hours & Location" data-auto="page-text-style">Hours &amp; Location<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/accessibility" class="unifiednav__item    " target="" data-target-page-alias="accessibility"> <span class="nav-item-text " data-link-text="Accessibility" data-auto="page-text-style">Accessibility<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/Contact#getintouch" class="unifiednav__item    " target="" data-target-page-alias="Contact#getintouch"> <span class="nav-item-text " data-link-text="Contact Us" data-auto="page-text-style">Contact Us<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="u_1941499633 dmRespCol small-12 large-4 medium-4" id="1941499633"> <div class="u_1037544854 default dmHoursOfOperation" id="1037544854" dmle_extension="open_hours" data-element-type="open_hours" time_format="12" wr="true" displaytitle="true" forcedisplay="false" icon="true" surround="true" adwords=""> <h3 class="dmwidget-title ">Winter Hours (Jan 1-March 30)</h3> 
+ <dl class="open-hours-data"> <div class="open-hours-item"> <dt day="0">Mon - Sun</dt> 
+ <dd> <time>8:00 am</time> 
+- <time>9:00 pm</time> 
+</dd> 
+</div> 
+</dl> 
+</div> 
+</div> 
+ <div class="u_1575123205 dmRespCol small-12 large-4 medium-4" id="1575123205"> <div class="u_1790143398 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1790143398" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h6 class="size-16 m-size-18 m-text-align-left"><strong style="font-weight: bold; display: initial;" class="font-size-16 m-font-size-18" m-font-size-set="true">Visit Us</strong></h6> 
+</div> 
+ <div class="u_1963871810 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1963871810" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h6 style="line-height: 2;" class="m-text-align-left"><span style="display: initial;">1792 Broadway at Columbus Circle, <br/>New York, NY 10019</span></h6> 
+</div> 
+ <div class="u_1414218894 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1414218894" style="transition: none 0s ease 0s; text-align: left;"> <h6 class="m-text-align-left"><span style="display: initial;">(646) 205-2230</span></h6> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1222712997 dmRespRow" id="1222712997"> <div class="dmRespColsWrapper" id="1396175621"> <div class="dmRespCol small-12 medium-12 large-12" id="1616116791"> <div class="u_1076808704 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1076808704"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1487903668"/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1528229002 dmRespRow" id="1528229002"> <div class="dmRespColsWrapper" id="1324521604"> <div class="dmRespCol large-12 medium-12 small-12" id="1345793757"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1982741667" style="transition: opacity 1s ease-in-out;"><p class="text-align-center m-size-9 size-11"></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5989";
+    var build = "2025-12-04T13_49_44";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-12-04T13_49_44";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5989';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5989';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =true;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5989/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5989/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '015d79c9'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 015d79c9 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Begin Body End Markup -->
+<!-- AccessiBe -->
+ <script> (function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init(); }; h.appendChild(s); })(); </script> 
+ 
+<!-- Append Aria Label to Gift Cards -->
+<script>
+(function () {
+  const TEXT = 'Gift Cards (opens in a new tab)';
+  const HREF_PART = '/farinella-columbus-circle/giftcards'; // stable part of the URL
+
+  // Utility: apply to a single anchor
+  function fixLink(a){
+    if (!a) return;
+
+    // aria-label
+    if (!a.hasAttribute('aria-label')) {
+      a.setAttribute('aria-label', TEXT);
+    }
+
+    // make sure it really opens in a new tab securely
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', (a.getAttribute('rel') || '') + ' noopener noreferrer');
+
+    // Fallback for scanners that ignore dynamic attributes:
+    if (!a.querySelector('.sr-only-new-tab')) {
+      const sr = document.createElement('span');
+      sr.className = 'sr-only-new-tab';
+      sr.textContent = ' (opens in a new tab)';
+      // Visually hide but keep for SR
+      sr.style.cssText = 'position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;';
+      a.appendChild(sr);
+    }
+  }
+
+  // Find anchors whose href contains the known part
+  function scan(root=document){
+    root.querySelectorAll('a[href*="' + HREF_PART + '"]').forEach(fixLink);
+  }
+
+  // Run ASAP
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', scan);
+  } else {
+    scan();
+  }
+
+  // Catch async/nav rebuilds
+  const mo = new MutationObserver(muts=>{
+    muts.forEach(m=>{
+      m.addedNodes.forEach(node=>{
+        if (node.nodeType === 1) scan(node);
+      });
+    });
+  });
+  mo.observe(document.documentElement, {childList:true, subtree:true});
+
+  // Safety net: run every few seconds for 10s (some scanners are late)
+  let tries = 0, maxTries = 5;
+  const iv = setInterval(()=>{
+    scan();
+    if (++tries >= maxTries) clearInterval(iv);
+  }, 2000);
+})();
+</script>
+<!--  End Body End Markup -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>
